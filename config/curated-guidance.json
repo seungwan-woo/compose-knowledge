@@ -1102,6 +1102,46 @@
           "sha256": "f930a30c253f4de8eb5b4f6c77b95a40809850a50c8c28bc901a566439b6fec4"
         }
       ]
+    },
+    {
+      "id": "guide-lazy-content-type-reuse",
+      "title": "Reuse lazy compositions within the same content type",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy.LazyColumn",
+      "body": "For heterogeneous lazy lists or grids, provide contentType based on the item structure. Compose can reuse compositions between items of the same type instead of attempting reuse across different structures. The official guide recommends this for composition reuse; it does not establish a measured speedup for your app. This card covers reuse grouping, not item identity or saved-state behavior. Validate performance in the target app; released-version applicability remains unknown.",
+      "aliases": [
+        "contentType",
+        "composition reuse",
+        "lazy list performance",
+        "콘텐츠 타입",
+        "리스트 재사용"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-lists-content-type",
+          "sha256": "1f665e3d84d2ca48c0881090d7575f00c1a74a8161988325af83a0b443c05ca9"
+        }
+      ]
+    },
+    {
+      "id": "guide-lazy-placeholder-size",
+      "title": "Give asynchronously loaded lazy items a useful initial size",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy.LazyColumn",
+      "body": "Give lazy items that load images or other data asynchronously a nonzero default size. Zero-height items can all fit in the first measurement, causing unnecessary composition before loaded content expands. When the eventual size is approximately known, keep placeholder and loaded sizes consistent to help maintain scroll position. Choose dimensions appropriate to the content rather than treating the guide example as a universal size. Released-version applicability remains unknown.",
+      "aliases": [
+        "placeholder",
+        "0-pixel sized items",
+        "async image size",
+        "자리표시자 크기",
+        "리스트 스크롤 위치"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-lists-avoid-0-size-items",
+          "sha256": "c63bda9f8093c8ed968611c282e3e2ff98e100f67548916e7f67242a53c889f1"
+        }
+      ]
     }
   ]
 }
