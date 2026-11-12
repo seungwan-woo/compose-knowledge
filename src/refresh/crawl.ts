@@ -20,6 +20,7 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
   for (const source of config.sources) {
     if (ids.has(source.id)) throw new Error(`Duplicate crawl source ID: ${source.id}`);
     if (!['html', 'gitiles', 'github', 'monitor'].includes(source.kind)) throw new Error(`Unsupported source kind: ${source.kind}`);
+    if (source.symbols !== undefined && (!Array.isArray(source.symbols) || source.symbols.some(symbol => typeof symbol !== 'string' || !/^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+$/.test(symbol)))) throw new Error(`Invalid source symbols: ${source.id}`);
     ids.add(source.id);
   }
   const documents: KnowledgeDocument[] = structuredClone(baseline.documents);
@@ -68,7 +69,12 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
       const key = safeId(part.anchor); const count = (seen.get(key) ?? 0) + 1; seen.set(key, count);
       const sectionId = `live-${id}-${key}${count === 1 ? '' : `-${count}`}`;
       const src = { id: `${sectionId}-source`, kind: (source.kind === 'html' ? 'guide' : 'code') as 'guide' | 'code', resource: source.kind === 'html' ? `${resource.split('#')[0]}#${encodeURIComponent(part.anchor)}` : resource, revision: rev, ...(source.kind === 'html' ? {} : { path: source.path!, startLine: part.startLine!, endLine: part.endLine! }), sha256: hash(part.text), license, excerpt: part.text };
-      const section: KnowledgeSection = { id: sectionId, title: part.title, body: part.text, aliases: [], requires: [{ artifact, version: null }], sources: [src], relatedIds: [] };
+      const symbolText = source.kind === 'html' ? part.text : part.text.split('\n').filter(line => !/^\s*(?:import|package)\s/.test(line)).join('\n');
+      const aliases = [...new Set(source.symbols ?? [])].filter(symbol => {
+        const name = symbol.split('.').at(-1)!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(`(?<![\\w$])${name}(?![\\w$])`).test(symbolText);
+      });
+      const section: KnowledgeSection = { id: sectionId, title: part.title, body: part.text, aliases, requires: [{ artifact, version: null }], sources: [src], relatedIds: [] };
       const prior = old.get(sectionId);
       return prior && comparable(prior) === comparable(section) ? prior : section;
     });

@@ -8,6 +8,8 @@ export interface CrawlSource {
   artifact: string;
   fqn: string;
   license: string;
+  /** Explicit API symbols evidenced by this source; indexed only in sections mentioning them. */
+  symbols?: string[];
   path?: string;
   repo?: string;
   ref?: string;

@@ -8,11 +8,12 @@ import { diffSnapshots } from '../dist/refresh/publish.js';
 import { buildSnapshot } from '../dist/knowledge/build.js';
 import { validateSnapshot } from '../dist/knowledge/validate.js';
 import { getSnapshotPath, syncSnapshot } from '../dist/io/snapshot.js';
+import { applyCuratedGuidance, parseGuidanceConfig } from '../dist/knowledge/curate.js';
 
 async function main() {
 const args = process.argv.slice(2); const opts = {};
 for (let i = 0; i < args.length; i += 2) {
-  if (!['--out', '--config', '--previous', '--remote', '--ref', '--base-snapshot'].includes(args[i]) || !args[i + 1] || opts[args[i]]) throw new Error('Usage: refresh.mjs --out DIR [--config FILE] [--previous DIR | --remote URL] [--ref BRANCH]');
+  if (!['--out', '--config', '--guidance', '--previous', '--remote', '--ref', '--base-snapshot'].includes(args[i]) || !args[i + 1] || opts[args[i]]) throw new Error('Usage: refresh.mjs --out DIR [--config FILE] [--guidance FILE] [--previous DIR | --remote URL] [--ref BRANCH]');
   opts[args[i]] = args[i + 1];
 }
 if (!opts['--out'] || (opts['--previous'] && opts['--remote']) || (opts['--previous'] && !opts['--base-snapshot']) || (opts['--base-snapshot'] && (!opts['--previous'] || !/^[0-9a-f]{40}$/.test(opts['--base-snapshot'])))) throw new Error('Specify --out and at most one previous source');
@@ -20,6 +21,7 @@ const out = path.resolve(opts['--out']); await mkdir(out, { recursive: true });
 if ((await readdir(out)).length) throw new Error('Output directory must be empty');
 const config = JSON.parse(await readFile(opts['--config'] ?? 'config/crawl.json', 'utf8'));
 const baseline = JSON.parse(await readFile('tests/fixtures/knowledge-input.json', 'utf8'));
+const guidanceConfig = parseGuidanceConfig(JSON.parse(await readFile(opts['--guidance'] ?? 'config/curated-guidance.json', 'utf8')));
 let previous; let temp; let baseSnapshot = opts['--base-snapshot'] ?? null;
 try {
   let previousDir = opts['--previous'];
@@ -46,9 +48,10 @@ try {
     documents.get(docId).sections.push(section);
   }
   const result = await crawlSources(config, baseline, previous ? { schemaVersion: 1, documents: [...documents.values()] } : undefined);
-  const corpus = path.join(out, 'corpus'); await buildSnapshot(result.input, corpus);
+  const guidance = applyCuratedGuidance(result.input, guidanceConfig);
+  const corpus = path.join(out, 'corpus'); await buildSnapshot(guidance.input, corpus);
   const current = await validateSnapshot(corpus); const changes = diffSnapshots(previous, current);
-  const report = { baseSnapshot, sources: result.sources, changes };
+  const report = { baseSnapshot, sources: result.sources, changes, curatedGuidance: guidance.statuses };
   await writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n');
   const currentEntries = new Map(current.index.entries.map(entry => [entry.id, entry]));
   const previousEntries = new Map((previous?.index.entries ?? []).map(entry => [entry.id, entry]));
@@ -71,7 +74,7 @@ try {
     if (ids.length > 30) sections.push(`- ${ids.length - 30} more; see report.json for the full list.`);
     sections.push('');
   }
-  const summary = ['# Daily knowledge refresh', '', `Sections: ${changes.added.length} added, ${changes.updated.length} updated, ${changes.removed.length} removed.`, `Previous corpus: ${baseSnapshot ?? 'none'}.`, '', ...sections, '## Sources', '', ...result.sources.map(source => `- ${text(source.id)}: ${source.status}, ${source.sections} sections${source.note ? ` — ${text(source.note)}` : ''}`), ''].join('\n');
+  const summary = ['# Daily knowledge refresh', '', `Sections: ${changes.added.length} added, ${changes.updated.length} updated, ${changes.removed.length} removed.`, `Previous corpus: ${baseSnapshot ?? 'none'}.`, '', ...sections, '## Curated guidance', '', ...guidance.statuses.map(card => `- ${text(card.id)}: ${card.status}${card.reason ? ` — ${text(card.reason)}` : ''}`), '', '## Sources', '', ...result.sources.map(source => `- ${text(source.id)}: ${source.status}, ${source.sections} sections${source.note ? ` — ${text(source.note)}` : ''}`), ''].join('\n');
   await writeFile(path.join(out, 'summary.md'), summary);
   if (process.env.GITHUB_STEP_SUMMARY) await import('node:fs/promises').then(fs => fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary));
 } finally { if (temp) await rm(temp, { recursive: true, force: true }); }

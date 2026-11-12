@@ -102,3 +102,42 @@ it('preserves highlighted Kotlin tokens, interpolation, and line comments', asyn
   const body = result.input.documents[0]!.sections[0]!.body;
   expect(body).toContain('option ->\n    // Placeholder comment\n    val label = "Hello ${option.name}"');
 });
+
+it('indexes configured API symbols only in sections that actually mention the exact name', async () => {
+  const configured: CrawlConfig = { ...config, sources: [{ ...config.sources[0]!, symbols: ['androidx.compose.runtime.DisposableEffect'] }] };
+  const page = '<article class="devsite-article-body"><h2 id="effect">Effect</h2><p>DisposableEffect runs cleanup when a key changes.</p><h2 id="scope">Scope</h2><p>DisposableEffectScope exposes cleanup registration.</p></article>';
+  const result = await crawlSources(configured, baseline, undefined, async () => page);
+  expect(result.input.documents[0]!.sections[0]!.aliases).toEqual(['androidx.compose.runtime.DisposableEffect']);
+  expect(result.input.documents[0]!.sections[1]!.aliases).toEqual([]);
+});
+
+it('rejects malformed configured API symbols before acquisition', async () => {
+  const invalid = { ...config, sources: [{ ...config.sources[0]!, symbols: ['not a qualified symbol'] }] };
+  await expect(crawlSources(invalid, baseline, undefined, async () => html)).rejects.toThrow(/symbol/i);
+});
+
+it('does not index foreign import or package directives as local API evidence', async () => {
+  const source = { ...config.sources[0]!, kind: 'gitiles' as const, repo: 'https://android.googlesource.com/project', ref: 'main', path: 'Dp.kt', fqn: 'androidx.compose.ui.unit', symbols: ['androidx.compose.ui.unit.lerp', 'androidx.compose.ui.unit.min'] };
+  const lines = ['package androidx.compose.ui.unit', 'import androidx.compose.ui.util.lerp', 'import kotlin.math.min', ...Array(32).fill('// License header'), 'fun lerp(start: Dp, stop: Dp, fraction: Float): Dp = TODO()', 'fun min(a: Dp, b: Dp): Dp = TODO()'];
+  const result = await crawlSources({ schemaVersion: 1, sources: [source] }, baseline, undefined, async url => url.endsWith('format=JSON') ? JSON.stringify({ commit: 'a'.repeat(40) }) : Buffer.from(lines.join('\n')).toString('base64'));
+  const sections = result.input.documents[0]!.sections;
+  expect(sections[0]!.body).toContain('import androidx.compose.ui.util.lerp');
+  expect(sections[0]!.aliases).toEqual([]);
+  expect(sections[1]!.aliases).toEqual(source.symbols);
+});
+
+it('honors long Retry-After rather than retrying early', async () => {
+  let calls = 0; const delays: number[] = [];
+  const body = await fetchWithPolicy('https://android.googlesource.com/a', async () => ++calls === 1
+    ? { status: 429, headers: { 'retry-after': '60' }, body: '' }
+    : { status: 200, headers: {}, body: 'source' }, async ms => { delays.push(ms); });
+  expect(body).toBe('source'); expect(delays).toEqual([60000]);
+});
+
+it('allows a bounded recovery window for a burst rate limit', async () => {
+  let calls = 0; const delays: number[] = [];
+  const body = await fetchWithPolicy('https://android.googlesource.com/a', async () => ++calls <= 4
+    ? { status: 429, headers: {}, body: '' }
+    : { status: 200, headers: {}, body: 'source' }, async ms => { delays.push(ms); });
+  expect(body).toBe('source'); expect(delays).toEqual([2000, 4000, 8000, 16000]);
+});

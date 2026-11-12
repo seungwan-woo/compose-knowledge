@@ -102,6 +102,2584 @@
       "artifact": "androidx.compose.material3:material3",
       "fqn": "androidx.compose.material3",
       "license": "Monitor only; content not ingested"
+    },
+    {
+      "id": "compose-guide-state",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/state",
+      "title": "State and Jetpack Compose",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.runtime.MutableState",
+        "androidx.compose.runtime.State",
+        "androidx.compose.runtime.saveable.rememberSaveable"
+      ]
+    },
+    {
+      "id": "compose-guide-side-effects",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/side-effects",
+      "title": "Side-effects in Compose",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.LaunchedEffect",
+        "androidx.compose.runtime.rememberCoroutineScope",
+        "androidx.compose.runtime.rememberUpdatedState",
+        "androidx.compose.runtime.DisposableEffect",
+        "androidx.compose.runtime.SideEffect",
+        "androidx.compose.runtime.produceState",
+        "androidx.compose.runtime.derivedStateOf",
+        "androidx.compose.runtime.snapshotFlow"
+      ]
+    },
+    {
+      "id": "compose-guide-state-hoisting",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/state-hoisting",
+      "title": "Where to hoist state",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.MutableState",
+        "androidx.compose.foundation.lazy.LazyListState",
+        "androidx.compose.foundation.lazy.rememberLazyListState"
+      ]
+    },
+    {
+      "id": "compose-guide-compositionlocal",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/compositionlocal",
+      "title": "Locally scoped data with CompositionLocal",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.CompositionLocal",
+        "androidx.compose.runtime.CompositionLocalProvider",
+        "androidx.compose.runtime.compositionLocalOf",
+        "androidx.compose.runtime.staticCompositionLocalOf"
+      ]
+    },
+    {
+      "id": "compose-guide-lifecycle",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/lifecycle",
+      "title": "Lifecycle of composables",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.key",
+        "androidx.compose.runtime.Stable"
+      ]
+    },
+    {
+      "id": "compose-guide-phases",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/phases",
+      "title": "Jetpack Compose phases",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-guide-state-saving",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/state-saving",
+      "title": "Save UI state in Compose",
+      "artifact": "androidx.compose.runtime:runtime-saveable",
+      "fqn": "androidx.compose.runtime.saveable",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.saveable.rememberSaveable",
+        "androidx.compose.runtime.saveable.Saver",
+        "androidx.compose.runtime.saveable.listSaver",
+        "androidx.compose.runtime.saveable.mapSaver"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-basics",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/basics",
+      "title": "Compose layout basics",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.foundation.layout.BoxWithConstraints"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-constraints-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers",
+      "title": "Constraints and modifier order",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.Modifier",
+        "androidx.compose.ui.unit.Constraints"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-flow",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/flow",
+      "title": "Flow layouts in Compose",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.layout.FlowRow",
+        "androidx.compose.foundation.layout.FlowColumn"
+      ]
+    },
+    {
+      "id": "compose-guide-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/modifiers",
+      "title": "Compose modifiers",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.Modifier"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-custom",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/custom",
+      "title": "Custom layouts",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.layout.Layout",
+        "androidx.compose.ui.layout.MeasureScope"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-intrinsic-measurements",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements",
+      "title": "Intrinsic measurements in Compose layouts",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.layout.IntrinsicSize",
+        "androidx.compose.ui.layout.MeasurePolicy",
+        "androidx.compose.ui.layout.LayoutModifier"
+      ]
+    },
+    {
+      "id": "compose-guide-lists",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/lists",
+      "title": "Lazy lists and lazy grids",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.lazy.LazyColumn",
+        "androidx.compose.foundation.lazy.LazyRow",
+        "androidx.compose.foundation.lazy.LazyListState",
+        "androidx.compose.foundation.lazy.rememberLazyListState",
+        "androidx.compose.foundation.lazy.grid.LazyVerticalGrid",
+        "androidx.compose.foundation.lazy.grid.LazyHorizontalGrid",
+        "androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-pager",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/pager",
+      "title": "Pager in Compose",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.pager.HorizontalPager",
+        "androidx.compose.foundation.pager.VerticalPager",
+        "androidx.compose.foundation.pager.PagerState",
+        "androidx.compose.foundation.pager.rememberPagerState"
+      ]
+    },
+    {
+      "id": "compose-guide-touch-input-pointer-input-understand-gestures",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/pointer-input/understand-gestures",
+      "title": "Understand gestures",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.input.pointer.pointerInput",
+        "androidx.compose.foundation.gestures.detectTapGestures",
+        "androidx.compose.ui.input.pointer.PointerEvent",
+        "androidx.compose.ui.input.pointer.PointerInputChange"
+      ]
+    },
+    {
+      "id": "compose-guide-touch-input-pointer-input-tap-and-press",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/pointer-input/tap-and-press",
+      "title": "Tap and press",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.foundation.combinedClickable",
+        "androidx.compose.foundation.gestures.detectTapGestures"
+      ]
+    },
+    {
+      "id": "compose-guide-touch-input-pointer-input-drag-composables",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/pointer-input/drag-composables",
+      "title": "Drag composables",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.gestures.draggable",
+        "androidx.compose.foundation.gestures.detectDragGestures",
+        "androidx.compose.foundation.gestures.anchoredDraggable"
+      ]
+    },
+    {
+      "id": "compose-guide-touch-input-pointer-input-multi-touch",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/pointer-input/multi-touch",
+      "title": "Multitouch: Panning, zooming, rotating",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.gestures.transformable",
+        "androidx.compose.foundation.gestures.rememberTransformableState",
+        "androidx.compose.foundation.gestures.detectTransformGestures"
+      ]
+    },
+    {
+      "id": "compose-guide-touch-input-scroll-scroll-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/scroll/scroll-modifiers",
+      "title": "Scroll modifiers",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.ScrollState",
+        "androidx.compose.foundation.rememberScrollState",
+        "androidx.compose.foundation.verticalScroll",
+        "androidx.compose.foundation.horizontalScroll",
+        "androidx.compose.foundation.gestures.scrollable"
+      ]
+    },
+    {
+      "id": "compose-guide-text-style-text",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/text/style-text",
+      "title": "Style text",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.text.TextStyle",
+        "androidx.compose.ui.text.AnnotatedString",
+        "androidx.compose.ui.text.SpanStyle",
+        "androidx.compose.ui.text.ParagraphStyle",
+        "androidx.compose.ui.text.buildAnnotatedString"
+      ]
+    },
+    {
+      "id": "compose-guide-text-user-input",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/text/user-input",
+      "title": "Configure text fields",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.TextField",
+        "androidx.compose.material3.OutlinedTextField",
+        "androidx.compose.foundation.text.BasicTextField",
+        "androidx.compose.foundation.text.input.TextFieldState"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-composables-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/composables-modifiers",
+      "title": "Animation modifiers and composables",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.AnimatedVisibility",
+        "androidx.compose.animation.AnimatedContent",
+        "androidx.compose.animation.Crossfade",
+        "androidx.compose.animation.animateContentSize"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-shared-elements",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/shared-elements",
+      "title": "Shared element transitions in Compose",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.SharedTransitionLayout",
+        "androidx.compose.animation.SharedTransitionScope"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-value-based",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/value-based",
+      "title": "Value-based animations",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.core.animateFloatAsState",
+        "androidx.compose.animation.core.Animatable",
+        "androidx.compose.animation.core.updateTransition",
+        "androidx.compose.animation.core.rememberInfiniteTransition"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-customize",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/customize",
+      "title": "Customize animations",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.core.spring",
+        "androidx.compose.animation.core.tween",
+        "androidx.compose.animation.core.keyframes",
+        "androidx.compose.animation.core.repeatable",
+        "androidx.compose.animation.core.infiniteRepeatable"
+      ]
+    },
+    {
+      "id": "compose-guide-graphics-draw-overview",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/graphics/draw/overview",
+      "title": "Graphics in Compose",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.graphics.drawscope.DrawScope",
+        "androidx.compose.foundation.Canvas",
+        "androidx.compose.ui.text.TextMeasurer"
+      ]
+    },
+    {
+      "id": "compose-guide-graphics-draw-brush",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/graphics/draw/brush",
+      "title": "Brush: gradients and shaders",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.graphics.Brush",
+        "androidx.compose.ui.graphics.TileMode",
+        "androidx.compose.ui.graphics.SolidColor"
+      ]
+    },
+    {
+      "id": "compose-guide-graphics-draw-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/graphics/draw/modifiers",
+      "title": "Graphics modifiers",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.draw",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.draw.drawWithContent",
+        "androidx.compose.ui.draw.drawBehind",
+        "androidx.compose.ui.draw.drawWithCache",
+        "androidx.compose.ui.graphics.graphicsLayer",
+        "androidx.compose.ui.graphics.CompositingStrategy"
+      ]
+    },
+    {
+      "id": "compose-guide-performance-bestpractices",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/bestpractices",
+      "title": "Follow best practices",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.derivedStateOf"
+      ]
+    },
+    {
+      "id": "compose-guide-performance-stability",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/stability",
+      "title": "Stability in Compose",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.Stable",
+        "androidx.compose.runtime.Immutable"
+      ]
+    },
+    {
+      "id": "compose-guide-performance-stability-fix",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/stability/fix",
+      "title": "Fix stability issues",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.Stable",
+        "androidx.compose.runtime.Immutable"
+      ]
+    },
+    {
+      "id": "compose-guide-performance-stability-strongskipping",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/stability/strongskipping",
+      "title": "Strong skipping mode",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.NonSkippableComposable",
+        "androidx.compose.runtime.DontMemoize"
+      ]
+    },
+    {
+      "id": "compose-guide-accessibility-api-defaults",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults",
+      "title": "API defaults",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.semantics.semantics",
+        "androidx.compose.ui.semantics.Role"
+      ]
+    },
+    {
+      "id": "compose-guide-accessibility-semantics",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/accessibility/semantics",
+      "title": "Semantics",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.semantics.SemanticsProperties",
+        "androidx.compose.ui.semantics.SemanticsActions",
+        "androidx.compose.ui.semantics.semantics"
+      ]
+    },
+    {
+      "id": "compose-guide-accessibility-merging-clearing",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/accessibility/merging-clearing",
+      "title": "Merging and clearing",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.semantics.clearAndSetSemantics",
+        "androidx.compose.ui.semantics.semantics"
+      ]
+    },
+    {
+      "id": "compose-guide-accessibility-testing",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/accessibility/testing",
+      "title": "Testing",
+      "artifact": "androidx.compose.ui:ui-test-junit4-accessibility",
+      "fqn": "androidx.compose.ui.test",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.test.junit4.AndroidComposeTestRule"
+      ]
+    },
+    {
+      "id": "compose-guide-testing-apis",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/testing/apis",
+      "title": "Testing APIs",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.test.SemanticsMatcher",
+        "androidx.compose.ui.test.SemanticsNodeInteraction"
+      ]
+    },
+    {
+      "id": "compose-guide-testing-semantics",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/testing/semantics",
+      "title": "Semantics",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-guide-testing-synchronization",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/testing/synchronization",
+      "title": "Synchronize your tests",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.test.IdlingResource",
+        "androidx.compose.ui.test.junit4.ComposeTestRule"
+      ]
+    },
+    {
+      "id": "compose-guide-testing-common-patterns",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/testing/common-patterns",
+      "title": "Common patterns",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.test.junit4.StateRestorationTester",
+        "androidx.compose.ui.test.DeviceConfigurationOverride"
+      ]
+    },
+    {
+      "id": "compose-guide-components-app-bars",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/app-bars",
+      "title": "App bars",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.TopAppBar",
+        "androidx.compose.material3.BottomAppBar",
+        "androidx.compose.material3.TopAppBarScrollBehavior",
+        "androidx.compose.material3.CenterAlignedTopAppBar",
+        "androidx.compose.material3.MediumTopAppBar",
+        "androidx.compose.material3.LargeTopAppBar"
+      ]
+    },
+    {
+      "id": "compose-guide-components-bottom-sheets",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/bottom-sheets",
+      "title": "Bottom sheets",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.ModalBottomSheet",
+        "androidx.compose.material3.SheetState"
+      ]
+    },
+    {
+      "id": "compose-guide-components-button",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/button",
+      "title": "Button",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.Button",
+        "androidx.compose.material3.FilledTonalButton",
+        "androidx.compose.material3.OutlinedButton",
+        "androidx.compose.material3.ElevatedButton",
+        "androidx.compose.material3.TextButton"
+      ]
+    },
+    {
+      "id": "compose-guide-components-fab",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/fab",
+      "title": "Floating action button",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.FloatingActionButton",
+        "androidx.compose.material3.SmallFloatingActionButton",
+        "androidx.compose.material3.LargeFloatingActionButton",
+        "androidx.compose.material3.ExtendedFloatingActionButton"
+      ]
+    },
+    {
+      "id": "compose-guide-components-card",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/card",
+      "title": "Card",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.Card",
+        "androidx.compose.material3.ElevatedCard",
+        "androidx.compose.material3.OutlinedCard"
+      ]
+    },
+    {
+      "id": "compose-guide-components-checkbox",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/checkbox",
+      "title": "Checkbox",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.Checkbox",
+        "androidx.compose.material3.TriStateCheckbox"
+      ]
+    },
+    {
+      "id": "compose-guide-components-chip",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/chip",
+      "title": "Chip",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.AssistChip",
+        "androidx.compose.material3.FilterChip",
+        "androidx.compose.material3.InputChip",
+        "androidx.compose.material3.SuggestionChip",
+        "androidx.compose.material3.ElevatedAssistChip",
+        "androidx.compose.material3.ElevatedFilterChip",
+        "androidx.compose.material3.ElevatedSuggestionChip"
+      ]
+    },
+    {
+      "id": "compose-guide-components-datepickers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/datepickers",
+      "title": "Date pickers",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.DatePicker",
+        "androidx.compose.material3.DatePickerDialog",
+        "androidx.compose.material3.DateRangePicker",
+        "androidx.compose.material3.DatePickerState",
+        "androidx.compose.material3.DateRangePickerState"
+      ]
+    },
+    {
+      "id": "compose-guide-components-dialog",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/dialog",
+      "title": "Dialog",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.AlertDialog"
+      ]
+    },
+    {
+      "id": "compose-guide-components-navigation-bar",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
+      "title": "Navigation bar",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.NavigationBar",
+        "androidx.compose.material3.NavigationBarItem"
+      ]
+    },
+    {
+      "id": "compose-guide-components-drawer",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/drawer",
+      "title": "Navigation drawer",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.ModalNavigationDrawer",
+        "androidx.compose.material3.ModalDrawerSheet",
+        "androidx.compose.material3.DrawerState",
+        "androidx.compose.material3.HorizontalDivider",
+        "androidx.compose.material3.NavigationDrawerItem",
+        "androidx.compose.material3.Scaffold",
+        "androidx.compose.material3.TopAppBar"
+      ]
+    },
+    {
+      "id": "compose-guide-components-progress",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/progress",
+      "title": "Progress indicators",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.LinearProgressIndicator",
+        "androidx.compose.material3.CircularProgressIndicator"
+      ]
+    },
+    {
+      "id": "compose-guide-components-scaffold",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/scaffold",
+      "title": "Jetpack Compose",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.Scaffold"
+      ]
+    },
+    {
+      "id": "compose-guide-components-snackbar",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/snackbar",
+      "title": "Snackbar",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.SnackbarHost",
+        "androidx.compose.material3.SnackbarHostState",
+        "androidx.compose.material3.Snackbar",
+        "androidx.compose.material3.SnackbarResult"
+      ]
+    },
+    {
+      "id": "compose-guide-components-slider",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/slider",
+      "title": "Slider",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.Slider"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-adaptive-use-window-size-classes",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+      "title": "Use window size classes",
+      "artifact": "androidx.compose.material3.adaptive:adaptive",
+      "fqn": "androidx.compose.material3.adaptive",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.adaptive.currentWindowAdaptiveInfo",
+        "androidx.compose.material3.adaptive.WindowAdaptiveInfo"
+      ]
+    },
+    {
+      "id": "compose-guide-layouts-adaptive-list-detail",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail",
+      "title": "Build a list-detail layout",
+      "artifact": "androidx.compose.material3.adaptive:adaptive-navigation",
+      "fqn": "androidx.compose.material3.adaptive.navigation",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.material3.adaptive.layout.ListDetailPaneScaffold",
+        "androidx.compose.material3.adaptive.navigation.NavigableListDetailPaneScaffold",
+        "androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator"
+      ]
+    },
+    {
+      "id": "compose-guide-text-fonts",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/text/fonts",
+      "title": "Work with fonts &nbsp;",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.text.font.Font",
+        "androidx.compose.ui.text.font.FontFamily",
+        "androidx.compose.ui.text.font.FontWeight"
+      ]
+    },
+    {
+      "id": "compose-guide-text-style-paragraph",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/text/style-paragraph",
+      "title": "Style paragraph &nbsp;",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.text.ParagraphStyle",
+        "androidx.compose.ui.text.style.TextAlign",
+        "androidx.compose.ui.text.style.LineHeightStyle"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-snapshotstate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+      "title": "androidx.compose.runtime SnapshotState.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+      "symbols": [
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.runtime.State",
+        "androidx.compose.runtime.getValue",
+        "androidx.compose.runtime.MutableState",
+        "androidx.compose.runtime.setValue",
+        "androidx.compose.runtime.mutableStateListOf",
+        "androidx.compose.runtime.toMutableStateList",
+        "androidx.compose.runtime.mutableStateMapOf",
+        "androidx.compose.runtime.mutableStateSetOf",
+        "androidx.compose.runtime.rememberUpdatedState"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-effects",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "title": "androidx.compose.runtime Effects.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "symbols": [
+        "androidx.compose.runtime.SideEffect",
+        "androidx.compose.runtime.DisposableEffectScope",
+        "androidx.compose.runtime.DisposableEffectResult",
+        "androidx.compose.runtime.DisposableEffect",
+        "androidx.compose.runtime.LaunchedEffect",
+        "androidx.compose.runtime.rememberCoroutineScope"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-composables",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Composables.kt",
+      "title": "androidx.compose.runtime Composables.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Composables.kt",
+      "symbols": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.key",
+        "androidx.compose.runtime.ReusableContent",
+        "androidx.compose.runtime.ReusableContentHost",
+        "androidx.compose.runtime.currentComposer",
+        "androidx.compose.runtime.currentCompositionContext",
+        "androidx.compose.runtime.currentRecomposeScope",
+        "androidx.compose.runtime.currentCompositionLocalContext",
+        "androidx.compose.runtime.currentCompositeKeyHash",
+        "androidx.compose.runtime.currentCompositeKeyHashCode",
+        "androidx.compose.runtime.rememberCompositionContext"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-compositionlocal",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "title": "androidx.compose.runtime CompositionLocal.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "symbols": [
+        "androidx.compose.runtime.CompositionLocal",
+        "androidx.compose.runtime.ProvidableCompositionLocal",
+        "androidx.compose.runtime.compositionLocalOf",
+        "androidx.compose.runtime.staticCompositionLocalOf",
+        "androidx.compose.runtime.compositionLocalWithComputedDefaultOf",
+        "androidx.compose.runtime.staticCompositionLocalWithComputedDefaultOf",
+        "androidx.compose.runtime.compositionLocalWithHostDefaultOf",
+        "androidx.compose.runtime.CompositionLocalAccessorScope",
+        "androidx.compose.runtime.CompositionLocalContext",
+        "androidx.compose.runtime.CompositionLocalProvider",
+        "androidx.compose.runtime.withCompositionLocal",
+        "androidx.compose.runtime.withCompositionLocals"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-derivedstate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/DerivedState.kt",
+      "title": "androidx.compose.runtime DerivedState.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/DerivedState.kt",
+      "symbols": [
+        "androidx.compose.runtime.derivedStateOf"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-producestate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/ProduceState.kt",
+      "title": "androidx.compose.runtime ProduceState.kt source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/ProduceState.kt",
+      "symbols": [
+        "androidx.compose.runtime.ProduceStateScope",
+        "androidx.compose.runtime.produceState"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-saveable-runtime-saveable-remembersaveable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/RememberSaveable.kt",
+      "title": "androidx.compose.runtime.saveable RememberSaveable.kt source",
+      "artifact": "androidx.compose.runtime:runtime-saveable",
+      "fqn": "androidx.compose.runtime.saveable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/RememberSaveable.kt",
+      "symbols": [
+        "androidx.compose.runtime.saveable.rememberSaveable"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-saveable-runtime-saveable-saver",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/Saver.kt",
+      "title": "androidx.compose.runtime.saveable Saver.kt source",
+      "artifact": "androidx.compose.runtime:runtime-saveable",
+      "fqn": "androidx.compose.runtime.saveable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/Saver.kt",
+      "symbols": [
+        "androidx.compose.runtime.saveable.Saver",
+        "androidx.compose.runtime.saveable.SaverScope",
+        "androidx.compose.runtime.saveable.autoSaver"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-saveable-runtime-saveable-saveablestateholder",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder.kt",
+      "title": "androidx.compose.runtime.saveable SaveableStateHolder.kt source",
+      "artifact": "androidx.compose.runtime:runtime-saveable",
+      "fqn": "androidx.compose.runtime.saveable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder.kt",
+      "symbols": [
+        "androidx.compose.runtime.saveable.SaveableStateHolder",
+        "androidx.compose.runtime.saveable.rememberSaveableStateHolder"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-modifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "title": "androidx.compose.ui Modifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "symbols": [
+        "androidx.compose.ui.Modifier",
+        "androidx.compose.ui.CombinedModifier"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-alignment",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Alignment.kt",
+      "title": "androidx.compose.ui Alignment.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Alignment.kt",
+      "symbols": [
+        "androidx.compose.ui.Alignment",
+        "androidx.compose.ui.AbsoluteAlignment",
+        "androidx.compose.ui.BiasAlignment",
+        "androidx.compose.ui.BiasAbsoluteAlignment"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-composedmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/ComposedModifier.kt",
+      "title": "androidx.compose.ui ComposedModifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/ComposedModifier.kt",
+      "symbols": [
+        "androidx.compose.ui.composed",
+        "androidx.compose.ui.materialize",
+        "androidx.compose.ui.materializeWithCompositionLocalInjection"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-layout-layout",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/Layout.kt",
+      "title": "androidx.compose.ui.layout Layout.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/Layout.kt",
+      "symbols": [
+        "androidx.compose.ui.layout.Layout",
+        "androidx.compose.ui.layout.MultiMeasureLayout"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-layout-layoutmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/LayoutModifier.kt",
+      "title": "androidx.compose.ui.layout LayoutModifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/LayoutModifier.kt",
+      "symbols": [
+        "androidx.compose.ui.layout.LayoutModifier",
+        "androidx.compose.ui.layout.layout"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-layout-contentscale",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/ContentScale.kt",
+      "title": "androidx.compose.ui.layout ContentScale.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/ContentScale.kt",
+      "symbols": [
+        "androidx.compose.ui.layout.ContentScale",
+        "androidx.compose.ui.layout.FixedScale"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-layout-onremeasuredmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/OnRemeasuredModifier.kt",
+      "title": "androidx.compose.ui.layout OnRemeasuredModifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/layout/OnRemeasuredModifier.kt",
+      "symbols": [
+        "androidx.compose.ui.layout.onSizeChanged",
+        "androidx.compose.ui.layout.OnRemeasuredModifier"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-input-pointer-suspendingpointerinputfilter",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/input/pointer/SuspendingPointerInputFilter.kt",
+      "title": "androidx.compose.ui.input.pointer SuspendingPointerInputFilter.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.input.pointer",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/input/pointer/SuspendingPointerInputFilter.kt",
+      "symbols": [
+        "androidx.compose.ui.input.pointer.AwaitPointerEventScope",
+        "androidx.compose.ui.input.pointer.PointerInputScope",
+        "androidx.compose.ui.input.pointer.pointerInput",
+        "androidx.compose.ui.input.pointer.PointerInputEventHandler",
+        "androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode",
+        "androidx.compose.ui.input.pointer.PointerEventTimeoutCancellationException"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-input-pointer-pointerevent",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/input/pointer/PointerEvent.kt",
+      "title": "androidx.compose.ui.input.pointer PointerEvent.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.input.pointer",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/input/pointer/PointerEvent.kt",
+      "symbols": [
+        "androidx.compose.ui.input.pointer.PointerInputModifier",
+        "androidx.compose.ui.input.pointer.PointerInputFilter",
+        "androidx.compose.ui.input.pointer.PointerEvent",
+        "androidx.compose.ui.input.pointer.PointerButtons",
+        "androidx.compose.ui.input.pointer.isPrimaryPressed",
+        "androidx.compose.ui.input.pointer.isSecondaryPressed",
+        "androidx.compose.ui.input.pointer.isTertiaryPressed",
+        "androidx.compose.ui.input.pointer.isBackPressed",
+        "androidx.compose.ui.input.pointer.isForwardPressed",
+        "androidx.compose.ui.input.pointer.isPressed",
+        "androidx.compose.ui.input.pointer.areAnyPressed",
+        "androidx.compose.ui.input.pointer.indexOfFirstPressed",
+        "androidx.compose.ui.input.pointer.indexOfLastPressed",
+        "androidx.compose.ui.input.pointer.PointerKeyboardModifiers",
+        "androidx.compose.ui.input.pointer.isCtrlPressed",
+        "androidx.compose.ui.input.pointer.isMetaPressed",
+        "androidx.compose.ui.input.pointer.isAltPressed",
+        "androidx.compose.ui.input.pointer.isAltGraphPressed",
+        "androidx.compose.ui.input.pointer.isSymPressed",
+        "androidx.compose.ui.input.pointer.isShiftPressed",
+        "androidx.compose.ui.input.pointer.isFunctionPressed",
+        "androidx.compose.ui.input.pointer.isCapsLockOn",
+        "androidx.compose.ui.input.pointer.isScrollLockOn",
+        "androidx.compose.ui.input.pointer.isNumLockOn",
+        "androidx.compose.ui.input.pointer.PointerType",
+        "androidx.compose.ui.input.pointer.PointerEventType",
+        "androidx.compose.ui.input.pointer.PointerInputChange",
+        "androidx.compose.ui.input.pointer.HistoricalChange",
+        "androidx.compose.ui.input.pointer.PointerId",
+        "androidx.compose.ui.input.pointer.ConsumedData",
+        "androidx.compose.ui.input.pointer.PointerEventPass",
+        "androidx.compose.ui.input.pointer.changedToDown",
+        "androidx.compose.ui.input.pointer.changedToDownIgnoreConsumed",
+        "androidx.compose.ui.input.pointer.changedToUp",
+        "androidx.compose.ui.input.pointer.changedToUpIgnoreConsumed",
+        "androidx.compose.ui.input.pointer.positionChanged",
+        "androidx.compose.ui.input.pointer.positionChangedIgnoreConsumed",
+        "androidx.compose.ui.input.pointer.positionChange",
+        "androidx.compose.ui.input.pointer.positionChangeIgnoreConsumed",
+        "androidx.compose.ui.input.pointer.positionChangeConsumed",
+        "androidx.compose.ui.input.pointer.anyChangeConsumed",
+        "androidx.compose.ui.input.pointer.consumeDownChange",
+        "androidx.compose.ui.input.pointer.consumePositionChange",
+        "androidx.compose.ui.input.pointer.consumeAllChanges",
+        "androidx.compose.ui.input.pointer.isOutOfBounds"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-focus-focusrequester",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "title": "androidx.compose.ui.focus FocusRequester.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.focus",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "symbols": [
+        "androidx.compose.ui.focus.FocusRequester"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-focus-focusproperties",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusProperties.kt",
+      "title": "androidx.compose.ui.focus FocusProperties.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.focus",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusProperties.kt",
+      "symbols": [
+        "androidx.compose.ui.focus.FocusProperties",
+        "androidx.compose.ui.focus.FocusEnterExitScope",
+        "androidx.compose.ui.focus.focusProperties"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-semantics-semanticsmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/semantics/SemanticsModifier.kt",
+      "title": "androidx.compose.ui.semantics SemanticsModifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/semantics/SemanticsModifier.kt",
+      "symbols": [
+        "androidx.compose.ui.semantics.SemanticsModifier",
+        "androidx.compose.ui.semantics.semantics",
+        "androidx.compose.ui.semantics.clearAndSetSemantics"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-semantics-semanticsproperties",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/semantics/SemanticsProperties.kt",
+      "title": "androidx.compose.ui.semantics SemanticsProperties.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/semantics/SemanticsProperties.kt",
+      "symbols": [
+        "androidx.compose.ui.semantics.SemanticsProperties",
+        "androidx.compose.ui.semantics.SemanticsActions",
+        "androidx.compose.ui.semantics.SemanticsPropertyKey",
+        "androidx.compose.ui.semantics.AccessibilityAction",
+        "androidx.compose.ui.semantics.CustomAccessibilityAction",
+        "androidx.compose.ui.semantics.ProgressBarRangeInfo",
+        "androidx.compose.ui.semantics.CollectionInfo",
+        "androidx.compose.ui.semantics.CollectionItemInfo",
+        "androidx.compose.ui.semantics.ScrollAxisRange",
+        "androidx.compose.ui.semantics.InputTextSuggestionState",
+        "androidx.compose.ui.semantics.Role",
+        "androidx.compose.ui.semantics.LiveRegionMode",
+        "androidx.compose.ui.semantics.SemanticsPropertyReceiver",
+        "androidx.compose.ui.semantics.contentDescription",
+        "androidx.compose.ui.semantics.hintText",
+        "androidx.compose.ui.semantics.stateDescription",
+        "androidx.compose.ui.semantics.backgroundColor",
+        "androidx.compose.ui.semantics.progressBarRangeInfo",
+        "androidx.compose.ui.semantics.heading",
+        "androidx.compose.ui.semantics.textEntryKey",
+        "androidx.compose.ui.semantics.paneTitle",
+        "androidx.compose.ui.semantics.disabled",
+        "androidx.compose.ui.semantics.liveRegion",
+        "androidx.compose.ui.semantics.focused",
+        "androidx.compose.ui.semantics.isContainer",
+        "androidx.compose.ui.semantics.isTraversalGroup",
+        "androidx.compose.ui.semantics.isSensitiveData",
+        "androidx.compose.ui.semantics.invisibleToUser",
+        "androidx.compose.ui.semantics.hideFromAccessibility",
+        "androidx.compose.ui.semantics.contentType",
+        "androidx.compose.ui.semantics.contentDataType",
+        "androidx.compose.ui.semantics.fillableData",
+        "androidx.compose.ui.semantics.traversalIndex",
+        "androidx.compose.ui.semantics.horizontalScrollAxisRange",
+        "androidx.compose.ui.semantics.verticalScrollAxisRange",
+        "androidx.compose.ui.semantics.popup",
+        "androidx.compose.ui.semantics.dialog",
+        "androidx.compose.ui.semantics.role",
+        "androidx.compose.ui.semantics.testTag",
+        "androidx.compose.ui.semantics.text",
+        "androidx.compose.ui.semantics.textSubstitution",
+        "androidx.compose.ui.semantics.isShowingTextSubstitution",
+        "androidx.compose.ui.semantics.inputText",
+        "androidx.compose.ui.semantics.editableText",
+        "androidx.compose.ui.semantics.textSelectionRange",
+        "androidx.compose.ui.semantics.textCompositionRange",
+        "androidx.compose.ui.semantics.imeAction",
+        "androidx.compose.ui.semantics.selected",
+        "androidx.compose.ui.semantics.collectionInfo",
+        "androidx.compose.ui.semantics.collectionItemInfo",
+        "androidx.compose.ui.semantics.toggleableState",
+        "androidx.compose.ui.semantics.inputTextSuggestionState",
+        "androidx.compose.ui.semantics.isEditable",
+        "androidx.compose.ui.semantics.password",
+        "androidx.compose.ui.semantics.error",
+        "androidx.compose.ui.semantics.indexForKey",
+        "androidx.compose.ui.semantics.maxTextLength",
+        "androidx.compose.ui.semantics.shape",
+        "androidx.compose.ui.semantics.selectableGroup",
+        "androidx.compose.ui.semantics.customActions",
+        "androidx.compose.ui.semantics.getTextLayoutResult",
+        "androidx.compose.ui.semantics.onClick",
+        "androidx.compose.ui.semantics.onLongClick",
+        "androidx.compose.ui.semantics.scrollBy",
+        "androidx.compose.ui.semantics.scrollByOffset",
+        "androidx.compose.ui.semantics.scrollToIndex",
+        "androidx.compose.ui.semantics.onAutofillText",
+        "androidx.compose.ui.semantics.onFillData",
+        "androidx.compose.ui.semantics.setProgress",
+        "androidx.compose.ui.semantics.setText",
+        "androidx.compose.ui.semantics.setTextSubstitution",
+        "androidx.compose.ui.semantics.showTextSubstitution",
+        "androidx.compose.ui.semantics.clearTextSubstitution",
+        "androidx.compose.ui.semantics.insertTextAtCursor",
+        "androidx.compose.ui.semantics.onImeAction",
+        "androidx.compose.ui.semantics.performImeAction",
+        "androidx.compose.ui.semantics.setSelection",
+        "androidx.compose.ui.semantics.copyText",
+        "androidx.compose.ui.semantics.cutText",
+        "androidx.compose.ui.semantics.pasteText",
+        "androidx.compose.ui.semantics.expand",
+        "androidx.compose.ui.semantics.collapse",
+        "androidx.compose.ui.semantics.dismiss",
+        "androidx.compose.ui.semantics.requestFocus",
+        "androidx.compose.ui.semantics.pageUp",
+        "androidx.compose.ui.semantics.pageDown",
+        "androidx.compose.ui.semantics.pageLeft",
+        "androidx.compose.ui.semantics.pageRight",
+        "androidx.compose.ui.semantics.getScrollViewportLength"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-draw-drawmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/DrawModifier.kt",
+      "title": "androidx.compose.ui.draw DrawModifier.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.draw",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/DrawModifier.kt",
+      "symbols": [
+        "androidx.compose.ui.draw.DrawModifier",
+        "androidx.compose.ui.draw.DrawCacheModifier",
+        "androidx.compose.ui.draw.BuildDrawCacheParams",
+        "androidx.compose.ui.draw.drawBehind",
+        "androidx.compose.ui.draw.drawWithCache",
+        "androidx.compose.ui.draw.CacheDrawModifierNode",
+        "androidx.compose.ui.draw.CacheDrawScope",
+        "androidx.compose.ui.draw.DrawResult",
+        "androidx.compose.ui.draw.drawWithContent"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-draw-clip",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/Clip.kt",
+      "title": "androidx.compose.ui.draw Clip.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.draw",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/Clip.kt",
+      "symbols": [
+        "androidx.compose.ui.draw.clipToBounds",
+        "androidx.compose.ui.draw.clip"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-ui-draw-shadow",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/Shadow.kt",
+      "title": "androidx.compose.ui.draw Shadow.kt source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.draw",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/Shadow.kt",
+      "symbols": [
+        "androidx.compose.ui.draw.shadow",
+        "androidx.compose.ui.draw.dropShadow",
+        "androidx.compose.ui.draw.innerShadow",
+        "androidx.compose.ui.draw.DropShadowScope",
+        "androidx.compose.ui.draw.InnerShadowScope",
+        "androidx.compose.ui.draw.ShadowScope"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-graphics-ui-graphics-color",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Color.kt",
+      "title": "androidx.compose.ui.graphics Color.kt source",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Color.kt",
+      "symbols": [
+        "androidx.compose.ui.graphics.Color",
+        "androidx.compose.ui.graphics.lerp",
+        "androidx.compose.ui.graphics.compositeOver",
+        "androidx.compose.ui.graphics.luminance",
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.ui.graphics.isSpecified",
+        "androidx.compose.ui.graphics.isUnspecified",
+        "androidx.compose.ui.graphics.takeOrElse",
+        "androidx.compose.ui.graphics.ColorProducer"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-graphics-ui-graphics-brush",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Brush.kt",
+      "title": "androidx.compose.ui.graphics Brush.kt source",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Brush.kt",
+      "symbols": [
+        "androidx.compose.ui.graphics.Brush",
+        "androidx.compose.ui.graphics.SolidColor",
+        "androidx.compose.ui.graphics.LinearGradient",
+        "androidx.compose.ui.graphics.RadialGradient",
+        "androidx.compose.ui.graphics.SweepGradient",
+        "androidx.compose.ui.graphics.ShaderBrush"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-graphics-ui-graphics-path",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Path.kt",
+      "title": "androidx.compose.ui.graphics Path.kt source",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Path.kt",
+      "symbols": [
+        "androidx.compose.ui.graphics.Path",
+        "androidx.compose.ui.graphics.copy"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-graphics-ui-graphics-shape",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Shape.kt",
+      "title": "androidx.compose.ui.graphics Shape.kt source",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-graphics/src/commonMain/kotlin/androidx/compose/ui/graphics/Shape.kt",
+      "symbols": [
+        "androidx.compose.ui.graphics.Shape"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-textstyle",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+      "title": "androidx.compose.ui.text TextStyle.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+      "symbols": [
+        "androidx.compose.ui.text.TextStyle",
+        "androidx.compose.ui.text.lerp",
+        "androidx.compose.ui.text.resolveDefaults"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-annotatedstring",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+      "title": "androidx.compose.ui.text AnnotatedString.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+      "symbols": [
+        "androidx.compose.ui.text.AnnotatedString",
+        "androidx.compose.ui.text.toUpperCase",
+        "androidx.compose.ui.text.toLowerCase",
+        "androidx.compose.ui.text.capitalize",
+        "androidx.compose.ui.text.decapitalize",
+        "androidx.compose.ui.text.withStyle",
+        "androidx.compose.ui.text.withAnnotation",
+        "androidx.compose.ui.text.withLink",
+        "androidx.compose.ui.text.withDrawAnnotation",
+        "androidx.compose.ui.text.buildAnnotatedString"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-paragraphstyle",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+      "title": "androidx.compose.ui.text ParagraphStyle.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+      "symbols": [
+        "androidx.compose.ui.text.ParagraphStyle",
+        "androidx.compose.ui.text.lerp"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-spanstyle",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+      "title": "androidx.compose.ui.text SpanStyle.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+      "symbols": [
+        "androidx.compose.ui.text.SpanStyle",
+        "androidx.compose.ui.text.lerp"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-font-fontfamily",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/font/FontFamily.kt",
+      "title": "androidx.compose.ui.text.font FontFamily.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text.font",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/font/FontFamily.kt",
+      "symbols": [
+        "androidx.compose.ui.text.font.FontFamily",
+        "androidx.compose.ui.text.font.FileBasedFontFamily",
+        "androidx.compose.ui.text.font.SystemFontFamily",
+        "androidx.compose.ui.text.font.FontListFontFamily",
+        "androidx.compose.ui.text.font.GenericFontFamily",
+        "androidx.compose.ui.text.font.LoadedFontFamily"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-text-ui-text-font-fontweight",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/font/FontWeight.kt",
+      "title": "androidx.compose.ui.text.font FontWeight.kt source",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text.font",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/font/FontWeight.kt",
+      "symbols": [
+        "androidx.compose.ui.text.font.FontWeight",
+        "androidx.compose.ui.text.font.lerp"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-unit-ui-unit-dp",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-unit/src/commonMain/kotlin/androidx/compose/ui/unit/Dp.kt",
+      "title": "androidx.compose.ui.unit Dp.kt source",
+      "artifact": "androidx.compose.ui:ui-unit",
+      "fqn": "androidx.compose.ui.unit",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-unit/src/commonMain/kotlin/androidx/compose/ui/unit/Dp.kt",
+      "symbols": [
+        "androidx.compose.ui.unit.Dp",
+        "androidx.compose.ui.unit.isSpecified",
+        "androidx.compose.ui.unit.isUnspecified",
+        "androidx.compose.ui.unit.takeOrElse",
+        "androidx.compose.ui.unit.dp",
+        "androidx.compose.ui.unit.times",
+        "androidx.compose.ui.unit.min",
+        "androidx.compose.ui.unit.max",
+        "androidx.compose.ui.unit.coerceIn",
+        "androidx.compose.ui.unit.coerceAtLeast",
+        "androidx.compose.ui.unit.coerceAtMost",
+        "androidx.compose.ui.unit.isFinite",
+        "androidx.compose.ui.unit.lerp",
+        "androidx.compose.ui.unit.DpOffset",
+        "androidx.compose.ui.unit.DpSize",
+        "androidx.compose.ui.unit.center",
+        "androidx.compose.ui.unit.DpRect",
+        "androidx.compose.ui.unit.width",
+        "androidx.compose.ui.unit.height",
+        "androidx.compose.ui.unit.size"
+      ]
+    },
+    {
+      "id": "androidx-ui-ui-unit-ui-unit-textunit",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui-unit/src/commonMain/kotlin/androidx/compose/ui/unit/TextUnit.kt",
+      "title": "androidx.compose.ui.unit TextUnit.kt source",
+      "artifact": "androidx.compose.ui:ui-unit",
+      "fqn": "androidx.compose.ui.unit",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui-unit/src/commonMain/kotlin/androidx/compose/ui/unit/TextUnit.kt",
+      "symbols": [
+        "androidx.compose.ui.unit.TextUnitType",
+        "androidx.compose.ui.unit.TextUnit",
+        "androidx.compose.ui.unit.isSpecified",
+        "androidx.compose.ui.unit.isUnspecified",
+        "androidx.compose.ui.unit.takeOrElse",
+        "androidx.compose.ui.unit.sp",
+        "androidx.compose.ui.unit.em",
+        "androidx.compose.ui.unit.times",
+        "androidx.compose.ui.unit.lerp"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-clickable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Clickable.kt",
+      "title": "androidx.compose.foundation Clickable.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Clickable.kt",
+      "symbols": [
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.foundation.combinedClickable"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-scroll",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Scroll.kt",
+      "title": "androidx.compose.foundation Scroll.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Scroll.kt",
+      "symbols": [
+        "androidx.compose.foundation.rememberScrollState",
+        "androidx.compose.foundation.ScrollState",
+        "androidx.compose.foundation.verticalScroll",
+        "androidx.compose.foundation.horizontalScroll"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-background",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Background.kt",
+      "title": "androidx.compose.foundation Background.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Background.kt",
+      "symbols": [
+        "androidx.compose.foundation.background"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-border",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Border.kt",
+      "title": "androidx.compose.foundation Border.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Border.kt",
+      "symbols": [
+        "androidx.compose.foundation.border"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-image",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Image.kt",
+      "title": "androidx.compose.foundation Image.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/Image.kt",
+      "symbols": [
+        "androidx.compose.foundation.Image"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-lazy-lazydsl",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyDsl.kt",
+      "title": "androidx.compose.foundation.lazy LazyDsl.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyDsl.kt",
+      "symbols": [
+        "androidx.compose.foundation.lazy.LazyListScope",
+        "androidx.compose.foundation.lazy.items",
+        "androidx.compose.foundation.lazy.itemsIndexed",
+        "androidx.compose.foundation.lazy.LazyRow",
+        "androidx.compose.foundation.lazy.LazyColumn"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-lazy-lazyliststate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt",
+      "title": "androidx.compose.foundation.lazy LazyListState.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt",
+      "symbols": [
+        "androidx.compose.foundation.lazy.rememberLazyListState",
+        "androidx.compose.foundation.lazy.LazyListState"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-lazy-grid-lazygriddsl",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridDsl.kt",
+      "title": "androidx.compose.foundation.lazy.grid LazyGridDsl.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy.grid",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridDsl.kt",
+      "symbols": [
+        "androidx.compose.foundation.lazy.grid.LazyVerticalGrid",
+        "androidx.compose.foundation.lazy.grid.LazyHorizontalGrid",
+        "androidx.compose.foundation.lazy.grid.GridCells",
+        "androidx.compose.foundation.lazy.grid.LazyGridScope",
+        "androidx.compose.foundation.lazy.grid.items",
+        "androidx.compose.foundation.lazy.grid.itemsIndexed"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-lazy-grid-lazygridstate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt",
+      "title": "androidx.compose.foundation.lazy.grid LazyGridState.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy.grid",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt",
+      "symbols": [
+        "androidx.compose.foundation.lazy.grid.rememberLazyGridState",
+        "androidx.compose.foundation.lazy.grid.LazyGridState"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-gestures-scrollable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Scrollable.kt",
+      "title": "androidx.compose.foundation.gestures Scrollable.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.gestures",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Scrollable.kt",
+      "symbols": [
+        "androidx.compose.foundation.gestures.scrollable",
+        "androidx.compose.foundation.gestures.ScrollableDefaults"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-gestures-draggable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Draggable.kt",
+      "title": "androidx.compose.foundation.gestures Draggable.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.gestures",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Draggable.kt",
+      "symbols": [
+        "androidx.compose.foundation.gestures.DraggableState",
+        "androidx.compose.foundation.gestures.DragScope",
+        "androidx.compose.foundation.gestures.rememberDraggableState",
+        "androidx.compose.foundation.gestures.draggable"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-gestures-tapgesturedetector",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/TapGestureDetector.kt",
+      "title": "androidx.compose.foundation.gestures TapGestureDetector.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.gestures",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/TapGestureDetector.kt",
+      "symbols": [
+        "androidx.compose.foundation.gestures.PressGestureScope",
+        "androidx.compose.foundation.gestures.detectTapGestures",
+        "androidx.compose.foundation.gestures.awaitFirstDown",
+        "androidx.compose.foundation.gestures.waitForUpOrCancellation"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-gestures-transformable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Transformable.kt",
+      "title": "androidx.compose.foundation.gestures Transformable.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.gestures",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/gestures/Transformable.kt",
+      "symbols": [
+        "androidx.compose.foundation.gestures.transformable"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-text-basictext",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
+      "title": "androidx.compose.foundation.text BasicText.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
+      "symbols": [
+        "androidx.compose.foundation.text.BasicText"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-text-basictextfield",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicTextField.kt",
+      "title": "androidx.compose.foundation.text BasicTextField.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicTextField.kt",
+      "symbols": [
+        "androidx.compose.foundation.text.BasicTextField"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-foundation-text-keyboardoptions",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/KeyboardOptions.kt",
+      "title": "androidx.compose.foundation.text KeyboardOptions.kt source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.text",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/KeyboardOptions.kt",
+      "symbols": [
+        "androidx.compose.foundation.text.KeyboardOptions"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-row",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Row.kt",
+      "title": "androidx.compose.foundation.layout Row.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Row.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.RowScope"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-column",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Column.kt",
+      "title": "androidx.compose.foundation.layout Column.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Column.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.ColumnScope"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-box",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Box.kt",
+      "title": "androidx.compose.foundation.layout Box.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Box.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.foundation.layout.BoxScope"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-size",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Size.kt",
+      "title": "androidx.compose.foundation.layout Size.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Size.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.foundation.layout.widthIn",
+        "androidx.compose.foundation.layout.heightIn",
+        "androidx.compose.foundation.layout.sizeIn",
+        "androidx.compose.foundation.layout.requiredWidth",
+        "androidx.compose.foundation.layout.requiredHeight",
+        "androidx.compose.foundation.layout.requiredSize",
+        "androidx.compose.foundation.layout.requiredWidthIn",
+        "androidx.compose.foundation.layout.requiredHeightIn",
+        "androidx.compose.foundation.layout.requiredSizeIn",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.fillMaxHeight",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.layout.wrapContentWidth",
+        "androidx.compose.foundation.layout.wrapContentHeight",
+        "androidx.compose.foundation.layout.wrapContentSize",
+        "androidx.compose.foundation.layout.defaultMinSize"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-padding",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Padding.kt",
+      "title": "androidx.compose.foundation.layout Padding.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Padding.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.absolutePadding",
+        "androidx.compose.foundation.layout.PaddingValues",
+        "androidx.compose.foundation.layout.plus",
+        "androidx.compose.foundation.layout.minus",
+        "androidx.compose.foundation.layout.calculateStartPadding",
+        "androidx.compose.foundation.layout.calculateEndPadding"
+      ]
+    },
+    {
+      "id": "androidx-foundation-foundation-layout-foundation-layout-arrangement",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Arrangement.kt",
+      "title": "androidx.compose.foundation.layout Arrangement.kt source",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Arrangement.kt",
+      "symbols": [
+        "androidx.compose.foundation.layout.Arrangement"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-animation-animatedvisibility",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimatedVisibility.kt",
+      "title": "androidx.compose.animation AnimatedVisibility.kt source",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimatedVisibility.kt",
+      "symbols": [
+        "androidx.compose.animation.AnimatedVisibility",
+        "androidx.compose.animation.EnterExitState",
+        "androidx.compose.animation.DeferredAnimatedVisibility",
+        "androidx.compose.animation.AnimatedVisibilityScope"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-animation-animatedcontent",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimatedContent.kt",
+      "title": "androidx.compose.animation AnimatedContent.kt source",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimatedContent.kt",
+      "symbols": [
+        "androidx.compose.animation.AnimatedContent",
+        "androidx.compose.animation.ContentTransform",
+        "androidx.compose.animation.SizeTransform",
+        "androidx.compose.animation.togetherWith",
+        "androidx.compose.animation.AnimatedContentDefaults",
+        "androidx.compose.animation.with",
+        "androidx.compose.animation.AnimatedContentTransitionScope",
+        "androidx.compose.animation.MutableContentTransform",
+        "androidx.compose.animation.AnimatedContentScope",
+        "androidx.compose.animation.DeferredAnimatedContent"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-animation-animationmodifier",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimationModifier.kt",
+      "title": "androidx.compose.animation AnimationModifier.kt source",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation/src/commonMain/kotlin/androidx/compose/animation/AnimationModifier.kt",
+      "symbols": [
+        "androidx.compose.animation.animateContentSize"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-animation-core-animateasstate",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimateAsState.kt",
+      "title": "androidx.compose.animation.core AnimateAsState.kt source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimateAsState.kt",
+      "symbols": [
+        "androidx.compose.animation.core.animateFloatAsState",
+        "androidx.compose.animation.core.animateDpAsState",
+        "androidx.compose.animation.core.animateSizeAsState",
+        "androidx.compose.animation.core.animateOffsetAsState",
+        "androidx.compose.animation.core.animateRectAsState",
+        "androidx.compose.animation.core.animateIntAsState",
+        "androidx.compose.animation.core.animateIntOffsetAsState",
+        "androidx.compose.animation.core.animateIntSizeAsState",
+        "androidx.compose.animation.core.animateValueAsState"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-animation-core-transition",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "title": "androidx.compose.animation.core Transition.kt source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "symbols": [
+        "androidx.compose.animation.core.updateTransition",
+        "androidx.compose.animation.core.DeferredTransitionState",
+        "androidx.compose.animation.core.DeferredTransition",
+        "androidx.compose.animation.core.rememberDeferredTransition",
+        "androidx.compose.animation.core.TransitionState",
+        "androidx.compose.animation.core.MutableTransitionState",
+        "androidx.compose.animation.core.SeekableTransitionState",
+        "androidx.compose.animation.core.rememberTransition",
+        "androidx.compose.animation.core.Transition",
+        "androidx.compose.animation.core.createDeferredAnimation",
+        "androidx.compose.animation.core.createChildTransition",
+        "androidx.compose.animation.core.animateValue",
+        "androidx.compose.animation.core.animateFloat",
+        "androidx.compose.animation.core.animateDp",
+        "androidx.compose.animation.core.animateOffset",
+        "androidx.compose.animation.core.animateSize",
+        "androidx.compose.animation.core.animateIntOffset",
+        "androidx.compose.animation.core.animateInt",
+        "androidx.compose.animation.core.animateIntSize",
+        "androidx.compose.animation.core.animateRect"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-animation-core-animationspec",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimationSpec.kt",
+      "title": "androidx.compose.animation.core AnimationSpec.kt source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimationSpec.kt",
+      "symbols": [
+        "androidx.compose.animation.core.AnimationConstants",
+        "androidx.compose.animation.core.AnimationSpec",
+        "androidx.compose.animation.core.FiniteAnimationSpec",
+        "androidx.compose.animation.core.TweenSpec",
+        "androidx.compose.animation.core.DurationBasedAnimationSpec",
+        "androidx.compose.animation.core.InterruptionAwareAnimationSpec",
+        "androidx.compose.animation.core.SpringSpec",
+        "androidx.compose.animation.core.ArcAnimationSpec",
+        "androidx.compose.animation.core.StartOffsetType",
+        "androidx.compose.animation.core.StartOffset",
+        "androidx.compose.animation.core.RepeatableSpec",
+        "androidx.compose.animation.core.InfiniteRepeatableSpec",
+        "androidx.compose.animation.core.RepeatMode",
+        "androidx.compose.animation.core.SnapSpec",
+        "androidx.compose.animation.core.KeyframesSpecBaseConfig",
+        "androidx.compose.animation.core.KeyframeBaseEntity",
+        "androidx.compose.animation.core.KeyframesSpec",
+        "androidx.compose.animation.core.KeyframesWithSplineSpec",
+        "androidx.compose.animation.core.tween",
+        "androidx.compose.animation.core.spring",
+        "androidx.compose.animation.core.keyframes",
+        "androidx.compose.animation.core.keyframesWithSpline",
+        "androidx.compose.animation.core.repeatable",
+        "androidx.compose.animation.core.infiniteRepeatable",
+        "androidx.compose.animation.core.snap"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-animation-core-infinitetransition",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/InfiniteTransition.kt",
+      "title": "androidx.compose.animation.core InfiniteTransition.kt source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/InfiniteTransition.kt",
+      "symbols": [
+        "androidx.compose.animation.core.rememberInfiniteTransition",
+        "androidx.compose.animation.core.InfiniteTransition",
+        "androidx.compose.animation.core.animateValue",
+        "androidx.compose.animation.core.animateFloat"
+      ]
+    },
+    {
+      "id": "androidx-material-material-material-button",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material/material/src/commonMain/kotlin/androidx/compose/material/Button.kt",
+      "title": "androidx.compose.material Button.kt source",
+      "artifact": "androidx.compose.material:material",
+      "fqn": "androidx.compose.material",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material/material/src/commonMain/kotlin/androidx/compose/material/Button.kt",
+      "symbols": [
+        "androidx.compose.material.Button",
+        "androidx.compose.material.OutlinedButton",
+        "androidx.compose.material.TextButton",
+        "androidx.compose.material.ButtonElevation",
+        "androidx.compose.material.ButtonColors",
+        "androidx.compose.material.ButtonDefaults"
+      ]
+    },
+    {
+      "id": "androidx-material-material-material-text",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material/material/src/commonMain/kotlin/androidx/compose/material/Text.kt",
+      "title": "androidx.compose.material Text.kt source",
+      "artifact": "androidx.compose.material:material",
+      "fqn": "androidx.compose.material",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material/material/src/commonMain/kotlin/androidx/compose/material/Text.kt",
+      "symbols": [
+        "androidx.compose.material.Text",
+        "androidx.compose.material.LocalTextStyle",
+        "androidx.compose.material.ProvideTextStyle"
+      ]
+    },
+    {
+      "id": "androidx-material-material-material-textfield",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material/material/src/commonMain/kotlin/androidx/compose/material/TextField.kt",
+      "title": "androidx.compose.material TextField.kt source",
+      "artifact": "androidx.compose.material:material",
+      "fqn": "androidx.compose.material",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material/material/src/commonMain/kotlin/androidx/compose/material/TextField.kt",
+      "symbols": [
+        "androidx.compose.material.TextField"
+      ]
+    },
+    {
+      "id": "androidx-material-material-material-scaffold",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material/material/src/commonMain/kotlin/androidx/compose/material/Scaffold.kt",
+      "title": "androidx.compose.material Scaffold.kt source",
+      "artifact": "androidx.compose.material:material",
+      "fqn": "androidx.compose.material",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material/material/src/commonMain/kotlin/androidx/compose/material/Scaffold.kt",
+      "symbols": [
+        "androidx.compose.material.ScaffoldState",
+        "androidx.compose.material.rememberScaffoldState",
+        "androidx.compose.material.FabPosition",
+        "androidx.compose.material.Scaffold",
+        "androidx.compose.material.ScaffoldDefaults"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-button",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+      "title": "androidx.compose.material3 Button.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+      "symbols": [
+        "androidx.compose.material3.Button",
+        "androidx.compose.material3.ElevatedButton",
+        "androidx.compose.material3.FilledTonalButton",
+        "androidx.compose.material3.OutlinedButton",
+        "androidx.compose.material3.TextButton",
+        "androidx.compose.material3.ButtonDefaults",
+        "androidx.compose.material3.ButtonElevation",
+        "androidx.compose.material3.ButtonColors",
+        "androidx.compose.material3.ButtonShapes"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-text",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Text.kt",
+      "title": "androidx.compose.material3 Text.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Text.kt",
+      "symbols": [
+        "androidx.compose.material3.Text",
+        "androidx.compose.material3.LocalTextStyle",
+        "androidx.compose.material3.ProvideTextStyle"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-textfield",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt",
+      "title": "androidx.compose.material3 TextField.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt",
+      "symbols": [
+        "androidx.compose.material3.TextField"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-scaffold",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Scaffold.kt",
+      "title": "androidx.compose.material3 Scaffold.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Scaffold.kt",
+      "symbols": [
+        "androidx.compose.material3.Scaffold",
+        "androidx.compose.material3.ScaffoldDefaults",
+        "androidx.compose.material3.FabPosition"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-card",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Card.kt",
+      "title": "androidx.compose.material3 Card.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Card.kt",
+      "symbols": [
+        "androidx.compose.material3.Card",
+        "androidx.compose.material3.ElevatedCard",
+        "androidx.compose.material3.OutlinedCard",
+        "androidx.compose.material3.CardDefaults",
+        "androidx.compose.material3.CardElevation",
+        "androidx.compose.material3.CardColors"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-checkbox",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Checkbox.kt",
+      "title": "androidx.compose.material3 Checkbox.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Checkbox.kt",
+      "symbols": [
+        "androidx.compose.material3.Checkbox",
+        "androidx.compose.material3.TriStateCheckbox",
+        "androidx.compose.material3.CheckboxDefaults",
+        "androidx.compose.material3.CheckboxColors"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-radiobutton",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/RadioButton.kt",
+      "title": "androidx.compose.material3 RadioButton.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/RadioButton.kt",
+      "symbols": [
+        "androidx.compose.material3.RadioButton",
+        "androidx.compose.material3.RadioButtonDefaults",
+        "androidx.compose.material3.RadioButtonColors"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-switch",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+      "title": "androidx.compose.material3 Switch.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+      "symbols": [
+        "androidx.compose.material3.Switch",
+        "androidx.compose.material3.SwitchDefaults",
+        "androidx.compose.material3.SwitchColors"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-slider",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Slider.kt",
+      "title": "androidx.compose.material3 Slider.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Slider.kt",
+      "symbols": [
+        "androidx.compose.material3.Slider",
+        "androidx.compose.material3.VerticalSlider",
+        "androidx.compose.material3.RangeSlider",
+        "androidx.compose.material3.SliderDefaults",
+        "androidx.compose.material3.SliderColors",
+        "androidx.compose.material3.SliderPositions",
+        "androidx.compose.material3.SliderState",
+        "androidx.compose.material3.rememberSliderState",
+        "androidx.compose.material3.RangeSliderState",
+        "androidx.compose.material3.rememberRangeSliderState"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-snackbar",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
+      "title": "androidx.compose.material3 Snackbar.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
+      "symbols": [
+        "androidx.compose.material3.Snackbar",
+        "androidx.compose.material3.SnackbarDefaults"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-navigationbar",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
+      "title": "androidx.compose.material3 NavigationBar.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
+      "symbols": [
+        "androidx.compose.material3.NavigationBar",
+        "androidx.compose.material3.NavigationBarItem",
+        "androidx.compose.material3.NavigationBarDefaults",
+        "androidx.compose.material3.NavigationBarItemDefaults",
+        "androidx.compose.material3.NavigationBarItemColors"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-appbar",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/AppBar.kt",
+      "title": "androidx.compose.material3 AppBar.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/AppBar.kt",
+      "symbols": [
+        "androidx.compose.material3.TopAppBar",
+        "androidx.compose.material3.CenterAlignedTopAppBar",
+        "androidx.compose.material3.MediumTopAppBar",
+        "androidx.compose.material3.MediumFlexibleTopAppBar",
+        "androidx.compose.material3.LargeTopAppBar",
+        "androidx.compose.material3.LargeFlexibleTopAppBar",
+        "androidx.compose.material3.TwoRowsTopAppBar",
+        "androidx.compose.material3.BottomAppBar",
+        "androidx.compose.material3.FlexibleBottomAppBar",
+        "androidx.compose.material3.TopAppBarScrollBehavior",
+        "androidx.compose.material3.TopAppBarDefaults",
+        "androidx.compose.material3.rememberTopAppBarState",
+        "androidx.compose.material3.TopAppBarState",
+        "androidx.compose.material3.TopAppBarColors",
+        "androidx.compose.material3.BottomAppBarScrollBehavior",
+        "androidx.compose.material3.BottomAppBarDefaults",
+        "androidx.compose.material3.rememberBottomAppBarState",
+        "androidx.compose.material3.BottomAppBarState"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-progressindicator",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ProgressIndicator.kt",
+      "title": "androidx.compose.material3 ProgressIndicator.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ProgressIndicator.kt",
+      "symbols": [
+        "androidx.compose.material3.LinearProgressIndicator",
+        "androidx.compose.material3.CircularProgressIndicator",
+        "androidx.compose.material3.ProgressIndicatorDefaults"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-surface",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Surface.kt",
+      "title": "androidx.compose.material3 Surface.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Surface.kt",
+      "symbols": [
+        "androidx.compose.material3.Surface",
+        "androidx.compose.material3.LocalAbsoluteTonalElevation"
+      ]
+    },
+    {
+      "id": "androidx-material3-material3-material3-floatingactionbutton",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+      "title": "androidx.compose.material3 FloatingActionButton.kt source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+      "symbols": [
+        "androidx.compose.material3.FloatingActionButton",
+        "androidx.compose.material3.SmallFloatingActionButton",
+        "androidx.compose.material3.MediumFloatingActionButton",
+        "androidx.compose.material3.LargeFloatingActionButton",
+        "androidx.compose.material3.SmallExtendedFloatingActionButton",
+        "androidx.compose.material3.MediumExtendedFloatingActionButton",
+        "androidx.compose.material3.LargeExtendedFloatingActionButton",
+        "androidx.compose.material3.ExtendedFloatingActionButton",
+        "androidx.compose.material3.FloatingActionButtonDefaults",
+        "androidx.compose.material3.animateFloatingActionButton",
+        "androidx.compose.material3.FloatingActionButtonElevation"
+      ]
     }
   ]
 }

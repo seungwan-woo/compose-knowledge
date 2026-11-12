@@ -8,7 +8,7 @@
       "type": "documentation-index",
       "scope": {
         "visibility": "public",
-        "selection": "Collect this page article and its anchored sections; linked pages are not recursively fetched.",
+        "selection": "Collect this page and the explicitly selected official practical Compose guides in config/crawl.json; do not recursively ingest arbitrary linked pages.",
         "exclude": [
           "private code",
           "internal rules",
@@ -29,7 +29,7 @@
       "type": "source-tree",
       "scope": {
         "visibility": "public",
-        "selection": "Collect exact-revision Menu.kt and Popup.kt as listed in config/crawl.json.",
+        "selection": "Collect the exact-revision representative Compose runtime, UI, Foundation, animation, Material and Material3 source files explicitly listed in config/crawl.json.",
         "exclude": [
           "private code",
           "internal rules",

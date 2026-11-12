@@ -44,16 +44,18 @@ node dist/cli.js read --cache "$CACHE" --snapshot "$SHA" --id menu-state-sample 
 
 ## Codex 스킬 설치
 
+사내 PC에서 clone한 뒤 다른 Android 프로젝트에서 사용하려면 [AGENTS.md](AGENTS.md)와 [설치·사내망 사용 가이드](docs/consumer-setup.md)를 따르세요. 프로젝트별 설치, 내부 Git 미러, 오프라인 캐시와 실제 명령을 제공합니다.
+
 체크아웃에서는 `.agents/skills/compose-reference-context/SKILL.md`를 명시 호출합니다. 다른 작업공간에 설치할 때는 같은 버전의 스킬과 CLI를 묶습니다.
 
 ```sh
 npm run bundle
-node scripts/install.mjs .cache/distribution/compose-reference-context-0.2.0.tar.gz /YOUR/SKILLS/DIRECTORY
+node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.0.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
 일반적인 사용자 스킬 디렉터리는 `~/.agents/skills`입니다. 설치기는 SHA256 sidecar를 확인하고 기존 스킬을 덮어쓰지 않습니다. 신뢰할 수 있는 경로로 번들과 체크섬을 함께 전달하세요. 체크섬은 전송 무결성을 검사하며 발행자 서명을 대신하지 않습니다.
 
-스킬은 설치된 자체 launcher를 사용합니다. 매 작업 한 번 동기화한 후 SHA를 고정하고, 검색·읽기 출력 합계 12 KiB와 근거 읽기 3건·연결 한 단계 한도를 기록합니다. 메뉴 닫힘 요청, 호출자의 상태 변경, 뒤쪽 UI의 터치 수신을 구분해 인용합니다. 프로젝트의 실행 테스트와 upstream 테스트 소스 읽기도 구분합니다.
+스킬은 설치된 자체 launcher를 사용합니다. 매 작업 한 번 동기화한 후 SHA를 고정하고, 짧은 주제별 지침에서 필요한 원문으로 이동합니다. 검색·읽기 출력 합계 12 KiB와 근거 읽기 3건·연결 한 단계 한도를 기록합니다. 바이트 제한은 실제 모델 토큰 수와는 다릅니다. 프로젝트의 실행 테스트와 upstream 테스트 소스 읽기도 구분합니다.
 
 ## 검증과 보고서
 
@@ -71,30 +73,31 @@ node scripts/evaluate.mjs .cache/evaluation-NEW
 - [스킬 없는 소비자 테스트](docs/reports/skill-baseline.md)
 - [스킬 사용성 테스트](docs/reports/skill-usability.md)
 - [일일 수집 검증](docs/reports/daily-refresh.md), [설치 스킬·발행 통합 테스트](docs/reports/daily-acceptance.md), [독립 리뷰](docs/reports/daily-review.md)
+- [확장 corpus 검증](docs/reports/coverage-expansion.md), [설치 스킬의 개선 전후 비교](docs/reports/coverage-usability.md), [지침 29개의 독립 검토](docs/reports/guidance-review.md)
 - [병렬 실행 계획](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
 
 `Source.sha256`은 보존한 발췌의 UTF-8 해시입니다. upstream 파일·아카이브 해시는 `tests/fixtures/upstream/provenance.json`에 별도로 보존하고 공식 체크섬과 대조했습니다. 생성 corpus에는 원문 출처·저작권 표기와 Apache 라이선스가 포함됩니다.
 
 ## 매일 수집과 자동 갱신
 
-`Daily public corpus refresh`는 매일 **00:17 UTC / 09:17 한국 시간**에 실행됩니다. GitHub 예약 실행은 지연될 수 있으며, 워크플로가 기본 브랜치에 병합된 뒤 활성화됩니다. 공개 저장소는 장기간 활동이 없으면 GitHub가 예약 실행을 중지할 수 있습니다.
+`Daily public corpus refresh`는 매일 **전날 23:00 UTC / 08:00 한국 시간**에 실행됩니다. GitHub 예약 실행은 지연될 수 있으며, 워크플로가 기본 브랜치에 병합된 뒤 활성화됩니다. 공개 저장소는 장기간 활동이 없으면 GitHub가 예약 실행을 중지할 수 있습니다.
 
-1. [수집 설정](config/crawl.json)에 지정한 문서와 소스를 가져옵니다. 원래 요청한 8개 대상의 구체적인 수집 범위는 아래 표와 같습니다.
+1. [수집 설정](config/crawl.json)에 지정한 **154개 문서·소스**를 가져오고, Material 3 동적 사이트 1개를 별도로 모니터링합니다. 수집한 원문 본문과 코드를 corpus에 저장하며 링크만 보관하지 않습니다.
 2. 원문·출처·해시·버전 상태를 보존하고 기존 버전별 근거와 함께 새 스냅샷을 만듭니다. 추가·수정·삭제된 섹션 ID를 보고합니다.
 3. 검증을 통과한 데이터만 별도 발행 작업에서 `corpus` 브랜치에 반영합니다. 변경이 없으면 커밋하지 않습니다. 필수 수집 실패, 잘못된 스냅샷, 수집 후 다른 발행이 들어온 경우에는 기존 데이터를 유지합니다.
 
 | 대상 | 자동 수집 범위 |
 | --- | --- |
-| Compose documentation / overview | 각 페이지의 본문과 앵커가 있는 섹션 |
-| Compose release notes | 등록된 Compose 릴리스 페이지 본문 |
-| Android architecture introduction | 해당 문서 본문 |
-| Compose menu guide | 추가 지정한 공식 메뉴 문서 본문 |
-| AndroidX Compose source | 정확한 Git 커밋의 `Menu.kt`, `Popup.kt` |
-| Compose API guidelines | 정확한 Git 커밋의 가이드 파일 |
+| Android 공식 가이드 65개 | 상태·효과·저장, 레이아웃·Modifier, 리스트·Pager, 입력·제스처, 텍스트·그래픽, 애니메이션, 접근성·성능·테스트, Material3·적응형 UI의 본문과 코드 예제 |
+| AndroidX Compose 소스·지침 88개 | 정확한 Git 커밋의 runtime, runtime-saveable, ui, ui-text, ui-graphics, ui-unit, foundation, foundation-layout, animation, animation-core, material, material3 대표 소스와 API 지침 |
 | compose-samples | 정확한 Git 커밋의 `README.md` |
 | Material 3 Compose guide | HTTP 응답·해시 확인만 수행. Angular 본문은 **미수집** |
 
 전체 사이트를 재귀적으로 수집하지 않습니다. 지정 문서에 추가된 섹션은 자동 반영되며, 다른 문서나 소스 파일은 `config/crawl.json`에 추가해야 합니다. 최신 웹 문서와 main 브랜치 소스는 특정 배포 버전으로 단정하지 않고 `unknown`으로 취급합니다. 웹의 `web:...@sha256:...` revision은 보존한 정규화 본문의 해시이며 Git 커밋이 아닙니다.
+
+2026-11-12 발행본에는 **원문 문서 158개 + 짧은 지침 29개**, **2,848개 섹션**, 본문·코드 **3,685,383바이트**가 있습니다. 이전 발행본은 문서 13개·173개 섹션이었습니다. 숫자는 해당 수집 시점의 측정치이며 이후 원문 변경에 따라 달라집니다.
+
+API 이름은 해당 원문에서 확인한 정규화된 이름을 명시적으로 등록하고, 그 이름을 실제로 언급한 섹션에만 검색 별칭을 붙입니다. 예를 들어 `androidx.compose.runtime.LaunchedEffect`처럼 정확한 이름으로 조회할 수 있습니다. 알려진 Compose Android artifact 별칭도 처리합니다. 전체 AndroidX API 목록을 수집했다는 의미는 아닙니다.
 
 실행 결과는 Actions의 작업 요약과 `refresh-report` artifact에 남습니다. `corpus-data` artifact에는 소비자 검증을 통과한 데이터만 포함됩니다. 필수 수집 실패 시 요약과 실패 보고서를 남기며 발행 작업은 실행하지 않습니다. 공개 정보 수집 작업은 읽기 권한만 사용하고, 발행 작업만 `contents: write`를 가집니다. 추가 PAT는 필요하지 않습니다.
 
@@ -122,3 +125,11 @@ node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs sync
 반환된 `snapshot` SHA를 이후 검색·읽기에서 고정합니다. `publishedAt`은 마지막 데이터 변경 커밋 시각이므로 변경 없는 일일 수집에서는 갱신되지 않습니다. `checkedAt`은 이번 sync 호출 시각이며 오프라인에서도 바뀝니다. 일일 수집의 성공 여부는 Actions 실행 결과로 확인하세요.
 
 Android 기기의 배경 클릭 전달과 사내 PC의 Codex 실행은 별도 검증 대상입니다. 수집하지 않은 Material 3 동적 본문이나 다른 샘플 Kotlin 파일의 내용은 근거로 제공하지 않습니다.
+
+## 지식 생성과 AI의 역할
+
+일일 수집 작업은 생성형 AI API를 호출하지 않습니다. 공식 문서·Kotlin 소스의 본문을 추출하고, 섹션·출처·해시·버전 상태·검색 인덱스를 만드는 과정은 코드로 재현 가능합니다. `corpus/knowledge/*.md`에는 실제 본문과 코드가, `index/sections.json`에는 같은 내용과 검색 메타데이터가 저장됩니다.
+
+원문 위에는 [짧은 주제별 지침 29개](config/curated-guidance.json)를 둡니다. AI로 정리한 뒤 원문과 독립 대조한 지침이며, 항목당 본문은 최대 1,000 UTF-8 바이트이고 근거 섹션 1~2개의 ID·본문 해시에 연결됩니다. 검색 결과의 `Guidance:` 표기로 구분하고 `relatedIds`로 필요한 원문만 읽습니다. [주제별 검색 안내](.agents/skills/compose-reference-context/references/topics.md)도 번들에 포함됩니다.
+
+매일 수집할 때 근거가 바뀌거나 없어지면 해당 지침은 자동 제외되어 `needs-review`로 보고됩니다. 원문은 계속 제공됩니다. 매일 LLM이 지침을 재작성하지 않으며, [Dot/예약 에이전트용 정제 지침](docs/dot-curation.md)을 별도 작업에 등록해 변경된 항목만 수정 PR로 검토할 수 있습니다. 이 저장소 변경만으로 Dot 예약이 생성되지는 않습니다.

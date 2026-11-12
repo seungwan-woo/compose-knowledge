@@ -1,11 +1,8 @@
+import { normalizeComposeArtifact } from './artifacts.js';
 import type { ArtifactVersion, Platform, SearchQuery, VersionStatus } from './types.js';
 
 export function normalizeArtifact(artifact: string, _platform?: Platform): string {
-  const aliases: Record<string, string> = {
-    'androidx.compose.ui:ui-android': 'androidx.compose.ui:ui',
-    'androidx.compose.material3:material3-android': 'androidx.compose.material3:material3',
-  };
-  return aliases[artifact] ?? artifact;
+  return normalizeComposeArtifact(artifact);
 }
 
 function sameArtifact(a: ArtifactVersion, b: ArtifactVersion): boolean {

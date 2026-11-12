@@ -1,3 +1,4 @@
+import { normalizeComposeArtifact } from '../domain/artifacts.js';
 import { createHash } from 'node:crypto';
 import type { KnowledgeInput } from '../domain/types.js';
 
@@ -31,8 +32,7 @@ export function toKnowledgeInputs(value: unknown): KnowledgeInput {
       const artifacts = new Set<string>();
       for (const rawReq of list(s.requires)) {
         const req = object(rawReq, ['artifact', 'version'], ['platform']); const artifact = str(req.artifact);
-        // Only these known platform variants share an identity.
-        const logical = ['androidx.compose.ui:ui-android', 'androidx.compose.material3:material3-android'].includes(artifact) ? artifact.slice(0, -8) : artifact;
+        const logical = normalizeComposeArtifact(artifact);
         if (artifacts.has(logical)) throw new Error('Duplicate artifact requirement'); artifacts.add(logical);
         if (req.version !== null) str(req.version);
         if (req.platform !== undefined && req.platform !== 'android') throw new Error('Invalid platform');
