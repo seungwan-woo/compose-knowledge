@@ -1,0 +1,47 @@
+# Curated guidance authoring report
+
+Authored 29 concise English guidance cards with qualified API and Korean behavioral aliases. Bodies summarize substantive retrieved guide prose and code examples, not import lists or API-name mentions. Each body includes a practical limitation and is capped at 1,000 UTF-8 bytes. No release-version claims are introduced.
+
+Evidence was selected from `.cache/coverage-live-final/corpus/index/sections.json`. Each configuration evidence SHA-256 binds the exact UTF-8 `body` of an existing section, with one or two sections per card. Provenance, related source sections, and dependency requirements must be derived by the corpus builder from those evidence records. Every evidence record is mandatory: an absent section or changed hash must exclude the entire card until reviewed and updated.
+
+The existing corpus supplied no inset guide or inset-named source section for a substantive insets card; measured Canvas text was selected instead. Primary FQNs belong to the declared artifact; aliases may reference collaborating APIs from other artifacts.
+
+| Card ID | Evidence section IDs | Supported claims |
+| --- | --- | --- |
+| `guide-remember-observable-state` | `live-compose-guide-state-state-in-composables` | remember retention; observable value reads; configuration-change limitation |
+| `guide-state-hoisting` | `live-compose-guide-state-state-hoisting`<br>`live-compose-guide-state-state-hoisting-2` | value/event split; single owner; reader/writer hoisting rules; underhoisting caveat |
+| `guide-save-minimal-ui-state` | `live-compose-guide-state-saving-ui-logic`<br>`live-compose-guide-state-saving-best-practice` | activity/process restoration; custom savers; shared Bundle size; minimal keys |
+| `guide-launched-effect-lifetime` | `live-compose-guide-side-effects-launchedeffect` | entry/exit coroutine lifetime; changed-key cancellation and restart; pulse example |
+| `guide-updated-callback-in-effect` | `live-compose-guide-side-effects-rememberupdatedstate` | updated captured value; constant-key timeout; distinction from restarting keys |
+| `guide-disposable-effect-cleanup` | `live-compose-guide-side-effects-disposableeffect` | registration/cleanup example; key lifecycle; updated callbacks; final onDispose requirement |
+| `guide-derived-state-threshold` | `live-compose-guide-side-effects-derivedstateof`<br>`live-compose-guide-side-effects-incorrect-usage` | frequent-input threshold use; distinct-result analogy; full-name overhead counterexample |
+| `guide-produce-state-external-data` | `live-compose-guide-side-effects-producestate` | external-to-State conversion; producer lifecycle and keys; awaitDispose; equal-value conflation |
+| `guide-snapshot-flow-state-observation` | `live-compose-guide-side-effects-snapshotflow` | cold collection; observed reads and result equality; mapped-threshold distinct/filter example |
+| `guide-modifier-order-hit-area` | `live-compose-guide-modifiers-order-modifier-matters` | modifier chaining semantics; clickable-before-padding and reverse hit areas |
+| `guide-lazy-list-stable-keys` | `live-compose-guide-lists-item-keys` | position default; stable unique keys; reorder state; Bundle-compatible key requirement |
+| `guide-gesture-abstraction-and-keys` | `live-compose-guide-touch-input-pointer-input-understand-gestures-different-levels`<br>`live-compose-guide-touch-input-pointer-input-understand-gestures-add-custom` | abstraction preference; semantics difference; raw event waiting and key re-execution |
+| `guide-textfield-state-initialization` | `live-compose-guide-text-user-input-manage-tf-state` | content/selection holder; hoisting; remember save/restore; initial-value versus edit limitation |
+| `guide-canvas-drawscope-coordinates` | `live-compose-guide-graphics-draw-overview-basic-drawing`<br>`live-compose-guide-graphics-draw-overview-coordinate-system` | Canvas wrapper; DrawScope size and functions; coordinate directions; default position/size |
+| `guide-cache-drawing-objects` | `live-compose-guide-graphics-draw-modifiers-drawwithcache` | object reuse; gradient example; remember alternative; size/state cache dependencies |
+| `guide-animated-visibility-exit-lifetime` | `live-compose-guide-animation-composables-modifiers-animatedvisibility`<br>`live-compose-guide-animation-composables-modifiers-animatedvisibility-add-custom-animation` | enter/exit customization; transition coordination; independent animation removal caveat |
+| `guide-scaffold-content-padding` | `live-compose-guide-components-scaffold-example` | screen slots; content PaddingValues contract; Column padding example |
+| `guide-semantics-descendant-merging` | `live-compose-guide-accessibility-semantics-merged-unmerged` | semantic-only nodes; merged Button example; explicit merging and existing component behavior |
+| `guide-test-synchronization-external-work` | `live-compose-guide-testing-synchronization-main-content`<br>`live-compose-guide-testing-synchronization-manual-sync-waituntil` | virtual-clock synchronization; stale plain assertion example; external-work waitUntil scope |
+| `guide-defer-state-reads-by-phase` | `live-compose-guide-performance-bestpractices-defer-reads-2`<br>`live-compose-guide-performance-bestpractices-defer-reads-3` | lambda read inside composable versus offset layout phase; draw-phase color example |
+| `guide-accessibility-replace-semantics` | `live-compose-guide-accessibility-merging-clearing-clear-and-set`<br>`live-compose-guide-accessibility-merging-clearing-clear-and-set-2` | replacement versus empty clearing; toggle role/state; consumer impact; modifier order |
+| `guide-measure-text-for-canvas` | `live-compose-guide-graphics-draw-overview-draw-text`<br>`live-compose-guide-graphics-draw-overview-measure-text` | manual text drawing; measurer; measured background size; constraints and ellipsis |
+| `guide-tap-gesture-consumption` | `live-androidx-foundation-foundation-foundation-gestures-tapgesturedetector-lines-71` | first-down/final-up consumption; long-press consumption; cancellation; expanded-target offsets |
+| `guide-text-style-and-span-weight` | `live-compose-guide-text-style-text-bold`<br>`live-compose-guide-text-style-text-multiple-styles` | fontWeight bold; TextStyle versus span/paragraph roles; range-scoped bold/color example |
+| `guide-animate-float-target-changes` | `live-compose-guide-animation-value-based-animate-as-state` | single value; initial target; automatic retargeting from current value/velocity; spec and converters |
+| `guide-image-content-description` | `live-compose-guide-accessibility-api-defaults-graphic-elements` | graphic description requirement; localization; decorative null; existing component semantics |
+| `guide-foundation-canvas-transforms` | `live-compose-guide-graphics-draw-overview-basic-drawing`<br>`live-compose-guide-graphics-draw-overview-multiple-transformations` | Canvas wrapper and DrawScope; combined translation/rotation; single-operation advantage; draw block example |
+| `guide-textfield-value-callback-state` | `live-androidx-material3-material3-material3-textfield-lines-297`<br>`live-compose-guide-state-state-in-composables` | value/onValueChange contract; remembered observable caller update example; TextFieldValue selection/IME scope |
+| `guide-padding-clickable-order` | `live-compose-guide-modifiers-order-modifier-matters` | padding after clickable includes padded area in clicks; padding before clickable excludes it; order affects input |
+
+Review corrections applied: `guide-gesture-abstraction-and-keys` now uses the member alias `androidx.compose.ui.input.pointer.PointerInputScope.awaitPointerEventScope`, verified against `SuspendingPointerInputFilter.kt` source sections at lines 106 and 141. `guide-measure-text-for-canvas` now uses primary artifact `androidx.compose.ui:ui-text` and FQN `androidx.compose.ui.text.TextMeasurer`, retaining the DrawScope alias and existing evidence. This aligns primary lookup with the card’s text measurement topic.
+
+Six additional cards address tap cancellation, text style and font weight, float target animation, graphic descriptions, Foundation Canvas transforms, and caller-owned value-based text input. Foundation Canvas identity and the `ui.text.drawText` / `rememberTextMeasurer` package identities were verified in the official guide’s linked [CanvasSnippets.kt](https://github.com/android/snippets/blob/6a67b0f48b00e967d9a1ed02a6f952417da36f9e/compose/snippets/src/main/java/com/example/compose/snippets/graphics/CanvasSnippets.kt), imports at lines 24, 51, and 52. These imports verify API identity only; all guidance claims remain supported by the substantive, hash-bound evidence bodies listed above.
+
+A focused padding card uses primary artifact `androidx.compose.foundation:foundation-layout` and FQN `androidx.compose.foundation.layout.padding`, so artifact-filtered padding queries can retrieve the supported modifier-order guidance. The broader UI Modifier card remains available under its original identity. The padding card reuses the exact verified modifier-order source body; no artifact-filter relaxation is required.
+
+Authoring checks: 29 unique IDs; 42 hash-bound evidence references; body sizes 458–590 UTF-8 bytes; total guidance body bytes 15,213. Configuration JSON parses successfully. Prior 28 cards passed independent source review; the additional padding card is submitted for independent review. No build or retrieval-completion claim is made here.

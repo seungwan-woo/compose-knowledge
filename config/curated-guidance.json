@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "cards": [
+    {
+      "id": "guide-remember-observable-state",
+      "title": "Remember observable state across recomposition",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.remember",
+      "body": "Guidance: Remember an object with remember; its initial value is stored in the Composition and reused during recomposition. Wrap changing UI data in mutableStateOf so changes to value schedule recomposition of composables that read it. For example, remember { mutableStateOf(\"\") } retains an editable name while the UI recomposes. Limitation: remember does not retain state across configuration changes; use rememberSaveable for state that must survive them.",
+      "aliases": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "observable state",
+        "recomposition",
+        "상태 기억",
+        "재구성"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-state-state-in-composables",
+          "sha256": "9b14d66a052a22b3e2198e8ad1ff2b451e8f47fe4dc259540476d5d489fda7cb"
+        }
+      ]
+    },
+    {
+      "id": "guide-state-hoisting",
+      "title": "Hoist shared state and pass events upward",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: Move state to a caller and pass the current value plus an event callback, such as value and onValueChange. This keeps one source of truth while callers can accept, change, or ignore events. Hoist to at least the lowest common parent of readers and the highest level that writes the state. States changed by the same events should be hoisted together. Limitation: merely exposing callbacks is insufficient if the state owner remains below a reader or writer; underhoisting prevents the intended downward-state, upward-event flow.",
+      "aliases": [
+        "androidx.compose.runtime",
+        "state hoisting",
+        "unidirectional data flow",
+        "single source of truth",
+        "상태 호이스팅",
+        "단방향 데이터 흐름"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-state-state-hoisting",
+          "sha256": "906f4db5cb2573d12d38b8bde447d8be77bb6120808119de66e1441ca8869414"
+        },
+        {
+          "id": "live-compose-guide-state-state-hoisting-2",
+          "sha256": "294584bba1c623b742305b33398287fc22df6f8c4d8c20de7ad557d39e6bd7d3"
+        }
+      ]
+    },
+    {
+      "id": "guide-save-minimal-ui-state",
+      "title": "Save only the UI state needed for restoration",
+      "artifact": "androidx.compose.runtime:runtime-saveable",
+      "fqn": "androidx.compose.runtime.saveable.rememberSaveable",
+      "body": "Guidance: Use rememberSaveable for UI state owned by a composable or a Composition-scoped state holder when it must survive activity or process recreation. Primitive values are saved automatically; custom types can use Parcelize, listSaver, mapSaver, or a custom Saver. Limitation: saved UI state shares a size-limited Bundle with other saved-instance-state APIs. Store minimal IDs or keys and rebuild complex state through persistent storage instead of putting large objects or object lists in the Bundle.",
+      "aliases": [
+        "androidx.compose.runtime.saveable.rememberSaveable",
+        "androidx.compose.runtime.saveable.Saver",
+        "androidx.compose.runtime.saveable.listSaver",
+        "androidx.compose.runtime.saveable.mapSaver",
+        "state restoration",
+        "상태 복원",
+        "프로세스 재생성"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-state-saving-ui-logic",
+          "sha256": "ba153c5b9f9a6441fb6b34e782ff511269c6cebaf06adb6d242f9aef71744acc"
+        },
+        {
+          "id": "live-compose-guide-state-saving-best-practice",
+          "sha256": "582c0d48c21d8466ac598fd323d78682df65f4df308725913b577e893c05141b"
+        }
+      ]
+    },
+    {
+      "id": "guide-launched-effect-lifetime",
+      "title": "Tie suspend work to LaunchedEffect keys",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.LaunchedEffect",
+      "body": "Guidance: Use LaunchedEffect for suspend work that belongs to a composable lifetime. It launches its coroutine when entering the Composition and cancels it on leaving. Choose keys that identify when the work must restart: a changed key cancels the existing coroutine and starts a new one. For example, keying a repeating pulse by pulseRateMs restarts the delay-and-animation loop when the rate changes. Limitation: work is cancelled on key changes or removal, so its lifetime is governed by that effect call and its keys.",
+      "aliases": [
+        "androidx.compose.runtime.LaunchedEffect",
+        "effect restart keys",
+        "coroutine cancellation",
+        "suspend work",
+        "부수 효과",
+        "효과 재시작"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-launchedeffect",
+          "sha256": "3494ccae5ade7131da5668330adb05ae92147d9fccbf3bada635796895a79268"
+        }
+      ]
+    },
+    {
+      "id": "guide-updated-callback-in-effect",
+      "title": "Read the latest callback without restarting an effect",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.rememberUpdatedState",
+      "body": "Guidance: Use rememberUpdatedState when a long-lived effect must capture a changing callback or value without restarting its work. Read the returned State inside the effect. In a timeout screen, rememberUpdatedState(onTimeout) lets a LaunchedEffect(true) finish its existing delay and then invoke the latest callback. A constant key makes the effect match the call-site lifetime. Limitation: pass a changing value as an effect key when it should restart the effect; the updated-state approach is for values whose changes should not restart it.",
+      "aliases": [
+        "androidx.compose.runtime.rememberUpdatedState",
+        "androidx.compose.runtime.LaunchedEffect",
+        "latest callback",
+        "long-lived effect",
+        "최신 콜백",
+        "효과 유지"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-rememberupdatedstate",
+          "sha256": "465fade8c5af5ac492f3a54f5bb0d3a24b4378470507d75a1bf51de8895c2dc8"
+        }
+      ]
+    },
+    {
+      "id": "guide-disposable-effect-cleanup",
+      "title": "Register and clean up subscriptions with DisposableEffect",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.DisposableEffect",
+      "body": "Guidance: Use DisposableEffect when a side effect needs cleanup after a key changes or the composable leaves the Composition. Register the observer or resource inside the effect and undo registration in onDispose. Keying a lifecycle observer by lifecycleOwner removes the old observer and registers against the new owner when it changes. rememberUpdatedState can keep observer callbacks current. Limitation: onDispose must be the final statement of the effect block; changing keys disposes and recreates the effect.",
+      "aliases": [
+        "androidx.compose.runtime.DisposableEffect",
+        "androidx.compose.runtime.DisposableEffectScope.onDispose",
+        "observer cleanup",
+        "subscription cleanup",
+        "관찰자 해제",
+        "리소스 정리"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-disposableeffect",
+          "sha256": "4643cd6b40ade9cb2724d441b3a81edca03869a8e63e2de398880cdb0c6bcbe0"
+        }
+      ]
+    },
+    {
+      "id": "guide-derived-state-threshold",
+      "title": "Use derivedStateOf when UI changes less often than inputs",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.derivedStateOf",
+      "body": "Guidance: Use derivedStateOf when state changes more frequently than the UI needs to update, such as a scroll position whose UI only reacts after crossing a threshold. Observe the derived state so the consumer responds to meaningful result changes, similarly to distinctUntilChanged. Limitation: combining state values is not itself a reason to use derivedStateOf. A full name made from firstName and lastName must change whenever either input changes, so ordinary string composition is enough and derivedStateOf adds unnecessary overhead.",
+      "aliases": [
+        "androidx.compose.runtime.derivedStateOf",
+        "scroll threshold",
+        "reduce recomposition",
+        "derived state overhead",
+        "파생 상태",
+        "재구성 줄이기"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-derivedstateof",
+          "sha256": "ac1e51c0f85003066b018412b42dc84894ab88eb541dc4b57f8dd2c884600156"
+        },
+        {
+          "id": "live-compose-guide-side-effects-incorrect-usage",
+          "sha256": "ee9290b80de8526f356fda22f7f0243a28b2de2604195629ced82cfc441923e9"
+        }
+      ]
+    },
+    {
+      "id": "guide-produce-state-external-data",
+      "title": "Convert external data to Compose State with produceState",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.produceState",
+      "body": "Guidance: Use produceState to expose external data as Compose State. Its producer coroutine starts on entering the Composition, updates the returned state through value, and is cancelled on leaving. Supply inputs as keys when changed inputs should cancel and relaunch the producer, as with a URL and image repository. For non-suspending subscriptions, use awaitDispose to remove the subscription. Limitation: the returned State conflates equal values; assigning the same value does not trigger recomposition.",
+      "aliases": [
+        "androidx.compose.runtime.produceState",
+        "androidx.compose.runtime.ProduceStateScope.awaitDispose",
+        "external subscription",
+        "state conflation",
+        "외부 데이터 상태",
+        "구독 해제"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-producestate",
+          "sha256": "35b26fd6009545074ac0d142de12f22ab9b76bb4fde1980af6bd76444d1fc629"
+        }
+      ]
+    },
+    {
+      "id": "guide-snapshot-flow-state-observation",
+      "title": "Observe Compose state as a cold Flow",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.snapshotFlow",
+      "body": "Guidance: Use snapshotFlow to turn reads of Compose State into a cold Flow. Its block runs when collected, and changes to state read by that block emit a new result only when it differs from the previous emitted value. Apply Flow operators for downstream behavior: map a list index to index > 0, then distinctUntilChanged and filter to record crossing the first-item threshold. Limitation: emission equality is checked on the block result; after mapping several distinct indices to the same boolean, use downstream distinctUntilChanged for that boolean.",
+      "aliases": [
+        "androidx.compose.runtime.snapshotFlow",
+        "cold Flow",
+        "scroll analytics",
+        "distinct emissions",
+        "상태를 플로우로",
+        "스크롤 관찰"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-side-effects-snapshotflow",
+          "sha256": "eaa4aec2033ec93ba5551b2e762e283697532855766e8f5eebe8e636b5be335b"
+        }
+      ]
+    },
+    {
+      "id": "guide-modifier-order-hit-area",
+      "title": "Choose modifier order to control the clickable area",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.Modifier",
+      "body": "Guidance: Modifier order changes behavior because each modifier operates on the result of the preceding one. Use Modifier.clickable(...).padding(...) when the padded surrounding area should respond to clicks. Reverse the order to Modifier.padding(...).clickable(...) when the added padding should remain outside the clickable area. Limitation: the same modifier functions in a different sequence do not produce equivalent input behavior; assess the intended hit area when arranging the chain.",
+      "aliases": [
+        "androidx.compose.ui.Modifier",
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.foundation.layout.padding",
+        "modifier order",
+        "clickable padding",
+        "모디파이어 순서",
+        "클릭 영역"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-modifiers-order-modifier-matters",
+          "sha256": "8ac771626f5427b3ba003fb904e0d1bb1d420f26fdc40edc5ebba54ec54319a4"
+        }
+      ]
+    },
+    {
+      "id": "guide-lazy-list-stable-keys",
+      "title": "Keep lazy item state attached to stable keys",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.lazy.LazyColumn",
+      "body": "Guidance: Provide a stable, unique key such as message.id to lazy items when data can reorder. The default uses item position, so moving an item can lose remembered state; explicit keys let Compose move that state with the item. This also matters for a nested LazyRow whose scroll state should follow its row. Limitation: keys must use Bundle-supported types, such as primitives, enums, or Parcelables, so rememberSaveable state inside an item can be restored after activity recreation or scrolling away and back.",
+      "aliases": [
+        "androidx.compose.foundation.lazy.LazyColumn",
+        "androidx.compose.foundation.lazy.LazyRow",
+        "androidx.compose.foundation.lazy.items",
+        "stable item keys",
+        "remembered item state",
+        "리스트 키",
+        "항목 상태 유지"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-lists-item-keys",
+          "sha256": "15f60835e2f8a59b79f24f213680e427482d0937893d65deff5ea70440d2a69a"
+        }
+      ]
+    },
+    {
+      "id": "guide-gesture-abstraction-and-keys",
+      "title": "Choose a gesture abstraction and key custom handlers",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.clickable",
+      "body": "Guidance: Use the highest gesture abstraction that supports the interaction: a component such as Button, then a gesture modifier such as clickable, then pointerInput for custom gestures. Higher layers include more semantics for accessibility. A pointerInput handler can await raw events with awaitPointerEventScope and awaitPointerEvent; pass keys for inputs whose changes should re-execute the handler. Limitation: raw event handling is complex and carries less semantic information than the higher-level component or gesture modifier.",
+      "aliases": [
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.ui.input.pointer.pointerInput",
+        "androidx.compose.ui.input.pointer.PointerInputScope.awaitPointerEventScope",
+        "custom gestures",
+        "pointer input keys",
+        "제스처 처리",
+        "포인터 입력"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-touch-input-pointer-input-understand-gestures-different-levels",
+          "sha256": "0862db596e3f9ca7f5fe7684b98b159f4c0cd397f73696702ac3d48a405c6112"
+        },
+        {
+          "id": "live-compose-guide-touch-input-pointer-input-understand-gestures-add-custom",
+          "sha256": "d9cf73e0d2ba7c10ab8aa78797bc4c435c650d738be5feaf399d974c8c107fa0"
+        }
+      ]
+    },
+    {
+      "id": "guide-textfield-state-initialization",
+      "title": "Keep TextField state and edit it after initialization",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.TextField",
+      "body": "Guidance: For a state-based TextField, use TextFieldState to own text content and selection, and hoist it where the architecture needs it. rememberTextFieldState remembers the state object and provides save/restore support. Pass it to TextField(state = ...); initialText and initialSelection establish initial content and selection. Limitation: changing the initial value passed to rememberTextFieldState during a later recomposition does not update the existing state. Use TextFieldState edit methods to change it after initialization.",
+      "aliases": [
+        "androidx.compose.material3.TextField",
+        "androidx.compose.foundation.text.input.TextFieldState",
+        "androidx.compose.foundation.text.input.rememberTextFieldState",
+        "initial text not updating",
+        "text selection",
+        "텍스트 필드 상태",
+        "초기 텍스트"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-text-user-input-manage-tf-state",
+          "sha256": "03911ec381e427ae8fb9457758041ee1cc4f85482d27e092ca57d7c3aad468ee"
+        }
+      ]
+    },
+    {
+      "id": "guide-canvas-drawscope-coordinates",
+      "title": "Draw with Canvas and DrawScope coordinates",
+      "artifact": "androidx.compose.ui:ui-graphics",
+      "fqn": "androidx.compose.ui.graphics.drawscope.DrawScope",
+      "body": "Guidance: Use drawing modifiers for custom rendering, or Canvas when the composable primarily draws. Canvas wraps Modifier.drawBehind, and drawing modifiers expose DrawScope with drawing functions and the current size. Use that size to position shapes within the drawing area. The origin is its top-left pixel: x increases rightward and y downward. Limitation: defaults on many draw methods place content at [0, 0] and fill the drawing area; provide positions and sizes when the desired geometry differs.",
+      "aliases": [
+        "androidx.compose.ui.graphics.drawscope.DrawScope",
+        "androidx.compose.foundation.Canvas",
+        "androidx.compose.ui.draw.drawBehind",
+        "canvas coordinates",
+        "custom drawing",
+        "캔버스 좌표",
+        "커스텀 그리기"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-graphics-draw-overview-basic-drawing",
+          "sha256": "cb1be0cea3b9ceb0e394e47190fab0d8936720ece7569299b3beda527133db55"
+        },
+        {
+          "id": "live-compose-guide-graphics-draw-overview-coordinate-system",
+          "sha256": "66194210847f0bf9066a807e7e3acc020c396c21a576abd06e2bc016cf6dc554"
+        }
+      ]
+    },
+    {
+      "id": "guide-cache-drawing-objects",
+      "title": "Cache drawing objects with drawWithCache",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.draw.drawWithCache",
+      "body": "Guidance: Create reusable drawing objects such as Brush, Shader, or Path inside drawWithCache to avoid reallocating them on each draw. For example, create a gradient Brush in the cache block and draw with it from onDrawBehind. Objects used only for drawing can be cached here even where composition-based remember is unavailable. Limitation: this cache depends on the drawing area size and state read by the cache block; it is not a permanent cache across changes to those inputs.",
+      "aliases": [
+        "androidx.compose.ui.draw.drawWithCache",
+        "androidx.compose.ui.draw.CacheDrawScope.onDrawBehind",
+        "drawing object cache",
+        "brush allocation",
+        "그리기 캐시",
+        "브러시 재사용"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-graphics-draw-modifiers-drawwithcache",
+          "sha256": "58696d56f30ec882608d9754ab54b94b7114ac0e784733cd0ef1217bcaa5e823"
+        }
+      ]
+    },
+    {
+      "id": "guide-animated-visibility-exit-lifetime",
+      "title": "Coordinate exit animations before removing content",
+      "artifact": "androidx.compose.animation:animation",
+      "fqn": "androidx.compose.animation.AnimatedVisibility",
+      "body": "Guidance: Use AnimatedVisibility to animate content appearing and disappearing; customize enter and exit transitions and combine them with +. To add custom animation that must finish before removal, attach it to the transition exposed inside the AnimatedVisibility content lambda. AnimatedVisibility waits for animations on that Transition before removing content. Limitation: independently created exit animations, such as animate*AsState, are not tracked by that Transition, so the content may be removed before they finish.",
+      "aliases": [
+        "androidx.compose.animation.AnimatedVisibility",
+        "androidx.compose.animation.AnimatedVisibilityScope.transition",
+        "exit animation completion",
+        "content removal",
+        "등장 퇴장 애니메이션",
+        "콘텐츠 제거"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-animation-composables-modifiers-animatedvisibility",
+          "sha256": "61cb0b1bab81f42f3a061b4459759372b23a466f6e757331729853970419734d"
+        },
+        {
+          "id": "live-compose-guide-animation-composables-modifiers-animatedvisibility-add-custom-animation",
+          "sha256": "8076a0e337d0b7379a0f68f5f863c1d6aa7e1f6f24e8c3ab6078c5cc13c6c8c1"
+        }
+      ]
+    },
+    {
+      "id": "guide-scaffold-content-padding",
+      "title": "Apply Scaffold content padding to the content root",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.Scaffold",
+      "body": "Guidance: Use Scaffold to assemble a Material screen from slots such as topBar, bottomBar, and floatingActionButton. Its content lambda receives PaddingValues that should be applied to the content root to constrain its size. A typical pattern is Scaffold(...) { innerPadding -> Column(Modifier.padding(innerPadding)) { ... } }. Limitation: supplying bars to Scaffold does not replace applying the padding passed to the content lambda; the documented example explicitly applies it to the Column.",
+      "aliases": [
+        "androidx.compose.material3.Scaffold",
+        "androidx.compose.foundation.layout.PaddingValues",
+        "innerPadding",
+        "scaffold content padding",
+        "스캐폴드 패딩",
+        "콘텐츠 여백"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-components-scaffold-example",
+          "sha256": "34041679b9cc14860a4cf33f5efb36b14320e87ea3c337012f280872fe4ee54c"
+        }
+      ]
+    },
+    {
+      "id": "guide-semantics-descendant-merging",
+      "title": "Merge semantics for a logical interactive element",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics.semantics",
+      "body": "Guidance: Use Modifier.semantics(mergeDescendants = true) when descendant content should be understood as one logical element. A Button containing an icon and text is represented as a single merged leaf in the semantics tree. clickable and toggleable already request descendant merging, as does ListItem. Limitation: the semantics tree only includes nodes with semantic information; it is not a copy of every composable in the UI tree. Check whether the component already merges descendants before adding another merging rule.",
+      "aliases": [
+        "androidx.compose.ui.semantics.semantics",
+        "mergeDescendants",
+        "semantics tree",
+        "accessibility grouping",
+        "시맨틱 트리",
+        "접근성 그룹화"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-accessibility-semantics-merged-unmerged",
+          "sha256": "14c702429123147e8218afa4b844af05fef4a9ee834da47b7055fece7a96b7ed"
+        }
+      ]
+    },
+    {
+      "id": "guide-test-synchronization-external-work",
+      "title": "Synchronize Compose assertions and wait for external work",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test",
+      "body": "Guidance: Compose test-rule actions and assertions synchronize with the UI before running, waiting for the UI tree to become idle and advancing a virtual clock. A plain assertion immediately after changing state can observe stale composition results; use a synchronized Compose assertion. For conditions depending on external work, such as data loading or Android measure/draw outside Compose, use waitUntil with a timeout and condition. Limitation: Compose hierarchy synchronization does not automatically cover the rest of the app.",
+      "aliases": [
+        "androidx.compose.ui.test",
+        "androidx.compose.ui.test.junit4.ComposeTestRule",
+        "androidx.compose.ui.test.junit4.ComposeTestRule.waitUntil",
+        "test synchronization",
+        "external data loading",
+        "테스트 동기화",
+        "비동기 대기"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-testing-synchronization-main-content",
+          "sha256": "29d8e02257d8276af22d52d4a2db59e927b2373663eac6da69f9512f7dc7ed42"
+        },
+        {
+          "id": "live-compose-guide-testing-synchronization-manual-sync-waituntil",
+          "sha256": "9f0badaef574a462c7063a6ae2189ee8823a7501c6b820e54f953577feb90fe1"
+        }
+      ]
+    },
+    {
+      "id": "guide-defer-state-reads-by-phase",
+      "title": "Read frequently changing state in layout or draw",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: When a changing value only affects placement, read it in a layout lambda such as Modifier.offset { IntOffset(0, scrollProvider()) }. The documented scroll example can then skip composition and update layout directly. If only a drawn color changes, read it inside drawBehind and drawRect so the update can skip composition and layout. Limitation: simply passing a lambda is not enough if you call it during composition; place the state read inside the layout or draw callback for the phase that needs it.",
+      "aliases": [
+        "androidx.compose.runtime",
+        "androidx.compose.foundation.layout.offset",
+        "androidx.compose.ui.draw.drawBehind",
+        "defer state reads",
+        "skip recomposition",
+        "layout draw phases",
+        "상태 읽기 지연",
+        "재구성 최적화"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-bestpractices-defer-reads-2",
+          "sha256": "cf21026d1579053ae16b37a1afed94421adc546b9dce0d3bf9eae56c210ebd47"
+        },
+        {
+          "id": "live-compose-guide-performance-bestpractices-defer-reads-3",
+          "sha256": "5abf373aa3a4f5e3380913c357d9021e47b48752b0630af2702eccb7d0fc54c4"
+        }
+      ]
+    },
+    {
+      "id": "guide-accessibility-replace-semantics",
+      "title": "Replace custom-control semantics deliberately",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics.clearAndSetSemantics",
+      "body": "Guidance: Use clearAndSetSemantics to replace a component and its descendants with semantics that describe the actual control. A custom toggle can supply stateDescription, toggleableState, and Role.Switch so accessibility services announce its state and toggle action. Limitation: an empty lambda removes that information from accessibility, autofill, and testing consumers. Use clearing only when needed, and consider modifier order: it clears semantics after its position regardless of other merging strategies.",
+      "aliases": [
+        "androidx.compose.ui.semantics.clearAndSetSemantics",
+        "androidx.compose.ui.semantics.stateDescription",
+        "androidx.compose.ui.semantics.toggleableState",
+        "androidx.compose.ui.semantics.Role",
+        "custom control accessibility",
+        "접근성 의미 재정의",
+        "토글 상태 설명"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-accessibility-merging-clearing-clear-and-set",
+          "sha256": "c032c870313e34df5fe42ae171b1154ad74e4ad54b7fcc54873a8bba79aa01ad"
+        },
+        {
+          "id": "live-compose-guide-accessibility-merging-clearing-clear-and-set-2",
+          "sha256": "f5bf216391466c9a1dd68d7a23442c42b26f2d36ffce79bfdaf544ec995c6af4"
+        }
+      ]
+    },
+    {
+      "id": "guide-measure-text-for-canvas",
+      "title": "Measure text before sizing its drawn background",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text.TextMeasurer",
+      "body": "Guidance: For manually drawn text, use rememberTextMeasurer and drawText. Measure with the intended constraints and TextStyle, then use the measured size for a matching background rectangle before drawing the text result. This accounts for text-specific sizing factors such as font size, ligatures, and letter spacing. Limitation: changing constraints, font size, or other measurement-affecting properties changes the reported size. Fixed width and height can be paired with TextOverflow.Ellipsis to constrain displayed text.",
+      "aliases": [
+        "androidx.compose.ui.graphics.drawscope.DrawScope",
+        "androidx.compose.ui.text.rememberTextMeasurer",
+        "androidx.compose.ui.text.TextMeasurer",
+        "androidx.compose.ui.text.drawText",
+        "canvas text measurement",
+        "텍스트 측정",
+        "캔버스 텍스트"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-graphics-draw-overview-draw-text",
+          "sha256": "74c383ba71528079f4587c537d39830a515ef3349979b2c1896b20b067432528"
+        },
+        {
+          "id": "live-compose-guide-graphics-draw-overview-measure-text",
+          "sha256": "96655ea5adb2466dd065ab8306ddb53569d323069d9bd2b61e7d41dc0e84efa3"
+        }
+      ]
+    },
+    {
+      "id": "guide-tap-gesture-consumption",
+      "title": "Account for tap gesture consumption and cancellation",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.gestures.detectTapGestures",
+      "body": "Guidance: detectTapGestures consumes the first pointer down and final pointer up; after detecting a long press it consumes subsequent changes. If another handler already consumed the first down, the entire gesture, including onPress, is skipped. After onPress, leaving the input area or consumption of movement, down, or up can cancel recognition, so onTap, onDoubleTap, and onLongPress are not called afterward. Limitation: callback offsets can fall outside element bounds when the touch target is expanded to the minimum target size.",
+      "aliases": [
+        "androidx.compose.foundation.gestures.detectTapGestures",
+        "androidx.compose.foundation.gestures.PressGestureScope.tryAwaitRelease",
+        "tap consumption",
+        "gesture cancellation",
+        "탭 제스처",
+        "이벤트 소비",
+        "제스처 취소"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-foundation-foundation-foundation-gestures-tapgesturedetector-lines-71",
+          "sha256": "a645ec6211a84869f2ac02e9871699103aac4b74956d51f02ab5ca8b8707b960"
+        }
+      ]
+    },
+    {
+      "id": "guide-text-style-and-span-weight",
+      "title": "Apply font weight to whole text or individual spans",
+      "artifact": "androidx.compose.ui:ui-text",
+      "fqn": "androidx.compose.ui.text.TextStyle",
+      "body": "Guidance: Set Text fontWeight to FontWeight.Bold, or another FontWeight, to style its text. For different styles within one Text, build an AnnotatedString and wrap selected appended ranges with withStyle(SpanStyle(...)); the example makes one letter bold and red while leaving surrounding letters outside that span. TextStyle is for Text, while SpanStyle and ParagraphStyle belong in AnnotatedString. Limitation: use SpanStyle for inline ranges and ParagraphStyle for paragraph properties such as alignment, direction, line height, and indent.",
+      "aliases": [
+        "androidx.compose.ui.text.TextStyle",
+        "androidx.compose.ui.text.SpanStyle",
+        "androidx.compose.ui.text.ParagraphStyle",
+        "androidx.compose.ui.text.font.FontWeight",
+        "androidx.compose.ui.text.buildAnnotatedString",
+        "fontWeight",
+        "bold text",
+        "텍스트 스타일",
+        "글자 굵기",
+        "부분 스타일"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-text-style-text-bold",
+          "sha256": "e150982148dac36973f296ad5a90fa09253a18d2089781d5c881df939972bc48"
+        },
+        {
+          "id": "live-compose-guide-text-style-text-multiple-styles",
+          "sha256": "582b4d390743592df297839860090ec60ba6b41291b2c53538962d0bd148f96b"
+        }
+      ]
+    },
+    {
+      "id": "guide-animate-float-target-changes",
+      "title": "Animate a float toward changing targets",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core.animateFloatAsState",
+      "body": "Guidance: Use animateFloatAsState for a single animated float: supply the target and read the returned animation value, such as an alpha changing between 1f and 0.5f. The first target becomes the initial value; later target changes start animation automatically. If a target changes during animation, it continues toward the new target from the current value and velocity. Customize timing with an AnimationSpec. Limitation: this API animates one value; other data types need a corresponding animate*AsState API or animateValueAsState with a TwoWayConverter.",
+      "aliases": [
+        "androidx.compose.animation.core.animateFloatAsState",
+        "androidx.compose.animation.core.animateValueAsState",
+        "androidx.compose.animation.core.TwoWayConverter",
+        "animation interruption",
+        "target value animation",
+        "값 애니메이션",
+        "애니메이션 목표 변경"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-animation-value-based-animate-as-state",
+          "sha256": "d6e12445c1fa3f3c84b9fcd27d4dbba32f11abe4db18d39c814b36f2fbedd7de"
+        }
+      ]
+    },
+    {
+      "id": "guide-image-content-description",
+      "title": "Describe meaningful images and omit decorative descriptions",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics.contentDescription",
+      "body": "Guidance: Provide Image and Icon with a textual contentDescription that explains a meaningful graphic; the framework cannot infer what the image displays. Use a localized string because this description is presented to users, as with a share icon labeled from string resources. Set contentDescription = null for a purely decorative graphic with no semantic meaning. Limitation: contentDescription is mainly for graphic elements; Text, Button, clickable, and toggleable already provide semantics for their intrinsic behavior.",
+      "aliases": [
+        "androidx.compose.ui.semantics.contentDescription",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.material3.Icon",
+        "contentDescription",
+        "decorative image",
+        "localized accessibility description",
+        "이미지 설명",
+        "장식 이미지",
+        "접근성 설명"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-accessibility-api-defaults-graphic-elements",
+          "sha256": "3745480670acb806d282738717e244122f07302890ff7a368c04c8e5218e0e71"
+        }
+      ]
+    },
+    {
+      "id": "guide-foundation-canvas-transforms",
+      "title": "Combine drawing transforms inside Foundation Canvas",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.Canvas",
+      "body": "Guidance: Use the Foundation Canvas composable when you need a layout element devoted to custom drawing; it wraps Modifier.drawBehind and exposes DrawScope drawing operations. Inside its drawing block, use withTransform to combine changes such as translation and rotation before issuing drawRect. This combines transformations in one operation instead of calculating and saving separately nested transformations. Limitation: place the drawing commands inside the withTransform content block to draw them with that combined transformation, as in the translated and rotated rectangle example.",
+      "aliases": [
+        "androidx.compose.foundation.Canvas",
+        "androidx.compose.ui.graphics.drawscope.DrawScope",
+        "androidx.compose.ui.graphics.drawscope.withTransform",
+        "canvas transform",
+        "translate rotate drawing",
+        "파운데이션 캔버스",
+        "그리기 변환",
+        "이동 회전"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-graphics-draw-overview-basic-drawing",
+          "sha256": "cb1be0cea3b9ceb0e394e47190fab0d8936720ece7569299b3beda527133db55"
+        },
+        {
+          "id": "live-compose-guide-graphics-draw-overview-multiple-transformations",
+          "sha256": "e1960c6aaef0ecad32349dd04626764ebfc3b6a5bbe730fb9a4dd70510493ec2"
+        }
+      ]
+    },
+    {
+      "id": "guide-textfield-value-callback-state",
+      "title": "Feed value-based text fields from caller-owned state",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.TextField",
+      "body": "Guidance: For a value-based TextField, pass the current input text through value and handle updated text from onValueChange. Keep the value in observable caller-owned state and update that state in the callback, as the guide demonstrates with remember { mutableStateOf(\"\") } and OutlinedTextField(value = name, onValueChange = { name = it }). Reads of that state schedule recomposition when it changes. Limitation: use the TextFieldValue overload if you also need to observe cursor location, selection, or IME composition; the String value represents input text.",
+      "aliases": [
+        "androidx.compose.material3.TextField",
+        "androidx.compose.material3.OutlinedTextField",
+        "androidx.compose.ui.text.input.TextFieldValue",
+        "value onValueChange",
+        "caller-owned text state",
+        "텍스트 입력 상태",
+        "입력 콜백",
+        "문자열 텍스트 필드"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-material3-material3-material3-textfield-lines-297",
+          "sha256": "e9993e8415d654af0ce89df7af2e798f7f5d6a6664c01a7a266ed1d2ee4b247d"
+        },
+        {
+          "id": "live-compose-guide-state-state-in-composables",
+          "sha256": "9b14d66a052a22b3e2198e8ad1ff2b451e8f47fe4dc259540476d5d489fda7cb"
+        }
+      ]
+    },
+    {
+      "id": "guide-padding-clickable-order",
+      "title": "Place padding inside or outside the clickable area",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout.padding",
+      "body": "Guidance: Place padding after clickable when the surrounding padded space should respond to clicks: Modifier.clickable(...).padding(16.dp). Place padding before clickable when that added space should remain outside the clickable area: Modifier.padding(16.dp).clickable(...). Each modifier changes the result of the preceding modifier, so order determines the final input behavior. Limitation: equal padding values do not imply equal clickable areas; reversing these two modifiers changes whether the padded space reacts to input.",
+      "aliases": [
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.clickable",
+        "padding order",
+        "clickable padding",
+        "padded hit area",
+        "패딩 순서",
+        "클릭 가능한 여백",
+        "터치 영역"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-modifiers-order-modifier-matters",
+          "sha256": "8ac771626f5427b3ba003fb904e0d1bb1d420f26fdc40edc5ebba54ec54319a4"
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ The user requested verification of merged CI and the installed skill, then daily
 
 ## Approach and scope
 
-Use the existing Node 24 CLI, snapshot validator and Git corpus branch. A review-PR for every data update was offered; the user selected validated automatic data publication. Keep implementation changes in a normal PR. The following are implementation choices: run at `17 0 * * *` (09:17 Asia/Seoul), support manual preview/publication, and publish with a separate job that alone has contents-write permission.
+Use the existing Node 24 CLI, snapshot validator and Git corpus branch. A review-PR for every data update was offered; the user selected validated automatic data publication. Keep implementation changes in a normal PR. The following are implementation choices: run at `0 23 * * *` (08:00 Asia/Seoul), support manual preview/publication, and publish with a separate job that alone has contents-write permission.
 
 Acquire registered Android documentation articles and selected AndroidX menu/popup source files, API guidelines, and compose-samples README at immutable Git revisions. Preserve the existing released-version evidence; current web/main-branch evidence has unknown release applicability. Split retrieved text into stable, attributable sections. This is a bounded acquisition scope, not a recursive crawl of all linked Android pages. New sections in these documents are discovered on the next run.
 

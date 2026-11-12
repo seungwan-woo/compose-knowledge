@@ -20,7 +20,7 @@ Version 0.2.0 adds explicit public-remote and freshness guidance. The installed 
 
 ## Operation and remaining activation
 
-Implementation changes are delivered through a PR. The `17 0 * * *` schedule starts after merging to the default branch. Collection has read permission; the separate publication job has contents-write permission and runs only on default-branch scheduled or explicitly requested runs. Public data is validated again before a normal non-forced push. The collection-base SHA prevents a newer corpus from being overwritten by an older prepared result.
+Implementation changes are delivered through a PR. The `0 23 * * *` schedule starts after merging to the default branch. Collection has read permission; the separate publication job has contents-write permission and runs only on default-branch scheduled or explicitly requested runs. Public data is validated again before a normal non-forced push. The collection-base SHA prevents a newer corpus from being overwritten by an older prepared result.
 
 The configured scope is bounded, not recursive: registered documentation articles, the additional menu guide, AndroidX Menu/Popup sources and API guidelines, and compose-samples README. New sections within those targets are discovered automatically; additional pages and sample Kotlin files require configuration. Material 3 body acquisition, target-project Gradle resolution, Android device behavior and corporate-PC Codex execution are not claimed.
 

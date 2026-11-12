@@ -16,17 +16,19 @@ export async function fetchWithPolicy(url: string, request: Request, wait: (ms: 
   let current = trusted(url).href;
   for (let redirects = 0; redirects <= 5; redirects++) {
     let response: HttpResponse | undefined;
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 6; attempt++) {
       try { response = await request(current); }
       catch (error) {
-        if (attempt === 2) throw new Error(`Failed fetching ${current}: ${String(error)}`);
-        await wait(500 * 2 ** attempt); continue;
+        if (attempt === 5) throw new Error(`Failed fetching ${current}: ${String(error)}`);
+        await wait(2000 * 2 ** attempt); continue;
       }
       if (response.status === 429 || response.status >= 500 && response.status <= 599) {
-        if (attempt === 2) throw new Error(`HTTP ${response.status} fetching ${current}`);
+        if (attempt === 5) throw new Error(`HTTP ${response.status} fetching ${current}`);
         const retry = response.headers['retry-after'];
         const seconds = retry && /^\d+$/.test(retry) ? Number(retry) * 1000 : retry ? Date.parse(retry) - Date.now() : 0;
-        await wait(Math.min(30_000, Math.max(500 * 2 ** attempt, Number.isFinite(seconds) ? seconds : 0)));
+        // Abort instead of violating a server-requested wait that exceeds this run's budget.
+        if (seconds > 300_000) throw new Error(`Retry-After exceeds refresh budget for ${current}`);
+        await wait(Math.max(2000 * 2 ** attempt, Number.isFinite(seconds) ? seconds : 0));
         continue;
       }
       break;
@@ -42,7 +44,15 @@ export async function fetchWithPolicy(url: string, request: Request, wait: (ms: 
   }
   throw new Error('Too many redirects');
 }
+let nextGitilesRequestAt = 0;
 async function curlRequest(url: string): Promise<HttpResponse> {
+  if (new URL(url).hostname === 'android.googlesource.com') {
+    // Reserve a slot before awaiting so concurrent callers cannot form a burst.
+    const slot = Math.max(Date.now(), nextGitilesRequestAt);
+    nextGitilesRequestAt = slot + 1000;
+    const delay = slot - Date.now();
+    if (delay > 0) await sleep(delay);
+  }
   const { stdout } = await exec('curl', ['--disable', '--silent', '--show-error', '--include', '--suppress-connect-headers', '--proto', '=https', '--max-time', '45', '--max-filesize', '12000000', '--user-agent', 'compose-knowledge-refresh', url], { maxBuffer: 12_100_000, timeout: 50_000, encoding: 'utf8' });
   const split = stdout.indexOf('\r\n\r\n');
   if (split < 0) throw new Error('Invalid HTTP response');

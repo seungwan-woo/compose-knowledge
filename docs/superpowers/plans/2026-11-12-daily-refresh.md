@@ -12,7 +12,7 @@
 
 ## Global constraints
 
-- Schedule `17 0 * * *`; separate collection and publishing jobs.
+- Schedule `0 23 * * *`; separate collection and publishing jobs.
 - Existing schemaVersion 1, unknown release applicability for live main/web sources.
 - Strict validated data-only corpus; never force push; unchanged input produces no commit.
 - Explicit Material 3 monitor-only status; required acquisition errors block publication.

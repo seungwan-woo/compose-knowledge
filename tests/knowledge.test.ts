@@ -85,6 +85,14 @@ describe('knowledge snapshots', () => {
     const conflict = sample(); conflict.documents[0]!.sections[1]!.sources[0]!.license = 'other'; expect(() => toKnowledgeInputs(conflict)).toThrow();
     const guide = sample(); guide.documents[0]!.sections[0]!.sources[0]!.kind = 'guide'; expect(() => toKnowledgeInputs(guide)).toThrow();
   });
+  it('rejects duplicate logical requirements for every known Compose Android variant', () => {
+    const artifacts = ['runtime:runtime', 'runtime:runtime-saveable', 'foundation:foundation', 'foundation:foundation-layout', 'animation:animation', 'animation:animation-core', 'animation:animation-graphics', 'ui:ui', 'ui:ui-text', 'ui:ui-graphics', 'ui:ui-unit', 'ui:ui-util', 'ui:ui-geometry', 'ui:ui-tooling-preview', 'ui:ui-test', 'ui:ui-test-junit4-accessibility', 'material:material', 'material:material-icons-core', 'material:material-icons-extended', 'material:material-ripple', 'material3:material3', 'material3.adaptive:adaptive', 'material3.adaptive:adaptive-navigation'];
+    for (const suffix of artifacts) {
+      const artifact = `androidx.compose.${suffix}`;
+      const input = sample(); input.documents[0]!.sections[0]!.requires = [{artifact, version:'1'}, {artifact:`${artifact}-android`, version:'1'}];
+      expect(() => toKnowledgeInputs(input), artifact).toThrow('Duplicate artifact requirement');
+    }
+  });
   it('keeps unrelated android suffix artifacts distinct', () => {
     const input = sample(); input.documents[0]!.sections[0]!.requires = [{ artifact: 'other:widget', version: '1' }, { artifact: 'other:widget-android', version: '2' }];
     expect(() => toKnowledgeInputs(input)).not.toThrow();

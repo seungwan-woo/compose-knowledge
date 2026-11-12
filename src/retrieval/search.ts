@@ -9,21 +9,44 @@ function artifactMatches(entry: IndexEntry, query: SearchQuery): boolean {
 }
 function symbolMatches(entry: IndexEntry, symbol: string): boolean {
   const target = symbol.toLowerCase();
-  const fqn = entry.fqn.toLowerCase();
-  return target.includes('.') ? fqn === target : fqn.split('.').at(-1) === target;
+  const symbols = [entry.fqn, ...entry.aliases.filter(alias => /^[\p{L}_$][\p{L}\p{N}_$]*(?:\.[\p{L}_$][\p{L}\p{N}_$]*)+$/u.test(alias))];
+  return symbols.some(symbol => {
+    const fqn = symbol.toLowerCase();
+    return target.includes('.') ? fqn === target : fqn.split('.').at(-1) === target;
+  });
 }
 function terms(value: string): string[] {
   return value.toLowerCase().match(/[\p{L}\p{N}_]+/gu) ?? [];
 }
-function relevance(entry: IndexEntry, query: string): number {
-  const q = query.trim().toLowerCase();
-  if (!q) return 1;
-  const fields: [string, number][] = [[entry.title, 8], [entry.fqn, 8], [entry.docTitle, 5], [entry.aliases.join(' '), 6], [entry.tags.join(' '), 4], [entry.description, 2], [entry.body, 1]];
+function relevance(entry: IndexEntry, query: SearchQuery): number {
+  const queryTerms = [...new Set(terms(query.query ?? ''))];
+  const symbol = query.symbol?.split('.').at(-1);
+  if (!queryTerms.length && !symbol) return query.query?.trim() ? 0 : 1;
+
+  const title = new Set(terms(entry.title));
+  const aliases = new Set(terms(entry.aliases.join(' ')));
+  const body = new Set(terms(entry.body));
+  const metadata = new Set(terms([entry.fqn, entry.docTitle, entry.description, ...entry.tags].join(' ')));
   let score = 0;
-  for (const [value, weight] of fields) {
-    const v = value.toLowerCase();
-    if (v.includes(q)) score += weight * 3;
-    for (const term of terms(q)) if (v.includes(term)) score += weight;
+  for (const term of queryTerms) {
+    // Metadata describes every chunk of a document; count it only once per term.
+    score += Math.max(title.has(term) ? 8 : 0, aliases.has(term) ? 6 : 0, metadata.has(term) ? 3 : 0);
+    if (body.has(term)) score += 12;
+  }
+  if (queryTerms.length && !score) return 0;
+  if (!queryTerms.length) score = 1; // A symbol has already passed the exact symbol filter.
+
+  const focus = symbol ?? (queryTerms.length === 1 ? queryTerms[0] : undefined);
+  if (focus) {
+    const escaped = focus.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const identifierEnd = '(?![\\p{L}\\p{N}_$])';
+    const declaration = new RegExp(`\\b(?:fun\\s+(?:<[^>]*>\\s*)?(?:[\\p{L}\\p{N}_$.]+\\.)?|(?:class|interface|object|val|var|typealias)\\s+)${escaped}${identifierEnd}`, 'iu');
+    const headingTerm = new RegExp(`(?<![\\p{L}\\p{N}_$])${escaped}${identifierEnd}`, 'iu');
+    if (entry.body.split('\n').some(line => declaration.test(line))) score += 40;
+    if (entry.body.split('\n').some(line => /^\s{0,3}#{1,6}\s/.test(line) && headingTerm.test(line))) score += 25;
+  }
+  if (entry.tags.includes('curated-guidance')) {
+    if (!symbol && queryTerms.every(term => title.has(term) || aliases.has(term) || body.has(term))) score += 30;
   }
   return score;
 }
@@ -34,12 +57,13 @@ export function searchIndex(index: SearchIndex, query: SearchQuery, snapshot: st
     if (!artifactMatches(entry, query) || (query.symbol && !symbolMatches(entry, query.symbol))) return [];
     const versionStatus = getVersionStatus(entry.requires, query);
     if (versionStatus === 'different' && !query.includeDifferent) return [];
-    const score = relevance(entry, query.query ?? '');
+    const score = relevance(entry, query);
     if (!score) return [];
-    return [{entry, score, versionStatus}];
+    const curatedSymbol = Boolean(query.symbol && entry.tags.includes('curated-guidance'));
+    return [{entry, score, versionStatus, curatedSymbol}];
   }).sort((a, b) => {
     const rank = {match: 0, unknown: 1, different: 2};
-    return rank[a.versionStatus] - rank[b.versionStatus] || b.score - a.score || (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0);
+    return rank[a.versionStatus] - rank[b.versionStatus] || Number(b.curatedSymbol) - Number(a.curatedSymbol) || b.score - a.score || (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0);
   });
   const limit = query.limit === undefined ? 3 : Math.max(0, Math.floor(query.limit));
   return { snapshot, hits: scored.slice(0, limit).map(({entry, versionStatus}) => ({id: entry.id, docId: entry.docId, title: entry.title, artifact: entry.artifact, fqn: entry.fqn, snippet: entry.body, versionStatus, sources: entry.sources.map(({id, resource}) => ({id, resource})), relatedIds: entry.relatedIds})), truncated: scored.length > limit };
