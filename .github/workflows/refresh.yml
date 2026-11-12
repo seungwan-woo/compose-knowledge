@@ -1,0 +1,17 @@
+name: Public corpus refresh integration gate
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-compose-corpus-refresh
+  cancel-in-progress: false
+jobs:
+  prerequisites:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require the real crawler and publication implementation
+        run: |
+          echo '::error::Refresh is intentionally gated: connect the existing crawler, verify source access and redistribution, then implement staging validation and a separate publishing job.'
+          echo 'No fixture corpus will be published as a successful refresh. Scheduling is not enabled.'
+          exit 2
