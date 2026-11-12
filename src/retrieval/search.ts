@@ -37,7 +37,10 @@ export function searchIndex(index: SearchIndex, query: SearchQuery, snapshot: st
     const score = relevance(entry, query.query ?? '');
     if (!score) return [];
     return [{entry, score, versionStatus}];
-  }).sort((a, b) => b.score - a.score || a.entry.id.localeCompare(b.entry.id, 'en'));
+  }).sort((a, b) => {
+    const rank = {match: 0, unknown: 1, different: 2};
+    return rank[a.versionStatus] - rank[b.versionStatus] || b.score - a.score || (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0);
+  });
   const limit = query.limit === undefined ? 3 : Math.max(0, Math.floor(query.limit));
   return { snapshot, hits: scored.slice(0, limit).map(({entry, versionStatus}) => ({id: entry.id, docId: entry.docId, title: entry.title, artifact: entry.artifact, fqn: entry.fqn, snippet: entry.body, versionStatus, sources: entry.sources.map(({id, resource}) => ({id, resource})), relatedIds: entry.relatedIds})), truncated: scored.length > limit };
 }

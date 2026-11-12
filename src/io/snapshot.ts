@@ -1,15 +1,15 @@
 import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { promisify } from 'node:util';
 import { cp, link, lstat, mkdir, mkdtemp, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { TextDecoder } from 'node:util';
-import type { SyncOptions, SyncResult } from '../domain/types.js';
+import type { SyncOptions, SyncResult, ValidatedSnapshot } from '../domain/types.js';
 import { validateSnapshot } from '../knowledge/validate.js';
 
 const exec = promisify(execFile);
 const shaPattern = /^[0-9a-f]{40}$/;
 const decoder = new TextDecoder('utf-8', { fatal: true });
-class SnapshotMismatch extends Error {}
 interface Pointer { snapshot: string; publishedAt: string; remote?: string; ref?: string }
 
 export function getSnapshotPath(cacheDir: string, snapshot: string): string {
@@ -17,10 +17,25 @@ export function getSnapshotPath(cacheDir: string, snapshot: string): string {
   return path.join(cacheDir, 'snapshots', snapshot);
 }
 
+/** Validate the payload against the identity recorded when its Git commit was fetched. */
+export async function validateCachedSnapshot(cacheDir: string, snapshot: string): Promise<ValidatedSnapshot> {
+  const dir = getSnapshotPath(cacheDir, snapshot);
+  if (!(await lstat(dir)).isDirectory()) throw new Error('Unsafe snapshot directory');
+  const expected = await readFile(path.join(cacheDir, 'identities', snapshot), 'utf8');
+  if (!/^[0-9a-f]{64}\n$/.test(expected)) throw new Error('Invalid snapshot identity');
+  const validated = await validateSnapshot(dir);
+  const actual = createHash('sha256').update(await readFile(path.join(dir, 'manifest.json'))).digest('hex') + '\n';
+  if (actual !== expected) throw new Error('Snapshot identity mismatch');
+  return validated;
+}
+
 async function git(cwd: string, args: string[]): Promise<Buffer> {
+  const env: NodeJS.ProcessEnv = { ...process.env, GIT_TERMINAL_PROMPT: '0', GIT_NO_REPLACE_OBJECTS: '1' };
+  // Repository-local settings must never redirect operations outside our temporary repo.
+  for (const key of ['GIT_DIR', 'GIT_WORK_TREE', 'GIT_COMMON_DIR', 'GIT_INDEX_FILE', 'GIT_OBJECT_DIRECTORY', 'GIT_ALTERNATE_OBJECT_DIRECTORIES', 'GIT_CEILING_DIRECTORIES', 'GIT_DISCOVERY_ACROSS_FILESYSTEM', 'GIT_IMPLICIT_WORK_TREE', 'GIT_GRAFT_FILE', 'GIT_REPLACE_REF_BASE', 'GIT_PREFIX', 'GIT_SHALLOW_FILE', 'GIT_NAMESPACE', 'GIT_QUARANTINE_PATH', 'GIT_CONFIG']) delete env[key];
   const { stdout } = await exec('git', ['-c', 'core.hooksPath=/dev/null', '-c', 'protocol.allow=never', '-c', 'protocol.file.allow=always', '-c', 'protocol.https.allow=always', '-c', 'protocol.http.allow=always', '-c', 'protocol.ssh.allow=always', ...args], {
     cwd, encoding: 'buffer', maxBuffer: 64 * 1024 * 1024,
-    env: { ...process.env, GIT_TERMINAL_PROMPT: '0', GIT_NO_REPLACE_OBJECTS: '1' },
+    env,
   });
   return stdout;
 }
@@ -33,9 +48,7 @@ async function cached(options: SyncOptions, ref: string): Promise<Pointer | null
     if (!pointer || typeof pointer.snapshot !== 'string' || typeof pointer.publishedAt !== 'string' || !Number.isFinite(Date.parse(pointer.publishedAt))) return null;
     if (options.remote !== undefined && (pointer.remote !== options.remote || pointer.ref !== ref)) return null;
     if (options.remote === undefined && options.ref !== undefined && pointer.ref !== ref) return null;
-    const dir = getSnapshotPath(options.cacheDir, pointer.snapshot);
-    if (!(await lstat(dir)).isDirectory()) return null;
-    await validateSnapshot(dir);
+    await validateCachedSnapshot(options.cacheDir, pointer.snapshot);
     return pointer;
   } catch { return null; }
 }
@@ -108,21 +121,30 @@ export async function syncSnapshot(options: SyncOptions): Promise<SyncResult> {
     if (!Number.isFinite(Date.parse(publishedAt))) throw new Error('Invalid commit date');
     await materialize(repo, sha, payload); await validateSnapshot(payload);
     await publishObjects(path.join(repo, 'objects'), objectCache);
+    const manifestDigest = createHash('sha256').update(await readFile(path.join(payload, 'manifest.json'))).digest('hex') + '\n';
     const destination = getSnapshotPath(options.cacheDir, sha);
     try { await rename(payload, destination); } catch (error) {
       if (!['EEXIST', 'ENOTEMPTY'].includes((error as NodeJS.ErrnoException).code ?? '')) throw error;
       if (!(await lstat(destination)).isDirectory()) throw new Error('Unsafe snapshot directory');
       await validateSnapshot(destination);
       const [existingManifest, fetchedManifest] = await Promise.all([readFile(path.join(destination, 'manifest.json')), readFile(path.join(payload, 'manifest.json'))]);
-      if (!existingManifest.equals(fetchedManifest)) throw new SnapshotMismatch('Cached snapshot differs from fetched commit');
+      if (!existingManifest.equals(fetchedManifest)) throw new Error('Cached snapshot differs from fetched commit');
     }
+    const identities = path.join(options.cacheDir, 'identities');
+    await mkdir(identities, { recursive: true });
+    const identityTemp = path.join(temp, 'identity');
+    await writeFile(identityTemp, manifestDigest, { flag: 'wx' });
+    try { await link(identityTemp, path.join(identities, sha)); } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'EEXIST') throw error;
+      if (await readFile(path.join(identities, sha), 'utf8') !== manifestDigest) throw new Error('Conflicting snapshot identity');
+    }
+    await validateCachedSnapshot(options.cacheDir, sha);
     const pointer: Pointer = { snapshot: sha, publishedAt, remote: options.remote, ref };
     pointerTemp = path.join(temp, 'current.json');
     await writeFile(pointerTemp, JSON.stringify(pointer) + '\n', { flag: 'wx' });
     await rename(pointerTemp, path.join(options.cacheDir, 'current.json'));
     return { snapshot: sha, status: 'fresh', checkedAt, publishedAt };
   } catch (error) {
-    if (error instanceof SnapshotMismatch) return { snapshot: null, status: 'unavailable', checkedAt, publishedAt: null, error: error.message };
     return fallback(error instanceof Error ? error.message : String(error));
   } finally {
     if (temp) await rm(temp, { recursive: true, force: true });

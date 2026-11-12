@@ -18,6 +18,7 @@ export function toKnowledgeInputs(value: unknown): KnowledgeInput {
   if (root.schemaVersion !== 1) throw new Error('Unsupported schema version');
   const docs = list(root.documents); if (!docs.length) throw new Error('No documents');
   const docIds = new Set<string>(), sectionIds = new Set<string>(), links: string[] = [];
+  const sourceIds = new Map<string, string>();
   for (const raw of docs) {
     const d = object(raw, ['id', 'artifact', 'fqn', 'title', 'description', 'tags', 'sections']);
     const docId = id(d.id); if (docIds.has(docId)) throw new Error('Duplicate document ID'); docIds.add(docId);
@@ -30,8 +31,8 @@ export function toKnowledgeInputs(value: unknown): KnowledgeInput {
       const artifacts = new Set<string>();
       for (const rawReq of list(s.requires)) {
         const req = object(rawReq, ['artifact', 'version'], ['platform']); const artifact = str(req.artifact);
-        // Android variants denote the same logical artifact.
-        const logical = artifact.replace(/-android$/, '');
+        // Only these known platform variants share an identity.
+        const logical = ['androidx.compose.ui:ui-android', 'androidx.compose.material3:material3-android'].includes(artifact) ? artifact.slice(0, -8) : artifact;
         if (artifacts.has(logical)) throw new Error('Duplicate artifact requirement'); artifacts.add(logical);
         if (req.version !== null) str(req.version);
         if (req.platform !== undefined && req.platform !== 'android') throw new Error('Invalid platform');
@@ -39,10 +40,18 @@ export function toKnowledgeInputs(value: unknown): KnowledgeInput {
       const sources = list(s.sources); if (!sources.length) throw new Error('Missing sources');
       for (const rawSource of sources) {
         const source = object(rawSource, ['id', 'kind', 'resource', 'revision', 'sha256', 'license', 'excerpt'], ['path', 'startLine', 'endLine']);
-        id(source.id); if (!['code', 'test', 'guide'].includes(source.kind as string)) throw new Error('Invalid source kind');
+        const sourceId = id(source.id); if (!['code', 'test', 'guide'].includes(source.kind as string)) throw new Error('Invalid source kind');
         for (const k of ['resource', 'revision', 'license', 'excerpt']) str(source[k]);
+        let url: URL; try { url = new URL(source.resource as string); } catch { throw new Error('Invalid source URL'); }
+        if (!['http:', 'https:'].includes(url.protocol) || !url.hostname || url.username || url.password) throw new Error('Invalid source URL');
+        if (source.kind === 'guide' && (!url.hash || url.hash === '#')) throw new Error('Guide requires an anchor');
+        if (!/^(?:[a-f0-9]{40}|[A-Za-z0-9_.-]+:[A-Za-z0-9_.-]+:[A-Za-z0-9_.+-]+@sha256:[a-f0-9]{64})$/.test(source.revision as string)) throw new Error('Invalid immutable revision');
+        if (source.kind !== 'guide' && (source.path === undefined || source.startLine === undefined || source.endLine === undefined)) throw new Error('Code and test sources require a path and line range');
+        const identity = JSON.stringify(Object.fromEntries(Object.entries(source).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0)));
+        if (sourceIds.has(sourceId) && sourceIds.get(sourceId) !== identity) throw new Error('Conflicting source ID');
+        sourceIds.set(sourceId, identity);
         if (!/^[a-f0-9]{64}$/.test(str(source.sha256)) || createHash('sha256').update(source.excerpt as string).digest('hex') !== source.sha256) throw new Error('Invalid source digest');
-        if (source.path !== undefined) str(source.path);
+        if (source.path !== undefined && (str(source.path).startsWith('/') || (source.path as string).split(/[\\/]/).some(part => part === '..' || part === '.'))) throw new Error('Invalid source path');
         if ((source.startLine === undefined) !== (source.endLine === undefined)) throw new Error('Incomplete line range');
         if (source.startLine !== undefined && (!Number.isSafeInteger(source.startLine) || !Number.isSafeInteger(source.endLine) || (source.startLine as number) < 1 || (source.endLine as number) < (source.startLine as number))) throw new Error('Invalid line range');
       }

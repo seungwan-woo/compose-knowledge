@@ -5,7 +5,7 @@ import { cp, mkdtemp, mkdir, readFile, rm, symlink, writeFile } from 'node:fs/pr
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { buildSnapshot } from '../src/knowledge/build.js';
-import { getSnapshotPath, syncSnapshot } from '../src/io/snapshot.js';
+import { getSnapshotPath, syncSnapshot, validateCachedSnapshot } from '../src/io/snapshot.js';
 
 const roots: string[] = [];
 afterEach(async () => { await Promise.all(roots.splice(0).map((p) => rm(p, { recursive: true, force: true }))); });
@@ -14,7 +14,7 @@ async function fixture(body = 'Body') {
   const root = await mkdtemp(path.join(tmpdir(), 'snapshot-test-')); roots.push(root);
   const repo = path.join(root, 'repo'); const cacheDir = path.join(root, 'cache');
   await mkdir(repo); git(repo, 'init', '-b', 'corpus'); git(repo, 'config', 'user.email', 'test@example.com'); git(repo, 'config', 'user.name', 'Test');
-  await buildSnapshot({ schemaVersion: 1, documents: [{ id: 'doc', artifact: 'a', fqn: 'a.Doc', title: 'Doc', description: 'A document', tags: [], sections: [{ id: 'section', title: 'Section', body, aliases: [], requires: [], sources: [{ id: 'source', kind: 'guide', resource: 'https://example.com', revision: 'revision', sha256: createHash('sha256').update(body).digest('hex'), license: 'Apache-2.0', excerpt: body }], relatedIds: [] }] }] }, path.join(root, 'built'));
+  await buildSnapshot({ schemaVersion: 1, documents: [{ id: 'doc', artifact: 'a', fqn: 'a.Doc', title: 'Doc', description: 'A document', tags: [], sections: [{ id: 'section', title: 'Section', body, aliases: [], requires: [], sources: [{ id: 'source', kind: 'guide', resource: 'https://example.com/#section', revision: 'a'.repeat(40), sha256: createHash('sha256').update(body).digest('hex'), license: 'Apache-2.0', excerpt: body }], relatedIds: [] }] }] }, path.join(root, 'built'));
   await cp(path.join(root, 'built'), repo, { recursive: true });
   git(repo, 'add', '.'); git(repo, 'commit', '-m', 'initial');
   return { repo, cacheDir, built: path.join(root, 'built'), sha: git(repo, 'rev-parse', 'HEAD') };
@@ -45,6 +45,16 @@ describe('snapshot sync', () => {
       expect((await syncSnapshot({ cacheDir, remote: repo })).status).toBe('fresh');
       expect(await readFile(capture, 'utf8')).toBe('http://proxy.invalid:1234\n/test/ca.pem\n');
     } finally { for (const key of keys) { if (old[key] === undefined) delete process.env[key]; else process.env[key] = old[key]; } }
+  });
+  it('ignores inherited Git repository redirection', async () => {
+    const { repo, cacheDir, sha } = await fixture();
+    const unrelated = await fixture('Unrelated');
+    const old = process.env.GIT_DIR; process.env.GIT_DIR = path.join(unrelated.repo, '.git');
+    try {
+      expect(await syncSnapshot({ cacheDir, remote: repo })).toMatchObject({ status: 'fresh', snapshot: sha });
+      expect(await readFile(path.join(unrelated.repo, '.git', 'config'), 'utf8')).toMatch(/bare = false/);
+      await expect(readFile(path.join(unrelated.repo, '.git', 'FETCH_HEAD'))).rejects.toMatchObject({ code: 'ENOENT' });
+    } finally { if (old === undefined) delete process.env.GIT_DIR; else process.env.GIT_DIR = old; }
   });
   it('reuses previously fetched objects on a subsequent sync', async () => {
     const { repo, cacheDir } = await fixture();
@@ -91,6 +101,24 @@ describe('snapshot sync', () => {
     await syncSnapshot({ cacheDir, remote: repo, ref: 'corpus' });
     await symlink('/etc/passwd', path.join(repo, 'evil')); git(repo, 'add', '.'); git(repo, 'commit', '-m', 'symlink');
     expect(await syncSnapshot({ cacheDir, remote: repo, ref: 'corpus' })).toMatchObject({ status: 'cached', snapshot: sha });
+  });
+  it('rejects a valid replacement payload offline and during direct reads', async () => {
+    const { repo, cacheDir, sha } = await fixture();
+    await syncSnapshot({ cacheDir, remote: repo });
+    const other = await fixture('Replacement body');
+    await rm(getSnapshotPath(cacheDir, sha), { recursive: true });
+    await cp(other.built, getSnapshotPath(cacheDir, sha), { recursive: true });
+    expect(await syncSnapshot({ cacheDir, offline: true })).toMatchObject({ status: 'unavailable', snapshot: null });
+    await expect(validateCachedSnapshot(cacheDir, sha)).rejects.toThrow();
+  });
+  it('falls back to intact A if a preexisting directory for B conflicts', async () => {
+    const { repo, cacheDir, sha } = await fixture();
+    await syncSnapshot({ cacheDir, remote: repo });
+    git(repo, 'commit', '--allow-empty', '-m', 'next');
+    const next = git(repo, 'rev-parse', 'HEAD');
+    const other = await fixture('Conflicting body');
+    await cp(other.built, getSnapshotPath(cacheDir, next), { recursive: true });
+    expect(await syncSnapshot({ cacheDir, remote: repo })).toMatchObject({ status: 'cached', snapshot: sha });
   });
   it('rejects an existing valid payload that does not match the fetched commit', async () => {
     const { repo, cacheDir, sha } = await fixture();

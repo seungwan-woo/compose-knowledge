@@ -1,7 +1,11 @@
 import type { ArtifactVersion, Platform, SearchQuery, VersionStatus } from './types.js';
 
 export function normalizeArtifact(artifact: string, _platform?: Platform): string {
-  return artifact.endsWith('-android') ? artifact.slice(0, -8) : artifact;
+  const aliases: Record<string, string> = {
+    'androidx.compose.ui:ui-android': 'androidx.compose.ui:ui',
+    'androidx.compose.material3:material3-android': 'androidx.compose.material3:material3',
+  };
+  return aliases[artifact] ?? artifact;
 }
 
 function sameArtifact(a: ArtifactVersion, b: ArtifactVersion): boolean {
@@ -13,7 +17,7 @@ function sameArtifact(a: ArtifactVersion, b: ArtifactVersion): boolean {
 }
 
 export function getVersionStatus(requires: ArtifactVersion[], query: SearchQuery): VersionStatus {
-  const requested = [...(query.versions ?? [])];
+  const requested = (query.versions ?? []).map(item => ({...item, platform: item.platform ?? query.platform}));
   if (query.artifact && query.version !== undefined) requested.push({artifact: query.artifact, version: query.version, platform: query.platform});
   for (let i = 0; i < requested.length; i++) for (let j = i + 1; j < requested.length; j++) {
     const a = requested[i]!, b = requested[j]!;
@@ -21,7 +25,7 @@ export function getVersionStatus(requires: ArtifactVersion[], query: SearchQuery
       throw new Error(`Conflicting requested versions for ${a.artifact}`);
     }
   }
-  let unknown = false;
+  let unknown = requires.length === 0;
   let different = false;
   for (const required of requires) {
     const found = requested.find(item => sameArtifact(required, item));
