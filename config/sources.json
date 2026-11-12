@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "purpose": "User-requested public source registry; not a crawler output contract or an instruction to ingest whole sites.",
+  "sources": [
+    {
+      "id": "compose-documentation",
+      "url": "https://developer.android.com/develop/ui/compose/documentation",
+      "type": "documentation-index",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select menu, popup, and related API documentation only for the initial corpus.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "androidx-compose-source",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose",
+      "type": "source-tree",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select Material3 DropdownMenu and Compose UI Popup source, samples, and tests only; resolve immutable revisions before ingestion.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "compose-api-guidelines",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/docs/compose-api-guidelines.md",
+      "type": "api-design-guidelines",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select API-design guidance directly relevant to the initial menu and popup task.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "compose-samples",
+      "url": "https://github.com/android/compose-samples",
+      "type": "sample-repository",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select menu or popup examples only after exact files, immutable revisions, and licenses are reviewed.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "compose-overview",
+      "url": "https://developer.android.com/develop/ui/compose/",
+      "type": "documentation-index",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select menu and popup links for the initial task; do not crawl the entire documentation tree.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "material3-compose-guide",
+      "url": "https://m3.material.io/develop/android/jetpack-compose",
+      "type": "design-system-guide",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select Material3 Android menu guidance relevant to the initial corpus.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "compose-release-notes",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose",
+      "type": "release-notes",
+      "scope": {
+        "visibility": "public",
+        "selection": "Select release evidence needed to establish or compare menu and popup artifact applicability.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "menu-focused",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    },
+    {
+      "id": "android-architecture-introduction",
+      "url": "https://developer.android.com/topic/architecture/intro",
+      "type": "architecture-guide",
+      "scope": {
+        "visibility": "public",
+        "selection": "General Android application architecture; defer ingestion until after the menu and popup workflow is validated.",
+        "exclude": [
+          "private code",
+          "internal rules",
+          "private PR diffs"
+        ]
+      },
+      "releaseApplicability": "unknown",
+      "phase": "later-general-architecture",
+      "license": {
+        "status": "pending",
+        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+      },
+      "ingestionStatus": "not-ingested"
+    }
+  ]
+}
