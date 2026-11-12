@@ -1,0 +1,2022 @@
+{
+  "questions": [
+    {
+      "phase": "baseline",
+      "id": "q01",
+      "judgment": "usable",
+      "reason": "Modifier.kt 36\u201370 directly covers modifier name/default/first optional position; API guidelines 392\u2013407 require root-node application and appending internal modifiers.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:01.280Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 10024,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "fdc63dc722fe954415ca58e0bc05b99e842f49644a1d0d93f909ab4e670cf69b",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "9731877d689bd5f132e3a3a1399ba1fdef4d326beb1a1f3ba1232bb6a8de4767",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-androidx-ui-ui-ui-modifier-lines-36",
+          "bytes": 2893,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "d227c5e64083cb220d60363374d8f9460dbe5bc2307a06fc841cd5acd4b31a42",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-modifier-lines-36-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-api-guidelines-lines-392",
+          "bytes": 3036,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "5bf2ba9061b61e6f995adcd760be2ecd5d6c0ee6daf96df069c5890735c32d4a",
+          "sourceIds": [
+            "live-compose-api-guidelines-lines-392-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q02",
+      "judgment": "partial",
+      "reason": "Visible CompositionLocal source establishes provider content scope, fallback factory, dynamic read tracking, and static values expected to rarely change. Nearest nested provider resolution and whole-provider static invalidation are not visible.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:15.678Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 11562,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2046,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "7906efc2aa5a2c35f70ce0ade0859601abd0f37bca99c80fff3b669512ff8696",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "7ef63c4a3f9b4a9815d4470068ccba9114e85b8d1b392d083c2435f343cc6a24",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211",
+          "bytes": 2723,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "71465dc61a66fe50bf39e234e27e41f49619636d572bdbc6e362b63c7d5e8b66",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456",
+          "bytes": 2377,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "03f66959cfcdf3d72c328c8da7de7ac90e57eb4a36f9644235563bdb2bd841cc",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176",
+          "bytes": 2368,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "90ee25e8af2c07d45680b44cf60f470db8170fcfd7ba44c000e3481a36aaf070",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q03",
+      "judgment": "unsupported",
+      "reason": "Exact LocalContentColor search is empty; intent fallback yields unrelated AppBar/FloatingActionButton documentation. No substantive content-color contract was read.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:21.257Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 2131,
+      "reads": 0,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "b74212b0188221072a340df662a17569697b3a8be85c91a409aa17d5bc6ac844",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "1fd2cac7a58d0a2383161bc473481367109e4c3dcb847191b501fc4d15544c42",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q04",
+      "judgment": "partial",
+      "reason": "DrawWithCacheElement shows create constructing a node, update assigning its block, and element equality. Modifier.kt describes attachment flags and auto-invalidation. General reuse/equality-triggered update contract and lifecycle ownership are absent.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:25.912Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 7086,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "b74212b0188221072a340df662a17569697b3a8be85c91a409aa17d5bc6ac844",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "e5b5a1743d1674a0a0662ae29b580d17a328ae4d5b725755b69105b91f99da0a",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-androidx-ui-ui-ui-draw-drawmodifier-lines-141",
+          "bytes": 2264,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "017cf2e957e3bf1cb936bee3a3adbf8f8d3fdeefe5064597400beaa3ecce4c65",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-draw-drawmodifier-lines-141-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-ui-ui-ui-modifier-lines-211",
+          "bytes": 2691,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "10775d238ee99578f4312de5a218026569fc2d3300981d47ac565fd305990d67",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-modifier-lines-211-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q05",
+      "judgment": "partial",
+      "reason": "Custom-layout guide states incoming constraints; intrinsic-layout sample visibly uses constrainWidth/constrainHeight. No returned passage establishes the one-measure-per-child prohibition; a sample measuring once does not prove that contract.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:30.915Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 12237,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "4fa81d8727d241ff0efb5211142603f2401e7cacd9c6d4d1b617fb0cfbd10846",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "ca93728086933b75e1dd317c8dbdf4b8f177b7b254b7b1e30bd96398d371150f",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-layouts-custom-main-content",
+          "bytes": 2153,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "a554cea30359c7215f43520566953aaef6fa20030305d7b2afa6da6d7168e2a7",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-main-content-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-layouts-intrinsic-measurements-intrinsics-in-layouts",
+          "bytes": 3009,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "3d4c7204fce23c827e9e3dad22bf92ae8a3cba5e3e487028053c37edec392c7e",
+          "sourceIds": [
+            "live-compose-guide-layouts-intrinsic-measurements-intrinsics-in-layouts-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-layouts-custom-create-custom",
+          "bytes": 2979,
+          "maximum": 3030,
+          "truncated": false,
+          "stdoutSha256": "43cea89af2f34b79edc9a5fa5851559fa524dec010b443232cdee1e83a99413a",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-create-custom-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q06",
+      "judgment": "usable",
+      "reason": "Official Layout direction passage contrasts absolute place with layout-direction-sensitive placeRelative and identifies MeasureScope.layoutDirection.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:35.681Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 3334,
+      "reads": 1,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "b74212b0188221072a340df662a17569697b3a8be85c91a409aa17d5bc6ac844",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "1bc3fb57fd2e80f9727f2382b1b9be02d6c4024097ffedc63ac4293f448b0674",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-layouts-custom-layout-direction",
+          "bytes": 1202,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "9440b85814b16cbb1032132a28abec7d89df962f18c67d8570eddb373b82d6fa",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-layout-direction-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q07",
+      "judgment": "unsupported",
+      "reason": "clickable hits concern gesture abstraction; intent fallback concerns tap consumption and BasicText. None establishes touch expansion versus layout allocation or target competition.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:41.000Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 4095,
+      "reads": 0,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "6dae5125af9f5301e17b6f8bf7d7357c64046c02a522327df830e57f06837889",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "22aba1fd4d5964257b226f591eacdab4a0dd5bbbad19bba68ade8395067602c1",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q08",
+      "judgment": "partial",
+      "reason": "FocusRequester source diagnostic explicitly advises remember, attaching focusRequester, and event-triggered requests outside composition. Modifier-order association with a focusable target remains unsupported.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:46.130Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 8878,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "0b919a315f11af1664b9ab9d8d0003c1c4300b1121013b5fa8d25081f7fa5f7a",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "649939409a8d44104df6e54e6e8572fea0c300b0a4ae138d8cea452312148435",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-1",
+          "bytes": 2481,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "f7e1e1dcaa112b28d3901746dc5f73479d0104a422cb8bd50c3be4f4be667182",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-1-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-36",
+          "bytes": 2303,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "e51ea4cd80f7470e842d52e663a97e099aef50f3c2c95241ee4c5ba15d46ae8f",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-36-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q09",
+      "judgment": "partial",
+      "reason": "Custom-actions source shows labels and true-returning action handlers, and moving child actions onto a container. Clear-and-set raw source establishes descendant clearing; the returned custom-actions section ends before the child-clearing example and explicit handled-result contract.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:51.106Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 12083,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "64785631fc1ea2abb59d5f76079c19fb405eb8bb8716a5bff166719c5ee8a182",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "6a7411030b27e4b864892aa015c08ad6be4b8be91a951853e0346f44967712c6",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-accessibility-semantics-custom-actions",
+          "bytes": 3018,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "6f21538ca2d53f9bb9fd697049b5d03df6a4f39053a59ab0d357941bf5405455",
+          "sourceIds": [
+            "live-compose-guide-accessibility-semantics-custom-actions-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "guide-accessibility-replace-semantics",
+          "bytes": 1929,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "619e2924d2afcfb58e1a4ae035907e7a72e2837d86506b333fb9264cc486fd74",
+          "sourceIds": [
+            "live-compose-guide-accessibility-merging-clearing-clear-and-set-source",
+            "live-compose-guide-accessibility-merging-clearing-clear-and-set-2-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-accessibility-merging-clearing-clear-and-set",
+          "bytes": 3042,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "df420a86cbae0e7c52bebb58d2e48c9b982e365463628da9c4e6af50a8cb0441",
+          "sourceIds": [
+            "live-compose-guide-accessibility-merging-clearing-clear-and-set-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q10",
+      "judgment": "usable",
+      "reason": "Official strong-skipping passage explicitly permits unstable parameters, uses instance equality for them, and structural equality for stable parameters. Actual target compiler configuration remains unknown.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:56:57.291Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 3577,
+      "reads": 1,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "b74212b0188221072a340df662a17569697b3a8be85c91a409aa17d5bc6ac844",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "9a85add4806754e3a5f8345affb6b4840c5f7279d78c69687786721b48b5cfc1",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-performance-stability-fix-enable-strong-skipping",
+          "bytes": 1445,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "4f5fc3c594531f86f4167f0abf6da7b1d8b9c4de29894f00fcb0299be5ea61d0",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-fix-enable-strong-skipping-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q11",
+      "judgment": "partial",
+      "reason": "Lifecycle source gives stable equality/notification/property-type promises; stability-fix source warns annotations override inference and discusses collections. Precise Immutable promises are not visible.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:57:02.770Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 9855,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "054abee61b81f1b8ae027354bd197b297676397cb4280779eadfda9dd8731d1f",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "740c5405595a7811bc9063cd2c97ef48c7ece13134530963613c8169ba390a0a",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-lifecycle-skipping",
+          "bytes": 2955,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "431bdd5fa47bcc9a070343e3a8950b88870dc51089482b1928bf247dae060adf",
+          "sourceIds": [
+            "live-compose-guide-lifecycle-skipping-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-performance-stability-fix-annotate-stable",
+          "bytes": 2804,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "637bd1e5fc86be823687151db432f19cf47b8d076bc9f49991120f6f7ceee06c",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-fix-annotate-stable-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q12",
+      "judgment": "partial",
+      "reason": "Animatable guide establishes suspend calls in an appropriate scope and shows LaunchedEffect. Raw animateTo KDoc describes frame callbacks, but no returned text proves required MonotonicFrameClock or arbitrary coroutine failure.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:57:08.784Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 10028,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "54e8f755c2e291c191d898a386f7ab6bdd7af8189dc4d32e5b84a4aee7762aa7",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "fe2ef6622430911342180cc0517521b01aa6f7af7e8c77c4801379c7147ef9b4",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-animation-value-based-animatable",
+          "bytes": 3018,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "7f04ccd44ee08d878a48fd6599525e58dc80a3b0c21393927aac8dadd38d557a",
+          "sourceIds": [
+            "live-compose-guide-animation-value-based-animatable-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-176",
+          "bytes": 2914,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "16f287bfaedf7233133b255a538b0ed61df4a023f44bd5175e4c0f79d1e9a8e3",
+          "sourceIds": [
+            "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q13",
+      "judgment": "partial",
+      "reason": "Save-minimal card and raw best-practice passage substantiate minimal saved state, shared limited Bundle and TransactionTooLarge risk. No retrieved passage describes StateRestorationTester simulation boundaries or real lifecycle execution.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:57:13.937Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 7374,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "d3bc2b66988b0388a643cdf17696aef5f28a6fd3a1fd8590c59c0832891ae617",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "ca85f53a28955af3e77ef7eb67d07054def262d2adfa8100ed41cd6906acec17",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-save-minimal-ui-state",
+          "bytes": 1768,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "4bf95553af6652f90f56b277f4fc7884f45d53b089de186d25c6f00dc29159b7",
+          "sourceIds": [
+            "live-compose-guide-state-saving-ui-logic-source",
+            "live-compose-guide-state-saving-best-practice-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-state-saving-best-practice",
+          "bytes": 1511,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "d9109a3bb102de256adc1374138848a79880432371f267a16ac538c5b88831cd",
+          "sourceIds": [
+            "live-compose-guide-state-saving-best-practice-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "baseline",
+      "id": "q14",
+      "judgment": "usable",
+      "reason": "Derived-state card plus raw threshold passage support deriving slowly-changing UI state; raw remember passage shows keyed list sorting, all calculation inputs as keys, equals comparison and cache overhead. Do not quote the final unfinished sentence about collection equality.",
+      "snapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T13:57:19.782Z",
+      "publishedAt": "2026-11-12T13:22:03Z",
+      "bytes": 10455,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "deb0fca9174298b6569676860ebec13c5689de0afa3d4d204b1615b833efea1a",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "27df9f87bcf7da1b0b67d3e85328e448896313bf98e69d2c420a6f84ca68bef5",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-derived-state-threshold",
+          "bytes": 1830,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "48519cf4e034c6728d35811b2c0ff6ba9129bef0c6915277dbf75dbefadd24b3",
+          "sourceIds": [
+            "live-compose-guide-side-effects-derivedstateof-source",
+            "live-compose-guide-side-effects-incorrect-usage-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-side-effects-derivedstateof",
+          "bytes": 1490,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "27859891b6a229d11dfac6b92f731e0c1e59d17d35bd4bd0239804097ae4475d",
+          "sourceIds": [
+            "live-compose-guide-side-effects-derivedstateof-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-performance-bestpractices-use-remember",
+          "bytes": 3040,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "e84922be831567ad32835087d2ab09e5a7c63624eee17333cc02bb102ff62a27",
+          "sourceIds": [
+            "live-compose-guide-performance-bestpractices-use-remember-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q01",
+      "judgment": "usable",
+      "reason": "New parameter-contract card and API-guideline raw verify name and first optional position; Modifier.kt raw verifies empty default and whole-component application. For the stated single-root question this supports root use, although explicit root-node API-guideline wording is no longer in the top2 retrieved hits.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:08:50.993Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 10381,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "4fead17827358405267a387691c3ba3b9215fee52d0292d8b88830abccdfc72d",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "1e07d2e99f9f8e608c73eb5680b4175325b0c21cf894566485812dc3ce445821",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-component-modifier-parameter-contract",
+          "bytes": 1364,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "59f855bf8e5c63f1ba93827b996ee42898c19106993bb63634888ab84f8ea568",
+          "sourceIds": [
+            "live-compose-api-guidelines-lines-357-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-api-guidelines-lines-357",
+          "bytes": 2029,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "c5b2f2cfbe07fb59c175992c2d223ecc4bccee6dc2f77349eb12bcc748237e72",
+          "sourceIds": [
+            "live-compose-api-guidelines-lines-357-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-androidx-ui-ui-ui-modifier-lines-36",
+          "bytes": 2893,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "8365b8c7285e1472ab38c356d06f48c1d5cf3d0966cb41b9f87ec53452a8eaaa",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-modifier-lines-36-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q02",
+      "judgment": "partial",
+      "reason": "Frozen provider FQN/intent searches return the same source chunks as baseline. Provider scope/default and dynamic tracking are visible; nearest nesting and full static-provider invalidation remain unseen.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:08:55.123Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 11562,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2046,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "29f45119de043e850b585588bd193d6958a8f35f5bf43d79ed13a6c2b47194b2",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "c6b9f0f31a19c96e6b56aec023b38ccdd2e234b7a83c2d73a5939250e6174d8b",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211",
+          "bytes": 2723,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "d5c32d01f5f831237df6880293083e3ef09700934318998afe7cf5cc26751ffa",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456",
+          "bytes": 2377,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "a180468f6a3472b31d5c596d862c1210b153584f27752a3f8ad293cf53c0a798",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176",
+          "bytes": 2368,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "1921d39bcc77800085d46694489b0cf0d0dbc8b728d0cd39c03b9da1913d875a",
+          "sourceIds": [
+            "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q03",
+      "judgment": "partial",
+      "reason": "New custom Material adapter card and raw show explicit container/content colors, shapes and ProvideTextStyle. Neither returned passage establishes LocalContentColor propagation through a custom surface or custom text/icon consumption.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:01.046Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 6464,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "c03f4a3249a57e341b411ab69e921e2f05a88ee5f46f5587a9bbee4aa6504840",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "b99f5e1ccb953686a034c7a19c5e106a175447cc304e88d666e77e22e47ec020",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-designsystem-component-default-adapters",
+          "bytes": 1525,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "b873c472c6393588fd61e8d9ec63f360456417a7f7de02cb1c4eade587387ad2",
+          "sourceIds": [
+            "live-compose-designsystems-custom-implementing-using-material-components-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-designsystems-custom-implementing-using-material-components",
+          "bytes": 2808,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "fbec6732c6720011ad72b5ce8aa3f6d9aab6745989fd6ebc4d7931e0e31f7378",
+          "sourceIds": [
+            "live-compose-designsystems-custom-implementing-using-material-components-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q04",
+      "judgment": "partial",
+      "reason": "New ModifierNodeElement card plus raw now establish create, in-place update, immutable element, reuse and equals/hashCode triggers. Retrieved evidence explicitly excludes attachment/detachment/resource cleanup, leaving that part unanswered.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:07.077Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 8092,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "f48cb6b2136d3c96e9fd8f5b923dad98848e274db88c96bf0536eb2a0956b031",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "df2f9575c25a74854768656c7b64dc67d02dd93ee84a4d2bd30117ad2215577e",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-modifier-node-element-update-contract",
+          "bytes": 1344,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "94607a8d6be348387613851d3d3bd62667ed951537ac4e6cb7d4e010681fdeb6",
+          "sourceIds": [
+            "live-compose-custom-modifiers-node-element-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-custom-modifiers-node-element",
+          "bytes": 2653,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "251ea58f3f6edf79225eb999e636f4cddfbe35775fb10995a6299d47027db85b",
+          "sourceIds": [
+            "live-compose-custom-modifiers-node-element-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q05",
+      "judgment": "usable",
+      "reason": "Measure-once card and both bound raw passages establish parent min/max constraints and exactly one child measurement; the intrinsic guide explicitly says twice throws. All decision-critical parts are visible.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:12.906Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 9888,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "d3a2fc58ab7b826d145a265318c27806a6aed5e3b1855f087ada356dadc8173d",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "2f5e8e282753f13df633bec210012435384f380799e82f7f423984e93f8afd70",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-custom-layout-measure-once",
+          "bytes": 1862,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "ce3627c313320d1ebc7d8df41b639dd6fca928003de230f36b1f02b24b389b4f",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-main-content-source",
+            "live-compose-guide-layouts-intrinsic-measurements-main-content-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-layouts-custom-main-content",
+          "bytes": 2153,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "1a6ac50edf4daf9259b72bd2d684d93201a1912a936e3fd21b09594fe516bc7b",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-main-content-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-layouts-intrinsic-measurements-main-content",
+          "bytes": 1777,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "535c6cce9608b12ace1a5a392977959d190438a6c4b4197e9f60f881d10f7fd1",
+          "sourceIds": [
+            "live-compose-guide-layouts-intrinsic-measurements-main-content-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q06",
+      "judgment": "usable",
+      "reason": "Exact relative-placement card plus raw layout-direction passage distinguish absolute place and direction-sensitive placeRelative, with avoiding double mirroring when computing coordinates manually.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:18.155Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 3792,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 1206,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "8ad565d227891ee537de9bde0353baeee4f0a538f64b6fa0c9eb6f3ee81d709c",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-custom-layout-rtl-placement",
+          "bytes": 1384,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "e68d0760c72b0b7ede7cf384912ec0b3780bca986e20e911d1f1373783bcbf2f",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-layout-direction-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-layouts-custom-layout-direction",
+          "bytes": 1202,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "c8906ac5c1e13ed6a3a10d8389417b5efda4fe8f16c2323d720a3d2264bf42ca",
+          "sourceIds": [
+            "live-compose-guide-layouts-custom-layout-direction-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q07",
+      "judgment": "unsupported",
+      "reason": "Frozen foundation clickable plus touch-target intent still return gesture abstraction/tap-consumption or BasicText hits; no touch expansion/layout allocation evidence is retrieved.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:23.649Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 4095,
+      "reads": 0,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "1b7ee840cd7b6f7af7ea3a46afe61a92187786a355bf53586b1a50d21e8d1503",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "2da5a4161f033f394315225a8a20e68ae4251ca8018fc39a4bdb4dba74d607fd",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q08",
+      "judgment": "partial",
+      "reason": "Focus card plus source1\u201335 and71\u2013105 support remember, attachment, event timing, success/cancellation. Card explicitly declines to establish custom-control modifier ordering.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:28.923Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 11476,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "c4aa81573e22d094804602b421c1a5ebb4eeed78b8eeb467b16ec6ca257ccc48",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "c4aa81573e22d094804602b421c1a5ebb4eeed78b8eeb467b16ec6ca257ccc48",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-focus-request-lifecycle",
+          "bytes": 2267,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "d47456bf3443e75e47f74c01d3542486108f3191f4cc04fe714dcdc9dbd9786e",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-1-source",
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-71-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-1",
+          "bytes": 2481,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "6704b67de286393034b2a000cf00464e6df90b21de92810c41c004c30769db49",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-1-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-71",
+          "bytes": 2634,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "31664d68e855823b25d939ddc5f60b86f4d5b6275950d68be944c60f0a2915ee",
+          "sourceIds": [
+            "live-androidx-ui-ui-ui-focus-focusrequester-lines-71-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q09",
+      "judgment": "usable",
+      "reason": "Custom-actions card plus its two raw sections show labeled callbacks returning true after the operation, container action grouping, and explicit child clearAndSetSemantics after transferring actions. Assistive-technology execution remains separate.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:34.397Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 8429,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "f673ffeb9eed8ed682a0130c7a419e038b73ed7e30ac0329eb5c112b44b33c4c",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-custom-accessibility-actions",
+          "bytes": 1933,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "538cecbcc26ef1e5d06dc9bdc0ebf67ffdc46ab838c980971721019b6946da0a",
+          "sourceIds": [
+            "live-compose-guide-accessibility-semantics-custom-actions-source",
+            "live-compose-guide-accessibility-semantics-custom-actions-2-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-accessibility-semantics-custom-actions",
+          "bytes": 3018,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "0ad4fb79f198f23e69e4bfc4a0719bc16283fde202aaeb834ab9064b65db62f9",
+          "sourceIds": [
+            "live-compose-guide-accessibility-semantics-custom-actions-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-accessibility-semantics-custom-actions-2",
+          "bytes": 1431,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "0a6cb878ad8ab21474290ef8281a4d40a2596273198c256f0112f827c53b2ab5",
+          "sourceIds": [
+            "live-compose-guide-accessibility-semantics-custom-actions-2-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q10",
+      "judgment": "usable",
+      "reason": "Strong-skipping card plus raw when-skip/composable-skippability sections establish unstable-parameter eligibility, identity versus Object.equals, and restartability limits.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:40.747Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 7069,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 84,
+          "maximum": 2048,
+          "truncated": false,
+          "stdoutSha256": "c03f4a3249a57e341b411ab69e921e2f05a88ee5f46f5587a9bbee4aa6504840",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "efc29470fc4d65f4d9876e07fc5f5c787a84b07bf4d0ee722eee319ee80a2342",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-strong-skipping-parameter-equality",
+          "bytes": 2073,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "165d2bd676d08460121ab996dab86449208e458a16351a3c57996e57093309dc",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-strongskipping-when-skip-source",
+            "live-compose-guide-performance-stability-strongskipping-composable-skippability-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-performance-stability-strongskipping-when-skip",
+          "bytes": 1503,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "980fa7548ab5a019847c4711979ac62c0ad33cec07cd60691f7de93196ab9269",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-strongskipping-when-skip-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-performance-stability-strongskipping-composable-skippability",
+          "bytes": 1362,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "e3e7c4a260e06672dbacdccb7ec1be2e7d36ce34843af41457e187528a400c62",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-strongskipping-composable-skippability-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q11",
+      "judgment": "partial",
+      "reason": "Frozen runtime Stable query still yields baseline lifecycle/fix passages, not exact Immutable declaration; precise Immutable promise remains unverified.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:46.105Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 9855,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "61819ac31346fbf627530cb3f68823147ef3b20d07a289ea22a28a99497633c6",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "1256f522d30324f6e13acc33948886a5df19c07f0bcf5734037150a9489b883f",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-lifecycle-skipping",
+          "bytes": 2955,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "1aad66b79a738386a48d7a0648b0095aa2b7d7778e163d2d80dce5cc5c5f3a8a",
+          "sourceIds": [
+            "live-compose-guide-lifecycle-skipping-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-performance-stability-fix-annotate-stable",
+          "bytes": 2804,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "6f27552ee1c34511287b5915bac7c16445ff113cb2a774ad01ec09b0d8a0270c",
+          "sourceIds": [
+            "live-compose-guide-performance-stability-fix-annotate-stable-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q12",
+      "judgment": "partial",
+      "reason": "Frozen animation-core Animatable/frame-clock query still yields scope example and animateTo KDoc without MonotonicFrameClock requirement. It does not establish arbitrary-coroutine success/failure or a blanket prohibition on non-Compose scopes.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:51.140Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 10028,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "312fd442b5a0341d61e2ed6d6b22c2376f1b38cc45dbc3b50645a914694da3f4",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "2301129911a9e5915f135937aee9da1604044d7c7cbdb33efb242849fb398747",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "live-compose-guide-animation-value-based-animatable",
+          "bytes": 3018,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "d27e95240109ad56e63db5e6ad763b082d4d16cfa664edff6f3cf0490c349a37",
+          "sourceIds": [
+            "live-compose-guide-animation-value-based-animatable-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-176",
+          "bytes": 2914,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "a81379fad6cfb25cff9393ab3c159a74b0efa2a70578d9404f35dfdc9342b893",
+          "sourceIds": [
+            "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q13",
+      "judgment": "partial",
+      "reason": "Frozen runtime-saveable starting context still yields saved-state size guidance and Saver chunks; StateRestorationTester simulation/lifecycle boundaries remain unseen.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:09:56.695Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 7374,
+      "reads": 2,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "54d13cc732b3ed2afcd8fb749bfac51efd57cdf59400275248e7e715867f2186",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2047,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "30af16ccb1415428f01692243baa0eda149e231f2e1f6b93673c3a233bf16080",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-save-minimal-ui-state",
+          "bytes": 1768,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "ad269b63dbd0d5913beda541303591557ad98d7700c2356d0f8e07c710420fd8",
+          "sourceIds": [
+            "live-compose-guide-state-saving-ui-logic-source",
+            "live-compose-guide-state-saving-best-practice-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-state-saving-best-practice",
+          "bytes": 1511,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "713b0e8c035c5b65d1de05859ae359365d52194ff960a56aa36c5298a9413323",
+          "sourceIds": [
+            "live-compose-guide-state-saving-best-practice-source"
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "candidate",
+      "id": "q14",
+      "judgment": "usable",
+      "reason": "Same derived-state card and raw threshold source plus raw remember sorting/key-equality passage support the decision. New expensive-work card makes its bound raw source reachable within the same3reads; unfinished source continuation is not cited.",
+      "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+      "freshness": "fresh",
+      "checkedAt": "2026-11-12T14:10:03.014Z",
+      "publishedAt": "2026-11-12T14:07:44Z",
+      "bytes": 10456,
+      "reads": 3,
+      "outputs": [
+        {
+          "file": "search-1.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "ad3b83010c89ae51a3bbe8152afb95c2a392de755ae1fa939ae5b92cb5479849",
+          "sourceIds": []
+        },
+        {
+          "file": "search-2.json",
+          "id": null,
+          "bytes": 2048,
+          "maximum": 2048,
+          "truncated": true,
+          "stdoutSha256": "a7559d7108df988928ebc8c93c2db7dfa3ade39a465122ec6b325117b4b1b4b7",
+          "sourceIds": []
+        },
+        {
+          "file": "read-1.json",
+          "id": "guide-derived-state-threshold",
+          "bytes": 1830,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "27608f0784c819b97b528ee0eafb73e8ee6f5ecd590c704a305b520a7da7c32b",
+          "sourceIds": [
+            "live-compose-guide-side-effects-derivedstateof-source",
+            "live-compose-guide-side-effects-incorrect-usage-source"
+          ]
+        },
+        {
+          "file": "read-2.json",
+          "id": "live-compose-guide-side-effects-derivedstateof",
+          "bytes": 1490,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "9b61b92e1ad4aab37212cd3c2b32a8b155c272fbbec3c4d4b1175d738d9f3619",
+          "sourceIds": [
+            "live-compose-guide-side-effects-derivedstateof-source"
+          ]
+        },
+        {
+          "file": "read-3.json",
+          "id": "live-compose-guide-performance-bestpractices-use-remember",
+          "bytes": 3040,
+          "maximum": 3072,
+          "truncated": false,
+          "stdoutSha256": "5d07909dd9a148aa8fbe5a8d8b5c5dd193a757ccf04eefaa8b5966f0ac22d7ef",
+          "sourceIds": [
+            "live-compose-guide-performance-bestpractices-use-remember-source"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "live-androidx-ui-ui-ui-modifier-lines-36-source": {
+      "id": "live-androidx-ui-ui-ui-modifier-lines-36-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "startLine": 36,
+      "endLine": 70,
+      "sha256": "ff564d20806ea44c0edf2abfa7e86ca76a969a80139310bb288d3517ada999c5",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-api-guidelines-lines-392-source": {
+      "id": "live-compose-api-guidelines-lines-392-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/85adb4710d1b88293d5b912df1c6104e6fe38c41/compose/docs/compose-api-guidelines.md",
+      "revision": "85adb4710d1b88293d5b912df1c6104e6fe38c41",
+      "path": "compose/docs/compose-api-guidelines.md",
+      "startLine": 392,
+      "endLine": 407,
+      "sha256": "e057201fa0b8fcd47ade4e07b20022e9ce551e04ed70608105ddf2fcb7d719c8",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211-source": {
+      "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-211-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "startLine": 211,
+      "endLine": 245,
+      "sha256": "98b5325ed11ce7e291157607298c9f06a593277dc2f172194da17abca26d4fb3",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456-source": {
+      "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-456-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "startLine": 456,
+      "endLine": 490,
+      "sha256": "7499541581ba5c1de641d865688f5d9e8cfd1c0b524fe423a8b9ba703191f198",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176-source": {
+      "id": "live-androidx-runtime-runtime-runtime-compositionlocal-lines-176-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/CompositionLocal.kt",
+      "startLine": 176,
+      "endLine": 210,
+      "sha256": "0ae62c0cecb5ba6ee5cfe9d699107e66df7ca662a29c72bc3e1802727f3678fd",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-ui-ui-ui-draw-drawmodifier-lines-141-source": {
+      "id": "live-androidx-ui-ui-ui-draw-drawmodifier-lines-141-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/DrawModifier.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/draw/DrawModifier.kt",
+      "startLine": 141,
+      "endLine": 175,
+      "sha256": "f4afca87ba43faf95f2516a4cdfeb2598c45dfa6c74ed3f35501bb9c98194a9c",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-ui-ui-ui-modifier-lines-211-source": {
+      "id": "live-androidx-ui-ui-ui-modifier-lines-211-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+      "startLine": 211,
+      "endLine": 245,
+      "sha256": "25f3fc88504466244d1928c843eccf39401e6110ee7e65692b77ce0e7407c899",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-layouts-custom-main-content-source": {
+      "id": "live-compose-guide-layouts-custom-main-content-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/layouts/custom#main-content",
+      "revision": "web:compose-guide-layouts-custom:content@sha256:9e25388e2aeb61a72ccb22f83037ede8460811f9c7366cf1244b81e2b2ff7991",
+      "sha256": "2aefa94014dd9213475337ee6504971b4c48775b6c37e2c2c0d73084c6e938a8",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-layouts-intrinsic-measurements-intrinsics-in-layouts-source": {
+      "id": "live-compose-guide-layouts-intrinsic-measurements-intrinsics-in-layouts-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements#intrinsics-in-layouts",
+      "revision": "web:compose-guide-layouts-intrinsic-measurements:content@sha256:68df20074691e6fa39f8d9f6edeee7818402033b6013471cec45cd0fd7c9a979",
+      "sha256": "650c950a97a9a56fb2a22188f58dd311443fafea4dea3658716e599aab4eb440",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-layouts-custom-create-custom-source": {
+      "id": "live-compose-guide-layouts-custom-create-custom-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/layouts/custom#create-custom",
+      "revision": "web:compose-guide-layouts-custom:content@sha256:9e25388e2aeb61a72ccb22f83037ede8460811f9c7366cf1244b81e2b2ff7991",
+      "sha256": "75de55fdef720d2dda853629ea8d307bfdb722bf84dbbf36188619b3859840bb",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-layouts-custom-layout-direction-source": {
+      "id": "live-compose-guide-layouts-custom-layout-direction-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/layouts/custom#layout-direction",
+      "revision": "web:compose-guide-layouts-custom:content@sha256:9e25388e2aeb61a72ccb22f83037ede8460811f9c7366cf1244b81e2b2ff7991",
+      "sha256": "07210a7e26d07cdcef3b1985695e7790e0f1c600baa96266304d53fbc5b81c76",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-ui-ui-ui-focus-focusrequester-lines-1-source": {
+      "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-1-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "startLine": 1,
+      "endLine": 35,
+      "sha256": "699698bbaaec4bafb608d9d932abeeb3990fdd4c92b6513537823ab818669a78",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-ui-ui-ui-focus-focusrequester-lines-36-source": {
+      "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-36-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "startLine": 36,
+      "endLine": 70,
+      "sha256": "a804a21e43edd5e6e63220a52a5588efa8dcfd56eb380d755e9a655129940837",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-accessibility-semantics-custom-actions-source": {
+      "id": "live-compose-guide-accessibility-semantics-custom-actions-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/semantics#custom-actions",
+      "revision": "web:compose-guide-accessibility-semantics:content@sha256:bb7df2e92e607b8649bc1c6d2f0238ce54eaa5b32510882fd419c0ddb31f80d6",
+      "sha256": "46db218637c4dad82d1a4c7e3cd93823491ab8f989f973f12282c2dca805eb95",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-accessibility-merging-clearing-clear-and-set-source": {
+      "id": "live-compose-guide-accessibility-merging-clearing-clear-and-set-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/merging-clearing#clear-and-set",
+      "revision": "web:compose-guide-accessibility-merging-clearing:content@sha256:7f067c2d606157ab33e4fb23583fa12671a50b8046b8e5f85126b3367877c50c",
+      "sha256": "c032c870313e34df5fe42ae171b1154ad74e4ad54b7fcc54873a8bba79aa01ad",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-accessibility-merging-clearing-clear-and-set-2-source": {
+      "id": "live-compose-guide-accessibility-merging-clearing-clear-and-set-2-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/merging-clearing#clear-and-set",
+      "revision": "web:compose-guide-accessibility-merging-clearing:content@sha256:7f067c2d606157ab33e4fb23583fa12671a50b8046b8e5f85126b3367877c50c",
+      "sha256": "f5bf216391466c9a1dd68d7a23442c42b26f2d36ffce79bfdaf544ec995c6af4",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-performance-stability-fix-enable-strong-skipping-source": {
+      "id": "live-compose-guide-performance-stability-fix-enable-strong-skipping-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/performance/stability/fix#enable-strong-skipping",
+      "revision": "web:compose-guide-performance-stability-fix:content@sha256:414509529224e4d72b1087716a12226489c5669ffe42edcddd41c111e58104ee",
+      "sha256": "7f07692d4bc3fc3818130df6ee0643c0c2fa52e660de2ed56db03819c68dc2ec",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-lifecycle-skipping-source": {
+      "id": "live-compose-guide-lifecycle-skipping-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/lifecycle#skipping",
+      "revision": "web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4",
+      "sha256": "1ccf4566f139f8b8d5db7cc6f50cd7b6d1df93d98334bedbc55627e1acb6070a",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-performance-stability-fix-annotate-stable-source": {
+      "id": "live-compose-guide-performance-stability-fix-annotate-stable-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/performance/stability/fix#annotate-stable",
+      "revision": "web:compose-guide-performance-stability-fix:content@sha256:414509529224e4d72b1087716a12226489c5669ffe42edcddd41c111e58104ee",
+      "sha256": "80dd9ace701a84effe51aefc0a41c9d1ecd1b1f7e624aa5677583fb8649d59f0",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-animation-value-based-animatable-source": {
+      "id": "live-compose-guide-animation-value-based-animatable-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/value-based#animatable",
+      "revision": "web:compose-guide-animation-value-based:content@sha256:710a628250ab278df97358f99cedf98db2fefad109909956223f98c3591c4591",
+      "sha256": "8a5bca8345a1403a72b85f69d5ff9aac12fa4abf62b3ad01f565c62322b36dd4",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 176,
+      "endLine": 210,
+      "sha256": "9b428a94859341e8801af1bc9d201fa249a36aee0ec74a6a773fe19546e2be03",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-state-saving-ui-logic-source": {
+      "id": "live-compose-guide-state-saving-ui-logic-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/state-saving#ui-logic",
+      "revision": "web:compose-guide-state-saving:content@sha256:838715f5e4e3a64e2f7697bee4c18d07fde02784b82c5cc5e2e32df06231d701",
+      "sha256": "ba153c5b9f9a6441fb6b34e782ff511269c6cebaf06adb6d242f9aef71744acc",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-state-saving-best-practice-source": {
+      "id": "live-compose-guide-state-saving-best-practice-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/state-saving#best_practice",
+      "revision": "web:compose-guide-state-saving:content@sha256:838715f5e4e3a64e2f7697bee4c18d07fde02784b82c5cc5e2e32df06231d701",
+      "sha256": "582c0d48c21d8466ac598fd323d78682df65f4df308725913b577e893c05141b",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-side-effects-derivedstateof-source": {
+      "id": "live-compose-guide-side-effects-derivedstateof-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/side-effects#derivedstateof",
+      "revision": "web:compose-guide-side-effects:content@sha256:838c4991c1f05c745dc4612e7cd37c2b621ee017632882a3589c7bdc0b819d33",
+      "sha256": "ac1e51c0f85003066b018412b42dc84894ab88eb541dc4b57f8dd2c884600156",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-side-effects-incorrect-usage-source": {
+      "id": "live-compose-guide-side-effects-incorrect-usage-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/side-effects#incorrect-usage",
+      "revision": "web:compose-guide-side-effects:content@sha256:838c4991c1f05c745dc4612e7cd37c2b621ee017632882a3589c7bdc0b819d33",
+      "sha256": "ee9290b80de8526f356fda22f7f0243a28b2de2604195629ced82cfc441923e9",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-performance-bestpractices-use-remember-source": {
+      "id": "live-compose-guide-performance-bestpractices-use-remember-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/performance/bestpractices#use-remember",
+      "revision": "web:compose-guide-performance-bestpractices:content@sha256:ad6d6b11b9339d90a88f85f03049651fe70e8b6a131986b10cfa29b82026ad91",
+      "sha256": "aca9be58876fbfc6c2721365613f5befe72f4ab114c27629872d52c5beb30fc1",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-api-guidelines-lines-357-source": {
+      "id": "live-compose-api-guidelines-lines-357-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/85adb4710d1b88293d5b912df1c6104e6fe38c41/compose/docs/compose-api-guidelines.md",
+      "revision": "85adb4710d1b88293d5b912df1c6104e6fe38c41",
+      "path": "compose/docs/compose-api-guidelines.md",
+      "startLine": 357,
+      "endLine": 391,
+      "sha256": "bc13048635b65a876960b25d4634ff269ae4a8c46bbec174e9528da6dfbcaf61",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-designsystems-custom-implementing-using-material-components-source": {
+      "id": "live-compose-designsystems-custom-implementing-using-material-components-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#implementing-using-material-components",
+      "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+      "sha256": "8cc042a09bb5fabc9a686468514cc4e531ca25553f5fd4a97a30cb8b9e14506a",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-custom-modifiers-node-element-source": {
+      "id": "live-compose-custom-modifiers-node-element-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#node-element",
+      "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+      "sha256": "0c2dcd43a17107daa18f53ddc4827b688661fd59287aba9718062a37773d4df0",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-layouts-intrinsic-measurements-main-content-source": {
+      "id": "live-compose-guide-layouts-intrinsic-measurements-main-content-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements#main-content",
+      "revision": "web:compose-guide-layouts-intrinsic-measurements:content@sha256:68df20074691e6fa39f8d9f6edeee7818402033b6013471cec45cd0fd7c9a979",
+      "sha256": "22a4e67efc7c07932bfaeebbb6f2e245989c62a740f23fce18d9cbb2152ef0e8",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-ui-ui-ui-focus-focusrequester-lines-71-source": {
+      "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-71-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/focus/FocusRequester.kt",
+      "startLine": 71,
+      "endLine": 105,
+      "sha256": "7a96a7518bfa8bc48c243a148368c75359aa9c2890875b23cc502068f9c7afa4",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-accessibility-semantics-custom-actions-2-source": {
+      "id": "live-compose-guide-accessibility-semantics-custom-actions-2-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/semantics#custom-actions",
+      "revision": "web:compose-guide-accessibility-semantics:content@sha256:bb7df2e92e607b8649bc1c6d2f0238ce54eaa5b32510882fd419c0ddb31f80d6",
+      "sha256": "f13de03ce81a6ab399239045ebe1104d8c520626678632e005cc404a089a8fe0",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-performance-stability-strongskipping-when-skip-source": {
+      "id": "live-compose-guide-performance-stability-strongskipping-when-skip-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/performance/stability/strongskipping#when-skip",
+      "revision": "web:compose-guide-performance-stability-strongskipping:content@sha256:5cdf171c66bc82d2d5adcd0d32a714b3f9ee2058ef9cbe3e417a1c3d9417bf43",
+      "sha256": "87253e4ef37c4559a1f612e7c5724d7c5ac98ef58c3e9415a553d1e9d14ad6b4",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-performance-stability-strongskipping-composable-skippability-source": {
+      "id": "live-compose-guide-performance-stability-strongskipping-composable-skippability-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/performance/stability/strongskipping#composable-skippability",
+      "revision": "web:compose-guide-performance-stability-strongskipping:content@sha256:5cdf171c66bc82d2d5adcd0d32a714b3f9ee2058ef9cbe3e417a1c3d9417bf43",
+      "sha256": "675f5877e3ae9bb6ec53cc5fad20e9e6e63660d46bba5fd3a84dbd819302e9a3",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-source": {
+      "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+      "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+      "sha256": "6e9c1bd62a8fc59e55667026a4dd155c4d7cc69c2cb9c3f255241973f5b61258",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2-source": {
+      "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+      "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+      "sha256": "a89b786812eb390aafd12afdf4c9cbfdf52bc86d10c4c1705224becd18ab0f21",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-testing-common-patterns-verify-state-source": {
+      "id": "live-compose-guide-testing-common-patterns-verify-state-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
+      "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+      "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    }
+  },
+  "routing": {
+    "failures": [],
+    "questions": [
+      {
+        "id": "rt07",
+        "status": "fresh",
+        "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+        "checkedAt": "2026-11-12T14:11:37.782Z",
+        "publishedAt": "2026-11-12T14:07:44Z",
+        "totalBytes": 10240,
+        "reads": 3,
+        "outputs": [
+          {
+            "file": "search-1.json",
+            "kind": "search",
+            "bytes": 2048,
+            "maxBytes": 2048,
+            "truncated": true,
+            "sha256": "d3654b286d379b5c8089202f2dd09d45dab04f6a576f333a806e037ef1977598",
+            "sources": []
+          },
+          {
+            "file": "read-1.json",
+            "kind": "read",
+            "id": "guide-minimum-touch-target-layout-space",
+            "bytes": 2091,
+            "maxBytes": 3072,
+            "truncated": false,
+            "sha256": "3488c7b003bc996ee72a6f5c48fe10d0aeaca065775e2b8da3dcbb54e6a7275a",
+            "sources": [
+              {
+                "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+                "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+                "sha256": "6e9c1bd62a8fc59e55667026a4dd155c4d7cc69c2cb9c3f255241973f5b61258",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              },
+              {
+                "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+                "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+                "sha256": "a89b786812eb390aafd12afdf4c9cbfdf52bc86d10c4c1705224becd18ab0f21",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              }
+            ]
+          },
+          {
+            "file": "read-2.json",
+            "kind": "read",
+            "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes",
+            "bytes": 3053,
+            "maxBytes": 3072,
+            "truncated": false,
+            "sha256": "d25596b1af2b72924ff334cadacc555a0a42630cb7cac6425d2dc3c4d7ec2cf1",
+            "sources": [
+              {
+                "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+                "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+                "sha256": "6e9c1bd62a8fc59e55667026a4dd155c4d7cc69c2cb9c3f255241973f5b61258",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              }
+            ]
+          },
+          {
+            "file": "read-3.json",
+            "kind": "read",
+            "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2",
+            "bytes": 3048,
+            "maxBytes": 3072,
+            "truncated": false,
+            "sha256": "708b1eac252f18ae1e47c6eaefdbbae4399a6656c23219d2e35aad623f47db65",
+            "sources": [
+              {
+                "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults#minimum-target-sizes",
+                "revision": "web:compose-guide-accessibility-api-defaults:content@sha256:17cdd5bb64f80d2236f8827ae9134a0da598ce633e418960fc78d0c6d92be726",
+                "sha256": "a89b786812eb390aafd12afdf4c9cbfdf52bc86d10c4c1705224becd18ab0f21",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rt13",
+        "status": "fresh",
+        "snapshot": "6237d0eba6a6d1f8bb38c115af3eefa0f7c7c348",
+        "checkedAt": "2026-11-12T14:11:43.495Z",
+        "publishedAt": "2026-11-12T14:07:44Z",
+        "totalBytes": 4149,
+        "reads": 2,
+        "outputs": [
+          {
+            "file": "search-1.json",
+            "kind": "search",
+            "bytes": 1136,
+            "maxBytes": 2048,
+            "truncated": false,
+            "sha256": "f7e29017fdc2be9951523c78c543abaf5044e9e9f7d82814e893f8f999b4bade",
+            "sources": []
+          },
+          {
+            "file": "read-1.json",
+            "kind": "read",
+            "id": "guide-test-saveable-state-restoration",
+            "bytes": 1388,
+            "maxBytes": 3072,
+            "truncated": false,
+            "sha256": "9854cd159a9b8e67a0a13fd6fffa17260aec66dad9e82243f00441686f6402f3",
+            "sources": [
+              {
+                "id": "live-compose-guide-testing-common-patterns-verify-state-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
+                "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+                "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              }
+            ]
+          },
+          {
+            "file": "read-2.json",
+            "kind": "read",
+            "id": "live-compose-guide-testing-common-patterns-verify-state",
+            "bytes": 1625,
+            "maxBytes": 3072,
+            "truncated": false,
+            "sha256": "c098736ed2f62ca1036d3ed94a400c0f522689615a4b07ae2ecc903146edf076",
+            "sources": [
+              {
+                "id": "live-compose-guide-testing-common-patterns-verify-state-source",
+                "kind": "guide",
+                "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
+                "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+                "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945",
+                "license": "Apache-2.0 (https://developer.android.com/license)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

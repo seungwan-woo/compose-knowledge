@@ -2799,6 +2799,97 @@
         "kotlinx.coroutines.coroutineScope",
         "kotlinx.coroutines.withTimeout"
       ]
+    },
+    {
+      "id": "compose-designsystems-custom",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/designsystems/custom",
+      "title": "Custom design systems in Compose",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.CompositionLocalProvider",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.runtime.CompositionLocalProvider",
+        "androidx.compose.runtime.staticCompositionLocalOf"
+      ]
+    },
+    {
+      "id": "compose-custom-modifiers",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/custom-modifiers",
+      "title": "Create custom modifiers",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.Modifier.Node",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.Modifier.Node",
+        "androidx.compose.ui.node.ModifierNodeElement",
+        "androidx.compose.ui.node.CompositionLocalConsumerModifierNode"
+      ]
+    },
+    {
+      "id": "compose-handling-interactions",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions",
+      "title": "Handling user interactions",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.interaction.MutableInteractionSource",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.foundation.interaction.MutableInteractionSource",
+        "androidx.compose.foundation.interaction.PressInteraction.Press",
+        "androidx.compose.foundation.interaction.PressInteraction.Release",
+        "androidx.compose.foundation.interaction.PressInteraction.Cancel",
+        "androidx.compose.foundation.Indication"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-suspend-animation",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+      "title": "Suspend animation source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core.AnimationState",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+      "symbols": [
+        "androidx.compose.animation.core.AnimationState",
+        "androidx.compose.animation.core.animateTo",
+        "androidx.compose.animation.core.animateDecay"
+      ]
+    },
+    {
+      "id": "androidx-runtime-monotonic-frame-clock",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+      "title": "MonotonicFrameClock source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.MonotonicFrameClock",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+      "symbols": [
+        "androidx.compose.runtime.MonotonicFrameClock",
+        "androidx.compose.runtime.withFrameNanos"
+      ]
+    },
+    {
+      "id": "androidx-runtime-stable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
+      "title": "Stable annotation source",
+      "artifact": "androidx.compose.runtime:runtime-annotation",
+      "fqn": "androidx.compose.runtime.Stable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
+      "symbols": [
+        "androidx.compose.runtime.Stable"
+      ]
     }
   ]
 }

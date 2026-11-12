@@ -1104,6 +1104,409 @@
       ]
     },
     {
+      "id": "guide-component-modifier-parameter-contract",
+      "title": "Expose one modifier as the first optional parameter",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.Modifier",
+      "body": "Guidance: A reusable Compose UI element should accept one Modifier parameter named modifier as its first optional parameter. Keep required data and event parameters before it, and avoid multiple Modifier parameters on the element API. Review this public signature separately from internal modifier ordering. Limitation: this guideline addresses Compose UI element functions; it does not establish the API contract of every helper composable.",
+      "aliases": [
+        "Modifier",
+        "component API",
+        "first optional parameter",
+        "element signature"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-api-guidelines-lines-357",
+          "sha256": "bc13048635b65a876960b25d4634ff269ae4a8c46bbec174e9528da6dfbcaf61"
+        }
+      ]
+    },
+    {
+      "id": "guide-compositionlocal-tree-scope-defaults",
+      "title": "Reserve CompositionLocal for tree-scoped dependencies with usable defaults",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.CompositionLocal",
+      "body": "Guidance: Use CompositionLocal for dependencies that can reasonably be needed by any descendant of a UI subtree, such as design-system context. Give the local a useful default; if no default is possible, make omission of its provider exceedingly difficult. This keeps previews and focused component tests practical. Pass a component only the state and events it needs instead of hiding a screen ViewModel in a local. Limitation: convenient access alone does not justify a local when only a few descendants need the dependency.",
+      "aliases": [
+        "CompositionLocal",
+        "theme dependency",
+        "preview defaults",
+        "parameter versus CompositionLocal",
+        "ViewModel implicit dependency"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-compositionlocal-deciding",
+          "sha256": "5e4a535f41aaaf869bfa6f0cd11be08a93fb345640011fac32c873315ed256ca"
+        }
+      ]
+    },
+    {
+      "id": "guide-theme-local-invalidation-policy",
+      "title": "Choose local creation by change frequency and invalidation scope",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.compositionLocalOf",
+      "body": "Guidance: compositionLocalOf tracks current-value reads; changing its provided value invalidates those readers. staticCompositionLocalOf does not track those reads; changing its provided value recomposes the entire provider content. Prefer staticCompositionLocalOf for values highly unlikely to change, and account for broader invalidation when that assumption changes. Limitation: static is not a general optimization for every theme value; choose using the actual provider update behavior.",
+      "aliases": [
+        "compositionLocalOf",
+        "staticCompositionLocalOf",
+        "theme invalidation",
+        "dynamic theme",
+        "CompositionLocal performance"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-compositionlocal-creating-apis",
+          "sha256": "517747f3caa251cb41f5a34fbba3215e82a5dcbcce60a1823e2ad44acf807aeb"
+        }
+      ]
+    },
+    {
+      "id": "guide-designsystem-theme-extension-boundary",
+      "title": "Choose an explicit boundary for extending or replacing a theme",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.MaterialTheme",
+      "body": "Guidance: Choose whether a custom design system extends MaterialTheme with additional values, replaces selected color, typography, or shape systems while retaining others, or replaces MaterialTheme entirely. Document that boundary before reviewing reused Material components, because their integration depends on the chosen approach. Limitation: these are supported design-system alternatives, not a requirement that a custom system adopt Material tokens or component behavior.",
+      "aliases": [
+        "custom design system",
+        "custom theme",
+        "extend MaterialTheme",
+        "replace typography",
+        "theme boundary"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-designsystems-custom-main-content",
+          "sha256": "6aedd70d9bdfa0cd93643af16d3871bc754376bf6879b07dd5a13aac72bfd1cc"
+        }
+      ]
+    },
+    {
+      "id": "guide-designsystem-component-default-adapters",
+      "title": "Adapt component defaults to the active custom theme",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.Button",
+      "body": "Guidance: When reusing Material components without MaterialTheme, wrap them and explicitly supply the custom color, typography, shape, and other system values they need; expose other intended options as parameters. Prefer values from the custom theme. The guide example passes custom colors and shape to Button and supplies its content typography with ProvideTextStyle. Limitation: a custom theme accessor alone does not redirect Material defaults. New value types such as gradients may make a fresh component implementation more suitable than a wrapper.",
+      "aliases": [
+        "component defaults",
+        "theme tokens",
+        "custom Button wrapper",
+        "theme adapter",
+        "custom typography"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-designsystems-custom-implementing-using-material-components",
+          "sha256": "8cc042a09bb5fabc9a686468514cc4e531ca25553f5fd4a97a30cb8b9e14506a"
+        }
+      ]
+    },
+    {
+      "id": "guide-component-interaction-source-ownership",
+      "title": "Share interaction ownership and pair press completion events",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.interaction.MutableInteractionSource",
+      "body": "Guidance: If component input, observers, and a custom indication need one interaction stream, route them through the same MutableInteractionSource. A custom IndicationNodeFactory receives an InteractionSource, and clickable can integrate the indication. When manually producing press events, retain the original Press and reference it from the matching Release or Cancel; completion events identify their starting interaction. Limitation: low-level interactions do not interpret a click action. The guide also permits a null source when callers do not need an exposed stream.",
+      "aliases": [
+        "MutableInteractionSource",
+        "shared interaction source",
+        "PressInteraction.Press",
+        "PressInteraction.Release",
+        "PressInteraction.Cancel",
+        "custom indication",
+        "ripple interaction ownership"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-handling-interactions-interactions",
+          "sha256": "db1dbb97508fd410a93e1087c748e7535fd248be515f9d5c73ec2a3fd5ce9791"
+        },
+        {
+          "id": "live-compose-handling-interactions-replace-effect-2",
+          "sha256": "918df5865896585680b4ce197b28f44c6d4076aea657e6cc2a46ccf1857460aa"
+        }
+      ]
+    },
+    {
+      "id": "guide-modifier-node-element-update-contract",
+      "title": "Keep ModifierNodeElement updates consistent with node reuse",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.node.ModifierNodeElement",
+      "body": "Guidance: Keep ModifierNodeElement immutable and use it to create or update a reusable modifier node. create instantiates the node when the modifier is first applied. When the element changes at the same position, update must copy the current inputs into the existing node rather than create another node. Implement equals and hashCode consistently: update is triggered when equality with the previous element is false. Limitation: checking this configuration contract does not verify attachment, detachment, or resource cleanup behavior.",
+      "aliases": [
+        "Modifier.Node",
+        "ModifierNodeElement",
+        "node update",
+        "modifier equality",
+        "custom modifier lifecycle"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-custom-modifiers-node-element",
+          "sha256": "0c2dcd43a17107daa18f53ddc4827b688661fd59287aba9718062a37773d4df0"
+        }
+      ]
+    },
+    {
+      "id": "guide-custom-layout-measure-once",
+      "title": "Measure children once within incoming constraints",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout.Layout",
+      "body": "Guidance: In a custom Layout, use the parent's minimum and maximum width and height constraints when choosing the layout size. Measure children, decide the parent size, then place the measured children. Measure each child only once; measuring twice throws a runtime exception. If sizing needs information before measurement, query intrinsics rather than measuring a child a second time. Limitation: this describes ordinary Compose layout; it does not specify a custom layout's constraint propagation or intrinsic formula.",
+      "aliases": [
+        "androidx.compose.ui.layout.Layout",
+        "androidx.compose.ui.layout.MeasureScope",
+        "androidx.compose.ui.unit.Constraints",
+        "custom layout",
+        "constraints",
+        "measure once",
+        "measurement"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-layouts-custom-main-content",
+          "sha256": "2aefa94014dd9213475337ee6504971b4c48775b6c37e2c2c0d73084c6e938a8"
+        },
+        {
+          "id": "live-compose-guide-layouts-intrinsic-measurements-main-content",
+          "sha256": "22a4e67efc7c07932bfaeebbb6f2e245989c62a740f23fce18d9cbb2152ef0e8"
+        }
+      ]
+    },
+    {
+      "id": "guide-custom-layout-intrinsic-contract",
+      "title": "Match custom intrinsic measurements to the measure policy",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout.MeasurePolicy",
+      "body": "Guidance: A custom Layout or layout modifier gets approximate intrinsic measurements by default; those approximations can be wrong for its layout algorithm. Override minIntrinsicWidth, minIntrinsicHeight, maxIntrinsicWidth, or maxIntrinsicHeight on MeasurePolicy when needed, keeping each answer consistent with measure. For a column that gives every child the full width, minimum intrinsic height for that width is the sum of child minimum intrinsic heights. Limitation: the column formula is not a general formula for other layouts.",
+      "aliases": [
+        "androidx.compose.ui.layout.MeasurePolicy",
+        "androidx.compose.ui.layout.MeasurePolicy.minIntrinsicHeight",
+        "androidx.compose.ui.layout.MeasurePolicy.minIntrinsicWidth",
+        "custom layout",
+        "intrinsic measurements",
+        "intrinsics"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-layouts-intrinsic-measurements-intrinsics-in-layouts",
+          "sha256": "650c950a97a9a56fb2a22188f58dd311443fafea4dea3658716e599aab4eb440"
+        }
+      ]
+    },
+    {
+      "id": "guide-custom-layout-rtl-placement",
+      "title": "Choose relative or absolute placement deliberately for RTL",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.layout.Placeable.PlacementScope.placeRelative",
+      "body": "Guidance: For manual placement in a Layout or layout modifier, MeasureScope.layoutDirection exposes the current direction. placeRelative changes placement with left-to-right versus right-to-left direction; place uses absolute coordinates. When calculating direction-dependent coordinates yourself, use place so placement does not apply another direction-dependent change. LocalLayoutDirection can change the direction of a composable. Limitation: this guidance does not define a component's visual mirroring policy; check both directions for its intended arrangement.",
+      "aliases": [
+        "androidx.compose.ui.layout.Placeable.PlacementScope.placeRelative",
+        "androidx.compose.ui.layout.Placeable.PlacementScope.place",
+        "androidx.compose.ui.unit.LayoutDirection",
+        "androidx.compose.ui.platform.LocalLayoutDirection",
+        "RTL",
+        "layout direction",
+        "manual placement"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-layouts-custom-layout-direction",
+          "sha256": "07210a7e26d07cdcef3b1985695e7790e0f1c600baa96266304d53fbc5b81c76"
+        }
+      ]
+    },
+    {
+      "id": "guide-minimum-touch-target-layout-space",
+      "title": "Reserve layout space for minimum touch targets",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout.sizeIn",
+      "body": "Guidance: Give interactive elements a minimum 48 dp size for the Material accessibility guideline, for example Modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp). Compose can expand a small clickable element's touch target outside its visible bounds; allocate enough layout space to avoid overlapping neighboring touch areas. Material 3 minimumInteractiveComponentSize reserves layout space for a smaller visual element; it does not itself expand the touch target. Limitation: a preceding size modifier can limit the reserved space; verify the final hit areas in the consuming layout.",
+      "aliases": [
+        "androidx.compose.foundation.layout.sizeIn",
+        "androidx.compose.material3.minimumInteractiveComponentSize",
+        "minimum touch target",
+        "48 dp",
+        "touch target overlap",
+        "accessibility"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes",
+          "sha256": "6e9c1bd62a8fc59e55667026a4dd155c4d7cc69c2cb9c3f255241973f5b61258"
+        },
+        {
+          "id": "live-compose-guide-accessibility-api-defaults-minimum-target-sizes-2",
+          "sha256": "a89b786812eb390aafd12afdf4c9cbfdf52bc86d10c4c1705224becd18ab0f21"
+        }
+      ]
+    },
+    {
+      "id": "guide-focus-request-lifecycle",
+      "title": "Remember and connect a focus requester before requesting focus",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.focus.FocusRequester",
+      "body": "Guidance: Remember a FocusRequester and connect it through Modifier.focusRequester. Request focus in response to an event rather than directly during composition. In the captured source, requestFocus(focusDirection = FocusDirection.Enter) returns a Boolean reporting success or cancellation; a request does not guarantee that focus moved. Limitation: check the overload available in the resolved project version. These excerpts do not establish software keyboard visibility, accessibility focus, or custom-control modifier ordering.",
+      "aliases": [
+        "androidx.compose.ui.focus.FocusRequester",
+        "androidx.compose.ui.focus.FocusRequester.requestFocus",
+        "androidx.compose.ui.focus.focusRequester",
+        "keyboard focus",
+        "request focus",
+        "focus initialization"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-1",
+          "sha256": "699698bbaaec4bafb608d9d932abeeb3990fdd4c92b6513537823ab818669a78"
+        },
+        {
+          "id": "live-androidx-ui-ui-ui-focus-focusrequester-lines-71",
+          "sha256": "7a96a7518bfa8bc48c243a148368c75359aa9c2890875b23cc502068f9c7afa4"
+        }
+      ]
+    },
+    {
+      "id": "guide-custom-accessibility-actions",
+      "title": "Expose complex gestures as labeled accessibility actions",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.semantics.CustomAccessibilityAction",
+      "body": "Guidance: Expose a complex gesture such as swipe to dismiss through semantics.customActions with a descriptive CustomAccessibilityAction label and the same operation in its action callback. Custom actions can also move repeated child operations into a container's action menu. When moving those operations, clear the original child semantics to avoid keeping duplicate traversal targets. Limitation: only clear child semantics when their actions have been represented on the container; verify the resulting action menu and traversal with assistive technology.",
+      "aliases": [
+        "androidx.compose.ui.semantics.CustomAccessibilityAction",
+        "androidx.compose.ui.semantics.customActions",
+        "androidx.compose.ui.semantics.semantics",
+        "custom accessibility actions",
+        "swipe to dismiss",
+        "Switch Access",
+        "TalkBack"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-accessibility-semantics-custom-actions",
+          "sha256": "46db218637c4dad82d1a4c7e3cd93823491ab8f989f973f12282c2dca805eb95"
+        },
+        {
+          "id": "live-compose-guide-accessibility-semantics-custom-actions-2",
+          "sha256": "f13de03ce81a6ab399239045ebe1104d8c520626678632e005cc404a089a8fe0"
+        }
+      ]
+    },
+    {
+      "id": "guide-finite-animation-frame-clock",
+      "title": "Supply the frame clock used by finite animation dispatch",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "body": "Guidance: Finite animation frame dispatch calls withFrameNanos. That function uses the calling CoroutineContext's MonotonicFrameClock and throws IllegalStateException if the clock is absent. Keep frame-driven UI animation in a context that supplies the appropriate local frame clock. Limitation: a dispatcher selects where work runs; it does not by itself supply this frame clock. This is a requirement of the frame-dispatch path, not of every suspend function.",
+      "aliases": [
+        "androidx.compose.runtime.withFrameNanos",
+        "androidx.compose.runtime.MonotonicFrameClock",
+        "androidx.compose.animation.core.Animatable",
+        "animation missing MonotonicFrameClock",
+        "finite animation caller context"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-animation-animation-core-suspend-animation-lines-281",
+          "sha256": "def4fe122e6f8ef73a753bf457aef88e064bcbae541a067b38cf1778155f8641"
+        },
+        {
+          "id": "live-androidx-runtime-monotonic-frame-clock-lines-71",
+          "sha256": "e371aa0f6a594cce577a10860d6f2333ed2606c320708480be389d593f325919"
+        }
+      ]
+    },
+    {
+      "id": "guide-stable-annotation-contract",
+      "title": "Honor the Stable annotation contract before overriding inference",
+      "artifact": "androidx.compose.runtime:runtime-annotation",
+      "fqn": "androidx.compose.runtime.Stable",
+      "body": "Guidance: Annotate a class or interface @Stable only when equals gives a consistent result for the same two instances, composition is notified when a public property changes, and all public property types are stable. The annotation communicates guarantees to the compiler; it does not implement change notification. Limitation: violating these assumptions has undefined behavior. Overriding stability inference can suppress expected recomposition, and annotating collection-heavy models can replace cheap identity checks with expensive structural equals checks under strong skipping.",
+      "aliases": [
+        "androidx.compose.runtime.Stable",
+        "androidx.compose.runtime.Immutable",
+        "Stable annotation contract",
+        "stability inference override",
+        "mutable property notification",
+        "collections equals performance"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-runtime-stable-lines-1",
+          "sha256": "b9e680e664cf1e8c89edb50fe44f7d41d778b4f3d426427ec4aca86bab7b9157"
+        },
+        {
+          "id": "live-compose-guide-performance-stability-fix-annotate-stable",
+          "sha256": "80dd9ace701a84effe51aefc0a41c9d1ecd1b1f7e624aa5677583fb8649d59f0"
+        }
+      ]
+    },
+    {
+      "id": "guide-strong-skipping-parameter-equality",
+      "title": "Account for identity and object equality under strong skipping",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: With strong skipping enabled, restartable composables can be skipped even when parameters are unstable. Compose compares unstable parameters by instance equality (===) and stable parameters by Object.equals(); unchanged parameters allow skipping. Limitation: do not assume that equal field values make two newly allocated unstable instances equal for skipping. Non-restartable composables remain unskippable. Check the project's actual compiler configuration before applying this behavior; the application's compiler version and settings are unknown here.",
+      "aliases": [
+        "strong skipping",
+        "unstable parameter instance equality",
+        "stable parameter equals",
+        "restartable composable",
+        "new model instance recomposition"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-stability-strongskipping-when-skip",
+          "sha256": "87253e4ef37c4559a1f612e7c5724d7c5ac98ef58c3e9415a553d1e9d14ad6b4"
+        },
+        {
+          "id": "live-compose-guide-performance-stability-strongskipping-composable-skippability",
+          "sha256": "675f5877e3ae9bb6ec53cc5fad20e9e6e63660d46bba5fd3a84dbd819302e9a3"
+        }
+      ]
+    },
+    {
+      "id": "guide-expensive-composition-work",
+      "title": "Cache expensive calculations using their actual inputs",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.remember",
+      "body": "Guidance: Cache an expensive repeatable calculation with remember and key it by the inputs used, for example remember(contacts, comparator) { contacts.sortedWith(comparator) }. The calculation runs initially and is regenerated when those inputs change. remember stores its keys and compares them using Object.equals() on recomposition. Limitation: caching is useful for costly calculations, heavy allocations, or required object identity; it is not free work and does not make the initial calculation asynchronous.",
+      "aliases": [
+        "androidx.compose.runtime.remember",
+        "expensive composable calculation",
+        "remember calculation keys",
+        "remember key equals cost",
+        "cache list sorting"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-bestpractices-use-remember",
+          "sha256": "aca9be58876fbfc6c2721365613f5befe72f4ab114c27629872d52c5beb30fc1"
+        }
+      ]
+    },
+    {
+      "id": "guide-test-saveable-state-restoration",
+      "title": "Exercise saveable state restoration with StateRestorationTester",
+      "artifact": "androidx.compose.ui:ui-test-junit4",
+      "fqn": "androidx.compose.ui.test.junit4.StateRestorationTester",
+      "body": "Guidance: Wrap the test content in StateRestorationTester(composeTestRule).setContent, perform actions that change saveable UI state, call emulateSavedInstanceStateRestore(), and assert that the state was restored. This targets rememberSaveable restoration without requiring activity recreation. Limitation: the tester simulates recreation of a composable; this check alone does not establish that the entire activity or application survives actual process recreation.",
+      "aliases": [
+        "androidx.compose.ui.test.junit4.StateRestorationTester",
+        "androidx.compose.ui.test.junit4.StateRestorationTester.emulateSavedInstanceStateRestore",
+        "androidx.compose.runtime.saveable.rememberSaveable",
+        "test saved UI state",
+        "verify state restoration"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-testing-common-patterns-verify-state",
+          "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945"
+        }
+      ]
+    },
+    {
       "id": "guide-lazy-content-type-reuse",
       "title": "Reuse lazy compositions within the same content type",
       "artifact": "androidx.compose.foundation:foundation",

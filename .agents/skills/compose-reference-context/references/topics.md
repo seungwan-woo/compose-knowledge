@@ -2,6 +2,8 @@
 
 This is a routing table, not API evidence. Choose only the relevant row, then search the pinned corpus. Artifacts and symbols do not imply version compatibility. If a symbol has no hit, use the query terms without `--symbol`; preserve the actual artifact/version context. Full knowledge remains outside the prompt.
 
+For reusable component libraries, use the matching row in [component routes](components.md) for API design, theming, measurement, input, or performance contracts.
+
 | Topic | Artifact | Symbol or English query |
 | --- | --- | --- |
 | State and recomposition | `androidx.compose.runtime:runtime` | `androidx.compose.runtime.derivedStateOf`; `state hoisting` |

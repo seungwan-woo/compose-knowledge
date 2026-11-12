@@ -50,7 +50,7 @@ In a checkout, explicitly invoke `.agents/skills/compose-reference-context/SKILL
 
 ```sh
 npm run bundle
-node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.2.tar.gz /YOUR/SKILLS/DIRECTORY
+node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.3.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
 The usual user skills directory is `~/.agents/skills`. The installer verifies the SHA256 sidecar and refuses to overwrite an existing skill. Transfer bundle and checksum together through a trusted channel. The checksum verifies transfer integrity; it does not replace a publisher signature.
@@ -75,6 +75,7 @@ Evaluation output never overwrites existing results. The 20 questions were fixed
 - [Daily collection validation](docs/reports/daily-refresh.md), [installed skill and publication integration tests](docs/reports/daily-acceptance.md), [independent review](docs/reports/daily-review.md)
 - [Expanded corpus validation](docs/reports/coverage-expansion.md), [installed skill before/after comparison](docs/reports/coverage-usability.md), [independent review of 29 guidance cards](docs/reports/guidance-review.md)
 - [Animation and coroutine expansion](docs/reports/animation-coroutine-expansion.md)
+- [Component knowledge audit and remaining gaps](docs/reports/component-knowledge-audit.md)
 - [Sync-first validation](docs/reports/sync-first-verification.md), [local MCP, SQLite, and graph/RDF comparison](docs/reports/local-retrieval-tradeoffs.md)
 - [Parallel implementation plan](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
 
@@ -84,14 +85,14 @@ Evaluation output never overwrites existing results. The 20 questions were fixed
 
 `Daily public corpus refresh` runs daily at **23:00 UTC the previous day / 08:00 KST**. GitHub scheduled runs can be delayed and become active after the workflow merges into the default branch. GitHub may disable schedules in public repositories after prolonged inactivity.
 
-1. Fetch the **162 documents/sources** in [collection configuration](config/crawl.json), and separately monitor 1 dynamic Material 3 site. Collected source bodies and code are stored in corpus, beyond links alone.
+1. Fetch the **168 documents/sources** in [collection configuration](config/crawl.json), and separately monitor 1 dynamic Material 3 site. Collected source bodies and code are stored in corpus, beyond links alone.
 2. Preserve text, provenance, hashes, and version status; build a new snapshot alongside existing version-specific evidence. Report added, updated, and removed section IDs.
 3. A separate publication job updates the `corpus` branch only with validated data. No changes means no commit. Required collection failure, an invalid snapshot, or a concurrent publication after collection preserves existing data.
 
 | Target | Automatic collection scope |
 | --- | --- |
-| 69 official Android guides | Bodies and code examples for state, effects, saving, layouts, Modifier, lists, Pager, input, gestures, text, graphics, animation, accessibility, performance, testing, Material3, and adaptive UI |
-| 91 AndroidX sources/guides | Representative runtime, runtime-saveable, ui, ui-text, ui-graphics, ui-unit, foundation, foundation-layout, animation, animation-core, material, material3, and lifecycle-runtime-compose sources and API guidelines at exact Git commits |
+| 72 official Android guides | Bodies and code examples for state, effects, saving, layouts, Modifier, lists, Pager, input, gestures, text, graphics, animation, accessibility, performance, testing, Material3, and adaptive UI |
+| 94 AndroidX sources/guides | Representative runtime, runtime-saveable, ui, ui-text, ui-graphics, ui-unit, foundation, foundation-layout, animation, animation-core, material, material3, and lifecycle-runtime-compose sources and API guidelines at exact Git commits |
 | compose-samples | `README.md` at an exact Git commit |
 | Kotlin coroutines | Official cancellation guide at an exact Git commit |
 | Material 3 Compose guide | HTTP response/hash monitoring only; Angular body **not collected** |
@@ -133,10 +134,12 @@ Background click delivery on Android devices and Codex execution on corporate PC
 
 Daily collection does not call generative AI APIs. Extracting official documentation/Kotlin source bodies and building sections, provenance, hashes, version status, and search indexes is reproducible in code. `corpus/knowledge/*.md` stores actual text and code; `index/sections.json` stores the same content and retrieval metadata.
 
-Above the sources sit [49 concise topic guidance cards](config/curated-guidance.json), organized with AI and independently checked against original sources. Each body is at most 1,000 UTF-8 bytes and links to 1–2 evidence sections by ID and body hash. Search results mark them `Guidance:`; use `relatedIds` to read only needed sources. The bundle also includes [topic retrieval guidance](.agents/skills/compose-reference-context/references/topics.md).
+Above the sources sit [67 concise topic guidance cards](config/curated-guidance.json), organized with AI and independently checked against original sources. Each body is at most 1,000 UTF-8 bytes and links to 1–2 evidence sections by ID and body hash. Search results mark them `Guidance:`; use `relatedIds` to read only needed sources. The bundle also includes [topic retrieval guidance](.agents/skills/compose-reference-context/references/topics.md).
 
 The two [lazy-layout additions](docs/reports/lazy-layout-guidance.md) are authored configuration; consumers receive them only after merge and a successful corpus publication.
 
 During daily collection, changed or missing evidence automatically omits its guidance and reports `needs-review`. Original sources remain available. An LLM does not rewrite guidance daily; register the [Dot/scheduled-agent curation instructions](docs/dot-curation.md) separately to review only changed items through revision PRs. Repository changes alone do not create a Dot schedule.
 
 The animation/coroutine expansion adds 18 focused cards: Animatable sequencing, concurrency, interruption, stop/snap, fling velocity, gesture handoff, animation test clocks, event-driven scopes, frame-clock context, lifecycle-aware Flow, snapshotFlow purity, effect inputs, caller-owned suspend work, and cancellation. They use the same evidence hashes, one-hop links, and retrieval budgets. The 0.3.2 bundle adds routing rows for these topics; corpus sync alone does not update an installed topic table.
+
+The component knowledge audit adds 18 source-bound decisions for public APIs, custom themes, composition locals, modifier nodes, interaction streams, measurement/intrinsics/RTL, touch targets, focus, accessibility actions, stability, frame clocks, calculation caching, and saved-state tests. The 0.3.3 bundle includes a separate [component routing table](.agents/skills/compose-reference-context/references/components.md), loaded only for relevant tasks. The audit records unfilled knowledge and retrieval gaps separately.
