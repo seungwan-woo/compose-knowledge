@@ -9,7 +9,6 @@ const root = resolve(import.meta.dirname, '..');
 const output = resolve(process.argv[2] || join(root, '.cache/distribution'));
 let temp;
 try {
-  execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe' });
   const pkg = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
   await mkdir(output, { recursive: true });
   temp = await mkdtemp(join(tmpdir(), 'compose-bundle-'));
@@ -17,7 +16,8 @@ try {
   await cp(join(root, '.agents/skills/compose-reference-context'), skill, { recursive: true });
   const runtime = join(skill, 'runtime');
   await mkdir(join(runtime, 'node_modules'), { recursive: true });
-  await cp(join(root, 'dist'), join(runtime, 'dist'), { recursive: true });
+  // Compile into this bundle's private staging tree; concurrent CLI readers use dist/.
+  execFileSync('npm', ['run', 'build', '--', '--outDir', join(runtime, 'dist')], { cwd: root, stdio: 'pipe' });
   await cp(join(root, 'node_modules/yaml'), join(runtime, 'node_modules/yaml'), { recursive: true });
   await writeFile(join(runtime, 'package.json'), JSON.stringify({ name: pkg.name, version: pkg.version, private: true, type: 'module', engines: pkg.engines }) + '\n');
   await mkdir(join(skill, 'references'), { recursive: true });

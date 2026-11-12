@@ -12,7 +12,6 @@ const git = (cwd: string, ...args: string[]) => execFileSync('git', args, { cwd,
 let cache: string, snapshot: string, id: string;
 
 beforeAll(() => {
-  execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe' });
   tmp = mkdtempSync(join(tmpdir(), 'compose-cli-'));
 });
 afterAll(() => { if (tmp) rmSync(tmp, { recursive: true, force: true }); });

@@ -1,4 +1,4 @@
-import { afterEach, beforeAll, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 import { spawn, spawnSync } from 'node:child_process';
 import { cp, mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -58,10 +58,6 @@ async function rebuildRemote(f: Awaited<ReturnType<typeof fixture>>) {
   await cp(stage, f.repo, { recursive: true });
 }
 const queryArgs = ['--artifact', 'androidx.compose.ui:ui', '--version', '1.7.8', '--platform', 'android'];
-beforeAll(() => {
-  const result = syncCommand(['npm', 'run', 'build']);
-  expect(result.code, result.stderr + result.stdout).toBe(0);
-}, 30000);
 afterEach(async () => { await Promise.all(roots.splice(0).map((dir) => rm(dir, { recursive: true, force: true }))); });
 
 describe('independent executable acceptance', () => {

@@ -70,6 +70,7 @@ node scripts/evaluate.mjs .cache/evaluation-NEW
 - [사용자 제공 수집 대상](config/sources.json)과 [접근 진단](docs/reports/source-access.md)
 - [스킬 없는 소비자 테스트](docs/reports/skill-baseline.md)
 - [스킬 사용성 테스트](docs/reports/skill-usability.md)
+- [일일 수집 검증](docs/reports/daily-refresh.md), [설치 스킬·발행 통합 테스트](docs/reports/daily-acceptance.md), [독립 리뷰](docs/reports/daily-review.md)
 - [병렬 실행 계획](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
 
 `Source.sha256`은 보존한 발췌의 UTF-8 해시입니다. upstream 파일·아카이브 해시는 `tests/fixtures/upstream/provenance.json`에 별도로 보존하고 공식 체크섬과 대조했습니다. 생성 corpus에는 원문 출처·저작권 표기와 Apache 라이선스가 포함됩니다.
