@@ -156,7 +156,7 @@ Observed strengths:
 - The skill was discoverable from its installed absolute path. The launcher help worked from outside the checkout on Node 24; actual sync/search/read also worked there. This exercises portability of the installed launch path, although the local demonstration remote still resides within the checkout.
 - Artifact + FQN search supplied useful direct hits and one-hop links. One search and three complete reads per task were sufficient for the implementation and the cautious review.
 - Provenance included concrete source archive URL, archive-relative path, lines, artifact revision and digest. Unknown project versions remained visible instead of becoming implicit matches.
-- The skill's separation of dismissal, caller state and touch routing materially changed the review: the claim was not accepted based solely on a callback property, and potential focusability changes were identified.
+- The consumer's review distinguished dismissal, caller state and touch routing: it rejected the claim based solely on a callback property and identified potential focusability changes. The no-skill baseline also produced a cautious answer, so this does not establish an improvement caused by the skill.
 
 Observed friction and limits:
 

@@ -59,3 +59,7 @@ Dismissal and background delivery remain separate claims. The Android source com
 ## Setup and unmeasured work
 
 The evaluator measured compiler build 1,521 ms, corpus build 106 ms, initial local-remote sync 312 ms, unchanged incremental sync 243 ms and baseline text preparation 3 ms. Changed-data incremental sync latency and first installation latency were not measured by this evaluator. No Codex token counts or model-quality claims are inferred from CLI bytes. Authenticated `codex exec`, corporate-PC installation, a real crawler integration, a live GitHub publish, and Android device pass-through behavior remain separate evidence gates.
+
+## Release verification after final review fixes
+
+The controller reran typecheck, build, the full46-test suite, and the unchanged frozen evaluator after commit db40cd6. All passed. `.cache/evaluation-release` retains snapshot cb6182b2804b6f6afc8c983d93074d705bec7200 with the same18/20 primary,20/20 diagnostic, zero version errors/budget violations and11633-byte primary maximum. The two known unknown-release misses remain q18/q19. No gold or ranking changes were made for the fixes. The joint-mismatch acceptance read now explicitly requests comparison, preserving its conjunction assertion under the consistent read gate.

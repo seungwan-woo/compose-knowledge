@@ -92,7 +92,7 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 - [x] Run a fresh-context no-skill baseline before writing the skill. Author skill for observed gaps, with version resolution, one sync per task, explicit offline state, pinned SHA, 3-read/12288-byte accounting and sourced conclusions.
 - [x] Fresh consumer invokes the installed skill for implementation and review; retain tool command transcripts and bounded output. Attempt authenticated `codex exec --json` when runtime permits and report precise limitations.
 - [x] Add CI and manual refresh workflow with explicit external-crawler gate; never activate daily publication for fixture-only build.
-- [ ] Obtain independent task review, fix findings, and commit scoped changes.
+- [x] Obtain independent task review, fix findings, and commit scoped changes.
 
 ### Task 6: Independent acceptance, final review and environment handoff
 
@@ -102,6 +102,10 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 - [x] Independently run clean install/build/tests, two deterministic corpus builds, sync/fallback/concurrency and clean-bundle install.
 - [x] Run 20-question top3 and top5 evaluation; record all outcomes, source validity, byte counts and p50/p95 separately from sync.
-- [ ] Whole-branch reviewer reports separate compliance and quality verdicts; fix important findings and reverify affected behavior.
+- [x] Whole-branch reviewer reports separate compliance and quality verdicts; fix important findings and reverify affected behavior.
 - [x] Save tested reproducible install/start instructions to cloud environment draft, preserving repository settings and network rules.
-- [ ] Report verified local capabilities, actual skill usability results, remaining original-crawler/GitHub publishing/PC/device limitations. No push or publication.
+- [x] Report verified local capabilities, actual skill usability results, remaining original-crawler/GitHub publishing/PC/device limitations. No push or publication.
+
+## Execution outcome
+
+All local fixture-first tasks above are verified. This does not complete the original plan’s operational crawler integration, live GitHub corpus publication/scheduling, corporate-PC Codex validation or Android device checks. See docs/reports/completion.md for remaining external gates.

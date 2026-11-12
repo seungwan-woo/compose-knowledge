@@ -12,8 +12,8 @@
 
 - Task 1: complete for fixture-first boundary (7f11517),9 truthful source sections and frozen20 questions; original crawler remains unavailable.
 - Tasks 2–4: scoped spec and quality review approved after round1 fixes, all R1–R8 addressed (41be97a).
-- Task 5: CLI, installable bundle, actual fresh skill consumer, CI and explicit refresh gate implemented; final review pending.
-- Task 6: independent acceptance8/8, final full suite44/44, typecheck/build and repeatable setup script verified; environment draft saved; whole-branch review pending.
+- Task 5: CLI, installable bundle, actual fresh skill consumer, CI and explicit refresh gate implemented; final review approved (db40cd6).
+- Task 6: independent acceptance8/8, final full suite44/44, typecheck/build and repeatable setup script verified; environment draft saved; whole-branch review approved after F1/F2 fixes.
 
 ## Roles
 
@@ -54,3 +54,14 @@
 - cli_integration / GPT-6.1 Terra high: executable interface and cache identity integration.
 - skill_baseline / GPT-6.1 Sol high: baseline without skill and standalone CLI runtime diagnosis.
 - skill_consumer / GPT-6.1 Sol high: fresh installed-skill consumer outside checkout.
+
+## Final completion evidence
+
+- Final independent whole-branch spec and quality review APPROVED for fixture-first PoC; original8 plus final2 material findings fixed; no open material findings. See final-review.md.
+- Final fix wave db40cd6: resolve local remotes against caller cwd consistently for fetch/cache, reject different-version reads absent explicit comparison; preserve unknown and valid linked reads.
+- Fresh controller verification after fixes: typecheck/build/full46/46, frozen release evaluation18/20top3 and20/20top5, zero wrong-version labels/budget violations,11633bytes maximum. Results .cache/evaluation-release.
+- Final bundle checksum5658606682c989d0bbaca1196d9e80ef89ccbb4b2f035513d86a64c8feab6636, installed to .cache/release-skills. Smoke verified relative remote, matching/unknown reads, default mismatch denial and explicit comparison outside checkout. Receipt release-smoke.json.
+- First release smoke recorder incorrectly parsed expected-error stdout; corrected to parse the CLI's documented JSON stderr. Rerun passed; no product change was needed.
+- Full worker reports archived under docs/reports/workers before deleting only this plan's ignored scratch workspace.
+- Local work branch retained with commits; no push, merge, or publication; no user files removed. Existing cloud checkout is isolated, so no extra worktree was created.
+- Final review role: GPT-6 Astra high; consolidated final fix role: GPT-6.1 Terra high.
