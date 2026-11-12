@@ -1,0 +1,2347 @@
+---
+type: reference
+title: androidx.compose.foundation.lazy.grid LazyGridState.kt source
+description: "Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt"
+tags:
+  - Compose
+  - Android
+sources:
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-1-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 1
+    endLine: 35
+    sha256: a41cf276790e080ba25dacc9087305a5cd5c305aeddb499bf4ae735ae2f8a011
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      /*
+       * Copyright 2022 The Android Open Source Project
+       *
+       * Licensed under the Apache License, Version 2.0 (the "License");
+       * you may not use this file except in compliance with the License.
+       * You may obtain a copy of the License at
+       *
+       *      http://www.apache.org/licenses/LICENSE-2.0
+       *
+       * Unless required by applicable law or agreed to in writing, software
+       * distributed under the License is distributed on an "AS IS" BASIS,
+       * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       * See the License for the specific language governing permissions and
+       * limitations under the License.
+       */
+
+      package androidx.compose.foundation.lazy.grid
+
+      import androidx.annotation.IntRange as AndroidXIntRange
+      import androidx.compose.foundation.ExperimentalFoundationApi
+      import androidx.compose.foundation.MutatePriority
+      import androidx.compose.foundation.ScrollIndicatorState
+      import androidx.compose.foundation.gestures.Orientation
+      import androidx.compose.foundation.gestures.ScrollScope
+      import androidx.compose.foundation.gestures.ScrollableState
+      import androidx.compose.foundation.gestures.stopScroll
+      import androidx.compose.foundation.interaction.InteractionSource
+      import androidx.compose.foundation.interaction.MutableInteractionSource
+      import androidx.compose.foundation.internal.checkPrecondition
+      import androidx.compose.foundation.lazy.grid.LazyGridState.Companion.Saver
+      import androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier
+      import androidx.compose.foundation.lazy.layout.CacheWindowLogic
+      import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsInfo
+      import androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
+      import androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-106-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 106
+    endLine: 140
+    sha256: 990959d876f2d3d6f269293f283eb9a87ee34137afa82de68d555bf3e540b0d4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          initialFirstVisibleItemScrollOffset: Int = 0,
+          prefetchStrategy: LazyGridPrefetchStrategy = remember { LazyGridPrefetchStrategy() },
+      ): LazyGridState {
+          return rememberSaveable(prefetchStrategy, saver = LazyGridState.saver(prefetchStrategy)) {
+              LazyGridState(
+                  initialFirstVisibleItemIndex,
+                  initialFirstVisibleItemScrollOffset,
+                  prefetchStrategy,
+              )
+          }
+      }
+
+      /**
+       * Creates a [LazyGridState] that is remembered across compositions.
+       *
+       * Changes to the provided initial values will **not** result in the state being recreated or
+       * changed in any way if it has already been created.
+       *
+       * @param cacheWindow specifies the size of the ahead and behind window to be used as per
+       *   [LazyLayoutCacheWindow].
+       * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+       * @param initialFirstVisibleItemScrollOffset the initial value for
+       *   [LazyGridState.firstVisibleItemScrollOffset]
+       */
+      @ExperimentalFoundationApi
+      @Deprecated(
+          """Providing `LazyLayoutCacheWindow` via the `Lazy[Orientation]Grid` composable should be preferred over providing it via state."""
+      )
+      @Composable
+      public fun rememberLazyGridState(
+          cacheWindow: LazyLayoutCacheWindow,
+          initialFirstVisibleItemIndex: Int = 0,
+          initialFirstVisibleItemScrollOffset: Int = 0,
+      ): LazyGridState {
+          return rememberSaveable(cacheWindow, saver = LazyGridState.saver(cacheWindow)) {
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-141-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 141
+    endLine: 175
+    sha256: 40283e6d39a516b163d4639708c4a347ea90fbd00d45246e73308bdacc1ba5b9
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              @Suppress("DEPRECATION")
+              LazyGridState(
+                  cacheWindow,
+                  initialFirstVisibleItemIndex,
+                  initialFirstVisibleItemScrollOffset,
+              )
+          }
+      }
+
+      @OptIn(ExperimentalFoundationApi::class)
+      @Stable
+      public class LazyGridState
+      @ExperimentalFoundationApi
+      internal constructor(
+          @Suppress("DEPRECATION") internal val legacyPrefetchStrategy: LazyGridPrefetchStrategy?,
+          firstVisibleItemIndex: Int = 0,
+          firstVisibleItemScrollOffset: Int = 0,
+      ) : ScrollableState {
+
+          /**
+           * A state object that can be hoisted to control and observe scrolling.
+           *
+           * In most cases, this will be created via [rememberLazyGridState].
+           *
+           * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+           * @param firstVisibleItemScrollOffset the initial value for
+           *   [LazyGridState.firstVisibleItemScrollOffset]
+           * @param prefetchStrategy the [LazyGridPrefetchStrategy] to use for prefetching content in this
+           *   grid
+           */
+          @ExperimentalFoundationApi
+          @Deprecated(
+              """`LazyGridPrefetchStrategy` is deprecated. Prefetching behaviour should be specified via the lazy grid composable arguments as a `CacheWindow`."""
+          )
+          @Suppress("DEPRECATION")
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-176-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 176
+    endLine: 210
+    sha256: 3186481f31fbd535a50f949995798b5c30a12016f206372b3f5558aeac978763
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          public constructor(
+              firstVisibleItemIndex: Int = 0,
+              firstVisibleItemScrollOffset: Int = 0,
+              prefetchStrategy: LazyGridPrefetchStrategy = LazyGridPrefetchStrategy(),
+          ) : this(prefetchStrategy, firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+          /**
+           * @param cacheWindow specifies the size of the ahead and behind window to be used as per
+           *   [LazyLayoutCacheWindow].
+           * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+           * @param firstVisibleItemScrollOffset the initial value for
+           *   [LazyGridState.firstVisibleItemScrollOffset]
+           */
+          @ExperimentalFoundationApi
+          @Deprecated(
+              """`CacheWindow` is now specified via the lazy grid composable arguments as `CacheWindow`."""
+          )
+          public constructor(
+              cacheWindow: LazyLayoutCacheWindow,
+              firstVisibleItemIndex: Int = 0,
+              firstVisibleItemScrollOffset: Int = 0,
+          ) : this(
+              LazyGridCacheWindowPrefetchStrategy(cacheWindow),
+              firstVisibleItemIndex,
+              firstVisibleItemScrollOffset,
+          )
+
+          /**
+           * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+           * @param firstVisibleItemScrollOffset the initial value for
+           *   [LazyGridState.firstVisibleItemScrollOffset]
+           */
+          public constructor(
+              firstVisibleItemIndex: Int = 0,
+              firstVisibleItemScrollOffset: Int = 0,
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-211-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 211
+    endLine: 245
+    sha256: 12b276ee1eb488646dcfa8cb69df436672efa16bb81c1ab931d36a24035e7d81
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          ) : this(null, firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+          internal var hasLookaheadOccurred: Boolean = false
+              private set
+
+          internal var approachLayoutInfo: LazyGridMeasureResult? = null
+              private set
+
+          // always execute requests in high priority
+          private var executeRequestsInHighPriorityMode = false
+
+          /** The holder class for the current scroll position. */
+          private val scrollPosition =
+              LazyGridScrollPosition(firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+          /**
+           * The index of the first item that is visible within the scrollable viewport area, this means,
+           * not including items in the content padding region. For the first visible item that includes
+           * items in the content padding please use [LazyGridLayoutInfo.visibleItemsInfo].
+           *
+           * Note that this property is observable and if you use it in the composable function it will be
+           * recomposed on every change causing potential performance issues.
+           *
+           * If you want to run some side effects like sending an analytics event or updating a state
+           * based on this value consider using "snapshotFlow":
+           *
+           * @sample androidx.compose.foundation.samples.UsingGridScrollPositionForSideEffectSample
+           *
+           * If you need to use it in the composition then consider wrapping the calculation into a
+           * derived state in order to only have recompositions when the derived value changes:
+           *
+           * @sample androidx.compose.foundation.samples.UsingGridScrollPositionInCompositionSample
+           */
+          public val firstVisibleItemIndex: Int
+              @FrequentlyChangingValue get() = scrollPosition.index
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-246-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 246
+    endLine: 280
+    sha256: 3d3f2628b816e960a151a721831fc2d7bae5602ed45b1c25b22feadf05ff9a57
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
+          /**
+           * The scroll offset of the first visible item. Scrolling forward is positive - i.e., the amount
+           * that the item is offset backwards
+           */
+          public val firstVisibleItemScrollOffset: Int
+              @FrequentlyChangingValue get() = scrollPosition.scrollOffset
+
+          /** Backing state for [layoutInfo] */
+          internal val layoutInfoState = mutableStateOf(EmptyLazyGridLayoutInfo, neverEqualPolicy())
+
+          /**
+           * The object of [LazyGridLayoutInfo] calculated during the last layout pass. For example, you
+           * can use it to calculate what items are currently visible.
+           *
+           * Note that this property is observable and is updated after every scroll or remeasure. If you
+           * use it in the composable function it will be recomposed on every change causing potential
+           * performance issues including infinity recomposition loop. Therefore, avoid using it in the
+           * composition.
+           *
+           * If you want to run some side effects like sending an analytics event or updating a state
+           * based on this value consider using "snapshotFlow":
+           *
+           * @sample androidx.compose.foundation.samples.UsingGridLayoutInfoForSideEffectSample
+           */
+          public val layoutInfo: LazyGridLayoutInfo
+              @FrequentlyChangingValue get() = layoutInfoState.value
+
+          /**
+           * [InteractionSource] that will be used to dispatch drag events when this grid is being
+           * dragged. If you want to know whether the fling (or animated scroll) is in progress, use
+           * [isScrollInProgress].
+           */
+          public val interactionSource: InteractionSource
+              get() = internalInteractionSource
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-281-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 281
+    endLine: 315
+    sha256: ec622905bbef40944198549e952a4242212021bedb11d76c3a13e0fad0b5c9d2
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
+          internal val internalInteractionSource: MutableInteractionSource = MutableInteractionSource()
+
+          /**
+           * The amount of scroll to be consumed in the next layout pass. Scrolling forward is negative
+           * - that is, it is the amount that the items are offset in y
+           */
+          internal var scrollToBeConsumed = 0f
+              private set
+
+          internal val slotsPerLine: Int
+              get() = layoutInfoState.value.slotsPerLine
+
+          internal val density: Density
+              get() = layoutInfoState.value.density
+
+          /**
+           * The ScrollableController instance. We keep it as we need to call stopAnimation on it once we
+           * reached the end of the grid.
+           */
+          private val scrollableState = ScrollableState { -onScroll(-it) }
+
+          /** Only used for testing to confirm that we're not making too many measure passes */
+          /*@VisibleForTesting*/
+          internal var numMeasurePasses: Int = 0
+              private set
+
+          /** Only used for testing to disable prefetching when needed to test the main logic. */
+          /*@VisibleForTesting*/
+          internal var prefetchingEnabled: Boolean = true
+
+          /**
+           * The [Remeasurement] object associated with our layout. It allows us to remeasure
+           * synchronously during scroll.
+           */
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-316-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 316
+    endLine: 350
+    sha256: 5ddc141fa69f22f169b1662c1248cf82b7b78d7c7415eb1f050fac0a2fdfc0e1
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          internal var remeasurement: Remeasurement? = null
+              private set
+
+          /** The modifier which provides [remeasurement]. */
+          internal val remeasurementModifier =
+              object : RemeasurementModifier {
+                  override fun onRemeasurementAvailable(remeasurement: Remeasurement) {
+                      this@LazyGridState.remeasurement = remeasurement
+                  }
+              }
+
+          /**
+           * Provides a modifier which allows to delay some interactions (e.g. scroll) until layout is
+           * ready.
+           */
+          internal val awaitLayoutModifier = AwaitFirstLayoutModifier()
+
+          internal val itemAnimator = LazyLayoutItemAnimator<LazyGridMeasuredItem>()
+
+          internal val beyondBoundsInfo = LazyLayoutBeyondBoundsInfo()
+
+          /**
+           * [legacyPrefetchState] will always be null if [LazyGridState] is constructed without
+           * specifying either a [LazyLayoutCacheWindow] or a [LazyGridPrefetchStrategy] explicitly.
+           */
+          internal val legacyPrefetchState = legacyPrefetchStrategy?.let { legacyPrefetchStrategy ->
+              @Suppress("DEPRECATION") // b/420551535
+              LazyLayoutPrefetchState(legacyPrefetchStrategy.prefetchScheduler) {
+                  with(legacyPrefetchStrategy) {
+                      onNestedPrefetch(Snapshot.withoutReadObservation { firstVisibleItemIndex })
+                  }
+              }
+          }
+
+          private val prefetchState
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-351-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 351
+    endLine: 385
+    sha256: 0ed3f002bd0c5011e0802d34fce1fa5b2720cea53ad7a1674d21b63be6768464
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              get() =
+                  Snapshot.withoutReadObservation { layoutInfoState.value.prefetchState }
+                      ?: legacyPrefetchState
+
+          @Suppress("DEPRECATION")
+          private val prefetchStrategy
+              get() =
+                  Snapshot.withoutReadObservation { layoutInfoState.value.prefetchStrategy }
+                      ?: legacyPrefetchStrategy
+
+          @Suppress("DEPRECATION")
+          private val prefetchScope: LazyGridPrefetchScope by
+              lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+                  object : LazyGridPrefetchScope {
+                      override fun scheduleLinePrefetch(
+                          lineIndex: Int
+                      ): List<LazyLayoutPrefetchState.PrefetchHandle> {
+                          return scheduleLinePrefetch(lineIndex, null)
+                      }
+
+                      @Suppress("PrimitiveInCollection")
+                      override fun scheduleLinePrefetch(
+                          lineIndex: Int,
+                          onPrefetchFinished: (LazyGridPrefetchResultScope.() -> Unit)?,
+                      ): List<LazyLayoutPrefetchState.PrefetchHandle> {
+                          // Without read observation since this can be triggered from scroll - this will
+                          // then cause us to recompose when the measure result changes. We don't care
+                          // since the prefetch is best effort.
+                          val prefetchHandles = mutableListOf<LazyLayoutPrefetchState.PrefetchHandle>()
+                          val itemSizes: MutableList<Int>? =
+                              if (onPrefetchFinished == null) null else mutableListOf()
+
+                          Snapshot.withoutReadObservation {
+                              val layoutInfo =
+                                  if (hasLookaheadOccurred) {
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-36-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 36
+    endLine: 70
+    sha256: a3efea79895d00a90df994243c62ebb41629e9bce74746c44e42748bc36f3d3a
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      import androidx.compose.foundation.lazy.layout.LazyLayoutPinnedItemList
+      import androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState
+      import androidx.compose.foundation.lazy.layout.LazyLayoutScrollDeltaBetweenPasses
+      import androidx.compose.foundation.lazy.layout.ObservableScopeInvalidator
+      import androidx.compose.foundation.lazy.layout.animateScrollToItem
+      import androidx.compose.runtime.Composable
+      import androidx.compose.runtime.Stable
+      import androidx.compose.runtime.annotation.FrequentlyChangingValue
+      import androidx.compose.runtime.getValue
+      import androidx.compose.runtime.mutableStateOf
+      import androidx.compose.runtime.neverEqualPolicy
+      import androidx.compose.runtime.remember
+      import androidx.compose.runtime.saveable.Saver
+      import androidx.compose.runtime.saveable.listSaver
+      import androidx.compose.runtime.saveable.rememberSaveable
+      import androidx.compose.runtime.setValue
+      import androidx.compose.runtime.snapshots.Snapshot
+      import androidx.compose.ui.layout.AlignmentLine
+      import androidx.compose.ui.layout.MeasureResult
+      import androidx.compose.ui.layout.Remeasurement
+      import androidx.compose.ui.layout.RemeasurementModifier
+      import androidx.compose.ui.unit.Density
+      import androidx.compose.ui.util.fastFirstOrNull
+      import androidx.compose.ui.util.fastForEach
+      import kotlin.coroutines.EmptyCoroutineContext
+      import kotlin.math.abs
+      import kotlin.math.roundToInt
+      import kotlinx.coroutines.CoroutineScope
+      import kotlinx.coroutines.launch
+
+      /**
+       * Creates a [LazyGridState] that is remembered across compositions.
+       *
+       * Changes to the provided initial values will **not** result in the state being recreated or
+       * changed in any way if it has already been created.
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-386-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 386
+    endLine: 420
+    sha256: dc35886eb9363e0eece0d9e74d5d17568a4c922c2a41a5589c7b1cd4ef626f46
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                                      approachLayoutInfo
+                                  } else {
+                                      layoutInfoState.value
+                                  }
+
+                              layoutInfo?.let { measureResult ->
+                                  var completedCount = 1
+                                  val itemsInLineInfo = measureResult.prefetchInfoRetriever(lineIndex)
+                                  itemsInLineInfo.fastForEach { lineInfo ->
+                                      val prefetchHandle =
+                                          prefetchState?.schedulePrecompositionAndPremeasure(
+                                              lineInfo.first,
+                                              lineInfo.second,
+                                              executeRequestsInHighPriorityMode,
+                                          ) {
+                                              var itemMainAxisItemSize = 0
+                                              repeat(placeablesCount) {
+                                                  itemMainAxisItemSize +=
+                                                      if (
+                                                          measureResult.orientation ==
+                                                              Orientation.Vertical
+                                                      ) {
+                                                          getSize(it).height
+                                                      } else {
+                                                          getSize(it).width
+                                                      }
+                                              }
+
+                                              itemSizes?.add(itemMainAxisItemSize)
+                                              // all items in this line were prefetched, report the size
+                                              if (completedCount == itemsInLineInfo.size) {
+                                                  if (onPrefetchFinished != null && itemSizes != null) {
+                                                      onPrefetchFinished.invoke(
+                                                          LazyGridPrefetchResultScopeImpl(
+                                                              lineIndex,
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-421-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 421
+    endLine: 455
+    sha256: 13732e0cc79cecd2b64de3128ea326f59148b2ce6b350650796e8b61b6a4a038
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+                                                              itemSizes,
+                                                          )
+                                                      )
+                                                  }
+                                              } else {
+                                                  completedCount++
+                                              }
+                                          }
+
+                                      if (prefetchHandle != null) {
+                                          prefetchHandles.add(prefetchHandle)
+                                      }
+                                  }
+                              }
+                          }
+                          return prefetchHandles
+                      }
+                  }
+              }
+
+          private val _scrollIndicatorState =
+              object : ScrollIndicatorState {
+                  override val scrollOffset: Int
+                      get() =
+                          if (layoutInfo.reverseLayout) {
+                              layoutInfo.calculateContentSize() -
+                                  layoutInfo.singleAxisViewportSize -
+                                  calculateScrollOffset()
+                          } else {
+                              calculateScrollOffset()
+                          }
+
+                  override val contentSize: Int
+                      get() = layoutInfo.calculateContentSize()
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-456-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 456
+    endLine: 490
+    sha256: 1096f853fc5eef4cadfb9876b75612698c7433a55db1398bf4d486c0f5f608f5
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+                  override val viewportSize: Int
+                      get() = layoutInfo.singleAxisViewportSize
+              }
+
+          private fun calculateScrollOffset(): Int {
+              val info = layoutInfo
+              val visibleItems = info.visibleItemsInfo
+              val orientation = info.orientation
+
+              // Find the first visible item that corresponds to the state's logical scroll position
+              val firstVisibleItem = visibleItems.fastFirstOrNull { it.index == firstVisibleItemIndex }
+              val firstVisibleItemLineIndex = firstVisibleItem?.lineIndex(orientation) ?: -1
+
+              val lineForOffset =
+                  if (firstVisibleItemLineIndex != -1) {
+                      // The first visible item is a standard grid item.
+                      firstVisibleItemLineIndex
+                  } else {
+                      // Fallback for sticky headers, where the line is an UnknownRow/UnknownColumn (-1
+                      // index)
+                      val firstValidItem = visibleItems.fastFirstOrNull {
+                          it.lineIndex(orientation) != -1
+                      }
+                      val firstValidLineIndex = firstValidItem?.lineIndex(orientation) ?: 0
+
+                      maxOf(0, firstValidLineIndex - 1)
+                  }
+
+              return (info.visibleLinesAverageMainAxisSize() * lineForOffset) +
+                  firstVisibleItemScrollOffset
+          }
+
+          /** Stores currently pinned items which are always composed. */
+          internal val pinnedItems = LazyLayoutPinnedItemList()
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-491-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 491
+    endLine: 525
+    sha256: dac8a8f4b79db98793752e3c74dc4531d37f8cafa6879d7675871f2df7bc518a
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          internal val nearestRange: IntRange by scrollPosition.nearestRangeState
+
+          internal val placementScopeInvalidator = ObservableScopeInvalidator()
+
+          /**
+           * Instantly brings the item at [index] to the top of the viewport, offset by [scrollOffset]
+           * pixels.
+           *
+           * @param index the index to which to scroll. Must be non-negative.
+           * @param scrollOffset the offset that the item should end up after the scroll. Note that
+           *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+           *   scroll the item further upward (taking it partly offscreen).
+           */
+          public suspend fun scrollToItem(@AndroidXIntRange(from = 0) index: Int, scrollOffset: Int = 0) {
+              scroll { snapToItemIndexInternal(index, scrollOffset, forceRemeasure = true) }
+          }
+
+          internal val measurementScopeInvalidator = ObservableScopeInvalidator()
+
+          /**
+           * Requests the item at [index] to be at the start of the viewport during the next remeasure,
+           * offset by [scrollOffset], and schedules a remeasure.
+           *
+           * The scroll position will be updated to the requested position rather than maintain the index
+           * based on the first visible item key (when a data set change will also be applied during the
+           * next remeasure), but *only* for the next remeasure.
+           *
+           * Any scroll in progress will be cancelled.
+           *
+           * @param index the index to which to scroll. Must be non-negative.
+           * @param scrollOffset the offset that the item should end up after the scroll. Note that
+           *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+           *   scroll the item further upward (taking it partly offscreen).
+           */
+          public fun requestScrollToItem(@AndroidXIntRange(from = 0) index: Int, scrollOffset: Int = 0) {
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-526-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 526
+    endLine: 560
+    sha256: ad9b076b53941c5d85a247aca8c20b06f0e5da65844fcc297dfa2af702937ff7
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              // Cancel any scroll in progress.
+              if (isScrollInProgress) {
+                  layoutInfoState.value.coroutineScope.launch { stopScroll() }
+              }
+
+              snapToItemIndexInternal(index, scrollOffset, forceRemeasure = false)
+          }
+
+          internal fun snapToItemIndexInternal(index: Int, scrollOffset: Int, forceRemeasure: Boolean) {
+              val positionChanged =
+                  scrollPosition.index != index || scrollPosition.scrollOffset != scrollOffset
+              // sometimes this method is called not to scroll, but to stay on the same index when
+              // the data changes, as by default we maintain the scroll position by key, not index.
+              // when this happens we don't need to reset the animations as from the user perspective
+              // we didn't scroll anywhere and if there is an offset change for an item, this change
+              // should be animated.
+              // however, when the request is to really scroll to a different position, we have to
+              // reset previously known item positions as we don't want offset changes to be animated.
+              // this offset should be considered as a scroll, not the placement change.
+              if (positionChanged) {
+                  itemAnimator.reset()
+                  // we changed positions, cancel existing requests and wait for the next scroll to
+                  // refill the window
+                  (prefetchStrategy as? CacheWindowLogic)?.resetStrategy()
+              }
+              scrollPosition.requestPositionAndForgetLastKnownKey(index, scrollOffset)
+              if (forceRemeasure) {
+                  remeasurement?.forceRemeasure()
+              } else {
+                  measurementScopeInvalidator.invalidateScope()
+              }
+          }
+
+          /**
+           * Call this function to take control of scrolling and gain the ability to send scroll events
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-561-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 561
+    endLine: 595
+    sha256: 6b9d4beac6c966a8a3e950b2ce5358d068c71258ed6a88415368f0eadaf8699d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+           * via [ScrollScope.scrollBy]. All actions that change the logical scroll position must be
+           * performed within a [scroll] block (even if they don't call any other methods on this object)
+           * in order to guarantee that mutual exclusion is enforced.
+           *
+           * If [scroll] is called from elsewhere, this will be canceled.
+           */
+          override suspend fun scroll(
+              scrollPriority: MutatePriority,
+              block: suspend ScrollScope.() -> Unit,
+          ) {
+              if (layoutInfoState.value === EmptyLazyGridLayoutInfo) {
+                  awaitLayoutModifier.waitForFirstLayout()
+              }
+              scrollableState.scroll(scrollPriority, block)
+          }
+
+          override fun dispatchRawDelta(delta: Float): Float = scrollableState.dispatchRawDelta(delta)
+
+          override val isScrollInProgress: Boolean
+              get() = scrollableState.isScrollInProgress
+
+          override var canScrollForward: Boolean by mutableStateOf(false)
+              private set
+
+          override var canScrollBackward: Boolean by mutableStateOf(false)
+              private set
+
+          @get:Suppress("GetterSetterNames")
+          override val lastScrolledForward: Boolean
+              get() = scrollableState.lastScrolledForward
+
+          @get:Suppress("GetterSetterNames")
+          override val lastScrolledBackward: Boolean
+              get() = scrollableState.lastScrolledBackward
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-596-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 596
+    endLine: 630
+    sha256: b73803aea3a4c27115c3af6e84abdacae8a390c81ed8b4ed59818062f4772901
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          override val scrollIndicatorState: ScrollIndicatorState?
+              get() = _scrollIndicatorState
+
+          // TODO: Coroutine scrolling APIs will allow this to be private again once we have more
+          //  fine-grained control over scrolling
+          /*@VisibleForTesting*/
+          internal fun onScroll(distance: Float): Float {
+              if (distance < 0 && !canScrollForward || distance > 0 && !canScrollBackward) {
+                  return 0f
+              }
+              checkPrecondition(abs(scrollToBeConsumed) <= 0.5f) {
+                  "entered drag with non-zero pending scroll"
+              }
+              scrollToBeConsumed += distance
+
+              // scrollToBeConsumed will be consumed synchronously during the forceRemeasure invocation
+              // inside measuring we do scrollToBeConsumed.roundToInt() so there will be no scroll if
+              // we have less than 0.5 pixels
+              if (abs(scrollToBeConsumed) > 0.5f) {
+                  val preScrollToBeConsumed = scrollToBeConsumed
+                  val intDelta = scrollToBeConsumed.roundToInt()
+                  var scrolledLayoutInfo =
+                      layoutInfoState.value.copyWithScrollDeltaWithoutRemeasure(
+                          delta = intDelta,
+                          updateAnimations = !hasLookaheadOccurred,
+                      )
+                  if (scrolledLayoutInfo != null && this.approachLayoutInfo != null) {
+                      // if we were able to scroll the lookahead layout info without remeasure, lets
+                      // try to do the same for post lookahead layout info (sometimes they diverge).
+                      val scrolledApproachLayoutInfo =
+                          approachLayoutInfo?.copyWithScrollDeltaWithoutRemeasure(
+                              delta = intDelta,
+                              updateAnimations = true,
+                          )
+                      if (scrolledApproachLayoutInfo != null) {
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 631
+    endLine: 665
+    sha256: 5b6f6fd1043b8a9dde9ca03211f05301037063072d86c7b901486df9489337d8
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                          // we can apply scroll delta for both phases without remeasure
+                          approachLayoutInfo = scrolledApproachLayoutInfo
+                      } else {
+                          // we can't apply scroll delta for post lookahead, so we have to remeasure
+                          scrolledLayoutInfo = null
+                      }
+                  }
+                  if (scrolledLayoutInfo != null) {
+                      applyMeasureResult(
+                          result = scrolledLayoutInfo,
+                          isLookingAhead = hasLookaheadOccurred,
+                          visibleItemsStayedTheSame = true,
+                      )
+                      // we don't need to remeasure, so we only trigger re-placement:
+                      placementScopeInvalidator.invalidateScope()
+
+                      notifyPrefetchOnScroll(
+                          preScrollToBeConsumed - scrollToBeConsumed,
+                          scrolledLayoutInfo,
+                      )
+                  } else {
+                      remeasurement?.forceRemeasure()
+                      notifyPrefetchOnScroll(preScrollToBeConsumed - scrollToBeConsumed, this.layoutInfo)
+                  }
+              }
+
+              // here scrollToBeConsumed is already consumed during the forceRemeasure invocation
+              if (abs(scrollToBeConsumed) <= 0.5f) {
+                  // We consumed all of it - we'll hold onto the fractional scroll for later, so report
+                  // that we consumed the whole thing
+                  return distance
+              } else {
+                  val scrollConsumed = distance - scrollToBeConsumed
+                  // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
+                  // nested scrolling)
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 666
+    endLine: 700
+    sha256: 44bf5929b2aeb373e7c1898a6d77053ad654bdb982806aa4af879e9be15f56de
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                  scrollToBeConsumed = 0f // We're not consuming the rest, give it back
+                  return scrollConsumed
+              }
+          }
+
+          private fun notifyPrefetchOnScroll(delta: Float, layoutInfo: LazyGridLayoutInfo) =
+              prefetchStrategy?.apply {
+                  if (prefetchingEnabled) {
+                      prefetchScope.onScroll(delta, layoutInfo)
+                  }
+              }
+
+          private val numOfItemsToTeleport: Int
+              get() = 100 * slotsPerLine
+
+          /**
+           * Animate (smooth scroll) to the given item.
+           *
+           * @param index the index to which to scroll. Must be non-negative.
+           * @param scrollOffset the offset that the item should end up after the scroll. Note that
+           *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+           *   scroll the item further upward (taking it partly offscreen).
+           */
+          public suspend fun animateScrollToItem(
+              @AndroidXIntRange(from = 0) index: Int,
+              scrollOffset: Int = 0,
+          ) {
+              scroll {
+                  LazyLayoutScrollScope(this@LazyGridState, this)
+                      .animateScrollToItem(index, scrollOffset, numOfItemsToTeleport, density)
+              }
+          }
+
+          /** Updates the state with the new calculated scroll position and consumed scroll. */
+          internal fun applyMeasureResult(
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 701
+    endLine: 735
+    sha256: d83192cf7e6f4be47a45f1fc317b72f2f3a841e924cfedf94a94e618bca79571
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              result: LazyGridMeasureResult,
+              isLookingAhead: Boolean,
+              visibleItemsStayedTheSame: Boolean = false,
+          ) {
+              // update the prefetch state with the number of nested prefetch items this layout
+              // should use.
+              result.prefetchState?.idealNestedPrefetchCount = result.visibleItemsInfo.size
+
+              if (!isLookingAhead && hasLookaheadOccurred) {
+                  // If there was already a lookahead pass, record this result as Approach result
+                  approachLayoutInfo = result
+                  Snapshot.withoutReadObservation {
+                      // Check whether backscroll animation (from _lazyLayoutScrollDeltaBetweenPasses) is
+                      // necessary. This animation handles cases where lookahead and approach passes
+                      // have different maximum scroll bounds due to measurement differences (e.g.,
+                      // when scrolling past the last item). If both passes already have the same
+                      // scroll position, the animation is unnecessary and can be stopped.
+                      if (
+                          _lazyLayoutScrollDeltaBetweenPasses.isActive &&
+                              result.firstVisibleLineScrollOffset == scrollPosition.scrollOffset &&
+                              result.firstVisibleLine?.items?.firstOrNull()?.index == scrollPosition.index
+                      ) {
+                          _lazyLayoutScrollDeltaBetweenPasses.stop()
+                      }
+                  }
+              } else {
+                  if (isLookingAhead) {
+                      (prefetchStrategy as? LazyGridCacheWindowPrefetchStrategy)?.hasLookaheadOccurred =
+                          true
+                      hasLookaheadOccurred = true
+                  }
+                  scrollToBeConsumed -= result.consumedScroll
+                  layoutInfoState.value = result
+
+                  canScrollBackward = result.canScrollBackward
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-71-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 71
+    endLine: 105
+    sha256: 4b19d2a5389e3c12bd6bdfe23e4884ab1a05ba02143538be97ffb8a98a8cfa6e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+       *
+       * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+       * @param initialFirstVisibleItemScrollOffset the initial value for
+       *   [LazyGridState.firstVisibleItemScrollOffset]
+       */
+      @Composable
+      public fun rememberLazyGridState(
+          initialFirstVisibleItemIndex: Int = 0,
+          initialFirstVisibleItemScrollOffset: Int = 0,
+      ): LazyGridState {
+          return rememberSaveable(saver = Saver) {
+              LazyGridState(initialFirstVisibleItemIndex, initialFirstVisibleItemScrollOffset)
+          }
+      }
+
+      /**
+       * Creates a [LazyGridState] that is remembered across compositions.
+       *
+       * Changes to the provided initial values will **not** result in the state being recreated or
+       * changed in any way if it has already been created.
+       *
+       * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+       * @param initialFirstVisibleItemScrollOffset the initial value for
+       *   [LazyGridState.firstVisibleItemScrollOffset]
+       * @param prefetchStrategy the [LazyGridPrefetchStrategy] to use for prefetching content in this
+       *   grid
+       */
+      @ExperimentalFoundationApi
+      @Deprecated(
+          """Providing `LazyLayoutCacheWindow` via the `Lazy[Orientation]Grid` composable should be preferred over using `LazyGridPrefetchStrategy` here."""
+      )
+      @Suppress("DEPRECATION")
+      @Composable
+      public fun rememberLazyGridState(
+          initialFirstVisibleItemIndex: Int = 0,
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 736
+    endLine: 770
+    sha256: 70aa57f64350d6f2c8289d4fc936cb0c6b67e861fe01ad93a685988578c59221
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                  canScrollForward = result.canScrollForward
+
+                  if (visibleItemsStayedTheSame) {
+                      scrollPosition.updateScrollOffset(result.firstVisibleLineScrollOffset)
+                  } else {
+                      scrollPosition.updateFromMeasureResult(result)
+                      prefetchStrategy?.apply {
+                          if (prefetchingEnabled) {
+                              prefetchScope.onVisibleItemsUpdated(result)
+                          }
+                      }
+                  }
+
+                  if (isLookingAhead) {
+                      _lazyLayoutScrollDeltaBetweenPasses.updateScrollDeltaForApproach(
+                          result.scrollBackAmount,
+                          result.density,
+                          result.coroutineScope,
+                      )
+                  }
+                  numMeasurePasses++
+              }
+          }
+
+          private val _lazyLayoutScrollDeltaBetweenPasses = LazyLayoutScrollDeltaBetweenPasses()
+
+          internal val scrollDeltaBetweenPasses
+              get() = _lazyLayoutScrollDeltaBetweenPasses.scrollDeltaBetweenPasses
+
+          /**
+           * When the user provided custom keys for the items we can try to detect when there were items
+           * added or removed before our current first visible item and keep this item as the first
+           * visible one even given that its index has been changed.
+           */
+          internal fun updateScrollPositionIfTheFirstItemWasMoved(
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 771
+    endLine: 805
+    sha256: 68d91c9a24c10d8978398fef9a53d4b45c807ef4f97ef6645eb594f12cfe9f49
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+              itemProvider: LazyGridItemProvider,
+              firstItemIndex: Int,
+          ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
+
+          public companion object {
+              /** The default [Saver] implementation for [LazyGridState]. */
+              public val Saver: Saver<LazyGridState, *> =
+                  listSaver(
+                      save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                      restore = {
+                          LazyGridState(
+                              firstVisibleItemIndex = it[0],
+                              firstVisibleItemScrollOffset = it[1],
+                          )
+                      },
+                  )
+
+              /**
+               * A [Saver] implementation for [LazyGridState] that handles setting a custom
+               * [LazyGridPrefetchStrategy].
+               */
+              @ExperimentalFoundationApi
+              @Suppress("DEPRECATION")
+              internal fun saver(prefetchStrategy: LazyGridPrefetchStrategy): Saver<LazyGridState, *> =
+                  listSaver(
+                      save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                      restore = {
+                          LazyGridState(
+                              firstVisibleItemIndex = it[0],
+                              firstVisibleItemScrollOffset = it[1],
+                              prefetchStrategy,
+                          )
+                      },
+                  )
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 806
+    endLine: 840
+    sha256: 35a8ac37830cb0b57c6d5c83949b65e6be5c4171444e8817b5195606e2ca4ed6
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              /**
+               * A [Saver] implementation for [LazyGridState] that handles setting a custom
+               * [LazyLayoutCacheWindow].
+               */
+              internal fun saver(cacheWindow: LazyLayoutCacheWindow): Saver<LazyGridState, *> =
+                  listSaver(
+                      save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                      restore = {
+                          @Suppress("DEPRECATION")
+                          LazyGridState(
+                              cacheWindow = cacheWindow,
+                              firstVisibleItemIndex = it[0],
+                              firstVisibleItemScrollOffset = it[1],
+                          )
+                      },
+                  )
+          }
+      }
+
+      @OptIn(ExperimentalFoundationApi::class)
+      private val EmptyLazyGridLayoutInfo =
+          LazyGridMeasureResult(
+              firstVisibleLine = null,
+              firstVisibleLineScrollOffset = 0,
+              canScrollForward = false,
+              consumedScroll = 0f,
+              measureResult =
+                  object : MeasureResult {
+                      override val width: Int = 0
+                      override val height: Int = 0
+
+                      @Suppress("PrimitiveInCollection")
+                      override val alignmentLines: Map<AlignmentLine, Int> = emptyMap()
+
+                      override fun placeChildren() {}
+  - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    startLine: 841
+    endLine: 861
+    sha256: c52c7da2e862286ed51ad5c3f1f0c526faac9aa438778c277945e2e477b4f597
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+                  },
+              scrollBackAmount = 0f,
+              visibleItemsInfo = emptyList(),
+              viewportStartOffset = 0,
+              viewportEndOffset = 0,
+              totalItemsCount = 0,
+              reverseLayout = false,
+              orientation = Orientation.Vertical,
+              afterContentPadding = 0,
+              mainAxisItemSpacing = 0,
+              remeasureNeeded = false,
+              density = Density(1f),
+              slotsPerLine = 0,
+              coroutineScope = CoroutineScope(EmptyCoroutineContext),
+              prefetchInfoRetriever = { emptyList() },
+              lineIndexProvider = { -1 },
+              stickingItemsCombinedSize = 0,
+              prefetchState = null,
+              prefetchStrategy = null,
+          )
+compose:
+  id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
+  artifact: androidx.compose.foundation:foundation
+  fqn: androidx.compose.foundation.lazy.grid
+  sections:
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-1
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 1–35)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-1-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-106
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 106–140)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.rememberLazyGridState
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-106-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-141
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 141–175)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.rememberLazyGridState
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-141-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-176
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 176–210)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-176-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-211
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 211–245)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-211-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-246
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 246–280)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-246-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-281
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 281–315)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-281-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-316
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 316–350)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-316-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-351
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 351–385)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-351-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-36
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 36–70)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-36-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-386
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 386–420)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-386-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-421
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 421–455)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-421-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-456
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 456–490)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-456-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-491
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 491–525)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-491-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-526
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 526–560)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-526-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-561
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 561–595)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-561-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-596
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 596–630)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-596-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 631–665)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 666–700)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 701–735)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-71
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 71–105)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.rememberLazyGridState
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-71-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 736–770)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 771–805)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 806–840)
+      aliases:
+        - androidx.compose.foundation.lazy.grid.LazyGridState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source
+      relatedIds: []
+    - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–861)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source
+      relatedIds: []
+---
+
+# androidx.compose.foundation.lazy.grid LazyGridState.kt source
+
+Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 1–35)
+
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package androidx.compose.foundation.lazy.grid
+
+import androidx.annotation.IntRange as AndroidXIntRange
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.MutatePriority
+import androidx.compose.foundation.ScrollIndicatorState
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.ScrollScope
+import androidx.compose.foundation.gestures.ScrollableState
+import androidx.compose.foundation.gestures.stopScroll
+import androidx.compose.foundation.interaction.InteractionSource
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.internal.checkPrecondition
+import androidx.compose.foundation.lazy.grid.LazyGridState.Companion.Saver
+import androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier
+import androidx.compose.foundation.lazy.layout.CacheWindowLogic
+import androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsInfo
+import androidx.compose.foundation.lazy.layout.LazyLayoutCacheWindow
+import androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-1-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 106–140)
+
+    initialFirstVisibleItemScrollOffset: Int = 0,
+    prefetchStrategy: LazyGridPrefetchStrategy = remember { LazyGridPrefetchStrategy() },
+): LazyGridState {
+    return rememberSaveable(prefetchStrategy, saver = LazyGridState.saver(prefetchStrategy)) {
+        LazyGridState(
+            initialFirstVisibleItemIndex,
+            initialFirstVisibleItemScrollOffset,
+            prefetchStrategy,
+        )
+    }
+}
+
+/**
+ * Creates a [LazyGridState] that is remembered across compositions.
+ *
+ * Changes to the provided initial values will **not** result in the state being recreated or
+ * changed in any way if it has already been created.
+ *
+ * @param cacheWindow specifies the size of the ahead and behind window to be used as per
+ *   [LazyLayoutCacheWindow].
+ * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+ * @param initialFirstVisibleItemScrollOffset the initial value for
+ *   [LazyGridState.firstVisibleItemScrollOffset]
+ */
+@ExperimentalFoundationApi
+@Deprecated(
+    """Providing `LazyLayoutCacheWindow` via the `Lazy[Orientation]Grid` composable should be preferred over providing it via state."""
+)
+@Composable
+public fun rememberLazyGridState(
+    cacheWindow: LazyLayoutCacheWindow,
+    initialFirstVisibleItemIndex: Int = 0,
+    initialFirstVisibleItemScrollOffset: Int = 0,
+): LazyGridState {
+    return rememberSaveable(cacheWindow, saver = LazyGridState.saver(cacheWindow)) {
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 141–175)
+
+        @Suppress("DEPRECATION")
+        LazyGridState(
+            cacheWindow,
+            initialFirstVisibleItemIndex,
+            initialFirstVisibleItemScrollOffset,
+        )
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Stable
+public class LazyGridState
+@ExperimentalFoundationApi
+internal constructor(
+    @Suppress("DEPRECATION") internal val legacyPrefetchStrategy: LazyGridPrefetchStrategy?,
+    firstVisibleItemIndex: Int = 0,
+    firstVisibleItemScrollOffset: Int = 0,
+) : ScrollableState {
+
+    /**
+     * A state object that can be hoisted to control and observe scrolling.
+     *
+     * In most cases, this will be created via [rememberLazyGridState].
+     *
+     * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+     * @param firstVisibleItemScrollOffset the initial value for
+     *   [LazyGridState.firstVisibleItemScrollOffset]
+     * @param prefetchStrategy the [LazyGridPrefetchStrategy] to use for prefetching content in this
+     *   grid
+     */
+    @ExperimentalFoundationApi
+    @Deprecated(
+        """`LazyGridPrefetchStrategy` is deprecated. Prefetching behaviour should be specified via the lazy grid composable arguments as a `CacheWindow`."""
+    )
+    @Suppress("DEPRECATION")
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 176–210)
+
+    public constructor(
+        firstVisibleItemIndex: Int = 0,
+        firstVisibleItemScrollOffset: Int = 0,
+        prefetchStrategy: LazyGridPrefetchStrategy = LazyGridPrefetchStrategy(),
+    ) : this(prefetchStrategy, firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+    /**
+     * @param cacheWindow specifies the size of the ahead and behind window to be used as per
+     *   [LazyLayoutCacheWindow].
+     * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+     * @param firstVisibleItemScrollOffset the initial value for
+     *   [LazyGridState.firstVisibleItemScrollOffset]
+     */
+    @ExperimentalFoundationApi
+    @Deprecated(
+        """`CacheWindow` is now specified via the lazy grid composable arguments as `CacheWindow`."""
+    )
+    public constructor(
+        cacheWindow: LazyLayoutCacheWindow,
+        firstVisibleItemIndex: Int = 0,
+        firstVisibleItemScrollOffset: Int = 0,
+    ) : this(
+        LazyGridCacheWindowPrefetchStrategy(cacheWindow),
+        firstVisibleItemIndex,
+        firstVisibleItemScrollOffset,
+    )
+
+    /**
+     * @param firstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+     * @param firstVisibleItemScrollOffset the initial value for
+     *   [LazyGridState.firstVisibleItemScrollOffset]
+     */
+    public constructor(
+        firstVisibleItemIndex: Int = 0,
+        firstVisibleItemScrollOffset: Int = 0,
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 211–245)
+
+    ) : this(null, firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+    internal var hasLookaheadOccurred: Boolean = false
+        private set
+
+    internal var approachLayoutInfo: LazyGridMeasureResult? = null
+        private set
+
+    // always execute requests in high priority
+    private var executeRequestsInHighPriorityMode = false
+
+    /** The holder class for the current scroll position. */
+    private val scrollPosition =
+        LazyGridScrollPosition(firstVisibleItemIndex, firstVisibleItemScrollOffset)
+
+    /**
+     * The index of the first item that is visible within the scrollable viewport area, this means,
+     * not including items in the content padding region. For the first visible item that includes
+     * items in the content padding please use [LazyGridLayoutInfo.visibleItemsInfo].
+     *
+     * Note that this property is observable and if you use it in the composable function it will be
+     * recomposed on every change causing potential performance issues.
+     *
+     * If you want to run some side effects like sending an analytics event or updating a state
+     * based on this value consider using "snapshotFlow":
+     *
+     * @sample androidx.compose.foundation.samples.UsingGridScrollPositionForSideEffectSample
+     *
+     * If you need to use it in the composition then consider wrapping the calculation into a
+     * derived state in order to only have recompositions when the derived value changes:
+     *
+     * @sample androidx.compose.foundation.samples.UsingGridScrollPositionInCompositionSample
+     */
+    public val firstVisibleItemIndex: Int
+        @FrequentlyChangingValue get() = scrollPosition.index
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 246–280)
+
+
+    /**
+     * The scroll offset of the first visible item. Scrolling forward is positive - i.e., the amount
+     * that the item is offset backwards
+     */
+    public val firstVisibleItemScrollOffset: Int
+        @FrequentlyChangingValue get() = scrollPosition.scrollOffset
+
+    /** Backing state for [layoutInfo] */
+    internal val layoutInfoState = mutableStateOf(EmptyLazyGridLayoutInfo, neverEqualPolicy())
+
+    /**
+     * The object of [LazyGridLayoutInfo] calculated during the last layout pass. For example, you
+     * can use it to calculate what items are currently visible.
+     *
+     * Note that this property is observable and is updated after every scroll or remeasure. If you
+     * use it in the composable function it will be recomposed on every change causing potential
+     * performance issues including infinity recomposition loop. Therefore, avoid using it in the
+     * composition.
+     *
+     * If you want to run some side effects like sending an analytics event or updating a state
+     * based on this value consider using "snapshotFlow":
+     *
+     * @sample androidx.compose.foundation.samples.UsingGridLayoutInfoForSideEffectSample
+     */
+    public val layoutInfo: LazyGridLayoutInfo
+        @FrequentlyChangingValue get() = layoutInfoState.value
+
+    /**
+     * [InteractionSource] that will be used to dispatch drag events when this grid is being
+     * dragged. If you want to know whether the fling (or animated scroll) is in progress, use
+     * [isScrollInProgress].
+     */
+    public val interactionSource: InteractionSource
+        get() = internalInteractionSource
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 281–315)
+
+
+    internal val internalInteractionSource: MutableInteractionSource = MutableInteractionSource()
+
+    /**
+     * The amount of scroll to be consumed in the next layout pass. Scrolling forward is negative
+     * - that is, it is the amount that the items are offset in y
+     */
+    internal var scrollToBeConsumed = 0f
+        private set
+
+    internal val slotsPerLine: Int
+        get() = layoutInfoState.value.slotsPerLine
+
+    internal val density: Density
+        get() = layoutInfoState.value.density
+
+    /**
+     * The ScrollableController instance. We keep it as we need to call stopAnimation on it once we
+     * reached the end of the grid.
+     */
+    private val scrollableState = ScrollableState { -onScroll(-it) }
+
+    /** Only used for testing to confirm that we're not making too many measure passes */
+    /*@VisibleForTesting*/
+    internal var numMeasurePasses: Int = 0
+        private set
+
+    /** Only used for testing to disable prefetching when needed to test the main logic. */
+    /*@VisibleForTesting*/
+    internal var prefetchingEnabled: Boolean = true
+
+    /**
+     * The [Remeasurement] object associated with our layout. It allows us to remeasure
+     * synchronously during scroll.
+     */
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-281-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 316–350)
+
+    internal var remeasurement: Remeasurement? = null
+        private set
+
+    /** The modifier which provides [remeasurement]. */
+    internal val remeasurementModifier =
+        object : RemeasurementModifier {
+            override fun onRemeasurementAvailable(remeasurement: Remeasurement) {
+                this@LazyGridState.remeasurement = remeasurement
+            }
+        }
+
+    /**
+     * Provides a modifier which allows to delay some interactions (e.g. scroll) until layout is
+     * ready.
+     */
+    internal val awaitLayoutModifier = AwaitFirstLayoutModifier()
+
+    internal val itemAnimator = LazyLayoutItemAnimator<LazyGridMeasuredItem>()
+
+    internal val beyondBoundsInfo = LazyLayoutBeyondBoundsInfo()
+
+    /**
+     * [legacyPrefetchState] will always be null if [LazyGridState] is constructed without
+     * specifying either a [LazyLayoutCacheWindow] or a [LazyGridPrefetchStrategy] explicitly.
+     */
+    internal val legacyPrefetchState = legacyPrefetchStrategy?.let { legacyPrefetchStrategy ->
+        @Suppress("DEPRECATION") // b/420551535
+        LazyLayoutPrefetchState(legacyPrefetchStrategy.prefetchScheduler) {
+            with(legacyPrefetchStrategy) {
+                onNestedPrefetch(Snapshot.withoutReadObservation { firstVisibleItemIndex })
+            }
+        }
+    }
+
+    private val prefetchState
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-316-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 351–385)
+
+        get() =
+            Snapshot.withoutReadObservation { layoutInfoState.value.prefetchState }
+                ?: legacyPrefetchState
+
+    @Suppress("DEPRECATION")
+    private val prefetchStrategy
+        get() =
+            Snapshot.withoutReadObservation { layoutInfoState.value.prefetchStrategy }
+                ?: legacyPrefetchStrategy
+
+    @Suppress("DEPRECATION")
+    private val prefetchScope: LazyGridPrefetchScope by
+        lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+            object : LazyGridPrefetchScope {
+                override fun scheduleLinePrefetch(
+                    lineIndex: Int
+                ): List<LazyLayoutPrefetchState.PrefetchHandle> {
+                    return scheduleLinePrefetch(lineIndex, null)
+                }
+
+                @Suppress("PrimitiveInCollection")
+                override fun scheduleLinePrefetch(
+                    lineIndex: Int,
+                    onPrefetchFinished: (LazyGridPrefetchResultScope.() -> Unit)?,
+                ): List<LazyLayoutPrefetchState.PrefetchHandle> {
+                    // Without read observation since this can be triggered from scroll - this will
+                    // then cause us to recompose when the measure result changes. We don't care
+                    // since the prefetch is best effort.
+                    val prefetchHandles = mutableListOf<LazyLayoutPrefetchState.PrefetchHandle>()
+                    val itemSizes: MutableList<Int>? =
+                        if (onPrefetchFinished == null) null else mutableListOf()
+
+                    Snapshot.withoutReadObservation {
+                        val layoutInfo =
+                            if (hasLookaheadOccurred) {
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-351-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 36–70)
+
+import androidx.compose.foundation.lazy.layout.LazyLayoutPinnedItemList
+import androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState
+import androidx.compose.foundation.lazy.layout.LazyLayoutScrollDeltaBetweenPasses
+import androidx.compose.foundation.lazy.layout.ObservableScopeInvalidator
+import androidx.compose.foundation.lazy.layout.animateScrollToItem
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
+import androidx.compose.runtime.annotation.FrequentlyChangingValue
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.neverEqualPolicy
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.Saver
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.Snapshot
+import androidx.compose.ui.layout.AlignmentLine
+import androidx.compose.ui.layout.MeasureResult
+import androidx.compose.ui.layout.Remeasurement
+import androidx.compose.ui.layout.RemeasurementModifier
+import androidx.compose.ui.unit.Density
+import androidx.compose.ui.util.fastFirstOrNull
+import androidx.compose.ui.util.fastForEach
+import kotlin.coroutines.EmptyCoroutineContext
+import kotlin.math.abs
+import kotlin.math.roundToInt
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+
+/**
+ * Creates a [LazyGridState] that is remembered across compositions.
+ *
+ * Changes to the provided initial values will **not** result in the state being recreated or
+ * changed in any way if it has already been created.
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 386–420)
+
+                                approachLayoutInfo
+                            } else {
+                                layoutInfoState.value
+                            }
+
+                        layoutInfo?.let { measureResult ->
+                            var completedCount = 1
+                            val itemsInLineInfo = measureResult.prefetchInfoRetriever(lineIndex)
+                            itemsInLineInfo.fastForEach { lineInfo ->
+                                val prefetchHandle =
+                                    prefetchState?.schedulePrecompositionAndPremeasure(
+                                        lineInfo.first,
+                                        lineInfo.second,
+                                        executeRequestsInHighPriorityMode,
+                                    ) {
+                                        var itemMainAxisItemSize = 0
+                                        repeat(placeablesCount) {
+                                            itemMainAxisItemSize +=
+                                                if (
+                                                    measureResult.orientation ==
+                                                        Orientation.Vertical
+                                                ) {
+                                                    getSize(it).height
+                                                } else {
+                                                    getSize(it).width
+                                                }
+                                        }
+
+                                        itemSizes?.add(itemMainAxisItemSize)
+                                        // all items in this line were prefetched, report the size
+                                        if (completedCount == itemsInLineInfo.size) {
+                                            if (onPrefetchFinished != null && itemSizes != null) {
+                                                onPrefetchFinished.invoke(
+                                                    LazyGridPrefetchResultScopeImpl(
+                                                        lineIndex,
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 421–455)
+
+                                                        itemSizes,
+                                                    )
+                                                )
+                                            }
+                                        } else {
+                                            completedCount++
+                                        }
+                                    }
+
+                                if (prefetchHandle != null) {
+                                    prefetchHandles.add(prefetchHandle)
+                                }
+                            }
+                        }
+                    }
+                    return prefetchHandles
+                }
+            }
+        }
+
+    private val _scrollIndicatorState =
+        object : ScrollIndicatorState {
+            override val scrollOffset: Int
+                get() =
+                    if (layoutInfo.reverseLayout) {
+                        layoutInfo.calculateContentSize() -
+                            layoutInfo.singleAxisViewportSize -
+                            calculateScrollOffset()
+                    } else {
+                        calculateScrollOffset()
+                    }
+
+            override val contentSize: Int
+                get() = layoutInfo.calculateContentSize()
+
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 456–490)
+
+            override val viewportSize: Int
+                get() = layoutInfo.singleAxisViewportSize
+        }
+
+    private fun calculateScrollOffset(): Int {
+        val info = layoutInfo
+        val visibleItems = info.visibleItemsInfo
+        val orientation = info.orientation
+
+        // Find the first visible item that corresponds to the state's logical scroll position
+        val firstVisibleItem = visibleItems.fastFirstOrNull { it.index == firstVisibleItemIndex }
+        val firstVisibleItemLineIndex = firstVisibleItem?.lineIndex(orientation) ?: -1
+
+        val lineForOffset =
+            if (firstVisibleItemLineIndex != -1) {
+                // The first visible item is a standard grid item.
+                firstVisibleItemLineIndex
+            } else {
+                // Fallback for sticky headers, where the line is an UnknownRow/UnknownColumn (-1
+                // index)
+                val firstValidItem = visibleItems.fastFirstOrNull {
+                    it.lineIndex(orientation) != -1
+                }
+                val firstValidLineIndex = firstValidItem?.lineIndex(orientation) ?: 0
+
+                maxOf(0, firstValidLineIndex - 1)
+            }
+
+        return (info.visibleLinesAverageMainAxisSize() * lineForOffset) +
+            firstVisibleItemScrollOffset
+    }
+
+    /** Stores currently pinned items which are always composed. */
+    internal val pinnedItems = LazyLayoutPinnedItemList()
+
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 491–525)
+
+    internal val nearestRange: IntRange by scrollPosition.nearestRangeState
+
+    internal val placementScopeInvalidator = ObservableScopeInvalidator()
+
+    /**
+     * Instantly brings the item at [index] to the top of the viewport, offset by [scrollOffset]
+     * pixels.
+     *
+     * @param index the index to which to scroll. Must be non-negative.
+     * @param scrollOffset the offset that the item should end up after the scroll. Note that
+     *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+     *   scroll the item further upward (taking it partly offscreen).
+     */
+    public suspend fun scrollToItem(@AndroidXIntRange(from = 0) index: Int, scrollOffset: Int = 0) {
+        scroll { snapToItemIndexInternal(index, scrollOffset, forceRemeasure = true) }
+    }
+
+    internal val measurementScopeInvalidator = ObservableScopeInvalidator()
+
+    /**
+     * Requests the item at [index] to be at the start of the viewport during the next remeasure,
+     * offset by [scrollOffset], and schedules a remeasure.
+     *
+     * The scroll position will be updated to the requested position rather than maintain the index
+     * based on the first visible item key (when a data set change will also be applied during the
+     * next remeasure), but *only* for the next remeasure.
+     *
+     * Any scroll in progress will be cancelled.
+     *
+     * @param index the index to which to scroll. Must be non-negative.
+     * @param scrollOffset the offset that the item should end up after the scroll. Note that
+     *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+     *   scroll the item further upward (taking it partly offscreen).
+     */
+    public fun requestScrollToItem(@AndroidXIntRange(from = 0) index: Int, scrollOffset: Int = 0) {
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 526–560)
+
+        // Cancel any scroll in progress.
+        if (isScrollInProgress) {
+            layoutInfoState.value.coroutineScope.launch { stopScroll() }
+        }
+
+        snapToItemIndexInternal(index, scrollOffset, forceRemeasure = false)
+    }
+
+    internal fun snapToItemIndexInternal(index: Int, scrollOffset: Int, forceRemeasure: Boolean) {
+        val positionChanged =
+            scrollPosition.index != index || scrollPosition.scrollOffset != scrollOffset
+        // sometimes this method is called not to scroll, but to stay on the same index when
+        // the data changes, as by default we maintain the scroll position by key, not index.
+        // when this happens we don't need to reset the animations as from the user perspective
+        // we didn't scroll anywhere and if there is an offset change for an item, this change
+        // should be animated.
+        // however, when the request is to really scroll to a different position, we have to
+        // reset previously known item positions as we don't want offset changes to be animated.
+        // this offset should be considered as a scroll, not the placement change.
+        if (positionChanged) {
+            itemAnimator.reset()
+            // we changed positions, cancel existing requests and wait for the next scroll to
+            // refill the window
+            (prefetchStrategy as? CacheWindowLogic)?.resetStrategy()
+        }
+        scrollPosition.requestPositionAndForgetLastKnownKey(index, scrollOffset)
+        if (forceRemeasure) {
+            remeasurement?.forceRemeasure()
+        } else {
+            measurementScopeInvalidator.invalidateScope()
+        }
+    }
+
+    /**
+     * Call this function to take control of scrolling and gain the ability to send scroll events
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 561–595)
+
+     * via [ScrollScope.scrollBy]. All actions that change the logical scroll position must be
+     * performed within a [scroll] block (even if they don't call any other methods on this object)
+     * in order to guarantee that mutual exclusion is enforced.
+     *
+     * If [scroll] is called from elsewhere, this will be canceled.
+     */
+    override suspend fun scroll(
+        scrollPriority: MutatePriority,
+        block: suspend ScrollScope.() -> Unit,
+    ) {
+        if (layoutInfoState.value === EmptyLazyGridLayoutInfo) {
+            awaitLayoutModifier.waitForFirstLayout()
+        }
+        scrollableState.scroll(scrollPriority, block)
+    }
+
+    override fun dispatchRawDelta(delta: Float): Float = scrollableState.dispatchRawDelta(delta)
+
+    override val isScrollInProgress: Boolean
+        get() = scrollableState.isScrollInProgress
+
+    override var canScrollForward: Boolean by mutableStateOf(false)
+        private set
+
+    override var canScrollBackward: Boolean by mutableStateOf(false)
+        private set
+
+    @get:Suppress("GetterSetterNames")
+    override val lastScrolledForward: Boolean
+        get() = scrollableState.lastScrolledForward
+
+    @get:Suppress("GetterSetterNames")
+    override val lastScrolledBackward: Boolean
+        get() = scrollableState.lastScrolledBackward
+
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 596–630)
+
+    override val scrollIndicatorState: ScrollIndicatorState?
+        get() = _scrollIndicatorState
+
+    // TODO: Coroutine scrolling APIs will allow this to be private again once we have more
+    //  fine-grained control over scrolling
+    /*@VisibleForTesting*/
+    internal fun onScroll(distance: Float): Float {
+        if (distance < 0 && !canScrollForward || distance > 0 && !canScrollBackward) {
+            return 0f
+        }
+        checkPrecondition(abs(scrollToBeConsumed) <= 0.5f) {
+            "entered drag with non-zero pending scroll"
+        }
+        scrollToBeConsumed += distance
+
+        // scrollToBeConsumed will be consumed synchronously during the forceRemeasure invocation
+        // inside measuring we do scrollToBeConsumed.roundToInt() so there will be no scroll if
+        // we have less than 0.5 pixels
+        if (abs(scrollToBeConsumed) > 0.5f) {
+            val preScrollToBeConsumed = scrollToBeConsumed
+            val intDelta = scrollToBeConsumed.roundToInt()
+            var scrolledLayoutInfo =
+                layoutInfoState.value.copyWithScrollDeltaWithoutRemeasure(
+                    delta = intDelta,
+                    updateAnimations = !hasLookaheadOccurred,
+                )
+            if (scrolledLayoutInfo != null && this.approachLayoutInfo != null) {
+                // if we were able to scroll the lookahead layout info without remeasure, lets
+                // try to do the same for post lookahead layout info (sometimes they diverge).
+                val scrolledApproachLayoutInfo =
+                    approachLayoutInfo?.copyWithScrollDeltaWithoutRemeasure(
+                        delta = intDelta,
+                        updateAnimations = true,
+                    )
+                if (scrolledApproachLayoutInfo != null) {
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 631–665)
+
+                    // we can apply scroll delta for both phases without remeasure
+                    approachLayoutInfo = scrolledApproachLayoutInfo
+                } else {
+                    // we can't apply scroll delta for post lookahead, so we have to remeasure
+                    scrolledLayoutInfo = null
+                }
+            }
+            if (scrolledLayoutInfo != null) {
+                applyMeasureResult(
+                    result = scrolledLayoutInfo,
+                    isLookingAhead = hasLookaheadOccurred,
+                    visibleItemsStayedTheSame = true,
+                )
+                // we don't need to remeasure, so we only trigger re-placement:
+                placementScopeInvalidator.invalidateScope()
+
+                notifyPrefetchOnScroll(
+                    preScrollToBeConsumed - scrollToBeConsumed,
+                    scrolledLayoutInfo,
+                )
+            } else {
+                remeasurement?.forceRemeasure()
+                notifyPrefetchOnScroll(preScrollToBeConsumed - scrollToBeConsumed, this.layoutInfo)
+            }
+        }
+
+        // here scrollToBeConsumed is already consumed during the forceRemeasure invocation
+        if (abs(scrollToBeConsumed) <= 0.5f) {
+            // We consumed all of it - we'll hold onto the fractional scroll for later, so report
+            // that we consumed the whole thing
+            return distance
+        } else {
+            val scrollConsumed = distance - scrollToBeConsumed
+            // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
+            // nested scrolling)
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 666–700)
+
+            scrollToBeConsumed = 0f // We're not consuming the rest, give it back
+            return scrollConsumed
+        }
+    }
+
+    private fun notifyPrefetchOnScroll(delta: Float, layoutInfo: LazyGridLayoutInfo) =
+        prefetchStrategy?.apply {
+            if (prefetchingEnabled) {
+                prefetchScope.onScroll(delta, layoutInfo)
+            }
+        }
+
+    private val numOfItemsToTeleport: Int
+        get() = 100 * slotsPerLine
+
+    /**
+     * Animate (smooth scroll) to the given item.
+     *
+     * @param index the index to which to scroll. Must be non-negative.
+     * @param scrollOffset the offset that the item should end up after the scroll. Note that
+     *   positive offset refers to forward scroll, so in a top-to-bottom list, positive offset will
+     *   scroll the item further upward (taking it partly offscreen).
+     */
+    public suspend fun animateScrollToItem(
+        @AndroidXIntRange(from = 0) index: Int,
+        scrollOffset: Int = 0,
+    ) {
+        scroll {
+            LazyLayoutScrollScope(this@LazyGridState, this)
+                .animateScrollToItem(index, scrollOffset, numOfItemsToTeleport, density)
+        }
+    }
+
+    /** Updates the state with the new calculated scroll position and consumed scroll. */
+    internal fun applyMeasureResult(
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 701–735)
+
+        result: LazyGridMeasureResult,
+        isLookingAhead: Boolean,
+        visibleItemsStayedTheSame: Boolean = false,
+    ) {
+        // update the prefetch state with the number of nested prefetch items this layout
+        // should use.
+        result.prefetchState?.idealNestedPrefetchCount = result.visibleItemsInfo.size
+
+        if (!isLookingAhead && hasLookaheadOccurred) {
+            // If there was already a lookahead pass, record this result as Approach result
+            approachLayoutInfo = result
+            Snapshot.withoutReadObservation {
+                // Check whether backscroll animation (from _lazyLayoutScrollDeltaBetweenPasses) is
+                // necessary. This animation handles cases where lookahead and approach passes
+                // have different maximum scroll bounds due to measurement differences (e.g.,
+                // when scrolling past the last item). If both passes already have the same
+                // scroll position, the animation is unnecessary and can be stopped.
+                if (
+                    _lazyLayoutScrollDeltaBetweenPasses.isActive &&
+                        result.firstVisibleLineScrollOffset == scrollPosition.scrollOffset &&
+                        result.firstVisibleLine?.items?.firstOrNull()?.index == scrollPosition.index
+                ) {
+                    _lazyLayoutScrollDeltaBetweenPasses.stop()
+                }
+            }
+        } else {
+            if (isLookingAhead) {
+                (prefetchStrategy as? LazyGridCacheWindowPrefetchStrategy)?.hasLookaheadOccurred =
+                    true
+                hasLookaheadOccurred = true
+            }
+            scrollToBeConsumed -= result.consumedScroll
+            layoutInfoState.value = result
+
+            canScrollBackward = result.canScrollBackward
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 71–105)
+
+ *
+ * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+ * @param initialFirstVisibleItemScrollOffset the initial value for
+ *   [LazyGridState.firstVisibleItemScrollOffset]
+ */
+@Composable
+public fun rememberLazyGridState(
+    initialFirstVisibleItemIndex: Int = 0,
+    initialFirstVisibleItemScrollOffset: Int = 0,
+): LazyGridState {
+    return rememberSaveable(saver = Saver) {
+        LazyGridState(initialFirstVisibleItemIndex, initialFirstVisibleItemScrollOffset)
+    }
+}
+
+/**
+ * Creates a [LazyGridState] that is remembered across compositions.
+ *
+ * Changes to the provided initial values will **not** result in the state being recreated or
+ * changed in any way if it has already been created.
+ *
+ * @param initialFirstVisibleItemIndex the initial value for [LazyGridState.firstVisibleItemIndex]
+ * @param initialFirstVisibleItemScrollOffset the initial value for
+ *   [LazyGridState.firstVisibleItemScrollOffset]
+ * @param prefetchStrategy the [LazyGridPrefetchStrategy] to use for prefetching content in this
+ *   grid
+ */
+@ExperimentalFoundationApi
+@Deprecated(
+    """Providing `LazyLayoutCacheWindow` via the `Lazy[Orientation]Grid` composable should be preferred over using `LazyGridPrefetchStrategy` here."""
+)
+@Suppress("DEPRECATION")
+@Composable
+public fun rememberLazyGridState(
+    initialFirstVisibleItemIndex: Int = 0,
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 736–770)
+
+            canScrollForward = result.canScrollForward
+
+            if (visibleItemsStayedTheSame) {
+                scrollPosition.updateScrollOffset(result.firstVisibleLineScrollOffset)
+            } else {
+                scrollPosition.updateFromMeasureResult(result)
+                prefetchStrategy?.apply {
+                    if (prefetchingEnabled) {
+                        prefetchScope.onVisibleItemsUpdated(result)
+                    }
+                }
+            }
+
+            if (isLookingAhead) {
+                _lazyLayoutScrollDeltaBetweenPasses.updateScrollDeltaForApproach(
+                    result.scrollBackAmount,
+                    result.density,
+                    result.coroutineScope,
+                )
+            }
+            numMeasurePasses++
+        }
+    }
+
+    private val _lazyLayoutScrollDeltaBetweenPasses = LazyLayoutScrollDeltaBetweenPasses()
+
+    internal val scrollDeltaBetweenPasses
+        get() = _lazyLayoutScrollDeltaBetweenPasses.scrollDeltaBetweenPasses
+
+    /**
+     * When the user provided custom keys for the items we can try to detect when there were items
+     * added or removed before our current first visible item and keep this item as the first
+     * visible one even given that its index has been changed.
+     */
+    internal fun updateScrollPositionIfTheFirstItemWasMoved(
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 771–805)
+
+        itemProvider: LazyGridItemProvider,
+        firstItemIndex: Int,
+    ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
+
+    public companion object {
+        /** The default [Saver] implementation for [LazyGridState]. */
+        public val Saver: Saver<LazyGridState, *> =
+            listSaver(
+                save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                restore = {
+                    LazyGridState(
+                        firstVisibleItemIndex = it[0],
+                        firstVisibleItemScrollOffset = it[1],
+                    )
+                },
+            )
+
+        /**
+         * A [Saver] implementation for [LazyGridState] that handles setting a custom
+         * [LazyGridPrefetchStrategy].
+         */
+        @ExperimentalFoundationApi
+        @Suppress("DEPRECATION")
+        internal fun saver(prefetchStrategy: LazyGridPrefetchStrategy): Saver<LazyGridState, *> =
+            listSaver(
+                save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                restore = {
+                    LazyGridState(
+                        firstVisibleItemIndex = it[0],
+                        firstVisibleItemScrollOffset = it[1],
+                        prefetchStrategy,
+                    )
+                },
+            )
+
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 806–840)
+
+        /**
+         * A [Saver] implementation for [LazyGridState] that handles setting a custom
+         * [LazyLayoutCacheWindow].
+         */
+        internal fun saver(cacheWindow: LazyLayoutCacheWindow): Saver<LazyGridState, *> =
+            listSaver(
+                save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
+                restore = {
+                    @Suppress("DEPRECATION")
+                    LazyGridState(
+                        cacheWindow = cacheWindow,
+                        firstVisibleItemIndex = it[0],
+                        firstVisibleItemScrollOffset = it[1],
+                    )
+                },
+            )
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+private val EmptyLazyGridLayoutInfo =
+    LazyGridMeasureResult(
+        firstVisibleLine = null,
+        firstVisibleLineScrollOffset = 0,
+        canScrollForward = false,
+        consumedScroll = 0f,
+        measureResult =
+            object : MeasureResult {
+                override val width: Int = 0
+                override val height: Int = 0
+
+                @Suppress("PrimitiveInCollection")
+                override val alignmentLines: Map<AlignmentLine, Int> = emptyMap()
+
+                override fun placeChildren() {}
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–861)
+
+            },
+        scrollBackAmount = 0f,
+        visibleItemsInfo = emptyList(),
+        viewportStartOffset = 0,
+        viewportEndOffset = 0,
+        totalItemsCount = 0,
+        reverseLayout = false,
+        orientation = Orientation.Vertical,
+        afterContentPadding = 0,
+        mainAxisItemSpacing = 0,
+        remeasureNeeded = false,
+        density = Density(1f),
+        slotsPerLine = 0,
+        coroutineScope = CoroutineScope(EmptyCoroutineContext),
+        prefetchInfoRetriever = { emptyList() },
+        lineIndexProvider = { -1 },
+        stickingItemsCombinedSize = 0,
+        prefetchState = null,
+        prefetchStrategy = null,
+    )
+
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)

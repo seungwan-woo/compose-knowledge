@@ -1,0 +1,642 @@
+---
+type: reference
+title: Lifecycle of composables
+description: "Public source: https://developer.android.com/develop/ui/compose/lifecycle"
+tags:
+  - Compose
+  - Android
+sources:
+  - id: live-compose-guide-lifecycle-add-info-smart-recomposition-2-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#add-info-smart-recomposition
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: 6765657ccbab8b07e18b3ce3c35dfb554d3884ac91c318e9013a37d177ef9762
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Composition when a new element is added to the list.
+
+      MovieOverview
+
+      composables cannot be reused and all side effects will restart. A different color in
+
+      MovieOverview
+
+      means the composable has been recomposed.
+
+      Ideally, we want to think of the identity of the MovieOverview instance as linked to the identity of the movie that is passed to it. If we reorder the list of movies, ideally we would similarly reorder the instances in the Composition tree instead of recomposing each MovieOverview composable with a different movie instance. Compose provides a way for you to tell the runtime what values you want to use to identify a given part of the tree: the key composable.
+
+      By wrapping a block of code with a call to the key composable with one or more values passed in, those values will be combined to be used to identify that instance in the composition. The value for a key does not need to be globally unique, it needs to only be unique amongst the invocations of composables at the call site. So in this example, each movie needs to have a key that's unique among the movies; it's fine if it shares that key with some other composable elsewhere in the app.
+
+      @Composable
+      fun MoviesScreenWithKey(movies: List<Movie>) {
+          Column {
+              for (movie in movies) {
+                  key(movie.id) { // Unique ID for this movie
+                      MovieOverview(movie)
+                  }
+              }
+          }
+      }LifecycleSnippets.kt
+
+      With the above, even if the elements on the list change, Compose recognizes individual calls to MovieOverview and can reuse them.
+
+      Figure 6.
+
+      Representation of
+
+      MoviesScreen
+
+      in the Composition when a new element is added to the list. Since the
+
+      MovieOverview
+
+      composables have unique keys, Compose recognizes which
+
+      MovieOverview
+
+      instances haven't changed, and can reuse them; their side effects will continue executing.
+
+      Some composables have built-in support for the key composable. For example, LazyColumn accepts specifying a custom key in the items DSL.
+
+      @Composable
+      fun MoviesScreenLazy(movies: List<Movie>) {
+          LazyColumn {
+              items(movies, key = { movie -> movie.id }) { movie ->
+                  MovieOverview(movie)
+              }
+          }
+      }LifecycleSnippets.kt
+  - id: live-compose-guide-lifecycle-add-info-smart-recomposition-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#add-info-smart-recomposition
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: e0a3115a825429ae7b4a526038733869da84810049f9d8286de2db1822541b13
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Calling a composable multiple times will add it to Composition multiple times as well. When calling a composable multiple times from the same call site, Compose doesn’t have any information to uniquely identify each call to that composable, so the execution order is used in addition to the call site in order to keep the instances distinct. This behavior is sometimes all that is needed, but in some cases it can cause unwanted behavior.
+
+      @Composable
+      fun MoviesScreen(movies: List<Movie>) {
+          Column {
+              for (movie in movies) {
+                  // MovieOverview composables are placed in Composition given its
+                  // index position in the for loop
+                  MovieOverview(movie)
+              }
+          }
+      }LifecycleSnippets.kt
+
+      In the example above, Compose uses the execution order in addition to the call site to keep the instance distinct in the Composition. If a new movie is added to the bottom of the list, Compose can reuse the instances already in the Composition since their location in the list haven't changed and therefore, the movie input is the same for those instances.
+
+      Figure 4.
+
+      Representation of
+
+      MoviesScreen
+
+      in the Composition when a new element is added to the bottom of the list.
+
+      MovieOverview
+
+      composables in the Composition can be reused. Same color in
+
+      MovieOverview
+
+      means the composable hasn't been recomposed.
+
+      However, if the movies list changes by either adding to the top or the middle of the list, removing or reordering items, it'll cause a recomposition in all MovieOverview calls whose input parameter has changed position in the list. That's extremely important if, for example, MovieOverview fetches a movie image using a side effect. If recomposition happens while the effect is in progress, it will be cancelled and will start again.
+
+      @Composable
+      fun MovieOverview(movie: Movie) {
+          Column {
+              // Side effect explained later in the docs. If MovieOverview
+              // recomposes, while fetching the image is in progress,
+              // it is cancelled and restarted.
+              val image = loadNetworkImage(movie.url)
+              MovieHeader(image)
+
+              /* ... */
+          }
+      }
+      LifecycleSnippets.kt
+
+      Figure 5.
+
+      Representation of
+
+      MoviesScreen
+
+      in the
+  - id: live-compose-guide-lifecycle-composition-anatomy-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#composition-anatomy
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: bf17ce1836247943f72e34cf226c092016163e7d4da80c668394fd6b8e30deaa
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      The instance of a composable in Composition is identified by its call site. The Compose compiler considers each call site as distinct. Calling composables from multiple call sites will create multiple instances of the composable in Composition.
+
+      If during a recomposition a composable calls different composables than it did during the previous composition, Compose will identify which composables were called or not called and for the composables that were called in both compositions, Compose will avoid recomposing them if their inputs haven't changed.
+
+      Preserving identity is crucial to associate side effects with their composable, so that they can complete successfully rather than restart for every recomposition.
+
+      Consider the following example:
+
+      @Composable
+      fun LoginScreen(showError: Boolean) {
+          if (showError) {
+              LoginError()
+          }
+          LoginInput() // This call site affects where LoginInput is placed in Composition
+      }
+
+      @Composable
+      fun LoginInput() { /* ... */ }
+
+      @Composable
+      fun LoginError() { /* ... */ }LifecycleSnippets.kt
+
+      In the code snippet above, LoginScreen will conditionally call the LoginError composable and will always call the LoginInput composable. Each call has a unique call site and source position, which the compiler will use to uniquely identify it.
+
+      Figure 3.
+
+      Representation of
+
+      LoginScreen
+
+      in the Composition when the state changes and a recomposition occurs. Same color means it hasn't been recomposed.
+
+      Even though LoginInput went from being called first to being called second, the LoginInput instance will be preserved across recompositions. Additionally, because LoginInput doesn’t have any parameters that have changed across recomposition, the call to LoginInput will be skipped by Compose.
+  - id: live-compose-guide-lifecycle-lifecycle-overview-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#lifecycle-overview
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: 25d62fde110e6acef30df1e59170ccef3c379f2646ce460fae2e48218d681185
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      As mentioned in the Managing state documentation, a Composition describes the UI of your app and is produced by running composables. A Composition is a tree-structure of the composables that describe your UI.
+
+      When Jetpack Compose runs your composables for the first time, during initial composition, it will keep track of the composables that you call to describe your UI in a Composition. Then, when the state of your app changes, Jetpack Compose schedules a recomposition. Recomposition is when Jetpack Compose re-executes the composables that may have changed in response to state changes, and then updates the Composition to reflect any changes.
+
+      A Composition can only be produced by an initial composition and updated by recomposition. The only way to modify a Composition is through recomposition.
+
+      Figure 1.
+
+      Lifecycle of a composable in the Composition. It enters the Composition, gets recomposed 0 or more times, and leaves the Composition.
+
+      Recomposition is typically triggered by a change to a State<T> object. Compose tracks these and runs all composables in the Composition that read that particular State<T>, and any composables that they call that cannot be skipped.
+
+      If a composable is called multiple times, multiple instances are placed in the Composition. Each call has its own lifecycle in the Composition.
+
+      @Composable
+      fun MyComposable() {
+          Column {
+              Text("Hello")
+              Text("World")
+          }
+      }LifecycleSnippets.kt
+
+      Figure 2.
+
+      Representation of
+
+      MyComposable
+
+      in the Composition. If a composable is called multiple times, multiple instances are placed in the Composition. An element having a different color is indicative of it being a separate instance.
+  - id: live-compose-guide-lifecycle-main-content-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#main-content
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: 53c65153286444c4e40a97eaacb388c1e9bbfc0c93e073bb1fd4ca4d4eaf6719
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: In this page, you'll learn about the lifecycle of a composable and how Compose decides whether a composable needs recomposition.
+  - id: live-compose-guide-lifecycle-recommended-for-you-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#recommended_for_you
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: 00786fcb365854704d89e9d46b5f6bc7c653af5307dd749bffd8522c42ff7f2c
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Note: link text is displayed when JavaScript is off
+
+      State and Jetpack Compose
+
+      Side-effects in Compose
+
+      Save UI state in Compose
+  - id: live-compose-guide-lifecycle-skipping-2-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#skipping
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: db95f6d3ae2c36570b59b79bdcaff6c578477c83287f45b345963f0c3167ecce
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      favor skipping and smart recompositions.
+      @Stable
+      interface UiState<T : Result<T>> {
+          val value: T?
+          val exception: Throwable?
+
+          val hasError: Boolean
+              get() = exception != null
+      }LifecycleSnippets.kt
+
+      In the code snippet above, since UiState is an interface, Compose could ordinarily consider this type to be not stable. By adding the @Stable annotation, you tell Compose that this type is stable, allowing Compose to favor smart recompositions. This also means that Compose will treat all its implementations as stable if the interface is used as the parameter type.
+  - id: live-compose-guide-lifecycle-skipping-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lifecycle#skipping
+    revision: web:compose-guide-lifecycle:content@sha256:d8cb7ec025ce0b979e0df074ec4f2dbc5a3872adffd9e302827200c11b85f1d4
+    sha256: 1ccf4566f139f8b8d5db7cc6f50cd7b6d1df93d98334bedbc55627e1acb6070a
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      During recomposition, some eligible composable functions can have their execution be skipped entirely if their inputs have not changed from the previous composition.
+
+      A composable function is eligible for skipping unless:
+
+      The function has a non-Unit return type
+
+      The function is annotated with @NonRestartableComposable or @NonSkippableComposable
+
+      A required parameter is of a non-stable type
+
+      There is a compiler mode, Strong Skipping, which relaxes the last requirement.
+
+      In order for a type to be considered stable it must comply with the following contract:
+
+      The result of equals for two instances will forever be the same for the same two instances.
+
+      If a public property of the type changes, Composition will be notified.
+
+      All public property types are also stable.
+
+      There are some important common types that fall into this contract that the Compose compiler will treat as stable, even though they are not explicitly marked as stable by using the @Stable annotation:
+
+      All primitive value types: Boolean, Int, Long, Float, Char, etc.
+
+      Strings
+
+      All function types (lambdas)
+
+      All of these types are able to follow the contract of stable because they are immutable. Since immutable types never change, they never have to notify Composition of the change, so it is much easier to follow this contract.
+
+      One notable type that is stable but is mutable is Compose’s MutableState type. If a value is held in a MutableState, the state object overall is considered to be stable as Compose will be notified of any changes to the .value property of State.
+
+      When all types passed as parameters to a composable are stable, the parameter values are compared for equality based on the composable position in the UI tree. Recomposition is skipped if all the values are unchanged since the previous call.
+
+      Compose considers a type stable only if it can prove it. For example, an interface is generally treated as not stable, and types with mutable public properties whose implementation could be immutable are not stable either.
+
+      If Compose is not able to infer that a type is stable, but you want to force Compose to treat it as stable, mark it with the @Stable annotation.
+
+      // Marking the type as stable to
+compose:
+  id: live-compose-guide-lifecycle
+  artifact: androidx.compose.runtime:runtime
+  fqn: androidx.compose.runtime
+  sections:
+    - id: live-compose-guide-lifecycle-add-info-smart-recomposition
+      title: Add extra information to help smart recompositions
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-add-info-smart-recomposition-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-add-info-smart-recomposition-2
+      title: Add extra information to help smart recompositions
+      aliases:
+        - androidx.compose.runtime.key
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-add-info-smart-recomposition-2-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-composition-anatomy
+      title: Anatomy of a composable in Composition
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-composition-anatomy-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-lifecycle-overview
+      title: Lifecycle overview
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-lifecycle-overview-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-main-content
+      title: Introduction
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-main-content-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-recommended-for-you
+      title: Recommended for you
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-recommended-for-you-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-skipping
+      title: Skipping if the inputs haven't changed
+      aliases:
+        - androidx.compose.runtime.Stable
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-skipping-source
+      relatedIds: []
+    - id: live-compose-guide-lifecycle-skipping-2
+      title: Skipping if the inputs haven't changed
+      aliases:
+        - androidx.compose.runtime.Stable
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - live-compose-guide-lifecycle-skipping-2-source
+      relatedIds: []
+---
+
+# Lifecycle of composables
+
+Public source: https://developer.android.com/develop/ui/compose/lifecycle
+
+## Add extra information to help smart recompositions
+
+Calling a composable multiple times will add it to Composition multiple times as well. When calling a composable multiple times from the same call site, Compose doesn’t have any information to uniquely identify each call to that composable, so the execution order is used in addition to the call site in order to keep the instances distinct. This behavior is sometimes all that is needed, but in some cases it can cause unwanted behavior.
+
+@Composable
+fun MoviesScreen(movies: List<Movie>) {
+    Column {
+        for (movie in movies) {
+            // MovieOverview composables are placed in Composition given its
+            // index position in the for loop
+            MovieOverview(movie)
+        }
+    }
+}LifecycleSnippets.kt
+
+In the example above, Compose uses the execution order in addition to the call site to keep the instance distinct in the Composition. If a new movie is added to the bottom of the list, Compose can reuse the instances already in the Composition since their location in the list haven't changed and therefore, the movie input is the same for those instances.
+
+Figure 4.
+
+Representation of
+
+MoviesScreen
+
+in the Composition when a new element is added to the bottom of the list.
+
+MovieOverview
+
+composables in the Composition can be reused. Same color in
+
+MovieOverview
+
+means the composable hasn't been recomposed.
+
+However, if the movies list changes by either adding to the top or the middle of the list, removing or reordering items, it'll cause a recomposition in all MovieOverview calls whose input parameter has changed position in the list. That's extremely important if, for example, MovieOverview fetches a movie image using a side effect. If recomposition happens while the effect is in progress, it will be cancelled and will start again.
+
+@Composable
+fun MovieOverview(movie: Movie) {
+    Column {
+        // Side effect explained later in the docs. If MovieOverview
+        // recomposes, while fetching the image is in progress,
+        // it is cancelled and restarted.
+        val image = loadNetworkImage(movie.url)
+        MovieHeader(image)
+
+        /* ... */
+    }
+}
+LifecycleSnippets.kt
+
+Figure 5.
+
+Representation of
+
+MoviesScreen
+
+in the
+
+Sources: [live-compose-guide-lifecycle-add-info-smart-recomposition-source](https://developer.android.com/develop/ui/compose/lifecycle#add-info-smart-recomposition)
+
+## Add extra information to help smart recompositions
+
+Composition when a new element is added to the list.
+
+MovieOverview
+
+composables cannot be reused and all side effects will restart. A different color in
+
+MovieOverview
+
+means the composable has been recomposed.
+
+Ideally, we want to think of the identity of the MovieOverview instance as linked to the identity of the movie that is passed to it. If we reorder the list of movies, ideally we would similarly reorder the instances in the Composition tree instead of recomposing each MovieOverview composable with a different movie instance. Compose provides a way for you to tell the runtime what values you want to use to identify a given part of the tree: the key composable.
+
+By wrapping a block of code with a call to the key composable with one or more values passed in, those values will be combined to be used to identify that instance in the composition. The value for a key does not need to be globally unique, it needs to only be unique amongst the invocations of composables at the call site. So in this example, each movie needs to have a key that's unique among the movies; it's fine if it shares that key with some other composable elsewhere in the app.
+
+@Composable
+fun MoviesScreenWithKey(movies: List<Movie>) {
+    Column {
+        for (movie in movies) {
+            key(movie.id) { // Unique ID for this movie
+                MovieOverview(movie)
+            }
+        }
+    }
+}LifecycleSnippets.kt
+
+With the above, even if the elements on the list change, Compose recognizes individual calls to MovieOverview and can reuse them.
+
+Figure 6.
+
+Representation of
+
+MoviesScreen
+
+in the Composition when a new element is added to the list. Since the
+
+MovieOverview
+
+composables have unique keys, Compose recognizes which
+
+MovieOverview
+
+instances haven't changed, and can reuse them; their side effects will continue executing.
+
+Some composables have built-in support for the key composable. For example, LazyColumn accepts specifying a custom key in the items DSL.
+
+@Composable
+fun MoviesScreenLazy(movies: List<Movie>) {
+    LazyColumn {
+        items(movies, key = { movie -> movie.id }) { movie ->
+            MovieOverview(movie)
+        }
+    }
+}LifecycleSnippets.kt
+
+Sources: [live-compose-guide-lifecycle-add-info-smart-recomposition-2-source](https://developer.android.com/develop/ui/compose/lifecycle#add-info-smart-recomposition)
+
+## Anatomy of a composable in Composition
+
+The instance of a composable in Composition is identified by its call site. The Compose compiler considers each call site as distinct. Calling composables from multiple call sites will create multiple instances of the composable in Composition.
+
+If during a recomposition a composable calls different composables than it did during the previous composition, Compose will identify which composables were called or not called and for the composables that were called in both compositions, Compose will avoid recomposing them if their inputs haven't changed.
+
+Preserving identity is crucial to associate side effects with their composable, so that they can complete successfully rather than restart for every recomposition.
+
+Consider the following example:
+
+@Composable
+fun LoginScreen(showError: Boolean) {
+    if (showError) {
+        LoginError()
+    }
+    LoginInput() // This call site affects where LoginInput is placed in Composition
+}
+
+@Composable
+fun LoginInput() { /* ... */ }
+
+@Composable
+fun LoginError() { /* ... */ }LifecycleSnippets.kt
+
+In the code snippet above, LoginScreen will conditionally call the LoginError composable and will always call the LoginInput composable. Each call has a unique call site and source position, which the compiler will use to uniquely identify it.
+
+Figure 3.
+
+Representation of
+
+LoginScreen
+
+in the Composition when the state changes and a recomposition occurs. Same color means it hasn't been recomposed.
+
+Even though LoginInput went from being called first to being called second, the LoginInput instance will be preserved across recompositions. Additionally, because LoginInput doesn’t have any parameters that have changed across recomposition, the call to LoginInput will be skipped by Compose.
+
+Sources: [live-compose-guide-lifecycle-composition-anatomy-source](https://developer.android.com/develop/ui/compose/lifecycle#composition-anatomy)
+
+## Lifecycle overview
+
+As mentioned in the Managing state documentation, a Composition describes the UI of your app and is produced by running composables. A Composition is a tree-structure of the composables that describe your UI.
+
+When Jetpack Compose runs your composables for the first time, during initial composition, it will keep track of the composables that you call to describe your UI in a Composition. Then, when the state of your app changes, Jetpack Compose schedules a recomposition. Recomposition is when Jetpack Compose re-executes the composables that may have changed in response to state changes, and then updates the Composition to reflect any changes.
+
+A Composition can only be produced by an initial composition and updated by recomposition. The only way to modify a Composition is through recomposition.
+
+Figure 1.
+
+Lifecycle of a composable in the Composition. It enters the Composition, gets recomposed 0 or more times, and leaves the Composition.
+
+Recomposition is typically triggered by a change to a State<T> object. Compose tracks these and runs all composables in the Composition that read that particular State<T>, and any composables that they call that cannot be skipped.
+
+If a composable is called multiple times, multiple instances are placed in the Composition. Each call has its own lifecycle in the Composition.
+
+@Composable
+fun MyComposable() {
+    Column {
+        Text("Hello")
+        Text("World")
+    }
+}LifecycleSnippets.kt
+
+Figure 2.
+
+Representation of
+
+MyComposable
+
+in the Composition. If a composable is called multiple times, multiple instances are placed in the Composition. An element having a different color is indicative of it being a separate instance.
+
+Sources: [live-compose-guide-lifecycle-lifecycle-overview-source](https://developer.android.com/develop/ui/compose/lifecycle#lifecycle-overview)
+
+## Introduction
+
+In this page, you'll learn about the lifecycle of a composable and how Compose decides whether a composable needs recomposition.
+
+Sources: [live-compose-guide-lifecycle-main-content-source](https://developer.android.com/develop/ui/compose/lifecycle#main-content)
+
+## Recommended for you
+
+Note: link text is displayed when JavaScript is off
+
+State and Jetpack Compose
+
+Side-effects in Compose
+
+Save UI state in Compose
+
+Sources: [live-compose-guide-lifecycle-recommended-for-you-source](https://developer.android.com/develop/ui/compose/lifecycle#recommended_for_you)
+
+## Skipping if the inputs haven't changed
+
+During recomposition, some eligible composable functions can have their execution be skipped entirely if their inputs have not changed from the previous composition.
+
+A composable function is eligible for skipping unless:
+
+The function has a non-Unit return type
+
+The function is annotated with @NonRestartableComposable or @NonSkippableComposable
+
+A required parameter is of a non-stable type
+
+There is a compiler mode, Strong Skipping, which relaxes the last requirement.
+
+In order for a type to be considered stable it must comply with the following contract:
+
+The result of equals for two instances will forever be the same for the same two instances.
+
+If a public property of the type changes, Composition will be notified.
+
+All public property types are also stable.
+
+There are some important common types that fall into this contract that the Compose compiler will treat as stable, even though they are not explicitly marked as stable by using the @Stable annotation:
+
+All primitive value types: Boolean, Int, Long, Float, Char, etc.
+
+Strings
+
+All function types (lambdas)
+
+All of these types are able to follow the contract of stable because they are immutable. Since immutable types never change, they never have to notify Composition of the change, so it is much easier to follow this contract.
+
+One notable type that is stable but is mutable is Compose’s MutableState type. If a value is held in a MutableState, the state object overall is considered to be stable as Compose will be notified of any changes to the .value property of State.
+
+When all types passed as parameters to a composable are stable, the parameter values are compared for equality based on the composable position in the UI tree. Recomposition is skipped if all the values are unchanged since the previous call.
+
+Compose considers a type stable only if it can prove it. For example, an interface is generally treated as not stable, and types with mutable public properties whose implementation could be immutable are not stable either.
+
+If Compose is not able to infer that a type is stable, but you want to force Compose to treat it as stable, mark it with the @Stable annotation.
+
+// Marking the type as stable to
+
+Sources: [live-compose-guide-lifecycle-skipping-source](https://developer.android.com/develop/ui/compose/lifecycle#skipping)
+
+## Skipping if the inputs haven't changed
+
+favor skipping and smart recompositions.
+@Stable
+interface UiState<T : Result<T>> {
+    val value: T?
+    val exception: Throwable?
+
+    val hasError: Boolean
+        get() = exception != null
+}LifecycleSnippets.kt
+
+In the code snippet above, since UiState is an interface, Compose could ordinarily consider this type to be not stable. By adding the @Stable annotation, you tell Compose that this type is stable, allowing Compose to favor smart recompositions. This also means that Compose will treat all its implementations as stable if the interface is used as the parameter type.
+
+Sources: [live-compose-guide-lifecycle-skipping-2-source](https://developer.android.com/develop/ui/compose/lifecycle#skipping)
