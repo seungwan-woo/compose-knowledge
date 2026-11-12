@@ -19,13 +19,15 @@ All CLI outputs were captured as raw bytes by a small subprocess recorder in `/t
 
 ## Task A: implementation with supplied versions
 
-Request: “Android 앱에서 Material3 1.3.2와 Compose UI1.7.8을 사용한다. 바깥을 누르면 닫히는 DropdownMenu 코드를 근거와 함께 제안해줘.”
+Request (English translation of the original Korean): “The Android app uses Material3 1.3.2 and Compose UI 1.7.8. Suggest evidence-based DropdownMenu code that closes when tapped outside.”
 
 Version context was taken from the user: Material3 1.3.2 and UI 1.7.8, Android. It was not inferred from the demo config and was not independently resolved by Gradle. No module, build variant or imports from the unavailable project were invented. The Material3 search/reads carried the independently supplied UI requirement; the linked UI read used UI 1.7.8 plus the Material3 requirement. All returned version statuses were `match` for this supplied context.
 
 ### Proposed answer produced from the evidence
 
-다음처럼 `expanded`를 호출자가 소유하고, `onDismissRequest`에서 `false`로 바꾸면 바깥 탭으로 메뉴를 닫을 수 있습니다. 메뉴 항목을 눌렀을 때 닫는 처리는 해당 항목의 `onClick`에 별도로 둡니다.
+English translation of the original consumer answer: Let the caller own `expanded` and set it to `false` in `onDismissRequest` to close the menu on an outside tap. Close it separately in the item’s `onClick` when an item is selected.
+
+The original Kotlin sample is preserved below, including its UI strings: `메뉴` means “Menu” and `수정` means “Edit”. These are original output data, not newly executed code.
 
 ```kotlin
 import androidx.compose.foundation.layout.Box
@@ -63,9 +65,9 @@ fun ActionsMenu(onEdit: () -> Unit) {
 }
 ```
 
-근거: [A1]의 API는 바깥 탭과 뒤로가기를 닫기 요청의 예로 들고, `expanded`를 매개변수로 받습니다. [A2]의 공식 샘플도 `remember { mutableStateOf(false) }`와 `onDismissRequest = { expanded = false }`를 사용합니다. [A3]에서 `dismissOnClickOutside`는 바깥 탭 시 콜백을 호출하는 속성이고 기본값은 `true`입니다. 위 코드는 공식 샘플처럼 메뉴 기본 properties를 그대로 사용합니다. 콜백 호출만으로 상태가 자동으로 변경되거나 뒤쪽 버튼의 클릭이 실행된다고 해석하지 않습니다.
+Evidence: API [A1] gives outside taps and back presses as examples of dismissal requests and accepts `expanded` as a parameter. Official sample [A2] also uses `remember { mutableStateOf(false) }` and `onDismissRequest = { expanded = false }`. In [A3], `dismissOnClickOutside` invokes the callback on an outside tap and defaults to `true`. Like the official sample, this code retains the menu’s default properties. A callback alone does not establish an automatic state change or a click on the underlying button.
 
-제시한 버전과 자료의 버전은 일치하지만 실제 프로젝트의 Gradle 해석, 컴파일, 기기 동작은 확인하지 못했습니다. 적용 후 메뉴를 열고 메뉴 바깥을 탭해 닫히는지 확인하고, 항목 선택과 뒤로가기도 함께 확인해야 합니다. 이 작업에서는 터치 전달 구현을 읽지 않았으므로 뒤쪽 버튼에 같은 탭이 전달되는지에 대한 결론은 내리지 않습니다.
+The supplied versions match the evidence, but the actual project’s Gradle resolution, compilation, and device behavior were not verified. After applying the code, open the menu and check that an outside tap closes it; also check item selection and back presses. This task did not read the touch-routing implementation, so it makes no claim about whether the same tap reaches the underlying button.
 
 ### Retrieval ledger
 
@@ -95,21 +97,23 @@ The Material3 API and sample were direct hits. `popup-properties` was followed o
 
 ## Task B: PR review with unavailable project versions
 
-Request: “PR에서 PopupProperties(dismissOnClickOutside=true)를 추가하며 이제 뒤쪽 버튼이 동일한 클릭을 받는다고 주장한다. 이 주장을 리뷰해줘. 프로젝트 버전은 현재 확인할 수 없다.”
+Request (English translation of the original Korean): “A PR adds PopupProperties(dismissOnClickOutside=true) and claims that the underlying button now receives the same click. Review this claim. The project versions cannot currently be checked.”
 
 This task synced separately and supplied `--version unknown` for Material3 and UI. No unresolved dependency was put into `--require`, and no version from Task A or the demo config was substituted for a project version. Every hit/read returned `unknown`. The retrieved example source versions remain visible in the source provenance; they are not asserted to be the PR's versions. Query selection began independently from the DropdownMenu FQN to inspect its default forwarding/focusability, then followed only one-hop related IDs for properties and routing.
 
 ### Review produced from the evidence
 
-리뷰 대상 위치는 PR의 `PopupProperties(dismissOnClickOutside = true)` 추가부입니다. 실제 파일명과 행 번호, 전체 호출부는 제공되지 않았습니다.
+English translation of the original consumer review:
 
-**“이제 뒤쪽 버튼도 같은 클릭을 받는다”는 주장은 이 변경만으로 입증되지 않습니다.** [B2]의 속성 계약은 메뉴 바깥 클릭 시 `onDismissRequest`를 호출한다는 뜻입니다. 상태를 닫는 코드와 뒤쪽 버튼의 `onClick` 실행은 별도로 확인해야 합니다.
+The review target is the PR’s addition of `PopupProperties(dismissOnClickOutside = true)`. The actual filename, line number, and full call site were not supplied.
 
-자료의 UI 1.7.8 구현 [B3]은 터치를 다른 윈도우로 전달할지 상위 계층이 결정하며, focusable일 때 소비하고 non-focusable일 때 다른 윈도우로 전달한다고 설명합니다. 이 소스 주석은 특정 Compose 버튼에 완전한 제스처가 도착해 `onClick`이 실행되었다는 기기 검증 결과가 아닙니다. 따라서 `dismissOnClickOutside` 값만 보고 클릭 전달을 보장해서는 안 됩니다.
+**This change alone does not establish that the underlying button now receives the same click.** The property contract in [B2] invokes `onDismissRequest` on an outside click. The code that closes the state and execution of the underlying button’s `onClick` must be checked separately.
 
-추가로 `DropdownMenu`에 `properties`를 새로 넘기는 PR이라면 focusability 변경을 확인해야 합니다. 예시 자료 [B1]의 Android DropdownMenu 기본값은 `PopupProperties(focusable = true)`인데, [B2]의 일반 `PopupProperties(dismissOnClickOutside = true)` 생성자는 `focusable = false`를 기본으로 사용합니다. 따라서 이 치환은 focusability와 뒤로가기 처리를 바꿀 수 있습니다. 바깥 탭으로 닫기만 의도했다면 기본 properties를 유지하거나 실제 버전에서 필요한 focusability를 명시하는 방향을 검토해야 합니다. `dismissOnClickOutside = true` 자체는 이 예시 소스에서도 이미 기본값입니다. PR이 일반 `Popup`을 변경하는 것이라면 DropdownMenu 기본값 비교는 적용되지 않습니다.
+The UI 1.7.8 implementation in [B3] explains that the upper layer decides whether to forward touches to another window: focusable windows consume them, while non-focusable windows forward them. This source comment is not device validation that a complete gesture reached a particular Compose button and invoked `onClick`. Therefore, `dismissOnClickOutside` alone cannot guarantee click forwarding.
 
-프로젝트 버전은 **unknown**이므로 위 1.3.2/1.7.8 자료가 실제 PR에 그대로 적용된다고 확정할 수 없습니다. 변경 전후의 실제 호출부와 상태 갱신 코드를 확인하고, 해당 모듈/variant에서 Material3와 Compose UI를 각각 Gradle `dependencyInsight`로 해석해야 합니다. 같은 기기/버전에서 메뉴를 연 뒤 배경 버튼 좌표를 한 번 탭하여 닫기 콜백 횟수, `expanded` 변화, 배경 `onClick` 횟수와 순서를 기록하십시오. focusable 설정과 뒤로가기 동작도 변경 전후 비교해야 합니다. 현재 결론은 **설명과 검증 보강이 필요한 주장**이며, 프로젝트에서 반드시 전달되거나 반드시 차단된다는 판정은 아닙니다.
+If the PR newly passes `properties` to `DropdownMenu`, also check for a focusability change. In example [B1], Android DropdownMenu defaults to `PopupProperties(focusable = true)`, whereas the general `PopupProperties(dismissOnClickOutside = true)` constructor in [B2] defaults to `focusable = false`. This replacement can therefore change focusability and back handling. If the only intent is outside-tap dismissal, consider retaining the default properties or explicitly setting the focusability required by the actual version. `dismissOnClickOutside = true` is already the default in this example source. The DropdownMenu-default comparison does not apply if the PR changes a general `Popup`.
+
+Project versions are **unknown**, so the 1.3.2/1.7.8 evidence cannot be assumed to apply unchanged to the actual PR. Check the real call sites and state updates before and after the change, then resolve Material3 and Compose UI separately with Gradle `dependencyInsight` for the relevant module/variant. On the same device/version, open the menu and tap the background button’s coordinates once; record dismissal callback counts, `expanded` changes, and background `onClick` counts and order. Also compare focusability settings and back behavior before and after the change. The current conclusion is **a claim requiring a stronger explanation and validation**, not a finding that this project always forwards or always blocks the tap.
 
 ### Retrieval ledger
 

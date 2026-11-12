@@ -1,40 +1,40 @@
-# 로컬 PoC 구현 결과
+# Local PoC implementation results
 
-사용자 계획을 고정 계약과 파일 소유권으로 나누어 병렬 구현했습니다. 현재 결과는 공식 AndroidX fixture 기반 로컬 PoC이며 운영 수집·발행 완료를 의미하지 않습니다.
+The user's plan was split into fixed contracts and file ownership for parallel implementation. The result is a local PoC using official AndroidX fixtures, not completed production collection or publication.
 
-| 역할 | 모델 | 담당 |
+| Role | Model | Scope |
 |---|---|---|
-| 구현 | GPT-6.1 Terra | OKF/검증, 검색/버전/예산, Git 캐시, CLI; 마지막 수정은 한 담당자에게 통합 |
-| 독립 리뷰 | GPT-6 Astra | 계약·작업별 리뷰와 새 컨텍스트의 전체 리뷰 |
-| 조사·테스트·사용성 | GPT-6.1 Sol | 출처·체크섬, 고정 질문/수용 테스트, 스킬 없는 소비자, 새 설치 스킬 소비자 |
+| Implementation | GPT-6.1 Terra | OKF/validation, search/version/budgets, Git cache, CLI; final fixes consolidated under one owner |
+| Independent review | GPT-6 Astra | Contract and task reviews, plus a full review in fresh context |
+| Research, testing, usability | GPT-6.1 Sol | Sources/checksums, fixed questions/acceptance tests, consumer without the skill, consumer with a freshly installed skill |
 
-## 검증
+## Validation
 
-- Node24 의존성 고정 설치, 타입 검사와 빌드, 전체46개 테스트 통과.
-- 공식 체크섬으로 확인한 공개 AndroidX 원문9개 근거 섹션과 출처·발췌·라이선스 보존.
-- 검색 질문20개를 순위 구현 전 고정: 상위3건18/20, 상위5건20/20. 같은 lexical rg 기준은15/20,18/20.
-- 버전 오표시0건, 예산 초과0건, 조회 흐름 최대11633바이트. 버전 미확인2개 자료는 상위5건에 있으나 상위3건에는 누락.
-- 독립 실행 테스트는 실제 Git 원격/캐시, 오프라인/장애/잘못된 새 데이터/동시 프로세스/기존SHA 읽기/UTF8 경계를 검증.
-- 스킬 없는 소비자도 성공. 이후 설치 스킬만 읽은 새 소비자가 체크아웃 밖에서 구현/리뷰를 수행:11309/10882바이트, 각3회 읽기, SHA 고정과unknown 버전 보존. 추가 스킬의 개선 효과를 측정했다는 주장은 하지 않음.
-- 독립 리뷰의 중요한 지적10건 수정 후 최종 스펙·품질 승인. 최종 번들 재설치와 핵심 동작 확인.
+- Installed pinned dependencies on Node 24; typecheck, build, and all 46 tests passed.
+- Preserved nine evidence sections from public AndroidX sources verified against official checksums, including provenance, excerpts, and licenses.
+- Fixed 20 search questions before implementing ranking: top-three hits 18/20, top-five hits 20/20. The same lexical `rg` baseline scored 15/20 and 18/20.
+- Zero incorrect version labels or budget overruns; largest retrieval flow: 11,633 bytes. Two sources with unknown version applicability appeared in the top five but not the top three.
+- Independent execution tests covered a real Git remote/cache, offline use, failures, invalid new data, concurrent processes, reads of an older SHA, and UTF-8 boundaries.
+- A consumer without the skill also succeeded. A fresh consumer then used only the installed skill for implementation/review outside the checkout: 11,309/10,882 bytes, three reads each, pinned SHAs, and preserved unknown versions. This does not establish an improvement caused by adding the skill.
+- Fixed ten important independent-review findings before final specification and quality approval. Reinstalled the final bundle and checked core behavior.
 
-## 결과물
+## Deliverables
 
-- README.md: 시작·검색·설치·검증 명령.
-- docs/superpowers/plans/2026-11-12-compose-knowledge.md: 작업 단위·인터페이스·검증 조건.
-- .agents/skills/compose-reference-context/SKILL.md: 실제 시험한 스킬.
-- docs/reports/skill-usability.md: 독립 소비자의 실제 명령·바이트·인용·결론.
-- docs/reports/final-review.md: 전체 리뷰와 최종 승인.
-- .cache/release/compose-reference-context-0.1.0.tar.gz 및.sha256: 최종 설치 번들.
-- docs/reports/release-smoke.json: 최종 번들의 설치 후 검증 기록.
-- config/sources.json: 사용자가 제공한8개 공식 수집 대상.
+- README.md: getting started, search, installation, and validation commands.
+- docs/superpowers/plans/2026-11-12-compose-knowledge.md: work units, interfaces, and validation criteria.
+- .agents/skills/compose-reference-context/SKILL.md: the skill actually tested.
+- docs/reports/skill-usability.md: independent consumer commands, bytes, citations, and conclusions.
+- docs/reports/final-review.md: full review and final approval.
+- .cache/release/compose-reference-context-0.1.0.tar.gz and .sha256: final installation bundle.
+- docs/reports/release-smoke.json: post-installation validation of the final bundle.
+- config/sources.json: eight official collection targets supplied by the user.
 
-## 남은 외부 연결
+## Outstanding external integration
 
-기존 TypeScript 크롤러 코드는 제공되지 않았습니다. 제공된 링크8개는 수집 대상에 등록했으며 GitHub 샘플은 읽기 접근을 확인했습니다. 나머지7개 URL은 프록시 CONNECT403으로 차단돼 원문 수집·라이선스·버전 매핑이 아직 검증되지 않았습니다.
+The existing TypeScript crawler code was not supplied. The eight supplied links were registered as collection targets, and read access to the GitHub samples was confirmed. The other seven URLs were blocked by proxy CONNECT 403, so source collection, licensing, and version mapping remain unverified.
 
-클라우드 환경 초안에는 테스트한 install_script/start_skill과developer.android.com,android.googlesource.com,m3.material.io 허용 추가안을 저장했습니다. 이 저장은 현재 접근 적용이나 Publish가 아닙니다. 환경 설정에서 검토·저장 후Publish하고 영향을 받는 연결을 다시 확인해야 합니다.
+The cloud environment draft saved the tested install_script/start_skill and proposed allowlist additions for developer.android.com, android.googlesource.com, and m3.material.io. Saving the draft did not apply access changes or publish the environment. The settings must be reviewed, saved, and published before rechecking affected connections.
 
-실제 corpus 브랜치 게시와 일일 스케줄은 활성화하지 않았습니다. refresh.yml은 크롤러·검증·발행을 연결하기 전 명시적으로 실패하는 수동 게이트입니다. 사내PC 설치와 Android 기기 동작은 검증하지 않았고, 이 환경의 standalone codex exec는 읽기 전용 app-server 초기화 실패로 실행되지 않았습니다. 새 에이전트의 스킬 사용성 검증과 구분합니다.
+Actual corpus-branch publication and the daily schedule were not enabled. refresh.yml is a manual gate that explicitly fails until the crawler, validation, and publication are connected. Installation on a corporate PC and Android device behavior were not validated. Standalone `codex exec` in this environment failed during read-only app-server initialization; distinguish that failure from the fresh agent's skill usability validation.
 
-추가 워크트리 없이 현재 격리된 work 브랜치에 커밋을 보존했습니다. GitHub 푸시·병합·환경 게시는 수행하지 않았습니다.
+Commits were preserved on the existing isolated work branch without an additional worktree. No GitHub push, merge, or environment publication was performed.
