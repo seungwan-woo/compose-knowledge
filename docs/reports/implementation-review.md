@@ -71,3 +71,24 @@ Counterexample confirmed in disposable directories: initialize an unrelated non-
 ## Follow-up status
 
 Highest-priority findings were sent to the controller while review was in progress. Concurrent workers may already be implementing fixes. Approval requires review of their concrete diff and targeted regression evidence; this report does not mark a finding resolved merely because a fix was proposed.
+
+## Round 1 re-review — commit `41be97a`
+
+Scope: the complete `review-fixes-round-1.diff`, appended task 2/3/4 reports, independent acceptance report, and CLI `validateCachedSnapshot` integration from `734cd88`. Existing passing suites were not rerun. The referenced OKF specification was consulted directly for frontmatter and source-entry conformance. No new material breakage was found in this fix delta.
+
+| Finding | Verdict | Evidence reviewed |
+| --- | --- | --- |
+| R1: non-OKF output | **ADDRESSED** | `renderOkf` now emits parseable YAML frontmatter with nonempty type, document metadata, complete source entries and Compose section metadata. Section source links preserve attribution. The new test parses YAML independently and checks source/requirement fields. This meets OKF v0.2 sections 4.1, 5.1 and 11 for the `knowledge/` bundle root; attribution is outside that root. |
+| R2: incomplete provenance | **ADDRESSED** | Adapter now validates HTTP(S) resource URLs, immutable SHA/release-coordinate syntax, code/test path and ordered line ranges, guide anchors, and consistent repeated source IDs. Regression cases reject missing lines, moving revisions, invalid URLs and conflicting IDs. |
+| R3: lost attribution | **ADDRESSED** | `ATTRIBUTION.md` is generated, hashed and byte-validated, retaining the 2019/2020/2022 Android Open Source Project notices present in the selected upstream files, source-specific locations and revision/license records. Full Apache text remains distributed. This approval concerns the fixed initial AndroidX corpus; its hardcoded notice set must be extended when new sources are introduced. |
+| R4: generic suffix aliases | **ADDRESSED** | Version normalization and input duplicate checks now recognize only the two documented Compose UI and Material 3 pairs. Regressions preserve arbitrary suffixed coordinates as distinct. The alias table is duplicated between two modules, a minor maintenance consideration rather than a remaining behavior defect. |
+| R5: unknown before exact | **ADDRESSED** | Search now sorts applicability (`match`, `unknown`, `different`) before relevance and a locale-independent ID tie-break. The regression deliberately gives unknown evidence a stronger lexical score. The independent acceptance test covers the same observable behavior. |
+| R6: offline wrong-SHA payload | **ADDRESSED** | Sync creates an external per-SHA manifest identity using an atomic create-only link. `validateCachedSnapshot` checks that identity as well as payload integrity. Offline fallback and the CLI's pinned search/read path both call it. Regressions reject internally valid replacement payloads offline and in direct validation. This protects payload substitution/corruption within the stated trusted local-cache boundary; it does not claim protection against an actor rewriting both payload and identity metadata. |
+| R7: candidate conflict loses fallback | **ADDRESSED** | The special unconditional-unavailable branch is removed. Candidate conflicts now use the identity-validated current pointer. The regression explicitly preserves A while introducing a conflicting B directory and expects cached A. |
+| R8: inherited Git redirection | **ADDRESSED** | Git repository/index/object-location environment variables are removed before subprocess execution; proxy, CA and authentication environment remain inherited. The regression proves an unrelated repo stays non-bare and receives no FETCH_HEAD. Existing proxy/CA inheritance coverage remains. |
+
+Additional changes in the delta were inspected: empty applicability now yields unknown; the query's explicit platform propagates to additional dependency requirements; search snippets share available output space without breaking complete JSON byte accounting. No new issue was found in those changes.
+
+The worker reports record behavioral RED/GREEN for the reviewed fixes. The independent acceptance report records eight passing executable scenarios and unchanged frozen evaluation at 18/20 top-three, 20/20 top-five, with zero version-label or byte-budget errors. These are reported evidence, not fresh test executions by this reviewer.
+
+**Updated scoped verdicts:** tasks 2, 3 and 4 pass specification-compliance and code-quality review for this local fixture PoC after the fixes. All R1–R8 are closed. Whole-branch CLI/bundle/skill/deployment review remains a separate requested scope and is not implied by this approval.
