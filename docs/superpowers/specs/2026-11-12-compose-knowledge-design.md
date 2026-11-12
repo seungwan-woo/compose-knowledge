@@ -15,12 +15,13 @@ Use fixture-first end-to-end implementation, then connect the original crawler w
 - `src/domain/types.ts` is the frozen shared data contract, schemaVersion 1.
 - Section IDs are globally unique. Each section carries independent source attribution, conjunctive artifact requirements, related section IDs, and language aliases.
 - Normalize only known Android base/platform artifact aliases. Explicit Android platform or `-android` identity is required to establish platform; never infer an unspecified platform as Android. All required artifact versions must match for a section to be `match`; mismatch takes precedence over unknown.
-- Raw source excerpts, source digest, release coordinate or immutable revision, file/line range, license and attribution are retained. Website hashing alone cannot restore historical text.
+- Raw source excerpts, source digest, release coordinate or immutable revision, file/line range, license and attribution are retained. `Source.sha256` hashes UTF-8 excerpt bytes; separately checked upstream file/archive digests remain in acquisition provenance and revisions. Website hashing alone cannot restore historical text.
 - Output consists of `knowledge/<docId>.md`, `index/sections.json`, and `manifest.json`. The manifest binds every payload file, input revisions, and schema version. No wall-clock build timestamps.
 - Index entries include section bodies as a derived read cache; snapshot validation checks consistency with OKF. Data from a remote corpus is never executed.
 - `searchIndex(index, query, snapshot)` returns ranked hits. `readSection(index, id, query, snapshot)` returns exactly one indexed section. API names, artifact filters, Korean/English aliases, version status and comparison mode are explicit.
 - Each JSON response includes metadata within its byte cap, including newline. Search default 3 hits/3072 bytes; read default 3072 bytes; skill task total search/read output 12288 bytes and at most 3 evidence reads, including linked evidence. Repeated search counts toward total. If minimal metadata cannot fit, fail explicitly rather than emit broken JSON.
 - Sync fetches a data-only Git branch, validates staged payloads before activation, stores immutable commit-SHA snapshots and atomically updates a last-good pointer. Pinned old SHAs remain readable. Offline/failure uses validated cache or returns unavailable.
+- Consumer search/read accept only cache paths plus full Git SHA; they cannot assign arbitrary directory contents a supplied Git identity. Standalone build/validate commands accept directories.
 - Local temporary Git remotes test sync/publish behavior. No push, remote publication, or daily schedule activation is performed by this session. Add manual workflows only with an explicit missing-crawler gate.
 - Build a versioned skill+CLI bundle with runtime dependencies and a SHA256 sidecar. Test extraction and invocation without the development checkout.
 

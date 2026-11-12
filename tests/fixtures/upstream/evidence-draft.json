@@ -1,0 +1,308 @@
+{
+  "note": "Research mapping draft, not canonical crawler input.",
+  "sections": [
+    {
+      "id": "menu-api",
+      "file": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+      "ranges": [
+        {
+          "startLine": 78,
+          "endLine": 89,
+          "excerpt": " * A [DropdownMenu] behaves similarly to a [Popup], and will use the position of the parent layout\n * to position itself on screen. Commonly a [DropdownMenu] will be placed in a [Box] with a sibling\n * that will be used as the 'anchor'. Note that a [DropdownMenu] by itself will not take up any\n * space in a layout, as the menu is displayed in a separate window, on top of other content.\n *\n * The [content] of a [DropdownMenu] will typically be [DropdownMenuItem]s, as well as custom\n * content. Using [DropdownMenuItem]s will result in a menu that matches the Material specification\n * for menus. Also note that the [content] is placed inside a scrollable [Column], so using a\n * [LazyColumn] as the root layout inside [content] is unsupported.\n *\n * [onDismissRequest] will be called when the menu should close - for example when there is a tap\n * outside the menu, or when the back key is pressed."
+        },
+        {
+          "startLine": 108,
+          "endLine": 115,
+          "excerpt": " * @param expanded whether the menu is expanded or not\n * @param onDismissRequest called when the user requests to dismiss the menu, such as by tapping\n *   outside the menu's bounds\n * @param modifier [Modifier] to be applied to the menu's content\n * @param offset [DpOffset] from the original position of the menu. The offset respects the\n *   [LayoutDirection], so the offset's x position will be added in LTR and subtracted in RTL.\n * @param scrollState a [ScrollState] to used by the menu's content for items vertical scrolling\n * @param properties [PopupProperties] for further customization of this popup's behavior"
+        },
+        {
+          "startLine": 125,
+          "endLine": 138,
+          "excerpt": "@Composable\nexpect fun DropdownMenu(\n    expanded: Boolean,\n    onDismissRequest: () -> Unit,\n    modifier: Modifier = Modifier,\n    offset: DpOffset = DpOffset(0.dp, 0.dp),\n    scrollState: ScrollState = rememberScrollState(),\n    properties: PopupProperties = DefaultMenuProperties,\n    shape: Shape = MenuDefaults.shape,\n    containerColor: Color = MenuDefaults.containerColor,\n    tonalElevation: Dp = MenuDefaults.TonalElevation,\n    shadowElevation: Dp = MenuDefaults.ShadowElevation,\n    border: BorderStroke? = null,\n    content: @Composable ColumnScope.() -> Unit"
+        }
+      ],
+      "summary": "DropdownMenu lives in a separate window; onDismissRequest is a close request on outside tap/back; expanded is caller-provided state.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.material3:material3",
+          "version": "1.3.2"
+        }
+      ],
+      "source": {
+        "path": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+        "archive": "maven/material3-android-1.3.2-sources.jar",
+        "member": "commonMain/androidx/compose/material3/Menu.kt",
+        "sha256": "e313521ab6513398c59bd64748a335c72d66aabf5fcfd70fddc7ab0f94ccb812",
+        "revision": "sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "Dismissal callback alone proves neither expanded=false nor background touch delivery."
+      ]
+    },
+    {
+      "id": "menu-android-implementation",
+      "file": "material3-1.3.2/androidMain/androidx/compose/material3/AndroidMenu.android.kt",
+      "ranges": [
+        {
+          "startLine": 42,
+          "endLine": 73,
+          "excerpt": "actual fun DropdownMenu(\n    expanded: Boolean,\n    onDismissRequest: () -> Unit,\n    modifier: Modifier,\n    offset: DpOffset,\n    scrollState: ScrollState,\n    properties: PopupProperties,\n    shape: Shape,\n    containerColor: Color,\n    tonalElevation: Dp,\n    shadowElevation: Dp,\n    border: BorderStroke?,\n    content: @Composable ColumnScope.() -> Unit\n) {\n    val expandedState = remember { MutableTransitionState(false) }\n    expandedState.targetState = expanded\n\n    if (expandedState.currentState || expandedState.targetState) {\n        val transformOriginState = remember { mutableStateOf(TransformOrigin.Center) }\n        val density = LocalDensity.current\n        val popupPositionProvider =\n            remember(offset, density) {\n                DropdownMenuPositionProvider(offset, density) { parentBounds, menuBounds ->\n                    transformOriginState.value = calculateTransformOrigin(parentBounds, menuBounds)\n                }\n            }\n\n        Popup(\n            onDismissRequest = onDismissRequest,\n            popupPositionProvider = popupPositionProvider,\n            properties = properties\n        ) {"
+        },
+        {
+          "startLine": 194,
+          "endLine": 194,
+          "excerpt": "internal actual val DefaultMenuProperties = PopupProperties(focusable = true)"
+        }
+      ],
+      "summary": "Android DropdownMenu forwards callback and properties into Popup. DefaultMenuProperties is PopupProperties(focusable=true).",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.material3:material3",
+          "version": "1.3.2"
+        }
+      ],
+      "source": {
+        "path": "material3-1.3.2/androidMain/androidx/compose/material3/AndroidMenu.android.kt",
+        "archive": "maven/material3-android-1.3.2-sources.jar",
+        "member": "androidMain/androidx/compose/material3/AndroidMenu.android.kt",
+        "sha256": "a90fc61984747aab4f753dc9b8840059a5df00d1f96c8e887bd45ae9df63aec5",
+        "revision": "sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": []
+    },
+    {
+      "id": "popup-api",
+      "file": "ui-1.7.8/commonMain/androidx/compose/ui/window/Popup.kt",
+      "ranges": [
+        {
+          "startLine": 130,
+          "endLine": 150,
+          "excerpt": " * The popup is visible as long as it is part of the composition hierarchy.\n *\n * @sample androidx.compose.ui.samples.PopupSample\n *\n * @param alignment The alignment relative to the parent.\n * @param offset An offset from the original aligned position of the popup. Offset respects the\n * Ltr/Rtl context, thus in Ltr it will be added to the original aligned position and in Rtl it\n * will be subtracted from it.\n * @param onDismissRequest Executes when the user clicks outside of the popup.\n * @param properties [PopupProperties] for further customization of this popup's behavior.\n * @param content The content to be displayed inside the popup.\n */\n@Composable\nexpect fun Popup(\n    alignment: Alignment = Alignment.TopStart,\n    offset: IntOffset = IntOffset(0, 0),\n    onDismissRequest: (() -> Unit)? = null,\n    properties: PopupProperties = @OptIn(ExperimentalComposeUiApi::class) PopupProperties(),\n    content: @Composable () -> Unit\n)\n"
+        },
+        {
+          "startLine": 152,
+          "endLine": 169,
+          "excerpt": " * Opens a popup with the given content.\n *\n * The popup is positioned using a custom [popupPositionProvider].\n *\n * @sample androidx.compose.ui.samples.PopupSample\n *\n * @param popupPositionProvider Provides the screen position of the popup.\n * @param onDismissRequest Executes when the user clicks outside of the popup.\n * @param properties [PopupProperties] for further customization of this popup's behavior.\n * @param content The content to be displayed inside the popup.\n */\n@Composable\nexpect fun Popup(\n    popupPositionProvider: PopupPositionProvider,\n    onDismissRequest: (() -> Unit)? = null,\n    properties: PopupProperties = @OptIn(ExperimentalComposeUiApi::class) PopupProperties(),\n    content: @Composable () -> Unit\n)"
+        }
+      ],
+      "summary": "Popup API takes a nullable onDismissRequest and PopupProperties, with separate alignment and position-provider overloads.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "1.7.8"
+        }
+      ],
+      "source": {
+        "path": "ui-1.7.8/commonMain/androidx/compose/ui/window/Popup.kt",
+        "archive": "maven/ui-android-1.7.8-sources.jar",
+        "member": "commonMain/androidx/compose/ui/window/Popup.kt",
+        "sha256": "c094c5a83ae6a2bae50384270d60734a4d84d7f39d538e78592ec6dc6c6579c0",
+        "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": []
+    },
+    {
+      "id": "popup-properties",
+      "file": "ui-1.7.8/commonMain/androidx/compose/ui/window/Popup.kt",
+      "ranges": [
+        {
+          "startLine": 27,
+          "endLine": 54,
+          "excerpt": "\n/**\n * Properties used to customize the behavior of a [Popup].\n *\n * @property focusable Whether the popup is focusable. When true, the popup will receive IME\n * events and key presses, such as when the back button is pressed.\n * @property dismissOnBackPress Whether the popup can be dismissed by pressing the back button\n * on Android or escape key on desktop.\n * If true, pressing the back button will call onDismissRequest. Note that [focusable] must be\n * set to true in order to receive key events such as the back button - if the popup is not\n * focusable then this property does nothing.\n * @property dismissOnClickOutside Whether the popup can be dismissed by clicking outside the\n * popup's bounds. If true, clicking outside the popup will call onDismissRequest.\n * @property clippingEnabled Whether to allow the popup window to extend beyond the bounds of the\n * screen. By default the window is clipped to the screen boundaries. Setting this to false will\n * allow windows to be accurately positioned.\n * The default value is true.\n */\n@Immutable\nexpect class PopupProperties(\n    focusable: Boolean = false,\n    dismissOnBackPress: Boolean = true,\n    dismissOnClickOutside: Boolean = true,\n    clippingEnabled: Boolean = true,\n) {\n    val focusable: Boolean\n    val dismissOnBackPress: Boolean\n    val dismissOnClickOutside: Boolean"
+        }
+      ],
+      "summary": "PopupProperties defaults focusable=false and dismissal-on-back/outside=true; back handling needs focusability.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "1.7.8"
+        }
+      ],
+      "source": {
+        "path": "ui-1.7.8/commonMain/androidx/compose/ui/window/Popup.kt",
+        "archive": "maven/ui-android-1.7.8-sources.jar",
+        "member": "commonMain/androidx/compose/ui/window/Popup.kt",
+        "sha256": "c094c5a83ae6a2bae50384270d60734a4d84d7f39d538e78592ec6dc6c6579c0",
+        "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "Generic Popup default focusability is not DropdownMenu default focusability."
+      ]
+    },
+    {
+      "id": "popup-android-implementation",
+      "file": "ui-1.7.8/androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+      "ranges": [
+        {
+          "startLine": 176,
+          "endLine": 198,
+          "excerpt": "    constructor(\n        focusable: Boolean = false,\n        dismissOnBackPress: Boolean = true,\n        dismissOnClickOutside: Boolean = true,\n        securePolicy: SecureFlagPolicy = SecureFlagPolicy.Inherit,\n        excludeFromSystemGesture: Boolean = true,\n        clippingEnabled: Boolean = true,\n        usePlatformDefaultWidth: Boolean = false,\n    ) : this (\n        flags = createFlags(focusable, securePolicy, clippingEnabled),\n        inheritSecurePolicy = securePolicy == SecureFlagPolicy.Inherit,\n        dismissOnBackPress = dismissOnBackPress,\n        dismissOnClickOutside = dismissOnClickOutside,\n        excludeFromSystemGesture = excludeFromSystemGesture,\n        usePlatformDefaultWidth = usePlatformDefaultWidth,\n    )\n\n    /**\n     * Whether the popup is focusable. When true, the popup will receive IME events and key\n     * presses, such as when the back button is pressed.\n     */\n    actual val focusable: Boolean\n        get() = (flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE) == 0"
+        },
+        {
+          "startLine": 402,
+          "endLine": 420,
+          "excerpt": "private const val PopupPropertiesBaseFlags: Int =\n    WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH\n\nprivate fun createFlags(\n    focusable: Boolean,\n    securePolicy: SecureFlagPolicy,\n    clippingEnabled: Boolean,\n): Int {\n    var flags = PopupPropertiesBaseFlags\n    if (!focusable) {\n        flags = flags or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE\n    }\n    if (securePolicy == SecureFlagPolicy.SecureOn) {\n        flags = flags or WindowManager.LayoutParams.FLAG_SECURE\n    }\n    if (!clippingEnabled) {\n        flags = flags or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS\n    }\n    return flags"
+        },
+        {
+          "startLine": 799,
+          "endLine": 817,
+          "excerpt": "    override fun onTouchEvent(event: MotionEvent?): Boolean {\n        if (!properties.dismissOnClickOutside) {\n            return super.onTouchEvent(event)\n        }\n        // Note that this implementation is taken from PopupWindow. It actually does not seem to\n        // matter whether we return true or false as some upper layer decides on whether the\n        // event is propagated to other windows or not. So for focusable the event is consumed but\n        // for not focusable it is propagated to other windows.\n        if ((event?.action == MotionEvent.ACTION_DOWN) &&\n            ((event.x < 0) || (event.x >= width) || (event.y < 0) || (event.y >= height))\n        ) {\n            onDismissRequest?.invoke()\n            return true\n        } else if (event?.action == MotionEvent.ACTION_OUTSIDE) {\n            onDismissRequest?.invoke()\n            return true\n        }\n\n        return super.onTouchEvent(event)"
+        }
+      ],
+      "summary": "Android flag creation watches outside touch and sets NOT_FOCUSABLE when requested; onTouchEvent guards dismissal and invokes callback for outside DOWN or OUTSIDE.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "1.7.8"
+        }
+      ],
+      "source": {
+        "path": "ui-1.7.8/androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+        "archive": "maven/ui-android-1.7.8-sources.jar",
+        "member": "androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+        "sha256": "39b0dd435eadbdd9308eb21f102ecf32a73c6b9656764c41a17c3963bf79ba79",
+        "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "Returning true is not itself proof of global window routing."
+      ]
+    },
+    {
+      "id": "popup-touch-routing",
+      "file": "ui-1.7.8/androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+      "ranges": [
+        {
+          "startLine": 799,
+          "endLine": 817,
+          "excerpt": "    override fun onTouchEvent(event: MotionEvent?): Boolean {\n        if (!properties.dismissOnClickOutside) {\n            return super.onTouchEvent(event)\n        }\n        // Note that this implementation is taken from PopupWindow. It actually does not seem to\n        // matter whether we return true or false as some upper layer decides on whether the\n        // event is propagated to other windows or not. So for focusable the event is consumed but\n        // for not focusable it is propagated to other windows.\n        if ((event?.action == MotionEvent.ACTION_DOWN) &&\n            ((event.x < 0) || (event.x >= width) || (event.y < 0) || (event.y >= height))\n        ) {\n            onDismissRequest?.invoke()\n            return true\n        } else if (event?.action == MotionEvent.ACTION_OUTSIDE) {\n            onDismissRequest?.invoke()\n            return true\n        }\n\n        return super.onTouchEvent(event)"
+        }
+      ],
+      "summary": "The implementation comment says an upper layer decides propagation: focusable consumes; non-focusable propagates to other windows. This is source-level guidance distinct from dismissal.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "1.7.8"
+        }
+      ],
+      "source": {
+        "path": "ui-1.7.8/androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+        "archive": "maven/ui-android-1.7.8-sources.jar",
+        "member": "androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+        "sha256": "39b0dd435eadbdd9308eb21f102ecf32a73c6b9656764c41a17c3963bf79ba79",
+        "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "No device/emulator background-click test executed. A particular underlying composable click callback or full gesture delivery is not established.",
+        "Do not infer delivery simply from dismissOnClickOutside=false."
+      ]
+    },
+    {
+      "id": "unknown-reference",
+      "file": "androidx-main-07bb66ae/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+      "ranges": [
+        {
+          "startLine": 27,
+          "endLine": 52,
+          "excerpt": "/**\n * Properties used to customize the behavior of a [Popup].\n *\n * @property focusable Whether the popup is focusable. When true, the popup will receive IME events\n *   and key presses, such as when the back button is pressed.\n * @property dismissOnBackPress Whether the popup can be dismissed by pressing the back or escape\n *   buttons on Android or the escape key on desktop. If true, pressing the back button will call\n *   onDismissRequest. Note that [focusable] must be set to true in order to receive key events such\n *   as the back button - if the popup is not focusable then this property does nothing.\n * @property dismissOnClickOutside Whether the popup can be dismissed by clicking outside the\n *   popup's bounds. If true, clicking outside the popup will call onDismissRequest.\n * @property clippingEnabled Whether to allow the popup window to extend beyond the bounds of the\n *   screen. By default the window is clipped to the screen boundaries. Setting this to false will\n *   allow windows to be accurately positioned. The default value is true.\n * @property usePlatformDefaultWidth Whether the width of the popup's content should be limited to\n *   the platform default, which is smaller than the screen width.\n */\n@Immutable\npublic expect class PopupProperties {\n    public constructor(\n        focusable: Boolean = false,\n        dismissOnBackPress: Boolean = true,\n        dismissOnClickOutside: Boolean = true,\n        clippingEnabled: Boolean = true,\n        usePlatformDefaultWidth: Boolean = false,\n    )"
+        }
+      ],
+      "summary": "Official AndroidX main PopupProperties reference frozen at an immutable commit; release applicability remains unknown.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "unknown"
+        }
+      ],
+      "source": {
+        "path": "androidx-main-07bb66ae/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+        "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+        "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+        "sha256": "7e82f67b99866457d3509356d3c9550668892f636782589d69e4224c599db4ef",
+        "appliesTo": "unknown",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "Commit pinning does not establish a published Maven version."
+      ]
+    },
+    {
+      "id": "menu-state-sample",
+      "file": "material3-1.3.2/androidx/compose/material3/samples/MenuSamples.kt",
+      "ranges": [
+        {
+          "startLine": 46,
+          "endLine": 76,
+          "excerpt": "@Preview\n@Sampled\n@Composable\nfun MenuSample() {\n    var expanded by remember { mutableStateOf(false) }\n\n    Box(modifier = Modifier.fillMaxSize().wrapContentSize(Alignment.TopStart)) {\n        IconButton(onClick = { expanded = true }) {\n            Icon(Icons.Default.MoreVert, contentDescription = \"Localized description\")\n        }\n        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {\n            DropdownMenuItem(\n                text = { Text(\"Edit\") },\n                onClick = { /* Handle edit! */ },\n                leadingIcon = { Icon(Icons.Outlined.Edit, contentDescription = null) }\n            )\n            DropdownMenuItem(\n                text = { Text(\"Settings\") },\n                onClick = { /* Handle settings! */ },\n                leadingIcon = { Icon(Icons.Outlined.Settings, contentDescription = null) }\n            )\n            HorizontalDivider()\n            DropdownMenuItem(\n                text = { Text(\"Send Feedback\") },\n                onClick = { /* Handle send feedback! */ },\n                leadingIcon = { Icon(Icons.Outlined.Email, contentDescription = null) },\n                trailingIcon = { Text(\"F11\", textAlign = TextAlign.Center) }\n            )\n        }\n    }\n}"
+        }
+      ],
+      "summary": "The official MenuSample owns expanded state, opens it in the anchor IconButton callback, and sets expanded=false in onDismissRequest. MenuItem actions are separate handlers.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.material3:material3",
+          "version": "1.3.2"
+        }
+      ],
+      "source": {
+        "path": "material3-1.3.2/androidx/compose/material3/samples/MenuSamples.kt",
+        "archive": "maven/material3-android-1.3.2-samples-sources.jar",
+        "member": "androidx/compose/material3/samples/MenuSamples.kt",
+        "sha256": "49c4d93fd69285a1785b967488f97a72df3d383d9d630389ddd2d4ab4af2e447",
+        "revision": "sha256:3329e1a97328bbeda1e9c4f8305037ef6c13ab227af31b8ea65f757c2e791162",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "The sample does not prove automatic dismissal by the library or background touch delivery."
+      ]
+    },
+    {
+      "id": "popup-dismiss-tests",
+      "file": "androidx-main-07bb66ae/compose/ui/ui/src/androidDeviceTest/kotlin/androidx/compose/ui/window/PopupTest.kt",
+      "ranges": [
+        {
+          "startLine": 245,
+          "endLine": 272,
+          "excerpt": "    @Test\n    fun isDismissedOnTapOutside() {\n        var showPopup by mutableStateOf(true)\n        rule.setContent {\n            Box(Modifier.fillMaxSize()) {\n                if (showPopup) {\n                    Popup(alignment = Alignment.Center, onDismissRequest = { showPopup = false }) {\n                        Box(Modifier.size(50.dp).testTag(testTag))\n                    }\n                }\n            }\n        }\n\n        // Popup should be visible\n        rule.onNodeWithTag(testTag).assertIsDisplayed()\n\n        // Click outside the popup\n        val outsideX = 0\n        val outsideY =\n            with(rule.density) {\n                rule.onAllNodes(isRoot()).onFirst().getUnclippedBoundsInRoot().height.roundToPx() /\n                    2\n            }\n        UiDevice.getInstance(getInstrumentation()).click(outsideX, outsideY)\n\n        // Popup should not exist\n        rule.onNodeWithTag(testTag).assertDoesNotExist()\n    }"
+        },
+        {
+          "startLine": 334,
+          "endLine": 365,
+          "excerpt": "    @Test\n    fun isNotDismissedOnTapOutside_dismissOnClickOutsideFalse() {\n        var showPopup by mutableStateOf(true)\n        rule.setContent {\n            Box(Modifier.fillMaxSize()) {\n                if (showPopup) {\n                    Popup(\n                        alignment = Alignment.Center,\n                        properties = PopupProperties(dismissOnClickOutside = false),\n                        onDismissRequest = { showPopup = false },\n                    ) {\n                        Box(Modifier.size(50.dp).testTag(testTag))\n                    }\n                }\n            }\n        }\n\n        // Popup should be visible\n        rule.onNodeWithTag(testTag).assertIsDisplayed()\n\n        // Click outside the popup\n        val outsideX = 0\n        val outsideY =\n            with(rule.density) {\n                rule.onAllNodes(isRoot()).onFirst().getUnclippedBoundsInRoot().height.roundToPx() /\n                    2\n            }\n        UiDevice.getInstance(getInstrumentation()).click(outsideX, outsideY)\n\n        // Popup should still be visible\n        rule.onNodeWithTag(testTag).assertIsDisplayed()\n    }"
+        }
+      ],
+      "summary": "Official upstream test source asserts popup disappears after an outside click with the default properties and remains visible when dismissOnClickOutside=false. This commit-pinned source has unknown released-version applicability and was not executed here.",
+      "appliesTo": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "version": "unknown"
+        }
+      ],
+      "source": {
+        "path": "androidx-main-07bb66ae/compose/ui/ui/src/androidDeviceTest/kotlin/androidx/compose/ui/window/PopupTest.kt",
+        "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/androidDeviceTest/kotlin/androidx/compose/ui/window/PopupTest.kt",
+        "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+        "sha256": "d6d09877da37d35383c1fba50e3ddbd4b1c3e8da70d981f0e0554b76dfa0bcb7",
+        "appliesTo": "unknown",
+        "license": "Apache-2.0",
+        "modified": false
+      },
+      "unsupportedConclusions": [
+        "These tests assert popup visibility, not an underlying click callback.",
+        "Source retrieval is not execution, and the main commit is not verified as a released artifact version."
+      ]
+    }
+  ]
+}
