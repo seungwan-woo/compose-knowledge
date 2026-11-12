@@ -1,10 +1,10 @@
 # Compose knowledge
 
-공식 AndroidX 근거를 버전별로 검색하고 Codex 구현·리뷰에 사용하는 로컬 CLI와 스킬입니다. Node.js 24가 필요합니다.
+A local CLI and skill for version-aware official AndroidX evidence retrieval in Codex implementation and review. Requires Node.js 24.
 
-Material 3 **1.3.2**, Compose UI **1.7.8**, 배포 버전이 미확인인 고정 AndroidX 소스의 **9개 섹션**을 기준 근거로 유지하고, 일일 수집기로 공식 문서와 최신 소스를 추가합니다. 이 버전들은 예제 근거의 버전이며 작업 대상 앱의 버전이 아닙니다. 새 수집기는 이 저장소의 입력 계약을 사용하며, 미제공된 기존 크롤러 코드를 연결했다고 주장하지 않습니다.
+The baseline preserves **9 sections** from Material 3 **1.3.2**, Compose UI **1.7.8**, and pinned AndroidX sources with unverified release versions. Daily collection adds official documentation and current sources. These example evidence versions are not the target app's versions. The new collector uses this repository's input contract; it does not claim integration with existing crawler code that was never supplied.
 
-## 시작
+## Start
 
 ```sh
 cd /workspace/compose-knowledge
@@ -14,7 +14,7 @@ npm test
 node scripts/prepare-demo.mjs
 ```
 
-마지막 명령은 공개 fixture로 로컬 Git 원격과 캐시를 만들고 `.cache/demo/latest.json`에 경로와 실제 SHA를 기록합니다. 다시 실행하면 새 디렉터리를 만들며 기존 파일을 덮어쓰지 않습니다. 별도 서버·데이터베이스·비밀키는 필요하지 않습니다.
+The last command creates a local Git remote and cache from public fixtures, recording paths and the actual SHA in `.cache/demo/latest.json`. Each run creates a new directory without overwriting existing files. No separate server, database, or secret is required.
 
 ## CLI
 
@@ -24,7 +24,7 @@ node dist/cli.js build --input tests/fixtures/knowledge-input.json --out /tmp/co
 node dist/cli.js validate --dir /tmp/compose-corpus-NEW --json
 ```
 
-빌드 출력 디렉터리는 비어 있어야 합니다. 다음의 `CACHE`, `REMOTE`, `SHA`는 데모 설정 또는 실제 발행 원격의 동기화 응답에서 가져옵니다.
+The build output directory must be empty. Obtain `CACHE`, `REMOTE`, and `SHA` below from the demo configuration or an actual published remote's sync response.
 
 ```sh
 node dist/cli.js sync --remote "$REMOTE" --ref corpus --cache "$CACHE" --json
@@ -35,29 +35,29 @@ node dist/cli.js read --cache "$CACHE" --snapshot "$SHA" --id menu-state-sample 
   --artifact androidx.compose.material3:material3 --version 1.3.2 --platform android --json
 ```
 
-- 검색·읽기는 같은 SHA와 버전 문맥을 사용합니다. `--require androidx.compose.ui:ui-android=1.7.8`처럼 의존성을 추가할 수 있습니다.
-- 알려진 Android artifact 별칭만 정규화합니다. 버전이나 플랫폼을 확인하지 못하면 `unknown`으로 남습니다. 필요한 모든 artifact가 맞아야 `match`입니다.
-- 다른 버전은 `--include-different` 비교 조회에서만 노출합니다.
-- `sync --offline --cache "$CACHE"`는 네트워크 없이 검증된 캐시를 사용합니다. `unavailable`은 JSON과 종료 코드 2를 반환합니다.
-- 검색/읽기 응답의 기본·최대 크기는 각각 3 KiB입니다. 전체 JSON·개행이 포함되며, 잘린 경우 `truncated`를 표시합니다. 메타데이터도 담기 어려운 예산은 명시적으로 실패합니다.
-- 원격 corpus는 실행하지 않습니다. 캐시의 SHA별 manifest identity와 실제 파일을 검증하고, 오류 시 마지막 정상 스냅샷으로 돌아갑니다.
+- Search/read use the same SHA and version context. Add dependencies with options such as `--require androidx.compose.ui:ui-android=1.7.8`.
+- Only known Android artifact aliases are normalized. Unverified versions or platforms stay `unknown`. All required artifacts must agree for `match`.
+- Different versions appear only in explicit `--include-different` comparisons.
+- `sync --offline --cache "$CACHE"` uses verified cache without network access. `unavailable` returns JSON and exit code 2.
+- Search/read responses default to and allow at most 3 KiB each, including all JSON/newlines. Truncation is marked `truncated`. Budgets too small even for metadata fail explicitly.
+- Remote corpus is never executed. Cached per-SHA manifest identity and actual files are verified; errors fall back to the last valid snapshot.
 
-## Codex 스킬 설치
+## Install the Codex skill
 
-사내 PC에서 clone한 뒤 다른 Android 프로젝트에서 사용하려면 [AGENTS.md](AGENTS.md)와 [설치·사내망 사용 가이드](docs/consumer-setup.md)를 따르세요. 프로젝트별 설치, 내부 Git 미러, 오프라인 캐시와 실제 명령을 제공합니다.
+To clone on a corporate PC and use another Android project, follow [AGENTS.md](AGENTS.md) and the [installation and corporate network guide](docs/consumer-setup.md). They cover project installation, internal Git mirrors, offline cache, and executable commands.
 
-체크아웃에서는 `.agents/skills/compose-reference-context/SKILL.md`를 명시 호출합니다. 다른 작업공간에 설치할 때는 같은 버전의 스킬과 CLI를 묶습니다.
+In a checkout, explicitly invoke `.agents/skills/compose-reference-context/SKILL.md`. For another workspace, bundle the skill and CLI at the same version.
 
 ```sh
 npm run bundle
 node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.1.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
-일반적인 사용자 스킬 디렉터리는 `~/.agents/skills`입니다. 설치기는 SHA256 sidecar를 확인하고 기존 스킬을 덮어쓰지 않습니다. 신뢰할 수 있는 경로로 번들과 체크섬을 함께 전달하세요. 체크섬은 전송 무결성을 검사하며 발행자 서명을 대신하지 않습니다.
+The usual user skills directory is `~/.agents/skills`. The installer verifies the SHA256 sidecar and refuses to overwrite an existing skill. Transfer bundle and checksum together through a trusted channel. The checksum verifies transfer integrity; it does not replace a publisher signature.
 
-스킬은 설치된 자체 launcher를 사용합니다. 새 Compose 질문의 첫 단계에서 온라인 동기화한 후 SHA를 고정하고, 짧은 주제별 지침에서 필요한 원문으로 이동합니다. 검색·읽기 출력 합계 12 KiB와 근거 읽기 3건·연결 한 단계 한도를 기록합니다. 바이트 제한은 실제 모델 토큰 수와는 다릅니다. 프로젝트의 실행 테스트와 upstream 테스트 소스 읽기도 구분합니다.
+The skill uses its installed launcher. Begin each new Compose question with online sync, pin the SHA, and follow concise topic guidance to necessary sources. Record the limits: 12 KiB total search/read output, 3 evidence reads, and one link hop. Byte limits differ from actual model token counts. Distinguish executing project tests from reading upstream test sources.
 
-## 검증과 보고서
+## Validation and reports
 
 ```sh
 npm run typecheck
@@ -65,57 +65,57 @@ npm test
 node scripts/evaluate.mjs .cache/evaluation-NEW
 ```
 
-평가 출력 디렉터리는 기존 결과를 덮어쓰지 않습니다. 질문 20개는 순위 구현 전에 고정됐습니다. 초기 결과는 상위 3건 **18/20**, 상위 5건 **20/20**, 버전 오표시 **0건**입니다. 상위 5건 결과는 3건 읽기 한도 안에서 모두 읽었다는 의미가 아닙니다.
+Evaluation output never overwrites existing results. The 20 questions were fixed before ranking implementation. Initial results: top 3 **18/20**, top 5 **20/20**, and **0** incorrect version labels. Top-5 results do not mean all were read within the 3-read limit.
 
-- [독립 테스트·검색 평가](docs/reports/acceptance.md)
-- [원문·체크섬·라이선스](docs/reports/source-research.md)
-- [사용자 제공 수집 대상](config/sources.json)과 [접근 진단](docs/reports/source-access.md)
-- [스킬 없는 소비자 테스트](docs/reports/skill-baseline.md)
-- [스킬 사용성 테스트](docs/reports/skill-usability.md)
-- [일일 수집 검증](docs/reports/daily-refresh.md), [설치 스킬·발행 통합 테스트](docs/reports/daily-acceptance.md), [독립 리뷰](docs/reports/daily-review.md)
-- [확장 corpus 검증](docs/reports/coverage-expansion.md), [설치 스킬의 개선 전후 비교](docs/reports/coverage-usability.md), [지침 29개의 독립 검토](docs/reports/guidance-review.md)
-- [sync-first 검증](docs/reports/sync-first-verification.md), [local MCP·SQLite·graph/RDF 비교](docs/reports/local-retrieval-tradeoffs.md)
-- [병렬 실행 계획](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
+- [Independent tests and retrieval evaluation](docs/reports/acceptance.md)
+- [Sources, checksums, and licenses](docs/reports/source-research.md)
+- [User-provided collection targets](config/sources.json) and [access diagnostics](docs/reports/source-access.md)
+- [Consumer test without the skill](docs/reports/skill-baseline.md)
+- [Skill usability test](docs/reports/skill-usability.md)
+- [Daily collection validation](docs/reports/daily-refresh.md), [installed skill and publication integration tests](docs/reports/daily-acceptance.md), [independent review](docs/reports/daily-review.md)
+- [Expanded corpus validation](docs/reports/coverage-expansion.md), [installed skill before/after comparison](docs/reports/coverage-usability.md), [independent review of 29 guidance cards](docs/reports/guidance-review.md)
+- [Sync-first validation](docs/reports/sync-first-verification.md), [local MCP, SQLite, and graph/RDF comparison](docs/reports/local-retrieval-tradeoffs.md)
+- [Parallel implementation plan](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
 
-`Source.sha256`은 보존한 발췌의 UTF-8 해시입니다. upstream 파일·아카이브 해시는 `tests/fixtures/upstream/provenance.json`에 별도로 보존하고 공식 체크섬과 대조했습니다. 생성 corpus에는 원문 출처·저작권 표기와 Apache 라이선스가 포함됩니다.
+`Source.sha256` hashes the preserved excerpt's UTF-8 bytes. Upstream file/archive hashes are stored separately in `tests/fixtures/upstream/provenance.json` and were checked against official checksums. Generated corpus includes source provenance, copyright notices, and the Apache license.
 
-## 매일 수집과 자동 갱신
+## Daily collection and automatic updates
 
-`Daily public corpus refresh`는 매일 **전날 23:00 UTC / 08:00 한국 시간**에 실행됩니다. GitHub 예약 실행은 지연될 수 있으며, 워크플로가 기본 브랜치에 병합된 뒤 활성화됩니다. 공개 저장소는 장기간 활동이 없으면 GitHub가 예약 실행을 중지할 수 있습니다.
+`Daily public corpus refresh` runs daily at **23:00 UTC the previous day / 08:00 KST**. GitHub scheduled runs can be delayed and become active after the workflow merges into the default branch. GitHub may disable schedules in public repositories after prolonged inactivity.
 
-1. [수집 설정](config/crawl.json)에 지정한 **154개 문서·소스**를 가져오고, Material 3 동적 사이트 1개를 별도로 모니터링합니다. 수집한 원문 본문과 코드를 corpus에 저장하며 링크만 보관하지 않습니다.
-2. 원문·출처·해시·버전 상태를 보존하고 기존 버전별 근거와 함께 새 스냅샷을 만듭니다. 추가·수정·삭제된 섹션 ID를 보고합니다.
-3. 검증을 통과한 데이터만 별도 발행 작업에서 `corpus` 브랜치에 반영합니다. 변경이 없으면 커밋하지 않습니다. 필수 수집 실패, 잘못된 스냅샷, 수집 후 다른 발행이 들어온 경우에는 기존 데이터를 유지합니다.
+1. Fetch the **154 documents/sources** in [collection configuration](config/crawl.json), and separately monitor 1 dynamic Material 3 site. Collected source bodies and code are stored in corpus, beyond links alone.
+2. Preserve text, provenance, hashes, and version status; build a new snapshot alongside existing version-specific evidence. Report added, updated, and removed section IDs.
+3. A separate publication job updates the `corpus` branch only with validated data. No changes means no commit. Required collection failure, an invalid snapshot, or a concurrent publication after collection preserves existing data.
 
-| 대상 | 자동 수집 범위 |
+| Target | Automatic collection scope |
 | --- | --- |
-| Android 공식 가이드 65개 | 상태·효과·저장, 레이아웃·Modifier, 리스트·Pager, 입력·제스처, 텍스트·그래픽, 애니메이션, 접근성·성능·테스트, Material3·적응형 UI의 본문과 코드 예제 |
-| AndroidX Compose 소스·지침 88개 | 정확한 Git 커밋의 runtime, runtime-saveable, ui, ui-text, ui-graphics, ui-unit, foundation, foundation-layout, animation, animation-core, material, material3 대표 소스와 API 지침 |
-| compose-samples | 정확한 Git 커밋의 `README.md` |
-| Material 3 Compose guide | HTTP 응답·해시 확인만 수행. Angular 본문은 **미수집** |
+| 65 official Android guides | Bodies and code examples for state, effects, saving, layouts, Modifier, lists, Pager, input, gestures, text, graphics, animation, accessibility, performance, testing, Material3, and adaptive UI |
+| 88 AndroidX Compose sources/guides | Representative runtime, runtime-saveable, ui, ui-text, ui-graphics, ui-unit, foundation, foundation-layout, animation, animation-core, material, and material3 sources and API guidelines at exact Git commits |
+| compose-samples | `README.md` at an exact Git commit |
+| Material 3 Compose guide | HTTP response/hash monitoring only; Angular body **not collected** |
 
-전체 사이트를 재귀적으로 수집하지 않습니다. 지정 문서에 추가된 섹션은 자동 반영되며, 다른 문서나 소스 파일은 `config/crawl.json`에 추가해야 합니다. 최신 웹 문서와 main 브랜치 소스는 특정 배포 버전으로 단정하지 않고 `unknown`으로 취급합니다. 웹의 `web:...@sha256:...` revision은 보존한 정규화 본문의 해시이며 Git 커밋이 아닙니다.
+Collection does not recursively crawl entire sites. New sections in configured documents are included automatically; other documents or source files must be added to `config/crawl.json`. Current web documentation and main-branch sources remain `unknown` for released-version applicability. Web `web:...@sha256:...` revisions hash preserved normalized content; they are not Git commits.
 
-2026-11-12 발행본에는 **원문 문서 158개 + 짧은 지침 29개**, **2,848개 섹션**, 본문·코드 **3,685,383바이트**가 있습니다. 이전 발행본은 문서 13개·173개 섹션이었습니다. 숫자는 해당 수집 시점의 측정치이며 이후 원문 변경에 따라 달라집니다.
+The 2026-11-12 publication contains **158 source documents + 29 concise guidance cards**, **2,848 sections**, and **3,685,383 bytes** of text/code. The previous publication had 13 documents and 173 sections. These measurements describe that collection and can change with later source updates.
 
-API 이름은 해당 원문에서 확인한 정규화된 이름을 명시적으로 등록하고, 그 이름을 실제로 언급한 섹션에만 검색 별칭을 붙입니다. 예를 들어 `androidx.compose.runtime.LaunchedEffect`처럼 정확한 이름으로 조회할 수 있습니다. 알려진 Compose Android artifact 별칭도 처리합니다. 전체 AndroidX API 목록을 수집했다는 의미는 아닙니다.
+API names are explicitly registered as canonical names verified in source, with search aliases only on sections that actually mention them. For example, search the exact name `androidx.compose.runtime.LaunchedEffect`. Known Compose Android artifact aliases are also supported. This is not a collection of the entire AndroidX API catalog.
 
-실행 결과는 Actions의 작업 요약과 `refresh-report` artifact에 남습니다. `corpus-data` artifact에는 소비자 검증을 통과한 데이터만 포함됩니다. 필수 수집 실패 시 요약과 실패 보고서를 남기며 발행 작업은 실행하지 않습니다. 공개 정보 수집 작업은 읽기 권한만 사용하고, 발행 작업만 `contents: write`를 가집니다. 추가 PAT는 필요하지 않습니다.
+Results appear in the Actions job summary and `refresh-report` artifact. The `corpus-data` artifact contains only data that passed consumer validation. Required collection failure leaves a summary and failure report and skips publication. Public collection has read-only permissions; only publication has `contents: write`. No additional PAT is needed.
 
-수동 확인은 Actions에서 `publish=false`로 실행합니다. 기능 브랜치에서는 발행이 항상 비활성화됩니다. 기본 브랜치에서 첫 데이터를 발행하거나 즉시 갱신하려면 `publish=true`를 선택합니다.
+For manual validation in Actions, use `publish=false`. Publication is always disabled on feature branches. To publish initial data or refresh immediately from the default branch, choose `publish=true`.
 
 ```sh
 gh workflow run refresh.yml --ref main -f publish=false
-# 기본 브랜치에서 검증 후 자동 발행까지 수행
+# Validate and automatically publish from the default branch
 gh workflow run refresh.yml --ref main -f publish=true
 
-# 로컬 미리보기: 출력 디렉터리는 비어 있어야 합니다.
+# Local preview: output directory must be empty.
 npm run build
 node scripts/refresh.mjs --out .cache/refresh-NEW \
   --remote https://github.com/seungwan-woo/compose-knowledge.git
 ```
 
-공개 corpus가 발행된 뒤 스킬에서는 다음과 같이 사용합니다.
+After public corpus publication, use the skill as follows:
 
 ```sh
 node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs sync \
@@ -123,14 +123,14 @@ node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs sync
   --ref corpus --cache .cache/public-corpus --json
 ```
 
-반환된 `snapshot` SHA를 이후 검색·읽기에서 고정합니다. `publishedAt`은 마지막 데이터 변경 커밋 시각이므로 변경 없는 일일 수집에서는 갱신되지 않습니다. `checkedAt`은 이번 sync 호출 시각이며 오프라인에서도 바뀝니다. 일일 수집의 성공 여부는 Actions 실행 결과로 확인하세요.
+Pin the returned `snapshot` SHA for subsequent search/read. `publishedAt` is the last data-change commit time and stays unchanged on daily crawls with no changes. `checkedAt` is this sync invocation's time and changes even offline. Check Actions results for daily collection success.
 
-Android 기기의 배경 클릭 전달과 사내 PC의 Codex 실행은 별도 검증 대상입니다. 수집하지 않은 Material 3 동적 본문이나 다른 샘플 Kotlin 파일의 내용은 근거로 제공하지 않습니다.
+Background click delivery on Android devices and Codex execution on corporate PCs require separate validation. Uncollected dynamic Material 3 content and other sample Kotlin files are not provided as evidence.
 
-## 지식 생성과 AI의 역할
+## Knowledge generation and AI's role
 
-일일 수집 작업은 생성형 AI API를 호출하지 않습니다. 공식 문서·Kotlin 소스의 본문을 추출하고, 섹션·출처·해시·버전 상태·검색 인덱스를 만드는 과정은 코드로 재현 가능합니다. `corpus/knowledge/*.md`에는 실제 본문과 코드가, `index/sections.json`에는 같은 내용과 검색 메타데이터가 저장됩니다.
+Daily collection does not call generative AI APIs. Extracting official documentation/Kotlin source bodies and building sections, provenance, hashes, version status, and search indexes is reproducible in code. `corpus/knowledge/*.md` stores actual text and code; `index/sections.json` stores the same content and retrieval metadata.
 
-원문 위에는 [짧은 주제별 지침 29개](config/curated-guidance.json)를 둡니다. AI로 정리한 뒤 원문과 독립 대조한 지침이며, 항목당 본문은 최대 1,000 UTF-8 바이트이고 근거 섹션 1~2개의 ID·본문 해시에 연결됩니다. 검색 결과의 `Guidance:` 표기로 구분하고 `relatedIds`로 필요한 원문만 읽습니다. [주제별 검색 안내](.agents/skills/compose-reference-context/references/topics.md)도 번들에 포함됩니다.
+Above the sources sit [29 concise topic guidance cards](config/curated-guidance.json), organized with AI and independently checked against original sources. Each body is at most 1,000 UTF-8 bytes and links to 1–2 evidence sections by ID and body hash. Search results mark them `Guidance:`; use `relatedIds` to read only needed sources. The bundle also includes [topic retrieval guidance](.agents/skills/compose-reference-context/references/topics.md).
 
-매일 수집할 때 근거가 바뀌거나 없어지면 해당 지침은 자동 제외되어 `needs-review`로 보고됩니다. 원문은 계속 제공됩니다. 매일 LLM이 지침을 재작성하지 않으며, [Dot/예약 에이전트용 정제 지침](docs/dot-curation.md)을 별도 작업에 등록해 변경된 항목만 수정 PR로 검토할 수 있습니다. 이 저장소 변경만으로 Dot 예약이 생성되지는 않습니다.
+During daily collection, changed or missing evidence automatically omits its guidance and reports `needs-review`. Original sources remain available. An LLM does not rewrite guidance daily; register the [Dot/scheduled-agent curation instructions](docs/dot-curation.md) separately to review only changed items through revision PRs. Repository changes alone do not create a Dot schedule.
