@@ -75,7 +75,11 @@ jobs:
         env:
           CORPUS_REMOTE: https://github.com/${{ github.repository }}.git
         run: |
+          if ! CORPUS_GIT_AUTH_HEADER="$(git config --local --get http.https://github.com/.extraheader)" || [ -z "$CORPUS_GIT_AUTH_HEADER" ]; then
+            echo "::error::Checkout authentication header is missing; publication stopped"
+            exit 1
+          fi
           export GIT_CONFIG_COUNT=1
           export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
-          export GIT_CONFIG_VALUE_0="$(git config --local --get http.https://github.com/.extraheader)"
+          export GIT_CONFIG_VALUE_0="$CORPUS_GIT_AUTH_HEADER"
           node scripts/publish-corpus.mjs --snapshot "$RUNNER_TEMP/corpus" --remote "$CORPUS_REMOTE" --report "$RUNNER_TEMP/refresh-report/report.json"
