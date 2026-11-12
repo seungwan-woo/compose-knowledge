@@ -50,12 +50,12 @@ node dist/cli.js read --cache "$CACHE" --snapshot "$SHA" --id menu-state-sample 
 
 ```sh
 npm run bundle
-node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.0.tar.gz /YOUR/SKILLS/DIRECTORY
+node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.1.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
 일반적인 사용자 스킬 디렉터리는 `~/.agents/skills`입니다. 설치기는 SHA256 sidecar를 확인하고 기존 스킬을 덮어쓰지 않습니다. 신뢰할 수 있는 경로로 번들과 체크섬을 함께 전달하세요. 체크섬은 전송 무결성을 검사하며 발행자 서명을 대신하지 않습니다.
 
-스킬은 설치된 자체 launcher를 사용합니다. 매 작업 한 번 동기화한 후 SHA를 고정하고, 짧은 주제별 지침에서 필요한 원문으로 이동합니다. 검색·읽기 출력 합계 12 KiB와 근거 읽기 3건·연결 한 단계 한도를 기록합니다. 바이트 제한은 실제 모델 토큰 수와는 다릅니다. 프로젝트의 실행 테스트와 upstream 테스트 소스 읽기도 구분합니다.
+스킬은 설치된 자체 launcher를 사용합니다. 새 Compose 질문의 첫 단계에서 온라인 동기화한 후 SHA를 고정하고, 짧은 주제별 지침에서 필요한 원문으로 이동합니다. 검색·읽기 출력 합계 12 KiB와 근거 읽기 3건·연결 한 단계 한도를 기록합니다. 바이트 제한은 실제 모델 토큰 수와는 다릅니다. 프로젝트의 실행 테스트와 upstream 테스트 소스 읽기도 구분합니다.
 
 ## 검증과 보고서
 
@@ -74,6 +74,7 @@ node scripts/evaluate.mjs .cache/evaluation-NEW
 - [스킬 사용성 테스트](docs/reports/skill-usability.md)
 - [일일 수집 검증](docs/reports/daily-refresh.md), [설치 스킬·발행 통합 테스트](docs/reports/daily-acceptance.md), [독립 리뷰](docs/reports/daily-review.md)
 - [확장 corpus 검증](docs/reports/coverage-expansion.md), [설치 스킬의 개선 전후 비교](docs/reports/coverage-usability.md), [지침 29개의 독립 검토](docs/reports/guidance-review.md)
+- [sync-first 검증](docs/reports/sync-first-verification.md), [local MCP·SQLite·graph/RDF 비교](docs/reports/local-retrieval-tradeoffs.md)
 - [병렬 실행 계획](docs/superpowers/plans/2026-11-12-compose-knowledge.md)
 
 `Source.sha256`은 보존한 발췌의 UTF-8 해시입니다. upstream 파일·아카이브 해시는 `tests/fixtures/upstream/provenance.json`에 별도로 보존하고 공식 체크섬과 대조했습니다. 생성 corpus에는 원문 출처·저작권 표기와 Apache 라이선스가 포함됩니다.
