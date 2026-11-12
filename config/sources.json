@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "purpose": "User-requested public source registry; not a crawler output contract or an instruction to ingest whole sites.",
+  "purpose": "User-requested public source registry. Exact bounded acquisition and monitor-only coverage are configured in config/crawl.json; no recursive whole-site ingestion.",
   "sources": [
     {
       "id": "compose-documentation",
@@ -8,7 +8,7 @@
       "type": "documentation-index",
       "scope": {
         "visibility": "public",
-        "selection": "Select menu, popup, and related API documentation only for the initial corpus.",
+        "selection": "Collect this page article and its anchored sections; linked pages are not recursively fetched.",
         "exclude": [
           "private code",
           "internal rules",
@@ -16,12 +16,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "androidx-compose-source",
@@ -29,7 +29,7 @@
       "type": "source-tree",
       "scope": {
         "visibility": "public",
-        "selection": "Select Material3 DropdownMenu and Compose UI Popup source, samples, and tests only; resolve immutable revisions before ingestion.",
+        "selection": "Collect exact-revision Menu.kt and Popup.kt as listed in config/crawl.json.",
         "exclude": [
           "private code",
           "internal rules",
@@ -37,12 +37,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "compose-api-guidelines",
@@ -50,7 +50,7 @@
       "type": "api-design-guidelines",
       "scope": {
         "visibility": "public",
-        "selection": "Select API-design guidance directly relevant to the initial menu and popup task.",
+        "selection": "Collect the exact-revision API design guidelines file with line-level provenance.",
         "exclude": [
           "private code",
           "internal rules",
@@ -58,12 +58,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "compose-samples",
@@ -71,7 +71,7 @@
       "type": "sample-repository",
       "scope": {
         "visibility": "public",
-        "selection": "Select menu or popup examples only after exact files, immutable revisions, and licenses are reviewed.",
+        "selection": "Collect exact-revision README.md; other sample files require explicit configuration.",
         "exclude": [
           "private code",
           "internal rules",
@@ -79,12 +79,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "compose-overview",
@@ -92,7 +92,7 @@
       "type": "documentation-index",
       "scope": {
         "visibility": "public",
-        "selection": "Select menu and popup links for the initial task; do not crawl the entire documentation tree.",
+        "selection": "Collect this page article and its anchored sections; linked pages are not recursively fetched.",
         "exclude": [
           "private code",
           "internal rules",
@@ -100,12 +100,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "material3-compose-guide",
@@ -113,7 +113,7 @@
       "type": "design-system-guide",
       "scope": {
         "visibility": "public",
-        "selection": "Select Material3 Android menu guidance relevant to the initial corpus.",
+        "selection": "Monitor HTTP response only. Dynamic Angular article text is not ingested.",
         "exclude": [
           "private code",
           "internal rules",
@@ -121,12 +121,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
         "status": "pending",
         "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "monitor-only"
     },
     {
       "id": "compose-release-notes",
@@ -134,7 +134,7 @@
       "type": "release-notes",
       "scope": {
         "visibility": "public",
-        "selection": "Select release evidence needed to establish or compare menu and popup artifact applicability.",
+        "selection": "Collect this Compose release page; do not infer resolved application dependencies from its contents.",
         "exclude": [
           "private code",
           "internal rules",
@@ -142,12 +142,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "menu-focused",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     },
     {
       "id": "android-architecture-introduction",
@@ -155,7 +155,7 @@
       "type": "architecture-guide",
       "scope": {
         "visibility": "public",
-        "selection": "General Android application architecture; defer ingestion until after the menu and popup workflow is validated.",
+        "selection": "Collect this architecture article and its anchored sections.",
         "exclude": [
           "private code",
           "internal rules",
@@ -163,12 +163,12 @@
         ]
       },
       "releaseApplicability": "unknown",
-      "phase": "later-general-architecture",
+      "phase": "daily-bounded",
       "license": {
-        "status": "pending",
-        "note": "Review redistribution terms for the exact content and revision before ingestion; source registration is not a license determination."
+        "status": "reviewed-for-configured-content",
+        "note": "Apache-2.0 for the configured Android documentation or AndroidX/compose-samples source. See exact source license URLs in config/crawl.json; content-specific notices are retained. This does not license arbitrary linked pages."
       },
-      "ingestionStatus": "not-ingested"
+      "ingestionStatus": "configured-in-crawl.json"
     }
   ]
 }

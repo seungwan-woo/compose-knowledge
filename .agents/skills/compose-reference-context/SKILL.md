@@ -15,9 +15,11 @@ Identify the affected module, imports, Android build variant and resolved artifa
 
 ## Sync once and pin
 
-Choose explicit `CK_REMOTE` and `CK_CACHE`. Call `sync --remote "$CK_REMOTE" --ref corpus --cache "$CK_CACHE" --json` once for the task. Use `--offline` for a prepared offline cache. Parse its JSON and save `snapshot` as `CK_SHA`; every subsequent search/read must pass that exact SHA.
+Use `CK_REMOTE=https://github.com/seungwan-woo/compose-knowledge.git` for the published public corpus, or an explicitly supplied alternative. Choose a writable `CK_CACHE` and keep the same remote URL spelling for later offline/fallback use: cache identity includes the remote. Call `sync --remote "$CK_REMOTE" --ref corpus --cache "$CK_CACHE" --json` once for the task. Use `--offline` for a prepared offline cache. Parse its JSON and save `snapshot` as `CK_SHA`; every subsequent search/read must pass that exact SHA. If the public branch is not published yet, report `unavailable` or explicitly use a demonstration corpus.
 
 Report `fresh` or `cached` with `checkedAt` and `publishedAt`. `cached` may be stale. `unavailable` exits 2: continue the user's work with the evidence gap stated, without inventing retrieved facts. A local demonstration corpus can be prepared using the repository's `node scripts/prepare-demo.mjs`; it contains example versions, not live project knowledge.
+
+`checkedAt` is this sync invocation's time, including offline invocations; it is not the last successful upstream crawl time. `publishedAt` is the data commit time and does not advance on unchanged daily crawls. For crawl health inspect the latest **Daily public corpus refresh** Actions run and its source report. Live web/main-branch sections retain unknown released-version applicability. A monitor-only source has no article evidence in the corpus; do not claim it was ingested. Hash-based `web:...@sha256:...` revisions identify captured normalized content, not upstream Git commits.
 
 ## Search, then read
 

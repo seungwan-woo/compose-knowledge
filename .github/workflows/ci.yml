@@ -1,6 +1,7 @@
 name: Validate Compose knowledge
 on:
   push:
+    branches-ignore: [corpus]
   pull_request:
   workflow_dispatch:
 permissions:

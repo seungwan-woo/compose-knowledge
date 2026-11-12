@@ -23,6 +23,27 @@ describe('portable skill and CLI distribution', () => {
       expect(help.stdout).toContain('search');
       const corpus = spawnSync(process.execPath, [join(skillDir, 'scripts', 'compose-knowledge.mjs'), 'build', '--input', join(root, 'tests/fixtures/knowledge-input.json'), '--out', join(dir, 'corpus'), '--json'], { cwd: dir, encoding: 'utf8' });
       expect(corpus.status, corpus.stderr).toBe(0);
+      const corpusDir = join(dir, 'corpus');
+      for (const args of [['init', '-b', 'corpus'], ['add', '.'], ['-c', 'user.name=Skill test', '-c', 'user.email=skill@example.invalid', 'commit', '-m', 'Public fixture']]) {
+        const committed = spawnSync('git', args, { cwd: corpusDir, encoding: 'utf8' });
+        expect(committed.status, committed.stderr).toBe(0);
+      }
+      const invoke = (...args: string[]) => {
+        const response = spawnSync(process.execPath, [join(skillDir, 'scripts', 'compose-knowledge.mjs'), ...args, '--json'], { cwd: dir, encoding: 'utf8' });
+        expect(response.status, response.stderr).toBe(0);
+        return { data: JSON.parse(response.stdout), bytes: Buffer.byteLength(response.stdout) };
+      };
+      const cache = join(dir, 'cache');
+      const sync = invoke('sync', '--remote', corpusDir, '--cache', cache, '--ref', 'corpus').data;
+      expect(sync.status).toBe('fresh');
+      const context = ['--cache', cache, '--snapshot', sync.snapshot, '--artifact', 'androidx.compose.material3:material3', '--platform', 'android', '--version', 'unknown'];
+      const search = invoke('search', ...context, '--symbol', 'DropdownMenu', '--limit', '3');
+      expect(search.data.hits).toEqual(expect.arrayContaining([expect.objectContaining({ id: 'menu-api', versionStatus: 'unknown' })]));
+      const read = invoke('read', ...context, '--id', 'menu-api');
+      expect(read.data).toMatchObject({ snapshot: sync.snapshot, versionStatus: 'unknown', truncated: false });
+      expect(read.data.body).toContain('onDismissRequest');
+      expect(search.bytes + read.bytes).toBeLessThanOrEqual(12288);
+      expect(invoke('sync', '--remote', corpusDir, '--cache', cache, '--offline').data).toMatchObject({ status: 'cached', snapshot: sync.snapshot });
       expect(run('install.mjs', [archive, join(dir, 'skills')]).status).not.toBe(0);
       await writeFile(archive, 'corrupted archive');
       expect(run('install.mjs', [archive, join(dir, 'another-skills')]).status).not.toBe(0);
