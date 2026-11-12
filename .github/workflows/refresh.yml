@@ -1,17 +1,80 @@
-name: Public corpus refresh integration gate
+name: Daily public corpus refresh
 on:
+  schedule:
+    - cron: '17 0 * * *'
   workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish validated corpus from the default branch
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
   group: public-compose-corpus-refresh
   cancel-in-progress: false
 jobs:
-  prerequisites:
+  collect:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: Require the real crawler and publication implementation
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - name: Collect and validate
+        env:
+          CORPUS_REMOTE: https://github.com/${{ github.repository }}.git
+        run: node scripts/refresh.mjs --out "$RUNNER_TEMP/refresh" --remote "$CORPUS_REMOTE"
+      - uses: actions/upload-artifact@v6
+        with:
+          name: corpus-data
+          path: ${{ runner.temp }}/refresh/corpus
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: refresh-report
+          path: |
+            ${{ runner.temp }}/refresh/report.json
+            ${{ runner.temp }}/refresh/summary.md
+          if-no-files-found: ignore
+  publish:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && (github.event_name == 'schedule' || inputs.publish == true)
+    needs: collect
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - uses: actions/download-artifact@v6
+        with:
+          name: corpus-data
+          path: ${{ runner.temp }}/corpus
+      - uses: actions/download-artifact@v6
+        with:
+          name: refresh-report
+          path: ${{ runner.temp }}/refresh-report
+      - name: Validate and publish
+        env:
+          CORPUS_REMOTE: https://github.com/${{ github.repository }}.git
         run: |
-          echo '::error::Refresh is intentionally gated: connect the existing crawler, verify source access and redistribution, then implement staging validation and a separate publishing job.'
-          echo 'No fixture corpus will be published as a successful refresh. Scheduling is not enabled.'
-          exit 2
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="$(git config --local --get http.https://github.com/.extraheader)"
+          node scripts/publish-corpus.mjs --snapshot "$RUNNER_TEMP/corpus" --remote "$CORPUS_REMOTE" --report "$RUNNER_TEMP/refresh-report/report.json"

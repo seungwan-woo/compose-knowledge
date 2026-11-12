@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "compose-documentation",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/documentation",
+      "title": "Compose documentation",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-overview",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/",
+      "title": "Compose overview",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-release-notes",
+      "kind": "html",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose",
+      "title": "Compose release notes",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "android-architecture-introduction",
+      "kind": "html",
+      "url": "https://developer.android.com/topic/architecture/intro",
+      "title": "Android architecture introduction",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-menus",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/components/menu",
+      "title": "Compose menus",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.DropdownMenu",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "androidx-menu",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Menu.kt",
+      "title": "Material 3 Menu source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.DropdownMenu",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Menu.kt"
+    },
+    {
+      "id": "androidx-popup",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+      "title": "Popup source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.window.Popup",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt"
+    },
+    {
+      "id": "compose-api-guidelines",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/docs/compose-api-guidelines.md",
+      "title": "Compose API guidelines",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/docs/compose-api-guidelines.md"
+    },
+    {
+      "id": "compose-samples",
+      "kind": "github",
+      "url": "https://github.com/android/compose-samples",
+      "title": "Compose samples README",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://github.com/android/compose-samples/blob/main/LICENSE)",
+      "repo": "android/compose-samples",
+      "ref": "main",
+      "path": "README.md"
+    },
+    {
+      "id": "material3-compose-guide",
+      "kind": "monitor",
+      "url": "https://m3.material.io/develop/android/jetpack-compose",
+      "title": "Material 3 Compose guide",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3",
+      "license": "Monitor only; content not ingested"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 공식 AndroidX 근거를 버전별로 검색하고 Codex 구현·리뷰에 사용하는 로컬 CLI와 스킬입니다. Node.js 24가 필요합니다.
 
-현재 PoC는 Material 3 **1.3.2**, Compose UI **1.7.8**, 배포 버전이 미확인인 고정 AndroidX main 소스의 **9개 섹션**을 포함합니다. 이 숫자는 예제 근거의 버전이며 작업 대상 앱의 버전이 아닙니다. 기존 TypeScript 크롤러 연결과 실제 GitHub `corpus` 게시는 아직 수행하지 않았습니다.
+Material 3 **1.3.2**, Compose UI **1.7.8**, 배포 버전이 미확인인 고정 AndroidX 소스의 **9개 섹션**을 기준 근거로 유지하고, 일일 수집기로 공식 문서와 최신 소스를 추가합니다. 이 버전들은 예제 근거의 버전이며 작업 대상 앱의 버전이 아닙니다. 새 수집기는 이 저장소의 입력 계약을 사용하며, 미제공된 기존 크롤러 코드를 연결했다고 주장하지 않습니다.
 
 ## 시작
 
@@ -48,7 +48,7 @@ node dist/cli.js read --cache "$CACHE" --snapshot "$SHA" --id menu-state-sample 
 
 ```sh
 npm run bundle
-node scripts/install.mjs .cache/distribution/compose-reference-context-0.1.0.tar.gz /YOUR/SKILLS/DIRECTORY
+node scripts/install.mjs .cache/distribution/compose-reference-context-0.2.0.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
 일반적인 사용자 스킬 디렉터리는 `~/.agents/skills`입니다. 설치기는 SHA256 sidecar를 확인하고 기존 스킬을 덮어쓰지 않습니다. 신뢰할 수 있는 경로로 번들과 체크섬을 함께 전달하세요. 체크섬은 전송 무결성을 검사하며 발행자 서명을 대신하지 않습니다.
@@ -74,8 +74,50 @@ node scripts/evaluate.mjs .cache/evaluation-NEW
 
 `Source.sha256`은 보존한 발췌의 UTF-8 해시입니다. upstream 파일·아카이브 해시는 `tests/fixtures/upstream/provenance.json`에 별도로 보존하고 공식 체크섬과 대조했습니다. 생성 corpus에는 원문 출처·저작권 표기와 Apache 라이선스가 포함됩니다.
 
-## 남은 연결
+## 매일 수집과 자동 갱신
 
-`config/sources.json`에는 요청한 8개 공식 문서·소스·샘플 URL을 등록했습니다. 현재 7개 URL은 프록시 CONNECT 403으로 차단됐고, GitHub 샘플 저장소는 읽기 접근을 확인했습니다. 웹 문서의 버전 적용성과 재배포 조건은 수집 후 확인해야 합니다.
+`Daily public corpus refresh`는 매일 **00:17 UTC / 09:17 한국 시간**에 실행됩니다. GitHub 예약 실행은 지연될 수 있으며, 워크플로가 기본 브랜치에 병합된 뒤 활성화됩니다. 공개 저장소는 장기간 활동이 없으면 GitHub가 예약 실행을 중지할 수 있습니다.
 
-`toKnowledgeInputs`는 정해진 JSON 계약을 검증하는 경계이며 미제공 크롤러의 어댑터를 완성한 것은 아닙니다. 크롤러 연결, 실제 `corpus` 게시, 변경 없음/수집 실패의 실운영 검증을 마친 뒤 일일 수집을 활성화해야 합니다. `refresh.yml`은 이 조건을 명시한 수동 연결 지점으로 남깁니다. Android 기기의 배경 클릭 전달과 사내 PC의 Codex 실행은 별도 검증 대상입니다.
+1. [수집 설정](config/crawl.json)에 지정한 문서와 소스를 가져옵니다. 원래 요청한 8개 대상의 구체적인 수집 범위는 아래 표와 같습니다.
+2. 원문·출처·해시·버전 상태를 보존하고 기존 버전별 근거와 함께 새 스냅샷을 만듭니다. 추가·수정·삭제된 섹션 ID를 보고합니다.
+3. 검증을 통과한 데이터만 별도 발행 작업에서 `corpus` 브랜치에 반영합니다. 변경이 없으면 커밋하지 않습니다. 필수 수집 실패, 잘못된 스냅샷, 수집 후 다른 발행이 들어온 경우에는 기존 데이터를 유지합니다.
+
+| 대상 | 자동 수집 범위 |
+| --- | --- |
+| Compose documentation / overview | 각 페이지의 본문과 앵커가 있는 섹션 |
+| Compose release notes | 등록된 Compose 릴리스 페이지 본문 |
+| Android architecture introduction | 해당 문서 본문 |
+| Compose menu guide | 추가 지정한 공식 메뉴 문서 본문 |
+| AndroidX Compose source | 정확한 Git 커밋의 `Menu.kt`, `Popup.kt` |
+| Compose API guidelines | 정확한 Git 커밋의 가이드 파일 |
+| compose-samples | 정확한 Git 커밋의 `README.md` |
+| Material 3 Compose guide | HTTP 응답·해시 확인만 수행. Angular 본문은 **미수집** |
+
+전체 사이트를 재귀적으로 수집하지 않습니다. 지정 문서에 추가된 섹션은 자동 반영되며, 다른 문서나 소스 파일은 `config/crawl.json`에 추가해야 합니다. 최신 웹 문서와 main 브랜치 소스는 특정 배포 버전으로 단정하지 않고 `unknown`으로 취급합니다. 웹의 `web:...@sha256:...` revision은 보존한 정규화 본문의 해시이며 Git 커밋이 아닙니다.
+
+실행 결과는 Actions의 작업 요약과 `refresh-report` artifact에 남습니다. `corpus-data` artifact에는 소비자 검증을 통과한 데이터만 포함됩니다. 필수 수집 실패 시 요약과 실패 보고서를 남기며 발행 작업은 실행하지 않습니다. 공개 정보 수집 작업은 읽기 권한만 사용하고, 발행 작업만 `contents: write`를 가집니다. 추가 PAT는 필요하지 않습니다.
+
+수동 확인은 Actions에서 `publish=false`로 실행합니다. 기능 브랜치에서는 발행이 항상 비활성화됩니다. 기본 브랜치에서 첫 데이터를 발행하거나 즉시 갱신하려면 `publish=true`를 선택합니다.
+
+```sh
+gh workflow run refresh.yml --ref main -f publish=false
+# 기본 브랜치에서 검증 후 자동 발행까지 수행
+gh workflow run refresh.yml --ref main -f publish=true
+
+# 로컬 미리보기: 출력 디렉터리는 비어 있어야 합니다.
+npm run build
+node scripts/refresh.mjs --out .cache/refresh-NEW \
+  --remote https://github.com/seungwan-woo/compose-knowledge.git
+```
+
+공개 corpus가 발행된 뒤 스킬에서는 다음과 같이 사용합니다.
+
+```sh
+node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs sync \
+  --remote https://github.com/seungwan-woo/compose-knowledge.git \
+  --ref corpus --cache .cache/public-corpus --json
+```
+
+반환된 `snapshot` SHA를 이후 검색·읽기에서 고정합니다. `publishedAt`은 마지막 데이터 변경 커밋 시각이므로 변경 없는 일일 수집에서는 갱신되지 않습니다. `checkedAt`은 이번 sync 호출 시각이며 오프라인에서도 바뀝니다. 일일 수집의 성공 여부는 Actions 실행 결과로 확인하세요.
+
+Android 기기의 배경 클릭 전달과 사내 PC의 Codex 실행은 별도 검증 대상입니다. 수집하지 않은 Material 3 동적 본문이나 다른 샘플 Kotlin 파일의 내용은 근거로 제공하지 않습니다.
