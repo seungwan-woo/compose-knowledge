@@ -1,4 +1,4 @@
-import { afterEach, beforeAll, expect, it } from 'vitest';
+import { afterEach, expect, it } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -53,7 +53,6 @@ async function publish(root: string, remote: string, name: string, input: Knowle
   return { snapshotDir, result: await publishSnapshot({ snapshotDir, remote, expectedSnapshot }) };
 }
 const context = ['--artifact', artifact, '--version', '1.7.8', '--platform', 'android'];
-beforeAll(() => { command('npm', ['run', 'build'], checkout); }, 30000);
 afterEach(async () => { await Promise.all(roots.splice(0).map(dir => rm(dir, { recursive: true, force: true }))); });
 
 it('crawls, publishes, consumes and updates daily evidence while retaining released and pinned snapshots', async () => {

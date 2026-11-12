@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { spawnSync } from 'node:child_process';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
@@ -11,8 +11,11 @@ describe('portable skill and CLI distribution', () => {
   it('installs a checksummed bundle outside the checkout, preserves existing installs, and rejects corruption', async () => {
     const dir = await mkdtemp(join(tmpdir(), 'compose-distribution-'));
     try {
+      const sharedCliBefore = await stat(join(root, 'dist/cli.js'), { bigint: true });
       const built = run('bundle.mjs', [join(dir, 'releases')]);
       expect(built.status, built.stderr).toBe(0);
+      // Packaging runs beside CLI consumers; it must not rewrite their executable.
+      expect((await stat(join(root, 'dist/cli.js'), { bigint: true })).mtimeNs).toBe(sharedCliBefore.mtimeNs);
       const { archive } = JSON.parse(built.stdout);
       const installed = run('install.mjs', [archive, join(dir, 'skills')]);
       expect(installed.status, installed.stderr).toBe(0);
