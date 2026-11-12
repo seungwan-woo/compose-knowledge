@@ -134,7 +134,9 @@ Background click delivery on Android devices and Codex execution on corporate PC
 
 Daily collection does not call generative AI APIs. Extracting official documentation/Kotlin source bodies and building sections, provenance, hashes, version status, and search indexes is reproducible in code. `corpus/knowledge/*.md` stores actual text and code; `index/sections.json` stores the same content and retrieval metadata.
 
-Above the sources sit [65 concise topic guidance cards](config/curated-guidance.json), organized with AI and independently checked against original sources. Each body is at most 1,000 UTF-8 bytes and links to 1–2 evidence sections by ID and body hash. Search results mark them `Guidance:`; use `relatedIds` to read only needed sources. The bundle also includes [topic retrieval guidance](.agents/skills/compose-reference-context/references/topics.md).
+Above the sources sit [67 concise topic guidance cards](config/curated-guidance.json), organized with AI and independently checked against original sources. Each body is at most 1,000 UTF-8 bytes and links to 1–2 evidence sections by ID and body hash. Search results mark them `Guidance:`; use `relatedIds` to read only needed sources. The bundle also includes [topic retrieval guidance](.agents/skills/compose-reference-context/references/topics.md).
+
+The two [lazy-layout additions](docs/reports/lazy-layout-guidance.md) are authored configuration; consumers receive them only after merge and a successful corpus publication.
 
 During daily collection, changed or missing evidence automatically omits its guidance and reports `needs-review`. Original sources remain available. An LLM does not rewrite guidance daily; register the [Dot/scheduled-agent curation instructions](docs/dot-curation.md) separately to review only changed items through revision PRs. Repository changes alone do not create a Dot schedule.
 
