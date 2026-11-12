@@ -158,7 +158,7 @@ describe('independent executable acceptance', () => {
     const readArgs = ['read', '--cache', f.cache, '--snapshot', next, '--id', 'popup-touch-routing', ...queryArgs];
     expect(parse(cli(...readArgs, '--json')).versionStatus).toBe('unknown');
     expect(parse(cli(...readArgs, '--require', 'androidx.compose.material3:material3=1.3.2', '--json')).versionStatus).toBe('match');
-    expect(parse(cli(...readArgs, '--require', 'androidx.compose.material3:material3=9.9.9', '--json')).versionStatus).toBe('different');
+    expect(parse(cli(...readArgs, '--require', 'androidx.compose.material3:material3=9.9.9', '--include-different', '--json')).versionStatus).toBe('different');
     const found = parse(cli('search', '--cache', f.cache, '--snapshot', next, ...queryArgs, '--query', 'priorityprobe', '--json'));
     expect(found.hits[0]).toMatchObject({ id: 'popup-properties', versionStatus: 'match' });
   });

@@ -32,6 +32,24 @@ describe('snapshot sync', () => {
     const { repo, cacheDir, sha } = await fixture();
     expect(await syncSnapshot({ cacheDir, remote: repo })).toMatchObject({ status: 'fresh', snapshot: sha });
   });
+  it('preserves URL and SCP-style remotes when invoking Git', async () => {
+    const { repo, cacheDir } = await fixture();
+    const bin = path.join(path.dirname(repo), 'capture-bin'); await mkdir(bin);
+    const realGit = execFileSync('which', ['git'], { encoding: 'utf8' }).trim();
+    const capture = path.join(path.dirname(repo), 'args');
+    await writeFile(path.join(bin, 'git'), '#!/bin/sh\nfor arg in "$@"; do if [ "$arg" = fetch ]; then printf "%s\\n" "$@" > "$REMOTE_CAPTURE"; exit 1; fi; done\nexec "' + realGit + '" "$@"\n', { mode: 0o755 });
+    const oldPath = process.env.PATH, oldCapture = process.env.REMOTE_CAPTURE;
+    process.env.PATH = bin + path.delimiter + oldPath; process.env.REMOTE_CAPTURE = capture;
+    try {
+      for (const remote of ['https://example.invalid/corpus', 'ssh://git@example.invalid/corpus', 'git@example.invalid:corpus']) {
+        expect((await syncSnapshot({ cacheDir, remote })).status).toBe('unavailable');
+        expect((await readFile(capture, 'utf8')).split('\n')).toContain(remote);
+      }
+    } finally {
+      if (oldPath === undefined) delete process.env.PATH; else process.env.PATH = oldPath;
+      if (oldCapture === undefined) delete process.env.REMOTE_CAPTURE; else process.env.REMOTE_CAPTURE = oldCapture;
+    }
+  });
   it('passes caller proxy and CA settings to Git', async () => {
     const { repo, cacheDir } = await fixture();
     const bin = path.join(path.dirname(repo), 'bin'); await mkdir(bin);

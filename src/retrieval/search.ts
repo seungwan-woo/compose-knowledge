@@ -47,5 +47,7 @@ export function searchIndex(index: SearchIndex, query: SearchQuery, snapshot: st
 export function readSection(index: SearchIndex, id: string, query: SearchQuery, snapshot: string): ReadResponse {
   const entry = index.entries.find(item => item.id === id);
   if (!entry) throw new Error(`Section not found: ${id}`);
-  return {snapshot, id: entry.id, title: entry.title, body: entry.body, sources: entry.sources.map(({excerpt: _excerpt, ...source}) => source), requires: entry.requires, relatedIds: entry.relatedIds, versionStatus: getVersionStatus(entry.requires, query), truncated: false};
+  const versionStatus = getVersionStatus(entry.requires, query);
+  if (versionStatus === 'different' && !query.includeDifferent) throw new Error('Different version evidence requires includeDifferent');
+  return {snapshot, id: entry.id, title: entry.title, body: entry.body, sources: entry.sources.map(({excerpt: _excerpt, ...source}) => source), requires: entry.requires, relatedIds: entry.relatedIds, versionStatus, truncated: false};
 }
