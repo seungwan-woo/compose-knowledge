@@ -38,11 +38,11 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** `KnowledgeInput` v1 feeds Task 2; documented section IDs feed Task 3 gold evaluation. No original crawler contract is presumed.
 
-- [ ] Record design decisions and initial Git state; install pinned dependencies using workspace npm cache.
-- [ ] Download versioned official source artifacts and verify official SHA256/SHA512; retain attributable excerpts.
-- [ ] Freeze 20 answerable questions and source-supported gold IDs before ranking implementation.
-- [ ] Map source evidence to `tests/fixtures/knowledge-input.json`; include separately attributed unknown-release evidence.
-- [ ] Commit scoped baseline and source inputs; obtain independent contract review.
+- [x] Record design decisions and initial Git state; install pinned dependencies using workspace npm cache.
+- [x] Download versioned official source artifacts and verify official SHA256/SHA512; retain attributable excerpts.
+- [x] Freeze 20 answerable questions and source-supported gold IDs before ranking implementation.
+- [x] Map source evidence to `tests/fixtures/knowledge-input.json`; include separately attributed unknown-release evidence.
+- [x] Commit scoped baseline and source inputs; obtain independent contract review.
 
 ### Task 2: Deterministic corpus build and validation
 
@@ -50,11 +50,11 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** `toKnowledgeInputs(value: unknown): KnowledgeInput`; `renderOkf(doc: KnowledgeDocument): string`; `buildIndex(docs: KnowledgeDocument[]): SearchIndex`; `buildSnapshot(input: KnowledgeInput, outDir: string): Promise<Manifest>`; `validateSnapshot(dir: string): Promise<ValidatedSnapshot>`.
 
-- [ ] Write failing tests for missing provenance, duplicate IDs, unknown version preservation, deterministic bytes and round-trip index/OKF links.
-- [ ] Run `npx vitest run tests/knowledge.test.ts` and record RED evidence.
-- [ ] Implement strict input boundary, stable rendering, index and complete manifest validation; reject unsafe paths, symlinks, extra payloads and inconsistent index bodies.
-- [ ] Rerun targeted tests and full current suite; obtain independent spec and quality review.
-- [ ] Controller commits only owned paths after worker report.
+- [x] Write failing tests for missing provenance, duplicate IDs, unknown version preservation, deterministic bytes and round-trip index/OKF links.
+- [x] Run `npx vitest run tests/knowledge.test.ts` and record RED evidence.
+- [x] Implement strict input boundary, stable rendering, index and complete manifest validation; reject unsafe paths, symlinks, extra payloads and inconsistent index bodies.
+- [x] Rerun targeted tests and full current suite; obtain independent spec and quality review.
+- [x] Controller commits only owned paths after worker report.
 
 ### Task 3: Version-aware retrieval and bounded JSON
 
@@ -62,11 +62,11 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** `normalizeArtifact(artifact: string, platform?: Platform): string`; `getVersionStatus(requires: ArtifactVersion[], query: SearchQuery): VersionStatus`; `searchIndex(index: SearchIndex, query: SearchQuery, snapshot: string): SearchResponse`; `readSection(index: SearchIndex, id: string, query: SearchQuery, snapshot: string): ReadResponse`; `serializeBounded(value: SearchResponse | ReadResponse, maxBytes: number): string` (includes newline).
 
-- [ ] Write failing tests for exact/sibling symbols, Korean aliases, Android coordinate aliases, conjunctive version matching, comparison-only different versions, unknown and empty results.
-- [ ] Run `npx vitest run tests/retrieval.test.ts` and record RED evidence.
-- [ ] Implement deterministic relevance with stable ID tie-breaks; maintain source attribution and required version state.
-- [ ] Test valid JSON/UTF-8 for 3072-byte envelopes and explicit failure for impossible caps; include repeated output accounting in evaluation.
-- [ ] Run current suite; independently review and controller commit.
+- [x] Write failing tests for exact/sibling symbols, Korean aliases, Android coordinate aliases, conjunctive version matching, comparison-only different versions, unknown and empty results.
+- [x] Run `npx vitest run tests/retrieval.test.ts` and record RED evidence.
+- [x] Implement deterministic relevance with stable ID tie-breaks; maintain source attribution and required version state.
+- [x] Test valid JSON/UTF-8 for 3072-byte envelopes and explicit failure for impossible caps; include repeated output accounting in evaluation.
+- [x] Run current suite; independently review and controller commit.
 
 ### Task 4: Immutable Git snapshot sync
 
@@ -74,11 +74,11 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** `syncSnapshot(options: SyncOptions): Promise<SyncResult>`; `getSnapshotPath(cacheDir: string, snapshot: string): string`. Imports Task 2 `validateSnapshot`.
 
-- [ ] Write failing tests using temporary local Git remotes for fresh/offline/cache-empty/invalid-update/network-failure/pinned-old-SHA and concurrent sync/read.
-- [ ] Run `npx vitest run tests/snapshot.test.ts` and record RED evidence (Task 2 dependency may initially be absent).
-- [ ] Fetch without executing remote files, stage commit contents safely, validate, atomically activate; retain prior immutable snapshots and isolate cache remote identity.
-- [ ] Verify staged invalid source cannot replace last-good and old SHA remains readable while branch advances.
-- [ ] Run full current suite; independent reviewer checks concurrency and integrity; controller commits.
+- [x] Write failing tests using temporary local Git remotes for fresh/offline/cache-empty/invalid-update/network-failure/pinned-old-SHA and concurrent sync/read.
+- [x] Run `npx vitest run tests/snapshot.test.ts` and record RED evidence (Task 2 dependency may initially be absent).
+- [x] Fetch without executing remote files, stage commit contents safely, validate, atomically activate; retain prior immutable snapshots and isolate cache remote identity.
+- [x] Verify staged invalid source cannot replace last-good and old SHA remains readable while branch advances.
+- [x] Run full current suite; independent reviewer checks concurrency and integrity; controller commits.
 
 ### Task 5: CLI, installable bundle, Codex skill and automation
 
@@ -86,12 +86,12 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** CLI `build --input --out`, `validate --dir`, `sync --remote --cache --offline`, `search --snapshot --cache|--dir --artifact --version --platform --symbol|--query --limit --max-bytes --json`, `read --snapshot --cache|--dir --id --max-bytes --json`. Additional artifact versions accepted as repeatable `--require artifact=version`.
 
-- [ ] Write failing CLI tests for JSON response/exit status, invalid args, unsafe ID/path, sync fallback and source/requirement context in read.
-- [ ] Implement CLI command dispatch without shell string interpolation; run commands through real subprocess tests.
-- [ ] Produce portable versioned bundle (CLI, runtime yaml dependency, skill) and SHA256; test checksum/extraction and install into temporary skill directory.
-- [ ] Run a fresh-context no-skill baseline before writing the skill. Author skill for observed gaps, with version resolution, one sync per task, explicit offline state, pinned SHA, 3-read/12288-byte accounting and sourced conclusions.
-- [ ] Fresh consumer invokes the installed skill for implementation and review; retain tool command transcripts and bounded output. Attempt authenticated `codex exec --json` when runtime permits and report precise limitations.
-- [ ] Add CI and manual refresh workflow with explicit external-crawler gate; never activate daily publication for fixture-only build.
+- [x] Write failing CLI tests for JSON response/exit status, invalid args, unsafe ID/path, sync fallback and source/requirement context in read.
+- [x] Implement CLI command dispatch without shell string interpolation; run commands through real subprocess tests.
+- [x] Produce portable versioned bundle (CLI, runtime yaml dependency, skill) and SHA256; test checksum/extraction and install into temporary skill directory.
+- [x] Run a fresh-context no-skill baseline before writing the skill. Author skill for observed gaps, with version resolution, one sync per task, explicit offline state, pinned SHA, 3-read/12288-byte accounting and sourced conclusions.
+- [x] Fresh consumer invokes the installed skill for implementation and review; retain tool command transcripts and bounded output. Attempt authenticated `codex exec --json` when runtime permits and report precise limitations.
+- [x] Add CI and manual refresh workflow with explicit external-crawler gate; never activate daily publication for fixture-only build.
 - [ ] Obtain independent task review, fix findings, and commit scoped changes.
 
 ### Task 6: Independent acceptance, final review and environment handoff
@@ -100,8 +100,8 @@ Task 1 freezes contracts and source/evaluation inputs. Tasks 2, 3 and 4 may impl
 
 **Interfaces:** invokes installed CLI, public APIs and frozen evaluation only; no implementation-internal assertions.
 
-- [ ] Independently run clean install/build/tests, two deterministic corpus builds, sync/fallback/concurrency and clean-bundle install.
-- [ ] Run 20-question top3 and top5 evaluation; record all outcomes, source validity, byte counts and p50/p95 separately from sync.
+- [x] Independently run clean install/build/tests, two deterministic corpus builds, sync/fallback/concurrency and clean-bundle install.
+- [x] Run 20-question top3 and top5 evaluation; record all outcomes, source validity, byte counts and p50/p95 separately from sync.
 - [ ] Whole-branch reviewer reports separate compliance and quality verdicts; fix important findings and reverify affected behavior.
-- [ ] Save tested reproducible install/start instructions to cloud environment draft, preserving repository settings and network rules.
+- [x] Save tested reproducible install/start instructions to cloud environment draft, preserving repository settings and network rules.
 - [ ] Report verified local capabilities, actual skill usability results, remaining original-crawler/GitHub publishing/PC/device limitations. No push or publication.
