@@ -1,0 +1,1411 @@
+{
+  "baselineSnapshot": "9b3d86c1dd4e03bce39df75116de8c06f1cee881",
+  "candidateSnapshot": "628b1ddfb38a7ab6dff06cdf152148efba7b1465",
+  "questionsSha256": "d9123f504b696ade21901706b0597c0c295cd4af4cbb7a881506045155780000",
+  "method": "Frozen deterministic strategy, not exhaustive corpus search or real Android test; all artifact versions unknown; local candidate is not public publication.",
+  "counts": {
+    "before": {
+      "usable": 2,
+      "partial": 6,
+      "unsupported": 4
+    },
+    "after": {
+      "usable": 7,
+      "partial": 5,
+      "unsupported": 0
+    }
+  },
+  "questions": [
+    {
+      "id": "01-sequential-parallel",
+      "before": {
+        "status": "unsupported",
+        "stdoutBytes": 9910,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2031",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-transition-lines-2031-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 9796,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-concurrent-children",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-quick-guide-concurrent-animations",
+            "linkedFrom": "guide-animatable-concurrent-children",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-quick-guide-sequential-animations",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-sequential-animations-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "02-retarget-cancellation",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 9415,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animateasstate-lines-491",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animateasstate-lines-491-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 11545,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-interruption-cancels-chain",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-211",
+            "linkedFrom": "guide-animatable-interruption-cancels-chain",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source"
+            ]
+          },
+          {
+            "id": "guide-animatable-concurrent-children",
+            "linkedFrom": null,
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "03-stop-snapto",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 9514,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-transition-lines-351",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-transition-lines-351-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "stdoutBytes": 10790,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-stop-versus-snap",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-351-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-386-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-351",
+            "linkedFrom": "guide-animatable-stop-versus-snap",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-351-source"
+            ]
+          },
+          {
+            "id": "guide-animatable-concurrent-children",
+            "linkedFrom": null,
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "04-decay-remaining-velocity",
+      "before": {
+        "status": "unsupported",
+        "stdoutBytes": 10093,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animate-float-target-changes",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animate-as-state-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animate-as-state",
+            "linkedFrom": "guide-animate-float-target-changes",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animate-as-state-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 10774,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-decay-velocity-handoff",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-246",
+            "linkedFrom": "guide-animatable-decay-velocity-handoff",
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source"
+            ]
+          },
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-211",
+            "linkedFrom": null,
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "05-drag-fling-interruption",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 9514,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-transition-lines-351",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-transition-lines-351-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 10515,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-gesture-fling",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-advanced-main-content-2-source",
+              "live-compose-guide-animation-advanced-main-content-3-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-advanced-main-content-2",
+            "linkedFrom": "guide-animatable-gesture-fling",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-advanced-main-content-2-source"
+            ]
+          },
+          {
+            "id": "guide-animatable-decay-velocity-handoff",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "06-manual-test-clock",
+      "before": {
+        "status": "usable",
+        "stdoutBytes": 5539,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-testing-synchronization-example",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-testing-synchronization-example-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-testing-synchronization-disable-autosync",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-testing-synchronization-disable-autosync-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": false,
+            "bytes": 84
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 9437,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animation-test-manual-clock",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-testing-main-content-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-testing-main-content",
+            "linkedFrom": "guide-animation-test-manual-clock",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-testing-main-content-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-testing-example",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-testing-example-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2048
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "07-event-handler-scope",
+      "before": {
+        "status": "usable",
+        "stdoutBytes": 9323,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-side-effects-remembercoroutinescope",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-remembercoroutinescope-source"
+            ]
+          },
+          {
+            "id": "live-androidx-runtime-runtime-runtime-effects-lines-840",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-runtime-runtime-runtime-effects-lines-840-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2048
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 9997,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-coroutine-scope-user-events",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-remembercoroutinescope-source",
+              "live-androidx-runtime-runtime-runtime-effects-lines-596-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-side-effects-remembercoroutinescope",
+            "linkedFrom": "guide-coroutine-scope-user-events",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-remembercoroutinescope-source"
+            ]
+          },
+          {
+            "id": "guide-no-launch-during-composition",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-runtime-runtime-runtime-effects-lines-840-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      }
+    },
+    {
+      "id": "08-animation-frame-clock",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 9660,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animate-as-state",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animate-as-state-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "stdoutBytes": 9911,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-animatable-concurrent-children",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-quick-guide-concurrent-animations",
+            "linkedFrom": "guide-animatable-concurrent-children",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source"
+            ]
+          },
+          {
+            "id": "guide-animatable-decay-velocity-handoff",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "09-lifecycle-flow",
+      "before": {
+        "status": "unsupported",
+        "stdoutBytes": 168,
+        "reads": 0,
+        "sections": [],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": false,
+            "bytes": 84
+          },
+          {
+            "name": "02-query",
+            "truncated": false,
+            "bytes": 84
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "stdoutBytes": 9988,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-android-flow-lifecycle-state",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-state-use-other-types-of-state-in-jetpack-compose-source",
+              "live-androidx-lifecycle-runtime-compose-flowext-lines-71-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-state-use-other-types-of-state-in-jetpack-compose",
+            "linkedFrom": "guide-android-flow-lifecycle-state",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-state-use-other-types-of-state-in-jetpack-compose-source"
+            ]
+          },
+          {
+            "id": "live-androidx-lifecycle-runtime-compose-flowext-lines-1",
+            "linkedFrom": null,
+            "truncated": true,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-lifecycle-runtime-compose-flowext-lines-1-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      }
+    },
+    {
+      "id": "10-snapshotflow-purity",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 7252,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-side-effects-snapshotflow",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-snapshotflow-source"
+            ]
+          },
+          {
+            "id": "guide-snapshot-flow-state-observation",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-snapshotflow-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2048
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "usable",
+        "stdoutBytes": 10076,
+        "reads": 3,
+        "sections": [
+          {
+            "id": "guide-snapshot-flow-pure-read-block",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-runtime-runtime-runtime-snapshotflow-lines-561-source"
+            ]
+          },
+          {
+            "id": "live-androidx-runtime-runtime-runtime-snapshotflow-lines-561",
+            "linkedFrom": "guide-snapshot-flow-pure-read-block",
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-runtime-runtime-runtime-snapshotflow-lines-561-source"
+            ]
+          },
+          {
+            "id": "guide-snapshot-flow-state-observation",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-snapshotflow-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    },
+    {
+      "id": "11-caller-owned-suspend",
+      "before": {
+        "status": "partial",
+        "stdoutBytes": 6528,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-side-effects-launchedeffect",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-launchedeffect-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-side-effects-remembercoroutinescope",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-remembercoroutinescope-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "stdoutBytes": 6528,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-side-effects-launchedeffect",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-launchedeffect-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-side-effects-remembercoroutinescope",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-side-effects-remembercoroutinescope-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      }
+    },
+    {
+      "id": "12-cancellation-exception",
+      "before": {
+        "status": "unsupported",
+        "stdoutBytes": 9659,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-compose-guide-animation-value-based-animatable",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animatable-source"
+            ]
+          },
+          {
+            "id": "live-compose-guide-animation-value-based-animate-as-state",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-value-based-animate-as-state-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2047
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "stdoutBytes": 9124,
+        "reads": 2,
+        "sections": [
+          {
+            "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-211",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source"
+            ]
+          },
+          {
+            "id": "guide-animatable-concurrent-children",
+            "linkedFrom": null,
+            "truncated": false,
+            "versionStatus": "unknown",
+            "sourceRefs": [
+              "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+              "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source"
+            ]
+          }
+        ],
+        "searchTruncation": [
+          {
+            "name": "01-symbol",
+            "truncated": true,
+            "bytes": 2047
+          },
+          {
+            "name": "02-query",
+            "truncated": true,
+            "bytes": 2048
+          }
+        ]
+      }
+    }
+  ],
+  "supplementary": [
+    {
+      "id": "08-animation-frame-clock",
+      "label": "Fresh independent topics-guided experiment; frozen result unchanged",
+      "status": "partial",
+      "artifact": "androidx.compose.runtime:runtime",
+      "query": "frame clock",
+      "stdoutBytes": 6200,
+      "reads": 2,
+      "application": "Full card and full raw explain the missing MonotonicFrameClock failure and composition-provided context for DrawerState.close invoked from ViewModel-managed logic. This is a relevant UI-state animation analogy, not retrieved proof of Animatable.animateTo's contract. Do not upgrade the exact Animatable question to fully verified.",
+      "sections": [
+        {
+          "id": "guide-ui-animation-frame-clock-context",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-compose-guide-state-hoisting-caveat-source"
+          ]
+        },
+        {
+          "id": "live-compose-guide-state-hoisting-caveat",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-compose-guide-state-hoisting-caveat-source"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11-caller-owned-suspend",
+      "label": "Fresh independent topics-guided experiment; frozen result unchanged",
+      "status": "usable-with-context-limit",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "query": "caller suspend coroutineScope",
+      "stdoutBytes": 8536,
+      "reads": 3,
+      "application": "Full card plus two fully visible raw guides establish caller-owned execution/lifecycle/cancellation for suspend work, coroutineScope/supervisorScope for screen-relevant child work, awaited parallel completion, and explicitly external scope for work that outlives the caller. Sources describe business/data-layer helpers; applying the principle to a UI helper is an architectural application, not a retrieved API-specific UI helper contract.",
+      "sections": [
+        {
+          "id": "guide-suspend-work-caller-lifetime",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-android-coroutines-best-practices-coroutines-data-layer-source",
+            "live-android-coroutines-best-practices-create-coroutines-data-layer-source"
+          ]
+        },
+        {
+          "id": "live-android-coroutines-best-practices-coroutines-data-layer",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-android-coroutines-best-practices-coroutines-data-layer-source"
+          ]
+        },
+        {
+          "id": "live-android-coroutines-best-practices-create-coroutines-data-layer",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-android-coroutines-best-practices-create-coroutines-data-layer-source"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12-cancellation-exception",
+      "label": "Fresh independent topics-guided experiment; frozen result unchanged",
+      "status": "usable",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "query": "kotlinx.coroutines.CancellationException exact symbol; rethrow cancellation",
+      "stdoutBytes": 7786,
+      "reads": 2,
+      "application": "Full card and fully visible Kotlin raw guide explicitly say to rethrow CancellationException if caught to preserve hierarchy cancellation propagation. This supports special-casing cancellation rather than converting it to a generic error result.",
+      "sections": [
+        {
+          "id": "guide-coroutine-rethrow-cancellation",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-kotlin-coroutines-cancellation-guide-lines-64-source"
+          ]
+        },
+        {
+          "id": "live-kotlin-coroutines-cancellation-guide-lines-64",
+          "truncated": false,
+          "versionStatus": "unknown",
+          "sourceRefs": [
+            "live-kotlin-coroutines-cancellation-guide-lines-64-source"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "live-androidx-animation-animation-core-animation-core-transition-lines-2031-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2031-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "startLine": 2031,
+      "endLine": 2065,
+      "sha256": "aad2334e59ac2623dc0602179b0df30f241e6de8b485f70abfeb45aa6152820d",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-animation-value-based-animatable-source": {
+      "id": "live-compose-guide-animation-value-based-animatable-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/value-based#animatable",
+      "revision": "web:compose-guide-animation-value-based:content@sha256:710a628250ab278df97358f99cedf98db2fefad109909956223f98c3591c4591",
+      "sha256": "8a5bca8345a1403a72b85f69d5ff9aac12fa4abf62b3ad01f565c62322b36dd4",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-animation-quick-guide-concurrent-animations-source": {
+      "id": "live-compose-guide-animation-quick-guide-concurrent-animations-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#concurrent-animations",
+      "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+      "sha256": "0fc49ed18a547ccb7c3fe5f5e0683b5cd75c9c43e0e953942c3665c84cced52c",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-176-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 176,
+      "endLine": 210,
+      "sha256": "9b428a94859341e8801af1bc9d201fa249a36aee0ec74a6a773fe19546e2be03",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-animation-quick-guide-sequential-animations-source": {
+      "id": "live-compose-guide-animation-quick-guide-sequential-animations-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#sequential-animations",
+      "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+      "sha256": "ba8e335fc274f4104b1c7f94fb3e62073a452f2171916941a6046bd1a9a7a023",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animateasstate-lines-491-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animateasstate-lines-491-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimateAsState.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/AnimateAsState.kt",
+      "startLine": 491,
+      "endLine": 525,
+      "sha256": "c63f6aaf1acc07bf958ba6655bd37358411112d8d23c0a5e5cbf0ee49683bb4c",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-211-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 211,
+      "endLine": 245,
+      "sha256": "85b519c4d6d2a65beee7cbf0c59bc5fa2e4012a2de5335aa5d7064ec7cdf2189",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-animation-animation-core-animation-core-transition-lines-351-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-transition-lines-351-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+      "startLine": 351,
+      "endLine": 385,
+      "sha256": "14cd7917f43c76802c0adbd3baa08325f2b4ca1739cdbbf2ac3cb61928b83783",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-351-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-351-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 351,
+      "endLine": 385,
+      "sha256": "e4c6e2a7f207655dbd414548c4840a29b8559bbc6b33c69d28bc129c6c52d1e8",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-386-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-386-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 386,
+      "endLine": 420,
+      "sha256": "75163b679190d3a25b4342ca3276645c9b4e104440c8357779c5e084c946d904",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-animation-value-based-animate-as-state-source": {
+      "id": "live-compose-guide-animation-value-based-animate-as-state-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/value-based#animate-as-state",
+      "revision": "web:compose-guide-animation-value-based:content@sha256:710a628250ab278df97358f99cedf98db2fefad109909956223f98c3591c4591",
+      "sha256": "d6e12445c1fa3f3c84b9fcd27d4dbba32f11abe4db18d39c814b36f2fbedd7de",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source": {
+      "id": "live-androidx-animation-animation-core-animation-core-animatable-lines-246-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "startLine": 246,
+      "endLine": 280,
+      "sha256": "aff2f89e4d72e3d2f766c991a8980fc818bf58c0ed5a615e0741df421b9dfc21",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-animation-advanced-main-content-2-source": {
+      "id": "live-compose-guide-animation-advanced-main-content-2-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/advanced#main-content",
+      "revision": "web:compose-guide-animation-advanced:content@sha256:1fa9d7400b45f6c0476625b6ac76073f56ade62a4dfb85e241997156b5137a40",
+      "sha256": "52b1d7fb617ef90e8c38725b352db5430fdd0710ee705e22c93330c956c6a941",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-animation-advanced-main-content-3-source": {
+      "id": "live-compose-guide-animation-advanced-main-content-3-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/advanced#main-content",
+      "revision": "web:compose-guide-animation-advanced:content@sha256:1fa9d7400b45f6c0476625b6ac76073f56ade62a4dfb85e241997156b5137a40",
+      "sha256": "3b3a5e9da5c37f51708f1b2c39376d681bd8de1015947c73b00fe9ce0709c91d",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-testing-synchronization-example-source": {
+      "id": "live-compose-guide-testing-synchronization-example-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#example",
+      "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+      "sha256": "620c26780492084a033beaf3e7c65d190a75f599466936b058fb8ca7a2674814",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-testing-synchronization-disable-autosync-source": {
+      "id": "live-compose-guide-testing-synchronization-disable-autosync-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#disable-autosync",
+      "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+      "sha256": "5bd4c3be1ab6b0c2eb06fe05df282205c938e6cad5229a91c7ef9b4f10ff21b8",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-animation-testing-main-content-source": {
+      "id": "live-compose-guide-animation-testing-main-content-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/testing#main-content",
+      "revision": "web:compose-guide-animation-testing:content@sha256:0a1b60bb6144f290a9a2e4b5c403e16f61bdd3aa15aed6678a3473c16ac4423b",
+      "sha256": "e69338a67ac768a032db9b3389886d2da444648c68177860399287a9bd3f743c",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-animation-testing-example-source": {
+      "id": "live-compose-guide-animation-testing-example-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/animation/testing#example",
+      "revision": "web:compose-guide-animation-testing:content@sha256:0a1b60bb6144f290a9a2e4b5c403e16f61bdd3aa15aed6678a3473c16ac4423b",
+      "sha256": "620c26780492084a033beaf3e7c65d190a75f599466936b058fb8ca7a2674814",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-side-effects-remembercoroutinescope-source": {
+      "id": "live-compose-guide-side-effects-remembercoroutinescope-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/side-effects#remembercoroutinescope",
+      "revision": "web:compose-guide-side-effects:content@sha256:838c4991c1f05c745dc4612e7cd37c2b621ee017632882a3589c7bdc0b819d33",
+      "sha256": "1add6d6d3349fb4e34d3a07ede8162867f336a3d1172a9f85bb93703c8d8e6dc",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-runtime-runtime-runtime-effects-lines-840-source": {
+      "id": "live-androidx-runtime-runtime-runtime-effects-lines-840-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "startLine": 840,
+      "endLine": 874,
+      "sha256": "507f586bb2a4d630d5ba3d67df38d591b656686fa5b509e894838ac6bf11e934",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-runtime-runtime-runtime-effects-lines-596-source": {
+      "id": "live-androidx-runtime-runtime-runtime-effects-lines-596-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+      "startLine": 596,
+      "endLine": 630,
+      "sha256": "ce3c044e76a61526835a83825ef61bb22257bff2a45abedffb476a6c8345086b",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-state-use-other-types-of-state-in-jetpack-compose-source": {
+      "id": "live-compose-guide-state-use-other-types-of-state-in-jetpack-compose-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/state#use-other-types-of-state-in-jetpack-compose",
+      "revision": "web:compose-guide-state:content@sha256:d49be9efee5933110b077ceeca1807b30275c670d103c11ffa3fcabc2dfec4a1",
+      "sha256": "251965894bcde3fbde7a8da63cbaebaf4cfdf7e5b7cd4f8d8ac256f221ad9458",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-lifecycle-runtime-compose-flowext-lines-71-source": {
+      "id": "live-androidx-lifecycle-runtime-compose-flowext-lines-71-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "startLine": 71,
+      "endLine": 105,
+      "sha256": "685f744296b0173790588ae8f970c5dae7d6cd34c9bec84fa3fc1d4cd158cd95",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-androidx-lifecycle-runtime-compose-flowext-lines-1-source": {
+      "id": "live-androidx-lifecycle-runtime-compose-flowext-lines-1-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "startLine": 1,
+      "endLine": 35,
+      "sha256": "083c7ae1063e03ed97b5978de08fe768614319374bbe1016c404ef484c42642c",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-side-effects-snapshotflow-source": {
+      "id": "live-compose-guide-side-effects-snapshotflow-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/side-effects#snapshotFlow",
+      "revision": "web:compose-guide-side-effects:content@sha256:838c4991c1f05c745dc4612e7cd37c2b621ee017632882a3589c7bdc0b819d33",
+      "sha256": "eaa4aec2033ec93ba5551b2e762e283697532855766e8f5eebe8e636b5be335b",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-androidx-runtime-runtime-runtime-snapshotflow-lines-561-source": {
+      "id": "live-androidx-runtime-runtime-runtime-snapshotflow-lines-561-source",
+      "kind": "code",
+      "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
+      "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
+      "startLine": 561,
+      "endLine": 595,
+      "sha256": "725a141e5c7027672beb73a8ea9b992639e51f471ca6049ff6c8a84e8727c97e",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+    },
+    "live-compose-guide-side-effects-launchedeffect-source": {
+      "id": "live-compose-guide-side-effects-launchedeffect-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/side-effects#launchedeffect",
+      "revision": "web:compose-guide-side-effects:content@sha256:838c4991c1f05c745dc4612e7cd37c2b621ee017632882a3589c7bdc0b819d33",
+      "sha256": "3494ccae5ade7131da5668330adb05ae92147d9fccbf3bada635796895a79268",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-compose-guide-state-hoisting-caveat-source": {
+      "id": "live-compose-guide-state-hoisting-caveat-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/develop/ui/compose/state-hoisting#caveat",
+      "revision": "web:compose-guide-state-hoisting:content@sha256:ed711f7d2b5f86bb1e847a60615bb5e228d420b51eb6e4ce32009e4c7a156ce6",
+      "sha256": "a8fc4d239e75bfa4dec64cf143216bb2e793eb4948a0a9f7517564cb4064c5cc",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-android-coroutines-best-practices-coroutines-data-layer-source": {
+      "id": "live-android-coroutines-best-practices-coroutines-data-layer-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/kotlin/coroutines/coroutines-best-practices#coroutines-data-layer",
+      "revision": "web:android-coroutines-best-practices:content@sha256:48e6344d9e8450c3342af934a887158d3e663dda9170f17d80ad49867c4b0b34",
+      "sha256": "1bc512165179b6cc6f18c807a592e2c6bccdeabdc2d783877fdce0758decd02d",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-android-coroutines-best-practices-create-coroutines-data-layer-source": {
+      "id": "live-android-coroutines-best-practices-create-coroutines-data-layer-source",
+      "kind": "guide",
+      "resource": "https://developer.android.com/kotlin/coroutines/coroutines-best-practices#create-coroutines-data-layer",
+      "revision": "web:android-coroutines-best-practices:content@sha256:48e6344d9e8450c3342af934a887158d3e663dda9170f17d80ad49867c4b0b34",
+      "sha256": "885f5c6951d86e78ef73b27f96bb22d2cd32b33c4930e8dc36fffbc7f7c8fd18",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    "live-kotlin-coroutines-cancellation-guide-lines-64-source": {
+      "id": "live-kotlin-coroutines-cancellation-guide-lines-64-source",
+      "kind": "code",
+      "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/docs/topics/coroutines-cancellation.md",
+      "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+      "path": "docs/topics/coroutines-cancellation.md",
+      "startLine": 64,
+      "endLine": 98,
+      "sha256": "f930a30c253f4de8eb5b4f6c77b95a40809850a50c8c28bc901a566439b6fec4",
+      "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+    }
+  }
+}

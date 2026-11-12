@@ -1,6 +1,6 @@
 {
   "name": "compose-knowledge",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "description": "Version-aware, source-grounded Compose reference retrieval for Codex",
   "type": "module",
