@@ -22,11 +22,19 @@ export function serializeBounded(value: SearchResponse | ReadResponse, maxBytes:
   if ('body' in copy) {
     trim(() => copy.body, v => { copy.body = v; });
   } else {
-    for (let i = copy.hits.length - 1; i >= 0 && !fits(); i--) {
-      const hit = copy.hits[i]!;
-      trim(() => hit.snippet, v => { hit.snippet = v; });
-    }
+    const originals = copy.hits.map(hit => Array.from(hit.snippet));
+    for (const hit of copy.hits) hit.snippet = '';
     while (!fits() && copy.hits.length) copy.hits.pop();
+    if (fits()) {
+      let low = 0, high = Math.max(0, ...originals.map(chars => chars.length));
+      const apply = (length: number) => copy.hits.forEach((hit, i) => { hit.snippet = originals[i]!.slice(0, length).join(''); });
+      while (low < high) {
+        const mid = Math.ceil((low + high) / 2);
+        apply(mid);
+        if (fits()) low = mid; else high = mid - 1;
+      }
+      apply(low);
+    }
   }
   if (!fits()) throw new Error('Byte budget cannot fit mandatory response metadata');
   return encode();

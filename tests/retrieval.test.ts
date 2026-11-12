@@ -9,13 +9,15 @@ const index: SearchIndex = { schemaVersion: 1, entries: [entry('b', 'a.PopupProp
 
 describe('versions', () => {
   it('normalizes Android aliases only when Android is explicit', () => {
-    expect(normalizeArtifact('g:ui-android')).toBe('g:ui');
+    expect(normalizeArtifact('androidx.compose.ui:ui-android')).toBe('androidx.compose.ui:ui');
+    expect(normalizeArtifact('g:foo-android')).toBe('g:foo-android');
     expect(normalizeArtifact('g:ui-desktop', 'android')).toBe('g:ui-desktop');
-    expect(getVersionStatus([{artifact:'g:ui-android', version:'1'}], {artifact:'g:ui', version:'1'})).toBe('match');
+    expect(getVersionStatus([{artifact:'androidx.compose.ui:ui-android', version:'1'}], {artifact:'androidx.compose.ui:ui', version:'1'})).toBe('match');
     expect(getVersionStatus([{artifact:'g:ui', version:'1', platform:'android'}], {artifact:'g:ui', version:'1'})).toBe('unknown');
   });
   it('requires every version and gives mismatch precedence', () => {
     const requires = [{artifact:'g:ui', version:'1'}, {artifact:'g:other', version:'2'}];
+    expect(getVersionStatus([], {})).toBe('unknown');
     expect(getVersionStatus(requires, {artifact:'g:ui', version:'1'})).toBe('unknown');
     expect(getVersionStatus(requires, {artifact:'g:ui', version:'0'})).toBe('different');
     expect(getVersionStatus(requires, {versions:[{artifact:'g:ui',version:'1'}, {artifact:'g:other',version:'2'}]})).toBe('match');
@@ -36,6 +38,17 @@ describe('retrieval', () => {
     expect(searchIndex(index, {artifact:'g:ui',version:'0',includeDifferent:true}, 'sha').hits[0].versionStatus).toBe('different');
     expect(readSection(index, 'a', {}, 'sha').sources[0]).not.toHaveProperty('excerpt');
     expect(() => readSection(index, 'missing', {}, 'sha')).toThrow();
+  });
+  it('ranks known matches above unknown evidence even with a weaker lexical score', () => {
+    const known = {...entry('known'), body:'touch', aliases: []};
+    const unknown = {...entry('unknown'), body:'touch touch touch', aliases:['touch'], requires:[{artifact:'g:ui',version:null}]};
+    expect(searchIndex({schemaVersion:1,entries:[unknown,known]}, {query:'touch', artifact:'g:ui',version:'1'}, 'sha').hits.map(h => h.id)).toEqual(['known','unknown']);
+  });
+  it('keeps each search snippet useful within a shared cap', () => {
+    const response = searchIndex({schemaVersion:1, entries:['a','b','c'].map(id => ({...entry(id),body:'한😀'.repeat(3000)}))}, {}, 'sha');
+    const parsed = JSON.parse(serializeBounded(response, 3072));
+    expect(parsed.hits).toHaveLength(3);
+    expect(parsed.hits.every((hit: {snippet:string}) => hit.snippet.length > 0)).toBe(true);
   });
   it('bounds valid UTF-8 JSON including metadata and newline', () => {
     const large = {...readSection(index, 'a', {}, 'sha'), body:'한😀'.repeat(4000)};

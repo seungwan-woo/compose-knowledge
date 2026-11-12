@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import type { KnowledgeDocument, KnowledgeInput, Manifest, SearchIndex } from '../domain/types.js';
 import { toKnowledgeInputs } from '../adapters/crawler.js';
 import { renderOkf } from './okf.js';
-import { ANDROIDX_LICENSE } from './license.js';
+import { ANDROIDX_LICENSE, renderAttribution } from './license.js';
 
 const compare = (a: string, b: string) => a < b ? -1 : a > b ? 1 : 0;
 export function buildIndex(docs: KnowledgeDocument[]): SearchIndex {
@@ -15,7 +15,7 @@ export async function buildSnapshot(input: KnowledgeInput, outDir: string): Prom
   await mkdir(outDir, { recursive: true });
   if ((await readdir(outDir)).length) throw new Error('Output directory must be empty');
   const docs = [...valid.documents].sort((a, b) => compare(a.id, b.id)).map(d => ({ ...d, sections: [...d.sections].sort((a, b) => compare(a.id, b.id)) }));
-  const payloads: Record<string, string> = { 'LICENSE-AndroidX.txt': ANDROIDX_LICENSE };
+  const payloads: Record<string, string> = { 'LICENSE-AndroidX.txt': ANDROIDX_LICENSE, 'ATTRIBUTION.md': renderAttribution(docs) };
   for (const d of docs) payloads[`knowledge/${d.id}.md`] = renderOkf(d);
   payloads['index/sections.json'] = JSON.stringify(buildIndex(docs), null, 2) + '\n';
   const files: Record<string, string> = {};

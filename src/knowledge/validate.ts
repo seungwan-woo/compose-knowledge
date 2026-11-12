@@ -5,7 +5,7 @@ import type { KnowledgeDocument, Manifest, SearchIndex, ValidatedSnapshot } from
 import { toKnowledgeInputs } from '../adapters/crawler.js';
 import { buildIndex } from './build.js';
 import { renderOkf } from './okf.js';
-import { ANDROIDX_LICENSE } from './license.js';
+import { ANDROIDX_LICENSE, renderAttribution } from './license.js';
 
 const digest = (data: Buffer) => createHash('sha256').update(data).digest('hex');
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
@@ -29,7 +29,7 @@ export async function validateSnapshot(dir: string): Promise<ValidatedSnapshot> 
   if (!record(manifestValue) || !exact(manifestValue, ['schemaVersion', 'files', 'inputRevisions']) || manifestValue.schemaVersion !== 1 || !record(manifestValue.files) || !Array.isArray(manifestValue.inputRevisions) || manifestValue.inputRevisions.some(x => typeof x !== 'string' || !x.trim())) throw new Error('Invalid manifest');
   const manifest = manifestValue as unknown as Manifest;
   const paths = Object.keys(manifest.files);
-  if (paths.some(p => !/^(?:knowledge\/[A-Za-z0-9][A-Za-z0-9._-]*\.md|index\/sections\.json|LICENSE-AndroidX\.txt)$/.test(p) || !/^[a-f0-9]{64}$/.test(manifest.files[p] ?? ''))) throw new Error('Unsafe manifest path or digest');
+  if (paths.some(p => !/^(?:knowledge\/[A-Za-z0-9][A-Za-z0-9._-]*\.md|index\/sections\.json|LICENSE-AndroidX\.txt|ATTRIBUTION\.md)$/.test(p) || !/^[a-f0-9]{64}$/.test(manifest.files[p] ?? ''))) throw new Error('Unsafe manifest path or digest');
   if (JSON.stringify([...actual].sort()) !== JSON.stringify([...paths, 'manifest.json'].sort())) throw new Error('Payload set differs from manifest');
   for (const p of paths) if (digest(await readFile(join(dir, p))) !== manifest.files[p]) throw new Error('Payload digest mismatch');
   if (!paths.includes('index/sections.json') || !paths.includes('LICENSE-AndroidX.txt') || await readFile(join(dir, 'LICENSE-AndroidX.txt'), 'utf8') !== ANDROIDX_LICENSE) throw new Error('Missing index or license');
@@ -50,9 +50,10 @@ export async function validateSnapshot(dir: string): Promise<ValidatedSnapshot> 
   const input = toKnowledgeInputs({ schemaVersion: 1, documents: [...docs.values()] });
   const index = buildIndex(input.documents);
   if (JSON.stringify(index) !== JSON.stringify(raw)) throw new Error('Noncanonical or inconsistent index');
-  const expectedPaths = ['index/sections.json', 'LICENSE-AndroidX.txt', ...input.documents.map(d => `knowledge/${d.id}.md`)].sort();
+  const expectedPaths = ['index/sections.json', 'LICENSE-AndroidX.txt', 'ATTRIBUTION.md', ...input.documents.map(d => `knowledge/${d.id}.md`)].sort();
   if (JSON.stringify(paths.sort()) !== JSON.stringify(expectedPaths)) throw new Error('Unexpected document set');
   for (const doc of input.documents) if (await readFile(join(dir, `knowledge/${doc.id}.md`), 'utf8') !== renderOkf(doc)) throw new Error('Index and document differ');
+  if (await readFile(join(dir, 'ATTRIBUTION.md'), 'utf8') !== renderAttribution(input.documents)) throw new Error('Attribution differs');
   const revisions = [...new Set(input.documents.flatMap(d => d.sections.flatMap(s => s.sources.map(source => source.revision))))].sort();
   if (JSON.stringify(revisions) !== JSON.stringify(manifest.inputRevisions)) throw new Error('Input revisions differ');
   return { manifest, index: index as SearchIndex };
