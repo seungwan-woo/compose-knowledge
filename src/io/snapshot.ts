@@ -90,6 +90,13 @@ async function materialize(repo: string, sha: string, destination: string): Prom
 }
 
 export async function syncSnapshot(options: SyncOptions): Promise<SyncResult> {
+  // Git runs from a temporary repository, so resolve filesystem remotes at the API boundary.
+  // URI schemes and SCP-style host:path identifiers must retain their Git syntax.
+  if (options.remote && !options.remote.startsWith('-') && !/[\x00-\x1f\x7f]/.test(options.remote) &&
+      !/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(options.remote) &&
+      !/^[^/]+:/.test(options.remote)) {
+    options = { ...options, remote: path.resolve(options.remote) };
+  }
   const checkedAt = new Date().toISOString(); const ref = options.ref ?? 'corpus';
   const fallback = async (error: string): Promise<SyncResult> => {
     const pointer = await cached(options, ref);

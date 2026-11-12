@@ -39,6 +39,13 @@ describe('retrieval', () => {
     expect(readSection(index, 'a', {}, 'sha').sources[0]).not.toHaveProperty('excerpt');
     expect(() => readSection(index, 'missing', {}, 'sha')).toThrow();
   });
+  it('gates different direct reads while allowing unknown and linked matches', () => {
+    const mismatch = {artifact:'g:ui', version:'0'};
+    expect(() => readSection(index, 'a', mismatch, 'sha')).toThrow('Different version evidence requires includeDifferent');
+    expect(readSection(index, 'a', {...mismatch, includeDifferent:true}, 'sha').versionStatus).toBe('different');
+    expect(readSection(index, 'a', {}, 'sha').versionStatus).toBe('unknown');
+    expect(readSection(index, 'a', {artifact:'g:other', version:'2', versions:[{artifact:'g:ui',version:'1'}]}, 'sha').versionStatus).toBe('match');
+  });
   it('ranks known matches above unknown evidence even with a weaker lexical score', () => {
     const known = {...entry('known'), body:'touch', aliases: []};
     const unknown = {...entry('unknown'), body:'touch touch touch', aliases:['touch'], requires:[{artifact:'g:ui',version:null}]};
