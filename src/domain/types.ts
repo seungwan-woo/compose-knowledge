@@ -14,6 +14,7 @@ export interface Source {
   path?: string;
   startLine?: number;
   endLine?: number;
+  /** SHA256 of excerpt UTF-8 bytes; upstream file/archive digests live in acquisition provenance. */
   sha256: string;
   license: string;
   excerpt: string;

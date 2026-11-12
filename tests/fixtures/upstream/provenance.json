@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Public source evidence, not an existing crawler output contract",
+  "retrievedAt": "2026-11-12",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "path": "maven/material3-1.3.2.module",
+      "artifact": "androidx.compose.material3:material3",
+      "version": "1.3.2",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3/1.3.2/material3-1.3.2.module",
+      "sha256": "a44e5fb483d2b7557f14860b7c3f92d28d3249a9400cba73c6a57ba75a01f413",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3/1.3.2/material3-1.3.2.module.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/material3-android-1.3.2.module",
+      "artifact": "androidx.compose.material3:material3-android",
+      "version": "1.3.2",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2.module",
+      "sha256": "0161280e41b42bad9282e65b51a7abb5098552a8c826be6deb6d21230ff1b4cb",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2.module.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/material3-android-1.3.2.pom",
+      "artifact": "androidx.compose.material3:material3-android",
+      "version": "1.3.2",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2.pom",
+      "sha256": "6f7aa2f96e971fab29637c01e1427116deed4f01b9be6ffb465a67520d9bdf74",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2.pom.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/material3-android-1.3.2-sources.jar",
+      "artifact": "androidx.compose.material3:material3-android",
+      "version": "1.3.2",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-sources.jar",
+      "sha256": "e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-sources.jar.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/material3-android-1.3.2-samples-sources.jar",
+      "artifact": "androidx.compose.material3:material3-android",
+      "version": "1.3.2",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-samples-sources.jar",
+      "sha256": "3329e1a97328bbeda1e9c4f8305037ef6c13ab227af31b8ea65f757c2e791162",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-samples-sources.jar.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/ui-1.7.8.module",
+      "artifact": "androidx.compose.ui:ui",
+      "version": "1.7.8",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.7.8/ui-1.7.8.module",
+      "sha256": "afb4a970a9d61a96b7dae6c7c86c6586a54aa044045cb0050cdbe16b05ebf7df",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui/1.7.8/ui-1.7.8.module.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/ui-android-1.7.8.module",
+      "artifact": "androidx.compose.ui:ui-android",
+      "version": "1.7.8",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8.module",
+      "sha256": "66080dbacb9372ac045ce16b144362381fb2b05a3c6864dac9b7b8df68dbeaa4",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8.module.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/ui-android-1.7.8.pom",
+      "artifact": "androidx.compose.ui:ui-android",
+      "version": "1.7.8",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8.pom",
+      "sha256": "0c5dd66e3fc01ae877ef49cb992178df47b17950824a3e462b80a696f143e208",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8.pom.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/ui-android-1.7.8-sources.jar",
+      "artifact": "androidx.compose.ui:ui-android",
+      "version": "1.7.8",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8-sources.jar",
+      "sha256": "0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8-sources.jar.sha256",
+      "verifiedAgainstOfficialDigest": true
+    },
+    {
+      "path": "maven/ui-android-1.7.8-samples-sources.jar",
+      "artifact": "androidx.compose.ui:ui-android",
+      "version": "1.7.8",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8-samples-sources.jar",
+      "sha256": "c38fdbd93b989a7ecffd1c66bb69116f1edfac9b4ddfb9b8d785ae53a3af2bd0",
+      "digestUrl": "https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-android/1.7.8/ui-android-1.7.8-samples-sources.jar.sha256",
+      "verifiedAgainstOfficialDigest": true
+    }
+  ],
+  "files": [
+    {
+      "path": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+      "archive": "maven/material3-android-1.3.2-sources.jar",
+      "member": "commonMain/androidx/compose/material3/Menu.kt",
+      "sha256": "e313521ab6513398c59bd64748a335c72d66aabf5fcfd70fddc7ab0f94ccb812",
+      "revision": "sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "material3-1.3.2/androidMain/androidx/compose/material3/AndroidMenu.android.kt",
+      "archive": "maven/material3-android-1.3.2-sources.jar",
+      "member": "androidMain/androidx/compose/material3/AndroidMenu.android.kt",
+      "sha256": "a90fc61984747aab4f753dc9b8840059a5df00d1f96c8e887bd45ae9df63aec5",
+      "revision": "sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "ui-1.7.8/commonMain/androidx/compose/ui/window/Popup.kt",
+      "archive": "maven/ui-android-1.7.8-sources.jar",
+      "member": "commonMain/androidx/compose/ui/window/Popup.kt",
+      "sha256": "c094c5a83ae6a2bae50384270d60734a4d84d7f39d538e78592ec6dc6c6579c0",
+      "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "ui-1.7.8/androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+      "archive": "maven/ui-android-1.7.8-sources.jar",
+      "member": "androidMain/androidx/compose/ui/window/AndroidPopup.android.kt",
+      "sha256": "39b0dd435eadbdd9308eb21f102ecf32a73c6b9656764c41a17c3963bf79ba79",
+      "revision": "sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "material3-1.3.2/androidx/compose/material3/samples/MenuSamples.kt",
+      "archive": "maven/material3-android-1.3.2-samples-sources.jar",
+      "member": "androidx/compose/material3/samples/MenuSamples.kt",
+      "sha256": "49c4d93fd69285a1785b967488f97a72df3d383d9d630389ddd2d4ab4af2e447",
+      "revision": "sha256:3329e1a97328bbeda1e9c4f8305037ef6c13ab227af31b8ea65f757c2e791162",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "ui-1.7.8/androidx/compose/ui/samples/PopupSample.kt",
+      "archive": "maven/ui-android-1.7.8-samples-sources.jar",
+      "member": "androidx/compose/ui/samples/PopupSample.kt",
+      "sha256": "64fbb8decbf4f6b86c34147991a610e6fb9927c1f51221008dd15be35ee9edbc",
+      "revision": "sha256:c38fdbd93b989a7ecffd1c66bb69116f1edfac9b4ddfb9b8d785ae53a3af2bd0",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "androidx-main-07bb66ae/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/LICENSE.txt",
+      "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+      "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+      "appliesTo": "unknown",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "androidx-main-07bb66ae/compose/material3/material3/src/androidDeviceTest/kotlin/androidx/compose/material3/MenuTest.kt",
+      "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/material3/material3/src/androidDeviceTest/kotlin/androidx/compose/material3/MenuTest.kt",
+      "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+      "sha256": "ae73f6c47d24cd13be05ff8813f50424e0c24b55ea7447cb3b39d3c335bbfaef",
+      "appliesTo": "unknown",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "androidx-main-07bb66ae/compose/ui/ui/src/androidDeviceTest/kotlin/androidx/compose/ui/window/PopupTest.kt",
+      "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/androidDeviceTest/kotlin/androidx/compose/ui/window/PopupTest.kt",
+      "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+      "sha256": "d6d09877da37d35383c1fba50e3ddbd4b1c3e8da70d981f0e0554b76dfa0bcb7",
+      "appliesTo": "unknown",
+      "license": "Apache-2.0",
+      "modified": false
+    },
+    {
+      "path": "androidx-main-07bb66ae/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+      "url": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+      "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+      "sha256": "7e82f67b99866457d3509356d3c9550668892f636782589d69e4224c599db4ef",
+      "appliesTo": "unknown",
+      "license": "Apache-2.0",
+      "modified": false
+    }
+  ],
+  "aliases": [
+    {
+      "logical": "androidx.compose.material3:material3",
+      "android": "androidx.compose.material3:material3-android",
+      "version": "1.3.2",
+      "evidence": "maven/material3-1.3.2.module",
+      "variants": [
+        "releaseApiElements-published",
+        "releaseRuntimeElements-published",
+        "releaseSourcesElements-published"
+      ]
+    },
+    {
+      "logical": "androidx.compose.ui:ui",
+      "android": "androidx.compose.ui:ui-android",
+      "version": "1.7.8",
+      "evidence": "maven/ui-1.7.8.module",
+      "variants": [
+        "releaseApiElements-published",
+        "releaseRuntimeElements-published",
+        "releaseSourcesElements-published"
+      ]
+    }
+  ],
+  "limitations": [
+    "Pinned examples are not target-app dependency versions.",
+    "Android source routing comments are not an executed background click test.",
+    "AndroidX main commit source has unknown released-artifact applicability.",
+    "Official web guide retrieval failed with proxy CONNECT 403; no guide content included."
+  ],
+  "refResolution": {
+    "url": "https://github.com/androidx/androidx.git/info/refs?service=git-upload-pack",
+    "ref": "refs/heads/androidx-main",
+    "commit": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
+    "responseSha256": "6d51b3bca71e9914a3f1bb2a9254fd1ecd2ad199dbe136425f0d9626695460d3"
+  }
+}
