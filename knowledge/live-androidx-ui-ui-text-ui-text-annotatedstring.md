@@ -277,12 +277,12 @@ sources:
            *
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1156
     endLine: 1190
-    sha256: 974438b5f2650371f52b0266f66a4f1338c1ebf15fbdab21a46387c59a7ba65d
+    sha256: 4f43440924fb77e057ae2b4d243614840b3d30a1dfa53bf38a659c4562df69e8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
            * The AnnotatedString supports annotations that provide different kind of information, such as
@@ -311,9 +311,9 @@ sources:
                    *   [androidx.compose.runtime.saveable.SaverScope.canBeSaved] (such as `Parcelable`
                    *   `data class`es on Android)
                    *
-                   * Note: Does not preserve [LinkInteractionListener] of [LinkAnnotation]s, lambda-backed
-                   * [DrawAnnotation] instances, or [Bullet] annotations. Handle saving and restoring them
-                   * manually if required.
+                   * Note: Does not preserve [LinkInteractionListener] of [LinkAnnotation]s,
+                   * [BackgroundAnnotation]s, lambda-backed [DrawAnnotation] instances, or [Bullet]
+                   * annotations. Handle saving and restoring them manually if required.
                    *
                    * @sample androidx.compose.ui.text.samples.AnnotatedStringAnnotationSaverSample
                    * @sample androidx.compose.ui.text.samples.LinkAnnotationSaverWithListenerSample
@@ -322,14 +322,14 @@ sources:
               }
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1191-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1191
     endLine: 1225
-    sha256: cd1c0bff604cc0cda960388264b4a2973ff3bccc93071c48135a1acb51ed8c8b
+    sha256: d40ec2f0ca1f90a44c8ab5ddc5d286e4de1e1cef555fb4ac198801f213017b57
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
+    excerpt: |2-
           }
 
           // Unused private subclass of the marker interface to avoid exhaustive "when" statement
@@ -339,8 +339,9 @@ sources:
               /**
                * The default [Saver] implementation for [AnnotatedString].
                *
-               * Note this Saver doesn't preserve the [LinkInteractionListener] of the links. You should
-               * handle this case manually if required (check
+               * Note this Saver doesn't preserve the [LinkInteractionListener] of the links,
+               * [BackgroundAnnotation]s, lambda-backed [DrawAnnotation] instances, or [Bullet]
+               * annotations. You should handle these cases manually if required (check
                * https://issuetracker.google.com/issues/332901550 for an example).
                */
               public val Saver: Saver<AnnotatedString, *> = AnnotatedStringSaver
@@ -366,14 +367,15 @@ sources:
       }
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1226
     endLine: 1260
-    sha256: 056df6a521d91dab1d8f7ed9005bd28beb1faff9f144e65a002cb80d4b9d1468
+    sha256: 0d815cb455b58f7b98b11eca75742e1713d1bfe7866d0d5cf6dea7a5a13a7e02
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
+      
       /**
        * A helper function used to determine the paragraph boundaries in [MultiParagraph].
        *
@@ -408,17 +410,17 @@ sources:
           val result = mutableListOf<Range<ParagraphStyle>>()
 
           // a pointer to the last character added to the result list, takes values from 0 to text.length
-          var lastAdded = 0
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1261
     endLine: 1295
-    sha256: b81e797eff4feefe7eed643cdc55315abb7d4222eaa620d8b5ed0ea5328c1741
+    sha256: 81134c507b28d2fc5de967a4902efc7cc6c6a7ddfdc67dc464e89c24d8524510
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+    excerpt: |2
+          var lastAdded = 0
           val stack = ArrayDeque<Range<ParagraphStyle>>()
 
           sortedParagraphs.fastForEach {
@@ -452,18 +454,17 @@ sources:
                       }
                   }
               }
-
-              if (lastAdded < current.start) {
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1296
     endLine: 1330
-    sha256: 64334fd7fbddce19dc7a53e90083641d106e08f51bccb5d7f17cafe75228f190
+    sha256: eac7617519eeaa32e4450e287eaf34caf40719622647d5278f79897ac3c17d39
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+              if (lastAdded < current.start) {
                   result.add(Range(defaultParagraphStyle, lastAdded, current.start))
                   lastAdded = current.start
               }
@@ -498,17 +499,17 @@ sources:
               // ....append............................
               // ....withStyle(B) { <-- last in stack..
               // ......append..........................
-              // ....}.................................
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1331-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1331
     endLine: 1365
-    sha256: 1241ce2df65cc5c10b981d26be065bce1d69ed43a6c1119f7f00d9ebd96b2999
+    sha256: 264adb1bb2faa7cf25702a96ffe9bcb032cb01e2da4ef6e1eff79fb2df2068ee
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+              // ....}.................................
               // ..}...................................
               // ....End of AnnotatedString builder....
               val lastInStack = stack.last()
@@ -543,17 +544,17 @@ sources:
        */
       private fun AnnotatedString.getLocalParagraphStyles(
           start: Int,
-          end: Int,
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1366-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1366
     endLine: 1400
-    sha256: 2bc42438d3fbac78018d78fbb793e71d386a63644453ec9746d170dad84a89fc
+    sha256: 40bd3b672e4558a9c8dd6080afe0dcceecfc935ac49dad3cb3c6bfc62912006a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
+    excerpt: |2-
+          end: Int,
       ): List<Range<ParagraphStyle>>? {
           if (start == end) return null
           val paragraphStyles = paragraphStylesOrNull ?: return null
@@ -588,17 +589,17 @@ sources:
                   annotations
               } else {
                   annotations.fastFilter { predicate(it.item) }
-              }
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1401-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1401
     endLine: 1435
-    sha256: 12750478fbe2278c73955b8f48982ffb44ec355c27c71a3240c7019f623bf27e
+    sha256: 17e96ed838ebfba89e66ee56e7c3d4cd3e767f3b9310bf650f8ed8b88e86bbfb
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+              }
           }
           return annotations.fastFilteredMap({
               (predicate?.invoke(it.item) ?: true) && intersect(start, end, it.start, it.end)
@@ -633,7 +634,6 @@ sources:
           crossinline block:
               (annotatedString: AnnotatedString, paragraphStyle: Range<ParagraphStyle>) -> T,
       ): List<T> {
-          return normalizedParagraphStyles(defaultParagraphStyle).fastMap { paragraphStyleRange ->
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-141-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
@@ -681,14 +681,15 @@ sources:
                                   "Paragraph overlap not allowed, end ${current.end} should be less than or equal to $previousEnd"
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1436-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1436
     endLine: 1470
-    sha256: 88f5e196531819f52e1349ac3d93399dc25053e865f6f5bc4100f6d5512c8aa9
+    sha256: 3e9e93fab31df6786db96386b0370deea939078526e0f50afca1a8bd342a8861
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+          return normalizedParagraphStyles(defaultParagraphStyle).fastMap { paragraphStyleRange ->
               val annotatedString =
                   substringWithoutParagraphStyles(paragraphStyleRange.start, paragraphStyleRange.end)
               block(annotatedString, paragraphStyleRange)
@@ -723,17 +724,17 @@ sources:
       }
 
       /**
-       * Create upper case transformed [AnnotatedString]
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1471-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1471
     endLine: 1505
-    sha256: ca9550c0cfca1a7ef749caa7aca6c34fb6934be860ec212164f0fb98ade54059
+    sha256: 1877e1a19de6aff97a99b415499aa7bb77c653660d5d019e466c1a3c1ce1ef21
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * Create upper case transformed [AnnotatedString]
        *
        * The uppercase sometimes maps different number of characters. This function adjusts the text style
        * and paragraph style ranges to transformed offset.
@@ -768,17 +769,17 @@ sources:
               "that can't be backed by snapshot state. Call toLowerCase with an explicit locale " +
               "instead. If you have a non-empty locale list, the correct thing to do is use the first " +
               "locale in the list."
-      )
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1506-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1506
     endLine: 1540
-    sha256: 48c7b4ddef135a2d12721625bc50ebb3087c4fb960bd5d02a2df62081ebcdf8f
+    sha256: e0065252ed87e787b8402adc31f39736fb88bb18fc4a1235625c1de1f542a2fd
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
+      )
       @Suppress("DEPRECATION")
       public fun AnnotatedString.toLowerCase(
           localeList: LocaleList = LocaleList.current
@@ -813,17 +814,17 @@ sources:
        * transform the character, e.g. style starts from between base alphabet character and accent
        * character.
        *
-       * @param localeList A locale list used for capitalize mapping. Only the first locale is effective.
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1541-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1541
     endLine: 1575
-    sha256: f1954ed9672a2936ec78adff772c849bac64ae96a9a50cd721bd3ae7aad301a6
+    sha256: 639c8f734a681cb09596c8138bc0717c18f5ec33c7e0f24814cbe5b25f6a036f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * @param localeList A locale list used for capitalize mapping. Only the first locale is effective.
        *   If empty locale list is passed, use the current locale instead. Note that, this locale is
        *   currently ignored since underlying Kotlin method is experimental.
        * @return A capitalized string.
@@ -858,17 +859,17 @@ sources:
        * character.
        *
        * @param locale The locale used for capitalize mapping.
-       * @return A capitalized [AnnotatedString].
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1576-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1576
     endLine: 1610
-    sha256: dd7dd8bac99b0d8cb9aac62a55c27a4a9ccd18db8875a6a1f1ba94f9836e19c4
+    sha256: 0276c0cc8394b40e22e8069a7076d0f0aaa8e9f6a5eb664ea4faf5f5cb83f812
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * @return A capitalized [AnnotatedString].
        */
       public fun AnnotatedString.capitalize(locale: Locale): AnnotatedString {
           return transform { str, start, end ->
@@ -903,17 +904,17 @@ sources:
       )
       @Suppress("DEPRECATION")
       public fun AnnotatedString.decapitalize(
-          localeList: LocaleList = LocaleList.current
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1611-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1611
     endLine: 1645
-    sha256: a072ef1253a65827c85f50a4e574cd5be64ab3cdae93bf5603efa337276102d7
+    sha256: 2d56686680580c356638a316cab3de32850394c7aa929826340d7a4b0c02a8a1
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
+    excerpt: |2-
+          localeList: LocaleList = LocaleList.current
       ): AnnotatedString {
           return transform { str, start, end ->
               if (start == 0) {
@@ -948,17 +949,17 @@ sources:
       }
 
       /**
-       * The core function of [AnnotatedString] transformation.
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1646-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1646
     endLine: 1680
-    sha256: a6ca339fbf4ba9414f1c0a9eab8499b85f4d9a3f61c7fec12c545f1f8af7fcdc
+    sha256: d3b2fed7ff4bd8dd4512e81a1b7a3a937c834d994ff8f56aeb1d6e61299d97d8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * The core function of [AnnotatedString] transformation.
        *
        * @param transform the transformation method
        * @return newly allocated transformed AnnotatedString
@@ -993,17 +994,17 @@ sources:
        * @param style [SpanStyle] to be applied
        * @param block function to be executed
        * @return result of the [block]
-       * @see AnnotatedString.Builder.pushStyle
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1681-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1681
     endLine: 1715
-    sha256: 62f77f8509d696006ad06c9846b059dc302a95d6a269455a992d59d9fc029a7b
+    sha256: fe05cf65b01915156fae1eaa68cd32a5d9bad44abfa842fe126fb2d6b08315d8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * @see AnnotatedString.Builder.pushStyle
        * @see AnnotatedString.Builder.pop
        */
       public inline fun <R : Any> Builder.withStyle(
@@ -1038,17 +1039,17 @@ sources:
           return try {
               block(this)
           } finally {
-              pop(index)
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1716-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1716
     endLine: 1750
-    sha256: 2ea49184a825f12b0ddda0e22d2f326af7a4978117781323ecc22f3265c5d57a
+    sha256: f62553887ff2fc8c36533b4895b2bcd4fca6010075c50d5a7571d57a2a5be198
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+              pop(index)
           }
       }
 
@@ -1083,17 +1084,17 @@ sources:
        * @param block function to be executed
        * @return result of the [block]
        * @see AnnotatedString.Builder.pushStringAnnotation
-       * @see AnnotatedString.Builder.pop
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1751-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1751
     endLine: 1785
-    sha256: 8b15e973e7281fbc09aa71ee7811d50993085594e5e89c999e9cd2f5c4fd094b
+    sha256: b323d28c53178ce32944b0cf13abd06b1b403e8025b0433c58003ba4b4e2fbb6
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * @see AnnotatedString.Builder.pop
        */
       @ExperimentalTextApi
       @Deprecated("Use LinkAnnotation API for links instead", ReplaceWith("withLink(, block)"))
@@ -1128,7 +1129,6 @@ sources:
           } finally {
               pop(index)
           }
-      }
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-176-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
@@ -1176,15 +1176,16 @@ sources:
            * Return a substring for the AnnotatedString and include the styles in the given [range].
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1786-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1786
     endLine: 1820
-    sha256: a8a081f8cd65fc54d7b5c8c89d8c6c1b868c81d2d2537a41a148b1396876dfd6
+    sha256: a2e89675e6f7237e5bfd5fb23f718954336c05fc901541c8b588ab453f8a2988
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |
-      
+    excerpt: |-
+      }
+
       /**
        * Associates [drawAnnotation] with the text appended while running [block].
        *
@@ -1220,14 +1221,15 @@ sources:
           val nonNullRange = ranges ?: return null
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1821-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1821
     endLine: 1855
-    sha256: a45048c898bd06cd4d28ff68c89f027cf2fbd4faca98c99cee3a44274266e6cf
+    sha256: 6f847cab3a0e5340e2fbc16597ce2b63f8bfe86486be6529eaf5b10168a4da97
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+      
           return nonNullRange
               .fastFilteredMap({ intersect(start, end, it.start, it.end) }) {
                   Range(
@@ -1262,17 +1264,17 @@ sources:
        * Create an AnnotatedString with a [paragraphStyle] that will apply to the whole text.
        *
        * @param text the text to be styled
-       * @param paragraphStyle [ParagraphStyle] to be applied to whole text
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1856
     endLine: 1890
-    sha256: c66da1d6f3f4289d9d5a08f97dd264abe2b1747e6b4ce7c7e39ae21c297ca964
+    sha256: fe9d9ce73927f899ce6ff9079eb70a6bf8e9975dff0b600d8737f1f948f9f5ed
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * @param paragraphStyle [ParagraphStyle] to be applied to whole text
        */
       public fun AnnotatedString(text: String, paragraphStyle: ParagraphStyle): AnnotatedString =
           AnnotatedString(text, listOf(), listOf(Range(paragraphStyle, 0, text.length)))
@@ -1307,17 +1309,17 @@ sources:
       internal fun intersect(lStart: Int, lEnd: Int, rStart: Int, rEnd: Int): Boolean {
           // We can check if two ranges intersect just by performing the following operation:
           //
-          //     lStart < rEnd && rStart < lEnd
   - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
+    revision: 34a3184bc88a3d67811302bb0634456e52be8b48
     path: compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt
     startLine: 1891
-    endLine: 1910
-    sha256: 6b3490a8c257e79a89164576f3fbfd44618f335f873b22dd93fa14d37f8ed849
+    endLine: 1911
+    sha256: 49d7e9f75657d9ef99d933b04f7050cf248ad9d0d296fa87825c16fca034eb85
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
+          //     lStart < rEnd && rStart < lEnd
           //
           // This operation handles all cases, including when one of the ranges is fully included in the
           // other ranges. This is however not enough in this particular case because our ranges are open
@@ -2639,7 +2641,6 @@ compose:
       aliases:
         - androidx.compose.ui.text.AnnotatedString
         - androidx.compose.ui.text.toLowerCase
-        - androidx.compose.ui.text.capitalize
       requires:
         - artifact: androidx.compose.ui:ui-text
           version: null
@@ -2769,7 +2770,7 @@ compose:
         - live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source
       relatedIds: []
     - id: live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891
-      title: androidx.compose.ui.text AnnotatedString.kt source (lines 1891–1910)
+      title: androidx.compose.ui.text AnnotatedString.kt source (lines 1891–1911)
       aliases:
         - androidx.compose.ui.text.AnnotatedString
       requires:
@@ -3294,9 +3295,9 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1121-source](ht
              *   [androidx.compose.runtime.saveable.SaverScope.canBeSaved] (such as `Parcelable`
              *   `data class`es on Android)
              *
-             * Note: Does not preserve [LinkInteractionListener] of [LinkAnnotation]s, lambda-backed
-             * [DrawAnnotation] instances, or [Bullet] annotations. Handle saving and restoring them
-             * manually if required.
+             * Note: Does not preserve [LinkInteractionListener] of [LinkAnnotation]s,
+             * [BackgroundAnnotation]s, lambda-backed [DrawAnnotation] instances, or [Bullet]
+             * annotations. Handle saving and restoring them manually if required.
              *
              * @sample androidx.compose.ui.text.samples.AnnotatedStringAnnotationSaverSample
              * @sample androidx.compose.ui.text.samples.LinkAnnotationSaverWithListenerSample
@@ -3304,7 +3305,7 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1121-source](ht
             public val Saver: Saver<Annotation, Any> = AnnotationSaver
         }
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1191–1225)
 
@@ -3317,8 +3318,9 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source](ht
         /**
          * The default [Saver] implementation for [AnnotatedString].
          *
-         * Note this Saver doesn't preserve the [LinkInteractionListener] of the links. You should
-         * handle this case manually if required (check
+         * Note this Saver doesn't preserve the [LinkInteractionListener] of the links,
+         * [BackgroundAnnotation]s, lambda-backed [DrawAnnotation] instances, or [Bullet]
+         * annotations. You should handle these cases manually if required (check
          * https://issuetracker.google.com/issues/332901550 for an example).
          */
         public val Saver: Saver<AnnotatedString, *> = AnnotatedStringSaver
@@ -3343,10 +3345,10 @@ private fun constructAnnotationsFromSpansAndParagraphs(
     }
 }
 
-
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1191-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1191-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1226–1260)
+
 
 /**
  * A helper function used to determine the paragraph boundaries in [MultiParagraph].
@@ -3382,12 +3384,12 @@ internal fun AnnotatedString.normalizedParagraphStyles(
     val result = mutableListOf<Range<ParagraphStyle>>()
 
     // a pointer to the last character added to the result list, takes values from 0 to text.length
-    var lastAdded = 0
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1261–1295)
 
+    var lastAdded = 0
     val stack = ArrayDeque<Range<ParagraphStyle>>()
 
     sortedParagraphs.fastForEach {
@@ -3422,12 +3424,12 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source](ht
             }
         }
 
-        if (lastAdded < current.start) {
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1296–1330)
 
+        if (lastAdded < current.start) {
             result.add(Range(defaultParagraphStyle, lastAdded, current.start))
             lastAdded = current.start
         }
@@ -3462,12 +3464,12 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source](ht
         // ....append............................
         // ....withStyle(B) { <-- last in stack..
         // ......append..........................
-        // ....}.................................
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1331–1365)
 
+        // ....}.................................
         // ..}...................................
         // ....End of AnnotatedString builder....
         val lastInStack = stack.last()
@@ -3502,12 +3504,12 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source](ht
  */
 private fun AnnotatedString.getLocalParagraphStyles(
     start: Int,
-    end: Int,
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1331-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1331-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1366–1400)
 
+    end: Int,
 ): List<Range<ParagraphStyle>>? {
     if (start == end) return null
     val paragraphStyles = paragraphStylesOrNull ?: return null
@@ -3542,12 +3544,12 @@ private fun AnnotatedString.getLocalAnnotations(
             annotations
         } else {
             annotations.fastFilter { predicate(it.item) }
-        }
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1366-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1366-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1401–1435)
 
+        }
     }
     return annotations.fastFilteredMap({
         (predicate?.invoke(it.item) ?: true) && intersect(start, end, it.start, it.end)
@@ -3582,9 +3584,8 @@ internal inline fun <T> AnnotatedString.mapEachParagraphStyle(
     crossinline block:
         (annotatedString: AnnotatedString, paragraphStyle: Range<ParagraphStyle>) -> T,
 ): List<T> {
-    return normalizedParagraphStyles(defaultParagraphStyle).fastMap { paragraphStyleRange ->
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1401-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1401-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 141–175)
 
@@ -3628,6 +3629,7 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-141-source](htt
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1436–1470)
 
+    return normalizedParagraphStyles(defaultParagraphStyle).fastMap { paragraphStyleRange ->
         val annotatedString =
             substringWithoutParagraphStyles(paragraphStyleRange.start, paragraphStyleRange.end)
         block(annotatedString, paragraphStyleRange)
@@ -3662,12 +3664,12 @@ public fun AnnotatedString.toUpperCase(
 }
 
 /**
- * Create upper case transformed [AnnotatedString]
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1436-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1436-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1471–1505)
 
+ * Create upper case transformed [AnnotatedString]
  *
  * The uppercase sometimes maps different number of characters. This function adjusts the text style
  * and paragraph style ranges to transformed offset.
@@ -3702,12 +3704,12 @@ public fun AnnotatedString.toUpperCase(locale: Locale): AnnotatedString {
         "that can't be backed by snapshot state. Call toLowerCase with an explicit locale " +
         "instead. If you have a non-empty locale list, the correct thing to do is use the first " +
         "locale in the list."
-)
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1471-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1471-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1506–1540)
 
+)
 @Suppress("DEPRECATION")
 public fun AnnotatedString.toLowerCase(
     localeList: LocaleList = LocaleList.current
@@ -3742,12 +3744,12 @@ public fun AnnotatedString.toLowerCase(locale: Locale): AnnotatedString {
  * transform the character, e.g. style starts from between base alphabet character and accent
  * character.
  *
- * @param localeList A locale list used for capitalize mapping. Only the first locale is effective.
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1506-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1506-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1541–1575)
 
+ * @param localeList A locale list used for capitalize mapping. Only the first locale is effective.
  *   If empty locale list is passed, use the current locale instead. Note that, this locale is
  *   currently ignored since underlying Kotlin method is experimental.
  * @return A capitalized string.
@@ -3782,12 +3784,12 @@ public fun AnnotatedString.capitalize(
  * character.
  *
  * @param locale The locale used for capitalize mapping.
- * @return A capitalized [AnnotatedString].
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1541-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1541-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1576–1610)
 
+ * @return A capitalized [AnnotatedString].
  */
 public fun AnnotatedString.capitalize(locale: Locale): AnnotatedString {
     return transform { str, start, end ->
@@ -3822,12 +3824,12 @@ public fun AnnotatedString.capitalize(locale: Locale): AnnotatedString {
 )
 @Suppress("DEPRECATION")
 public fun AnnotatedString.decapitalize(
-    localeList: LocaleList = LocaleList.current
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1576-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1576-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1611–1645)
 
+    localeList: LocaleList = LocaleList.current
 ): AnnotatedString {
     return transform { str, start, end ->
         if (start == 0) {
@@ -3862,12 +3864,12 @@ public fun AnnotatedString.decapitalize(locale: Locale): AnnotatedString {
 }
 
 /**
- * The core function of [AnnotatedString] transformation.
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1611-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1611-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1646–1680)
 
+ * The core function of [AnnotatedString] transformation.
  *
  * @param transform the transformation method
  * @return newly allocated transformed AnnotatedString
@@ -3902,12 +3904,12 @@ public inline fun <R : Any> Builder.withStyle(style: SpanStyle, block: Builder.(
  * @param style [SpanStyle] to be applied
  * @param block function to be executed
  * @return result of the [block]
- * @see AnnotatedString.Builder.pushStyle
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1646-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1646-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1681–1715)
 
+ * @see AnnotatedString.Builder.pushStyle
  * @see AnnotatedString.Builder.pop
  */
 public inline fun <R : Any> Builder.withStyle(
@@ -3942,12 +3944,12 @@ public inline fun <R : Any> Builder.withAnnotation(
     return try {
         block(this)
     } finally {
-        pop(index)
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1681-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1681-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1716–1750)
 
+        pop(index)
     }
 }
 
@@ -3982,12 +3984,12 @@ public inline fun <R : Any> Builder.withAnnotation(
  * @param block function to be executed
  * @return result of the [block]
  * @see AnnotatedString.Builder.pushStringAnnotation
- * @see AnnotatedString.Builder.pop
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1716-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1716-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1751–1785)
 
+ * @see AnnotatedString.Builder.pop
  */
 @ExperimentalTextApi
 @Deprecated("Use LinkAnnotation API for links instead", ReplaceWith("withLink(, block)"))
@@ -4022,9 +4024,8 @@ public inline fun <R : Any> Builder.withLink(link: LinkAnnotation, block: Builde
     } finally {
         pop(index)
     }
-}
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1751-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1751-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 176–210)
 
@@ -4068,6 +4069,7 @@ Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-176-source](htt
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1786–1820)
 
+}
 
 /**
  * Associates [drawAnnotation] with the text appended while running [block].
@@ -4103,10 +4105,10 @@ private fun <T> filterRanges(ranges: List<Range<out T>>?, start: Int, end: Int):
     }
     val nonNullRange = ranges ?: return null
 
-
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1786-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1786-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1821–1855)
+
 
     return nonNullRange
         .fastFilteredMap({ intersect(start, end, it.start, it.end) }) {
@@ -4142,12 +4144,12 @@ public fun AnnotatedString(
  * Create an AnnotatedString with a [paragraphStyle] that will apply to the whole text.
  *
  * @param text the text to be styled
- * @param paragraphStyle [ParagraphStyle] to be applied to whole text
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1821-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1821-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 1856–1890)
 
+ * @param paragraphStyle [ParagraphStyle] to be applied to whole text
  */
 public fun AnnotatedString(text: String, paragraphStyle: ParagraphStyle): AnnotatedString =
     AnnotatedString(text, listOf(), listOf(Range(paragraphStyle, 0, text.length)))
@@ -4182,12 +4184,12 @@ internal fun contains(baseStart: Int, baseEnd: Int, targetStart: Int, targetEnd:
 internal fun intersect(lStart: Int, lEnd: Int, rStart: Int, rEnd: Int): Boolean {
     // We can check if two ranges intersect just by performing the following operation:
     //
+
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+
+## androidx.compose.ui.text AnnotatedString.kt source (lines 1891–1911)
+
     //     lStart < rEnd && rStart < lEnd
-
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
-
-## androidx.compose.ui.text AnnotatedString.kt source (lines 1891–1910)
-
     //
     // This operation handles all cases, including when one of the ranges is fully included in the
     // other ranges. This is however not enough in this particular case because our ranges are open
@@ -4209,7 +4211,7 @@ private val EmptyAnnotatedString: AnnotatedString = AnnotatedString("")
 internal fun emptyAnnotatedString() = EmptyAnnotatedString
 
 
-Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
+Sources: [live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891-source](https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt)
 
 ## androidx.compose.ui.text AnnotatedString.kt source (lines 211–245)
 

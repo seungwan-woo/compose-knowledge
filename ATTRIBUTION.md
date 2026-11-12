@@ -11142,57 +11142,57 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1191-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1331-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1366-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1401-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -11205,71 +11205,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1436-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1471-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1506-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1541-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1576-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1611-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1646-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1681-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1716-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1751-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -11282,29 +11282,29 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1786-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1821-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },

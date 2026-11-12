@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "files": {
-    "ATTRIBUTION.md": "7ad3f7c4fe6e2dee21dca55ca1ce0a4c551c4f5247a26b28361f348847008b1e",
+    "ATTRIBUTION.md": "08df8680aa9f3bac9cc44665e34f15e749abba1449e6cb8dbfc79da396103bc6",
     "LICENSE-AndroidX.txt": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
-    "index/sections.json": "415b12d15945482c3eb27a36703b4933d754a69570994da87b289a42f4ce0ca8",
+    "index/sections.json": "235184c9a1c999abcc232eadbc0788e9d809689db00bcc3a2617cc8705515091",
     "knowledge/compose-popup-properties-main.md": "66b6437761b0f40be7b1dec14c92919aa50cf575ce937b76ec0170a1b304dba8",
     "knowledge/compose-popup-properties.md": "03feb0840478217806288544ccb3d1132b903c834aacd8ef457523144a7df509",
     "knowledge/compose-popup.md": "541a4ceccd532a4390216ebd065ea9bd1e9674f3ebaaac049bb2d9ae2d964d0f",
@@ -100,7 +100,7 @@
     "knowledge/live-androidx-ui-ui-graphics-ui-graphics-color.md": "4d3b9ec46efb29a55a7487a1572e1f1eca7c9db8f9e010d142200ef7ca8ce2ed",
     "knowledge/live-androidx-ui-ui-graphics-ui-graphics-path.md": "33e3660b9880843d7c11b5ad852b67ef61114d61630bc688092db9850c94fb90",
     "knowledge/live-androidx-ui-ui-graphics-ui-graphics-shape.md": "3445f2fd71650c1bcea2b0150316fa85251a9559cc2add65dd5b3bfb4ff0738d",
-    "knowledge/live-androidx-ui-ui-text-ui-text-annotatedstring.md": "2daa6ac3659bfced1ea8aacbb527f73db9ac73a9481c110670ca1696ce53971d",
+    "knowledge/live-androidx-ui-ui-text-ui-text-annotatedstring.md": "c9170cba366d8dfeba254ede7e92dee7f2dc523d7ebe052da8b8d949968b8232",
     "knowledge/live-androidx-ui-ui-text-ui-text-font-fontfamily.md": "7f5cef3105f1d7266641dd3df7ef86eaf1efd05f4cf31fc58ed46b04ed4ef2c9",
     "knowledge/live-androidx-ui-ui-text-ui-text-font-fontweight.md": "cb130e33665d10bf1bfb42aada32aa8041d00924ddc8c0fe41bcb98ae26a3b55",
     "knowledge/live-androidx-ui-ui-text-ui-text-paragraphstyle.md": "e872b7fe80a4c4a8a12323d81e2c969ce82901c8dbf9fab25239d14ee38d2880",
@@ -196,6 +196,7 @@
     "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
     "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
     "25631e8f544a9a1e3f01e296eaf1b4c28428196c",
+    "34a3184bc88a3d67811302bb0634456e52be8b48",
     "85adb4710d1b88293d5b912df1c6104e6fe38c41",
     "androidx.compose.material3:material3-android:1.3.2@sha256:3329e1a97328bbeda1e9c4f8305037ef6c13ab227af31b8ea65f757c2e791162",
     "androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
