@@ -2680,6 +2680,125 @@
         "androidx.compose.material3.animateFloatingActionButton",
         "androidx.compose.material3.FloatingActionButtonElevation"
       ]
+    },
+    {
+      "id": "compose-guide-animation-quick-guide",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/quick-guide",
+      "title": "Quick guide to Animations in Compose",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.core.Animatable",
+        "androidx.compose.animation.core.animateFloatAsState",
+        "androidx.compose.animation.core.updateTransition",
+        "androidx.compose.animation.core.rememberInfiniteTransition"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-advanced",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/advanced",
+      "title": "Gesture and animation",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core.Animatable",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.animation.core.Animatable"
+      ]
+    },
+    {
+      "id": "androidx-animation-animation-core-animation-core-animatable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "title": "Animatable source",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core.Animatable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+      "symbols": [
+        "androidx.compose.animation.core.Animatable",
+        "androidx.compose.animation.core.AnimationResult"
+      ]
+    },
+    {
+      "id": "compose-guide-animation-testing",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/animation/testing",
+      "title": "Test animations",
+      "artifact": "androidx.compose.ui:ui-test",
+      "fqn": "androidx.compose.ui.test.MainTestClock",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "androidx.compose.ui.test.MainTestClock"
+      ]
+    },
+    {
+      "id": "androidx-runtime-runtime-runtime-snapshotflow",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
+      "title": "Compose snapshotFlow source",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.snapshotFlow",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
+      "symbols": [
+        "androidx.compose.runtime.snapshotFlow",
+        "androidx.compose.runtime.collectAsState"
+      ]
+    },
+    {
+      "id": "androidx-lifecycle-runtime-compose-flowext",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "title": "Lifecycle-aware Compose Flow collection source",
+      "artifact": "androidx.lifecycle:lifecycle-runtime-compose",
+      "fqn": "androidx.lifecycle.compose.collectAsStateWithLifecycle",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "lifecycle/lifecycle-runtime-compose/src/commonMain/kotlin/androidx/lifecycle/compose/FlowExt.kt",
+      "symbols": [
+        "androidx.lifecycle.compose.collectAsStateWithLifecycle"
+      ]
+    },
+    {
+      "id": "android-coroutines-best-practices",
+      "kind": "html",
+      "url": "https://developer.android.com/kotlin/coroutines/coroutines-best-practices",
+      "title": "Best practices for coroutines in Android",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "fqn": "kotlinx.coroutines.CoroutineScope",
+      "license": "Apache-2.0 (https://developer.android.com/license)",
+      "symbols": [
+        "kotlinx.coroutines.CoroutineScope",
+        "kotlinx.coroutines.coroutineScope",
+        "kotlinx.coroutines.CancellationException",
+        "kotlinx.coroutines.ensureActive"
+      ]
+    },
+    {
+      "id": "kotlin-coroutines-cancellation-guide",
+      "kind": "github",
+      "url": "https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/topics/coroutines-cancellation.md",
+      "title": "Kotlin coroutine cancellation",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "fqn": "kotlinx.coroutines",
+      "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)",
+      "repo": "Kotlin/kotlinx.coroutines",
+      "ref": "master",
+      "path": "docs/topics/coroutines-cancellation.md",
+      "symbols": [
+        "kotlinx.coroutines.CancellationException",
+        "kotlinx.coroutines.ensureActive",
+        "kotlinx.coroutines.coroutineScope",
+        "kotlinx.coroutines.withTimeout"
+      ]
     }
   ]
 }
