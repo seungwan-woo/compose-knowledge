@@ -1,0 +1,9 @@
+# CLI integration report
+
+Implemented strict command-specific argument parsing and JSON dispatch, explicit sync, cache plus full-SHA pinned retrieval, per-invocation snapshot validation, and bounded search/read serialization. The CLI maps `--version unknown` and `--require artifact=unknown` to null version context; `--version` requires `--artifact`. Help documents usage, JSON defaults, and 256–3072 byte budgets. Invalid invocations return bounded JSON errors on stderr; unavailable sync returns its JSON result on stdout and exit 2.
+
+Test-first evidence: `npm test -- tests/cli.test.ts` before implementation failed because `dist/cli.js` did not exist. After implementation, `npm test -- tests/cli.test.ts` passed all 4 subprocess tests, exercising a fixture build, validation, local Git sync, cached fallback, pinned search/read and source context, invalid options and IDs, and tamper detection. `npm run typecheck` passed.
+
+Full `npm test` on 2026-11-12: 29 passed, 5 failed, all in `tests/acceptance.test.ts`. The failures assume contracts conflicting with the frozen CLI task: validation of a directory containing `.git`, success exit for unavailable sync, and rebuilding into nonempty Git directories. Controller notified; acceptance tests are outside this task's file ownership.
+
+Follow-up: switched both retrieval commands to `validateCachedSnapshot`, which checks cache contents against the pinned Git commit. Added a subprocess regression that substitutes a separately built, internally valid corpus under the original SHA. Before the change the test failed because search returned success; after the change search and read both reject it. `npm test -- tests/cli.test.ts` passed 5/5, `npm run typecheck` passed, and the current full `npm test` passed 43/43 after the acceptance contract corrections.

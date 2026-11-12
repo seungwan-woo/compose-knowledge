@@ -1,0 +1,218 @@
+{
+  "coreCommit": "db40cd6134a421725ab617f7b9a4d07b06fa5563",
+  "artifact": ".cache/release/compose-reference-context-0.1.0.tar.gz",
+  "sha256": "5658606682c989d0bbaca1196d9e80ef89ccbb4b2f035513d86a64c8feab6636",
+  "installedLauncher": "/workspace/compose-knowledge/.cache/release-skills/compose-reference-context/scripts/compose-knowledge.mjs",
+  "verified": [
+    "relative remote from outside checkout",
+    "matching read",
+    "different read rejected by default",
+    "explicit comparison read allowed",
+    "unknown read allowed"
+  ],
+  "calls": [
+    {
+      "args": [
+        "sync",
+        "--remote",
+        "./corpus",
+        "--cache",
+        "/tmp/compose-release-smoke-aqqbcs48/cache",
+        "--json"
+      ],
+      "exitCode": 0,
+      "stdoutBytes": 149,
+      "stderrBytes": 0,
+      "response": {
+        "snapshot": "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "status": "fresh",
+        "checkedAt": "2026-11-12T09:13:07.905Z",
+        "publishedAt": "2026-11-12T09:01:17Z"
+      }
+    },
+    {
+      "args": [
+        "read",
+        "--cache",
+        "/tmp/compose-release-smoke-aqqbcs48/cache",
+        "--snapshot",
+        "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "--artifact",
+        "androidx.compose.material3:material3",
+        "--platform",
+        "android",
+        "--id",
+        "menu-api",
+        "--json",
+        "--version",
+        "1.3.2"
+      ],
+      "exitCode": 0,
+      "stdoutBytes": 2868,
+      "stderrBytes": 0,
+      "response": {
+        "snapshot": "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "id": "menu-api",
+        "title": "DropdownMenu API and dismissal request",
+        "body": "DropdownMenu lives in a separate window; onDismissRequest is a close request on outside tap/back; expanded is caller-provided state. [^menu-api-source]\n\nScope: Dismissal callback alone proves neither expanded=false nor background touch delivery.\n\n```kotlin\n * A [DropdownMenu] behaves similarly to a [Popup], and will use the position of the parent layout\n * to position itself on screen. Commonly a [DropdownMenu] will be placed in a [Box] with a sibling\n * that will be used as the 'anchor'. Note that a [DropdownMenu] by itself will not take up any\n * space in a layout, as the menu is displayed in a separate window, on top of other content.\n *\n * The [content] of a [DropdownMenu] will typically be [DropdownMenuItem]s, as well as custom\n * content. Using [DropdownMenuItem]s will result in a menu that matches the Material specification\n * for menus. Also note that the [content] is placed inside a scrollable [Column], so using a\n * [LazyColumn] as the root layout inside [content] is unsupported.\n *\n * [onDismissRequest] will be called when the menu should close - for example when there is a tap\n * outside the menu, or when the back key is pressed.\n\n@Composable\nexpect fun DropdownMenu(\n    expanded: Boolean,\n    onDismissRequest: () -> Unit,\n    modifier: Modifier = Modifier,\n    offset: DpOffset = DpOffset(0.dp, 0.dp),\n    scrollState: ScrollState = rememberScrollState(),\n    properties: PopupProperties = DefaultMenuProperties,\n    shape: Shape = MenuDefaults.shape,\n    containerColor: Color = MenuDefaults.containerColor,\n    tonalElevation: Dp = MenuDefaults.TonalElevation,\n    shadowElevation: Dp = MenuDefaults.ShadowElevation,\n    border: BorderStroke? = null,\n    content: @Composable ColumnScope.() -> Unit\n```\n\n[^menu-api-source]: material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt:78-138; androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2; Apache-2.0.\n",
+        "sources": [
+          {
+            "id": "menu-api-source",
+            "kind": "code",
+            "resource": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-sources.jar",
+            "revision": "androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+            "path": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+            "startLine": 78,
+            "endLine": 138,
+            "sha256": "3137588042e651cdc79ca35b5a0bebb74e976529355e33cf577743ed2766f9c7",
+            "license": "Apache-2.0"
+          }
+        ],
+        "requires": [
+          {
+            "artifact": "androidx.compose.material3:material3",
+            "version": "1.3.2",
+            "platform": "android"
+          }
+        ],
+        "relatedIds": [
+          "menu-state-sample",
+          "menu-android-implementation"
+        ],
+        "versionStatus": "match",
+        "truncated": false
+      }
+    },
+    {
+      "args": [
+        "read",
+        "--cache",
+        "/tmp/compose-release-smoke-aqqbcs48/cache",
+        "--snapshot",
+        "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "--artifact",
+        "androidx.compose.material3:material3",
+        "--platform",
+        "android",
+        "--id",
+        "menu-api",
+        "--json",
+        "--version",
+        "9.9.9"
+      ],
+      "exitCode": 1,
+      "stdoutBytes": 0,
+      "stderrBytes": 65,
+      "response": {
+        "error": "Different version evidence requires includeDifferent"
+      }
+    },
+    {
+      "args": [
+        "read",
+        "--cache",
+        "/tmp/compose-release-smoke-aqqbcs48/cache",
+        "--snapshot",
+        "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "--artifact",
+        "androidx.compose.material3:material3",
+        "--platform",
+        "android",
+        "--id",
+        "menu-api",
+        "--json",
+        "--version",
+        "9.9.9",
+        "--include-different"
+      ],
+      "exitCode": 0,
+      "stdoutBytes": 2872,
+      "stderrBytes": 0,
+      "response": {
+        "snapshot": "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "id": "menu-api",
+        "title": "DropdownMenu API and dismissal request",
+        "body": "DropdownMenu lives in a separate window; onDismissRequest is a close request on outside tap/back; expanded is caller-provided state. [^menu-api-source]\n\nScope: Dismissal callback alone proves neither expanded=false nor background touch delivery.\n\n```kotlin\n * A [DropdownMenu] behaves similarly to a [Popup], and will use the position of the parent layout\n * to position itself on screen. Commonly a [DropdownMenu] will be placed in a [Box] with a sibling\n * that will be used as the 'anchor'. Note that a [DropdownMenu] by itself will not take up any\n * space in a layout, as the menu is displayed in a separate window, on top of other content.\n *\n * The [content] of a [DropdownMenu] will typically be [DropdownMenuItem]s, as well as custom\n * content. Using [DropdownMenuItem]s will result in a menu that matches the Material specification\n * for menus. Also note that the [content] is placed inside a scrollable [Column], so using a\n * [LazyColumn] as the root layout inside [content] is unsupported.\n *\n * [onDismissRequest] will be called when the menu should close - for example when there is a tap\n * outside the menu, or when the back key is pressed.\n\n@Composable\nexpect fun DropdownMenu(\n    expanded: Boolean,\n    onDismissRequest: () -> Unit,\n    modifier: Modifier = Modifier,\n    offset: DpOffset = DpOffset(0.dp, 0.dp),\n    scrollState: ScrollState = rememberScrollState(),\n    properties: PopupProperties = DefaultMenuProperties,\n    shape: Shape = MenuDefaults.shape,\n    containerColor: Color = MenuDefaults.containerColor,\n    tonalElevation: Dp = MenuDefaults.TonalElevation,\n    shadowElevation: Dp = MenuDefaults.ShadowElevation,\n    border: BorderStroke? = null,\n    content: @Composable ColumnScope.() -> Unit\n```\n\n[^menu-api-source]: material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt:78-138; androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2; Apache-2.0.\n",
+        "sources": [
+          {
+            "id": "menu-api-source",
+            "kind": "code",
+            "resource": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-sources.jar",
+            "revision": "androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+            "path": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+            "startLine": 78,
+            "endLine": 138,
+            "sha256": "3137588042e651cdc79ca35b5a0bebb74e976529355e33cf577743ed2766f9c7",
+            "license": "Apache-2.0"
+          }
+        ],
+        "requires": [
+          {
+            "artifact": "androidx.compose.material3:material3",
+            "version": "1.3.2",
+            "platform": "android"
+          }
+        ],
+        "relatedIds": [
+          "menu-state-sample",
+          "menu-android-implementation"
+        ],
+        "versionStatus": "different",
+        "truncated": false
+      }
+    },
+    {
+      "args": [
+        "read",
+        "--cache",
+        "/tmp/compose-release-smoke-aqqbcs48/cache",
+        "--snapshot",
+        "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "--artifact",
+        "androidx.compose.material3:material3",
+        "--platform",
+        "android",
+        "--id",
+        "menu-api",
+        "--json",
+        "--version",
+        "unknown"
+      ],
+      "exitCode": 0,
+      "stdoutBytes": 2870,
+      "stderrBytes": 0,
+      "response": {
+        "snapshot": "1a794ce75c68dca8f8603e554d83d3ad6d152110",
+        "id": "menu-api",
+        "title": "DropdownMenu API and dismissal request",
+        "body": "DropdownMenu lives in a separate window; onDismissRequest is a close request on outside tap/back; expanded is caller-provided state. [^menu-api-source]\n\nScope: Dismissal callback alone proves neither expanded=false nor background touch delivery.\n\n```kotlin\n * A [DropdownMenu] behaves similarly to a [Popup], and will use the position of the parent layout\n * to position itself on screen. Commonly a [DropdownMenu] will be placed in a [Box] with a sibling\n * that will be used as the 'anchor'. Note that a [DropdownMenu] by itself will not take up any\n * space in a layout, as the menu is displayed in a separate window, on top of other content.\n *\n * The [content] of a [DropdownMenu] will typically be [DropdownMenuItem]s, as well as custom\n * content. Using [DropdownMenuItem]s will result in a menu that matches the Material specification\n * for menus. Also note that the [content] is placed inside a scrollable [Column], so using a\n * [LazyColumn] as the root layout inside [content] is unsupported.\n *\n * [onDismissRequest] will be called when the menu should close - for example when there is a tap\n * outside the menu, or when the back key is pressed.\n\n@Composable\nexpect fun DropdownMenu(\n    expanded: Boolean,\n    onDismissRequest: () -> Unit,\n    modifier: Modifier = Modifier,\n    offset: DpOffset = DpOffset(0.dp, 0.dp),\n    scrollState: ScrollState = rememberScrollState(),\n    properties: PopupProperties = DefaultMenuProperties,\n    shape: Shape = MenuDefaults.shape,\n    containerColor: Color = MenuDefaults.containerColor,\n    tonalElevation: Dp = MenuDefaults.TonalElevation,\n    shadowElevation: Dp = MenuDefaults.ShadowElevation,\n    border: BorderStroke? = null,\n    content: @Composable ColumnScope.() -> Unit\n```\n\n[^menu-api-source]: material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt:78-138; androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2; Apache-2.0.\n",
+        "sources": [
+          {
+            "id": "menu-api-source",
+            "kind": "code",
+            "resource": "https://dl.google.com/dl/android/maven2/androidx/compose/material3/material3-android/1.3.2/material3-android-1.3.2-sources.jar",
+            "revision": "androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
+            "path": "material3-1.3.2/commonMain/androidx/compose/material3/Menu.kt",
+            "startLine": 78,
+            "endLine": 138,
+            "sha256": "3137588042e651cdc79ca35b5a0bebb74e976529355e33cf577743ed2766f9c7",
+            "license": "Apache-2.0"
+          }
+        ],
+        "requires": [
+          {
+            "artifact": "androidx.compose.material3:material3",
+            "version": "1.3.2",
+            "platform": "android"
+          }
+        ],
+        "relatedIds": [
+          "menu-state-sample",
+          "menu-android-implementation"
+        ],
+        "versionStatus": "unknown",
+        "truncated": false
+      }
+    }
+  ]
+}
