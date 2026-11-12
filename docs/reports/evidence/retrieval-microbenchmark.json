@@ -1,0 +1,73 @@
+{
+  "note": "Local warm microbenchmark only; FTS prototype has different ranking/AND semantics and does not implement version gates or published security validation. No production backend changed.",
+  "node": "v24.22.1",
+  "sections": 2848,
+  "validateSnapshotMs": [
+    1619.183614,
+    936.6846460000002,
+    608.0530159999998
+  ],
+  "sqliteBuildMs": 45.3914249999998,
+  "queries": [
+    {
+      "query": "LaunchedEffect",
+      "currentWarmSearchMs": 58.174477000000024,
+      "sqliteWarmSearchMs": 0.2624160000000302,
+      "currentHits": [
+        "live-androidx-runtime-runtime-runtime-effects-lines-526",
+        "live-androidx-runtime-runtime-runtime-effects-lines-561",
+        "live-androidx-runtime-runtime-runtime-effects-lines-596"
+      ],
+      "sqliteHits": [
+        "guide-launched-effect-lifetime",
+        "live-compose-guide-side-effects-launchedeffect",
+        "live-compose-guide-side-effects-constants-as-keys"
+      ]
+    },
+    {
+      "query": "derivedStateOf",
+      "currentWarmSearchMs": 57.84177399999999,
+      "sqliteWarmSearchMs": 0.23911099999986618,
+      "currentHits": [
+        "live-androidx-runtime-runtime-runtime-derivedstate-lines-351",
+        "guide-derived-state-threshold",
+        "live-compose-guide-performance-bestpractices-use-derivedstateof"
+      ],
+      "sqliteHits": [
+        "guide-derived-state-threshold",
+        "live-compose-guide-performance-bestpractices-use-derivedstateof-2",
+        "live-compose-guide-side-effects-derivedstateof"
+      ]
+    },
+    {
+      "query": "modifier order",
+      "currentWarmSearchMs": 57.634461999999985,
+      "sqliteWarmSearchMs": 0.3459320000001753,
+      "currentHits": [
+        "guide-modifier-order-hit-area",
+        "guide-padding-clickable-order",
+        "guide-accessibility-replace-semantics"
+      ],
+      "sqliteHits": [
+        "guide-modifier-order-hit-area",
+        "live-compose-guide-modifiers-order-modifier-matters",
+        "live-compose-guide-graphics-draw-modifiers-drawwithcontent"
+      ]
+    },
+    {
+      "query": "stable keys",
+      "currentWarmSearchMs": 63.35391899999922,
+      "sqliteWarmSearchMs": 0.26933699999972305,
+      "currentHits": [
+        "guide-lazy-list-stable-keys",
+        "live-compose-guide-lists-item-keys",
+        "live-compose-guide-performance-bestpractices-use-lazylist-keys"
+      ],
+      "sqliteHits": [
+        "guide-lazy-list-stable-keys",
+        "live-compose-guide-performance-stability-strongskipping-examples",
+        "live-compose-guide-lists-item-keys"
+      ]
+    }
+  ]
+}
