@@ -1225,15 +1225,15 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1016-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1051-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1246,71 +1246,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1086-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1121-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1156-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1191-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1226-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1261-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1296-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1331-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1366-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1401-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1323,71 +1323,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1436-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1471-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1506-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1541-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1576-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1611-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1646-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1681-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1716-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1751-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1400,71 +1400,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1786-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1821-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1856-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1891-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1926-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1961-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-1996-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2031-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2066-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2101-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1477,71 +1477,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2136-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2171-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2206-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2241-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2275-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2276-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2310-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2311-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2345-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2346-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2380-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2381-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2415-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2416-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2450-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2451-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1549,6 +1549,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-246-source",
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-animation-core-transition-lines-2486-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1582,71 +1589,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-561-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-596-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-631-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-666-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-701-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -1659,58 +1666,135 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-736-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-771-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-806-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-841-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-876-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-911-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-946-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-animation-animation-core-animation-core-transition-lines-981-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-106-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-141-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-176-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-211-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-246-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-281-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-316-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-351-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-animation-animation-core-suspend-animation-lines-71-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/SuspendAnimation.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
@@ -9156,141 +9240,155 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-1-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-379-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-386-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-414-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-421-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-448-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-456-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-483-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-491-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-518-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-526-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-552-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-561-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-587-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-596-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-622-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-631-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-switch-lines-657-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-switch-lines-666-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-material3-material3-switch-lines-701-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-switch-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-material3-material3-switch-lines-736-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -10118,6 +10216,34 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/85adb4710d1b88293d5b912df1c6104e6fe38c41/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
     "revision": "85adb4710d1b88293d5b912df1c6104e6fe38c41",
     "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-monotonic-frame-clock-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-monotonic-frame-clock-lines-106-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-monotonic-frame-clock-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-monotonic-frame-clock-lines-71-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/MonotonicFrameClock.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
@@ -11042,6 +11168,20 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/Saver.kt",
     "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
     "path": "compose/runtime/runtime-saveable/src/commonMain/kotlin/androidx/compose/runtime/saveable/Saver.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-stable-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-runtime-stable-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
+    "revision": "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
+    "path": "compose/runtime/runtime-annotation/src/commonMain/kotlin/androidx/compose/runtime/Stable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
@@ -14655,6 +14795,180 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "revision": "85adb4710d1b88293d5b912df1c6104e6fe38c41",
     "path": "compose/docs/compose-api-guidelines.md",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-animate-modifier-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#animate-modifier",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-autoinvalidation-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#autoinvalidation",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-called-within-function-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#called-within-function",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-chain-existing-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#chain-existing",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-common-situations-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#common-situations",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-complete-example-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#complete-example",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-create-custom-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#create-custom",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-implement-custom-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#implement-custom",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-implement-modifier-node-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#implement-modifier-node",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#main-content",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-modifier-factory-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#modifier-factory",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-modifiernode-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#modifiernode",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-modifiernode-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#modifiernode",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-never-skipped-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#never-skipped",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-node-element-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#node-element",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-reference-composition-locals-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#reference-composition-locals",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-reference-composition-locals-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#reference-composition-locals",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-resolved-call-site-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#resolved-call-site",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-share-state-delegation-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#share-state-delegation",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-custom-modifiers-zero-parameters-source",
+    "resource": "https://developer.android.com/develop/ui/compose/custom-modifiers#zero-parameters",
+    "revision": "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-extending-material-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#extending-material",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-extending-using-material-components-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#extending-using-material-components",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-implementing-fully-custom-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#implementing-fully-custom",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-implementing-fully-custom-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#implementing-fully-custom",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-implementing-using-material-components-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#implementing-using-material-components",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#main-content",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-recommended-for-you-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#recommended_for_you",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-replacing-systems-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#replacing-systems",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-designsystems-custom-replacing-using-material-components-source",
+    "resource": "https://developer.android.com/develop/ui/compose/designsystems/custom#replacing-using-material-components",
+    "revision": "web:compose-designsystems-custom:content@sha256:93f0171f387644e5dd79a5bd6ea0714a6909f5013f9dd7350d9a1ea89fadb1af",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-documentation-adaptive-ui-source",
@@ -19124,6 +19438,144 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "id": "live-compose-guide-touch-input-scroll-scroll-modifiers-when-use-source",
     "resource": "https://developer.android.com/develop/ui/compose/touch-input/scroll/scroll-modifiers#when-use",
     "revision": "web:compose-guide-touch-input-scroll-scroll-modifiers:content@sha256:6024f84b6691d70ae2017263228c84bb29354204d1a8061f44587b2c52f1ab8f",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-advanced-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-advanced",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-advanced-3-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-advanced",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-advanced-4-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-advanced",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-advanced-5-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-advanced",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-advanced-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-advanced",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-component-handling-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-component-handling",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-components-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-components",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-build-components-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#build-components",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-consume-emit-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#consume-emit",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-consuming-modifier-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#consuming-modifier",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-interaction-state-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#interaction-state",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-interactions-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#interactions",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-interactions-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#interactions",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#main-content",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-producing-modifier-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#producing-modifier",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-recommended-for-you-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#recommended_for_you",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-replace-effect-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#replace-effect",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-replace-effect-3-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#replace-effect",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-replace-effect-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#replace-effect",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-reusable-custom-effect-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#reusable-custom-effect",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-work-with-interactionsource-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#work-with-interactionsource",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-work-with-interactionsource-3-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#work-with-interactionsource",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-handling-interactions-work-with-interactionsource-source",
+    "resource": "https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#work-with-interactionsource",
+    "revision": "web:compose-handling-interactions:content@sha256:0994b90dd16a438f6b4bb4b54ed7213abd471da80f0bafb9ca79e115d25e4b62",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {

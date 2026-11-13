@@ -53,14 +53,62 @@ sources:
       import androidx.compose.runtime.mutableStateListOf
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-1016-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 1016
     endLine: 1050
-    sha256: 5c034efae14aa34ff5700b9cc3ddfc683ccd39fcc39772b6d3fb6a40077080b5
+    sha256: c639edcfa3f94bb7a8a6bd6c005cfcc2330ba1f785a816901bae793b612bcc9d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
+    excerpt: |2-
+                  transition.updatePendingTarget(transitionState.pendingTargetState)
+              }
+          }
+          DisposableEffect(transition) {
+              onDispose {
+                  // Clean up on the way out, to ensure the observers are not stuck in an in-between
+                  // state.
+                  transition.onDisposed()
+              }
+          }
+          return transition
+      }
+
+      /**
+       * Creates a [Transition] and puts it in the [currentState][MutableTransitionState.currentState] of
+       * the provided [transitionState]. Whenever the [targetState][MutableTransitionState.targetState] of
+       * the [transitionState] changes, the [Transition] will animate to the new target state.
+       *
+       * __Remember__: The provided [transitionState] needs to be [remember]ed.
+       *
+       * Compared to the [rememberTransition] variant that takes a targetState, this function supports a
+       * different initial state than the first targetState. Here is an example:
+       *
+       * @sample androidx.compose.animation.core.samples.InitialStateSample
+       *
+       * In most cases, it is recommended to reuse the same [transitionState] that is [remember]ed, such
+       * that [Transition] preserves continuity when [targetState][MutableTransitionState.targetState] is
+       * changed. However, in some rare cases it is more critical to immediately *snap* to a state change
+       * (e.g. in response to a user interaction). This can be achieved by creating a new
+       * [transitionState]:
+       *
+       * @sample androidx.compose.animation.core.samples.DoubleTapToLikeSample
+       */
+      @Deprecated(
+          "Use rememberTransition() instead",
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1051-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1051
+    endLine: 1085
+    sha256: 46923668b5e8256181f0d1b147b8e78d84d20e45672f131ae233df8e8874813a
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          replaceWith = ReplaceWith("rememberTransition(transitionState, label)"),
+      )
+      @Composable
       public fun <T> updateTransition(
           transitionState: MutableTransitionState<T>,
           label: String? = null,
@@ -93,54 +141,6 @@ sources:
           private val transitionState: TransitionState<S>,
           @Suppress("BanRestrictTo")
           @get:RestrictTo(RestrictTo.Scope.LIBRARY)
-          public val parentTransition: Transition<*>?,
-          label: String? = null,
-      ) {
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1051-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1051
-    endLine: 1085
-    sha256: 338a0a154116444e7f38c24e1f480f34c026e41cec85931192401bb9fa4c1483
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-          private val _rawLabel: String? = label
-
-          /** An optional label for differentiating different transitions in Android Studio. */
-          public val label: String?
-              get() {
-                  val parent = parentTransition
-                  val parentLabel = parent?.label
-                  return when {
-                      parentLabel != null && _rawLabel != null -> "$parentLabel > $_rawLabel"
-                      parentLabel != null -> parentLabel
-                      else -> _rawLabel
-                  }
-              }
-
-          /**
-           * Current state of the transition. This will always be the initialState of the transition until
-           * the transition is finished. Once the transition is finished, [currentState] will be set to
-           * [targetState]. [currentState] is backed by a [MutableState].
-           */
-          public val currentState: S
-              get() = transitionState.currentState
-
-          /**
-           * Target state of the transition. This will be read by all child animations to determine their
-           * most up-to-date target values.
-           */
-          public var targetState: S by mutableStateOf(currentState)
-              internal set
-
-          /**
-           * Pending target state of the transition. This is the state that the transition is waiting to
-           * animate to. It is non-null only when a deferred update is in progress.
-           */
-          public var pendingTargetState: S? by mutableStateOf(null)
-              private set
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-106-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -188,15 +188,63 @@ sources:
            * [targetState]), the animation will continue toward its current [targetState] while
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-1086-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 1086
     endLine: 1120
-    sha256: 9615bdff1e1a172345bb4bb949a39f812c737c267550bbe48e8c588754c01db0
+    sha256: fc28e01b9b93a846fb1a9482aab70b989c496ac9729583e58b06bf858e80bd9d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-      
+          public val parentTransition: Transition<*>?,
+          label: String? = null,
+      ) {
+          private val _rawLabel: String? = label
+
+          /** An optional label for differentiating different transitions in Android Studio. */
+          public val label: String?
+              get() {
+                  val parent = parentTransition
+                  val parentLabel = parent?.label
+                  return when {
+                      parentLabel != null && _rawLabel != null -> "$parentLabel > $_rawLabel"
+                      parentLabel != null -> parentLabel
+                      else -> _rawLabel
+                  }
+              }
+
+          /**
+           * Current state of the transition. This will always be the initialState of the transition until
+           * the transition is finished. Once the transition is finished, [currentState] will be set to
+           * [targetState]. [currentState] is backed by a [MutableState].
+           */
+          public val currentState: S
+              get() = transitionState.currentState
+
+          /**
+           * Target state of the transition. This will be read by all child animations to determine their
+           * most up-to-date target values.
+           */
+          public var targetState: S by mutableStateOf(currentState)
+              internal set
+
+          /**
+           * Pending target state of the transition. This is the state that the transition is waiting to
+           * animate to. It is non-null only when a deferred update is in progress.
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1121-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1121
+    endLine: 1155
+    sha256: a884a22def41ef45cab67dab08f9eeceb6440b5f0291ea473e399e056bd8f983
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+           */
+          public var pendingTargetState: S? by mutableStateOf(null)
+              private set
+
           @PublishedApi
           internal fun updatePendingTarget(value: S?) {
               val previousPending = pendingTargetState
@@ -228,20 +276,20 @@ sources:
 
           /** Indicates whether there is any animation running in the transition. */
           public val isRunning: Boolean
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1156-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1156
+    endLine: 1190
+    sha256: 22298c1f31c14baf11b9858f1817115a18570490abb1ffbb1535f19948bc7293
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
               get() = startTimeNanos != AnimationConstants.UnspecifiedTime
 
           private var _playTimeNanos by mutableLongStateOf(0L)
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1121-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1121
-    endLine: 1155
-    sha256: 4c4f014277f24d22c6787335fac9777d99060a2008e0fe93ed8ef7984383e4dd
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-      
+
           /**
            * Play time in nano-seconds. [playTimeNanos] is always non-negative. It starts from 0L at the
            * beginning of the transition and increment until all child animations have finished.
@@ -272,21 +320,20 @@ sources:
           /** List of child transitions in a [Transition]. */
           public val transitions: List<Transition<*>>
               get() = _transitions
-
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1191-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1191
+    endLine: 1225
+    sha256: 1550a6438b411c64ed141ee97101bd0a54e49cd1b28b6680680eb67c60d280cf
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           /** List of [TransitionAnimationState]s that are in a [Transition]. */
           public val animations: List<TransitionAnimationState<*, *>>
               get() = _animations
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1156-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1156
-    endLine: 1190
-    sha256: cf362e4df093860f629a9f9fb647c3b15c2c27514b572f6614d00cd1eb222353
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-      
+
           // Seeking related
           @Suppress("BanRestrictTo")
           @get:RestrictTo(RestrictTo.Scope.LIBRARY)
@@ -318,19 +365,19 @@ sources:
            * to [Transition]. It's strongly recommended to query this *after* all the animations in the
            * [Transition] are set up.
            */
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1226-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1226
+    endLine: 1260
+    sha256: b59b3a080922f90b0b678ef626bd2a7b6a55f33a975b3f0b3cdd68b66bfdc50a
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           public val totalDurationNanos: Long by derivedStateOf { calculateTotalDurationNanos() }
 
           private fun calculateTotalDurationNanos(): Long {
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1191-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1191
-    endLine: 1225
-    sha256: 84ae9c4fb6548fb6abc8ddd5b3103d1a174249e306fa2d85aff9a1f7b0d2e132
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
               var maxDurationNanos = 0L
               _animations.toList().fastForEach {
                   maxDurationNanos = max(maxDurationNanos, it.durationNanos)
@@ -363,18 +410,19 @@ sources:
                   onTransitionStart(scaledPlayTimeNanos)
               } else if (!transitionState.isRunning) {
                   transitionState.isRunning = true
-              }
-              updateChildrenNeeded = false
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1226-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1261-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1226
-    endLine: 1260
-    sha256: 1e8b7624ac3324bb884e29cf61f1d20268ece2b57791b8e1a0b0b34c4652a821
+    startLine: 1261
+    endLine: 1295
+    sha256: d3646bd27fd83fc19c2292179c4e8fc371309e721c47e6bb0295abca2ee9de80
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+              }
+              updateChildrenNeeded = false
+
               var allFinished = true
               // Pulse new playtime
               _animations.toList().fastForEach {
@@ -407,19 +455,19 @@ sources:
           internal fun onTransitionStart(frameTimeNanos: Long) {
               startTimeNanos = frameTimeNanos
               transitionState.isRunning = true
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1296-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1296
+    endLine: 1330
+    sha256: 45049c8d428b9bd7590658993abc4cf311ff58357e7ff7fa327b9d6a36083197
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           }
 
           // Called when the Transition is being disposed to clean up any state
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1261-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1261
-    endLine: 1295
-    sha256: cb36bd1ad8e7f6bd0ef6a4681721246a653443368667e337bcc392ac48f78e6a
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           internal fun onDisposed() {
               onTransitionEnd()
               transitionState.transitionRemoved()
@@ -452,19 +500,19 @@ sources:
            *
            * __Caveat:__ This function puts [Transition] in a manual playtime setting mode. From then on
            * the [Transition] will not resume normal animation runs.
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1331-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1331
+    endLine: 1365
+    sha256: 00960a43e1836ae6f55bc1663b2bc5a8e211bd272eee582542a40f57e4931d43
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            */
           @Suppress("BanRestrictTo")
           @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP_PREFIX)
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1296-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1296
-    endLine: 1330
-    sha256: 8310f002a4efe982e4d1effb8d23b1f0234d370bdd88c2e76c19e7380ece202b
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           @OptIn(InternalAnimationApi::class)
           @JvmName("seek")
           public fun setPlaytimeAfterInitialAndTargetStateEstablished(
@@ -497,19 +545,19 @@ sources:
                               it.currentState,
                               it.targetState,
                               playTimeNanos,
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1366-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1366
+    endLine: 1400
+    sha256: ea68883d3a78ebcf90bf7833c462574f7235c310f5df16a7272acaf14946ed97
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
                           )
                       }
                   }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1331-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1331
-    endLine: 1365
-    sha256: a0f56bf69194a47885b38c24127cf9b2d940b2ada0949112237e78b62aa4c61f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               }
 
               _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
@@ -541,20 +589,19 @@ sources:
                   if (!isRunning) {
                       updateChildrenNeeded = true
                   }
-
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1401-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1401
+    endLine: 1435
+    sha256: 17b6bc2068f084b205380e00b7b5cbc3896dcf60d7a5ad27274a160179bbb3b5
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   // If target state is changed, reset all the animations to be re-created in the
                   // next frame w/ their new target value. Child animations target values are updated in
                   // the side effect that may not have happened when this function in invoked.
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1366-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1366
-    endLine: 1400
-    sha256: 256480db94cd1fe426187f8d2f472f3748223aa7e3b83c58966ef797422f77f6
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   // Copying to a list to avoid ConcurrentModificationException since resetAnimation()
                   // can modify the animations list. This operation is trivial with SnapshotStateList.
                   @Suppress("ListIterator") val animations = animations.toList()
@@ -587,54 +634,6 @@ sources:
                           coroutineScope.launch(start = CoroutineStart.UNDISPATCHED) {
                               val durationScale = coroutineContext.durationScale
                               while (isActive) {
-                                  withFrameNanos {
-                                      // This check is very important, as isSeeking may be changed
-                                      // off-band between the last check in composition and this callback
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1401-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1401
-    endLine: 1435
-    sha256: 563ea6c5a5194f9869aebf9363243e81ae811960a19654ddc0c7878f3574243e
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-                                      // which happens in the animation callback the next frame.
-                                      if (!isSeeking) {
-                                          onFrame(it / AnimationDebugDurationScale, durationScale)
-                                      }
-                                  }
-                              }
-                          }
-                          onDispose {}
-                      }
-                  }
-              }
-          }
-
-          /**
-           * Used by [SeekableTransitionState] to seek the current transition animation to
-           * [playTimeNanos].
-           */
-          internal fun seekAnimations(playTimeNanos: Long) {
-              if (startTimeNanos == AnimationConstants.UnspecifiedTime) {
-                  startTimeNanos = playTimeNanos
-              }
-              this.playTimeNanos = playTimeNanos
-              updateChildrenNeeded = false
-
-              // Pulse new playtime
-              _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
-              _transitions.toList().fastForEach {
-                  if (it.targetState != it.currentState) {
-                      it.seekAnimations(playTimeNanos)
-                  }
-              }
-          }
-
-          /**
-           * Changes the existing animations to be initial value animations. An existing animation was
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-141-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -682,14 +681,62 @@ sources:
        * A [Transition] that supports a deferred phase, created via [rememberDeferredTransition].
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-1436-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 1436
     endLine: 1470
-    sha256: 72e7ff4d011df76ac6c062f8f6e3540f004beec2f5d38d821207953a822cec42
+    sha256: 6b60e09f00d71196dbbc1146a3c2ed634aee91d31afae27b3967014968a3e571
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+                                  withFrameNanos {
+                                      // This check is very important, as isSeeking may be changed
+                                      // off-band between the last check in composition and this callback
+                                      // which happens in the animation callback the next frame.
+                                      if (!isSeeking) {
+                                          onFrame(it / AnimationDebugDurationScale, durationScale)
+                                      }
+                                  }
+                              }
+                          }
+                          onDispose {}
+                      }
+                  }
+              }
+          }
+
+          /**
+           * Used by [SeekableTransitionState] to seek the current transition animation to
+           * [playTimeNanos].
+           */
+          internal fun seekAnimations(playTimeNanos: Long) {
+              if (startTimeNanos == AnimationConstants.UnspecifiedTime) {
+                  startTimeNanos = playTimeNanos
+              }
+              this.playTimeNanos = playTimeNanos
+              updateChildrenNeeded = false
+
+              // Pulse new playtime
+              _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
+              _transitions.toList().fastForEach {
+                  if (it.targetState != it.currentState) {
+                      it.seekAnimations(playTimeNanos)
+                  }
+              }
+          }
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1471-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1471
+    endLine: 1505
+    sha256: c46f505be4627e04befcd1ec4e2985c83c2938d33e421cba98fbb9ec0b2e71ff
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
+          /**
+           * Changes the existing animations to be initial value animations. An existing animation was
            * interrupted, so the current animation is used only for the initial values. The current
            * animation is then changed to an unchanging animation that is only moved by the initial value.
            */
@@ -722,20 +769,20 @@ sources:
            *   anything.
            */
           internal fun updateInitialValues() {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1506-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1506
+    endLine: 1540
+    sha256: 279087782b1d72559f81687ba7e334cbb7999b7cd56f7511f01c29e15159f242
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               _animations.toList().fastForEach { it.updateInitialValue() }
               _transitions.toList().fastForEach { it.updateInitialValues() }
           }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1471-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1471
-    endLine: 1505
-    sha256: dc22d97d8a1b33f831ef097fa4bccb74fe38fda1719da0338b6514e37321771a
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-      
+
           override fun toString(): String {
               return animations.fastFold("Transition animation values: ") { acc, anim -> "$acc$anim, " }
           }
@@ -767,19 +814,19 @@ sources:
               initialVelocityVector: V,
               public val typeConverter: TwoWayConverter<T, V>,
               public val label: String,
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1541-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1541
+    endLine: 1575
+    sha256: 5a5ea0dc5803b1221e3a294cf12f932e4136e36cf0431a0d5063da9c4e5c1590
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           ) : State<T> {
 
               // Changed during composition, may rollback
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1506-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1506
-    endLine: 1540
-    sha256: 3f7327a845118edaf7f53da4978b814bd02038e019e8c9d7e4387d360315ffe5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               private var targetValue: T by mutableStateOf(initialValue)
 
               private val defaultSpring = spring<T>()
@@ -812,19 +859,19 @@ sources:
 
               internal var isFinished: Boolean by mutableStateOf(true)
               internal var resetSnapValue by mutableFloatStateOf(NoReset)
-
-              /**
-               * When the target state has changed, but the target value remains the same, the initial
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1541-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1576-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1541
-    endLine: 1575
-    sha256: babfff9c1fad6ee4cc00ec8f90d3c68344111e829fbd70e78bb6014f94326e65
+    startLine: 1576
+    endLine: 1610
+    sha256: f075ace33809a247c2301bf597211cc490cdbf03752bc9dd6af820efe857f315
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+      
+              /**
+               * When the target state has changed, but the target value remains the same, the initial
                * value animation completely controls the animated value. When this flag is `true`, the
                * [animation] can be ignored and only the [initialValueState] is needed to determine the
                * value. When this is `false`, if there is an [initialValueState], it is used only for
@@ -857,19 +904,19 @@ sources:
                   isSeeking = true // SeekableTransitionState won't use interrupted animation spec
                   if (animation.targetValue == animation.initialValue) {
                       // This is likely an interrupted animation and the initial value is changing, but
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1611-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1611
+    endLine: 1645
+    sha256: 48d872e24b9ec960b13b049e9e656c9487f36530a561736ecf1954436aaaa361
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       // the target value remained the same. The initial value animation has the target
                       // value, so only the initial value animation is changing the value.
                       value = animation.targetValue
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1576-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1576
-    endLine: 1610
-    sha256: 1217c00d6fd7a165009b8e7d037e4d9bbc3623884c05988775ecadf1884d649c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   } else {
                       // TODO: unlikely but need to double check that animation returns the correct values
                       // when play time is way past their durations.
@@ -902,19 +949,19 @@ sources:
                   this.animation.mutableInitialValue = initialValue
                   durationNanos = this.animation.durationNanos
                   if (resetSnapValue == ResetNoSnap || useOnlyInitialValue) {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1646-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1646
+    endLine: 1680
+    sha256: c0d80dd9aecf6a05a8021ebe0c06730137673c8245c50f27980eba9fe2a6dc61
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       value = initialValue
                   } else {
                       seekTo(playTimeNanos)
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1611-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1611
-    endLine: 1645
-    sha256: 35309a355729250b08ef75ee6b817fee2b7ad994c555b90609ce7b9287d5561f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   }
                   if (initialPlayTimeNanos >= animState.durationNanos) {
                       initialValueState = null
@@ -947,19 +994,19 @@ sources:
                               interruptionSpec,
                               typeConverter,
                               initialValue,
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1681-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1681
+    endLine: 1715
+    sha256: 169b2711aefc60461be90478bc6ea79062c4d1a5b0628651498d781037b9b337
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                               initialValue,
                               velocityVector.newInstance(), // 0 velocity
                           )
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1646-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1646
-    endLine: 1680
-    sha256: b6f1f7e517a40c5ecc357a7c5e3d15cee70c6ae7e80a9dd3ebbe5e6a0a08cabe
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       useOnlyInitialValue = true
                       durationNanos = animation.durationNanos
                       return
@@ -992,19 +1039,19 @@ sources:
 
               internal fun resetAnimation() {
                   resetSnapValue = ResetNoSnap
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1716-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1716
+    endLine: 1750
+    sha256: 817b162b94422dcffa78844f0f698c4ce0301e852ccc67fcacf186411d7a2b69
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               }
 
               /**
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1681-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1681
-    endLine: 1715
-    sha256: f15fd18e176a265703a47851ac51a5f022ff08c05f51f42cf7707bd43a8001de
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                * Forces the value to the given fraction or reset value. If [fraction] is
                * [ResetAnimationSnapCurrent] or [ResetAnimationSnapTarget], the animated values are
                * directly moved to the start or end of the animation.
@@ -1037,19 +1084,19 @@ sources:
                   animationState: SeekableTransitionState.SeekingAnimationState
               ) {
                   if (animation.targetValue != animation.initialValue) {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1751-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1751
+    endLine: 1785
+    sha256: 20226d9b509be79f1e2111f9130ab1abf38323356f124bb83535a06c8f9997cf
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       // Continue the animation from the current position to the target
                       initialValueAnimation = animation
                       initialValueState = animationState
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1716-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1716
-    endLine: 1750
-    sha256: d3ca0b4e3e3f5d180613f686110f8da821156d41d09452cf4cc2cdfd1df3a7ba
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   }
                   animation =
                       TargetBasedAnimation(
@@ -1082,54 +1129,6 @@ sources:
                   forcedInitialVelocity: V? = null,
               ) {
                   if (useOnlyInitialValue && targetValue == initialValueAnimation?.targetValue) {
-                      return // we're already animating to the target value through the initial value
-                  }
-                  if (
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1751-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1751
-    endLine: 1785
-    sha256: 33a5b6396926d9fbfc6e163069264f8a8279cf15e2a3c3d269d3cc0e019aa07b
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-                      this.targetValue == targetValue &&
-                          resetSnapValue == NoReset &&
-                          (forcedInitialValue == null || forcedInitialValue == animation.initialValue)
-                  ) {
-                      return // nothing to change. Just continue the existing animation.
-                  }
-                  this.targetValue = targetValue
-                  this.animationSpec = animationSpec
-                  val initialValue =
-                      forcedInitialValue
-                          ?: if (resetSnapValue == ResetAnimationSnap) targetValue else value
-                  if (forcedInitialValue != null) {
-                      value = initialValue
-                      if (forcedInitialVelocity != null) {
-                          velocityVector = forcedInitialVelocity
-                      }
-                  }
-                  updateAnimation(initialValue, isInterrupted = !isFinished && forcedInitialValue == null)
-                  isFinished = resetSnapValue == ResetAnimationSnap
-                  // This is needed because the target change could happen during a transition
-                  if (resetSnapValue >= 0f) {
-                      val duration = animation.durationNanos
-                      value = animation.getValueFromNanos((duration * resetSnapValue).toLong())
-                  } else if (resetSnapValue == ResetAnimationSnap) {
-                      value = targetValue
-                  }
-                  useOnlyInitialValue = false
-                  resetSnapValue = NoReset
-              }
-
-              // This gets called *during* composition
-              internal fun updateInitialAndTargetValue(
-                  initialValue: T,
-                  targetValue: T,
-                  animationSpec: FiniteAnimationSpec<T>,
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-176-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -1177,14 +1176,62 @@ sources:
       }
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-1786-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 1786
     endLine: 1820
-    sha256: 052ad5d3088bc07e7177a52de8b8dd7e3874d67f6ea48ab91b2e7917738eac23
+    sha256: df022ff81e7be06f3a9812325789eed70f94a743f919109992e96b36a781dd42
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+                      return // we're already animating to the target value through the initial value
+                  }
+                  if (
+                      this.targetValue == targetValue &&
+                          resetSnapValue == NoReset &&
+                          (forcedInitialValue == null || forcedInitialValue == animation.initialValue)
+                  ) {
+                      return // nothing to change. Just continue the existing animation.
+                  }
+                  this.targetValue = targetValue
+                  this.animationSpec = animationSpec
+                  val initialValue =
+                      forcedInitialValue
+                          ?: if (resetSnapValue == ResetAnimationSnap) targetValue else value
+                  if (forcedInitialValue != null) {
+                      value = initialValue
+                      if (forcedInitialVelocity != null) {
+                          velocityVector = forcedInitialVelocity
+                      }
+                  }
+                  updateAnimation(initialValue, isInterrupted = !isFinished && forcedInitialValue == null)
+                  isFinished = resetSnapValue == ResetAnimationSnap
+                  // This is needed because the target change could happen during a transition
+                  if (resetSnapValue >= 0f) {
+                      val duration = animation.durationNanos
+                      value = animation.getValueFromNanos((duration * resetSnapValue).toLong())
+                  } else if (resetSnapValue == ResetAnimationSnap) {
+                      value = targetValue
+                  }
+                  useOnlyInitialValue = false
+                  resetSnapValue = NoReset
+              }
+
+              // This gets called *during* composition
+              internal fun updateInitialAndTargetValue(
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1821-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1821
+    endLine: 1855
+    sha256: 6756bd00a5246912e217fe1b84cb9dfb93a2f3705bb244e69a80e2533bdc815c
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                  initialValue: T,
+                  targetValue: T,
+                  animationSpec: FiniteAnimationSpec<T>,
               ) {
                   this.targetValue = targetValue
                   this.animationSpec = animationSpec
@@ -1217,20 +1264,20 @@ sources:
           public interface Segment<S> {
               /** Initial state of a Transition Segment. This is the state that transition starts from. */
               public val initialState: S
-
-              /** Target state of a Transition Segment. This is the state that transition will end on. */
-              public val targetState: S
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1821-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1856-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1821
-    endLine: 1855
-    sha256: e4eb29e0463b53d80032ffe2e88725971921ed5487d99f07f1f099861a4875de
+    startLine: 1856
+    endLine: 1890
+    sha256: ec4f75f1f1be2e2e36438f53216e8a74130d060257e9202d912a791d34330ed8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
       
+              /** Target state of a Transition Segment. This is the state that transition will end on. */
+              public val targetState: S
+
               /**
                * Returns whether the provided state matches the [initialState] && the provided
                * [targetState] matches [Segment.targetState].
@@ -1262,19 +1309,19 @@ sources:
                   var transitionSpec: Segment<S>.() -> FiniteAnimationSpec<T>,
                   var targetValueByState: (state: S) -> T,
               ) : State<T> {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1891-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1891
+    endLine: 1925
+    sha256: b823190a6b11ab0a5362f5171d16ae132804e65c075319a9bc367113e3ab0267
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   fun updateAnimationStates(
                       segment: Segment<S>,
                       forcedInitialValue: T? = null,
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1856-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1856
-    endLine: 1890
-    sha256: d3480553821b1b1c3c4885b87de6b189991d47b3dc1fdad3cce47cf35edc1c72
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       forcedInitialVelocity: V? = null,
                   ) {
                       val targetValue = targetValueByState(segment.targetState)
@@ -1307,19 +1354,19 @@ sources:
                * [DeferredAnimation] allows the animation setup to be deferred until a later time after
                * composition. [animate] can be used to set up a [DeferredAnimation]. Like other Transition
                * animations such as [Transition.animateFloat], [DeferredAnimation] also expects
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1926-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1926
+    endLine: 1960
+    sha256: 4b473a66d9b853e91b63c65ab5db4f84555a9a368ee4b9a5cef1fddac6dc662b
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                * [transitionSpec] and [targetValueByState] for the mapping from target state to animation
                * spec and target value, respectively.
                */
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1891-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1891
-    endLine: 1925
-    sha256: acd9b1dc217ff05745432919a6a3857b068f9dcc48977efecf7f782c6c948858
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               public fun animate(
                   transitionSpec: Segment<S>.() -> FiniteAnimationSpec<T>,
                   targetValueByState: (state: S) -> T,
@@ -1352,19 +1399,19 @@ sources:
                       data
                           ?: DeferredAnimationData(
                                   TransitionAnimationState(
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1961-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1961
+    endLine: 1995
+    sha256: 9ffb312d46cb3cddcd1479407b3980ef76ef3b9c240f5a6f10bb8f29a6b189a2
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                                       targetValueByState(currentState),
                                       typeConverter.createZeroVectorFrom(
                                           targetValueByState(currentState)
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1926-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1926
-    endLine: 1960
-    sha256: 57b3eb8fe5daf3e2717462d088f65bff354c649005c75791a5bcee4db890f59c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                                       ),
                                       typeConverter,
                                       label,
@@ -1397,20 +1444,20 @@ sources:
           }
 
           internal fun removeAnimation(deferredAnimation: DeferredAnimation<*, *>) {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1996-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 1996
+    endLine: 2030
+    sha256: 6f15201c43b50d24f6ff3798fbd7a938b8f4a781f825e0a511af2eaad72ac678
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
               deferredAnimation.data?.animation?.let { removeAnimation(it) }
           }
       }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1961-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1961
-    endLine: 1995
-    sha256: 5a5d17f8086f72c1b880420fa1a802975be11d55106cd157955401130c3a9e22
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |
-      
+
       @PublishedApi
       internal class TransitionInstance<S>(
           transitionState: TransitionState<S>,
@@ -1441,19 +1488,19 @@ sources:
 
       // When the animation needs to be changed because of a target update
       private const val ResetNoSnap = -2f
-
-      // When the animation should be reset to have the same start and end value
-      private const val ResetAnimationSnap = -3f
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-1996-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2031-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 1996
-    endLine: 2030
-    sha256: 742c3e0919d2cb6eb5db34ab445aa00214bf05ed84144904d381e7e7f89a164f
+    startLine: 2031
+    endLine: 2065
+    sha256: 5f94b8934b6d5559bfce1ce7e88a4dbfea024bade71dfbe797b0d34279d3a50f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
+      // When the animation should be reset to have the same start and end value
+      private const val ResetAnimationSnap = -3f
+
       // Snap to the current state and set the initial and target values to the same thing
       private const val ResetAnimationSnapCurrent = -4f
 
@@ -1486,19 +1533,19 @@ sources:
       }
 
       /**
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2066-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2066
+    endLine: 2100
+    sha256: cfb3e113ef5eeb15d62026409285c75651ab8f935b1a58bef544c3759ea22ee7
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * [createChildTransition] creates a child Transition based on the mapping between parent state to
        * child state provided in [transformToChildState]. This serves the following purposes:
        * 1) Hoist the child transition state into parent transition. Therefore the parent Transition will
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2031-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2031
-    endLine: 2065
-    sha256: aad2334e59ac2623dc0602179b0df30f241e6de8b485f70abfeb45aa6152820d
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        *    be aware of whether there's any on-going animation due to the same target state change. This
        *    will further allow sequential animation to be set up when all animations have finished.
        * 2) Separation of concerns. The child transition can respresent a much more simplified state
@@ -1531,19 +1578,19 @@ sources:
       internal fun <S, T> Transition<S>.createChildTransitionInternal(
           initialState: T,
           targetState: T,
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2101-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2101
+    endLine: 2135
+    sha256: 8f887d9d98e69c7fc50f22917a4b70d53db291fe21afb84e64c744bc871c1fb5
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           childLabel: String,
       ): Transition<T> {
           val transition =
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2066-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2066
-    endLine: 2100
-    sha256: 2406e2b1c7f3e6dd1f3a770d2daad90884e91d4bd9c961d0aded0524ee6cc0c0
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               remember(this) {
                   TransitionInstance(MutableTransitionState(initialState), this, childLabel)
               }
@@ -1576,54 +1623,6 @@ sources:
        * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
        * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
        * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
-       * [Transition] will start running again to ensure this animation reaches its new target smoothly.
-       *
-       * An optional [transitionSpec] can be provided to specify (potentially different) animation for
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2101-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2101
-    endLine: 2135
-    sha256: afe934731cd4de092669058b99f6f6f1ba8bded9e4906620cc7acc59cbb6ec6e
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-       * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
-       * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
-       * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
-       * destinations.
-       *
-       * [label] is used to differentiate from other animations in the same transition in Android Studio.
-       *
-       * @return A [State] object, the value of which is updated by animation
-       * @see updateTransition
-       * @see rememberTransition
-       * @see Transition.animateFloat
-       * @see androidx.compose.animation.animateColor
-       */
-      @Composable
-      public inline fun <S, T, V : AnimationVector> Transition<S>.animateValue(
-          typeConverter: TwoWayConverter<T, V>,
-          noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<T> = {
-              spring()
-          },
-          label: String = "ValueAnimation",
-          targetValueByState: @Composable (state: S) -> T,
-      ): State<T> {
-
-          val initialState =
-              if (!isSeeking) {
-                  // For non-seeking use cases, we can avoid reading currentState frequently by querying
-                  // it only once when initializing TransitionAnimation.
-                  remember(this) { Snapshot.withoutReadObservation { currentState } }
-              } else {
-                  currentState
-              }
-          val initialValue = targetValueByState(initialState)
-
-          // `targetState` is changed in composition in rememberTransition before consumed here. Due to
-          // b/393642162, this consumption will cause a 2nd recomposition, meaning this read will cause
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-211-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -1671,14 +1670,62 @@ sources:
        * [TransitionState].
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-2136-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 2136
     endLine: 2170
-    sha256: 63c7443c484998bdc058e9571a869a2584bc49f3a612a89e82938a4df0aebc61
+    sha256: c71eb54363002bd96a30e0392b94c8458c56e1d0bb324431589db46c599386f8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * [Transition] will start running again to ensure this animation reaches its new target smoothly.
+       *
+       * An optional [transitionSpec] can be provided to specify (potentially different) animation for
+       * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
+       * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
+       * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
+       * destinations.
+       *
+       * [label] is used to differentiate from other animations in the same transition in Android Studio.
+       *
+       * @return A [State] object, the value of which is updated by animation
+       * @see updateTransition
+       * @see rememberTransition
+       * @see Transition.animateFloat
+       * @see androidx.compose.animation.animateColor
+       */
+      @Composable
+      public inline fun <S, T, V : AnimationVector> Transition<S>.animateValue(
+          typeConverter: TwoWayConverter<T, V>,
+          noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<T> = {
+              spring()
+          },
+          label: String = "ValueAnimation",
+          targetValueByState: @Composable (state: S) -> T,
+      ): State<T> {
+
+          val initialState =
+              if (!isSeeking) {
+                  // For non-seeking use cases, we can avoid reading currentState frequently by querying
+                  // it only once when initializing TransitionAnimation.
+                  remember(this) { Snapshot.withoutReadObservation { currentState } }
+              } else {
+                  currentState
+              }
+          val initialValue = targetValueByState(initialState)
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2171-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2171
+    endLine: 2205
+    sha256: 3fd783484391fe565be86d14301d026689fe8375e3e6e52a0fb4c8af6b55940e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
+          // `targetState` is changed in composition in rememberTransition before consumed here. Due to
+          // b/393642162, this consumption will cause a 2nd recomposition, meaning this read will cause
           // recomposition for both the first and second frame of the animation. As a temporary
           // workaround, `derivedStateOf` is added here to avoid recomposing when the state value is the
           // same.
@@ -1711,19 +1758,19 @@ sources:
                       TransitionAnimationState(
                           initialValue,
                           typeConverter.createZeroVectorFrom(targetValue),
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2206-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2206
+    endLine: 2240
+    sha256: a0e4b4c5d0c67e30f8daec79a3733e1eb43035f0f9911fa28219d2f5196c96f3
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                           typeConverter,
                           label,
                       )
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2171-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2171
-    endLine: 2205
-    sha256: 506ade265a9b4e3426f142b2bebb1ec0c34431a56bea1d41eb225165bb6682fe
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   }
               }
           UpdateInitialAndTargetValues(transitionAnimation, initialValue, targetValue, animationSpec)
@@ -1756,19 +1803,19 @@ sources:
       // TODO: Remove noinline when b/174814083 is fixed.
       /**
        * Creates a Float animation as a part of the given [Transition]. This means the states of this
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2241-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2241
+    endLine: 2275
+    sha256: 5ca9fbca49f8bc3807c4152cafb2c680c0f40c2d8ab2d014d9cfda34844727dd
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * animation will be managed by the [Transition].
        *
        * [targetValueByState] is used as a mapping from a target state to the target value of this
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2206-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2206
-    endLine: 2240
-    sha256: 8d2283df2b50b008425d1441021c2c010f5e924b9e1a800d07e1b14c87b268bb
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * animation. [Transition] will be using this mapping to determine what value to target this
        * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
        * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
@@ -1801,19 +1848,19 @@ sources:
       ): State<Float> = animateValue(Float.VectorConverter, transitionSpec, label, targetValueByState)
 
       /**
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2276-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2276
+    endLine: 2310
+    sha256: 9fb4d02936128b44e9d12bb099d422909b157976db3a231dae489b401b51c0b6
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * Creates a [Dp] animation as a part of the given [Transition]. This means the states of this
        * animation will be managed by the [Transition].
        *
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2241-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2241
-    endLine: 2274
-    sha256: aea3938be7983cf9d4939c1638f9d522c9322da17b00b5bd3b329ddc02af2fec
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * [targetValueByState] is used as a mapping from a target state to the target value of this
        * animation. [Transition] will be using this mapping to determine what value to target this
        * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
@@ -1846,18 +1893,18 @@ sources:
        *
        * [targetValueByState] is used as a mapping from a target state to the target value of this
        * animation. [Transition] will be using this mapping to determine what value to target this
-       * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
-       * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2275-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2311-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2275
-    endLine: 2309
-    sha256: 84c7a1776af8e1cebe3d4dce3192268e449e31c6926ce7001a4459f5dfc5734d
+    startLine: 2311
+    endLine: 2345
+    sha256: a9a9161f9cab5017bceb8725c941b802692d4d2abef0d7720e46597ba0d652cc
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
+       * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
        * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
        * [Transition] will start running again to ensure this animation reaches its new target smoothly.
        *
@@ -1891,18 +1938,18 @@ sources:
        * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
        * [Transition] will start running again to ensure this animation reaches its new target smoothly.
        *
-       * An optional [transitionSpec] can be provided to specify (potentially different) animation for
-       * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2310-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2346-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2310
-    endLine: 2344
-    sha256: b5204b03d36b27cd8c6c156e178034f0121793f219acd2a4176df912a144177f
+    startLine: 2346
+    endLine: 2380
+    sha256: 7f14e0c358f7c64032c3a81098da957345cdd61b358c7fad9a38f67e3acdb1e5
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * An optional [transitionSpec] can be provided to specify (potentially different) animation for
+       * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
        * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
        * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
        * destinations.
@@ -1936,18 +1983,18 @@ sources:
        * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
        * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
        * destinations.
-       *
-       * [label] is used to differentiate from other animations in the same transition in Android Studio.
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2345-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2381-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2345
-    endLine: 2379
-    sha256: 14652f7c045938112f6a3077cc4ee9a65d470454f10034e7f8d5a3f7780c9f6c
+    startLine: 2381
+    endLine: 2415
+    sha256: 9457a778f5b2bc41f90aea76935ee3e990450b8c38deed9cfa270442cf65400f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       *
+       * [label] is used to differentiate from other animations in the same transition in Android Studio.
        *
        * @return A [State] object, the value of which is updated by animation
        */
@@ -1981,18 +2028,18 @@ sources:
        * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
        * destinations.
        *
-       * [label] is used to differentiate from other animations in the same transition in Android Studio.
-       *
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2380-source
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2416-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2380
-    endLine: 2414
-    sha256: f7b993f45e985abe1086da3cf967a6764b8d3c58efae31a62cef6d89652a26f0
+    startLine: 2416
+    endLine: 2450
+    sha256: d2a4e67ca9ddc0c4d273d11e796dcba7c4ed9a7a58c62d02b6713ff96c2235f6
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       * [label] is used to differentiate from other animations in the same transition in Android Studio.
+       *
        * @return A [State] object, the value of which is updated by animation
        */
       @Composable
@@ -2026,18 +2073,18 @@ sources:
        * @return A [State] object, the value of which is updated by animation
        */
       @Composable
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2451-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2451
+    endLine: 2485
+    sha256: 9fdc33a43addcfbc5488150073750b54165e7f786bda0c69c77b92a80ae9190c
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
       public inline fun <S> Transition<S>.animateIntSize(
           noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<IntSize> =
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2415-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2415
-    endLine: 2449
-    sha256: 372f0124a191e5bd37a694bfc3d7a466ba2a731aafea7ba8c9aac8576ac21104
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               {
                   spring(visibilityThreshold = IntSize(1, 1))
               },
@@ -2071,19 +2118,6 @@ sources:
           noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<Rect> = {
               spring(visibilityThreshold = Rect.VisibilityThreshold)
           },
-          label: String = "RectAnimation",
-          targetValueByState: @Composable (state: S) -> Rect,
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2450-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 2450
-    endLine: 2451
-    sha256: e15e1b9a2d06019106cc7a1d0fbf522a4bcd365c1a644f2788182966a2f6eff0
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |
-      ): State<Rect> = animateValue(Rect.VectorConverter, transitionSpec, label, targetValueByState)
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-246-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -2129,6 +2163,19 @@ sources:
            */
           override var currentState: S by mutableStateOf(initialState)
               internal set
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-2486-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 2486
+    endLine: 2489
+    sha256: dc9389c9cc55d4f1b30e0e1d2ed673bdb9ba33336b941d1c86626e8704dd66e9
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+          label: String = "RectAnimation",
+          targetValueByState: @Composable (state: S) -> Rect,
+      ): State<Rect> = animateValue(Rect.VectorConverter, transitionSpec, label, targetValueByState)
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-281-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -2309,12 +2356,12 @@ sources:
        * values specified for the new [targetState]. Child animations can be dynamically added using
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-386-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 386
     endLine: 420
-    sha256: 311c722623b52abda982f52c5250fd1e8645bb3b640baea4530823980fd2e8aa
+    sha256: 429777245a3849d48a0f99edae5f71b392deda34f8d7f40cb4128b4aa31317ce
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
            * has stopped, this is [AnimationConstants.UnspecifiedTime].
@@ -2344,24 +2391,38 @@ sources:
            */
           private var durationScale: Float = 0f
 
+          /**
+           * True when the next animation frame is the first frame following
+           * [waitForCompositionAfterTargetStateChange], so that main-thread time spent composing and
+           * laying out the new target state does not advance the animation by multiple frames at once.
+           */
+          private var isFirstFrameAfterTargetStateComposition: Boolean = false
+
           /** Lambda instance used for animating a single frame within [withFrameNanos]. */
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-421-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 421
+    endLine: 455
+    sha256: a3212c127ec1d8c8691f0db24c09c8dd096f1496f3d1b4e5907b51fb67201416
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           private val animateOneFrameLambda: (Long) -> Unit = { frameTimeNanos ->
-              val delta =
+              val rawDelta =
                   if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
                       0L
                   } else {
                       frameTimeNanos - lastFrameTimeNanos
                   }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-421-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 421
-    endLine: 455
-    sha256: 7062f3a0466af9e5580624a4a7a99b98fac821391f27ea21750260f5f0df8f9a
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+              val delta =
+                  if (isFirstFrameAfterTargetStateComposition) {
+                      isFirstFrameAfterTargetStateComposition = false
+                      rawDelta.coerceAtMost(MaxFirstFrameDeltaNanos)
+                  } else {
+                      rawDelta
+                  }
               lastFrameTimeNanos = frameTimeNanos
               val deltaPlayTimeNanos =
                   if (durationScale <= 0f || durationScale.isNaN()) {
@@ -2383,6 +2444,16 @@ sources:
               if (currentAnimation != null) {
                   currentAnimation.durationNanos = totalDurationNanos
                   recalculateAnimationValue(currentAnimation, deltaPlayTimeNanos)
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-456-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 456
+    endLine: 490
+    sha256: a424ebb25177b32580e9b2e213e0f05749451f86d57706312fb12c144ab4bb5b
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   fraction = currentAnimation.value
                   if (currentAnimation.value == 1f) {
                       this@SeekableTransitionState.currentAnimation = null // all done!
@@ -2397,16 +2468,6 @@ sources:
           private fun endAllAnimations() {
               transition?.clearInitialAnimations()
               initialValueAnimations.clear()
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-456-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 456
-    endLine: 490
-    sha256: 2b374e9e8372dbc53d45454c3dfb263a4293e243e7c366c83d74207775a6621c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
               val current = currentAnimation
               if (current != null) {
                   currentAnimation = null
@@ -2428,8 +2489,19 @@ sources:
               }
               val durationScale = coroutineContext.durationScale
               if (durationScale <= 0f || durationScale.isNaN()) {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-491-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 491
+    endLine: 525
+    sha256: c6bf7aab3ae0a3cc1b1cfbf6474c9a93b48bff322f3042643985ad0d10f699b8
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   endAllAnimations()
                   lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+                  isFirstFrameAfterTargetStateComposition = false
                   return
               }
               if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
@@ -2440,17 +2512,9 @@ sources:
                   animateOneFrame()
               }
               lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+              isFirstFrameAfterTargetStateComposition = false
           }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-491-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 491
-    endLine: 525
-    sha256: 0d4effbf9ade21f27d468c82d9a0cb41c10fb11d5907682abc643ed6e7f9563c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
           /**
            * Does one frame of work. If there is no previous animation, then it will capture the
            * [lastFrameTimeNanos]. If there was a previous animation, it will advance by one frame.
@@ -2470,6 +2534,16 @@ sources:
               if (durationScale <= 0f || durationScale.isNaN()) {
                   endAllAnimations()
               } else {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-526-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 526
+    endLine: 560
+    sha256: e68b237234acf92d229805df10651897daaf488352c3a07e403edcf1175730bf
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   this@SeekableTransitionState.durationScale = durationScale
                   if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
                       withFrameNanos(firstFrameLambda)
@@ -2486,16 +2560,6 @@ sources:
            */
           private fun recalculateAnimationValue(
               animation: SeekingAnimationState,
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-526-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 526
-    endLine: 560
-    sha256: c7a5f299308cdcdde435bfab5d2100c2ef91906e4f6df5881daf11f46973a574
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               deltaPlayTimeNanos: Long,
           ) {
               val playTimeNanos = animation.progressNanos + deltaPlayTimeNanos
@@ -2515,6 +2579,16 @@ sources:
                                   animation.initialVelocity ?: ZeroVelocity,
                               )[0]
                       } else {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-561-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 561
+    endLine: 595
+    sha256: eb1dc9aee2118a7d848e1562ea19064670e3d050aac34beb8f27ae70d0116c5b
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                           lerp(animation.start[0], 1f, playTimeNanos.toFloat() / durationNanos)
                       }
                   animation.value = if (newValue.isNaN()) 1f else newValue.coerceIn(0f, 1f)
@@ -2531,16 +2605,6 @@ sources:
            * between any fraction between [currentState] and [targetState], while [snapTo] moves all state
            * to [targetState] without any further seeking allowed.
            *
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-561-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 561
-    endLine: 595
-    sha256: 57fd30ba585888a676b8ad5f7b689187e4f90842b2dc55c69bcbd699bd095623
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
            * @sample androidx.compose.animation.core.samples.SnapToSample
            * @see animateTo
            */
@@ -2554,11 +2618,22 @@ sources:
               mutatorMutex.mutate {
                   endAllAnimations()
                   lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+                  isFirstFrameAfterTargetStateComposition = false
                   fraction = 0f
                   val fraction =
                       when (targetState) {
                           currentState -> ResetAnimationSnapCurrent
                           this@SeekableTransitionState.targetState -> ResetAnimationSnapTarget
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-596-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 596
+    endLine: 630
+    sha256: 2153865c07ada6b7dcc80475409e6a5c1197007aed5a6cf1684b17798f6886a9
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                           else -> ResetAnimationSnap
                       }
                   transition.updateTarget(targetState)
@@ -2575,16 +2650,7 @@ sources:
                   transition.onTransitionEnd()
               }
           }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-596-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 596
-    endLine: 630
-    sha256: 34608e7a0b623a460d00394cc6cb239b50d6f657860e095a75c66eabc62da9d7
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
           /**
            * Starts seeking the transition to [targetState] with [fraction] used to indicate the progress
            * towards [targetState]. If the previous `targetState` was already [targetState] then [seekTo]
@@ -2603,6 +2669,16 @@ sources:
           public suspend fun seekTo(
               @FloatRange(from = 0.0, to = 1.0) fraction: Float,
               targetState: S = this.targetState,
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-631-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 631
+    endLine: 665
+    sha256: 9bfcf2a2c8b84ec7ada28c43dd5e270f5b274e057146f58ae6c20c8a90da67dc
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           ) {
               requirePrecondition(fraction in 0f..1f) {
                   "Expecting fraction between 0 and 1. Got $fraction"
@@ -2620,16 +2696,6 @@ sources:
                           }
                       }
                       if (targetState != oldTargetState) {
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-631-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 631
-    endLine: 665
-    sha256: 09c2f1b686e1dc898d5ca16e32b515097fc0f54457fb7e91f371fc0a8d1a7605
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                           // Change the target _and_ the fraction
                           transition.updateTarget(targetState)
                           transition.playTimeNanos = 0L
@@ -2641,13 +2707,24 @@ sources:
                           launch { runAnimations() }
                       } else {
                           lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+                          isFirstFrameAfterTargetStateComposition = false
                       }
                       waitForCompositionAfterTargetStateChange()
                       seekToFraction()
                   }
               }
           }
-
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-666-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 666
+    endLine: 700
+    sha256: ac5a41bea306e1b48aabdf197fc1edecbb5c7a392aabf507a76a4e58df936f62
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
           /** Wait for composition to set up the target values */
           private suspend fun waitForCompositionAfterTargetStateChange() {
               val expectedState = targetState
@@ -2665,16 +2742,6 @@ sources:
                           "snapTo() was canceled because state was changed to " +
                               "$state instead of $expectedState"
                       )
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-666-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 666
-    endLine: 700
-    sha256: 82f9ee8c4ed36ffabdc638478decda62246dc1940afa1190cf58e6852e5f6836
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   }
               }
           }
@@ -2692,6 +2759,16 @@ sources:
               }
               if (state != expectedState) {
                   lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-701-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 701
+    endLine: 735
+    sha256: 97754d80aba52c9ac6b093ec4009283dacef2be6409a4c5a091d9eacb56092c2
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   throw CancellationException("targetState while waiting for composition")
               }
           }
@@ -2710,16 +2787,6 @@ sources:
                               it.durationNanos = totalDurationNanos
                               it.animationSpecDuration =
                                   (totalDurationNanos * (1.0 - fraction)).roundToLong()
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-701-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 701
-    endLine: 735
-    sha256: 878c987d132e99b7d13e04a47a784527c0dc0d73bc412c91a13702125f286636
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                               it.start[0] = fraction
                           }
                       }
@@ -2737,24 +2804,6 @@ sources:
            * animation is continued. If a previous transition was interrupted, [currentState] is changed
            * to the former `targetState` and the start values are animated toward the former
            * `targetState`.
-           *
-           * Upon completion of the animation, [currentState] will be changed to [targetState].
-           *
-           * @param targetState The state to animate towards.
-           * @param animationSpec If provided, is used to animate the animation fraction. If `null`, the
-           *   transition is linearly traversed based on the duration of the transition.
-           */
-          @Suppress("DocumentExceptions")
-          public suspend fun animateTo(
-              targetState: S = this.targetState,
-              animationSpec: FiniteAnimationSpec<Float>? = null,
-          ) {
-              val transition = transition ?: return
-              mutatorMutex.mutate {
-                  coroutineScope {
-                      val oldTargetState = this@SeekableTransitionState.targetState
-                      if (targetState != oldTargetState) {
-                          moveAnimationToInitialState()
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-71-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
@@ -2802,14 +2851,32 @@ sources:
        * manually-controlled state (e.g., during a predictive back gesture) before proceeding to its final
   - id: live-androidx-animation-animation-core-animation-core-transition-lines-736-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
     startLine: 736
     endLine: 770
-    sha256: eb7e09226fb17d2e51e83b3968c536a886d2ccb30423de54396dbe24191863f8
+    sha256: 92ee4a8dd880c057d6a28ac751a14d72f96d6b52df9dbe367932b8f5eb0531c2
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+           *
+           * Upon completion of the animation, [currentState] will be changed to [targetState].
+           *
+           * @param targetState The state to animate towards.
+           * @param animationSpec If provided, is used to animate the animation fraction. If `null`, the
+           *   transition is linearly traversed based on the duration of the transition.
+           */
+          @Suppress("DocumentExceptions")
+          public suspend fun animateTo(
+              targetState: S = this.targetState,
+              animationSpec: FiniteAnimationSpec<Float>? = null,
+          ) {
+              val transition = transition ?: return
+              mutatorMutex.mutate {
+                  coroutineScope {
+                      val oldTargetState = this@SeekableTransitionState.targetState
+                      if (targetState != oldTargetState) {
+                          moveAnimationToInitialState()
                           fraction = 0f
                           transition.updateTarget(targetState)
                           transition.playTimeNanos = 0L
@@ -2820,9 +2887,27 @@ sources:
                           composedTargetState
                       }
                       if (targetState != composedTargetState) {
+                          val wasRunning = lastFrameTimeNanos != AnimationConstants.UnspecifiedTime
                           doOneFrame() // We have to wait a frame for the composition, so continue
                           // Now we shouldn't skip a frame while waiting for composition
                           waitForCompositionAfterTargetStateChange()
+                          @OptIn(ExperimentalAnimationCoreApi::class)
+                          if (
+                              ComposeAnimationCoreFlags
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-771-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 771
+    endLine: 805
+    sha256: 090abbffb691c9b1f5fa4e57800676248612a821c846df88fd9b064340551e12
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+                                  .isSeekableTransitionStateStartAfterLayoutEnabled && !wasRunning
+                          ) {
+                              isFirstFrameAfterTargetStateComposition = true
+                          }
                       }
                       if (currentState != targetState) {
                           if (fraction < 1f) {
@@ -2845,16 +2930,6 @@ sources:
                                       runningAnimation == null || runningAnimation.progressNanos == 0L
                                   ) {
                                       oldVelocity = ZeroVelocity
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-771-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 771
-    endLine: 805
-    sha256: 44b5c7c6f5bc750389fd3a747f4eb999e5ac788cf7753f7e265142a3367e9eb5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                                   } else {
                                       val oldDurationNanos = runningAnimation.durationNanos
                                       val oldDuration =
@@ -2864,6 +2939,16 @@ sources:
                                               oldDurationNanos
                                           } / (1000f * MillisToNanos)
                                       if (oldDuration <= 0L) {
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-806-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 806
+    endLine: 840
+    sha256: bfd637e178087389cfec1b1ed9190d3e4b5891a2ed04dd13e4318ff861a9fe24
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                                           oldVelocity = ZeroVelocity
                                       } else {
                                           oldVelocity = AnimationVector1D(1f / oldDuration)
@@ -2890,16 +2975,6 @@ sources:
                           currentState = targetState
                           fraction = 0f
                           transition.onTransitionEnd()
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-806-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 806
-    endLine: 840
-    sha256: f8a53b629f7d448574ea200e66192d0e46d4896949ea4e88cb9148a0c957af21
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                           waitForComposition()
                       }
                   }
@@ -2909,6 +2984,16 @@ sources:
           override fun transitionConfigured(transition: Transition<S>) {
               checkPrecondition(this.transition == null || transition == this.transition) {
                   "An instance of SeekableTransitionState has been used in different Transitions. " +
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-841-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 841
+    endLine: 875
+    sha256: 4aba046a772f395494fa8fa31d8c94071d71ae0a3dac083963e7af6bcd034e15
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       "Previous instance: ${this.transition}, new instance: $transition"
               }
               this.transition = transition
@@ -2935,16 +3020,6 @@ sources:
                   if (animation != null) {
                       if (animation.progressNanos > totalDurationNanos) {
                           endAllAnimations()
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-841-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 841
-    endLine: 875
-    sha256: a392e09e5610ad92782be6f1e68586c3c61c8507ddc6877d68009940623171a2
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
                       } else {
                           animation.durationNanos = totalDurationNanos
                           if (animation.animationSpec == null) {
@@ -2954,6 +3029,16 @@ sources:
                       }
                   } else if (totalDurationNanos != 0L) {
                       // seekTo() called with a fraction. If an animation is running, we can just wait
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-876-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 876
+    endLine: 910
+    sha256: 7f4ac9aaab94e9fb6b2a43e1dfac44e3222d7ee3a96d09b20fb791dc01786812
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
                       // for the animation to change the value. The fraction may not be the best way
                       // to advance a regular animation.
                       seekToFraction()
@@ -2979,16 +3064,7 @@ sources:
               // The AnimationSpec used in this animation, or null if it is a linear animation with
               // duration of durationNanos
               var animationSpec: VectorizedAnimationSpec<AnimationVector1D>? = null
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-876-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 876
-    endLine: 910
-    sha256: afb818c687fe892c61ec0cd37e1f01bb04bb7522246cc509349e07159aad7e6c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
               // Used by initial value animations to mark when the animation should continue
               var isComplete = false
 
@@ -2997,7 +3073,16 @@ sources:
 
               // The start value of the animation
               var start: AnimationVector1D = AnimationVector1D(0f)
-
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-911-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 911
+    endLine: 945
+    sha256: 058c92654915a22952399d355c867f483b78b8936b5c9b8f585ae6f420de2fa0
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               // The initial velocity of the animation
               var initialVelocity: AnimationVector1D? = null
 
@@ -3024,20 +3109,25 @@ sources:
 
               // AnimationVector1D with 1 value, used as the target value of 1f
               val Target1 = AnimationVector1D(1f)
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-911-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 911
-    endLine: 945
-    sha256: 060e3e4f53e4358f73d3905480b218c1254c1faa21fb21485f82069e710d5986
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
+              // Maximum frame delta (1/60s in nanoseconds, ~16.67ms) allowed on the first frame after
+              // composing and laying out a new target state when starting from idle, preventing expensive
+              // first-frame composition/layout from skipping initial animation frames.
+              private const val MaxFirstFrameDeltaNanos = 16_666_667L
           }
       }
 
       /**
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-946-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 946
+    endLine: 980
+    sha256: c5ce9eae6b06aa95aee96a811b65d21780a1ea01c64c0494801733605a52a403
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * Creates a [Transition] and puts it in the [currentState][TransitionState.currentState] of the
        * provided [transitionState]. If the [TransitionState.targetState] changes, the [Transition] will
        * change where it will animate to.
@@ -3069,20 +3159,20 @@ sources:
                   // Tracked at b/392921611. Until this is fixed, we need to explicitly disable state
                   // observation in remember.
                   Snapshot.withoutReadObservation {
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-946-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 946
-    endLine: 980
-    sha256: 7e4888441ec94da356c8fde25bffd66a3be8490b341a6711b3580bc1d3e31ab5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       if (transitionState is DeferredTransitionState) {
                           DeferredTransition(transitionState, label)
                       } else {
                           TransitionInstance(transitionState, label)
+  - id: live-androidx-animation-animation-core-animation-core-transition-lines-981-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
+    startLine: 981
+    endLine: 1015
+    sha256: 8de5af782aa760878130a0fd0cdcad021bdd0d0262cbe7e9ad209dcebc5b72c9
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       }
                   }
               }
@@ -3100,65 +3190,24 @@ sources:
                   transitionState.snapshotStateObserver = snapshotStateObserver
                   onDispose { transitionState.snapshotStateObserver = null }
               }
-              LaunchedEffect(transitionState.currentState, transitionState.targetState) {
+              val targetState = transitionState.targetState
+              LaunchedEffect(transitionState.currentState, targetState) {
                   transitionState.observeTotalDuration()
                   transitionState.compositionContinuationMutex.withLock {
-                      transitionState.composedTargetState = transitionState.targetState
-                      transitionState.compositionContinuation?.resume(transitionState.targetState)
-                      transitionState.compositionContinuation = null
+                      @OptIn(ExperimentalAnimationCoreApi::class)
+                      if (
+                          !ComposeAnimationCoreFlags.isSeekableTransitionStateStartAfterLayoutEnabled ||
+                              targetState == transitionState.targetState
+                      ) {
+                          transitionState.composedTargetState = transitionState.targetState
+                          transitionState.compositionContinuation?.resume(transitionState.targetState)
+                          transitionState.compositionContinuation = null
+                      }
                   }
               }
           } else {
               transition.animateTo(transitionState.targetState)
               if (transitionState is DeferredTransitionState) {
-                  transition.updatePendingTarget(transitionState.pendingTargetState)
-              }
-          }
-  - id: live-androidx-animation-animation-core-animation-core-transition-lines-981-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt
-    startLine: 981
-    endLine: 1015
-    sha256: 5c6b78c338015089a7dc0b66a056b238a25ba9d9d6c2cbf140e270b2debd0696
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-          DisposableEffect(transition) {
-              onDispose {
-                  // Clean up on the way out, to ensure the observers are not stuck in an in-between
-                  // state.
-                  transition.onDisposed()
-              }
-          }
-          return transition
-      }
-
-      /**
-       * Creates a [Transition] and puts it in the [currentState][MutableTransitionState.currentState] of
-       * the provided [transitionState]. Whenever the [targetState][MutableTransitionState.targetState] of
-       * the [transitionState] changes, the [Transition] will animate to the new target state.
-       *
-       * __Remember__: The provided [transitionState] needs to be [remember]ed.
-       *
-       * Compared to the [rememberTransition] variant that takes a targetState, this function supports a
-       * different initial state than the first targetState. Here is an example:
-       *
-       * @sample androidx.compose.animation.core.samples.InitialStateSample
-       *
-       * In most cases, it is recommended to reuse the same [transitionState] that is [remember]ed, such
-       * that [Transition] preserves continuity when [targetState][MutableTransitionState.targetState] is
-       * changed. However, in some rare cases it is more critical to immediately *snap* to a state change
-       * (e.g. in response to a user interaction). This can be achieved by creating a new
-       * [transitionState]:
-       *
-       * @sample androidx.compose.animation.core.samples.DoubleTapToLikeSample
-       */
-      @Deprecated(
-          "Use rememberTransition() instead",
-          replaceWith = ReplaceWith("rememberTransition(transitionState, label)"),
-      )
-      @Composable
 compose:
   id: live-androidx-animation-animation-core-animation-core-transition
   artifact: androidx.compose.animation:animation-core
@@ -3176,13 +3225,9 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1016
       title: androidx.compose.animation.core Transition.kt source (lines 1016–1050)
       aliases:
-        - androidx.compose.animation.core.updateTransition
-        - androidx.compose.animation.core.TransitionState
         - androidx.compose.animation.core.MutableTransitionState
         - androidx.compose.animation.core.rememberTransition
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.animateValue
-        - androidx.compose.animation.core.animateFloat
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3191,7 +3236,14 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1051
       title: androidx.compose.animation.core Transition.kt source (lines 1051–1085)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.updateTransition
+        - androidx.compose.animation.core.TransitionState
+        - androidx.compose.animation.core.MutableTransitionState
+        - androidx.compose.animation.core.rememberTransition
+        - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.animateValue
+        - androidx.compose.animation.core.animateFloat
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3211,7 +3263,8 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1086
       title: androidx.compose.animation.core Transition.kt source (lines 1086–1120)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3220,8 +3273,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1121
       title: androidx.compose.animation.core Transition.kt source (lines 1121–1155)
-      aliases:
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3231,7 +3283,6 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1156
       title: androidx.compose.animation.core Transition.kt source (lines 1156–1190)
       aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
         - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
@@ -3241,7 +3292,9 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1191
       title: androidx.compose.animation.core Transition.kt source (lines 1191–1225)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.SeekableTransitionState
+        - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3250,8 +3303,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1226
       title: androidx.compose.animation.core Transition.kt source (lines 1226–1260)
-      aliases:
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3260,10 +3312,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1261
       title: androidx.compose.animation.core Transition.kt source (lines 1261–1295)
-      aliases:
-        - androidx.compose.animation.core.DeferredTransitionState
-        - androidx.compose.animation.core.MutableTransitionState
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3285,6 +3334,8 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1331
       title: androidx.compose.animation.core Transition.kt source (lines 1331–1365)
       aliases:
+        - androidx.compose.animation.core.DeferredTransitionState
+        - androidx.compose.animation.core.MutableTransitionState
         - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
@@ -3305,7 +3356,7 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1401
       title: androidx.compose.animation.core Transition.kt source (lines 1401–1435)
       aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+        - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3336,9 +3387,7 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1471
       title: androidx.compose.animation.core Transition.kt source (lines 1471–1505)
       aliases:
-        - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.animateFloat
-        - androidx.compose.animation.core.animateDp
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3348,7 +3397,9 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1506
       title: androidx.compose.animation.core Transition.kt source (lines 1506–1540)
       aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+        - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.animateFloat
+        - androidx.compose.animation.core.animateDp
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3377,7 +3428,8 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1611
       title: androidx.compose.animation.core Transition.kt source (lines 1611–1645)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3395,8 +3447,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1681
       title: androidx.compose.animation.core Transition.kt source (lines 1681–1715)
-      aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3405,7 +3456,8 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1716
       title: androidx.compose.animation.core Transition.kt source (lines 1716–1750)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3438,8 +3490,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1786
       title: androidx.compose.animation.core Transition.kt source (lines 1786–1820)
-      aliases:
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3450,7 +3501,6 @@ compose:
       title: androidx.compose.animation.core Transition.kt source (lines 1821–1855)
       aliases:
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.createDeferredAnimation
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3461,7 +3511,7 @@ compose:
       title: androidx.compose.animation.core Transition.kt source (lines 1856–1890)
       aliases:
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.animateFloat
+        - androidx.compose.animation.core.createDeferredAnimation
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3481,7 +3531,9 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1926
       title: androidx.compose.animation.core Transition.kt source (lines 1926–1960)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.animateFloat
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3490,10 +3542,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1961
       title: androidx.compose.animation.core Transition.kt source (lines 1961–1995)
-      aliases:
-        - androidx.compose.animation.core.TransitionState
-        - androidx.compose.animation.core.MutableTransitionState
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3503,9 +3552,9 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-1996
       title: androidx.compose.animation.core Transition.kt source (lines 1996–2030)
       aliases:
+        - androidx.compose.animation.core.TransitionState
+        - androidx.compose.animation.core.MutableTransitionState
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.createDeferredAnimation
-        - androidx.compose.animation.core.createChildTransition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3516,7 +3565,7 @@ compose:
       title: androidx.compose.animation.core Transition.kt source (lines 2031–2065)
       aliases:
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.createChildTransition
+        - androidx.compose.animation.core.createDeferredAnimation
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3526,8 +3575,8 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-2066
       title: androidx.compose.animation.core Transition.kt source (lines 2066–2100)
       aliases:
-        - androidx.compose.animation.core.MutableTransitionState
         - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.createChildTransition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3537,11 +3586,8 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-2101
       title: androidx.compose.animation.core Transition.kt source (lines 2101–2135)
       aliases:
-        - androidx.compose.animation.core.updateTransition
-        - androidx.compose.animation.core.rememberTransition
+        - androidx.compose.animation.core.MutableTransitionState
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.animateValue
-        - androidx.compose.animation.core.animateFloat
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3565,7 +3611,11 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-2136
       title: androidx.compose.animation.core Transition.kt source (lines 2136–2170)
       aliases:
+        - androidx.compose.animation.core.updateTransition
+        - androidx.compose.animation.core.rememberTransition
         - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.animateValue
+        - androidx.compose.animation.core.animateFloat
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3575,8 +3625,8 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-2171
       title: androidx.compose.animation.core Transition.kt source (lines 2171–2205)
       aliases:
+        - androidx.compose.animation.core.rememberTransition
         - androidx.compose.animation.core.Transition
-        - androidx.compose.animation.core.animateValue
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3585,6 +3635,17 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-2206
       title: androidx.compose.animation.core Transition.kt source (lines 2206–2240)
+      aliases:
+        - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.animateValue
+      requires:
+        - artifact: androidx.compose.animation:animation-core
+          version: null
+      sourceIds:
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2206-source
+      relatedIds: []
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2241
+      title: androidx.compose.animation.core Transition.kt source (lines 2241–2275)
       aliases:
         - androidx.compose.animation.core.updateTransition
         - androidx.compose.animation.core.rememberTransition
@@ -3595,10 +3656,10 @@ compose:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2206-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2241-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2241
-      title: androidx.compose.animation.core Transition.kt source (lines 2241–2274)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2276
+      title: androidx.compose.animation.core Transition.kt source (lines 2276–2310)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
@@ -3607,10 +3668,10 @@ compose:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2241-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2276-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2275
-      title: androidx.compose.animation.core Transition.kt source (lines 2275–2309)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2311
+      title: androidx.compose.animation.core Transition.kt source (lines 2311–2345)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
@@ -3619,10 +3680,10 @@ compose:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2275-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2311-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2310
-      title: androidx.compose.animation.core Transition.kt source (lines 2310–2344)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2346
+      title: androidx.compose.animation.core Transition.kt source (lines 2346–2380)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
@@ -3631,10 +3692,10 @@ compose:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2310-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2346-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2345
-      title: androidx.compose.animation.core Transition.kt source (lines 2345–2379)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2381
+      title: androidx.compose.animation.core Transition.kt source (lines 2381–2415)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
@@ -3643,42 +3704,32 @@ compose:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2345-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2381-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2380
-      title: androidx.compose.animation.core Transition.kt source (lines 2380–2414)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2416
+      title: androidx.compose.animation.core Transition.kt source (lines 2416–2450)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
         - androidx.compose.animation.core.animateInt
-        - androidx.compose.animation.core.animateIntSize
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2380-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2416-source
       relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2415
-      title: androidx.compose.animation.core Transition.kt source (lines 2415–2449)
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2451
+      title: androidx.compose.animation.core Transition.kt source (lines 2451–2485)
       aliases:
         - androidx.compose.animation.core.Transition
         - androidx.compose.animation.core.animateValue
+        - androidx.compose.animation.core.animateIntSize
         - androidx.compose.animation.core.animateRect
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
       sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2415-source
-      relatedIds: []
-    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2450
-      title: androidx.compose.animation.core Transition.kt source (lines 2450–2451)
-      aliases:
-        - androidx.compose.animation.core.animateValue
-      requires:
-        - artifact: androidx.compose.animation:animation-core
-          version: null
-      sourceIds:
-        - live-androidx-animation-animation-core-animation-core-transition-lines-2450-source
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2451-source
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-246
       title: androidx.compose.animation.core Transition.kt source (lines 246–280)
@@ -3692,6 +3743,16 @@ compose:
           version: null
       sourceIds:
         - live-androidx-animation-animation-core-animation-core-transition-lines-246-source
+      relatedIds: []
+    - id: live-androidx-animation-animation-core-animation-core-transition-lines-2486
+      title: androidx.compose.animation.core Transition.kt source (lines 2486–2489)
+      aliases:
+        - androidx.compose.animation.core.animateValue
+      requires:
+        - artifact: androidx.compose.animation:animation-core
+          version: null
+      sourceIds:
+        - live-androidx-animation-animation-core-animation-core-transition-lines-2486-source
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-281
       title: androidx.compose.animation.core Transition.kt source (lines 281–315)
@@ -3747,8 +3808,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-421
       title: androidx.compose.animation.core Transition.kt source (lines 421–455)
-      aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3757,7 +3817,8 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-456
       title: androidx.compose.animation.core Transition.kt source (lines 456–490)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3766,8 +3827,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-491
       title: androidx.compose.animation.core Transition.kt source (lines 491–525)
-      aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3776,7 +3836,8 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-526
       title: androidx.compose.animation.core Transition.kt source (lines 526–560)
-      aliases: []
+      aliases:
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3824,8 +3885,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-701
       title: androidx.compose.animation.core Transition.kt source (lines 701–735)
-      aliases:
-        - androidx.compose.animation.core.SeekableTransitionState
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3898,12 +3958,7 @@ compose:
       relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-911
       title: androidx.compose.animation.core Transition.kt source (lines 911–945)
-      aliases:
-        - androidx.compose.animation.core.updateTransition
-        - androidx.compose.animation.core.TransitionState
-        - androidx.compose.animation.core.MutableTransitionState
-        - androidx.compose.animation.core.rememberTransition
-        - androidx.compose.animation.core.Transition
+      aliases: []
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3913,9 +3968,13 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-946
       title: androidx.compose.animation.core Transition.kt source (lines 946–980)
       aliases:
+        - androidx.compose.animation.core.updateTransition
         - androidx.compose.animation.core.DeferredTransitionState
         - androidx.compose.animation.core.DeferredTransition
-        - androidx.compose.animation.core.SeekableTransitionState
+        - androidx.compose.animation.core.TransitionState
+        - androidx.compose.animation.core.MutableTransitionState
+        - androidx.compose.animation.core.rememberTransition
+        - androidx.compose.animation.core.Transition
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3925,9 +3984,8 @@ compose:
     - id: live-androidx-animation-animation-core-animation-core-transition-lines-981
       title: androidx.compose.animation.core Transition.kt source (lines 981–1015)
       aliases:
-        - androidx.compose.animation.core.MutableTransitionState
-        - androidx.compose.animation.core.rememberTransition
-        - androidx.compose.animation.core.Transition
+        - androidx.compose.animation.core.DeferredTransitionState
+        - androidx.compose.animation.core.SeekableTransitionState
       requires:
         - artifact: androidx.compose.animation:animation-core
           version: null
@@ -3982,6 +4040,49 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 1016–1050)
 
+            transition.updatePendingTarget(transitionState.pendingTargetState)
+        }
+    }
+    DisposableEffect(transition) {
+        onDispose {
+            // Clean up on the way out, to ensure the observers are not stuck in an in-between
+            // state.
+            transition.onDisposed()
+        }
+    }
+    return transition
+}
+
+/**
+ * Creates a [Transition] and puts it in the [currentState][MutableTransitionState.currentState] of
+ * the provided [transitionState]. Whenever the [targetState][MutableTransitionState.targetState] of
+ * the [transitionState] changes, the [Transition] will animate to the new target state.
+ *
+ * __Remember__: The provided [transitionState] needs to be [remember]ed.
+ *
+ * Compared to the [rememberTransition] variant that takes a targetState, this function supports a
+ * different initial state than the first targetState. Here is an example:
+ *
+ * @sample androidx.compose.animation.core.samples.InitialStateSample
+ *
+ * In most cases, it is recommended to reuse the same [transitionState] that is [remember]ed, such
+ * that [Transition] preserves continuity when [targetState][MutableTransitionState.targetState] is
+ * changed. However, in some rare cases it is more critical to immediately *snap* to a state change
+ * (e.g. in response to a user interaction). This can be achieved by creating a new
+ * [transitionState]:
+ *
+ * @sample androidx.compose.animation.core.samples.DoubleTapToLikeSample
+ */
+@Deprecated(
+    "Use rememberTransition() instead",
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1016-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1051–1085)
+
+    replaceWith = ReplaceWith("rememberTransition(transitionState, label)"),
+)
+@Composable
 public fun <T> updateTransition(
     transitionState: MutableTransitionState<T>,
     label: String? = null,
@@ -4014,51 +4115,8 @@ protected constructor(
     private val transitionState: TransitionState<S>,
     @Suppress("BanRestrictTo")
     @get:RestrictTo(RestrictTo.Scope.LIBRARY)
-    public val parentTransition: Transition<*>?,
-    label: String? = null,
-) {
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1016-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1051–1085)
-
-    private val _rawLabel: String? = label
-
-    /** An optional label for differentiating different transitions in Android Studio. */
-    public val label: String?
-        get() {
-            val parent = parentTransition
-            val parentLabel = parent?.label
-            return when {
-                parentLabel != null && _rawLabel != null -> "$parentLabel > $_rawLabel"
-                parentLabel != null -> parentLabel
-                else -> _rawLabel
-            }
-        }
-
-    /**
-     * Current state of the transition. This will always be the initialState of the transition until
-     * the transition is finished. Once the transition is finished, [currentState] will be set to
-     * [targetState]. [currentState] is backed by a [MutableState].
-     */
-    public val currentState: S
-        get() = transitionState.currentState
-
-    /**
-     * Target state of the transition. This will be read by all child animations to determine their
-     * most up-to-date target values.
-     */
-    public var targetState: S by mutableStateOf(currentState)
-        internal set
-
-    /**
-     * Pending target state of the transition. This is the state that the transition is waiting to
-     * animate to. It is non-null only when a deferred update is in progress.
-     */
-    public var pendingTargetState: S? by mutableStateOf(null)
-        private set
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1051-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1051-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 106–140)
 
@@ -4102,6 +4160,49 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 1086–1120)
 
+    public val parentTransition: Transition<*>?,
+    label: String? = null,
+) {
+    private val _rawLabel: String? = label
+
+    /** An optional label for differentiating different transitions in Android Studio. */
+    public val label: String?
+        get() {
+            val parent = parentTransition
+            val parentLabel = parent?.label
+            return when {
+                parentLabel != null && _rawLabel != null -> "$parentLabel > $_rawLabel"
+                parentLabel != null -> parentLabel
+                else -> _rawLabel
+            }
+        }
+
+    /**
+     * Current state of the transition. This will always be the initialState of the transition until
+     * the transition is finished. Once the transition is finished, [currentState] will be set to
+     * [targetState]. [currentState] is backed by a [MutableState].
+     */
+    public val currentState: S
+        get() = transitionState.currentState
+
+    /**
+     * Target state of the transition. This will be read by all child animations to determine their
+     * most up-to-date target values.
+     */
+    public var targetState: S by mutableStateOf(currentState)
+        internal set
+
+    /**
+     * Pending target state of the transition. This is the state that the transition is waiting to
+     * animate to. It is non-null only when a deferred update is in progress.
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1086-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1121–1155)
+
+     */
+    public var pendingTargetState: S? by mutableStateOf(null)
+        private set
 
     @PublishedApi
     internal fun updatePendingTarget(value: S?) {
@@ -4134,14 +4235,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
     /** Indicates whether there is any animation running in the transition. */
     public val isRunning: Boolean
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1121-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1156–1190)
+
         get() = startTimeNanos != AnimationConstants.UnspecifiedTime
 
     private var _playTimeNanos by mutableLongStateOf(0L)
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1086-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1121–1155)
-
 
     /**
      * Play time in nano-seconds. [playTimeNanos] is always non-negative. It starts from 0L at the
@@ -4174,14 +4275,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     public val transitions: List<Transition<*>>
         get() = _transitions
 
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1156-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1191–1225)
+
     /** List of [TransitionAnimationState]s that are in a [Transition]. */
     public val animations: List<TransitionAnimationState<*, *>>
         get() = _animations
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1121-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1156–1190)
-
 
     // Seeking related
     @Suppress("BanRestrictTo")
@@ -4214,14 +4315,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      * to [Transition]. It's strongly recommended to query this *after* all the animations in the
      * [Transition] are set up.
      */
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1191-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1226–1260)
+
     public val totalDurationNanos: Long by derivedStateOf { calculateTotalDurationNanos() }
 
     private fun calculateTotalDurationNanos(): Long {
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1156-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1191–1225)
-
         var maxDurationNanos = 0L
         _animations.toList().fastForEach {
             maxDurationNanos = max(maxDurationNanos, it.durationNanos)
@@ -4254,13 +4355,13 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             onTransitionStart(scaledPlayTimeNanos)
         } else if (!transitionState.isRunning) {
             transitionState.isRunning = true
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1226-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1261–1295)
+
         }
         updateChildrenNeeded = false
-
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1191-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1226–1260)
 
         var allFinished = true
         // Pulse new playtime
@@ -4294,14 +4395,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     internal fun onTransitionStart(frameTimeNanos: Long) {
         startTimeNanos = frameTimeNanos
         transitionState.isRunning = true
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1261-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1296–1330)
+
     }
 
     // Called when the Transition is being disposed to clean up any state
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1226-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1261–1295)
-
     internal fun onDisposed() {
         onTransitionEnd()
         transitionState.transitionRemoved()
@@ -4334,14 +4435,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      *
      * __Caveat:__ This function puts [Transition] in a manual playtime setting mode. From then on
      * the [Transition] will not resume normal animation runs.
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1296-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1331–1365)
+
      */
     @Suppress("BanRestrictTo")
     @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP_PREFIX)
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1261-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1296–1330)
-
     @OptIn(InternalAnimationApi::class)
     @JvmName("seek")
     public fun setPlaytimeAfterInitialAndTargetStateEstablished(
@@ -4374,14 +4475,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                         it.currentState,
                         it.targetState,
                         playTimeNanos,
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1331-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1366–1400)
+
                     )
                 }
             }
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1296-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1331–1365)
-
         }
 
         _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
@@ -4414,14 +4515,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                 updateChildrenNeeded = true
             }
 
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1366-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1401–1435)
+
             // If target state is changed, reset all the animations to be re-created in the
             // next frame w/ their new target value. Child animations target values are updated in
             // the side effect that may not have happened when this function in invoked.
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1331-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1366–1400)
-
             // Copying to a list to avoid ConcurrentModificationException since resetAnimation()
             // can modify the animations list. This operation is trivial with SnapshotStateList.
             @Suppress("ListIterator") val animations = animations.toList()
@@ -4454,51 +4555,8 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     coroutineScope.launch(start = CoroutineStart.UNDISPATCHED) {
                         val durationScale = coroutineContext.durationScale
                         while (isActive) {
-                            withFrameNanos {
-                                // This check is very important, as isSeeking may be changed
-                                // off-band between the last check in composition and this callback
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1366-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1401–1435)
-
-                                // which happens in the animation callback the next frame.
-                                if (!isSeeking) {
-                                    onFrame(it / AnimationDebugDurationScale, durationScale)
-                                }
-                            }
-                        }
-                    }
-                    onDispose {}
-                }
-            }
-        }
-    }
-
-    /**
-     * Used by [SeekableTransitionState] to seek the current transition animation to
-     * [playTimeNanos].
-     */
-    internal fun seekAnimations(playTimeNanos: Long) {
-        if (startTimeNanos == AnimationConstants.UnspecifiedTime) {
-            startTimeNanos = playTimeNanos
-        }
-        this.playTimeNanos = playTimeNanos
-        updateChildrenNeeded = false
-
-        // Pulse new playtime
-        _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
-        _transitions.toList().fastForEach {
-            if (it.targetState != it.currentState) {
-                it.seekAnimations(playTimeNanos)
-            }
-        }
-    }
-
-    /**
-     * Changes the existing animations to be initial value animations. An existing animation was
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1401-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1401-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 141–175)
 
@@ -4542,6 +4600,49 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 1436–1470)
 
+                            withFrameNanos {
+                                // This check is very important, as isSeeking may be changed
+                                // off-band between the last check in composition and this callback
+                                // which happens in the animation callback the next frame.
+                                if (!isSeeking) {
+                                    onFrame(it / AnimationDebugDurationScale, durationScale)
+                                }
+                            }
+                        }
+                    }
+                    onDispose {}
+                }
+            }
+        }
+    }
+
+    /**
+     * Used by [SeekableTransitionState] to seek the current transition animation to
+     * [playTimeNanos].
+     */
+    internal fun seekAnimations(playTimeNanos: Long) {
+        if (startTimeNanos == AnimationConstants.UnspecifiedTime) {
+            startTimeNanos = playTimeNanos
+        }
+        this.playTimeNanos = playTimeNanos
+        updateChildrenNeeded = false
+
+        // Pulse new playtime
+        _animations.toList().fastForEach { it.seekTo(playTimeNanos) }
+        _transitions.toList().fastForEach {
+            if (it.targetState != it.currentState) {
+                it.seekAnimations(playTimeNanos)
+            }
+        }
+    }
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1436-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1471–1505)
+
+
+    /**
+     * Changes the existing animations to be initial value animations. An existing animation was
      * interrupted, so the current animation is used only for the initial values. The current
      * animation is then changed to an unchanging animation that is only moved by the initial value.
      */
@@ -4574,14 +4675,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      *   anything.
      */
     internal fun updateInitialValues() {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1471-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1506–1540)
+
         _animations.toList().fastForEach { it.updateInitialValue() }
         _transitions.toList().fastForEach { it.updateInitialValues() }
     }
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1436-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1471–1505)
-
 
     override fun toString(): String {
         return animations.fastFold("Transition animation values: ") { acc, anim -> "$acc$anim, " }
@@ -4614,14 +4715,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         initialVelocityVector: V,
         public val typeConverter: TwoWayConverter<T, V>,
         public val label: String,
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1506-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1541–1575)
+
     ) : State<T> {
 
         // Changed during composition, may rollback
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1471-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1506–1540)
-
         private var targetValue: T by mutableStateOf(initialValue)
 
         private val defaultSpring = spring<T>()
@@ -4655,13 +4756,13 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         internal var isFinished: Boolean by mutableStateOf(true)
         internal var resetSnapValue by mutableFloatStateOf(NoReset)
 
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1541-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1576–1610)
+
+
         /**
          * When the target state has changed, but the target value remains the same, the initial
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1506-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1541–1575)
-
          * value animation completely controls the animated value. When this flag is `true`, the
          * [animation] can be ignored and only the [initialValueState] is needed to determine the
          * value. When this is `false`, if there is an [initialValueState], it is used only for
@@ -4694,14 +4795,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             isSeeking = true // SeekableTransitionState won't use interrupted animation spec
             if (animation.targetValue == animation.initialValue) {
                 // This is likely an interrupted animation and the initial value is changing, but
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1576-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1611–1645)
+
                 // the target value remained the same. The initial value animation has the target
                 // value, so only the initial value animation is changing the value.
                 value = animation.targetValue
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1541-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1576–1610)
-
             } else {
                 // TODO: unlikely but need to double check that animation returns the correct values
                 // when play time is way past their durations.
@@ -4734,14 +4835,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             this.animation.mutableInitialValue = initialValue
             durationNanos = this.animation.durationNanos
             if (resetSnapValue == ResetNoSnap || useOnlyInitialValue) {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1611-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1646–1680)
+
                 value = initialValue
             } else {
                 seekTo(playTimeNanos)
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1576-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1611–1645)
-
             }
             if (initialPlayTimeNanos >= animState.durationNanos) {
                 initialValueState = null
@@ -4774,14 +4875,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                         interruptionSpec,
                         typeConverter,
                         initialValue,
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1646-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1681–1715)
+
                         initialValue,
                         velocityVector.newInstance(), // 0 velocity
                     )
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1611-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1646–1680)
-
                 useOnlyInitialValue = true
                 durationNanos = animation.durationNanos
                 return
@@ -4814,14 +4915,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
         internal fun resetAnimation() {
             resetSnapValue = ResetNoSnap
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1681-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1716–1750)
+
         }
 
         /**
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1646-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1681–1715)
-
          * Forces the value to the given fraction or reset value. If [fraction] is
          * [ResetAnimationSnapCurrent] or [ResetAnimationSnapTarget], the animated values are
          * directly moved to the start or end of the animation.
@@ -4854,14 +4955,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             animationState: SeekableTransitionState.SeekingAnimationState
         ) {
             if (animation.targetValue != animation.initialValue) {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1716-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1751–1785)
+
                 // Continue the animation from the current position to the target
                 initialValueAnimation = animation
                 initialValueState = animationState
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1681-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1716–1750)
-
             }
             animation =
                 TargetBasedAnimation(
@@ -4894,51 +4995,8 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             forcedInitialVelocity: V? = null,
         ) {
             if (useOnlyInitialValue && targetValue == initialValueAnimation?.targetValue) {
-                return // we're already animating to the target value through the initial value
-            }
-            if (
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1716-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1751–1785)
-
-                this.targetValue == targetValue &&
-                    resetSnapValue == NoReset &&
-                    (forcedInitialValue == null || forcedInitialValue == animation.initialValue)
-            ) {
-                return // nothing to change. Just continue the existing animation.
-            }
-            this.targetValue = targetValue
-            this.animationSpec = animationSpec
-            val initialValue =
-                forcedInitialValue
-                    ?: if (resetSnapValue == ResetAnimationSnap) targetValue else value
-            if (forcedInitialValue != null) {
-                value = initialValue
-                if (forcedInitialVelocity != null) {
-                    velocityVector = forcedInitialVelocity
-                }
-            }
-            updateAnimation(initialValue, isInterrupted = !isFinished && forcedInitialValue == null)
-            isFinished = resetSnapValue == ResetAnimationSnap
-            // This is needed because the target change could happen during a transition
-            if (resetSnapValue >= 0f) {
-                val duration = animation.durationNanos
-                value = animation.getValueFromNanos((duration * resetSnapValue).toLong())
-            } else if (resetSnapValue == ResetAnimationSnap) {
-                value = targetValue
-            }
-            useOnlyInitialValue = false
-            resetSnapValue = NoReset
-        }
-
-        // This gets called *during* composition
-        internal fun updateInitialAndTargetValue(
-            initialValue: T,
-            targetValue: T,
-            animationSpec: FiniteAnimationSpec<T>,
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1751-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1751-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 176–210)
 
@@ -4982,6 +5040,49 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 1786–1820)
 
+                return // we're already animating to the target value through the initial value
+            }
+            if (
+                this.targetValue == targetValue &&
+                    resetSnapValue == NoReset &&
+                    (forcedInitialValue == null || forcedInitialValue == animation.initialValue)
+            ) {
+                return // nothing to change. Just continue the existing animation.
+            }
+            this.targetValue = targetValue
+            this.animationSpec = animationSpec
+            val initialValue =
+                forcedInitialValue
+                    ?: if (resetSnapValue == ResetAnimationSnap) targetValue else value
+            if (forcedInitialValue != null) {
+                value = initialValue
+                if (forcedInitialVelocity != null) {
+                    velocityVector = forcedInitialVelocity
+                }
+            }
+            updateAnimation(initialValue, isInterrupted = !isFinished && forcedInitialValue == null)
+            isFinished = resetSnapValue == ResetAnimationSnap
+            // This is needed because the target change could happen during a transition
+            if (resetSnapValue >= 0f) {
+                val duration = animation.durationNanos
+                value = animation.getValueFromNanos((duration * resetSnapValue).toLong())
+            } else if (resetSnapValue == ResetAnimationSnap) {
+                value = targetValue
+            }
+            useOnlyInitialValue = false
+            resetSnapValue = NoReset
+        }
+
+        // This gets called *during* composition
+        internal fun updateInitialAndTargetValue(
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1786-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1821–1855)
+
+            initialValue: T,
+            targetValue: T,
+            animationSpec: FiniteAnimationSpec<T>,
         ) {
             this.targetValue = targetValue
             this.animationSpec = animationSpec
@@ -5015,13 +5116,13 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         /** Initial state of a Transition Segment. This is the state that transition starts from. */
         public val initialState: S
 
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1821-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1856–1890)
+
+
         /** Target state of a Transition Segment. This is the state that transition will end on. */
         public val targetState: S
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1786-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1821–1855)
-
 
         /**
          * Returns whether the provided state matches the [initialState] && the provided
@@ -5054,14 +5155,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             var transitionSpec: Segment<S>.() -> FiniteAnimationSpec<T>,
             var targetValueByState: (state: S) -> T,
         ) : State<T> {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1856-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1891–1925)
+
             fun updateAnimationStates(
                 segment: Segment<S>,
                 forcedInitialValue: T? = null,
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1821-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1856–1890)
-
                 forcedInitialVelocity: V? = null,
             ) {
                 val targetValue = targetValueByState(segment.targetState)
@@ -5094,14 +5195,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
          * [DeferredAnimation] allows the animation setup to be deferred until a later time after
          * composition. [animate] can be used to set up a [DeferredAnimation]. Like other Transition
          * animations such as [Transition.animateFloat], [DeferredAnimation] also expects
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1891-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1926–1960)
+
          * [transitionSpec] and [targetValueByState] for the mapping from target state to animation
          * spec and target value, respectively.
          */
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1856-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1891–1925)
-
         public fun animate(
             transitionSpec: Segment<S>.() -> FiniteAnimationSpec<T>,
             targetValueByState: (state: S) -> T,
@@ -5134,14 +5235,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                 data
                     ?: DeferredAnimationData(
                             TransitionAnimationState(
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1926-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1961–1995)
+
                                 targetValueByState(currentState),
                                 typeConverter.createZeroVectorFrom(
                                     targetValueByState(currentState)
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1891-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1926–1960)
-
                                 ),
                                 typeConverter,
                                 label,
@@ -5174,14 +5275,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     }
 
     internal fun removeAnimation(deferredAnimation: DeferredAnimation<*, *>) {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1961-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 1996–2030)
+
         deferredAnimation.data?.animation?.let { removeAnimation(it) }
     }
 }
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1926-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1961–1995)
-
 
 @PublishedApi
 internal class TransitionInstance<S>(
@@ -5214,13 +5315,13 @@ private const val NoReset = -1f
 // When the animation needs to be changed because of a target update
 private const val ResetNoSnap = -2f
 
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1996-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2031–2065)
+
 // When the animation should be reset to have the same start and end value
 private const val ResetAnimationSnap = -3f
-
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1961-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 1996–2030)
 
 // Snap to the current state and set the initial and target values to the same thing
 private const val ResetAnimationSnapCurrent = -4f
@@ -5254,14 +5355,14 @@ public fun <S, T, V : AnimationVector> Transition<S>.createDeferredAnimation(
 }
 
 /**
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2031-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2066–2100)
+
  * [createChildTransition] creates a child Transition based on the mapping between parent state to
  * child state provided in [transformToChildState]. This serves the following purposes:
  * 1) Hoist the child transition state into parent transition. Therefore the parent Transition will
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-1996-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2031–2065)
-
  *    be aware of whether there's any on-going animation due to the same target state change. This
  *    will further allow sequential animation to be set up when all animations have finished.
  * 2) Separation of concerns. The child transition can respresent a much more simplified state
@@ -5294,14 +5395,14 @@ public inline fun <S, T> Transition<S>.createChildTransition(
 internal fun <S, T> Transition<S>.createChildTransitionInternal(
     initialState: T,
     targetState: T,
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2066-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2101–2135)
+
     childLabel: String,
 ): Transition<T> {
     val transition =
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2031-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2066–2100)
-
         remember(this) {
             TransitionInstance(MutableTransitionState(initialState), this, childLabel)
         }
@@ -5334,51 +5435,8 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
  * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
  * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
  * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
- * [Transition] will start running again to ensure this animation reaches its new target smoothly.
- *
- * An optional [transitionSpec] can be provided to specify (potentially different) animation for
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2066-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2101–2135)
-
- * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
- * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
- * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
- * destinations.
- *
- * [label] is used to differentiate from other animations in the same transition in Android Studio.
- *
- * @return A [State] object, the value of which is updated by animation
- * @see updateTransition
- * @see rememberTransition
- * @see Transition.animateFloat
- * @see androidx.compose.animation.animateColor
- */
-@Composable
-public inline fun <S, T, V : AnimationVector> Transition<S>.animateValue(
-    typeConverter: TwoWayConverter<T, V>,
-    noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<T> = {
-        spring()
-    },
-    label: String = "ValueAnimation",
-    targetValueByState: @Composable (state: S) -> T,
-): State<T> {
-
-    val initialState =
-        if (!isSeeking) {
-            // For non-seeking use cases, we can avoid reading currentState frequently by querying
-            // it only once when initializing TransitionAnimation.
-            remember(this) { Snapshot.withoutReadObservation { currentState } }
-        } else {
-            currentState
-        }
-    val initialValue = targetValueByState(initialState)
-
-    // `targetState` is changed in composition in rememberTransition before consumed here. Due to
-    // b/393642162, this consumption will cause a 2nd recomposition, meaning this read will cause
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2101-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2101-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 211–245)
 
@@ -5422,6 +5480,49 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 2136–2170)
 
+ * [Transition] will start running again to ensure this animation reaches its new target smoothly.
+ *
+ * An optional [transitionSpec] can be provided to specify (potentially different) animation for
+ * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
+ * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
+ * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
+ * destinations.
+ *
+ * [label] is used to differentiate from other animations in the same transition in Android Studio.
+ *
+ * @return A [State] object, the value of which is updated by animation
+ * @see updateTransition
+ * @see rememberTransition
+ * @see Transition.animateFloat
+ * @see androidx.compose.animation.animateColor
+ */
+@Composable
+public inline fun <S, T, V : AnimationVector> Transition<S>.animateValue(
+    typeConverter: TwoWayConverter<T, V>,
+    noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<T> = {
+        spring()
+    },
+    label: String = "ValueAnimation",
+    targetValueByState: @Composable (state: S) -> T,
+): State<T> {
+
+    val initialState =
+        if (!isSeeking) {
+            // For non-seeking use cases, we can avoid reading currentState frequently by querying
+            // it only once when initializing TransitionAnimation.
+            remember(this) { Snapshot.withoutReadObservation { currentState } }
+        } else {
+            currentState
+        }
+    val initialValue = targetValueByState(initialState)
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2136-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2171–2205)
+
+
+    // `targetState` is changed in composition in rememberTransition before consumed here. Due to
+    // b/393642162, this consumption will cause a 2nd recomposition, meaning this read will cause
     // recomposition for both the first and second frame of the animation. As a temporary
     // workaround, `derivedStateOf` is added here to avoid recomposing when the state value is the
     // same.
@@ -5454,14 +5555,14 @@ internal fun <S, T, V : AnimationVector> Transition<S>.createTransitionAnimation
                 TransitionAnimationState(
                     initialValue,
                     typeConverter.createZeroVectorFrom(targetValue),
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2171-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2206–2240)
+
                     typeConverter,
                     label,
                 )
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2136-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2171–2205)
-
             }
         }
     UpdateInitialAndTargetValues(transitionAnimation, initialValue, targetValue, animationSpec)
@@ -5494,14 +5595,14 @@ private fun <S, T, V : AnimationVector> Transition<S>.UpdateInitialAndTargetValu
 // TODO: Remove noinline when b/174814083 is fixed.
 /**
  * Creates a Float animation as a part of the given [Transition]. This means the states of this
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2206-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2241–2275)
+
  * animation will be managed by the [Transition].
  *
  * [targetValueByState] is used as a mapping from a target state to the target value of this
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2171-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2206–2240)
-
  * animation. [Transition] will be using this mapping to determine what value to target this
  * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
  * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
@@ -5534,14 +5635,14 @@ public inline fun <S> Transition<S>.animateFloat(
 ): State<Float> = animateValue(Float.VectorConverter, transitionSpec, label, targetValueByState)
 
 /**
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2241-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2276–2310)
+
  * Creates a [Dp] animation as a part of the given [Transition]. This means the states of this
  * animation will be managed by the [Transition].
  *
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2206-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2241–2274)
-
  * [targetValueByState] is used as a mapping from a target state to the target value of this
  * animation. [Transition] will be using this mapping to determine what value to target this
  * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
@@ -5574,13 +5675,13 @@ public inline fun <S> Transition<S>.animateDp(
  *
  * [targetValueByState] is used as a mapping from a target state to the target value of this
  * animation. [Transition] will be using this mapping to determine what value to target this
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2276-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2311–2345)
+
  * animation towards. __Note__ that [targetValueByState] is a composable function. This means the
  * mapping function could access states, CompositionLocals, themes, etc. If the targetValue changes
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2241-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2275–2309)
-
  * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
  * [Transition] will start running again to ensure this animation reaches its new target smoothly.
  *
@@ -5614,13 +5715,13 @@ public inline fun <S> Transition<S>.animateOffset(
  * outside of a [Transition] run (i.e. when the [Transition] already reached its targetState), the
  * [Transition] will start running again to ensure this animation reaches its new target smoothly.
  *
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2311-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2346–2380)
+
  * An optional [transitionSpec] can be provided to specify (potentially different) animation for
  * each pair of initialState and targetState. [FiniteAnimationSpec] includes any non-infinite
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2275-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2310–2344)
-
  * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
  * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
  * destinations.
@@ -5654,13 +5755,13 @@ public inline fun <S> Transition<S>.animateSize(
  * animation, such as [tween], [spring], [keyframes] and even [repeatable], but not
  * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
  * destinations.
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2346-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2381–2415)
+
  *
  * [label] is used to differentiate from other animations in the same transition in Android Studio.
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2310-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2345–2379)
-
  *
  * @return A [State] object, the value of which is updated by animation
  */
@@ -5694,13 +5795,13 @@ public inline fun <S> Transition<S>.animateIntOffset(
  * [infiniteRepeatable]. By default, [transitionSpec] uses a [spring] animation for all transition
  * destinations.
  *
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2381-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2416–2450)
+
  * [label] is used to differentiate from other animations in the same transition in Android Studio.
  *
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2345-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2380–2414)
-
  * @return A [State] object, the value of which is updated by animation
  */
 @Composable
@@ -5734,13 +5835,13 @@ public inline fun <S> Transition<S>.animateInt(
  * @return A [State] object, the value of which is updated by animation
  */
 @Composable
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2416-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2451–2485)
+
 public inline fun <S> Transition<S>.animateIntSize(
     noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<IntSize> =
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2380-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2415–2449)
-
         {
             spring(visibilityThreshold = IntSize(1, 1))
         },
@@ -5774,17 +5875,8 @@ public inline fun <S> Transition<S>.animateRect(
     noinline transitionSpec: @Composable Transition.Segment<S>.() -> FiniteAnimationSpec<Rect> = {
         spring(visibilityThreshold = Rect.VisibilityThreshold)
     },
-    label: String = "RectAnimation",
-    targetValueByState: @Composable (state: S) -> Rect,
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2415-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 2450–2451)
-
-): State<Rect> = animateValue(Rect.VectorConverter, transitionSpec, label, targetValueByState)
-
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2450-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2451-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 246–280)
 
@@ -5825,6 +5917,15 @@ public class MutableTransitionState<S>(initialState: S) : TransitionState<S>() {
         internal set
 
 Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 2486–2489)
+
+    label: String = "RectAnimation",
+    targetValueByState: @Composable (state: S) -> Rect,
+): State<Rect> = animateValue(Rect.VectorConverter, transitionSpec, label, targetValueByState)
+
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-2486-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 281–315)
 
@@ -6015,19 +6116,33 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      */
     private var durationScale: Float = 0f
 
+    /**
+     * True when the next animation frame is the first frame following
+     * [waitForCompositionAfterTargetStateChange], so that main-thread time spent composing and
+     * laying out the new target state does not advance the animation by multiple frames at once.
+     */
+    private var isFirstFrameAfterTargetStateComposition: Boolean = false
+
     /** Lambda instance used for animating a single frame within [withFrameNanos]. */
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 421–455)
+
     private val animateOneFrameLambda: (Long) -> Unit = { frameTimeNanos ->
-        val delta =
+        val rawDelta =
             if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
                 0L
             } else {
                 frameTimeNanos - lastFrameTimeNanos
             }
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 421–455)
-
+        val delta =
+            if (isFirstFrameAfterTargetStateComposition) {
+                isFirstFrameAfterTargetStateComposition = false
+                rawDelta.coerceAtMost(MaxFirstFrameDeltaNanos)
+            } else {
+                rawDelta
+            }
         lastFrameTimeNanos = frameTimeNanos
         val deltaPlayTimeNanos =
             if (durationScale <= 0f || durationScale.isNaN()) {
@@ -6049,6 +6164,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         if (currentAnimation != null) {
             currentAnimation.durationNanos = totalDurationNanos
             recalculateAnimationValue(currentAnimation, deltaPlayTimeNanos)
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 456–490)
+
             fraction = currentAnimation.value
             if (currentAnimation.value == 1f) {
                 this@SeekableTransitionState.currentAnimation = null // all done!
@@ -6063,11 +6183,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     private fun endAllAnimations() {
         transition?.clearInitialAnimations()
         initialValueAnimations.clear()
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 456–490)
-
         val current = currentAnimation
         if (current != null) {
             currentAnimation = null
@@ -6089,8 +6204,14 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         }
         val durationScale = coroutineContext.durationScale
         if (durationScale <= 0f || durationScale.isNaN()) {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 491–525)
+
             endAllAnimations()
             lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+            isFirstFrameAfterTargetStateComposition = false
             return
         }
         if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
@@ -6101,12 +6222,8 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             animateOneFrame()
         }
         lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+        isFirstFrameAfterTargetStateComposition = false
     }
-
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 491–525)
 
     /**
      * Does one frame of work. If there is no previous animation, then it will capture the
@@ -6127,6 +6244,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         if (durationScale <= 0f || durationScale.isNaN()) {
             endAllAnimations()
         } else {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 526–560)
+
             this@SeekableTransitionState.durationScale = durationScale
             if (lastFrameTimeNanos == AnimationConstants.UnspecifiedTime) {
                 withFrameNanos(firstFrameLambda)
@@ -6143,11 +6265,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      */
     private fun recalculateAnimationValue(
         animation: SeekingAnimationState,
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 526–560)
-
         deltaPlayTimeNanos: Long,
     ) {
         val playTimeNanos = animation.progressNanos + deltaPlayTimeNanos
@@ -6167,6 +6284,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                             animation.initialVelocity ?: ZeroVelocity,
                         )[0]
                 } else {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 561–595)
+
                     lerp(animation.start[0], 1f, playTimeNanos.toFloat() / durationNanos)
                 }
             animation.value = if (newValue.isNaN()) 1f else newValue.coerceIn(0f, 1f)
@@ -6183,11 +6305,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      * between any fraction between [currentState] and [targetState], while [snapTo] moves all state
      * to [targetState] without any further seeking allowed.
      *
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 561–595)
-
      * @sample androidx.compose.animation.core.samples.SnapToSample
      * @see animateTo
      */
@@ -6201,11 +6318,17 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         mutatorMutex.mutate {
             endAllAnimations()
             lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+            isFirstFrameAfterTargetStateComposition = false
             fraction = 0f
             val fraction =
                 when (targetState) {
                     currentState -> ResetAnimationSnapCurrent
                     this@SeekableTransitionState.targetState -> ResetAnimationSnapTarget
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 596–630)
+
                     else -> ResetAnimationSnap
                 }
             transition.updateTarget(targetState)
@@ -6222,11 +6345,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             transition.onTransitionEnd()
         }
     }
-
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 596–630)
 
     /**
      * Starts seeking the transition to [targetState] with [fraction] used to indicate the progress
@@ -6246,6 +6364,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     public suspend fun seekTo(
         @FloatRange(from = 0.0, to = 1.0) fraction: Float,
         targetState: S = this.targetState,
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 631–665)
+
     ) {
         requirePrecondition(fraction in 0f..1f) {
             "Expecting fraction between 0 and 1. Got $fraction"
@@ -6263,11 +6386,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     }
                 }
                 if (targetState != oldTargetState) {
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 631–665)
-
                     // Change the target _and_ the fraction
                     transition.updateTarget(targetState)
                     transition.playTimeNanos = 0L
@@ -6279,12 +6397,18 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     launch { runAnimations() }
                 } else {
                     lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+                    isFirstFrameAfterTargetStateComposition = false
                 }
                 waitForCompositionAfterTargetStateChange()
                 seekToFraction()
             }
         }
     }
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 666–700)
+
 
     /** Wait for composition to set up the target values */
     private suspend fun waitForCompositionAfterTargetStateChange() {
@@ -6303,11 +6427,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     "snapTo() was canceled because state was changed to " +
                         "$state instead of $expectedState"
                 )
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 666–700)
-
             }
         }
     }
@@ -6325,6 +6444,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         }
         if (state != expectedState) {
             lastFrameTimeNanos = AnimationConstants.UnspecifiedTime
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 701–735)
+
             throw CancellationException("targetState while waiting for composition")
         }
     }
@@ -6343,11 +6467,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                         it.durationNanos = totalDurationNanos
                         it.animationSpecDuration =
                             (totalDurationNanos * (1.0 - fraction)).roundToLong()
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 701–735)
-
                         it.start[0] = fraction
                     }
                 }
@@ -6365,26 +6484,8 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
      * animation is continued. If a previous transition was interrupted, [currentState] is changed
      * to the former `targetState` and the start values are animated toward the former
      * `targetState`.
-     *
-     * Upon completion of the animation, [currentState] will be changed to [targetState].
-     *
-     * @param targetState The state to animate towards.
-     * @param animationSpec If provided, is used to animate the animation fraction. If `null`, the
-     *   transition is linearly traversed based on the duration of the transition.
-     */
-    @Suppress("DocumentExceptions")
-    public suspend fun animateTo(
-        targetState: S = this.targetState,
-        animationSpec: FiniteAnimationSpec<Float>? = null,
-    ) {
-        val transition = transition ?: return
-        mutatorMutex.mutate {
-            coroutineScope {
-                val oldTargetState = this@SeekableTransitionState.targetState
-                if (targetState != oldTargetState) {
-                    moveAnimationToInitialState()
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
 
 ## androidx.compose.animation.core Transition.kt source (lines 71–105)
 
@@ -6428,6 +6529,24 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
 ## androidx.compose.animation.core Transition.kt source (lines 736–770)
 
+     *
+     * Upon completion of the animation, [currentState] will be changed to [targetState].
+     *
+     * @param targetState The state to animate towards.
+     * @param animationSpec If provided, is used to animate the animation fraction. If `null`, the
+     *   transition is linearly traversed based on the duration of the transition.
+     */
+    @Suppress("DocumentExceptions")
+    public suspend fun animateTo(
+        targetState: S = this.targetState,
+        animationSpec: FiniteAnimationSpec<Float>? = null,
+    ) {
+        val transition = transition ?: return
+        mutatorMutex.mutate {
+            coroutineScope {
+                val oldTargetState = this@SeekableTransitionState.targetState
+                if (targetState != oldTargetState) {
+                    moveAnimationToInitialState()
                     fraction = 0f
                     transition.updateTarget(targetState)
                     transition.playTimeNanos = 0L
@@ -6438,9 +6557,22 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     composedTargetState
                 }
                 if (targetState != composedTargetState) {
+                    val wasRunning = lastFrameTimeNanos != AnimationConstants.UnspecifiedTime
                     doOneFrame() // We have to wait a frame for the composition, so continue
                     // Now we shouldn't skip a frame while waiting for composition
                     waitForCompositionAfterTargetStateChange()
+                    @OptIn(ExperimentalAnimationCoreApi::class)
+                    if (
+                        ComposeAnimationCoreFlags
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 771–805)
+
+                            .isSeekableTransitionStateStartAfterLayoutEnabled && !wasRunning
+                    ) {
+                        isFirstFrameAfterTargetStateComposition = true
+                    }
                 }
                 if (currentState != targetState) {
                     if (fraction < 1f) {
@@ -6463,11 +6595,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                                 runningAnimation == null || runningAnimation.progressNanos == 0L
                             ) {
                                 oldVelocity = ZeroVelocity
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 771–805)
-
                             } else {
                                 val oldDurationNanos = runningAnimation.durationNanos
                                 val oldDuration =
@@ -6477,6 +6604,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                                         oldDurationNanos
                                     } / (1000f * MillisToNanos)
                                 if (oldDuration <= 0L) {
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 806–840)
+
                                     oldVelocity = ZeroVelocity
                                 } else {
                                     oldVelocity = AnimationVector1D(1f / oldDuration)
@@ -6503,11 +6635,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                     currentState = targetState
                     fraction = 0f
                     transition.onTransitionEnd()
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 806–840)
-
                     waitForComposition()
                 }
             }
@@ -6517,6 +6644,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
     override fun transitionConfigured(transition: Transition<S>) {
         checkPrecondition(this.transition == null || transition == this.transition) {
             "An instance of SeekableTransitionState has been used in different Transitions. " +
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 841–875)
+
                 "Previous instance: ${this.transition}, new instance: $transition"
         }
         this.transition = transition
@@ -6543,11 +6675,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             if (animation != null) {
                 if (animation.progressNanos > totalDurationNanos) {
                     endAllAnimations()
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 841–875)
-
                 } else {
                     animation.durationNanos = totalDurationNanos
                     if (animation.animationSpec == null) {
@@ -6557,6 +6684,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
                 }
             } else if (totalDurationNanos != 0L) {
                 // seekTo() called with a fraction. If an animation is running, we can just wait
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-841-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 876–910)
+
                 // for the animation to change the value. The fraction may not be the best way
                 // to advance a regular animation.
                 seekToFraction()
@@ -6583,11 +6715,6 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         // duration of durationNanos
         var animationSpec: VectorizedAnimationSpec<AnimationVector1D>? = null
 
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-841-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 876–910)
-
         // Used by initial value animations to mark when the animation should continue
         var isComplete = false
 
@@ -6596,6 +6723,11 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
 
         // The start value of the animation
         var start: AnimationVector1D = AnimationVector1D(0f)
+
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-876-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 911–945)
 
         // The initial velocity of the animation
         var initialVelocity: AnimationVector1D? = null
@@ -6624,14 +6756,19 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
         // AnimationVector1D with 1 value, used as the target value of 1f
         val Target1 = AnimationVector1D(1f)
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-876-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 911–945)
-
+        // Maximum frame delta (1/60s in nanoseconds, ~16.67ms) allowed on the first frame after
+        // composing and laying out a new target state when starting from idle, preventing expensive
+        // first-frame composition/layout from skipping initial animation frames.
+        private const val MaxFirstFrameDeltaNanos = 16_666_667L
     }
 }
 
 /**
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-911-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 946–980)
+
  * Creates a [Transition] and puts it in the [currentState][TransitionState.currentState] of the
  * provided [transitionState]. If the [TransitionState.targetState] changes, the [Transition] will
  * change where it will animate to.
@@ -6663,15 +6800,15 @@ public fun <T> rememberTransition(
             // Tracked at b/392921611. Until this is fixed, we need to explicitly disable state
             // observation in remember.
             Snapshot.withoutReadObservation {
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-911-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 946–980)
-
                 if (transitionState is DeferredTransitionState) {
                     DeferredTransition(transitionState, label)
                 } else {
                     TransitionInstance(transitionState, label)
+
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-946-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+
+## androidx.compose.animation.core Transition.kt source (lines 981–1015)
+
                 }
             }
         }
@@ -6689,59 +6826,23 @@ Sources: [live-androidx-animation-animation-core-animation-core-transition-lines
             transitionState.snapshotStateObserver = snapshotStateObserver
             onDispose { transitionState.snapshotStateObserver = null }
         }
-        LaunchedEffect(transitionState.currentState, transitionState.targetState) {
+        val targetState = transitionState.targetState
+        LaunchedEffect(transitionState.currentState, targetState) {
             transitionState.observeTotalDuration()
             transitionState.compositionContinuationMutex.withLock {
-                transitionState.composedTargetState = transitionState.targetState
-                transitionState.compositionContinuation?.resume(transitionState.targetState)
-                transitionState.compositionContinuation = null
+                @OptIn(ExperimentalAnimationCoreApi::class)
+                if (
+                    !ComposeAnimationCoreFlags.isSeekableTransitionStateStartAfterLayoutEnabled ||
+                        targetState == transitionState.targetState
+                ) {
+                    transitionState.composedTargetState = transitionState.targetState
+                    transitionState.compositionContinuation?.resume(transitionState.targetState)
+                    transitionState.compositionContinuation = null
+                }
             }
         }
     } else {
         transition.animateTo(transitionState.targetState)
         if (transitionState is DeferredTransitionState) {
-            transition.updatePendingTarget(transitionState.pendingTargetState)
-        }
-    }
 
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-946-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
-
-## androidx.compose.animation.core Transition.kt source (lines 981–1015)
-
-    DisposableEffect(transition) {
-        onDispose {
-            // Clean up on the way out, to ensure the observers are not stuck in an in-between
-            // state.
-            transition.onDisposed()
-        }
-    }
-    return transition
-}
-
-/**
- * Creates a [Transition] and puts it in the [currentState][MutableTransitionState.currentState] of
- * the provided [transitionState]. Whenever the [targetState][MutableTransitionState.targetState] of
- * the [transitionState] changes, the [Transition] will animate to the new target state.
- *
- * __Remember__: The provided [transitionState] needs to be [remember]ed.
- *
- * Compared to the [rememberTransition] variant that takes a targetState, this function supports a
- * different initial state than the first targetState. Here is an example:
- *
- * @sample androidx.compose.animation.core.samples.InitialStateSample
- *
- * In most cases, it is recommended to reuse the same [transitionState] that is [remember]ed, such
- * that [Transition] preserves continuity when [targetState][MutableTransitionState.targetState] is
- * changed. However, in some rare cases it is more critical to immediately *snap* to a state change
- * (e.g. in response to a user interaction). This can be achieved by creating a new
- * [transitionState]:
- *
- * @sample androidx.compose.animation.core.samples.DoubleTapToLikeSample
- */
-@Deprecated(
-    "Use rememberTransition() instead",
-    replaceWith = ReplaceWith("rememberTransition(transitionState, label)"),
-)
-@Composable
-
-Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-981-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)
+Sources: [live-androidx-animation-animation-core-animation-core-transition-lines-981-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Transition.kt)

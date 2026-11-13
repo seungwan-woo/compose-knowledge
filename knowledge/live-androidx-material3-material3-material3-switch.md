@@ -8,12 +8,12 @@ tags:
 sources:
   - id: live-androidx-material3-material3-material3-switch-lines-1-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
     startLine: 1
     endLine: 35
-    sha256: f339a8f6858f0378199b4a659fd13dd4dc8cd1c074f97dd0e70db647c26e36c2
+    sha256: eeec5021ea842542a989892e7cf69b6b3de8a1bf69ff0ac63d9f865cbff23b1a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
       /*
@@ -37,30 +37,45 @@ sources:
       import androidx.compose.animation.core.Animatable
       import androidx.compose.animation.core.AnimationVector1D
       import androidx.compose.animation.core.FiniteAnimationSpec
-      import androidx.compose.animation.core.SnapSpec
       import androidx.compose.foundation.background
       import androidx.compose.foundation.border
+      import androidx.compose.foundation.gestures.AnchoredDraggableDefaults
+      import androidx.compose.foundation.gestures.AnchoredDraggableState
+      import androidx.compose.foundation.gestures.DraggableAnchors
+      import androidx.compose.foundation.gestures.Orientation
+      import androidx.compose.foundation.gestures.anchoredDraggable
+      import androidx.compose.foundation.gestures.animateTo
       import androidx.compose.foundation.indication
+      import androidx.compose.foundation.interaction.DragInteraction
       import androidx.compose.foundation.interaction.Interaction
       import androidx.compose.foundation.interaction.InteractionSource
       import androidx.compose.foundation.interaction.MutableInteractionSource
       import androidx.compose.foundation.interaction.PressInteraction
-      import androidx.compose.foundation.layout.Box
-      import androidx.compose.foundation.layout.requiredSize
-      import androidx.compose.foundation.layout.wrapContentSize
-      import androidx.compose.foundation.selection.toggleable
-      import androidx.compose.material3.tokens.MotionSchemeKeyTokens
-      import androidx.compose.material3.tokens.SwitchTokens
   - id: live-androidx-material3-material3-material3-switch-lines-106-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
     startLine: 106
     endLine: 140
-    sha256: 692f172bdd35f0dd3487ae361239586209ce70f8fd1764306ab289f2a89826a5
+    sha256: e6fca60c01a1648f4ed459bccaab2afe9cbb7a7fc3a74562e1751d223f4fe781
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+    excerpt: |-
+      @Suppress("ComposableLambdaParameterNaming", "ComposableLambdaParameterPosition")
+      public fun Switch(
+          checked: Boolean,
+          onCheckedChange: ((Boolean) -> Unit)?,
+          modifier: Modifier = Modifier,
+          thumbContent: (@Composable () -> Unit)? = null,
+          enabled: Boolean = true,
+          colors: SwitchColors = SwitchDefaults.colors(),
+          interactionSource: MutableInteractionSource? = null,
+      ) {
+          SwitchImpl(
+              modifier = modifier,
+              onCheckedChange = onCheckedChange,
+              checked = checked,
+              enabled = enabled,
               thumbContent = thumbContent,
               thumbShape = SwitchTokens.HandleShape.value,
               trackShape = SwitchTokens.TrackShape.value,
@@ -81,6 +96,16 @@ sources:
           enabled: Boolean,
           thumbContent: (@Composable () -> Unit)?,
           thumbShape: Shape,
+  - id: live-androidx-material3-material3-material3-switch-lines-141-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 141
+    endLine: 175
+    sha256: c482e3d46cc27ae60243c6b9ddcf001e577991660b1a57808c4a88302b37b865
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           trackShape: Shape,
           thumbColor: Color,
           iconColor: Color,
@@ -91,21 +116,52 @@ sources:
           @Suppress("NAME_SHADOWING")
           val interactionSource = interactionSource ?: remember { MutableInteractionSource() }
 
-          // TODO: Add Swipeable modifier b/223797571
+          // TODO Load the motionScheme tokens from the component tokens file
+          val animationSpec = MotionSchemeKeyTokens.FastSpatial.value<Float>()
+          val thumbTravelPx = with(LocalDensity.current) { (SwitchWidth - SwitchHeight).toPx() }
+          var forceAnimationCheck by remember { mutableStateOf(false) }
+          val anchoredDraggableState =
+              remember(thumbTravelPx) {
+                  AnchoredDraggableState(
+                      initialValue = checked,
+                      anchors =
+                          DraggableAnchors {
+                              false at 0f
+                              true at thumbTravelPx
+                          },
+                  )
+              }
+          val currentOnCheckedChange by rememberUpdatedState(onCheckedChange)
+          val currentChecked by rememberUpdatedState(checked)
+          LaunchedEffect(anchoredDraggableState) {
+              snapshotFlow { anchoredDraggableState.settledValue }
+                  .collectLatest { newValue ->
+                      if (currentChecked != newValue) {
+                          currentOnCheckedChange?.invoke(newValue)
+                          forceAnimationCheck = !forceAnimationCheck
+                      }
+                  }
+  - id: live-androidx-material3-material3-material3-switch-lines-176-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 176
+    endLine: 210
+    sha256: ddecf46f2fb5acbe9c2ceebf2a2f07db7bbe291ef5e1c302b82c622956ad84cc
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          }
+          LaunchedEffect(checked, forceAnimationCheck) {
+              if (checked != anchoredDraggableState.settledValue) {
+                  anchoredDraggableState.animateTo(checked, animationSpec)
+              }
+          }
+
           val toggleableModifier =
               if (onCheckedChange != null) {
                   Modifier.minimumInteractiveComponentSize()
                       .toggleable(
-  - id: live-androidx-material3-material3-material3-switch-lines-141-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 141
-    endLine: 175
-    sha256: b557fe0eac0413aa716fe320a6baf0d46b497f41fc14340d1b92d7aae0785449
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                           value = checked,
                           onValueChange = onCheckedChange,
                           enabled = enabled,
@@ -113,6 +169,33 @@ sources:
                           interactionSource = interactionSource,
                           indication = null,
                       )
+              } else {
+                  Modifier
+              }
+
+          val dragModifier =
+              if (onCheckedChange != null) {
+                  Modifier.anchoredDraggable(
+                      state = anchoredDraggableState,
+                      orientation = Orientation.Horizontal,
+                      enabled = enabled,
+                      interactionSource = interactionSource,
+                      flingBehavior =
+                          AnchoredDraggableDefaults.flingBehavior(
+                              state = anchoredDraggableState,
+                              animationSpec = animationSpec,
+                          ),
+                  )
+  - id: live-androidx-material3-material3-material3-switch-lines-211-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 211
+    endLine: 245
+    sha256: a0a56e0c4b7b6a3339a877994e7ea2cffe37fad27cf5d85db7c37c7d34095560
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               } else {
                   Modifier
               }
@@ -139,31 +222,32 @@ sources:
           Box(
               modifier
                   .then(toggleableModifier)
+                  .then(dragModifier)
                   .wrapContentSize(Alignment.Center)
                   .requiredSize(SwitchWidth, SwitchHeight)
-  - id: live-androidx-material3-material3-material3-switch-lines-176-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 176
-    endLine: 210
-    sha256: 605809de62fe5c90d4e085113816eb14d8fff7f2df1eedc085e6dc46a6a6b62d
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   .border(TrackOutlineWidth, borderColor, trackShape)
                   .background(trackColor, trackShape)
                   .then(focusRingModifier)
           ) {
               Box(
                   modifier =
+  - id: live-androidx-material3-material3-material3-switch-lines-246-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 246
+    endLine: 280
+    sha256: 9303f0a4bcbe32bc12857809a4a25422b05ffdeb42e0f7d9e7682cba18ea46c3
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       Modifier.align(Alignment.CenterStart)
                           .then(
                               ThumbElement(
                                   interactionSource = interactionSource,
                                   checked = checked,
-                                  // TODO Load the motionScheme tokens from the component tokens file
-                                  animationSpec = MotionSchemeKeyTokens.FastSpatial.value(),
+                                  anchoredDraggableState = anchoredDraggableState,
+                                  animationSpec = animationSpec,
                               )
                           )
                           .indication(
@@ -186,31 +270,38 @@ sources:
                   }
               }
           }
-  - id: live-androidx-material3-material3-material3-switch-lines-211-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 211
-    endLine: 245
-    sha256: 2e4df5263564fc8f90e588a34cc0b41bf02da26641c6b5c94fadc6dedb574132
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
       }
 
       private data class ThumbElement(
           val interactionSource: InteractionSource,
           val checked: Boolean,
+          val anchoredDraggableState: AnchoredDraggableState<Boolean>,
+  - id: live-androidx-material3-material3-material3-switch-lines-281-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 281
+    endLine: 315
+    sha256: 2cf7a5e0a3244a163a78aecc7008a1c8d5ab160ef861d09dde0d5f7f05ea49a9
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
           val animationSpec: FiniteAnimationSpec<Float>,
       ) : ModifierNodeElement<ThumbNode>() {
-          override fun create() = ThumbNode(interactionSource, checked, animationSpec)
+          override fun create() =
+              ThumbNode(interactionSource, checked, anchoredDraggableState, animationSpec)
 
           override fun update(node: ThumbNode) {
+              val interactionSourceChanged = node.interactionSource != interactionSource
               node.interactionSource = interactionSource
-              if (node.checked != checked) {
+              if (interactionSourceChanged) {
+                  node.restartInteractionCollection()
+              }
+              if (node.checked != checked || node.anchoredDraggableState != anchoredDraggableState) {
                   node.invalidateMeasurement()
               }
               node.checked = checked
+              node.anchoredDraggableState = anchoredDraggableState
               node.animationSpec = animationSpec
               node.update()
           }
@@ -226,40 +317,70 @@ sources:
       private class ThumbNode(
           var interactionSource: InteractionSource,
           var checked: Boolean,
+          var anchoredDraggableState: AnchoredDraggableState<Boolean>,
           var animationSpec: FiniteAnimationSpec<Float>,
       ) : Modifier.Node(), LayoutModifierNode {
-
-          override val shouldAutoInvalidate: Boolean
-              get() = false
-  - id: live-androidx-material3-material3-material3-switch-lines-246-source
+  - id: live-androidx-material3-material3-material3-switch-lines-316-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 246
-    endLine: 280
-    sha256: a60cb1f3a863af560fc10a7dccc2cbdab41f275ea17b931cf213f60f4c9fab1d
+    startLine: 316
+    endLine: 350
+    sha256: 84a91f4883fd679748a9cf64f50e22637ec07228c6eea1d101ec0db62d15c7c2
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-      
+          override val shouldAutoInvalidate: Boolean
+              get() = false
+
           private var isPressed = false
-          private var offsetAnim: Animatable<Float, AnimationVector1D>? = null
+          private var isDragged = false
+          private var interactionCollectionJob: Job? = null
           private var sizeAnim: Animatable<Float, AnimationVector1D>? = null
-          private var initialOffset: Float = Float.NaN
           private var initialSize: Float = Float.NaN
 
           override fun onAttach() {
-              coroutineScope.launch {
+              restartInteractionCollection()
+          }
+
+          override fun onDetach() {
+              super.onDetach()
+              isPressed = false
+              isDragged = false
+          }
+
+          fun restartInteractionCollection() {
+              interactionCollectionJob?.cancel()
+              isPressed = false
+              isDragged = false
+              if (!isAttached) return
+              interactionCollectionJob = coroutineScope.launch {
                   var pressCount = 0
+                  var dragCount = 0
                   interactionSource.interactions.collect { interaction ->
                       when (interaction) {
                           is PressInteraction.Press -> pressCount++
                           is PressInteraction.Release -> pressCount--
                           is PressInteraction.Cancel -> pressCount--
+                          is DragInteraction.Start -> dragCount++
+                          is DragInteraction.Stop -> dragCount--
+                          is DragInteraction.Cancel -> dragCount--
+  - id: live-androidx-material3-material3-material3-switch-lines-351-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 351
+    endLine: 385
+    sha256: 6a7e8d936207b92a2a1443e143ab2d913fa8f497adac121f9e349cb83fa76dc3
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       }
                       val pressed = pressCount > 0
-                      if (isPressed != pressed) {
+                      val dragged = dragCount > 0
+                      if (isPressed != pressed || isDragged != dragged) {
                           isPressed = pressed
+                          isDragged = dragged
                           invalidateMeasurement()
                       }
                   }
@@ -268,24 +389,14 @@ sources:
 
           override fun onReset() {
               super.onReset()
-              offsetAnim = null
               sizeAnim = null
               initialSize = Float.NaN
-              initialOffset = Float.NaN
+              isPressed = false
+              isDragged = false
           }
 
           override fun MeasureScope.measure(
               measurable: Measurable,
-  - id: live-androidx-material3-material3-material3-switch-lines-281-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 281
-    endLine: 315
-    sha256: c7125d7716aadcb75663aa219f931cb2d243c50c9b1a28bedca3747e6ac326e0
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               constraints: Constraints,
           ): MeasureResult {
               val hasContent =
@@ -293,54 +404,93 @@ sources:
                       measurable.maxIntrinsicWidth(constraints.maxHeight) != 0
               val size =
                   when {
-                      isPressed -> SwitchTokens.PressedHandleWidth
+                      isPressed || isDragged -> SwitchTokens.PressedHandleWidth
                       hasContent || checked -> ThumbDiameter
                       else -> UncheckedThumbDiameter
                   }.toPx()
 
-              val actualSize = (sizeAnim?.value ?: size).toInt()
-              val placeable = measurable.measure(Constraints.fixed(actualSize, actualSize))
-              val thumbPaddingStart = (SwitchHeight - size.toDp()) / 2f
-              val minBound = thumbPaddingStart.toPx()
-              val thumbPathLength = (SwitchWidth - ThumbDiameter) - ThumbPadding
-              val maxBound = thumbPathLength.toPx()
-              val offset =
-                  when {
-                      isPressed && checked -> maxBound - TrackOutlineWidth.toPx()
-                      isPressed && !checked -> TrackOutlineWidth.toPx()
-                      checked -> maxBound
-                      else -> minBound
-                  }
-
-              if (sizeAnim?.targetValue != size) {
-                  coroutineScope.launch {
-                      sizeAnim?.animateTo(size, if (isPressed) SnapSpec else animationSpec)
-                  }
-              }
-
-              if (offsetAnim?.targetValue != offset) {
-                  coroutineScope.launch {
-                      offsetAnim?.animateTo(offset, if (isPressed) SnapSpec else animationSpec)
-  - id: live-androidx-material3-material3-material3-switch-lines-316-source
+              if (sizeAnim == null && !initialSize.isNaN()) {
+  - id: live-androidx-material3-material3-material3-switch-lines-36-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 316
-    endLine: 350
-    sha256: 57fbe6e53a60eec5fd1bcf417811d33f2278bd7fd2859314f77cb15e7ff65e7c
+    startLine: 36
+    endLine: 70
+    sha256: cd07fdf1b11be6e94ced1ed010cb7672bb048695fa5929b5f4c4248404d7f0e4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      import androidx.compose.foundation.layout.Box
+      import androidx.compose.foundation.layout.requiredSize
+      import androidx.compose.foundation.layout.wrapContentSize
+      import androidx.compose.foundation.selection.toggleable
+      import androidx.compose.material3.tokens.MotionSchemeKeyTokens
+      import androidx.compose.material3.tokens.SwitchTokens
+      import androidx.compose.material3.tokens.SwitchTokens.TrackOutlineWidth
+      import androidx.compose.runtime.Composable
+      import androidx.compose.runtime.CompositionLocalProvider
+      import androidx.compose.runtime.Immutable
+      import androidx.compose.runtime.LaunchedEffect
+      import androidx.compose.runtime.Stable
+      import androidx.compose.runtime.getValue
+      import androidx.compose.runtime.mutableStateOf
+      import androidx.compose.runtime.remember
+      import androidx.compose.runtime.rememberUpdatedState
+      import androidx.compose.runtime.setValue
+      import androidx.compose.runtime.snapshotFlow
+      import androidx.compose.ui.Alignment
+      import androidx.compose.ui.Modifier
+      import androidx.compose.ui.graphics.Color
+      import androidx.compose.ui.graphics.Shape
+      import androidx.compose.ui.graphics.compositeOver
+      import androidx.compose.ui.graphics.takeOrElse
+      import androidx.compose.ui.layout.Measurable
+      import androidx.compose.ui.layout.MeasureResult
+      import androidx.compose.ui.layout.MeasureScope
+      import androidx.compose.ui.node.LayoutModifierNode
+      import androidx.compose.ui.node.ModifierNodeElement
+      import androidx.compose.ui.node.invalidateMeasurement
+      import androidx.compose.ui.platform.InspectorInfo
+      import androidx.compose.ui.platform.LocalDensity
+      import androidx.compose.ui.semantics.Role
+      import androidx.compose.ui.unit.Constraints
+      import androidx.compose.ui.unit.Dp
+  - id: live-androidx-material3-material3-material3-switch-lines-386-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 386
+    endLine: 420
+    sha256: aab027ae4e1e426e208c56392f9b14f59e2a7f31be16d4e3102afd4feb7ce522
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                  }
+                  sizeAnim = Animatable(initialSize)
+              }
+              val actualSize = (sizeAnim?.value ?: size).toInt().coerceAtLeast(0)
+              val placeable = measurable.measure(Constraints.fixed(actualSize, actualSize))
+
+              if (sizeAnim?.targetValue != size) {
+                  coroutineScope.launch { sizeAnim?.animateTo(size, animationSpec) }
               }
 
-              if (initialSize.isNaN() && initialOffset.isNaN()) {
+              if (initialSize.isNaN()) {
                   initialSize = size
-                  initialOffset = offset
               }
+
+              val minCenterX = (SwitchHeight / 2f).toPx()
+              val fallbackTravel = (SwitchWidth - SwitchHeight).toPx()
 
               return layout(actualSize, actualSize) {
-                  placeable.placeRelative(offsetAnim?.value?.toInt() ?: offset.toInt(), 0)
+                  val dragOffset =
+                      if (!anchoredDraggableState.offset.isNaN()) {
+                          anchoredDraggableState.offset
+                      } else {
+                          if (checked) fallbackTravel else 0f
+                      }
+                  val currentThumbSize = sizeAnim?.value ?: size
+                  val leftOffset = minCenterX + dragOffset - currentThumbSize / 2f
+                  placeable.placeRelative(leftOffset.toInt(), 0)
               }
           }
 
@@ -348,11 +498,19 @@ sources:
               if (sizeAnim == null && !initialSize.isNaN()) {
                   sizeAnim = Animatable(initialSize)
               }
-
-              if (offsetAnim == null && !initialOffset.isNaN()) offsetAnim = Animatable(initialOffset)
           }
       }
-
+  - id: live-androidx-material3-material3-material3-switch-lines-421-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 421
+    endLine: 455
+    sha256: bc53e3621fb2d6db1cb151b0f4b0885c7ac7e2bb84787bb618e354dfa2d2cadf
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      
       /** Contains the default values used by [Switch] */
       public object SwitchDefaults {
           /**
@@ -366,16 +524,6 @@ sources:
            * states.
            *
            * @param checkedThumbColor the color used for the thumb when enabled and checked
-  - id: live-androidx-material3-material3-material3-switch-lines-351-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 351
-    endLine: 378
-    sha256: 6427fce4814e747938c8586da848aef5f6cccaf99c3c1b5d581cde35488f085c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            * @param checkedTrackColor the color used for the track when enabled and checked
            * @param checkedBorderColor the color used for the border when enabled and checked
            * @param checkedIconColor the color used for the icon when enabled and checked
@@ -397,6 +545,16 @@ sources:
               checkedThumbColor: Color = SwitchTokens.SelectedHandleColor.value,
               checkedTrackColor: Color = SwitchTokens.SelectedTrackColor.value,
               checkedBorderColor: Color = Color.Transparent,
+  - id: live-androidx-material3-material3-material3-switch-lines-456-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 456
+    endLine: 490
+    sha256: 688c4fbe891ebcbbfc8ef73dde00459f31f44c3f5c689ce8428a8316fec9559e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               checkedIconColor: Color = SwitchTokens.SelectedIconColor.value,
               uncheckedThumbColor: Color = SwitchTokens.UnselectedHandleColor.value,
               uncheckedTrackColor: Color = SwitchTokens.UnselectedTrackColor.value,
@@ -404,61 +562,6 @@ sources:
               uncheckedIconColor: Color = SwitchTokens.UnselectedIconColor.value,
               disabledCheckedThumbColor: Color =
                   SwitchTokens.DisabledSelectedHandleColor.value
-  - id: live-androidx-material3-material3-material3-switch-lines-36-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 36
-    endLine: 70
-    sha256: 67c03616a54d7e57240d242e673afc859ef17e9eec4b52e31c82eeaf53a7fd46
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
-      import androidx.compose.material3.tokens.SwitchTokens.TrackOutlineWidth
-      import androidx.compose.runtime.Composable
-      import androidx.compose.runtime.CompositionLocalProvider
-      import androidx.compose.runtime.Immutable
-      import androidx.compose.runtime.Stable
-      import androidx.compose.runtime.remember
-      import androidx.compose.ui.Alignment
-      import androidx.compose.ui.Modifier
-      import androidx.compose.ui.graphics.Color
-      import androidx.compose.ui.graphics.Shape
-      import androidx.compose.ui.graphics.compositeOver
-      import androidx.compose.ui.graphics.takeOrElse
-      import androidx.compose.ui.layout.Measurable
-      import androidx.compose.ui.layout.MeasureResult
-      import androidx.compose.ui.layout.MeasureScope
-      import androidx.compose.ui.node.LayoutModifierNode
-      import androidx.compose.ui.node.ModifierNodeElement
-      import androidx.compose.ui.node.invalidateMeasurement
-      import androidx.compose.ui.platform.InspectorInfo
-      import androidx.compose.ui.semantics.Role
-      import androidx.compose.ui.unit.Constraints
-      import androidx.compose.ui.unit.Dp
-      import androidx.compose.ui.unit.dp
-      import kotlinx.coroutines.launch
-
-      /**
-       * [Material Design switch](https://m3.material.io/components/switch)
-       *
-       * Switches toggle the state of a single item on or off.
-       *
-       * ![Switch
-       * image](https://developer.android.com/images/reference/androidx/compose/material3/switch.png)
-       *
-       * @sample androidx.compose.material3.samples.SwitchSample
-       *
-  - id: live-androidx-material3-material3-material3-switch-lines-379-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 379
-    endLine: 413
-    sha256: ea6b8a55f4dd1929f403d95e774c86e9beabf1edb28a8d445c899bccc88112a8
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       .copy(alpha = SwitchTokens.DisabledSelectedHandleOpacity)
                       .compositeOver(MaterialTheme.colorScheme.surface),
               disabledCheckedTrackColor: Color =
@@ -487,6 +590,16 @@ sources:
                       .copy(alpha = SwitchTokens.DisabledUnselectedIconOpacity)
                       .compositeOver(MaterialTheme.colorScheme.surface),
           ): SwitchColors =
+  - id: live-androidx-material3-material3-material3-switch-lines-491-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 491
+    endLine: 525
+    sha256: 2a9981fe237d6dc82fa86ac146c95c8a6489b371751a54fa4de95c77082f61aa
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               SwitchColors(
                   checkedThumbColor = checkedThumbColor,
                   checkedTrackColor = checkedTrackColor,
@@ -494,16 +607,6 @@ sources:
                   checkedIconColor = checkedIconColor,
                   uncheckedThumbColor = uncheckedThumbColor,
                   uncheckedTrackColor = uncheckedTrackColor,
-  - id: live-androidx-material3-material3-material3-switch-lines-414-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 414
-    endLine: 447
-    sha256: a40a5eb1227041606b5d751353b94b803fdbda91a2c3ef35fbbb8b5321eaf139
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   uncheckedBorderColor = uncheckedBorderColor,
                   uncheckedIconColor = uncheckedIconColor,
                   disabledCheckedThumbColor = disabledCheckedThumbColor,
@@ -532,22 +635,22 @@ sources:
                               disabledCheckedThumbColor =
                                   fromToken(SwitchTokens.DisabledSelectedHandleColor)
                                       .copy(alpha = SwitchTokens.DisabledSelectedHandleOpacity)
+  - id: live-androidx-material3-material3-material3-switch-lines-526-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 526
+    endLine: 560
+    sha256: 9d018068d6c788a4a9f640ab26c4ccf3b19c05d27a50d742b9b1c617b2538c4d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                                       .compositeOver(surface),
                               disabledCheckedTrackColor =
                                   fromToken(SwitchTokens.DisabledSelectedTrackColor)
                                       .copy(alpha = SwitchTokens.DisabledTrackOpacity)
                                       .compositeOver(surface),
                               disabledCheckedBorderColor = Color.Transparent,
-  - id: live-androidx-material3-material3-material3-switch-lines-448-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 448
-    endLine: 482
-    sha256: 8ba93bea29818388341819b944aba370e6e6c8b5d465f0eddc3cc21515244337
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                               disabledCheckedIconColor =
                                   fromToken(SwitchTokens.DisabledSelectedIconColor)
                                       .copy(alpha = SwitchTokens.DisabledSelectedIconOpacity)
@@ -577,22 +680,22 @@ sources:
       }
 
       /**
+  - id: live-androidx-material3-material3-material3-switch-lines-561-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 561
+    endLine: 595
+    sha256: f8fb3c08a2c3d65087db2b14ff4b78e5a1f8f42d9a3bbe02607c994f5e55b61e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * Represents the colors used by a [Switch] in different states
        *
        * @param checkedThumbColor the color used for the thumb when enabled and checked
        * @param checkedTrackColor the color used for the track when enabled and checked
        * @param checkedBorderColor the color used for the border when enabled and checked
        * @param checkedIconColor the color used for the icon when enabled and checked
-  - id: live-androidx-material3-material3-material3-switch-lines-483-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 483
-    endLine: 517
-    sha256: 19c409eecc06467ee34d0634e815fedea89ac221656ba22721bd709d917d4ad3
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param uncheckedThumbColor the color used for the thumb when enabled and unchecked
        * @param uncheckedTrackColor the color used for the track when enabled and unchecked
        * @param uncheckedBorderColor the color used for the border when enabled and unchecked
@@ -622,22 +725,22 @@ sources:
           public val disabledCheckedThumbColor: Color,
           public val disabledCheckedTrackColor: Color,
           public val disabledCheckedBorderColor: Color,
+  - id: live-androidx-material3-material3-material3-switch-lines-596-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 596
+    endLine: 630
+    sha256: 8a7a338de18e4709deb5f95119474fafe2caca76e4b5f1179b249afef8fd3d1d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           public val disabledCheckedIconColor: Color,
           public val disabledUncheckedThumbColor: Color,
           public val disabledUncheckedTrackColor: Color,
           public val disabledUncheckedBorderColor: Color,
           public val disabledUncheckedIconColor: Color,
       ) {
-  - id: live-androidx-material3-material3-material3-switch-lines-518-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 518
-    endLine: 551
-    sha256: be2674aadf029c12a77f477f923983b37c9c80a9db58bd0059af5d347bfea245
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           /**
            * Returns a copy of this SwitchColors, optionally overriding some of the values. This uses the
            * Color.Unspecified to mean “use the value from the source”
@@ -667,21 +770,21 @@ sources:
                   checkedIconColor.takeOrElse { this.checkedIconColor },
                   uncheckedThumbColor.takeOrElse { this.uncheckedThumbColor },
                   uncheckedTrackColor.takeOrElse { this.uncheckedTrackColor },
+  - id: live-androidx-material3-material3-material3-switch-lines-631-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 631
+    endLine: 665
+    sha256: b3659fc934c8bc383899f7b85c9f34f03d0cbda3c7c5ffbf7276ab21a61aff5d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   uncheckedBorderColor.takeOrElse { this.uncheckedBorderColor },
                   uncheckedIconColor.takeOrElse { this.uncheckedIconColor },
                   disabledCheckedThumbColor.takeOrElse { this.disabledCheckedThumbColor },
                   disabledCheckedTrackColor.takeOrElse { this.disabledCheckedTrackColor },
                   disabledCheckedBorderColor.takeOrElse { this.disabledCheckedBorderColor },
-  - id: live-androidx-material3-material3-material3-switch-lines-552-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 552
-    endLine: 586
-    sha256: 7c30b992d8d11bcd86bdbe0e11f0f4efea9acb586b953b569e83188421fcaf79
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
                   disabledCheckedIconColor.takeOrElse { this.disabledCheckedIconColor },
                   disabledUncheckedThumbColor.takeOrElse { this.disabledUncheckedThumbColor },
                   disabledUncheckedTrackColor.takeOrElse { this.disabledUncheckedTrackColor },
@@ -712,20 +815,21 @@ sources:
           @Stable
           internal fun trackColor(enabled: Boolean, checked: Boolean): Color =
               if (enabled) {
+  - id: live-androidx-material3-material3-material3-switch-lines-666-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 666
+    endLine: 700
+    sha256: 539f7b17456390a02200baa8008fb9aa75a982ade1ffc6e45a27aad840f28a3f
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   if (checked) checkedTrackColor else uncheckedTrackColor
               } else {
                   if (checked) disabledCheckedTrackColor else disabledUncheckedTrackColor
               }
-  - id: live-androidx-material3-material3-material3-switch-lines-587-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 587
-    endLine: 621
-    sha256: 5c99bc6ea748e729de338c93bd15be1b3b080bef9b53de8091534e40e84bb5da
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
           /**
            * Represents the color used for the switch's border, depending on [enabled] and [checked].
            *
@@ -756,21 +860,21 @@ sources:
 
           override fun equals(other: Any?): Boolean {
               if (this === other) return true
+  - id: live-androidx-material3-material3-material3-switch-lines-701-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 701
+    endLine: 735
+    sha256: de9e9b08f8da2515259e33e2ed5eabeffb31d8d86ecd7ac937a77712db71b295
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               if (other == null || other !is SwitchColors) return false
 
               if (checkedThumbColor != other.checkedThumbColor) return false
               if (checkedTrackColor != other.checkedTrackColor) return false
               if (checkedBorderColor != other.checkedBorderColor) return false
-  - id: live-androidx-material3-material3-material3-switch-lines-622-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 622
-    endLine: 656
-    sha256: e44c9d5987fc51e4e4eb4d2eaaf0d58db091fe182f6bd5db8e91da0f00865403
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               if (checkedIconColor != other.checkedIconColor) return false
               if (uncheckedThumbColor != other.uncheckedThumbColor) return false
               if (uncheckedTrackColor != other.uncheckedTrackColor) return false
@@ -801,46 +905,31 @@ sources:
               result = 31 * result + disabledCheckedTrackColor.hashCode()
               result = 31 * result + disabledCheckedBorderColor.hashCode()
               result = 31 * result + disabledCheckedIconColor.hashCode()
-              result = 31 * result + disabledUncheckedThumbColor.hashCode()
-              result = 31 * result + disabledUncheckedTrackColor.hashCode()
-              result = 31 * result + disabledUncheckedBorderColor.hashCode()
-              result = 31 * result + disabledUncheckedIconColor.hashCode()
-              return result
-  - id: live-androidx-material3-material3-material3-switch-lines-657-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    startLine: 657
-    endLine: 672
-    sha256: b748fdaaa15fe95d87dc57e51249d82075fa45b462a42c8d423e81d2694d695b
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
-          }
-      }
-
-      /* @VisibleForTesting */
-      internal val ThumbDiameter
-          get() = SwitchTokens.SelectedHandleWidth
-      internal val UncheckedThumbDiameter
-          get() = SwitchTokens.UnselectedHandleWidth
-
-      private val SwitchWidth
-          get() = SwitchTokens.TrackWidth
-      private val SwitchHeight
-          get() = SwitchTokens.TrackHeight
-      private val ThumbPadding = (SwitchHeight - ThumbDiameter) / 2
-      private val SnapSpec = SnapSpec<Float>()
   - id: live-androidx-material3-material3-material3-switch-lines-71-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
     startLine: 71
     endLine: 105
-    sha256: f219b93d93253655a3cc111714667d6c8a76da106aff5b1c298dcf5f8eeae67a
+    sha256: 873cdc78f15defcd330e5b4f0c570663f8353147495cc260faa2a3335e3198e2
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+    excerpt: |-
+      import androidx.compose.ui.unit.dp
+      import kotlinx.coroutines.Job
+      import kotlinx.coroutines.flow.collectLatest
+      import kotlinx.coroutines.launch
+
+      /**
+       * [Material Design switch](https://m3.material.io/components/switch)
+       *
+       * Switches toggle the state of a single item on or off.
+       *
+       * ![Switch
+       * image](https://developer.android.com/images/reference/androidx/compose/material3/switch.png)
+       *
+       * @sample androidx.compose.material3.samples.SwitchSample
+       *
        * Switch can be used with a custom icon via [thumbContent] parameter
        *
        * @sample androidx.compose.material3.samples.SwitchWithThumbIconSample
@@ -861,21 +950,34 @@ sources:
        *   still happen internally.
        */
       @Composable
-      @Suppress("ComposableLambdaParameterNaming", "ComposableLambdaParameterPosition")
-      public fun Switch(
-          checked: Boolean,
-          onCheckedChange: ((Boolean) -> Unit)?,
-          modifier: Modifier = Modifier,
-          thumbContent: (@Composable () -> Unit)? = null,
-          enabled: Boolean = true,
-          colors: SwitchColors = SwitchDefaults.colors(),
-          interactionSource: MutableInteractionSource? = null,
-      ) {
-          SwitchImpl(
-              modifier = modifier,
-              onCheckedChange = onCheckedChange,
-              checked = checked,
-              enabled = enabled,
+  - id: live-androidx-material3-material3-material3-switch-lines-736-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    revision: 75856eb147ebe0f9b37f5aa3ae3023d023fd54ce
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt
+    startLine: 736
+    endLine: 754
+    sha256: 609af6438860e74005a1b3e00aa72ea5b8b2f9911ff0791d931f0675f564292d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+              result = 31 * result + disabledUncheckedThumbColor.hashCode()
+              result = 31 * result + disabledUncheckedTrackColor.hashCode()
+              result = 31 * result + disabledUncheckedBorderColor.hashCode()
+              result = 31 * result + disabledUncheckedIconColor.hashCode()
+              return result
+          }
+      }
+
+      /* @VisibleForTesting */
+      internal val ThumbDiameter
+          get() = SwitchTokens.SelectedHandleWidth
+      internal val UncheckedThumbDiameter
+          get() = SwitchTokens.UnselectedHandleWidth
+
+      private val SwitchWidth
+          get() = SwitchTokens.TrackWidth
+      private val SwitchHeight
+          get() = SwitchTokens.TrackHeight
 compose:
   id: live-androidx-material3-material3-material3-switch
   artifact: androidx.compose.material3:material3
@@ -892,7 +994,10 @@ compose:
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-106
       title: androidx.compose.material3 Switch.kt source (lines 106–140)
-      aliases: []
+      aliases:
+        - androidx.compose.material3.Switch
+        - androidx.compose.material3.SwitchDefaults
+        - androidx.compose.material3.SwitchColors
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
@@ -901,8 +1006,7 @@ compose:
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-141
       title: androidx.compose.material3 Switch.kt source (lines 141–175)
-      aliases:
-        - androidx.compose.material3.Switch
+      aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
@@ -911,7 +1015,8 @@ compose:
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-176
       title: androidx.compose.material3 Switch.kt source (lines 176–210)
-      aliases: []
+      aliases:
+        - androidx.compose.material3.Switch
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
@@ -947,10 +1052,7 @@ compose:
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-316
       title: androidx.compose.material3 Switch.kt source (lines 316–350)
-      aliases:
-        - androidx.compose.material3.Switch
-        - androidx.compose.material3.SwitchDefaults
-        - androidx.compose.material3.SwitchColors
+      aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
@@ -958,7 +1060,7 @@ compose:
         - live-androidx-material3-material3-material3-switch-lines-316-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-351
-      title: androidx.compose.material3 Switch.kt source (lines 351–378)
+      title: androidx.compose.material3 Switch.kt source (lines 351–385)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
@@ -968,103 +1070,114 @@ compose:
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-36
       title: androidx.compose.material3 Switch.kt source (lines 36–70)
-      aliases:
-        - androidx.compose.material3.Switch
+      aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
         - live-androidx-material3-material3-material3-switch-lines-36-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-379
-      title: androidx.compose.material3 Switch.kt source (lines 379–413)
-      aliases:
-        - androidx.compose.material3.SwitchColors
+    - id: live-androidx-material3-material3-material3-switch-lines-386
+      title: androidx.compose.material3 Switch.kt source (lines 386–420)
+      aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-379-source
+        - live-androidx-material3-material3-material3-switch-lines-386-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-414
-      title: androidx.compose.material3 Switch.kt source (lines 414–447)
-      aliases:
-        - androidx.compose.material3.SwitchColors
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-414-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-448
-      title: androidx.compose.material3 Switch.kt source (lines 448–482)
+    - id: live-androidx-material3-material3-material3-switch-lines-421
+      title: androidx.compose.material3 Switch.kt source (lines 421–455)
       aliases:
         - androidx.compose.material3.Switch
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-448-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-483
-      title: androidx.compose.material3 Switch.kt source (lines 483–517)
-      aliases:
         - androidx.compose.material3.SwitchDefaults
         - androidx.compose.material3.SwitchColors
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-483-source
+        - live-androidx-material3-material3-material3-switch-lines-421-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-518
-      title: androidx.compose.material3 Switch.kt source (lines 518–551)
+    - id: live-androidx-material3-material3-material3-switch-lines-456
+      title: androidx.compose.material3 Switch.kt source (lines 456–490)
       aliases:
         - androidx.compose.material3.SwitchColors
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-518-source
+        - live-androidx-material3-material3-material3-switch-lines-456-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-552
-      title: androidx.compose.material3 Switch.kt source (lines 552–586)
+    - id: live-androidx-material3-material3-material3-switch-lines-491
+      title: androidx.compose.material3 Switch.kt source (lines 491–525)
       aliases:
-        - androidx.compose.material3.Switch
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-552-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-587
-      title: androidx.compose.material3 Switch.kt source (lines 587–621)
-      aliases:
-        - androidx.compose.material3.Switch
         - androidx.compose.material3.SwitchColors
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-587-source
+        - live-androidx-material3-material3-material3-switch-lines-491-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-622
-      title: androidx.compose.material3 Switch.kt source (lines 622–656)
+    - id: live-androidx-material3-material3-material3-switch-lines-526
+      title: androidx.compose.material3 Switch.kt source (lines 526–560)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-622-source
+        - live-androidx-material3-material3-material3-switch-lines-526-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-switch-lines-657
-      title: androidx.compose.material3 Switch.kt source (lines 657–672)
-      aliases: []
+    - id: live-androidx-material3-material3-material3-switch-lines-561
+      title: androidx.compose.material3 Switch.kt source (lines 561–595)
+      aliases:
+        - androidx.compose.material3.Switch
+        - androidx.compose.material3.SwitchDefaults
+        - androidx.compose.material3.SwitchColors
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-switch-lines-657-source
+        - live-androidx-material3-material3-material3-switch-lines-561-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-switch-lines-596
+      title: androidx.compose.material3 Switch.kt source (lines 596–630)
+      aliases:
+        - androidx.compose.material3.SwitchColors
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-switch-lines-596-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-switch-lines-631
+      title: androidx.compose.material3 Switch.kt source (lines 631–665)
+      aliases:
+        - androidx.compose.material3.Switch
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-switch-lines-631-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-switch-lines-666
+      title: androidx.compose.material3 Switch.kt source (lines 666–700)
+      aliases:
+        - androidx.compose.material3.Switch
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-switch-lines-666-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-switch-lines-701
+      title: androidx.compose.material3 Switch.kt source (lines 701–735)
+      aliases:
+        - androidx.compose.material3.SwitchColors
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-switch-lines-701-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-switch-lines-71
       title: androidx.compose.material3 Switch.kt source (lines 71–105)
@@ -1077,6 +1190,15 @@ compose:
           version: null
       sourceIds:
         - live-androidx-material3-material3-material3-switch-lines-71-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-switch-lines-736
+      title: androidx.compose.material3 Switch.kt source (lines 736–754)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-switch-lines-736-source
       relatedIds: []
 ---
 
@@ -1107,25 +1229,40 @@ package androidx.compose.material3
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
 import androidx.compose.animation.core.FiniteAnimationSpec
-import androidx.compose.animation.core.SnapSpec
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.AnchoredDraggableDefaults
+import androidx.compose.foundation.gestures.AnchoredDraggableState
+import androidx.compose.foundation.gestures.DraggableAnchors
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.anchoredDraggable
+import androidx.compose.foundation.gestures.animateTo
 import androidx.compose.foundation.indication
+import androidx.compose.foundation.interaction.DragInteraction
 import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.requiredSize
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.selection.toggleable
-import androidx.compose.material3.tokens.MotionSchemeKeyTokens
-import androidx.compose.material3.tokens.SwitchTokens
 
-Sources: [live-androidx-material3-material3-material3-switch-lines-1-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+Sources: [live-androidx-material3-material3-material3-switch-lines-1-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
 
 ## androidx.compose.material3 Switch.kt source (lines 106–140)
 
+@Suppress("ComposableLambdaParameterNaming", "ComposableLambdaParameterPosition")
+public fun Switch(
+    checked: Boolean,
+    onCheckedChange: ((Boolean) -> Unit)?,
+    modifier: Modifier = Modifier,
+    thumbContent: (@Composable () -> Unit)? = null,
+    enabled: Boolean = true,
+    colors: SwitchColors = SwitchDefaults.colors(),
+    interactionSource: MutableInteractionSource? = null,
+) {
+    SwitchImpl(
+        modifier = modifier,
+        onCheckedChange = onCheckedChange,
+        checked = checked,
+        enabled = enabled,
         thumbContent = thumbContent,
         thumbShape = SwitchTokens.HandleShape.value,
         trackShape = SwitchTokens.TrackShape.value,
@@ -1146,6 +1283,11 @@ private fun SwitchImpl(
     enabled: Boolean,
     thumbContent: (@Composable () -> Unit)?,
     thumbShape: Shape,
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 141–175)
+
     trackShape: Shape,
     thumbColor: Color,
     iconColor: Color,
@@ -1156,16 +1298,47 @@ private fun SwitchImpl(
     @Suppress("NAME_SHADOWING")
     val interactionSource = interactionSource ?: remember { MutableInteractionSource() }
 
-    // TODO: Add Swipeable modifier b/223797571
+    // TODO Load the motionScheme tokens from the component tokens file
+    val animationSpec = MotionSchemeKeyTokens.FastSpatial.value<Float>()
+    val thumbTravelPx = with(LocalDensity.current) { (SwitchWidth - SwitchHeight).toPx() }
+    var forceAnimationCheck by remember { mutableStateOf(false) }
+    val anchoredDraggableState =
+        remember(thumbTravelPx) {
+            AnchoredDraggableState(
+                initialValue = checked,
+                anchors =
+                    DraggableAnchors {
+                        false at 0f
+                        true at thumbTravelPx
+                    },
+            )
+        }
+    val currentOnCheckedChange by rememberUpdatedState(onCheckedChange)
+    val currentChecked by rememberUpdatedState(checked)
+    LaunchedEffect(anchoredDraggableState) {
+        snapshotFlow { anchoredDraggableState.settledValue }
+            .collectLatest { newValue ->
+                if (currentChecked != newValue) {
+                    currentOnCheckedChange?.invoke(newValue)
+                    forceAnimationCheck = !forceAnimationCheck
+                }
+            }
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 176–210)
+
+    }
+    LaunchedEffect(checked, forceAnimationCheck) {
+        if (checked != anchoredDraggableState.settledValue) {
+            anchoredDraggableState.animateTo(checked, animationSpec)
+        }
+    }
+
     val toggleableModifier =
         if (onCheckedChange != null) {
             Modifier.minimumInteractiveComponentSize()
                 .toggleable(
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 141–175)
-
                     value = checked,
                     onValueChange = onCheckedChange,
                     enabled = enabled,
@@ -1173,6 +1346,28 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-106-source](h
                     interactionSource = interactionSource,
                     indication = null,
                 )
+        } else {
+            Modifier
+        }
+
+    val dragModifier =
+        if (onCheckedChange != null) {
+            Modifier.anchoredDraggable(
+                state = anchoredDraggableState,
+                orientation = Orientation.Horizontal,
+                enabled = enabled,
+                interactionSource = interactionSource,
+                flingBehavior =
+                    AnchoredDraggableDefaults.flingBehavior(
+                        state = anchoredDraggableState,
+                        animationSpec = animationSpec,
+                    ),
+            )
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 211–245)
+
         } else {
             Modifier
         }
@@ -1199,26 +1394,27 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-106-source](h
     Box(
         modifier
             .then(toggleableModifier)
+            .then(dragModifier)
             .wrapContentSize(Alignment.Center)
             .requiredSize(SwitchWidth, SwitchHeight)
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 176–210)
-
             .border(TrackOutlineWidth, borderColor, trackShape)
             .background(trackColor, trackShape)
             .then(focusRingModifier)
     ) {
         Box(
             modifier =
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 246–280)
+
                 Modifier.align(Alignment.CenterStart)
                     .then(
                         ThumbElement(
                             interactionSource = interactionSource,
                             checked = checked,
-                            // TODO Load the motionScheme tokens from the component tokens file
-                            animationSpec = MotionSchemeKeyTokens.FastSpatial.value(),
+                            anchoredDraggableState = anchoredDraggableState,
+                            animationSpec = animationSpec,
                         )
                     )
                     .indication(
@@ -1241,26 +1437,33 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-141-source](h
             }
         }
     }
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 211–245)
-
 }
 
 private data class ThumbElement(
     val interactionSource: InteractionSource,
     val checked: Boolean,
+    val anchoredDraggableState: AnchoredDraggableState<Boolean>,
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 281–315)
+
     val animationSpec: FiniteAnimationSpec<Float>,
 ) : ModifierNodeElement<ThumbNode>() {
-    override fun create() = ThumbNode(interactionSource, checked, animationSpec)
+    override fun create() =
+        ThumbNode(interactionSource, checked, anchoredDraggableState, animationSpec)
 
     override fun update(node: ThumbNode) {
+        val interactionSourceChanged = node.interactionSource != interactionSource
         node.interactionSource = interactionSource
-        if (node.checked != checked) {
+        if (interactionSourceChanged) {
+            node.restartInteractionCollection()
+        }
+        if (node.checked != checked || node.anchoredDraggableState != anchoredDraggableState) {
             node.invalidateMeasurement()
         }
         node.checked = checked
+        node.anchoredDraggableState = anchoredDraggableState
         node.animationSpec = animationSpec
         node.update()
     }
@@ -1276,35 +1479,61 @@ private data class ThumbElement(
 private class ThumbNode(
     var interactionSource: InteractionSource,
     var checked: Boolean,
+    var anchoredDraggableState: AnchoredDraggableState<Boolean>,
     var animationSpec: FiniteAnimationSpec<Float>,
 ) : Modifier.Node(), LayoutModifierNode {
+
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-281-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 316–350)
 
     override val shouldAutoInvalidate: Boolean
         get() = false
 
-Sources: [live-androidx-material3-material3-material3-switch-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 246–280)
-
-
     private var isPressed = false
-    private var offsetAnim: Animatable<Float, AnimationVector1D>? = null
+    private var isDragged = false
+    private var interactionCollectionJob: Job? = null
     private var sizeAnim: Animatable<Float, AnimationVector1D>? = null
-    private var initialOffset: Float = Float.NaN
     private var initialSize: Float = Float.NaN
 
     override fun onAttach() {
-        coroutineScope.launch {
+        restartInteractionCollection()
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        isPressed = false
+        isDragged = false
+    }
+
+    fun restartInteractionCollection() {
+        interactionCollectionJob?.cancel()
+        isPressed = false
+        isDragged = false
+        if (!isAttached) return
+        interactionCollectionJob = coroutineScope.launch {
             var pressCount = 0
+            var dragCount = 0
             interactionSource.interactions.collect { interaction ->
                 when (interaction) {
                     is PressInteraction.Press -> pressCount++
                     is PressInteraction.Release -> pressCount--
                     is PressInteraction.Cancel -> pressCount--
+                    is DragInteraction.Start -> dragCount++
+                    is DragInteraction.Stop -> dragCount--
+                    is DragInteraction.Cancel -> dragCount--
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-316-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 351–385)
+
                 }
                 val pressed = pressCount > 0
-                if (isPressed != pressed) {
+                val dragged = dragCount > 0
+                if (isPressed != pressed || isDragged != dragged) {
                     isPressed = pressed
+                    isDragged = dragged
                     invalidateMeasurement()
                 }
             }
@@ -1313,19 +1542,14 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-211-source](h
 
     override fun onReset() {
         super.onReset()
-        offsetAnim = null
         sizeAnim = null
         initialSize = Float.NaN
-        initialOffset = Float.NaN
+        isPressed = false
+        isDragged = false
     }
 
     override fun MeasureScope.measure(
         measurable: Measurable,
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 281–315)
-
         constraints: Constraints,
     ): MeasureResult {
         val hasContent =
@@ -1333,49 +1557,83 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-246-source](h
                 measurable.maxIntrinsicWidth(constraints.maxHeight) != 0
         val size =
             when {
-                isPressed -> SwitchTokens.PressedHandleWidth
+                isPressed || isDragged -> SwitchTokens.PressedHandleWidth
                 hasContent || checked -> ThumbDiameter
                 else -> UncheckedThumbDiameter
             }.toPx()
 
-        val actualSize = (sizeAnim?.value ?: size).toInt()
+        if (sizeAnim == null && !initialSize.isNaN()) {
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-351-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 36–70)
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.selection.toggleable
+import androidx.compose.material3.tokens.MotionSchemeKeyTokens
+import androidx.compose.material3.tokens.SwitchTokens
+import androidx.compose.material3.tokens.SwitchTokens.TrackOutlineWidth
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.Stable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.compositeOver
+import androidx.compose.ui.graphics.takeOrElse
+import androidx.compose.ui.layout.Measurable
+import androidx.compose.ui.layout.MeasureResult
+import androidx.compose.ui.layout.MeasureScope
+import androidx.compose.ui.node.LayoutModifierNode
+import androidx.compose.ui.node.ModifierNodeElement
+import androidx.compose.ui.node.invalidateMeasurement
+import androidx.compose.ui.platform.InspectorInfo
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.unit.Constraints
+import androidx.compose.ui.unit.Dp
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 386–420)
+
+            sizeAnim = Animatable(initialSize)
+        }
+        val actualSize = (sizeAnim?.value ?: size).toInt().coerceAtLeast(0)
         val placeable = measurable.measure(Constraints.fixed(actualSize, actualSize))
-        val thumbPaddingStart = (SwitchHeight - size.toDp()) / 2f
-        val minBound = thumbPaddingStart.toPx()
-        val thumbPathLength = (SwitchWidth - ThumbDiameter) - ThumbPadding
-        val maxBound = thumbPathLength.toPx()
-        val offset =
-            when {
-                isPressed && checked -> maxBound - TrackOutlineWidth.toPx()
-                isPressed && !checked -> TrackOutlineWidth.toPx()
-                checked -> maxBound
-                else -> minBound
-            }
 
         if (sizeAnim?.targetValue != size) {
-            coroutineScope.launch {
-                sizeAnim?.animateTo(size, if (isPressed) SnapSpec else animationSpec)
-            }
+            coroutineScope.launch { sizeAnim?.animateTo(size, animationSpec) }
         }
 
-        if (offsetAnim?.targetValue != offset) {
-            coroutineScope.launch {
-                offsetAnim?.animateTo(offset, if (isPressed) SnapSpec else animationSpec)
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-281-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 316–350)
-
-            }
-        }
-
-        if (initialSize.isNaN() && initialOffset.isNaN()) {
+        if (initialSize.isNaN()) {
             initialSize = size
-            initialOffset = offset
         }
+
+        val minCenterX = (SwitchHeight / 2f).toPx()
+        val fallbackTravel = (SwitchWidth - SwitchHeight).toPx()
 
         return layout(actualSize, actualSize) {
-            placeable.placeRelative(offsetAnim?.value?.toInt() ?: offset.toInt(), 0)
+            val dragOffset =
+                if (!anchoredDraggableState.offset.isNaN()) {
+                    anchoredDraggableState.offset
+                } else {
+                    if (checked) fallbackTravel else 0f
+                }
+            val currentThumbSize = sizeAnim?.value ?: size
+            val leftOffset = minCenterX + dragOffset - currentThumbSize / 2f
+            placeable.placeRelative(leftOffset.toInt(), 0)
         }
     }
 
@@ -1383,10 +1641,13 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-281-source](h
         if (sizeAnim == null && !initialSize.isNaN()) {
             sizeAnim = Animatable(initialSize)
         }
-
-        if (offsetAnim == null && !initialOffset.isNaN()) offsetAnim = Animatable(initialOffset)
     }
 }
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 421–455)
+
 
 /** Contains the default values used by [Switch] */
 public object SwitchDefaults {
@@ -1401,11 +1662,6 @@ public object SwitchDefaults {
      * states.
      *
      * @param checkedThumbColor the color used for the thumb when enabled and checked
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-316-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 351–378)
-
      * @param checkedTrackColor the color used for the track when enabled and checked
      * @param checkedBorderColor the color used for the border when enabled and checked
      * @param checkedIconColor the color used for the icon when enabled and checked
@@ -1427,6 +1683,11 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-316-source](h
         checkedThumbColor: Color = SwitchTokens.SelectedHandleColor.value,
         checkedTrackColor: Color = SwitchTokens.SelectedTrackColor.value,
         checkedBorderColor: Color = Color.Transparent,
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 456–490)
+
         checkedIconColor: Color = SwitchTokens.SelectedIconColor.value,
         uncheckedThumbColor: Color = SwitchTokens.UnselectedHandleColor.value,
         uncheckedTrackColor: Color = SwitchTokens.UnselectedTrackColor.value,
@@ -1434,51 +1695,6 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-316-source](h
         uncheckedIconColor: Color = SwitchTokens.UnselectedIconColor.value,
         disabledCheckedThumbColor: Color =
             SwitchTokens.DisabledSelectedHandleColor.value
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-351-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 36–70)
-
-import androidx.compose.material3.tokens.SwitchTokens.TrackOutlineWidth
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.Stable
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.compositeOver
-import androidx.compose.ui.graphics.takeOrElse
-import androidx.compose.ui.layout.Measurable
-import androidx.compose.ui.layout.MeasureResult
-import androidx.compose.ui.layout.MeasureScope
-import androidx.compose.ui.node.LayoutModifierNode
-import androidx.compose.ui.node.ModifierNodeElement
-import androidx.compose.ui.node.invalidateMeasurement
-import androidx.compose.ui.platform.InspectorInfo
-import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.unit.Constraints
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.launch
-
-/**
- * [Material Design switch](https://m3.material.io/components/switch)
- *
- * Switches toggle the state of a single item on or off.
- *
- * ![Switch
- * image](https://developer.android.com/images/reference/androidx/compose/material3/switch.png)
- *
- * @sample androidx.compose.material3.samples.SwitchSample
- *
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 379–413)
-
                 .copy(alpha = SwitchTokens.DisabledSelectedHandleOpacity)
                 .compositeOver(MaterialTheme.colorScheme.surface),
         disabledCheckedTrackColor: Color =
@@ -1507,6 +1723,11 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-36-source](ht
                 .copy(alpha = SwitchTokens.DisabledUnselectedIconOpacity)
                 .compositeOver(MaterialTheme.colorScheme.surface),
     ): SwitchColors =
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 491–525)
+
         SwitchColors(
             checkedThumbColor = checkedThumbColor,
             checkedTrackColor = checkedTrackColor,
@@ -1514,11 +1735,6 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-36-source](ht
             checkedIconColor = checkedIconColor,
             uncheckedThumbColor = uncheckedThumbColor,
             uncheckedTrackColor = uncheckedTrackColor,
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-379-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 414–447)
-
             uncheckedBorderColor = uncheckedBorderColor,
             uncheckedIconColor = uncheckedIconColor,
             disabledCheckedThumbColor = disabledCheckedThumbColor,
@@ -1547,17 +1763,17 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-379-source](h
                         disabledCheckedThumbColor =
                             fromToken(SwitchTokens.DisabledSelectedHandleColor)
                                 .copy(alpha = SwitchTokens.DisabledSelectedHandleOpacity)
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 526–560)
+
                                 .compositeOver(surface),
                         disabledCheckedTrackColor =
                             fromToken(SwitchTokens.DisabledSelectedTrackColor)
                                 .copy(alpha = SwitchTokens.DisabledTrackOpacity)
                                 .compositeOver(surface),
                         disabledCheckedBorderColor = Color.Transparent,
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-414-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 448–482)
-
                         disabledCheckedIconColor =
                             fromToken(SwitchTokens.DisabledSelectedIconColor)
                                 .copy(alpha = SwitchTokens.DisabledSelectedIconOpacity)
@@ -1587,17 +1803,17 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-414-source](h
 }
 
 /**
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 561–595)
+
  * Represents the colors used by a [Switch] in different states
  *
  * @param checkedThumbColor the color used for the thumb when enabled and checked
  * @param checkedTrackColor the color used for the track when enabled and checked
  * @param checkedBorderColor the color used for the border when enabled and checked
  * @param checkedIconColor the color used for the icon when enabled and checked
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-448-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 483–517)
-
  * @param uncheckedThumbColor the color used for the thumb when enabled and unchecked
  * @param uncheckedTrackColor the color used for the track when enabled and unchecked
  * @param uncheckedBorderColor the color used for the border when enabled and unchecked
@@ -1627,17 +1843,17 @@ public constructor(
     public val disabledCheckedThumbColor: Color,
     public val disabledCheckedTrackColor: Color,
     public val disabledCheckedBorderColor: Color,
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 596–630)
+
     public val disabledCheckedIconColor: Color,
     public val disabledUncheckedThumbColor: Color,
     public val disabledUncheckedTrackColor: Color,
     public val disabledUncheckedBorderColor: Color,
     public val disabledUncheckedIconColor: Color,
 ) {
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-483-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 518–551)
-
     /**
      * Returns a copy of this SwitchColors, optionally overriding some of the values. This uses the
      * Color.Unspecified to mean “use the value from the source”
@@ -1667,16 +1883,16 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-483-source](h
             checkedIconColor.takeOrElse { this.checkedIconColor },
             uncheckedThumbColor.takeOrElse { this.uncheckedThumbColor },
             uncheckedTrackColor.takeOrElse { this.uncheckedTrackColor },
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 631–665)
+
             uncheckedBorderColor.takeOrElse { this.uncheckedBorderColor },
             uncheckedIconColor.takeOrElse { this.uncheckedIconColor },
             disabledCheckedThumbColor.takeOrElse { this.disabledCheckedThumbColor },
             disabledCheckedTrackColor.takeOrElse { this.disabledCheckedTrackColor },
             disabledCheckedBorderColor.takeOrElse { this.disabledCheckedBorderColor },
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-518-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 552–586)
-
             disabledCheckedIconColor.takeOrElse { this.disabledCheckedIconColor },
             disabledUncheckedThumbColor.takeOrElse { this.disabledUncheckedThumbColor },
             disabledUncheckedTrackColor.takeOrElse { this.disabledUncheckedTrackColor },
@@ -1707,15 +1923,15 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-518-source](h
     @Stable
     internal fun trackColor(enabled: Boolean, checked: Boolean): Color =
         if (enabled) {
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 666–700)
+
             if (checked) checkedTrackColor else uncheckedTrackColor
         } else {
             if (checked) disabledCheckedTrackColor else disabledUncheckedTrackColor
         }
-
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-552-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 587–621)
 
     /**
      * Represents the color used for the switch's border, depending on [enabled] and [checked].
@@ -1747,16 +1963,16 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-552-source](h
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 701–735)
+
         if (other == null || other !is SwitchColors) return false
 
         if (checkedThumbColor != other.checkedThumbColor) return false
         if (checkedTrackColor != other.checkedTrackColor) return false
         if (checkedBorderColor != other.checkedBorderColor) return false
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-587-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 622–656)
-
         if (checkedIconColor != other.checkedIconColor) return false
         if (uncheckedThumbColor != other.uncheckedThumbColor) return false
         if (uncheckedTrackColor != other.uncheckedTrackColor) return false
@@ -1787,37 +2003,26 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-587-source](h
         result = 31 * result + disabledCheckedTrackColor.hashCode()
         result = 31 * result + disabledCheckedBorderColor.hashCode()
         result = 31 * result + disabledCheckedIconColor.hashCode()
-        result = 31 * result + disabledUncheckedThumbColor.hashCode()
-        result = 31 * result + disabledUncheckedTrackColor.hashCode()
-        result = 31 * result + disabledUncheckedBorderColor.hashCode()
-        result = 31 * result + disabledUncheckedIconColor.hashCode()
-        return result
 
-Sources: [live-androidx-material3-material3-material3-switch-lines-622-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
-
-## androidx.compose.material3 Switch.kt source (lines 657–672)
-
-    }
-}
-
-/* @VisibleForTesting */
-internal val ThumbDiameter
-    get() = SwitchTokens.SelectedHandleWidth
-internal val UncheckedThumbDiameter
-    get() = SwitchTokens.UnselectedHandleWidth
-
-private val SwitchWidth
-    get() = SwitchTokens.TrackWidth
-private val SwitchHeight
-    get() = SwitchTokens.TrackHeight
-private val ThumbPadding = (SwitchHeight - ThumbDiameter) / 2
-private val SnapSpec = SnapSpec<Float>()
-
-
-Sources: [live-androidx-material3-material3-material3-switch-lines-657-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+Sources: [live-androidx-material3-material3-material3-switch-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
 
 ## androidx.compose.material3 Switch.kt source (lines 71–105)
 
+import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+
+/**
+ * [Material Design switch](https://m3.material.io/components/switch)
+ *
+ * Switches toggle the state of a single item on or off.
+ *
+ * ![Switch
+ * image](https://developer.android.com/images/reference/androidx/compose/material3/switch.png)
+ *
+ * @sample androidx.compose.material3.samples.SwitchSample
+ *
  * Switch can be used with a custom icon via [thumbContent] parameter
  *
  * @sample androidx.compose.material3.samples.SwitchWithThumbIconSample
@@ -1838,20 +2043,29 @@ Sources: [live-androidx-material3-material3-material3-switch-lines-657-source](h
  *   still happen internally.
  */
 @Composable
-@Suppress("ComposableLambdaParameterNaming", "ComposableLambdaParameterPosition")
-public fun Switch(
-    checked: Boolean,
-    onCheckedChange: ((Boolean) -> Unit)?,
-    modifier: Modifier = Modifier,
-    thumbContent: (@Composable () -> Unit)? = null,
-    enabled: Boolean = true,
-    colors: SwitchColors = SwitchDefaults.colors(),
-    interactionSource: MutableInteractionSource? = null,
-) {
-    SwitchImpl(
-        modifier = modifier,
-        onCheckedChange = onCheckedChange,
-        checked = checked,
-        enabled = enabled,
 
-Sources: [live-androidx-material3-material3-material3-switch-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+Sources: [live-androidx-material3-material3-material3-switch-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
+
+## androidx.compose.material3 Switch.kt source (lines 736–754)
+
+        result = 31 * result + disabledUncheckedThumbColor.hashCode()
+        result = 31 * result + disabledUncheckedTrackColor.hashCode()
+        result = 31 * result + disabledUncheckedBorderColor.hashCode()
+        result = 31 * result + disabledUncheckedIconColor.hashCode()
+        return result
+    }
+}
+
+/* @VisibleForTesting */
+internal val ThumbDiameter
+    get() = SwitchTokens.SelectedHandleWidth
+internal val UncheckedThumbDiameter
+    get() = SwitchTokens.UnselectedHandleWidth
+
+private val SwitchWidth
+    get() = SwitchTokens.TrackWidth
+private val SwitchHeight
+    get() = SwitchTokens.TrackHeight
+
+
+Sources: [live-androidx-material3-material3-material3-switch-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/75856eb147ebe0f9b37f5aa3ae3023d023fd54ce/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Switch.kt)
