@@ -72,6 +72,14 @@
       "sourceSha256": "d89a62c716baf17649deae1cf6f7611a8831908637f2c86e324be7e165ad1597",
       "startLine": 22,
       "endLine": 26
+    },
+    {
+      "id": "contract-modifier-node-attachment-scope",
+      "sourceId": "androidx-ui-ui-ui-modifier",
+      "title": "Modifier.Node attachment-bound coroutine scope lifecycle",
+      "sourceSha256": "50dd9f4cadaa996c99ba8b562ea23bea332e91ba838a5029fdabaa74489c00cf",
+      "startLine": 175,
+      "endLine": 192
     }
   ]
 }

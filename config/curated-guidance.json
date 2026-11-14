@@ -1917,6 +1917,34 @@
           "sha256": "1cf39772b10fa72022f267e3be476ce5d5cae71fcad8f96fb39db46b482296ab"
         }
       ]
+    },
+    {
+      "id": "guide-modifier-node-update-attachment-contract",
+      "title": "Update reusable nodes and scope work to attachment",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.node.ModifierNodeElement",
+      "body": "Guidance: Keep ModifierNodeElement immutable with consistent equals/hashCode. create builds the node when first applied; when equality detects changed inputs at the same position, update copies current properties into the existing node. Launch attachment-bound work in node.coroutineScope: it is accessible between onAttach and onDetach, throws if accessed while detached, and is cancelled after onDetach returns. Limitation: this establishes configuration updates and cleanup of that coroutine scope, not arbitrary external-resource cleanup or all reset/reattachment behavior.",
+      "aliases": [
+        "androidx.compose.ui.node.ModifierNodeElement",
+        "androidx.compose.ui.Modifier.Node",
+        "node update",
+        "node detach",
+        "node coroutineScope",
+        "attachment cleanup",
+        "노드 갱신",
+        "노드 분리",
+        "노드 코루틴"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-custom-modifiers-node-element",
+          "sha256": "0c2dcd43a17107daa18f53ddc4827b688661fd59287aba9718062a37773d4df0"
+        },
+        {
+          "id": "contract-modifier-node-attachment-scope",
+          "sha256": "25be7062a22789ebe958467c9cd79217fce5ccc142c078e5a32a33ad721b0b8d"
+        }
+      ]
     }
   ]
 }
