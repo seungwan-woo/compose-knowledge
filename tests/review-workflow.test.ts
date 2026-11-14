@@ -53,3 +53,20 @@ it('does not spend or retrieve when a valid task is locked', () => {
  const result = cli('lookup','--task',file,'--query','DropdownMenu'); expect(result.status).not.toBe(0); expect(result.stdout).toBe(''); expect(readFileSync(file,'utf8')).toBe(before);
  rmSync(file+'.lock');
 });
+it('binds resolved versions only on first lookup and preserves the pin and ledger', () => {
+ const file=join(tmp,'binding.json'); const begun=cli('begin','--cache',cache,'--task',file,'--offline'); const pin=JSON.parse(begun.stdout).snapshot;
+ const first=cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.3.2'); expect(first.status,first.stderr).toBe(0);
+ expect(JSON.parse(readFileSync(file,'utf8'))).toMatchObject({snapshot:pin,versions:[{artifact:'androidx.compose.material3:material3',version:'1.3.2'}],ledger:{attempts:1}});
+ const second=cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.4.0');expect(second.status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(1);
+});
+it('rejects conflicting versions from begin and normalized aliases on lookup',()=>{
+ const file=join(tmp,'conflict.json');expect(cli('begin','--cache',cache,'--task',file,'--offline','--require','androidx.compose.ui:ui=1.0').status).toBe(0);
+ expect(cli('lookup','--task',file,'--query','test','--require','androidx.compose.ui:ui-android=2.0').status).not.toBe(0);
+ expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(0);
+});
+it('preserves explicit unknown applicability and rejects late context additions',()=>{
+ const file=join(tmp,'unknown-binding.json');expect(cli('begin','--cache',cache,'--task',file,'--offline','--require','androidx.compose.ui:ui=unknown').status).toBe(0);
+ const result=cli('lookup','--task',file,'--query','DropdownMenu');expect(result.status,result.stderr).toBe(0);
+ const state=JSON.parse(readFileSync(file,'utf8'));expect(state.versions).toEqual([{artifact:'androidx.compose.ui:ui',version:null}]);
+ expect(cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.0').status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(1);
+});

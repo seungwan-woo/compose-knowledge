@@ -88,7 +88,7 @@ main().catch(async error => {
   const outIndex = process.argv.indexOf('--out');
   if (outIndex >= 0 && process.argv[outIndex + 1]) {
     const out = path.resolve(process.argv[outIndex + 1]);
-    await writeFile(path.join(out, 'report.json'), JSON.stringify({ error: message }, null, 2) + '\n', { flag: 'wx' }).catch(() => {});
+    await writeFile(path.join(out, 'report.json'), JSON.stringify({ error: message, ...(Array.isArray(error?.spans) ? { spans: error.spans } : {}) }, null, 2) + '\n', { flag: 'wx' }).catch(() => {});
     await writeFile(path.join(out, 'summary.md'), summary, { flag: 'wx' }).catch(() => {});
   }
   if (process.env.GITHUB_STEP_SUMMARY) await import('node:fs/promises').then(fs => fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary)).catch(() => {});
