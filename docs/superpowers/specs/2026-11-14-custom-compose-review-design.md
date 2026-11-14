@@ -1,5 +1,7 @@
 # Efficient knowledge for custom Compose libraries
 
+> Historical proposal. The [current delivery plan](../plans/2026-11-14-custom-compose-delivery.md) supersedes the private importer, manifest and relationship-loader work below. Current scope uses direct consumer-local inspection in an approved agent deployment; do not implement the superseded private context layer.
+
 Status: proposed design; no runtime, corpus, or consumer changes implemented.
 Date: 2026-11-14. Repository baseline: main `30fe869` (PR #10).
 
