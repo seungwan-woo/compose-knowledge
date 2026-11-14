@@ -2934,6 +2934,51 @@
         "androidx.compose.material3.ExposedDropdownMenuBoxScope",
         "androidx.compose.material3.ExposedDropdownMenuAnchorType"
       ]
+    },
+    {
+      "id": "androidx-ui-viewinterop-android-view",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+      "title": "AndroidView lifecycle source",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.viewinterop.AndroidView",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+      "symbols": [
+        "androidx.compose.ui.viewinterop.AndroidView"
+      ]
+    },
+    {
+      "id": "androidx-foundation-selection-toggleable",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+      "title": "Toggleable state and input source",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.selection.toggleable",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+      "symbols": [
+        "androidx.compose.foundation.selection.toggleable"
+      ]
+    },
+    {
+      "id": "kotlin-coroutines-coroutine-scope",
+      "kind": "github",
+      "url": "https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+      "title": "Kotlin structured coroutine scope source",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "fqn": "kotlinx.coroutines.CoroutineScope",
+      "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)",
+      "repo": "Kotlin/kotlinx.coroutines",
+      "ref": "master",
+      "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+      "symbols": [
+        "kotlinx.coroutines.CoroutineScope"
+      ]
     }
   ]
 }

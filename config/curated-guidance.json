@@ -1799,6 +1799,124 @@
           "sha256": "c74721ef17b39cb37e3dea8fd709567ed9a304cb9ab993679e825e6d77075f77"
         }
       ]
+    },
+    {
+      "id": "guide-androidview-lifecycle-contract",
+      "title": "Follow the full AndroidView lifecycle",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.viewinterop.AndroidView",
+      "body": "Guidance: factory creates each View once on the UI thread; update runs after factory and on recomposition for changing properties. Non-null onReset permits reuse in supporting containers with compatible group structure; reset transient state there before update. Reset need not be immediately followed by update: a View can remain detached and retained, or be reset from deactivation before release. onRelease permanently ends that instance’s use: free additional resources; Compose never reuses it afterward, and future instances begin with factory. Limitation: reuse is eligible, not guaranteed; reset/deactivation and permanent release are different events.",
+      "aliases": [
+        "androidx.compose.ui.viewinterop.AndroidView",
+        "factory update onReset onRelease",
+        "View reuse cleanup",
+        "뷰 수명주기"
+      ],
+      "evidence": [
+        {
+          "id": "contract-androidview-factory-reuse-release",
+          "sha256": "0a6edd3d22f31afa9dac7847879d1f3cb5967edc0b06bce825c35c6dcfe513b0"
+        },
+        {
+          "id": "contract-androidview-callback-parameters",
+          "sha256": "d254f221133a49492548c194e708028c2031939fc88f014f11a36fadef45105b"
+        }
+      ]
+    },
+    {
+      "id": "guide-effect-key-current-callback-contract",
+      "title": "Choose restart keys and keep callbacks current",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime.LaunchedEffect",
+      "body": "Guidance: LaunchedEffect launches on entry, cancels and relaunches when its key changes, and cancels on composition exit. Put values that must restart work in its keys. For a changing callback or parameter that must stay current without restarting the operation, create rememberUpdatedState during composition and read its returned State inside the long-lived effect. Limitation: do not route event-handler jobs through a MutableState effect key; use rememberCoroutineScope to launch jobs from callbacks.",
+      "aliases": [
+        "androidx.compose.runtime.LaunchedEffect",
+        "androidx.compose.runtime.rememberUpdatedState",
+        "effect restart keys",
+        "latest callback",
+        "효과 재시작",
+        "최신 콜백"
+      ],
+      "evidence": [
+        {
+          "id": "contract-launchedeffect-key-lifetime",
+          "sha256": "74a8b9defaaf13afb85d5b4c05d196c81669c10bebcc9c7627557877672ec552"
+        },
+        {
+          "id": "contract-rememberupdatedstate-current-value",
+          "sha256": "361469368aebf06cbc3d82c5d9db2277ebd8689ec0dc2c547082d0f936945f1e"
+        }
+      ]
+    },
+    {
+      "id": "guide-toggleable-state-disabled",
+      "title": "Pass current toggle state and disabled behavior explicitly",
+      "artifact": "androidx.compose.foundation:foundation",
+      "fqn": "androidx.compose.foundation.selection.toggleable",
+      "body": "Guidance: Pass toggleable the caller’s current value and enabled flag. Its click callback requests !value; the caller must decide whether to update state and supply the new value. The node updates its current value and callback and publishes ToggleableState(value) semantics. enabled controls input handling and whether semantics present it as enabled. Limitation: onValueChange is a request, not an automatic mutation of caller state; this contract does not disable unrelated handlers elsewhere.",
+      "aliases": [
+        "androidx.compose.foundation.selection.toggleable",
+        "toggle state",
+        "disabled semantics",
+        "토글 상태",
+        "비활성"
+      ],
+      "evidence": [
+        {
+          "id": "contract-toggleable-input-disabled",
+          "sha256": "3b3470ea26a9efc6685aa631aa4cbf1f07a7873aabd9e7cabe1ea1a92c498e5c"
+        },
+        {
+          "id": "contract-toggleable-node-state",
+          "sha256": "acfb6cd32f2573e3eb32f257e16b0041fcbf2ef102abbb785edf7fd251be7a6c"
+        }
+      ]
+    },
+    {
+      "id": "guide-animatable-child-cancellation",
+      "title": "Separate interrupted animation children from ordinary failures",
+      "artifact": "androidx.compose.animation:animation-core",
+      "fqn": "androidx.compose.animation.core.Animatable",
+      "body": "Guidance: Interrupting Animatable with another animation, stop, or snapTo throws CancellationException, so subsequent work in that caller does not run normally. A child coroutine ending with CancellationException cancels itself and its own children without cancelling its parent or siblings. Limitation: the isolation claim requires the animation to run in a separate child; a direct animateTo call still interrupts the caller’s sequence. Normal return may be Finished or BoundReached, so require Finished when target completion matters.",
+      "aliases": [
+        "androidx.compose.animation.core.Animatable",
+        "animation child cancellation",
+        "parent sibling cancellation",
+        "애니메이션 취소"
+      ],
+      "evidence": [
+        {
+          "id": "contract-animatable-interruption-result",
+          "sha256": "40de289b774953147dc4bb44f8246d004a999ceb85cf954179d40bdb2eca3fcc"
+        },
+        {
+          "id": "contract-coroutine-normal-child-cancellation",
+          "sha256": "1cf39772b10fa72022f267e3be476ce5d5cae71fcad8f96fb39db46b482296ab"
+        }
+      ]
+    },
+    {
+      "id": "guide-coroutine-scope-cancellation-direction",
+      "title": "Distinguish parent scope cancellation from child cancellation",
+      "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "fqn": "kotlinx.coroutines.CoroutineScope",
+      "body": "Guidance: Structured concurrency nests child lifetimes within their parent scope: cancelling the scope cancels its coroutines, and the scope cannot complete until its children complete. By contrast, a child ending with CancellationException cancels itself and its children without cancelling its parent or siblings. Limitation: this does not claim the same isolation for other exception types or for detached work outside that scope.",
+      "aliases": [
+        "kotlinx.coroutines.CoroutineScope",
+        "structured cancellation",
+        "parent children",
+        "구조적 취소"
+      ],
+      "evidence": [
+        {
+          "id": "contract-coroutine-parent-scope-lifetime",
+          "sha256": "2ec8ca69296b20fe7fc0523db3074dd89320f3831efc42eca5e098deeb1b552a"
+        },
+        {
+          "id": "contract-coroutine-normal-child-cancellation",
+          "sha256": "1cf39772b10fa72022f267e3be476ce5d5cae71fcad8f96fb39db46b482296ab"
+        }
+      ]
     }
   ]
 }
