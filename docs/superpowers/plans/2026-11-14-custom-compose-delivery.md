@@ -24,10 +24,10 @@ Keep `sync`, `search` and `read` unchanged. Add:
 ```text
 begin --cache DIR --task FILE [--remote URL --ref corpus] [--offline] [--require ARTIFACT=VERSION]
 route --query TEXT
-lookup --task FILE (--query TEXT | --route ID) [--max-bytes N]
+lookup --task FILE (--query TEXT | --route ID) [--require ARTIFACT=VERSION] [--max-bytes N]
 ```
 
-`begin` syncs first and exclusively creates a local task file containing the pin, sync status, explicit caller-supplied resolved versions and a zeroed ledger. It refuses an existing task file. `route` is advisory local navigation with at most two candidates; it is not evidence or a version resolver. `lookup` uses the recorded pin and versions, performs only local retrieval, selects one direct search hit and at most two one-hop source sections, and returns a compact pack. No network lookup query is sent. Two lookup attempts maximum per task allow a bounded explicit refinement. Default pack ceiling 6,144 bytes; maximum is the remaining 12,288-byte allowance, including the envelope. Legacy calls retain their 3,072-byte cap. A whole selected pack that cannot fit returns an explicit gap rather than silently trimming a contract.
+`begin` syncs first and exclusively creates a local task file containing the pin, sync status, explicit caller-supplied resolved versions and a zeroed ledger. It refuses an existing task file. After inspecting consumer versions, the first `lookup` may bind `--require` values once; conflicting begin values are rejected, and later attempts cannot alter the context. `route` is advisory local navigation with at most two candidates; it is not evidence or a version resolver. `lookup` uses the recorded pin and versions, performs only local retrieval, selects one direct search hit and at most two one-hop source sections, and returns a compact pack. No network lookup query is sent. Two lookup attempts maximum per task allow a bounded explicit refinement. The default and maximum pack ceiling are the remaining 12,288-byte allowance, including the envelope; return only the selected necessary content, never pad output to the ceiling. Legacy calls retain their 3,072-byte cap. A whole selected pack that cannot fit returns an explicit gap rather than silently trimming a contract.
 
 The task ledger records emitted bytes, section reads and attempts under an exclusive lock and atomic update. Failed/empty attempts remain visible and cannot reset prior spending. Lock collisions execute no retrieval. Refuse invalid/corrupted pins or contexts. Versions on all chosen routes come from the same explicit context; a route does not invent or rewrite an app version.
 
@@ -39,15 +39,17 @@ The task ledger records emitted bytes, section reads and attempts under an exclu
 - `config/review-contracts.json`: schemaVersion 1, contracts with `id`, `claim`, `cardId`, `cardSha256`, `evidence` (one/two `{id,sha256}`). Descriptor hashes bind actual emitted card/raw bodies; absent/changed required evidence means insufficient/unreviewed, never sufficient. No automatic version upgrade.
 - `config/contract-spans.json`: schemaVersion 1, spans with `id`, `sourceId`, `title`, `sourceSha256`, `startLine`, `endLine`. Hash the full normalized Git file (`CRLF` to `LF`), use inclusive one-based lines, and create an ordinary section with exactly `id`. Changed/missing file or invalid interval suppresses the span and yields needs-review. Retain ordinary chunks and old snapshots. Exact IDs/intervals are authored only after public-source inspection.
 
+Required-source acquisition failures still abort refresh/publication. For a missing/unavailable configured Git file with selected spans, attach their needs-review statuses to the failure report; do not silently publish a partial raw corpus. A missing source configuration entry can be reported as needs-review in an otherwise successful crawl.
+
 The implementer may factor these formats into small typed modules, but must notify the controller before changing fields consumed by another task.
 
 ## Task 1 — Runtime, routing, packs and selected spans
 
-- [ ] Write meaningful failing tests for route aliases/ambiguity, hash completeness, version uncertainty, output/read/hop limits, retries, task locking/corruption, immutable pins and legacy compatibility.
-- [ ] Implement the API and data formats above; ship seed routes for interop, effects, compound APIs, nodes, accessible interaction, animation, coroutine cancellation and performance evidence. Start with an empty descriptor/span catalog if public authoring is not ready.
-- [ ] Extend crawling with optional selected spans and refresh reporting without changing ordinary chunks or canonical schema. Add hash/interval/source-change tests.
-- [ ] Stage new runtime data in bundles; verify installed lookup works outside the checkout. Do not add a private context loader.
-- [ ] Run typecheck and full tests, bundle/install/launcher checks; commit and receive an independent scoped review.
+- [x] Write meaningful failing tests for route aliases/ambiguity, hash completeness, version uncertainty, output/read/hop limits, retries, task locking/corruption, immutable pins and legacy compatibility.
+- [x] Implement the API and data formats above; ship seed routes for interop, effects, compound APIs, nodes, accessible interaction, animation, coroutine cancellation and performance evidence. Start with an empty descriptor/span catalog if public authoring is not ready.
+- [x] Extend crawling with optional selected spans and refresh reporting without changing ordinary chunks or canonical schema. Add hash/interval/source-change tests.
+- [x] Stage new runtime data in bundles; verify installed lookup works outside the checkout. Do not add a private context loader.
+- [x] Run typecheck and full tests, bundle/install/launcher checks; commit and receive an independent scoped review.
 
 ## Task 2 — Targeted public knowledge
 
