@@ -86,7 +86,7 @@
     },
     {
       "id": "nodes",
-      "title": "Modifier node configuration and updates",
+      "title": "Modifier node updates and attachment-bound work",
       "keywords": [
         "Modifier.Node",
         "ModifierNodeElement",
@@ -95,7 +95,11 @@
         "equals hashCode",
         "노드",
         "노드 갱신",
-        "노드 재사용"
+        "노드 재사용",
+        "node detach",
+        "node coroutineScope",
+        "attachment cleanup",
+        "노드 분리"
       ],
       "queries": [
         {
@@ -104,7 +108,7 @@
         }
       ],
       "cardIds": [
-        "guide-modifier-node-element-update-contract"
+        "guide-modifier-node-update-attachment-contract"
       ],
       "relatedRouteIds": [
         "performance"
@@ -198,20 +202,29 @@
     },
     {
       "id": "performance",
-      "title": "Performance evidence",
+      "title": "Performance timings and benchmark validation",
       "keywords": [
         "performance",
         "benchmark",
+        "Macrobenchmark",
+        "profileable",
+        "non-debuggable",
+        "performance measurement",
+        "composition tracing",
         "성능",
-        "벤치마크"
+        "성능 측정",
+        "벤치마크",
+        "프로파일"
       ],
       "queries": [
         {
-          "artifact": "androidx.compose.ui:ui",
-          "query": "performance"
+          "artifact": "androidx.benchmark:benchmark-macro-junit4",
+          "symbol": "androidx.benchmark.macro"
         }
       ],
-      "cardIds": [],
+      "cardIds": [
+        "guide-verify-performance-with-benchmarks"
+      ],
       "relatedRouteIds": [
         "nodes"
       ]

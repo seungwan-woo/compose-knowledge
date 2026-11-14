@@ -108,6 +108,38 @@
           "sha256": "0c2dcd43a17107daa18f53ddc4827b688661fd59287aba9718062a37773d4df0"
         }
       ]
+    },
+    {
+      "id": "review-modifier-node-update-attachment-contract",
+      "claim": "Node element create/update/equality and attachment-bound coroutineScope cancellation after onDetach returns.",
+      "cardId": "guide-modifier-node-update-attachment-contract",
+      "cardSha256": "114f7be5578f142acb17f7a479d27cc8959005c7fcee9ffd8e8e8e711e40bd63",
+      "evidence": [
+        {
+          "id": "live-compose-custom-modifiers-node-element",
+          "sha256": "0c2dcd43a17107daa18f53ddc4827b688661fd59287aba9718062a37773d4df0"
+        },
+        {
+          "id": "contract-modifier-node-attachment-scope",
+          "sha256": "25be7062a22789ebe958467c9cd79217fce5ccc142c078e5a32a33ad721b0b8d"
+        }
+      ]
+    },
+    {
+      "id": "review-verify-performance-with-benchmarks",
+      "claim": "Recomposition counts locate updates; verify timing with tracing/Macrobenchmark and a non-debuggable, profileable app.",
+      "cardId": "guide-verify-performance-with-benchmarks",
+      "cardSha256": "fc33b6d051fba5f64d6efa3e0e61d95cf84da05d51cb4ea6fd597afdfca0ab8c",
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-tooling-layout-inspector",
+          "sha256": "230a86f7f70092073246ef10683d36ea84ac12fe1110a1594ab3662b28e98b1e"
+        },
+        {
+          "id": "live-compose-guide-performance-tracing-accurate-timing",
+          "sha256": "1031e5dde873cd2a65392fd962fc40edbe34621dc248e76dd155b13d2f5eb5e8"
+        }
+      ]
     }
   ]
 }
