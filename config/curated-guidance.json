@@ -1545,6 +1545,260 @@
           "sha256": "c63bda9f8093c8ed968611c282e3e2ff98e100f67548916e7f67242a53c889f1"
         }
       ]
+    },
+    {
+      "id": "guide-verify-performance-with-benchmarks",
+      "title": "Verify performance with timings rather than recomposition counts",
+      "artifact": "androidx.benchmark:benchmark-macro-junit4",
+      "fqn": "androidx.benchmark.macro",
+      "body": "Guidance: Use Layout Inspector recomposition counts to locate unexpected updates, then verify performance changes with composition tracing and Macrobenchmark. Counts do not measure elapsed work: skipping has slot-table and parameter-comparison overhead, and skipping an intermediate composable can save little once composition is scheduled. For accurate timings, profile a non-debuggable, profileable app. Limitation: fewer recompositions alone do not establish faster UI; inspector observations need timing evidence.",
+      "aliases": [
+        "androidx.benchmark.macro",
+        "Macrobenchmark",
+        "recomposition counts",
+        "profileable",
+        "non-debuggable",
+        "performance measurement",
+        "재구성 횟수",
+        "성능 측정"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-tooling-layout-inspector",
+          "sha256": "230a86f7f70092073246ef10683d36ea84ac12fe1110a1594ab3662b28e98b1e"
+        },
+        {
+          "id": "live-compose-guide-performance-tracing-accurate-timing",
+          "sha256": "1031e5dde873cd2a65392fd962fc40edbe34621dc248e76dd155b13d2f5eb5e8"
+        }
+      ]
+    },
+    {
+      "id": "guide-composition-system-tracing",
+      "title": "Inspect composable timing with composition system traces",
+      "artifact": "androidx.compose.runtime:runtime-tracing",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: Use composition tracing to expose composable functions inside system traces when investigating where time is spent. Configure the documented toolchain and device prerequisites and add androidx.compose.runtime:runtime-tracing; the guide explains how the Compose BOM can supply its version. Composition tracing combines composition detail with the lower overhead of system tracing. Limitation: ordinary system traces omit individual composables, while method tracing records every function call and can substantially affect performance. Check the target toolchain and dependencies before copying the setup.",
+      "aliases": [
+        "androidx.compose.runtime",
+        "androidx.compose.runtime:runtime-tracing",
+        "composition tracing",
+        "system trace",
+        "method tracing",
+        "composable timing",
+        "구성 추적",
+        "시스템 트레이스"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-tracing-main-content",
+          "sha256": "e3f5d2e84442b163d56e25c4c010d626ee5053d700e3908524663aa001bf0d15"
+        },
+        {
+          "id": "live-compose-guide-performance-tracing-set-composition",
+          "sha256": "b81555f9fa925a64097cd2f4b608482b2da32c095c12aeabe6400f2a7bd67a63"
+        }
+      ]
+    },
+    {
+      "id": "guide-app-specific-baseline-profiles",
+      "title": "Generate and verify Baseline Profiles for app journeys",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "body": "Guidance: Create an app Baseline Profile covering critical user journeys with Macrobenchmark, and test the profile as you add or revise it. Profiles identify classes and methods for ahead-of-time compilation. Compose ships a default profile, but its optimizations cover Compose library code; it does not provide a profile of your app-specific journeys. Limitation: defining a profile does not establish a benefit for your app. Use Macrobenchmark results to verify that the generated profile helps the journeys you exercise.",
+      "aliases": [
+        "androidx.compose.ui",
+        "Baseline Profile",
+        "Macrobenchmark",
+        "critical user journeys",
+        "ahead-of-time compilation",
+        "기준 프로필",
+        "사용자 여정"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-performance-baseline-profiles-benefits",
+          "sha256": "1921cbfa9fc3ea7cb2d27262c613fa8d7fe1e7e4056a352a0ad7a85cd3abf628"
+        },
+        {
+          "id": "live-compose-guide-performance-baseline-profiles-macrobenchmark",
+          "sha256": "ba73c74e34fc573e7a70d9bc90b3865bead6a66865e3ce20b29717f8b48f8542"
+        }
+      ]
+    },
+    {
+      "id": "guide-alpha-compositing-tradeoffs",
+      "title": "Choose alpha compositing with overlap semantics in mind",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.graphics.CompositingStrategy",
+      "body": "Guidance: Account for offscreen rendering when using graphicsLayer alpha: CompositingStrategy.Auto creates an offscreen buffer when alpha is below 1. For content known not to overlap, ModulateAlpha applies alpha to individual drawing instructions and can avoid that buffer. Limitation: ModulateAlpha can change the appearance of overlapping content, so it is not a universal substitution. RenderEffect still requires offscreen rendering; Auto also documents offscreen rendering for overscroll regardless of the selected strategy.",
+      "aliases": [
+        "androidx.compose.ui.graphics.CompositingStrategy",
+        "androidx.compose.ui.graphics.graphicsLayer",
+        "CompositingStrategy.Auto",
+        "CompositingStrategy.ModulateAlpha",
+        "offscreen buffer",
+        "alpha compositing",
+        "알파 합성",
+        "오프스크린 버퍼"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-graphics-draw-modifiers-compositing-strategy-auto",
+          "sha256": "6c3f6c9a0b1df3dcc8095bb934be04504681cd0bc9e4bc210297fe9a4a28928c"
+        },
+        {
+          "id": "live-compose-guide-graphics-draw-modifiers-modulatealpha",
+          "sha256": "bb69d2d2adbfa4aecb22d95360d6a59c4d37f61811456cc90f8274f5a9054dcc"
+        }
+      ]
+    },
+    {
+      "id": "guide-compound-component-explicit-contract",
+      "title": "Compose compound components through explicit scope and state contracts",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.ExposedDropdownMenuBox",
+      "body": "Guidance: Here, \"compound component\" is a repository synthesis for coordinating composable parts through an explicit container contract. Material 3 ExposedDropdownMenuBox demonstrates caller-supplied expanded state and onExpandedChange, a scoped content lambda, and a documented menuAnchor modifier on its text field. Use this as a reference when designing related parts of a component library: expose the state, event, content, and attachment contracts that callers must supply. Limitation: compound component is not presented here as an official Android pattern name. This example establishes neither a React-style namespace API nor an automatic performance improvement; its specific text-field/menu requirements still apply.",
+      "aliases": [
+        "androidx.compose.material3.ExposedDropdownMenuBox",
+        "androidx.compose.material3.ExposedDropdownMenuBoxScope",
+        "compound component",
+        "compound pattern",
+        "복합 컴포넌트",
+        "컴파운드 패턴"
+      ],
+      "evidence": [
+        {
+          "id": "live-androidx-material3-exposed-dropdown-menu-lines-106",
+          "sha256": "5a16ce64047e588d98e37de9ca8b116862f7b95fd61db07c34e9a612f78698b9"
+        },
+        {
+          "id": "live-androidx-material3-exposed-dropdown-menu-lines-141",
+          "sha256": "370e06ba14bc8ae9f0f18499906572cde7643bda7f2c9a7f6dd402b64a5c2d5f"
+        }
+      ]
+    },
+    {
+      "id": "guide-slot-api-content-customization",
+      "title": "Use named composable slots for independently configurable content",
+      "artifact": "androidx.compose.foundation:foundation-layout",
+      "fqn": "androidx.compose.foundation.layout",
+      "body": "Guidance: Use composable slots when callers need to supply UI content that configures itself. A content lambda accepts child composition; named slots such as title, navigationIcon, and actions expose distinct roles without making the parent mirror every configuration parameter of those children. This lets a component library own placement while callers customize slot content. Limitation: this is a content customization contract, not a rule to replace every scalar parameter or configuration object with a lambda. The cited layout guide includes older Material examples; it does not establish current Material 3 signatures or released-version applicability.",
+      "aliases": [
+        "slot API",
+        "slot-based layout",
+        "named slots",
+        "configuration model",
+        "content lambda",
+        "슬롯 API",
+        "슬롯 패턴"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-guide-layouts-basics-slot-based-layouts",
+          "sha256": "222aafce802668c5fa4bb1e05bd2b14556755a4dd4338ac4b22c976f084f7227"
+        }
+      ]
+    },
+    {
+      "id": "guide-hoisted-library-state-interface",
+      "title": "Group growing library state contracts into caller-supplied state types",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: When related state values and event callbacks make a component API unwieldy, group them into a hoisted state interface that callers can provide as a cohesive policy object. For extensible library state types, Compose API guidelines prefer interfaces over abstract or open classes to discourage hidden synchronization contracts between the component and state implementation. Supply an explicit remembered default state where appropriate, or require caller configuration. Limitation: do not use a nullable state parameter as a sentinel for internally remembering state. This guidance concerns library API design; it does not require every small component to introduce a state interface.",
+      "aliases": [
+        "hoisted state interface",
+        "state holder contract",
+        "controlled component",
+        "library API design",
+        "상태 홀더 인터페이스"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-api-guidelines-lines-686",
+          "sha256": "4aea07645390ff94b9d830da97921613719b5d0feb66932af9967ec000587ef9"
+        },
+        {
+          "id": "live-compose-api-guidelines-lines-791",
+          "sha256": "8e41e940369f891708c27ce6111e3aff0237dd7fc9d539ad94243e83e0f1d344"
+        }
+      ]
+    },
+    {
+      "id": "guide-parent-data-layout-scope-contract",
+      "title": "Expose child layout configuration through the parent content scope",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.node.ParentDataModifierNode",
+      "body": "Guidance: For child-specific layout configuration, expose parent-data modifiers on a receiver scope available in the parent layout's content lambda. The integrator can then attach configuration at each child call site instead of passing the parent a parallel structure describing all children. Keep the layout decoupled from concrete child components. Limitation: lexical access to a scope does not make a modifier meaningful for every descendant; it must reach a direct child of the matching consuming layout. Avoid top-level parent-data factories that obscure which parent consumes the data.",
+      "aliases": [
+        "androidx.compose.ui.node.ParentDataModifierNode",
+        "parent data",
+        "layout scope",
+        "scoped content",
+        "receiver scope",
+        "부모 데이터",
+        "레이아웃 스코프"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-api-guidelines-lines-478",
+          "sha256": "f382b4eb6c5ac8266704de685acd87c13808db524c8a8c43813a7e536442c04e"
+        },
+        {
+          "id": "live-compose-guide-modifiers-scope-safety",
+          "sha256": "b5886d9020d2dd7f60d737bff909fd88a8954289064c4d87d9144a8892ebfb75"
+        }
+      ]
+    },
+    {
+      "id": "guide-parent-data-explicit-stateless-ownership",
+      "title": "Keep parent data explicit, stateless, and separate from shared state",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui.node.ParentDataModifierNode",
+      "body": "Guidance: Let integration code explicitly supply parent data through the parent's scoped modifier. A child component must not secretly install parent data as an implementation detail that assumes a particular parent. Parent data carries stateless child-to-parent layout configuration owned by the integrator; neither parent nor child should mutate it. Drive configuration changes by recomposition with new modifier data. Hoist shared mutable state and pass it explicitly to both parts instead of using parent data as a hidden state channel. Limitation: these rules govern parent data; they do not establish that every compound component supports arbitrary child order or nesting.",
+      "aliases": [
+        "androidx.compose.ui.node.ParentDataModifierNode",
+        "implicit parent child coupling",
+        "parent data ownership",
+        "compound component contract",
+        "hidden child contract",
+        "명시적 부모 자식 계약"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-api-guidelines-lines-511",
+          "sha256": "be6a91dc9fb3b398d723590a97605eb9aecd768b3e175a9eda39fb7ea8fb698d"
+        },
+        {
+          "id": "live-compose-api-guidelines-lines-581",
+          "sha256": "558b27a66eca444b35c7f0c281a2f2ac6d8d9ffeb118efa6879e7a65eac2a2f9"
+        }
+      ]
+    },
+    {
+      "id": "guide-component-emit-or-return-control",
+      "title": "Pass component controls in rather than returning them from emitted UI",
+      "artifact": "androidx.compose.runtime:runtime",
+      "fqn": "androidx.compose.runtime",
+      "body": "Guidance: A library composable that emits UI should receive its state object, controls, or callbacks as parameters and return Unit. Create or remember the control object before composing related parts, so another control can use it even when that control appears before the emitting component. Compose API guidelines prohibit a single public composable from both emitting tree nodes and returning a value. Limitation: declaration order still controls emitted content order; this rule removes the extra ordering dependency caused by obtaining a control object only from an emitting call. Composable factories that return values without emitting content are a separate case.",
+      "aliases": [
+        "androidx.compose.runtime.Composable",
+        "emit XOR return",
+        "component controls",
+        "state before composition",
+        "compound component ordering",
+        "컴포넌트 제어 계약"
+      ],
+      "evidence": [
+        {
+          "id": "live-compose-api-guidelines-lines-256",
+          "sha256": "9bab311f5d15528e6650dac2287a17033e898da0d9dd1ae095ad976570eee6ee"
+        },
+        {
+          "id": "live-compose-api-guidelines-lines-287",
+          "sha256": "c74721ef17b39cb37e3dea8fd709567ed9a304cb9ab993679e825e6d77075f77"
+        }
+      ]
     }
   ]
 }

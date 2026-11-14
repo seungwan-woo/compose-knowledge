@@ -1,0 +1,22 @@
+{
+  "q01": [
+    "live-compose-guide-performance-stability-fix-not-composable"
+  ],
+  "q02": [],
+  "q03": [
+    "live-compose-guide-performance-bestpractices-main-content"
+  ],
+  "q04": [
+    "guide-cache-drawing-objects",
+    "live-compose-guide-graphics-draw-modifiers-drawwithcache"
+  ],
+  "q05": [],
+  "q06": [],
+  "q07": [
+    "live-androidx-foundation-foundation-layout-foundation-layout-row-lines-280"
+  ],
+  "q08": [
+    "guide-state-hoisting",
+    "live-compose-guide-state-hoisting-best-practice"
+  ]
+}

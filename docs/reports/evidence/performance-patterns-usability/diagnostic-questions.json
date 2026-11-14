@@ -1,0 +1,60 @@
+[
+  {
+    "id": "q01",
+    "question": "A Compose screen feels janky. Is a lower recomposition count enough to demonstrate improvement, and what build and measurement should validate it?",
+    "artifact": "androidx.benchmark:benchmark-macro-junit4",
+    "symbol": "androidx.benchmark.macro",
+    "query": "recomposition counts profileable measurement",
+    "intent": [
+      "measurement",
+      "release",
+      "recomposition"
+    ]
+  },
+  {
+    "id": "q02",
+    "question": "How can a system trace help identify which composable is expensive instead of relying on recomposition counts?",
+    "artifact": "androidx.compose.runtime:runtime-tracing",
+    "symbol": "androidx.compose.runtime",
+    "query": "composition tracing system trace",
+    "intent": [
+      "trace",
+      "cost"
+    ]
+  },
+  {
+    "id": "q03",
+    "question": "What does a Baseline Profile optimize for a Compose app, and does it remove the need to measure runtime performance?",
+    "artifact": "androidx.compose.ui:ui",
+    "symbol": null,
+    "query": "baseline profile critical user journeys",
+    "intent": [
+      "baseline profile",
+      "limits"
+    ]
+  },
+  {
+    "id": "q05",
+    "question": "How does the compound component idea map to a Compose parent component that accepts composable child slots?",
+    "artifact": "androidx.compose.material3:material3",
+    "symbol": "androidx.compose.material3.ExposedDropdownMenuBox",
+    "query": "compound component contract",
+    "intent": [
+      "compound",
+      "slot",
+      "composition"
+    ]
+  },
+  {
+    "id": "q06",
+    "question": "A reusable card needs caller-defined leading and trailing content. When should its API accept composable slots instead of adding more content configuration parameters?",
+    "artifact": "androidx.compose.foundation:foundation-layout",
+    "symbol": null,
+    "query": "slot API content customization",
+    "intent": [
+      "slot",
+      "API",
+      "configuration"
+    ]
+  }
+]
