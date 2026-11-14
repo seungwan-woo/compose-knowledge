@@ -60,7 +60,7 @@ export function suggest(query:string,catalog:Route[]) {
  return {candidates,gap:candidates.length ? null : 'No explicit route alias matched'};
 }
 function validateTask(t:unknown): asserts t is Task {
- if (!keys(t,['schemaVersion','cache','snapshot','sync','versions','ledger']) || t.schemaVersion !== 1 || typeof t.cache !== 'string' || !path.isAbsolute(t.cache) || typeof t.snapshot !== 'string' || !/^[a-f0-9]{40}$/.test(t.snapshot) || !keys(t.sync,['snapshot','status','checkedAt','publishedAt'],['error']) || t.sync.snapshot !== t.snapshot || !['fresh','cached'].includes(String(t.sync.status)) || typeof t.sync.checkedAt !== 'string' || !Number.isFinite(Date.parse(t.sync.checkedAt)) || typeof t.sync.publishedAt !== 'string' || !Number.isFinite(Date.parse(t.sync.publishedAt)) || ('error' in t.sync && typeof t.sync.error !== 'string') || !Array.isArray(t.versions) || !t.versions.every(v => keys(v,['artifact','version'],['platform']) && nonempty(v.artifact) && (v.version === null || nonempty(v.version)) && (v.platform === undefined || v.platform === 'android')) || !keys(t.ledger,['bytes','sections','attempts'])) throw new Error('Invalid task context');
+ if (!keys(t,['schemaVersion','cache','snapshot','sync','versions','ledger']) || t.schemaVersion !== 1 || typeof t.cache !== 'string' || !path.isAbsolute(t.cache) || typeof t.snapshot !== 'string' || !/^[a-f0-9]{40}$/.test(t.snapshot) || !keys(t.sync,['snapshot','status','checkedAt','publishedAt'],['error']) || t.sync.snapshot !== t.snapshot || (t.sync.status !== 'fresh' && t.sync.status !== 'cached') || typeof t.sync.checkedAt !== 'string' || !Number.isFinite(Date.parse(t.sync.checkedAt)) || typeof t.sync.publishedAt !== 'string' || !Number.isFinite(Date.parse(t.sync.publishedAt)) || ('error' in t.sync && typeof t.sync.error !== 'string') || !Array.isArray(t.versions) || !t.versions.every(v => keys(v,['artifact','version'],['platform']) && nonempty(v.artifact) && (v.version === null || nonempty(v.version)) && (v.platform === undefined || v.platform === 'android')) || !keys(t.ledger,['bytes','sections','attempts'])) throw new Error('Invalid task context');
  for (const [key,max] of [['bytes',12288],['sections',3],['attempts',2]] as const) if (!Number.isSafeInteger(t.ledger[key]) || (t.ledger[key] as number) < 0 || (t.ledger[key] as number) > max) throw new Error('Invalid task ledger');
  getVersionStatus([], {versions:t.versions as ArtifactVersion[]});
 }
@@ -87,7 +87,7 @@ type Gap = {id?:string;reason:string};
 function encodePack(base:Record<string,unknown>,task:Task,sections:ReadResponse[],gaps:Gap[],maxBytes:number):string {
  const allowance=12288-task.ledger.bytes, ceiling=Math.min(maxBytes,allowance);
  const encode=(include:boolean,issues:Gap[])=>{
-  const sources:Record<string, Omit<ReadResponse['sources'][number],never>>={};
+  const sources:Record<string, Omit<ReadResponse['sources'][number],never>>=Object.create(null);
   const projected=include ? sections.map(({snapshot:_snapshot,sources:items,...section})=>{
    for (const source of items) {
     if (sources[source.id] && JSON.stringify(sources[source.id]) !== JSON.stringify(source)) throw new Error('Conflicting source provenance');
@@ -104,7 +104,7 @@ function encodePack(base:Record<string,unknown>,task:Task,sections:ReadResponse[
   return result;
  };
  let result=encode(!gaps.length,gaps);
- if (Buffer.byteLength(result)>ceiling) result=encode(false,sections.map(section=>({id:section.id,reason:'Selected evidence does not fit byte allowance'})));
+ if (Buffer.byteLength(result)>ceiling && !gaps.length) result=encode(false,sections.map(section=>({id:section.id,reason:'Selected evidence does not fit byte allowance'})));
  if (Buffer.byteLength(result)>ceiling) throw new Error('Byte budget cannot fit response');
  return result;
 }
