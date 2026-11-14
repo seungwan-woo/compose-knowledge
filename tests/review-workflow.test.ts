@@ -96,3 +96,11 @@ it('returns an explicit gap for an unknown route alias instead of searching the 
  const result=cli('lookup','--task',file,'--query','dismiss');expect(result.status,result.stderr).toBe(0);const pack=JSON.parse(result.stdout);
  expect(pack.candidates).toEqual([]);expect(pack.transmission).toBe('gap');expect(pack.sections).toEqual([]);expect(pack.gaps[0].reason).toMatch(/alias/i);
 });
+it('leaves the prior versions unchanged when a first lookup fails after binding',()=>{
+ for (const [name,args] of [['unknown-route',['--route','does-not-exist']],['byte-envelope',['--query','Animatable cancellation','--max-bytes','1']]] as [string,string[]][]) {
+  const file=join(tmp,'failed-binding-'+name+'.json');const begin=cli('begin','--cache',cache,'--task',file,'--offline');expect(begin.status,begin.stderr).toBe(0);const before=JSON.parse(begin.stdout);
+  const failed=cli('lookup','--task',file,...args,'--require','androidx.compose.ui:ui=1.7.8');expect(failed.status).not.toBe(0);expect(failed.stdout).toBe('');
+  const after=JSON.parse(readFileSync(file,'utf8'));expect(after).toMatchObject({snapshot:before.snapshot,versions:before.versions,ledger:{attempts:1,bytes:0,sections:0}});
+  expect(cli('lookup','--task',file,'--route','animation','--require','androidx.compose.ui:ui=1.7.8').status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).versions).toEqual(before.versions);
+ }
+});

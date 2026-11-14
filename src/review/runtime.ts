@@ -119,7 +119,7 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   const selectedMaxBytes=typeof maxBytes === 'function' ? maxBytes() : maxBytes;
   const selectedVersions=typeof versions === 'function' ? versions() : versions;
   if (selectedVersions.length && priorAttempts !== 0) throw new Error('Version context already frozen');
-  task.versions=bindVersions(task.versions,selectedVersions); await saveTask(file,task);
+  task.versions=bindVersions(task.versions,selectedVersions);
   const {index}=await validateCachedSnapshot(task.cache,task.snapshot);
   const catalog=await routes(), descriptors=await contracts();
   const candidates=selection.query ? suggest(selection.query,catalog).candidates : [];
