@@ -22,7 +22,7 @@ it('pins a task and bounds attempts and complete evidence packs', () => {
  const pin = JSON.parse(begin.stdout).snapshot; expect(pin).toBe(git('rev-parse','HEAD'));
  expect(cli('begin','--cache',cache,'--task',task,'--offline').status).not.toBe(0);
  const result = cli('lookup','--task',task,'--query','DropdownMenu'); expect(result.status,result.stderr).toBe(0);
- const pack = JSON.parse(result.stdout); expect(pack.snapshot).toBe(pin); expect(pack.sections.length).toBeGreaterThan(0); expect(pack.sections[0].versionStatus).toBe('unknown'); expect(pack.sufficiency).not.toBe('sufficient'); expect(Buffer.byteLength(result.stdout)).toBeLessThanOrEqual(6144);
+ const pack = JSON.parse(result.stdout); expect(pack.snapshot).toBe(pin); expect(pack.sections).toEqual([]); expect(pack.gaps[0].reason).toMatch(/alias/i); expect(pack.sufficiency).not.toBe('sufficient'); expect(Buffer.byteLength(result.stdout)).toBeLessThanOrEqual(6144);
  expect(cli('lookup','--task',task,'--query','qzxunrecognized').status).toBe(0);
  expect(cli('lookup','--task',task,'--query','DropdownMenu').status).not.toBe(0);
  expect(JSON.parse(readFileSync(task,'utf8')).ledger.attempts).toBe(2);
@@ -57,16 +57,42 @@ it('binds resolved versions only on first lookup and preserves the pin and ledge
  const file=join(tmp,'binding.json'); const begun=cli('begin','--cache',cache,'--task',file,'--offline'); const pin=JSON.parse(begun.stdout).snapshot;
  const first=cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.3.2'); expect(first.status,first.stderr).toBe(0);
  expect(JSON.parse(readFileSync(file,'utf8'))).toMatchObject({snapshot:pin,versions:[{artifact:'androidx.compose.material3:material3',version:'1.3.2'}],ledger:{attempts:1}});
- const second=cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.4.0');expect(second.status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(1);
+ const second=cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.4.0');expect(second.status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(2);
 });
 it('rejects conflicting versions from begin and normalized aliases on lookup',()=>{
  const file=join(tmp,'conflict.json');expect(cli('begin','--cache',cache,'--task',file,'--offline','--require','androidx.compose.ui:ui=1.0').status).toBe(0);
  expect(cli('lookup','--task',file,'--query','test','--require','androidx.compose.ui:ui-android=2.0').status).not.toBe(0);
- expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(0);
+ expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(1);
 });
 it('preserves explicit unknown applicability and rejects late context additions',()=>{
  const file=join(tmp,'unknown-binding.json');expect(cli('begin','--cache',cache,'--task',file,'--offline','--require','androidx.compose.ui:ui=unknown').status).toBe(0);
  const result=cli('lookup','--task',file,'--query','DropdownMenu');expect(result.status,result.stderr).toBe(0);
  const state=JSON.parse(readFileSync(file,'utf8'));expect(state.versions).toEqual([{artifact:'androidx.compose.ui:ui',version:null}]);
- expect(cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.0').status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(1);
+ expect(cli('lookup','--task',file,'--query','DropdownMenu','--require','androidx.compose.material3:material3=1.0').status).not.toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(2);
+});
+it('charges an invalid route-and-query selection before retrieval and blocks a third attempt',()=>{
+ const file=join(tmp,'invalid-selection.json');expect(cli('begin','--cache',cache,'--task',file,'--offline').status).toBe(0);
+ const before=JSON.parse(readFileSync(file,'utf8'));const failed=cli('lookup','--task',file,'--query','DropdownMenu','--route','compound-apis');expect(failed.status).not.toBe(0);expect(failed.stdout).toBe('');
+ const after=JSON.parse(readFileSync(file,'utf8'));expect(after).toMatchObject({snapshot:before.snapshot,versions:before.versions,ledger:{attempts:1,bytes:0,sections:0}});
+ expect(cli('lookup','--task',file,'--route','compound-apis').status).toBe(0);expect(cli('lookup','--task',file,'--route','compound-apis').status).not.toBe(0);
+});
+it('charges semantically invalid lookup arguments on a valid task',()=>{
+ for (const [name,args] of [['missing',[]],['empty',['--query',' ']],['budget',['--query','DropdownMenu','--max-bytes','0']],['require',['--query','DropdownMenu','--require','bad']]] as [string,string[]][]) {
+  const file=join(tmp,'invalid-'+name+'.json');expect(cli('begin','--cache',cache,'--task',file,'--offline').status).toBe(0);
+  const result=cli('lookup','--task',file,...args);expect(result.status).not.toBe(0);expect(result.stdout).toBe('');expect(JSON.parse(readFileSync(file,'utf8')).ledger).toEqual({attempts:1,bytes:0,sections:0});
+ }
+});
+it('does not mutate a corrupt task while rejecting invalid selection',()=>{
+ const file=join(tmp,'bad-selection-task.json');writeFileSync(file,'{}');expect(cli('lookup','--task',file,'--query','DropdownMenu','--route','compound-apis').status).not.toBe(0);expect(readFileSync(file,'utf8')).toBe('{}');
+});
+it('returns ambiguous route candidates without spending a section before refinement',()=>{
+ const file=join(tmp,'ambiguous-refine.json');expect(cli('begin','--cache',cache,'--task',file,'--offline').status).toBe(0);
+ const result=cli('lookup','--task',file,'--query','Animatable sequential concurrent child coroutines cancellation interruption frame performance');expect(result.status,result.stderr).toBe(0);
+ const pack=JSON.parse(result.stdout);expect(pack.candidates.length).toBe(2);expect(pack.transmission).toBe('gap');expect(pack.sections).toEqual([]);expect(pack.remaining.sections).toBe(3);expect(pack.gaps[0].reason).toMatch(/ambiguous/i);
+ expect(cli('lookup','--task',file,'--route','animation').status).toBe(0);expect(JSON.parse(readFileSync(file,'utf8')).ledger.attempts).toBe(2);
+});
+it('returns an explicit gap for an unknown route alias instead of searching the corpus',()=>{
+ const file=join(tmp,'unknown-route.json');expect(cli('begin','--cache',cache,'--task',file,'--offline').status).toBe(0);
+ const result=cli('lookup','--task',file,'--query','dismiss');expect(result.status,result.stderr).toBe(0);const pack=JSON.parse(result.stdout);
+ expect(pack.candidates).toEqual([]);expect(pack.transmission).toBe('gap');expect(pack.sections).toEqual([]);expect(pack.gaps[0].reason).toMatch(/alias/i);
 });

@@ -33,7 +33,14 @@ node "$CK_SKILL_DIR/scripts/compose-knowledge.mjs" lookup \
   --task "$CK_TASK" --query "effect restart keys current callback"
 ```
 
-On the first lookup only, add repeatable `--require artifact=version` for verified dependencies; omitted versions remain unknown. This freezes the context. `route --query TEXT` offers at most two advisory candidates from curated English/Korean/API aliases; it is not semantic translation or evidence. If necessary, refine once with `lookup --route ID` or a narrower query on the same task.
+On the first lookup only, add repeatable `--require artifact=version` for verified dependencies; omitted versions remain unknown. This freezes the context. `route --query TEXT` offers at most two advisory candidates from curated English/Korean/API aliases; it is not semantic translation or evidence. If necessary, refine once on the same task. Replace `--query` with `--route`; never combine them:
+
+```sh
+node "$CK_SKILL_DIR/scripts/compose-knowledge.mjs" lookup \
+  --task "$CK_TASK" --route animation
+```
+
+Alternatively, use only a narrower `--query`.
 
 All workers share ≤12,288 UTF-8 retrieval stdout bytes, three emitted sections, one link hop and two lookup attempts. Packs default to the remaining byte allowance and emit only selected evidence. Serialize task mutations. Never reset a task or bypass its ledger with legacy reads to continue the question.
 

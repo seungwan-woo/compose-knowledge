@@ -108,20 +108,24 @@ function encodePack(base:Record<string,unknown>,task:Task,sections:ReadResponse[
  if (Buffer.byteLength(result)>ceiling) throw new Error('Byte budget cannot fit response');
  return result;
 }
-export async function lookup(file:string,selection:{query?:string;route?:string},maxBytes=12288,versions:ArtifactVersion[]=[]):Promise<string> {
+export async function lookup(file:string,selection:{query?:string;route?:string},maxBytes:number | (()=>number)=12288,versions:ArtifactVersion[] | (()=>ArtifactVersion[])=[]):Promise<string> {
  const lock=file+'.lock'; const handle=await open(lock,'wx',0o600);
  try {
   const task:unknown=JSON.parse(await readFile(file,'utf8')); validateTask(task);
   if (task.ledger.attempts >= 2) throw new Error('Lookup attempts exhausted');
-  if (versions.length && task.ledger.attempts !== 0) throw new Error('Version context already frozen');
-  task.versions=bindVersions(task.versions,versions);
+  const priorAttempts=task.ledger.attempts;
   task.ledger.attempts++; await saveTask(file,task);
+  if (Boolean(selection.query) === Boolean(selection.route) || !(selection.query ?? selection.route)?.trim()) throw new Error('Use either --query or --route');
+  const selectedMaxBytes=typeof maxBytes === 'function' ? maxBytes() : maxBytes;
+  const selectedVersions=typeof versions === 'function' ? versions() : versions;
+  if (selectedVersions.length && priorAttempts !== 0) throw new Error('Version context already frozen');
+  task.versions=bindVersions(task.versions,selectedVersions); await saveTask(file,task);
   const {index}=await validateCachedSnapshot(task.cache,task.snapshot);
   const catalog=await routes(), descriptors=await contracts();
   const candidates=selection.query ? suggest(selection.query,catalog).candidates : [];
   const route=selection.route ? catalog.find(r=>r.id===selection.route) : candidates.length===1 ? catalog.find(r=>r.id===candidates[0]!.id) : undefined;
   if (selection.route && !route) throw new Error('Unknown route');
-  const alternatives:RouteQuery[]=route?.queries ?? [{artifact:'',query:selection.query}];
+  const alternatives:RouteQuery[]=route?.queries ?? [];
   let hit:ReturnType<typeof searchIndex>['hits'][number] | undefined; let query:SearchQuery={versions:task.versions,limit:1};
   for (const alt of alternatives) {
    query={...(alt.artifact ? {artifact:alt.artifact}:{}),...(alt.symbol ? {symbol:alt.symbol}:{query:alt.query}),versions:task.versions,limit:1};
@@ -132,8 +136,9 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   const descriptor=hit ? descriptors.find(d=>d.cardId===hit!.id) : undefined;
   const gaps:Gap[]=[]; const sections:ReadResponse[]=[];
   const ids=hit ? [hit.id,...(descriptor?.evidence.map(e=>e.id) ?? [])] : [];
-  if (!hit) gaps.push({reason:'No matching evidence'});
-  if (hit && ids.length > 3-task.ledger.sections) for (const id of ids.slice(3-task.ledger.sections)) gaps.push({id,reason:'Section allowance exhausted'});
+  if (!route && selection.query) gaps.push({reason:candidates.length ? 'Ambiguous route aliases; choose a candidate' : 'No explicit route alias matched'});
+  else if (!hit) gaps.push({reason:'No matching evidence'});
+  if (hit && ids.length > 3-task.ledger.sections) for (const id of ids.slice(3-task.ledger.sections)) gaps.push({id,reason:`Selected pack requires ${ids.length} sections; ${3-task.ledger.sections} remain`});
   if (hit && descriptor) for (const e of descriptor.evidence) if (!hit.relatedIds.includes(e.id)) gaps.push({id:e.id,reason:'Required evidence is not one hop from direct hit'});
   if (!gaps.length) for (const id of ids) {
    try { sections.push(readSection(index,id,query,task.snapshot)); }
@@ -142,9 +147,9 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   if (!gaps.length && descriptor) for (const item of [{id:descriptor.cardId,sha256:descriptor.cardSha256},...descriptor.evidence]) if (!sections.some(s=>s.id===item.id && hash(s.body)===item.sha256)) gaps.push({id:item.id,reason:'Reviewed body hash changed'});
   const claims=gaps.length ? [] : reviewedClaims(descriptors,sections);
   const base={snapshot:task.snapshot,route:route?.id ?? null,candidates,scope:selection,sufficiency:claims.length ? 'sufficient':'unreviewed',claims,relatedRouteIds:route?.relatedRouteIds ?? []};
-  let result=encodePack(base,task,sections,gaps,maxBytes);
+  let result=encodePack(base,task,sections,gaps,selectedMaxBytes);
   let pack=JSON.parse(result) as {sections:unknown[];transmission:string};
-  if (pack.transmission==='gap' && claims.length) {base.sufficiency='unreviewed';base.claims=[];result=encodePack(base,task,sections,gaps,maxBytes);pack=JSON.parse(result) as typeof pack;}
+  if (pack.transmission==='gap' && claims.length) {base.sufficiency='unreviewed';base.claims=[];result=encodePack(base,task,sections,gaps,selectedMaxBytes);pack=JSON.parse(result) as typeof pack;}
   task.ledger.bytes+=Buffer.byteLength(result);task.ledger.sections+=pack.sections.length;await saveTask(file,task);return result;
  } finally {await handle.close();await rm(lock,{force:true});}
 }

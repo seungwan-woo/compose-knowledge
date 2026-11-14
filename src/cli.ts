@@ -86,8 +86,7 @@ async function main(): Promise<void> {
   }
   if (command === 'lookup') {
     const query = one(o,'query'), route = one(o,'route');
-    if (Boolean(query) === Boolean(route) || !(query ?? route)?.trim()) throw new Error('Use either --query or --route');
-    process.stdout.write(await lookup(required(o,'task'),{query,route},positive(one(o,'max-bytes'),12288,12288),queryOptions(o).versions ?? [])); return;
+    process.stdout.write(await lookup(required(o,'task'),{query,route},()=>positive(one(o,'max-bytes'),12288,12288),()=>queryOptions(o).versions ?? [])); return;
   }
   const cache = required(o, 'cache'), snapshot = required(o, 'snapshot');
   const query = queryOptions(o), maxBytes = positive(one(o, 'max-bytes'), 3072, 3072);
