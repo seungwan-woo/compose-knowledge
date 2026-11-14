@@ -1,6 +1,6 @@
 # Custom Compose reference workflow delivery
 
-Status: implementation in progress. This delivery follows the measured six-question pilot and the user's requirement that private code is only inspected in the consumer's approved environment.
+Status: implementation and local acceptance complete; final whole-branch review pending. See the [measured acceptance report](../../reports/custom-review-acceptance.md) and [decisions/costs](../../reports/custom-review-decisions.md). No public corpus/environment publication or merge was performed. This delivery follows the measured six-question pilot and the user's requirement that private code is only inspected in the consumer's approved environment.
 
 ## Goal and scope
 
@@ -12,7 +12,7 @@ The earlier [design](../specs/2026-11-14-custom-compose-review-design.md) remain
 
 - Public AndroidX/Android/Kotlin sources and independently authored generic fixtures only; no private uploads or private review findings.
 - Node 24, concise English repository documentation, legacy commands and corpus schema v1 compatible.
-- New question: online sync first, immutable snapshot pin; cached/unavailable are distinct. No automatic build of a consumer project; unverified module/variant/artifact applicability stays unknown.
+- Choose packs or legacy upfront; never switch after a lookup. New question: online sync first, immutable snapshot pin; cached/unavailable are distinct. No automatic build of a consumer project; unverified module/variant/artifact applicability stays unknown.
 - At most 12,288 retrieval stdout bytes, three emitted sections and one-hop linked evidence per task shared across workers. Serialize concurrent task mutations. No task reset or unrecorded retry allowance.
 - Preserve full provenance, conjunctive version requirements and curated-card uncertainty. Full transmission is distinct from sufficient evidence for a named claim.
 - No public corpus publication, shared-branch merge, environment publication or private-data export is part of local verification.
@@ -27,7 +27,7 @@ route --query TEXT
 lookup --task FILE (--query TEXT | --route ID) [--require ARTIFACT=VERSION] [--max-bytes N]
 ```
 
-`begin` syncs first and exclusively creates a local task file containing the pin, sync status, explicit caller-supplied resolved versions and a zeroed ledger. It refuses an existing task file. After inspecting consumer versions, the first `lookup` may bind `--require` values once; conflicting begin values are rejected, and later attempts cannot alter the context. `route` is advisory local navigation with at most two candidates; it is not evidence or a version resolver. `lookup` uses the recorded pin and versions, performs only local retrieval, selects one direct search hit and at most two one-hop source sections, and returns a compact pack. No network lookup query is sent. Two lookup attempts maximum per task allow a bounded explicit refinement. The default and maximum pack ceiling are the remaining 12,288-byte allowance, including the envelope; return only the selected necessary content, never pad output to the ceiling. Legacy calls retain their 3,072-byte cap. A whole selected pack that cannot fit returns an explicit gap rather than silently trimming a contract.
+`begin` syncs first and exclusively creates a local task file containing the pin, sync status, explicit caller-supplied resolved versions and a zeroed ledger. It refuses an existing task file. After inspecting consumer versions, the first `lookup` may bind `--require` values once; conflicting begin values are rejected, and later attempts cannot alter the context. Failed loaded-task attempts remain spent; newly supplied versions commit only with successful output. `route` is advisory local navigation with at most two candidates; it is not evidence or a version resolver. `lookup` uses the recorded pin and versions, performs only local retrieval, selects one direct search hit and at most two one-hop source sections, and returns a compact pack. No network lookup query is sent. Two lookup attempts maximum per task, including valid-task selection failures, allow a bounded explicit refinement. Ambiguous aliases spend one attempt and envelope bytes but emit no evidence sections; refine explicitly instead of spending the section budget on an arbitrary hit. The default and maximum pack ceiling are the remaining 12,288-byte allowance, including the envelope; return only the selected necessary content, never pad output to the ceiling. Legacy calls retain their 3,072-byte cap. A whole selected pack that cannot fit returns an explicit gap rather than silently trimming a contract.
 
 The task ledger records emitted bytes, section reads and attempts under an exclusive lock and atomic update. Failed/empty attempts remain visible and cannot reset prior spending. Lock collisions execute no retrieval. Refuse invalid/corrupted pins or contexts. Versions on all chosen routes come from the same explicit context; a route does not invent or rewrite an app version.
 
@@ -53,21 +53,23 @@ The implementer may factor these formats into small typed modules, but must noti
 
 ## Task 2 — Targeted public knowledge
 
-- [ ] Research exact public contracts for AndroidView factory/update/reset/release, effect key/exit/current callback, toggle state/disabled behavior, and structured animation cancellation. Reuse existing compound/node knowledge where sufficient.
-- [ ] Add only necessary official source inputs, at most ten concise guidance cards, complete selected spans and matching claim descriptors. Bind evidence hashes, revision, path, lines and license; retain unknown released applicability.
-- [ ] Validate on a locally built candidate snapshot and document newly sufficient claims, unavailable evidence and stale-card behavior. Keep the public snapshot and candidate distinct.
-- [ ] Run relevant tests and full checks; commit and receive independent review against full raw source.
+- [x] Research exact public contracts for AndroidView factory/update/reset/release, effect key/exit/current callback, toggle state/disabled behavior, and structured animation cancellation. Reuse existing compound/node knowledge where sufficient.
+- [x] Add only necessary official source inputs, at most ten concise guidance cards, complete selected spans and matching claim descriptors. Bind evidence hashes, revision, path, lines and license; retain unknown released applicability.
+- [x] Validate on a locally built candidate snapshot and document newly sufficient claims, unavailable evidence and stale-card behavior. Keep the public snapshot and candidate distinct.
+- [x] Run relevant tests and full checks; commit and receive independent review against full raw source.
 
 ## Task 3 — Installed skill and consumer documentation
 
-- [ ] Shorten default SKILL to begin, scope, lookup, assess/stop. Keep detailed fallback/version/provenance explanations in optional references.
-- [ ] Document one simple invocation, natural Korean/English questions, local-only query processing, direct consumer-local code inspection and approved internal mirrors/offline use. No private files or mapping templates are needed in this repository.
-- [ ] Update README, AGENTS and consumer setup with concise output interpretation, failed-route recovery and shared task budgets. Use generic examples only.
-- [ ] Bump bundle to 0.4.0, verify install and inspect all packaged files for unexpected content. Commit and receive scoped review.
+- [x] Shorten default SKILL to begin, scope, lookup, assess/stop. Keep detailed fallback/version/provenance explanations in optional references.
+- [x] Document one simple invocation, natural Korean/English questions, local-only query processing, direct consumer-local code inspection and approved internal mirrors/offline use. No private files or mapping templates are needed in this repository.
+- [x] Update README, AGENTS and consumer setup with concise output interpretation, failed-route recovery and shared task budgets. Use generic examples only.
+- [x] Bump bundle to 0.4.0, verify install and inspect all packaged files for unexpected content. Commit and receive scoped review.
 
 ## Task 4 — Independent acceptance and measurement
 
-- [ ] Retain the six frozen public questions and the prior 0.3.4 baseline; separate same-corpus workflow comparison from new-corpus coverage.
-- [ ] Exercise fresh installation, cached/unavailable sync, routing aliases, empty result, stale descriptor, budget exhaustion and local-only operation. Record exact pins and outputs.
-- [ ] Run fresh consumer scenarios on the candidate, independently grade claim support, and report total captured text with the same named tokenizer plus explicit missing provider/hidden usage. Preserve failed trials and evaluation overhead. Do not claim a 20% reduction unless comparable evidence supports it.
-- [ ] Run final checks and whole-change review. Deliver code, bundle and reproducible report; keep implementation and knowledge-publication status distinct.
+- [x] Retain the six frozen public questions and the prior 0.3.4 baseline; separate same-corpus workflow comparison from new-corpus coverage.
+- [x] Exercise fresh installation, cached/unavailable sync, routing aliases, empty result, stale descriptor, budget exhaustion and local-only operation. Record exact pins and outputs.
+- [x] Run fresh consumer scenarios on the candidate, independently grade claim support, and report total captured text with the same named tokenizer plus explicit missing provider/hidden usage. Preserve failed trials and evaluation overhead. Do not claim a 20% reduction unless comparable evidence supports it.
+- [x] Run final typecheck, 123 tests in 15 files, installed/bundle checks and separate CI evaluation (18 usable of 20, zero version/budget errors).
+- [x] Deliver the [report](../../reports/custom-review-acceptance.md), exact public questions and separate audit inventory. Preserve the original 3-supported/3-partial cohort, q06 protocol deviation and selected q03-supported/q06-partial retests; no mixed six-case average or savings claim.
+- [ ] Complete final whole-branch review before integration. Local E remains unpublished; code/bundle delivery does not publish corpus or environment configuration.
