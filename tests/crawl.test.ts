@@ -141,3 +141,19 @@ it('allows a bounded recovery window for a burst rate limit', async () => {
     : { status: 200, headers: {}, body: 'source' }, async ms => { delays.push(ms); });
   expect(body).toBe('source'); expect(delays).toEqual([2000, 4000, 8000, 16000]);
 });
+
+it('emits only hash-valid inclusive selected Git spans and reports changes', async () => {
+  const { createHash } = await import('node:crypto');
+  const git: CrawlConfig = { schemaVersion: 1, sources: [{ id: 'code', kind: 'github', url: 'https://github.com/a/b', title: 'Code', artifact: 'androidx.compose.ui:ui', fqn: 'androidx.compose.ui', license: 'Apache-2.0', repo: 'a/b', ref: 'main', path: 'A.kt' }] };
+  const text = 'first\nsecond\nthird\n';
+  const spans = {schemaVersion:1 as const, spans:[{id:'selected',sourceId:'code',title:'Selected',sourceSha256:createHash('sha256').update(text).digest('hex'),startLine:2,endLine:3}]};
+  let body = text.replace(/\n/g,'\r\n');
+  const fetch = async (url:string) => url.includes('api.github.com') ? JSON.stringify({sha:'a'.repeat(40)}) : body;
+  const first = await crawlSources(git, baseline, undefined, fetch, spans);
+  expect(first.input.documents[0]!.sections.find(s => s.id === 'selected')?.body).toBe('second\nthird');
+  expect(first.spans).toEqual([{id:'selected',status:'ingested'}]);
+  body = text + 'changed';
+  const changed = await crawlSources(git, baseline, first.input, fetch, spans);
+  expect(changed.input.documents[0]!.sections.some(s => s.id === 'selected')).toBe(false);
+  expect(changed.spans[0]!.status).toBe('needs-review');
+});

@@ -23,6 +23,8 @@ export interface SourceStatus {
   sections: number;
   note?: string;
 }
-export interface CrawlResult { input: KnowledgeInput; sources: SourceStatus[]; }
+export interface ContractSpan { id:string; sourceId:string; title:string; sourceSha256:string; startLine:number; endLine:number }
+export interface SpanCatalog { schemaVersion:1; spans:ContractSpan[] }
+export interface CrawlResult { input: KnowledgeInput; sources: SourceStatus[]; spans: {id:string; status:'ingested'|'needs-review'; reason?:string}[]; }
 export type FetchText = (url: string) => Promise<string>;
 export interface ChangeSet { added: string[]; updated: string[]; removed: string[]; }

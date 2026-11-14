@@ -36,9 +36,13 @@ describe('portable skill and CLI distribution', () => {
         expect(response.status, response.stderr).toBe(0);
         return { data: JSON.parse(response.stdout), bytes: Buffer.byteLength(response.stdout) };
       };
+      expect(invoke('route', '--query', 'AndroidView').data.candidates[0].id).toBe('interop');
       const cache = join(dir, 'cache');
       const sync = invoke('sync', '--remote', corpusDir, '--cache', cache, '--ref', 'corpus').data;
       expect(sync.status).toBe('fresh');
+      const task = join(dir, 'task.json');
+      expect(invoke('begin', '--remote', corpusDir, '--cache', cache, '--task', task).data.snapshot).toBe(sync.snapshot);
+      expect(invoke('lookup', '--task', task, '--query', 'DropdownMenu').data.snapshot).toBe(sync.snapshot);
       const context = ['--cache', cache, '--snapshot', sync.snapshot, '--artifact', 'androidx.compose.material3:material3', '--platform', 'android', '--version', 'unknown'];
       const search = invoke('search', ...context, '--symbol', 'DropdownMenu', '--limit', '3');
       expect(search.data.hits).toEqual(expect.arrayContaining([expect.objectContaining({ id: 'menu-api', versionStatus: 'unknown' })]));

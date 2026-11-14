@@ -21,6 +21,7 @@ const out = path.resolve(opts['--out']); await mkdir(out, { recursive: true });
 if ((await readdir(out)).length) throw new Error('Output directory must be empty');
 const config = JSON.parse(await readFile(opts['--config'] ?? 'config/crawl.json', 'utf8'));
 const baseline = JSON.parse(await readFile('tests/fixtures/knowledge-input.json', 'utf8'));
+const spans = JSON.parse(await readFile('config/contract-spans.json', 'utf8'));
 const guidanceConfig = parseGuidanceConfig(JSON.parse(await readFile(opts['--guidance'] ?? 'config/curated-guidance.json', 'utf8')));
 let previous; let temp; let baseSnapshot = opts['--base-snapshot'] ?? null;
 try {
@@ -47,11 +48,11 @@ try {
     if (!documents.has(docId)) documents.set(docId, { id: docId, artifact, fqn, title: docTitle, description, tags, sections: [] });
     documents.get(docId).sections.push(section);
   }
-  const result = await crawlSources(config, baseline, previous ? { schemaVersion: 1, documents: [...documents.values()] } : undefined);
+  const result = await crawlSources(config, baseline, previous ? { schemaVersion: 1, documents: [...documents.values()] } : undefined, undefined, spans);
   const guidance = applyCuratedGuidance(result.input, guidanceConfig);
   const corpus = path.join(out, 'corpus'); await buildSnapshot(guidance.input, corpus);
   const current = await validateSnapshot(corpus); const changes = diffSnapshots(previous, current);
-  const report = { baseSnapshot, sources: result.sources, changes, curatedGuidance: guidance.statuses };
+  const report = { baseSnapshot, sources: result.sources, spans: result.spans, changes, curatedGuidance: guidance.statuses };
   await writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n');
   const currentEntries = new Map(current.index.entries.map(entry => [entry.id, entry]));
   const previousEntries = new Map((previous?.index.entries ?? []).map(entry => [entry.id, entry]));
