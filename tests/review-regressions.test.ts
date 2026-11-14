@@ -8,7 +8,11 @@ import { beforeAll, afterAll, beforeEach, expect, it } from 'vitest';
 const root=process.cwd(), hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 let dir:string, runtime:any, cache:string, sync:any, route:any, contract:any, sections:any[];
 const catalog=async(name:string,data:unknown)=>writeFile(path.join(dir,'config',name),JSON.stringify(data));
-const routes=async(r:any)=>catalog('review-routes.json',{schemaVersion:1,routes:[r]});
+const routes=async(r:any)=>catalog('review-routes.json',{schemaVersion:1,routes:[r,
+ {id:'initial',title:'Initial evidence',keywords:['initial'],queries:[{artifact:'test:runtime',query:'initial'}],cardIds:['evidence-a'],relatedRouteIds:[]},
+ {id:'large',title:'Large evidence',keywords:['LongEvidence'],queries:[{artifact:'test:runtime',query:'LongEvidence'}],cardIds:['large'],relatedRouteIds:[]},
+ {id:'prototype',title:'Prototype evidence',keywords:['prototype-only-marker'],queries:[{artifact:'test:runtime',query:'prototype-only-marker'}],cardIds:['prototype-source'],relatedRouteIds:[]}
+]});
 const task=async(name:string,versions:any[]=[])=>{const f=path.join(dir,name);await runtime.createTask(f,cache,sync,versions);return f;};
 beforeAll(async()=>{
  dir=await mkdtemp(path.join(tmpdir(),'review-regression-')); await cp(path.join(root,'dist'),path.join(dir,'dist'),{recursive:true}); await cp(path.join(root,'src'),path.join(dir,'src'),{recursive:true}); await cp(path.join(root,'config'),path.join(dir,'config'),{recursive:true}); await writeFile(path.join(dir,'package.json'),'{"type":"module"}'); await symlink(path.join(root,'node_modules'),path.join(dir,'node_modules'));
@@ -25,7 +29,7 @@ beforeAll(async()=>{
 beforeEach(async()=>{await routes(route);await catalog('review-contracts.json',{schemaVersion:1,contracts:[contract]});});
 afterAll(async()=>rm(dir,{recursive:true,force:true}));
 it('rejects route query version injection',async()=>{await routes({...route,queries:[{...route.queries[0],version:'1.0.0'}]});await expect(runtime.lookup(await task('injected'),{route:'test'},12288)).rejects.toThrow(/route/i);});
-it('reports required sections that exceed the remaining section allowance',async()=>{const f=await task('limited'); await runtime.lookup(f,{query:'initial'},12288); const p=JSON.parse(await runtime.lookup(f,{route:'test'},12288)); expect(p.transmission).toBe('gap'); expect(JSON.stringify(p.gaps)).toContain('evidence-b'); expect(p.sections).toEqual([]);});
+it('reports required sections that exceed the remaining section allowance',async()=>{const f=await task('limited'); await runtime.lookup(f,{query:'initial'},12288); const p=JSON.parse(await runtime.lookup(f,{route:'test'},12288)); expect(p.transmission).toBe('gap'); expect(JSON.stringify(p.gaps)).toContain('evidence-b'); expect(p.gaps[0].reason).toBe('Selected pack requires 3 sections; 2 remain'); expect(p.sections).toEqual([]);});
 it('reports failed required version reads without silently transmitting a partial pack',async()=>{const f=await task('different',[{artifact:'test:runtime',version:'1.0.0'}]);const p=JSON.parse(await runtime.lookup(f,{route:'test'},12288));expect(p.transmission).toBe('gap');expect(JSON.stringify(p.gaps)).toContain('evidence-b');});
 it('preserves per-section source associations and supports reviewed unknown evidence',async()=>{const p=JSON.parse(await runtime.lookup(await task('unknown'),{route:'test'},12288));expect(p.sufficiency).toBe('sufficient');expect(p.sections.map((s:any)=>s.versionStatus)).toEqual(['unknown','unknown','unknown']);expect(p.sections.map((s:any)=>s.sourceIds)).toEqual([['source-0'],['source-1','source-0'],['source-2']]);});
 it('tries the second route query in the same attempt',async()=>{await routes({...route,queries:[{artifact:'test:runtime',symbol:'Missing'},route.queries[0]]});const p=JSON.parse(await runtime.lookup(await task('alternative'),{route:'test'},12288));expect(p.sections[0].id).toBe('card');});
@@ -57,4 +61,10 @@ it('rejects corrupted sync status types before spending or retrieving',async()=>
   const file=await task('status-'+i);const state=JSON.parse(await readFile(file,'utf8'));state.sync.status=status;const corrupted=JSON.stringify(state)+'\n';await writeFile(file,corrupted);
   await expect(runtime.lookup(file,{query:'initial'},12288)).rejects.toThrow(/task context/i);expect(await readFile(file,'utf8')).toBe(corrupted);
  }
+});
+
+it('leaves three section slots for a reviewed contract after an ambiguous query',async()=>{
+ const f=await task('ambiguous-contract');const first=JSON.parse(await runtime.lookup(f,{query:'card initial'},12288));
+ expect(first.candidates.length).toBe(2);expect(first.transmission).toBe('gap');expect(first.sections).toEqual([]);expect(first.remaining.sections).toBe(3);
+ const second=JSON.parse(await runtime.lookup(f,{route:'test'},12288));expect(second.sections.map((s:any)=>s.id)).toEqual(['card','evidence-a','evidence-b']);expect(second.sufficiency).toBe('sufficient');
 });
