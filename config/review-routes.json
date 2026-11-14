@@ -1,10 +1,220 @@
-{"schemaVersion":1,"routes":[
-{"id":"interop","title":"Android view interop","keywords":["AndroidView","interop","상호 운용"],"queries":[{"artifact":"androidx.compose.ui:ui","symbol":"AndroidView"}],"cardIds":[],"relatedRouteIds":["effects"]},
-{"id":"effects","title":"Effects and lifecycle","keywords":["LaunchedEffect","DisposableEffect","SideEffect","부수 효과"],"queries":[{"artifact":"androidx.compose.runtime:runtime","symbol":"LaunchedEffect"}],"cardIds":[],"relatedRouteIds":["cancellation"]},
-{"id":"compound-apis","title":"Compound APIs","keywords":["compound","DropdownMenu","복합"],"queries":[{"artifact":"androidx.compose.material3:material3","symbol":"DropdownMenu"}],"cardIds":[],"relatedRouteIds":["accessibility"]},
-{"id":"nodes","title":"Modifier nodes","keywords":["Modifier.Node","ModifierNodeElement","노드"],"queries":[{"artifact":"androidx.compose.ui:ui","symbol":"Modifier.Node"}],"cardIds":[],"relatedRouteIds":["performance"]},
-{"id":"accessibility","title":"Accessible interaction","keywords":["semantics","accessibility","접근성"],"queries":[{"artifact":"androidx.compose.ui:ui","query":"semantics"}],"cardIds":[],"relatedRouteIds":["compound-apis"]},
-{"id":"animation","title":"Animation","keywords":["animation","animate","애니메이션"],"queries":[{"artifact":"androidx.compose.animation:animation","query":"animation"}],"cardIds":[],"relatedRouteIds":[]},
-{"id":"cancellation","title":"Coroutine cancellation","keywords":["coroutine","cancellation","취소"],"queries":[{"artifact":"androidx.compose.runtime:runtime","query":"cancellation"}],"cardIds":[],"relatedRouteIds":["effects"]},
-{"id":"performance","title":"Performance evidence","keywords":["performance","benchmark","성능"],"queries":[{"artifact":"androidx.compose.ui:ui","query":"performance"}],"cardIds":[],"relatedRouteIds":["nodes"]}
-]}
+{
+  "schemaVersion": 1,
+  "routes": [
+    {
+      "id": "interop",
+      "title": "Android View lifecycle",
+      "keywords": [
+        "AndroidView",
+        "interop",
+        "factory",
+        "onReset",
+        "onRelease",
+        "View reuse",
+        "뷰 재사용",
+        "상호 운용",
+        "뷰 수명주기"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "symbol": "androidx.compose.ui.viewinterop.AndroidView"
+        }
+      ],
+      "cardIds": [
+        "guide-androidview-lifecycle-contract"
+      ],
+      "relatedRouteIds": [
+        "effects"
+      ]
+    },
+    {
+      "id": "effects",
+      "title": "Effect keys, lifetime, and current callbacks",
+      "keywords": [
+        "LaunchedEffect",
+        "rememberUpdatedState",
+        "effect key",
+        "callback",
+        "effect exit",
+        "effect restart",
+        "부수 효과",
+        "효과 재시작",
+        "콜백",
+        "최신 콜백"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.runtime:runtime",
+          "symbol": "androidx.compose.runtime.LaunchedEffect"
+        }
+      ],
+      "cardIds": [
+        "guide-effect-key-current-callback-contract"
+      ],
+      "relatedRouteIds": [
+        "cancellation"
+      ]
+    },
+    {
+      "id": "compound-apis",
+      "title": "Scoped compound component contracts",
+      "keywords": [
+        "compound",
+        "tab group",
+        "slot",
+        "scoped content",
+        "ExposedDropdownMenuBox",
+        "menuAnchor",
+        "복합",
+        "탭 그룹",
+        "슬롯",
+        "컴포넌트 조합"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.material3:material3",
+          "symbol": "androidx.compose.material3.ExposedDropdownMenuBox"
+        }
+      ],
+      "cardIds": [
+        "guide-compound-component-explicit-contract"
+      ],
+      "relatedRouteIds": [
+        "accessibility"
+      ]
+    },
+    {
+      "id": "nodes",
+      "title": "Modifier node configuration and updates",
+      "keywords": [
+        "Modifier.Node",
+        "ModifierNodeElement",
+        "node update",
+        "node reuse",
+        "equals hashCode",
+        "노드",
+        "노드 갱신",
+        "노드 재사용"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "symbol": "androidx.compose.ui.node.ModifierNodeElement"
+        }
+      ],
+      "cardIds": [
+        "guide-modifier-node-element-update-contract"
+      ],
+      "relatedRouteIds": [
+        "performance"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Toggle state and enabled semantics",
+      "keywords": [
+        "toggle",
+        "toggleable",
+        "onValueChange",
+        "disabled",
+        "enabled",
+        "semantics",
+        "accessibility",
+        "토글",
+        "비활성",
+        "활성 상태",
+        "접근성"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.foundation:foundation",
+          "symbol": "androidx.compose.foundation.selection.toggleable"
+        }
+      ],
+      "cardIds": [
+        "guide-toggleable-state-disabled"
+      ],
+      "relatedRouteIds": [
+        "compound-apis"
+      ]
+    },
+    {
+      "id": "animation",
+      "title": "Animatable interruption and separate children",
+      "keywords": [
+        "Animatable",
+        "animateTo",
+        "snapTo",
+        "animation",
+        "interrupted animation",
+        "애니메이션",
+        "애니메이션 중단"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.animation:animation-core",
+          "symbol": "androidx.compose.animation.core.Animatable"
+        }
+      ],
+      "cardIds": [
+        "guide-animatable-child-cancellation"
+      ],
+      "relatedRouteIds": [
+        "cancellation",
+        "effects"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Structured coroutine cancellation",
+      "keywords": [
+        "coroutine",
+        "CoroutineScope",
+        "CancellationException",
+        "cancellation",
+        "parent",
+        "sibling",
+        "child coroutine",
+        "코루틴",
+        "취소",
+        "부모",
+        "형제 코루틴",
+        "자식 코루틴"
+      ],
+      "queries": [
+        {
+          "artifact": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+          "symbol": "kotlinx.coroutines.CoroutineScope"
+        }
+      ],
+      "cardIds": [
+        "guide-coroutine-scope-cancellation-direction"
+      ],
+      "relatedRouteIds": [
+        "animation",
+        "effects"
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Performance evidence",
+      "keywords": [
+        "performance",
+        "benchmark",
+        "성능",
+        "벤치마크"
+      ],
+      "queries": [
+        {
+          "artifact": "androidx.compose.ui:ui",
+          "query": "performance"
+        }
+      ],
+      "cardIds": [],
+      "relatedRouteIds": [
+        "nodes"
+      ]
+    }
+  ]
+}

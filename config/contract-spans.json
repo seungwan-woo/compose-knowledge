@@ -1,1 +1,77 @@
-{"schemaVersion":1,"spans":[]}
+{
+  "schemaVersion": 1,
+  "spans": [
+    {
+      "id": "contract-androidview-factory-reuse-release",
+      "sourceId": "androidx-ui-viewinterop-android-view",
+      "title": "AndroidView factory, update, reset, and release lifecycle",
+      "sourceSha256": "385e33a25c974332f3500c6f0fe0ca37d6f9b82bd390b28f63d4042dba2f150b",
+      "startLine": 110,
+      "endLine": 165
+    },
+    {
+      "id": "contract-androidview-callback-parameters",
+      "sourceId": "androidx-ui-viewinterop-android-view",
+      "title": "AndroidView callback cleanup and reuse parameters",
+      "sourceSha256": "385e33a25c974332f3500c6f0fe0ca37d6f9b82bd390b28f63d4042dba2f150b",
+      "startLine": 179,
+      "endLine": 190
+    },
+    {
+      "id": "contract-launchedeffect-key-lifetime",
+      "sourceId": "androidx-runtime-runtime-runtime-effects",
+      "title": "LaunchedEffect key changes and composition exit",
+      "sourceSha256": "e888128ec8581f2b718545bb2805246988a7dcc36661c6e71f66d3cc2e1bf575",
+      "startLine": 552,
+      "endLine": 569
+    },
+    {
+      "id": "contract-rememberupdatedstate-current-value",
+      "sourceId": "androidx-runtime-runtime-runtime-snapshotstate",
+      "title": "rememberUpdatedState current values in a long-lived operation",
+      "sourceSha256": "f8a232ed56459172a07cc8c8a1c3804866b511127bb960bc710c46120f8d4d6e",
+      "startLine": 317,
+      "endLine": 342
+    },
+    {
+      "id": "contract-toggleable-input-disabled",
+      "sourceId": "androidx-foundation-selection-toggleable",
+      "title": "Toggleable value, input, disabled semantics, and state change request",
+      "sourceSha256": "94909e2d6705481ec7e093b3d7c65dc47c876116876ce06fabf389c69d3e0e9e",
+      "startLine": 125,
+      "endLine": 137
+    },
+    {
+      "id": "contract-toggleable-node-state",
+      "sourceId": "androidx-foundation-selection-toggleable",
+      "title": "Toggleable current value, callback update, and semantics",
+      "sourceSha256": "94909e2d6705481ec7e093b3d7c65dc47c876116876ce06fabf389c69d3e0e9e",
+      "startLine": 309,
+      "endLine": 348
+    },
+    {
+      "id": "contract-animatable-interruption-result",
+      "sourceId": "androidx-animation-animation-core-animation-core-animatable",
+      "title": "Animatable return reasons and interruption cancellation",
+      "sourceSha256": "5b17840d03fa430612090bc4ec8f455b894367b336cb4313d78eaa6584dd9e68",
+      "startLine": 205,
+      "endLine": 217
+    },
+    {
+      "id": "contract-coroutine-normal-child-cancellation",
+      "sourceId": "kotlin-coroutines-coroutine-scope",
+      "title": "CancellationException does not cancel parent or siblings",
+      "sourceSha256": "d89a62c716baf17649deae1cf6f7611a8831908637f2c86e324be7e165ad1597",
+      "startLine": 378,
+      "endLine": 383
+    },
+    {
+      "id": "contract-coroutine-parent-scope-lifetime",
+      "sourceId": "kotlin-coroutines-coroutine-scope",
+      "title": "Scope cancellation and child completion",
+      "sourceSha256": "d89a62c716baf17649deae1cf6f7611a8831908637f2c86e324be7e165ad1597",
+      "startLine": 22,
+      "endLine": 26
+    }
+  ]
+}
