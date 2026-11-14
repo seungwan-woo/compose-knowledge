@@ -24,23 +24,21 @@ node dist/cli.js build --input tests/fixtures/knowledge-input.json --out /tmp/co
 node dist/cli.js validate --dir /tmp/compose-corpus-NEW --json
 ```
 
-The build output directory must be empty. Obtain `CACHE`, `REMOTE`, and `SHA` below from the demo configuration or an actual published remote's sync response.
+The build output directory must be empty. Choose a workflow upfront: packs cover AndroidView, effects, compound APIs, modifier nodes, toggles/accessibility, Animatable, coroutine cancellation and performance measurement. Other topics, including text, general layouts and menu/popups, retain [legacy sync/search/read](.agents/skills/compose-reference-context/references/workflow-details.md#legacy-manual-retrieval). Never mix workflows or switch after a lookup attempt. For a pack question, start one task and let lookup manage the pin and retrieval ledger:
 
 ```sh
-node dist/cli.js sync --remote "$REMOTE" --ref corpus --cache "$CACHE" --json
-node dist/cli.js search --cache "$CACHE" --snapshot "$SHA" \
-  --artifact androidx.compose.material3:material3 --version 1.3.2 --platform android \
-  --symbol androidx.compose.material3.DropdownMenu --limit 3 --json
-node dist/cli.js read --cache "$CACHE" --snapshot "$SHA" --id menu-state-sample \
-  --artifact androidx.compose.material3:material3 --version 1.3.2 --platform android --json
+node dist/cli.js begin --cache "$CACHE" --task "$TASK" --remote "$REMOTE" --ref corpus
+# Inspect only relevant consumer-local code and available dependency facts.
+node dist/cli.js lookup --task "$TASK" --query "effect restart keys current callback"
 ```
 
-- Search/read use the same SHA and version context. Add dependencies with options such as `--require androidx.compose.ui:ui-android=1.7.8`.
-- Only known Android artifact aliases are normalized. Unverified versions or platforms stay `unknown`. All required artifacts must agree for `match`.
-- Different versions appear only in explicit `--include-different` comparisons.
-- `sync --offline --cache "$CACHE"` uses verified cache without network access. `unavailable` returns JSON and exit code 2.
-- Search/read responses default to and allow at most 3 KiB each, including all JSON/newlines. Truncation is marked `truncated`. Budgets too small even for metadata fail explicitly.
-- Remote corpus is never executed. Cached per-SHA manifest identity and actual files are verified; errors fall back to the last valid snapshot.
+Choose a nonexistent local `TASK` file. Begin syncs online first; use `--offline` only when explicitly requested or configured. `fresh` verifies the configured remote now; `cached` uses older verified data without current freshness; `unavailable` stops retrieval. Keep the immutable full SHA and same task for follow-ups.
+
+On the first lookup only, add repeatable `--require artifact=version` for actual resolved dependencies; omitted versions stay unknown. Context then freezes. `route --query TEXT` offers up to two advisory candidates using explicit English/Korean/API aliases; it does not translate arbitrary questions. Refine at most once on the same task with `--route ID` or a narrower query. Failed/empty attempts remain spent.
+
+Packs contain selected sections and a deduplicated source dictionary. `transmission: complete` describes delivery, while `sufficiency: sufficient` supports only the named reviewed claim. Inspect scope, per-section `match`/`unknown`/`different`, gaps and provenance separately. Source support does not establish app behavior or dependency compatibility.
+
+All workers share the task's ≤12,288 UTF-8 stdout bytes, three emitted sections, one link hop and two lookup attempts. The pack ceiling defaults to the remaining byte allowance; output contains only needed evidence. Serialize task mutations. Report gaps when evidence or allowance runs out; do not reset tasks or bypass their ledger with legacy reads. Legacy sync/search/read remain compatible; see [workflow details](.agents/skills/compose-reference-context/references/workflow-details.md).
 
 ## Install the Codex skill
 
@@ -50,12 +48,21 @@ In a checkout, explicitly invoke `.agents/skills/compose-reference-context/SKILL
 
 ```sh
 npm run bundle
-node scripts/install.mjs .cache/distribution/compose-reference-context-0.3.4.tar.gz /YOUR/SKILLS/DIRECTORY
+node scripts/install.mjs .cache/distribution/compose-reference-context-0.4.0.tar.gz /YOUR/SKILLS/DIRECTORY
 ```
 
 The usual user skills directory is `~/.agents/skills`. The installer verifies the SHA256 sidecar and refuses to overwrite an existing skill. Transfer bundle and checksum together through a trusted channel. The checksum verifies transfer integrity; it does not replace a publisher signature.
 
-The skill uses its installed launcher. Begin each new Compose question with online sync, pin the SHA, and follow concise topic guidance to necessary sources. Record the limits: 12 KiB total search/read output, 3 evidence reads, and one link hop. Byte limits differ from actual model token counts. Distinguish executing project tests from reading upstream test sources.
+After installation, invoke the skill once in a Codex prompt; no command flags need to be copied into the request:
+
+```text
+$compose-reference-context
+Review the effect keys and callback lifetime in the current diff.
+```
+
+Natural English and Korean questions are supported through curated aliases. Local route/lookup processing sends no question or code to a network endpoint; online sync fetches the configured public corpus or approved mirror. Private code inspection requires an agent deployment approved for the consumer environment. Keep private sources, symbol maps, policies and review findings there; this repository needs no private uploads or mapping templates.
+
+The agent reports a decision, local code location, short supporting contract and scope, version status, source reference and specific unresolved check. Distinguish source-level support, recommendations and actually executed app tests. Corpus sync updates data; new skill/runtime/catalog behavior requires a new bundle.
 
 ## Validation and reports
 

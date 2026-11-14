@@ -1,5 +1,7 @@
 # Efficient custom Compose review implementation plan
 
+> Historical proposal. The [current delivery plan](2026-11-14-custom-compose-delivery.md) supersedes the private importer, manifest and relationship-loader work below. Current scope uses direct consumer-local inspection in an approved agent deployment; do not implement the superseded private context layer.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Improve contract discovery, direct relationship understanding and evidence quality while reducing total model-visible context for custom Compose implementation and review.
