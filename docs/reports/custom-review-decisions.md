@@ -30,4 +30,6 @@ These controller decisions follow the reference-only privacy requirement. They p
 
 14. Use the existing implementation/PR authorization to open a reviewable feature draft PR without another permission menu. Cost: reviewed public/generic changes become visible on a feature branch; no main merge or environment/corpus publication is included.
 
+15. Implement the documented public remote default for new begin, preserving explicit approved-mirror precedence and legacy sync behavior. Cost: omitted remote contacts the public corpus; corporate or offline deployments must configure their approved remote or offline mode.
+
 No public corpus/environment publication, merge, consumer Android build, private import or provider-billing measurement is part of this delivery. New-source released applicability stays unknown until the consumer supplies verified dependency facts.
