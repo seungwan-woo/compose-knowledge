@@ -6,10 +6,14 @@ import { validateSnapshot } from './knowledge/validate.js';
 import { syncSnapshot, validateCachedSnapshot } from './io/snapshot.js';
 import { searchIndex, readSection } from './retrieval/search.js';
 import { serializeBounded } from './retrieval/budget.js';
+import { createTask, lookup, routes, suggest } from './review/runtime.js';
 
 const help = `Usage:
   compose-knowledge build --input FILE --out EMPTY_DIR [--json]
   compose-knowledge validate --dir DIR [--json]
+  compose-knowledge begin --cache DIR --task FILE [--remote URL/PATH] [--ref REF] [--offline] [--require ARTIFACT=VERSION]
+  compose-knowledge route --query TEXT
+  compose-knowledge lookup --task FILE (--query TEXT | --route ID) [--max-bytes N]
   compose-knowledge sync --cache DIR [--remote URL/PATH] [--ref REF] [--offline] [--json]
   compose-knowledge search --cache DIR --snapshot FULL_SHA [--artifact NAME --version VERSION] [--platform android] [--symbol NAME | --query TEXT] [--require ARTIFACT=VERSION] [--limit N] [--max-bytes N] [--include-different] [--json]
   compose-knowledge read --cache DIR --snapshot FULL_SHA --id ID [--artifact NAME --version VERSION] [--platform android] [--symbol NAME | --query TEXT] [--require ARTIFACT=VERSION] [--limit N] [--max-bytes N] [--include-different] [--json]
@@ -22,6 +26,7 @@ Examples:
 JSON is the default. Search and read budgets are 256–3072 bytes (default 3072); mandatory metadata may require more than 256. Use version 'unknown' to indicate missing version context. Sync is explicit and defaults to ref corpus.
 `;
 const scopes: Record<string, string[]> = {
+  begin: ['cache', 'task', 'remote', 'ref', 'offline', 'require', 'json'], route: ['query', 'json'], lookup: ['task', 'query', 'route', 'max-bytes', 'json'],
   build: ['input', 'out', 'json'], validate: ['dir', 'json'], sync: ['cache', 'remote', 'ref', 'offline', 'json'],
   search: ['cache', 'snapshot', 'artifact', 'version', 'platform', 'symbol', 'query', 'require', 'limit', 'max-bytes', 'include-different', 'json'],
   read: ['cache', 'snapshot', 'id', 'artifact', 'version', 'platform', 'symbol', 'query', 'require', 'limit', 'max-bytes', 'include-different', 'json'],
@@ -71,6 +76,19 @@ async function main(): Promise<void> {
   if (command === 'build') { const input = JSON.parse(await readFile(required(o, 'input'), 'utf8')) as KnowledgeInput; const result = await buildSnapshot(input, required(o, 'out')); process.stdout.write(JSON.stringify(result) + '\n'); return; }
   if (command === 'validate') { const result = await validateSnapshot(required(o, 'dir')); process.stdout.write(JSON.stringify({ valid: true, manifest: result.manifest }) + '\n'); return; }
   if (command === 'sync') { const result = await syncSnapshot({ cacheDir: required(o, 'cache'), remote: one(o, 'remote'), ref: one(o, 'ref'), offline: !!o.offline }); process.stdout.write(JSON.stringify(result) + '\n'); if (result.status === 'unavailable') process.exitCode = 2; return; }
+  if (command === 'route') { process.stdout.write(JSON.stringify(suggest(required(o, 'query'), await routes())) + '\n'); return; }
+  if (command === 'begin') {
+    const cache = required(o, 'cache'), file = required(o, 'task');
+    const versions = queryOptions(o).versions ?? [];
+    const result = await syncSnapshot({cacheDir:cache,remote:one(o,'remote'),ref:one(o,'ref'),offline:!!o.offline});
+    if (!result.snapshot) { process.stdout.write(JSON.stringify(result)+'\n'); process.exitCode=2; return; }
+    const task = await createTask(file,cache,result,versions); process.stdout.write(JSON.stringify(task)+'\n'); return;
+  }
+  if (command === 'lookup') {
+    const query = one(o,'query'), route = one(o,'route');
+    if (Boolean(query) === Boolean(route) || !(query ?? route)?.trim()) throw new Error('Use either --query or --route');
+    process.stdout.write(await lookup(required(o,'task'),{query,route},positive(one(o,'max-bytes'),6144,12288))); return;
+  }
   const cache = required(o, 'cache'), snapshot = required(o, 'snapshot');
   const query = queryOptions(o), maxBytes = positive(one(o, 'max-bytes'), 3072, 3072);
   if (maxBytes < 256) throw new Error('Byte budget must be at least 256');

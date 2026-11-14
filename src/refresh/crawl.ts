@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import type { KnowledgeDocument, KnowledgeInput, KnowledgeSection } from '../domain/types.js';
-import type { CrawlConfig, CrawlResult, CrawlSource, FetchText } from './types.js';
+import type { CrawlConfig, CrawlResult, CrawlSource, FetchText, SpanCatalog } from './types.js';
 import { chunks, extractArticle, safeId } from './extract.js';
 import { fetchPublicText } from './fetch.js';
 export { fetchPublicText } from './fetch.js';
@@ -14,7 +14,7 @@ const revisionFrom = (text: string, gitiles: boolean): string => {
 };
 const comparable = (s: KnowledgeSection) => JSON.stringify({ ...s, sources: s.sources.map(({ revision: _revision, resource, ...rest }) => ({ ...rest, resource: resource.replace(/[a-f0-9]{40}/g, 'COMMIT') })) });
 
-export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput, previous?: KnowledgeInput, fetchText: FetchText = fetchPublicText): Promise<CrawlResult> {
+export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput, previous?: KnowledgeInput, fetchText: FetchText = fetchPublicText, spanCatalog: SpanCatalog = {schemaVersion:1,spans:[]}): Promise<CrawlResult> {
   if (config.schemaVersion !== 1) throw new Error('Unsupported crawl config');
   const ids = new Set<string>();
   for (const source of config.sources) {
@@ -23,6 +23,13 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
     if (source.symbols !== undefined && (!Array.isArray(source.symbols) || source.symbols.some(symbol => typeof symbol !== 'string' || !/^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+$/.test(symbol)))) throw new Error(`Invalid source symbols: ${source.id}`);
     ids.add(source.id);
   }
+  if (spanCatalog.schemaVersion !== 1 || !Array.isArray(spanCatalog.spans)) throw new Error('Invalid span catalog');
+  const spanIds = new Set<string>();
+  for (const span of spanCatalog.spans) {
+    if (!span || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(span.id) || spanIds.has(span.id) || typeof span.sourceId !== 'string' || typeof span.title !== 'string' || !/^[a-f0-9]{64}$/.test(span.sourceSha256) || !Number.isSafeInteger(span.startLine) || !Number.isSafeInteger(span.endLine)) throw new Error('Invalid span');
+    spanIds.add(span.id);
+  }
+  const spanStatuses: CrawlResult['spans'] = [];
   const documents: KnowledgeDocument[] = structuredClone(baseline.documents);
   const statuses: CrawlResult['sources'] = [];
   const old = new Map(previous?.documents.flatMap(d => d.sections).map(s => [s.id, s]) ?? []);
@@ -36,6 +43,7 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
       statuses.push({ id, url: source.url, status: 'monitor-only', revision: `web:${id}:content@sha256:${hash(body)}`, sections: 0, note: 'Material 3 is an Angular shell; article body is not ingested.' });
       continue;
     }
+    let normalized: string | undefined;
     let rev: string, parts: { anchor: string; title: string; text: string; startLine?: number; endLine?: number }[], resource: string;
     if (source.kind === 'html') {
       const html = await fetchText(source.url);
@@ -53,7 +61,8 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
       const text = await fetchText(gitiles ? `${resource}?format=TEXT` : `https://raw.githubusercontent.com/${source.repo}/${rev}/${source.path}`);
       const decoded = gitiles ? Buffer.from(text.replace(/\s/g, ''), 'base64').toString('utf8') : text;
       if (!decoded.trim() || decoded.includes('\ufffd')) throw new Error(`Empty or invalid Git content: ${id}`);
-      const lines = decoded.replace(/\r\n/g, '\n').split('\n');
+      normalized = decoded.replace(/\r\n/g, '\n');
+      const lines = normalized.split('\n');
       parts = [];
       let start = 0;
       while (start < lines.length) {
@@ -78,9 +87,21 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
       const prior = old.get(sectionId);
       return prior && comparable(prior) === comparable(section) ? prior : section;
     });
+    for (const span of spanCatalog.spans.filter(item => item.sourceId === id)) {
+      const lines = normalized?.split('\n');
+      if (!normalized || hash(normalized) !== span.sourceSha256 || !lines || span.startLine < 1 || span.endLine < span.startLine || span.endLine > lines.length) {
+        spanStatuses.push({id:span.id,status:'needs-review',reason:'Source changed or interval invalid'}); continue;
+      }
+      const body = lines.slice(span.startLine-1,span.endLine).join('\n');
+      if (!body.trim()) { spanStatuses.push({id:span.id,status:'needs-review',reason:'Empty interval'}); continue; }
+      const src = {id:`${span.id}-source`,kind:'code' as const,resource,revision:rev,path:source.path!,startLine:span.startLine,endLine:span.endLine,sha256:hash(body),license,excerpt:body};
+      sections.push({id:span.id,title:span.title,body,aliases:[],requires:[{artifact,version:null}],sources:[src],relatedIds:[]});
+      spanStatuses.push({id:span.id,status:'ingested'});
+    }
     if (!sections.length) throw new Error(`No usable sections: ${id}`);
     documents.push({ id: `live-${id}`, artifact, fqn, title, description: `Public source: ${source.url}`, tags: ['Compose', 'Android'], sections });
     statuses.push({ id, url: source.url, status: 'ingested', revision: rev, sections: sections.length });
   }
-  return { input: { schemaVersion: 1, documents }, sources: statuses };
+  for (const span of spanCatalog.spans) if (!spanStatuses.some(s => s.id === span.id)) spanStatuses.push({id:span.id,status:'needs-review',reason:'Source missing or unsupported'});
+  return { input: { schemaVersion: 1, documents }, sources: statuses, spans: spanStatuses };
 }

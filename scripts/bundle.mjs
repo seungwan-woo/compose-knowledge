@@ -18,6 +18,8 @@ try {
   await mkdir(join(runtime, 'node_modules'), { recursive: true });
   // Compile into this bundle's private staging tree; concurrent CLI readers use dist/.
   execFileSync('npm', ['run', 'build', '--', '--outDir', join(runtime, 'dist')], { cwd: root, stdio: 'pipe' });
+  await mkdir(join(runtime, 'config'), { recursive: true });
+  for (const name of ['review-routes.json', 'review-contracts.json', 'contract-spans.json']) await cp(join(root, 'config', name), join(runtime, 'config', name));
   await cp(join(root, 'node_modules/yaml'), join(runtime, 'node_modules/yaml'), { recursive: true });
   await writeFile(join(runtime, 'package.json'), JSON.stringify({ name: pkg.name, version: pkg.version, private: true, type: 'module', engines: pkg.engines }) + '\n');
   await mkdir(join(skill, 'references'), { recursive: true });
