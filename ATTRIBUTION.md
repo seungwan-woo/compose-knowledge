@@ -5858,6 +5858,230 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1017-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1052-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-106-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-141-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-176-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-211-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-246-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-281-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-316-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-351-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-386-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-421-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-456-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-489-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-516-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-548-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-578-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-613-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-647-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-671-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-704-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-71-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-737-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-772-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-807-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-842-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-877-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-912-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-947-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-982-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
     "id": "live-androidx-material3-material3-material3-appbar-lines-1-source",
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/AppBar.kt",
     "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
@@ -15447,7 +15671,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-animation-quick-guide-animate-appearing-disappearing-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-appearing-disappearing",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -15465,13 +15689,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-animation-quick-guide-animate-elevation-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-elevation",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-animation-quick-guide-animate-padding-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-padding",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -15483,31 +15707,37 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-animation-quick-guide-animate-position-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-position",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-animation-quick-guide-animate-size-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-size",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-animation-quick-guide-animate-text-color-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-color",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-animation-quick-guide-animate-text-scale-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-scale",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-animation-quick-guide-animate-whilst-2-source",
+    "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-animation-quick-guide-animate-whilst-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -15555,7 +15785,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-animation-quick-guide-switch-different-source",
     "resource": "https://developer.android.com/develop/ui/compose/animation/quick-guide#switch-different",
-    "revision": "web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e",
+    "revision": "web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17025,7 +17255,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-layouts-constraints-modifiers-examples-2-source",
     "resource": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples",
-    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27",
+    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-layouts-constraints-modifiers-examples-3-source",
+    "resource": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples",
+    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17055,7 +17291,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-layouts-constraints-modifiers-requiredsize-modifier-source",
     "resource": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#requiredsize-modifier",
-    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27",
+    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17067,7 +17303,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-layouts-constraints-modifiers-sizein-modifier-source",
     "resource": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#sizein-modifier",
-    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27",
+    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17079,7 +17315,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-layouts-constraints-modifiers-width-height-source",
     "resource": "https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#width-height",
-    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27",
+    "revision": "web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17683,6 +17919,36 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
+    "id": "live-compose-guide-performance-baseline-profiles-additional-resources-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles#additional-resources",
+    "revision": "web:compose-guide-performance-baseline-profiles:content@sha256:7d9d3db99a9e5b328cd6c1c52734de4f3dfa9079fad2d555a522efce21f6f45a",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-baseline-profiles-benefits-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles#benefits",
+    "revision": "web:compose-guide-performance-baseline-profiles:content@sha256:7d9d3db99a9e5b328cd6c1c52734de4f3dfa9079fad2d555a522efce21f6f45a",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-baseline-profiles-considerations-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles#considerations",
+    "revision": "web:compose-guide-performance-baseline-profiles:content@sha256:7d9d3db99a9e5b328cd6c1c52734de4f3dfa9079fad2d555a522efce21f6f45a",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-baseline-profiles-macrobenchmark-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles#macrobenchmark",
+    "revision": "web:compose-guide-performance-baseline-profiles:content@sha256:7d9d3db99a9e5b328cd6c1c52734de4f3dfa9079fad2d555a522efce21f6f45a",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-baseline-profiles-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles#main-content",
+    "revision": "web:compose-guide-performance-baseline-profiles:content@sha256:7d9d3db99a9e5b328cd6c1c52734de4f3dfa9079fad2d555a522efce21f6f45a",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
     "id": "live-compose-guide-performance-bestpractices-additional-resources-source",
     "resource": "https://developer.android.com/develop/ui/compose/performance/bestpractices#additional-resources",
     "revision": "web:compose-guide-performance-bestpractices:content@sha256:ad6d6b11b9339d90a88f85f03049651fe70e8b6a131986b10cfa29b82026ad91",
@@ -17944,6 +18210,126 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "id": "live-compose-guide-performance-stability-types-source",
     "resource": "https://developer.android.com/develop/ui/compose/performance/stability#types",
     "revision": "web:compose-guide-performance-stability:content@sha256:51ff08733927ce79882bce226503210b1fa0ad201d67c4f63b06c6235d6318bc",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tooling-additional-resources-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/tooling#additional-resources",
+    "revision": "web:compose-guide-performance-tooling:content@sha256:ad432603b744da7dac9f22771bbcea5849b1ce8f1b3de1c36e7a5bdfc03473e4",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tooling-layout-inspector-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/tooling#layout-inspector",
+    "revision": "web:compose-guide-performance-tooling:content@sha256:ad432603b744da7dac9f22771bbcea5849b1ce8f1b3de1c36e7a5bdfc03473e4",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tooling-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/tooling#main-content",
+    "revision": "web:compose-guide-performance-tooling:content@sha256:ad432603b744da7dac9f22771bbcea5849b1ce8f1b3de1c36e7a5bdfc03473e4",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tooling-tracing-source",
+    "resource": "https://developer.android.com/develop/ui/compose/performance/tooling#tracing",
+    "revision": "web:compose-guide-performance-tooling:content@sha256:ad432603b744da7dac9f22771bbcea5849b1ce8f1b3de1c36e7a5bdfc03473e4",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-accurate-timing-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#accurate-timing",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-apk-size-overhead-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#apk-size-overhead",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-capture-recomposition-trace-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#capture-recomposition-trace",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-capture-trace-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#capture-trace",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-caveats-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#caveats",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-feedback-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#feedback",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-generate-record-command-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#generate-record-command",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-macrobenchmark-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#macrobenchmark",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-main-content-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#main-content",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-open-trace-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#open-trace",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-recomposition-tracing-setup-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#recomposition-tracing-setup",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-recomposition-tracing-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#recomposition-tracing",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-set-composition-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#set-composition",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-take-system-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#take-system",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-terminal-dependencies-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#terminal-dependencies",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-performance-tracing-terminal-source",
+    "resource": "https://developer.android.com/develop/ui/compose/tooling/tracing#terminal",
+    "revision": "web:compose-guide-performance-tracing:content@sha256:9ddf40ae25b328981e9fbfb7d99069348233dfcaf5a48fdda29575942b4d7025",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {

@@ -25,14 +25,10 @@ sources:
   - id: live-compose-guide-animation-quick-guide-animate-appearing-disappearing-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-appearing-disappearing
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 7c2e06a7dc3e58489f749677d7451ad918ef17799a3371b2d7a18dde5500eb62
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 13216a7f7e7799584c629fc0b7134b5e41a8a48878884984396c4ee30e1edb27
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 1.
-
-      Animating the appearance and disappearance of an item in a Column
-
       Use AnimatedVisibility to hide or show a Composable. Children inside AnimatedVisibility can use Modifier.animateEnterExit() for their own enter or exit transition.
 
       var visible by remember {
@@ -43,6 +39,10 @@ sources:
           // your composable here
           // ...
       }AnimationQuickGuide.kt
+
+      Figure 1.
+
+      Animating the appearance and disappearance of an item in a Column
 
       The enter and exit parameters of AnimatedVisibility allow you to configure how a composable behaves when it appears and disappears. Read the full documentation for more information.
 
@@ -67,11 +67,11 @@ sources:
       ) {
       }AnimationQuickGuide.kt
 
-      However, changing the alpha comes with the caveat that the composable remains in the composition and continues to occupy the space it's laid out in. This could cause screen readers and other accessibility mechanisms to still consider the item on screen. On the other hand, AnimatedVisibility eventually removes the item from the composition.
-
       Figure 2.
 
       Animating the alpha of a composable
+
+      However, changing the alpha comes with the caveat that the composable remains in the composition and continues to occupy the space it's laid out in. This could cause screen readers and other accessibility mechanisms to still consider the item on screen. On the other hand, AnimatedVisibility eventually removes the item from the composition.
   - id: live-compose-guide-animation-quick-guide-animate-background-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-background
@@ -108,14 +108,10 @@ sources:
   - id: live-compose-guide-animation-quick-guide-animate-elevation-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-elevation
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 3f9c2250d0cf9ef0c667e69c3db360265bb1cf91741fb16ecf34ab900ec08c57
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 6a0645d48cfbe1c0d9961da216a8e42ce6436cc6e35a3c6d7e6bde54888a9d05
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 8.
-
-      Composable's elevation animating on click
-
       To animate the elevation of a composable, use animateDpAsState combined with Modifier.graphicsLayer{ }. For once-off elevation changes, use Modifier.shadow(). If you are animating the shadow, using the Modifier.graphicsLayer{ } modifier is the more performant option.
 
       val mutableInteractionSource = remember {
@@ -143,18 +139,18 @@ sources:
       ) {
       }AnimationQuickGuide.kt
 
+      Figure 8.
+
+      Composable's elevation animating on click
+
       Alternatively, use the Card composable, and set the elevation property to different values per state.
   - id: live-compose-guide-animation-quick-guide-animate-padding-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-padding
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 678ab5012f771290e940609264643043535490791f620452be24bec0485e97ab
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 385257225a2e486dfe16b24ecc9bacdaf0d149119099b94658452b90496d63e5
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 7.
-
-      Composable with its padding animating
-
       To animate the padding of a composable, use animateDpAsState combined with Modifier.padding():
 
       var toggled by remember {
@@ -181,6 +177,10 @@ sources:
                   toggled = !toggled
               }
       )AnimationQuickGuide.kt
+
+      Figure 7.
+
+      Composable with its padding animating
   - id: live-compose-guide-animation-quick-guide-animate-position-2-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-position
@@ -209,14 +209,10 @@ sources:
   - id: live-compose-guide-animation-quick-guide-animate-position-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-position
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: f1b45e092b02d5f10d592857e771963bc67a6604052fc87c1ea8553217533ff9
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: efdede5e7690f0aea4d047c49cec1a7bc40834dbc0c8983c3849b7e0bae5329f
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 5.
-
-      Composable moving by an offset
-
       To animate the position of a composable, use Modifier.offset{ } combined with animateIntOffsetAsState().
 
       var moved by remember { mutableStateOf(false) }
@@ -246,6 +242,10 @@ sources:
                   moved = !moved
               }
       )AnimationQuickGuide.kt
+
+      Figure 5.
+
+      Composable moving by an offset
 
       If you want to ensure that composables are not drawn over or under other composables when animating position or size, use Modifier.layout{ }. This modifier propagates size and position changes to the parent, which then affects other children.
 
@@ -287,14 +287,10 @@ sources:
   - id: live-compose-guide-animation-quick-guide-animate-size-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-size
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 058a64e8cb43b087492aadb572437d988f3f3a19c9c6e80524e6b4bda916a503
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 3597e01945658ec5ba0da90461421ab664df8c534571b8af9e59db588fc210c5
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 4.
-
-      Composable smoothly animating between a small and a larger size
-
       Compose lets you animate the size of composables in a few different ways. Use animateContentSize() for animations between composable size changes.
 
       For example, if you have a box that contains text which can expand from one to multiple lines you can use Modifier.animateContentSize() to achieve a smoother transition:
@@ -316,18 +312,18 @@ sources:
       ) {
       }AnimationQuickGuide.kt
 
+      Figure 4.
+
+      Composable smoothly animating between a small and a larger size
+
       You can also use AnimatedContent, with a SizeTransform to describe how size changes should take place.
   - id: live-compose-guide-animation-quick-guide-animate-text-color-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-color
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 0b9312270bf9ec9e40fa04b94ea6612b16fef6df9a56808e2670fa3aec15af6b
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 36b7fea624c9c47f34f98c41fb64a05c781a8b65d16cb60e523697ecd0a87855
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 10.
-
-      Example showing animating text color
-
       To animate text color, use the color lambda on the BasicText composable:
 
       val infiniteTransition = rememberInfiniteTransition(label = "infinite transition")
@@ -345,17 +341,17 @@ sources:
           },
           // ...
       )AnimationQuickGuide.kt
+
+      Figure 10.
+
+      Example showing animating text color
   - id: live-compose-guide-animation-quick-guide-animate-text-scale-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-scale
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 86531ea6945b9735b716efb4d4adba50eacd4df115a6b9e179da23dea328f4ce
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 854d414bf56949802b7e9dd33bc2ec1b599be1ee5fda6fb6cd61abcdc07dbc86
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 9.
-
-      Text animating smoothly between two sizes
-
       When animating scale, translation, or rotation of text, set the textMotion parameter on TextStyle to TextMotion.Animated. This ensures smoother transitions between text animations. Use Modifier.graphicsLayer{ } to translate, rotate or scale the text.
 
       val infiniteTransition = rememberInfiniteTransition(label = "infinite transition")
@@ -381,61 +377,97 @@ sources:
           )
       }
       AnimationQuickGuide.kt
+
+      Figure 9.
+
+      Text animating smoothly between two sizes
+  - id: live-compose-guide-animation-quick-guide-animate-whilst-2-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 40f51b4a3614feaffdd4c9babde91841dae93721f8ddebd4ddf5a6315e2fddd9
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      LinearEasing
+                                  )
+                              ) + slideOutOfContainer(
+                                  animationSpec = tween(300, easing = EaseOut),
+                                  towards = AnimatedContentTransitionScope.SlideDirection.End
+                              )
+                          }
+                          put(NavDisplay.PredictivePopTransitionKey) {
+                              EnterTransition.None togetherWith fadeOut(
+                                  animationSpec = tween(
+                                      300, easing = LinearEasing
+                                  )
+                              ) + slideOutOfContainer(
+                                  animationSpec = tween(300, easing = EaseOut),
+                                  towards = AnimatedContentTransitionScope.SlideDirection.End
+                              )
+                          }
+                      }
+                  ) { detail ->
+                      ScreenDetails(
+                          // ...
+                      )
+                  }
+              }
+          )
+      }AnimationQuickGuide.kt
+
+      There are many different kinds of enter and exit transitions that apply different effects to the incoming and outgoing content, see the documentation for more. For more about animating destinations, including predictive back, see Animate between destinations.
   - id: live-compose-guide-animation-quick-guide-animate-whilst-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: 3506623fcec07bee1610af0bf00c12464b2ff94311e391daf5add5a9361960a4
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: 38d9df5c8becdcfed18947c6acf0a9b9cbe7384e1b00a8fd72ac6026d9257a00
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Figure 12.
 
-      Animating between composables using navigation-compose
+      Animating between destinations
 
-      To animate transitions between composables when using the navigation-compose artifact, specify the enterTransition and exitTransition on a composable. You can also set the default animation to be used for all destinations at the top level NavHost:
+      To animate transitions between destinations when using Navigation 3, set the default animations for all destinations with the transitionSpec, popTransitionSpec, and predictivePopTransitionSpec parameters of NavDisplay. To override them for a single destination, add NavDisplay.TransitionKey, NavDisplay.PopTransitionKey, and NavDisplay.PredictivePopTransitionKey metadata to its entry:
 
-      val navController = rememberNavController()
-      NavHost(
-          navController = navController, startDestination = "landing",
-          enterTransition = { EnterTransition.None },
-          exitTransition = { ExitTransition.None }
-      ) {
-          composable("landing") {
-              ScreenLanding(
-                  // ...
-              )
-          }
-          composable(
-              "detail/{photoUrl}",
-              arguments = listOf(navArgument("photoUrl") { type = NavType.StringType }),
-              enterTransition = {
-                  fadeIn(
-                      animationSpec = tween(
-                          300, easing = LinearEasing
+      data object Landing
+
+      data class Detail(val photoIndex: Int)
+
+      @Preview
+      @Composable
+      fun AnimateBetweenComposableDestinations() {
+          // To keep the back stack across configuration changes, use rememberNavBackStack instead.
+          val backStack = remember { mutableStateListOf<Any>(Landing) }
+          NavDisplay(
+              backStack = backStack,
+              onBack = { backStack.removeLastOrNull() },
+              // Default transitions for every destination: no animation.
+              transitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+              popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+              predictivePopTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+              entryProvider = entryProvider {
+                  entry<Landing> {
+                      ScreenLanding(
+                          // ...
                       )
-                  ) + slideIntoContainer(
-                      animationSpec = tween(300, easing = EaseIn),
-                      towards = AnimatedContentTransitionScope.SlideDirection.Start
-                  )
-              },
-              exitTransition = {
-                  fadeOut(
-                      animationSpec = tween(
-                          300, easing = LinearEasing
-                      )
-                  ) + slideOutOfContainer(
-                      animationSpec = tween(300, easing = EaseOut),
-                      towards = AnimatedContentTransitionScope.SlideDirection.End
-                  )
-              }
-          ) { backStackEntry ->
-              ScreenDetails(
-                  // ...
-              )
-          }
-      }AnimationQuickGuide.kt
-
-      There are many different kinds of enter and exit transitions that apply different effects to the incoming and outgoing content, see the documentation for more.
+                  }
+                  entry<Detail>(
+                      // Override the transitions for this destination.
+                      metadata = metadata {
+                          put(NavDisplay.TransitionKey) {
+                              fadeIn(
+                                  animationSpec = tween(
+                                      300, easing = LinearEasing
+                                  )
+                              ) + slideIntoContainer(
+                                  animationSpec = tween(300, easing = EaseIn),
+                                  towards = AnimatedContentTransitionScope.SlideDirection.Start
+                              ) togetherWith ExitTransition.KeepUntilTransitionsFinished
+                          }
+                          put(NavDisplay.PopTransitionKey) {
+                              EnterTransition.None togetherWith fadeOut(
+                                  animationSpec = tween(
+                                      300, easing =
   - id: live-compose-guide-animation-quick-guide-animation-timing-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#animation-timing
@@ -601,14 +633,10 @@ sources:
   - id: live-compose-guide-animation-quick-guide-switch-different-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/quick-guide#switch-different
-    revision: web:compose-guide-animation-quick-guide:content@sha256:497af5614f61ed325c7b4d9731d701ae7ea379ac7fcbbc99c23230792855673e
-    sha256: e2424a4f4365ef87a3ca650a77eeb899610387af4d1202c2258391893c0e4573
+    revision: web:compose-guide-animation-quick-guide:content@sha256:18e3e74cc9dbf1b16f2b12b246b0dece3df447da09426b6f39572f9d66104133
+    sha256: a934e9dbc542ef5c6d15aa8e18061d499e19641a75ee6581e00023e6ae5ccf75
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 11.
-
-      Using AnimatedContent to animate changes between different composables (slowed down)
-
       Use AnimatedContent to animate between different composables, if you just want a standard fade between composables, use Crossfade.
 
       var state by remember {
@@ -645,6 +673,10 @@ sources:
               }
           }
       }AnimationQuickGuide.kt
+
+      Figure 11.
+
+      Using AnimatedContent to animate changes between different composables (slowed down)
 
       AnimatedContent can be customized to show many different kinds of enter and exit transitions. For more information, read the documentation on AnimatedContent or read this blog post on AnimatedContent.
 compose:
@@ -763,6 +795,15 @@ compose:
       sourceIds:
         - live-compose-guide-animation-quick-guide-animate-whilst-source
       relatedIds: []
+    - id: live-compose-guide-animation-quick-guide-animate-whilst-2
+      title: Animate while navigating to different destinations
+      aliases: []
+      requires:
+        - artifact: androidx.compose.animation:animation-core
+          version: null
+      sourceIds:
+        - live-compose-guide-animation-quick-guide-animate-whilst-2-source
+      relatedIds: []
     - id: live-compose-guide-animation-quick-guide-animation-timing
       title: Change animation timing
       aliases: []
@@ -862,10 +903,6 @@ Sources: [live-compose-guide-animation-quick-guide-additional-resources-source](
 
 ## Animate appearing / disappearing
 
-Figure 1.
-
-Animating the appearance and disappearance of an item in a Column
-
 Use AnimatedVisibility to hide or show a Composable. Children inside AnimatedVisibility can use Modifier.animateEnterExit() for their own enter or exit transition.
 
 var visible by remember {
@@ -876,6 +913,10 @@ AnimatedVisibility(visible) {
     // your composable here
     // ...
 }AnimationQuickGuide.kt
+
+Figure 1.
+
+Animating the appearance and disappearance of an item in a Column
 
 The enter and exit parameters of AnimatedVisibility allow you to configure how a composable behaves when it appears and disappears. Read the full documentation for more information.
 
@@ -900,11 +941,11 @@ Box(
 ) {
 }AnimationQuickGuide.kt
 
-However, changing the alpha comes with the caveat that the composable remains in the composition and continues to occupy the space it's laid out in. This could cause screen readers and other accessibility mechanisms to still consider the item on screen. On the other hand, AnimatedVisibility eventually removes the item from the composition.
-
 Figure 2.
 
 Animating the alpha of a composable
+
+However, changing the alpha comes with the caveat that the composable remains in the composition and continues to occupy the space it's laid out in. This could cause screen readers and other accessibility mechanisms to still consider the item on screen. On the other hand, AnimatedVisibility eventually removes the item from the composition.
 
 Sources: [live-compose-guide-animation-quick-guide-animate-appearing-disappearing-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-appearing-disappearing)
 
@@ -940,10 +981,6 @@ Sources: [live-compose-guide-animation-quick-guide-animate-common-properties-sou
 
 ## Animate elevation of a composable
 
-Figure 8.
-
-Composable's elevation animating on click
-
 To animate the elevation of a composable, use animateDpAsState combined with Modifier.graphicsLayer{ }. For once-off elevation changes, use Modifier.shadow(). If you are animating the shadow, using the Modifier.graphicsLayer{ } modifier is the more performant option.
 
 val mutableInteractionSource = remember {
@@ -971,15 +1008,15 @@ Box(
 ) {
 }AnimationQuickGuide.kt
 
+Figure 8.
+
+Composable's elevation animating on click
+
 Alternatively, use the Card composable, and set the elevation property to different values per state.
 
 Sources: [live-compose-guide-animation-quick-guide-animate-elevation-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-elevation)
 
 ## Animate padding of a composable
-
-Figure 7.
-
-Composable with its padding animating
 
 To animate the padding of a composable, use animateDpAsState combined with Modifier.padding():
 
@@ -1008,13 +1045,13 @@ Box(
         }
 )AnimationQuickGuide.kt
 
+Figure 7.
+
+Composable with its padding animating
+
 Sources: [live-compose-guide-animation-quick-guide-animate-padding-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-padding)
 
 ## Animate position of composable
-
-Figure 5.
-
-Composable moving by an offset
 
 To animate the position of a composable, use Modifier.offset{ } combined with animateIntOffsetAsState().
 
@@ -1045,6 +1082,10 @@ Box(
             moved = !moved
         }
 )AnimationQuickGuide.kt
+
+Figure 5.
+
+Composable moving by an offset
 
 If you want to ensure that composables are not drawn over or under other composables when animating position or size, use Modifier.layout{ }. This modifier propagates size and position changes to the parent, which then affects other children.
 
@@ -1111,10 +1152,6 @@ Sources: [live-compose-guide-animation-quick-guide-animate-position-2-source](ht
 
 ## Animate the size of a composable
 
-Figure 4.
-
-Composable smoothly animating between a small and a larger size
-
 Compose lets you animate the size of composables in a few different ways. Use animateContentSize() for animations between composable size changes.
 
 For example, if you have a box that contains text which can expand from one to multiple lines you can use Modifier.animateContentSize() to achieve a smoother transition:
@@ -1136,15 +1173,15 @@ Box(
 ) {
 }AnimationQuickGuide.kt
 
+Figure 4.
+
+Composable smoothly animating between a small and a larger size
+
 You can also use AnimatedContent, with a SizeTransform to describe how size changes should take place.
 
 Sources: [live-compose-guide-animation-quick-guide-animate-size-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-size)
 
 ## Animate text color
-
-Figure 10.
-
-Example showing animating text color
 
 To animate text color, use the color lambda on the BasicText composable:
 
@@ -1164,13 +1201,13 @@ BasicText(
     // ...
 )AnimationQuickGuide.kt
 
+Figure 10.
+
+Example showing animating text color
+
 Sources: [live-compose-guide-animation-quick-guide-animate-text-color-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-color)
 
 ## Animate text scale, translation or rotation
-
-Figure 9.
-
-Text animating smoothly between two sizes
 
 When animating scale, translation, or rotation of text, set the textMotion parameter on TextStyle to TextMotion.Animated. This ensures smoother transitions between text animations. Use Modifier.graphicsLayer{ } to translate, rotate or scale the text.
 
@@ -1198,60 +1235,94 @@ Box(modifier = Modifier.fillMaxSize()) {
 }
 AnimationQuickGuide.kt
 
+Figure 9.
+
+Text animating smoothly between two sizes
+
 Sources: [live-compose-guide-animation-quick-guide-animate-text-scale-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-text-scale)
 
 ## Animate while navigating to different destinations
 
 Figure 12.
 
-Animating between composables using navigation-compose
+Animating between destinations
 
-To animate transitions between composables when using the navigation-compose artifact, specify the enterTransition and exitTransition on a composable. You can also set the default animation to be used for all destinations at the top level NavHost:
+To animate transitions between destinations when using Navigation 3, set the default animations for all destinations with the transitionSpec, popTransitionSpec, and predictivePopTransitionSpec parameters of NavDisplay. To override them for a single destination, add NavDisplay.TransitionKey, NavDisplay.PopTransitionKey, and NavDisplay.PredictivePopTransitionKey metadata to its entry:
 
-val navController = rememberNavController()
-NavHost(
-    navController = navController, startDestination = "landing",
-    enterTransition = { EnterTransition.None },
-    exitTransition = { ExitTransition.None }
-) {
-    composable("landing") {
-        ScreenLanding(
-            // ...
-        )
-    }
-    composable(
-        "detail/{photoUrl}",
-        arguments = listOf(navArgument("photoUrl") { type = NavType.StringType }),
-        enterTransition = {
-            fadeIn(
-                animationSpec = tween(
-                    300, easing = LinearEasing
+data object Landing
+
+data class Detail(val photoIndex: Int)
+
+@Preview
+@Composable
+fun AnimateBetweenComposableDestinations() {
+    // To keep the back stack across configuration changes, use rememberNavBackStack instead.
+    val backStack = remember { mutableStateListOf<Any>(Landing) }
+    NavDisplay(
+        backStack = backStack,
+        onBack = { backStack.removeLastOrNull() },
+        // Default transitions for every destination: no animation.
+        transitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+        popTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+        predictivePopTransitionSpec = { EnterTransition.None togetherWith ExitTransition.None },
+        entryProvider = entryProvider {
+            entry<Landing> {
+                ScreenLanding(
+                    // ...
                 )
-            ) + slideIntoContainer(
-                animationSpec = tween(300, easing = EaseIn),
-                towards = AnimatedContentTransitionScope.SlideDirection.Start
-            )
-        },
-        exitTransition = {
-            fadeOut(
-                animationSpec = tween(
-                    300, easing = LinearEasing
-                )
-            ) + slideOutOfContainer(
-                animationSpec = tween(300, easing = EaseOut),
-                towards = AnimatedContentTransitionScope.SlideDirection.End
-            )
-        }
-    ) { backStackEntry ->
-        ScreenDetails(
-            // ...
-        )
-    }
-}AnimationQuickGuide.kt
-
-There are many different kinds of enter and exit transitions that apply different effects to the incoming and outgoing content, see the documentation for more.
+            }
+            entry<Detail>(
+                // Override the transitions for this destination.
+                metadata = metadata {
+                    put(NavDisplay.TransitionKey) {
+                        fadeIn(
+                            animationSpec = tween(
+                                300, easing = LinearEasing
+                            )
+                        ) + slideIntoContainer(
+                            animationSpec = tween(300, easing = EaseIn),
+                            towards = AnimatedContentTransitionScope.SlideDirection.Start
+                        ) togetherWith ExitTransition.KeepUntilTransitionsFinished
+                    }
+                    put(NavDisplay.PopTransitionKey) {
+                        EnterTransition.None togetherWith fadeOut(
+                            animationSpec = tween(
+                                300, easing =
 
 Sources: [live-compose-guide-animation-quick-guide-animate-whilst-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst)
+
+## Animate while navigating to different destinations
+
+LinearEasing
+                            )
+                        ) + slideOutOfContainer(
+                            animationSpec = tween(300, easing = EaseOut),
+                            towards = AnimatedContentTransitionScope.SlideDirection.End
+                        )
+                    }
+                    put(NavDisplay.PredictivePopTransitionKey) {
+                        EnterTransition.None togetherWith fadeOut(
+                            animationSpec = tween(
+                                300, easing = LinearEasing
+                            )
+                        ) + slideOutOfContainer(
+                            animationSpec = tween(300, easing = EaseOut),
+                            towards = AnimatedContentTransitionScope.SlideDirection.End
+                        )
+                    }
+                }
+            ) { detail ->
+                ScreenDetails(
+                    // ...
+                )
+            }
+        }
+    )
+}AnimationQuickGuide.kt
+
+There are many different kinds of enter and exit transitions that apply different effects to the incoming and outgoing content, see the documentation for more. For more about animating destinations, including predictive back, see Animate between destinations.
+
+Sources: [live-compose-guide-animation-quick-guide-animate-whilst-2-source](https://developer.android.com/develop/ui/compose/animation/quick-guide#animate-whilst)
 
 ## Change animation timing
 
@@ -1404,10 +1475,6 @@ Sources: [live-compose-guide-animation-quick-guide-start-animation-source](https
 
 ## Switch between different types of content
 
-Figure 11.
-
-Using AnimatedContent to animate changes between different composables (slowed down)
-
 Use AnimatedContent to animate between different composables, if you just want a standard fade between composables, use Crossfade.
 
 var state by remember {
@@ -1444,6 +1511,10 @@ AnimatedContent(
         }
     }
 }AnimationQuickGuide.kt
+
+Figure 11.
+
+Using AnimatedContent to animate changes between different composables (slowed down)
 
 AnimatedContent can be customized to show many different kinds of enter and exit transitions. For more information, read the documentation on AnimatedContent or read this blog post on AnimatedContent.
 

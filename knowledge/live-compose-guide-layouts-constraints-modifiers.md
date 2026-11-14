@@ -51,8 +51,8 @@ sources:
   - id: live-compose-guide-layouts-constraints-modifiers-examples-2-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples
-    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27
-    sha256: 190bb287821d47c6020756cb2293ae9f733f19fb9d198173205861c79f0ff9ec
+    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831
+    sha256: c31361d8e5348e39780459afbc8d876320a360e41ca5235491e2d0ce353dfa18
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       contentDescription = null,
@@ -83,6 +83,128 @@ sources:
       The padding modifier then insets its content by 10dp on all sides, which lowers the canvas size for the Image to 100dp by 100dp.
 
       The Image is drawn in that smaller canvas. The image is clipped based on the original circle of 120dp, so the output is a non-round result.
+
+      The next three snippets put a Box with a background color in the same 300dp by 200dp container.
+
+      Box(
+          modifier = Modifier
+              .requiredWidth(400.dp)
+              .height(100.dp)
+              .background(Color(0xFF3DDC84))
+      )ConstraintsModifiersSnippets.kt
+
+      This snippet produces the following output:
+
+      Figure 17.
+
+      With
+
+      requiredWidth(400.dp)
+
+      , the
+
+      Box
+
+      extends
+
+      50dp
+
+      past each side of the
+
+      300dp
+
+      container.
+
+      The requiredWidth modifier replaces the incoming width constraints with exact bounds of 400dp. It keeps the incoming height constraints, 0 to 200dp.
+
+      The height modifier sets the height to 100dp, which fits the height constraints.
+
+      The Box measures 400dp by 100dp. That width is larger than the 300dp that the container allows, so requiredWidth reports a width of 300dp to its parent and centers its content in that space: the Box extends 50dp past each side of the container.
+
+      Box(
+          modifier = Modifier
+              .widthIn(min = 100.dp, max = 400.dp)
+              .heightIn(max = 100.dp)
+              .fillMaxSize()
+              .background(Color(0xFF3DDC84))
+      )ConstraintsModifiersSnippets.kt
+
+      This snippet produces the following output:
+
+      Figure 18.
+
+      With
+
+      widthIn
+
+      ,
+  - id: live-compose-guide-layouts-constraints-modifiers-examples-3-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples
+    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831
+    sha256: fa6180da508151b1d58cb2d641a6b9edbd0570cc274c815878a6baf520d1c48e
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      the
+
+      Box
+
+      measures
+
+      300dp
+
+      by
+
+      100dp
+
+      and stays inside the container.
+
+      The widthIn modifier asks for a width between 100dp and 400dp. The incoming maximum width is 300dp, so the width constraints become 100dp to 300dp.
+
+      The heightIn modifier sets a maximum height of 100dp, so the height constraints become 0 to 100dp.
+
+      The fillMaxSize modifier sets the minimum width and height to those maximums, so the Box is 300dp by 100dp and stays inside the container.
+
+      Box(
+          modifier = Modifier
+              .requiredSizeIn(minWidth = 100.dp, maxWidth = 400.dp, maxHeight = 100.dp)
+              .fillMaxSize()
+              .background(Color(0xFF3DDC84))
+      )ConstraintsModifiersSnippets.kt
+
+      This snippet produces the following output:
+
+      Figure 19.
+
+      With
+
+      requiredSizeIn
+
+      , the
+
+      Box
+
+      measures
+
+      400dp
+
+      by
+
+      100dp
+
+      and extends
+
+      50dp
+
+      past each side of the container, the same result as Figure 17.
+
+      The requiredSizeIn modifier replaces the incoming constraints with a width of 100dp to 400dp and a height of 0 to 100dp. The minimum height isn't set, so it keeps the incoming minimum height of 0.
+
+      The fillMaxSize modifier sets the minimum width and height to those maximums, so the Box measures 400dp by 100dp.
+
+      As in the requiredWidth example, the width is larger than the container allows, so the Box is centered and extends 50dp past each side.
+
+      With the same range, widthIn and heightIn keep the Box inside the container, and requiredSizeIn doesn't.
   - id: live-compose-guide-layouts-constraints-modifiers-examples-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples
@@ -207,13 +329,13 @@ sources:
   - id: live-compose-guide-layouts-constraints-modifiers-requiredsize-modifier-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#requiredsize-modifier
-    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27
-    sha256: dfb8d3c9b298a9346865ea53ad5fac7de813d71770322e922d721beb5d4d6758
+    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831
+    sha256: 24e6229255663dd884da58b37571ac30b87e054813e01fd98fdbf66162558351
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Use the requiredSize modifier instead of size if you need your node to override the incoming constraints. The requiredSize modifier replaces the incoming constraints and passes the size you specify as exact bounds.
 
-      When the size is passed back up the tree, the child node will be centered in the available space:
+      If the size you pass is outside the incoming constraints, the node reports a size that fits them when the size is passed back up the tree, and its content is centered in that space on each axis where the two sizes differ. Content larger than the constraints extends past them. In Figure 11, requiredSize(50) is smaller than the 100dp that size passes in, so the 50dp content is centered in a 100dp space:
 
       Figure 11.
 
@@ -285,11 +407,11 @@ sources:
   - id: live-compose-guide-layouts-constraints-modifiers-sizein-modifier-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#sizein-modifier
-    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27
-    sha256: 3928b747c4ecf5445a5966cbd839fc1af8c7326762ef31fc08b2a51d3ad5bcfb
+    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831
+    sha256: 0a877f3e94505e064e3ea9e2c0e65b1dc32da445867b5384f59ded49449def86
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      The sizeIn modifier lets you set exact minimum and maximum constraints for width and height. Use the sizeIn modifier if you need fine-grained control over the constraints.
+      The sizeIn modifier lets you set minimum and maximum constraints for width and height, within the incoming constraints: where the incoming constraints are tighter, they win. Use the sizeIn modifier if you need fine-grained control over the constraints. The widthIn and heightIn modifiers do the same on one axis and leave the constraints of the other axis unchanged. Each one takes a minimum, a maximum, or both.
 
       Figure 13.
 
@@ -314,6 +436,8 @@ sources:
       maxHeight
 
       set.
+
+      To set a range that overrides the incoming constraints, use requiredSizeIn, or requiredWidthIn and requiredHeightIn for one axis. They relate to sizeIn, widthIn, and heightIn the way requiredSize relates to size.
   - id: live-compose-guide-layouts-constraints-modifiers-types-constraints-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#types-constraints
@@ -351,8 +475,8 @@ sources:
   - id: live-compose-guide-layouts-constraints-modifiers-width-height-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#width-height
-    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:8bbfcde4b75d0698bc9dbe78db1f9d628d48e81034c860e4ddd871c26edaee27
-    sha256: 3984164d5cece8424f7554436ee57e8b236ea9c40137df7c934c6c2c6b1204a5
+    revision: web:compose-guide-layouts-constraints-modifiers:content@sha256:a3e9819aec204b9ca140980b33045a01ce9d2d3359afcd9a65341bf0e4813831
+    sha256: bf4a5af6bc73815c662633041786a5fe134f227e451add5bcac6f82b2f99a28d
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       The size modifier adapts both the width and height of the constraints. With the width modifier, you can set a fixed width but leave the height undecided. Similarly, with the height modifier, you can set a fixed height, but leave the width undecided:
@@ -368,6 +492,8 @@ sources:
       height
 
       modifier setting a fixed width and height, respectively.
+
+      To set a width or height that overrides the incoming constraints, use requiredWidth or requiredHeight. Like requiredSize, each one replaces the incoming constraints, but only on its own axis: requiredWidth keeps the incoming height constraints, and requiredHeight keeps the incoming width constraints.
 compose:
   id: live-compose-guide-layouts-constraints-modifiers
   artifact: androidx.compose.foundation:foundation-layout
@@ -412,6 +538,16 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-layouts-constraints-modifiers-examples-2-source
+      relatedIds: []
+    - id: live-compose-guide-layouts-constraints-modifiers-examples-3
+      title: Examples
+      aliases:
+        - androidx.compose.ui.Modifier
+      requires:
+        - artifact: androidx.compose.foundation:foundation-layout
+          version: null
+      sourceIds:
+        - live-compose-guide-layouts-constraints-modifiers-examples-3-source
       relatedIds: []
     - id: live-compose-guide-layouts-constraints-modifiers-main-content
       title: Introduction
@@ -628,7 +764,127 @@ The padding modifier then insets its content by 10dp on all sides, which lowers 
 
 The Image is drawn in that smaller canvas. The image is clipped based on the original circle of 120dp, so the output is a non-round result.
 
+The next three snippets put a Box with a background color in the same 300dp by 200dp container.
+
+Box(
+    modifier = Modifier
+        .requiredWidth(400.dp)
+        .height(100.dp)
+        .background(Color(0xFF3DDC84))
+)ConstraintsModifiersSnippets.kt
+
+This snippet produces the following output:
+
+Figure 17.
+
+With
+
+requiredWidth(400.dp)
+
+, the
+
+Box
+
+extends
+
+50dp
+
+past each side of the
+
+300dp
+
+container.
+
+The requiredWidth modifier replaces the incoming width constraints with exact bounds of 400dp. It keeps the incoming height constraints, 0 to 200dp.
+
+The height modifier sets the height to 100dp, which fits the height constraints.
+
+The Box measures 400dp by 100dp. That width is larger than the 300dp that the container allows, so requiredWidth reports a width of 300dp to its parent and centers its content in that space: the Box extends 50dp past each side of the container.
+
+Box(
+    modifier = Modifier
+        .widthIn(min = 100.dp, max = 400.dp)
+        .heightIn(max = 100.dp)
+        .fillMaxSize()
+        .background(Color(0xFF3DDC84))
+)ConstraintsModifiersSnippets.kt
+
+This snippet produces the following output:
+
+Figure 18.
+
+With
+
+widthIn
+
+,
+
 Sources: [live-compose-guide-layouts-constraints-modifiers-examples-2-source](https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples)
+
+## Examples
+
+the
+
+Box
+
+measures
+
+300dp
+
+by
+
+100dp
+
+and stays inside the container.
+
+The widthIn modifier asks for a width between 100dp and 400dp. The incoming maximum width is 300dp, so the width constraints become 100dp to 300dp.
+
+The heightIn modifier sets a maximum height of 100dp, so the height constraints become 0 to 100dp.
+
+The fillMaxSize modifier sets the minimum width and height to those maximums, so the Box is 300dp by 100dp and stays inside the container.
+
+Box(
+    modifier = Modifier
+        .requiredSizeIn(minWidth = 100.dp, maxWidth = 400.dp, maxHeight = 100.dp)
+        .fillMaxSize()
+        .background(Color(0xFF3DDC84))
+)ConstraintsModifiersSnippets.kt
+
+This snippet produces the following output:
+
+Figure 19.
+
+With
+
+requiredSizeIn
+
+, the
+
+Box
+
+measures
+
+400dp
+
+by
+
+100dp
+
+and extends
+
+50dp
+
+past each side of the container, the same result as Figure 17.
+
+The requiredSizeIn modifier replaces the incoming constraints with a width of 100dp to 400dp and a height of 0 to 100dp. The minimum height isn't set, so it keeps the incoming minimum height of 0.
+
+The fillMaxSize modifier sets the minimum width and height to those maximums, so the Box measures 400dp by 100dp.
+
+As in the requiredWidth example, the width is larger than the container allows, so the Box is centered and extends 50dp past each side.
+
+With the same range, widthIn and heightIn keep the Box inside the container, and requiredSizeIn doesn't.
+
+Sources: [live-compose-guide-layouts-constraints-modifiers-examples-3-source](https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#examples)
 
 ## Introduction
 
@@ -680,7 +936,7 @@ Sources: [live-compose-guide-layouts-constraints-modifiers-modifiers-ui-source](
 
 Use the requiredSize modifier instead of size if you need your node to override the incoming constraints. The requiredSize modifier replaces the incoming constraints and passes the size you specify as exact bounds.
 
-When the size is passed back up the tree, the child node will be centered in the available space:
+If the size you pass is outside the incoming constraints, the node reports a size that fits them when the size is passed back up the tree, and its content is centered in that space on each axis where the two sizes differ. Content larger than the constraints extends past them. In Figure 11, requiredSize(50) is smaller than the 100dp that size passes in, so the 50dp content is centered in a 100dp space:
 
 Figure 11.
 
@@ -752,7 +1008,7 @@ Sources: [live-compose-guide-layouts-constraints-modifiers-size-modifier-source]
 
 ## The sizeIn modifier
 
-The sizeIn modifier lets you set exact minimum and maximum constraints for width and height. Use the sizeIn modifier if you need fine-grained control over the constraints.
+The sizeIn modifier lets you set minimum and maximum constraints for width and height, within the incoming constraints: where the incoming constraints are tighter, they win. Use the sizeIn modifier if you need fine-grained control over the constraints. The widthIn and heightIn modifiers do the same on one axis and leave the constraints of the other axis unchanged. Each one takes a minimum, a maximum, or both.
 
 Figure 13.
 
@@ -777,6 +1033,8 @@ minHeight
 maxHeight
 
 set.
+
+To set a range that overrides the incoming constraints, use requiredSizeIn, or requiredWidthIn and requiredHeightIn for one axis. They relate to sizeIn, widthIn, and heightIn the way requiredSize relates to size.
 
 Sources: [live-compose-guide-layouts-constraints-modifiers-sizein-modifier-source](https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#sizein-modifier)
 
@@ -827,5 +1085,7 @@ modifier and
 height
 
 modifier setting a fixed width and height, respectively.
+
+To set a width or height that overrides the incoming constraints, use requiredWidth or requiredHeight. Like requiredSize, each one replaces the incoming constraints, but only on its own axis: requiredWidth keeps the incoming height constraints, and requiredHeight keeps the incoming width constraints.
 
 Sources: [live-compose-guide-layouts-constraints-modifiers-width-height-source](https://developer.android.com/develop/ui/compose/layouts/constraints-modifiers#width-height)
