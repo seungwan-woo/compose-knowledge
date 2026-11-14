@@ -4,6 +4,8 @@ This is a routing table, not API evidence. Choose only the relevant row, then se
 
 For reusable component libraries, use the matching row in [component routes](components.md) for API design, theming, measurement, input, or performance contracts.
 
+For measurement and composable API design, use the matching [performance and pattern route](performance-patterns.md).
+
 | Topic | Artifact | Symbol or English query |
 | --- | --- | --- |
 | State and recomposition | `androidx.compose.runtime:runtime` | `androidx.compose.runtime.derivedStateOf`; `state hoisting` |

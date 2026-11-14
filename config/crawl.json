@@ -2890,6 +2890,50 @@
       "symbols": [
         "androidx.compose.runtime.Stable"
       ]
+    },
+    {
+      "id": "compose-guide-performance-tooling",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/tooling",
+      "title": "Performance tooling",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-guide-performance-baseline-profiles",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/performance/baseline-profiles",
+      "title": "Baseline Profiles in Compose",
+      "artifact": "androidx.compose.ui:ui",
+      "fqn": "androidx.compose.ui",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "compose-guide-performance-tracing",
+      "kind": "html",
+      "url": "https://developer.android.com/develop/ui/compose/tooling/tracing",
+      "title": "Composition tracing",
+      "artifact": "androidx.compose.runtime:runtime-tracing",
+      "fqn": "androidx.compose.runtime",
+      "license": "Apache-2.0 (https://developer.android.com/license)"
+    },
+    {
+      "id": "androidx-material3-exposed-dropdown-menu",
+      "kind": "gitiles",
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+      "title": "Material 3 exposed dropdown menu source",
+      "artifact": "androidx.compose.material3:material3",
+      "fqn": "androidx.compose.material3.ExposedDropdownMenuBox",
+      "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
+      "repo": "https://android.googlesource.com/platform/frameworks/support",
+      "ref": "androidx-main",
+      "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+      "symbols": [
+        "androidx.compose.material3.ExposedDropdownMenuBox",
+        "androidx.compose.material3.ExposedDropdownMenuBoxScope",
+        "androidx.compose.material3.ExposedDropdownMenuAnchorType"
+      ]
     }
   ]
 }

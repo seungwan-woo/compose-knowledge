@@ -1,0 +1,9 @@
+# Frozen consumer protocol
+
+Eight questions and artifact/FQN/concept query strings were frozen before author candidate inspection in questions.json (SHA-256 c562beaa947171bee820c3167db13f169d37b4e187dda63e4bc5fa124b2f0f17).
+
+For each baseline/candidate question: run online sync to its configured remote; require fresh and expected full SHA; record checkedAt/publishedAt. Preserve actual app module, variant and artifact versions as unknown because the private OneUI/sesl-compose target is inaccessible. First search Android artifact + FQN (limit2, max2048), then the single frozen concept query (same artifact/version/platform, limit2, max2048). This comparison always executes that optional query so differing FQN coverage cannot change the search protocol. An AI tester selects relevant evidence from these hits and direct relatedIds only. Read concise guidance when relevant, then raw source needed to support conclusions. Do not read irrelevant results solely to use the allowance. Read at most3 sections; each response <=3072 UTF8 stdout bytes; reserve each maximum before calling; total search/read stdout<=12288. No second-hop evidence or alternative queries. Keep baseline artifacts immutable after verification.
+
+Supported: the read evidence answers the question's concrete decision and limits. Partial: it answers part but a material requested decision/limit is absent. Unsupported: no read substantive evidence answers the requested decision (a mere mention or link is insufficient). Count no app performance verification: source reading is not execution in the target app. This is AI evidence selection and grading, not human review.
+
+Compare the same frozen questions and search protocol. Candidate may select different direct/one-hop hits under the same read/byte budget. Fresh against a local test remote proves that local remote only; distinguish it from current public corpus freshness.

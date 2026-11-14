@@ -1,0 +1,26 @@
+{
+  "q01": [
+    "guide-verify-performance-with-benchmarks",
+    "live-compose-guide-performance-tracing-accurate-timing",
+    "live-compose-guide-performance-tooling-layout-inspector"
+  ],
+  "q02": [
+    "guide-composition-system-tracing",
+    "live-compose-guide-performance-tracing-main-content",
+    "live-compose-guide-performance-tracing-set-composition"
+  ],
+  "q03": [
+    "guide-app-specific-baseline-profiles",
+    "live-compose-guide-performance-baseline-profiles-benefits",
+    "live-compose-guide-performance-baseline-profiles-macrobenchmark"
+  ],
+  "q05": [
+    "guide-compound-component-explicit-contract",
+    "live-androidx-material3-exposed-dropdown-menu-lines-106",
+    "live-androidx-material3-exposed-dropdown-menu-lines-141"
+  ],
+  "q06": [
+    "guide-slot-api-content-customization",
+    "live-compose-guide-layouts-basics-slot-based-layouts"
+  ]
+}
