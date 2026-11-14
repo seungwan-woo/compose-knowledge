@@ -75,6 +75,7 @@ node scripts/evaluate.mjs .cache/evaluation-NEW
 Evaluation output never overwrites existing results. The 20 questions were fixed before ranking implementation. Initial results: top 3 **18/20**, top 5 **20/20**, and **0** incorrect version labels. Top-5 results do not mean all were read within the 3-read limit.
 
 - [Independent tests and retrieval evaluation](docs/reports/acceptance.md)
+- [Custom Compose workflow acceptance, measured limits and decisions](docs/reports/custom-review-acceptance.md)
 - [Sources, checksums, and licenses](docs/reports/source-research.md)
 - [User-provided collection targets](config/sources.json) and [access diagnostics](docs/reports/source-access.md)
 - [Consumer test without the skill](docs/reports/skill-baseline.md)

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-14",
+  "scope": "Six frozen public synthetic original trials plus two selected post-fix retests; no merged final six-case result",
+  "questionsSha256": "bdf34c81e12619260bbfd1bfd0cc3b6d8b9e7a8d3183d153b5ab1d8e7d970ae4",
+  "corpora": {
+    "B": "1a7433db51d3d15cb42a22aa8770caba43627d3b",
+    "E": "f9e370a0ba49504dc142ae143e9273a35a7f16df",
+    "publication": "E local-only; no corpus publication performed"
+  },
+  "tokenizer": {
+    "package": "js-tiktoken",
+    "version": "1.0.21",
+    "encoding": "o200k_base",
+    "moduleSha256": "e0f5359f32d5cf67c4b6d9ac20d4a27e2c7dc8d124b1f0599faf6fe620095943"
+  },
+  "usageMeaning": "Exact saved text proxy; unavailable host/tool framing, intermediate commentary, reasoning, complete coordination/reviewer exposure and provider billing excluded",
+  "historicalBaseline": {
+    "bundleVersion": "0.3.4",
+    "archiveSha256": "8a7a1f20b1c0708f03d8ee8666bf7695455e1b5ca252a1a6165eaed9f5f524bd",
+    "retrievalBytes": 57325,
+    "retrievalTokens": 13768,
+    "capturedInputPlusAnswerTokens": 32633
+  },
+  "original": {
+    "sourceCommit": "6231f51163a324142ad5167fbceeb13c75095775",
+    "archiveSha256": "11e322884ee4060c35239691e9fa11d998eceff3a99a7d356cdfeb6bdae2872d",
+    "gradeSummarySha256": "fe5f9f9b8d32a352558806ac7e6dcf25efbc6109d9bb084883c9350a13847348",
+    "gradeTotals": {
+      "supported": 3,
+      "partial": 3
+    },
+    "totals": {
+      "retrievalBytes": 33747,
+      "retrievalTokens": 8041,
+      "capturedInputBytes": 86594,
+      "capturedInputTokens": 19674,
+      "answerBytes": 31304,
+      "answerTokens": 6915,
+      "capturedInputPlusAnswerTokens": 26589,
+      "finalHandoffTokens": 146
+    },
+    "cases": [
+      {
+        "id": "q01",
+        "independentSupportGrade": "supported",
+        "retrievalBytes": 9042,
+        "retrievalTokens": 2111,
+        "capturedInputPlusAnswerTokens": 5214,
+        "lookupCLIInvocations": 1,
+        "runtimeLedgerAttempts": 1,
+        "protocolStatus": "within total-2 lookup invocation limit"
+      },
+      {
+        "id": "q02",
+        "independentSupportGrade": "supported",
+        "retrievalBytes": 6135,
+        "retrievalTokens": 1502,
+        "capturedInputPlusAnswerTokens": 4451,
+        "lookupCLIInvocations": 1,
+        "runtimeLedgerAttempts": 1,
+        "protocolStatus": "within total-2 lookup invocation limit"
+      },
+      {
+        "id": "q03",
+        "independentSupportGrade": "partial",
+        "retrievalBytes": 3024,
+        "retrievalTokens": 767,
+        "capturedInputPlusAnswerTokens": 3904,
+        "lookupCLIInvocations": 2,
+        "runtimeLedgerAttempts": 1,
+        "protocolStatus": "within total-2 lookup invocation limit"
+      },
+      {
+        "id": "q04",
+        "independentSupportGrade": "supported",
+        "retrievalBytes": 6420,
+        "retrievalTokens": 1442,
+        "capturedInputPlusAnswerTokens": 4644,
+        "lookupCLIInvocations": 1,
+        "runtimeLedgerAttempts": 1,
+        "protocolStatus": "within total-2 lookup invocation limit"
+      },
+      {
+        "id": "q05",
+        "independentSupportGrade": "partial",
+        "retrievalBytes": 6575,
+        "retrievalTokens": 1577,
+        "capturedInputPlusAnswerTokens": 4833,
+        "lookupCLIInvocations": 2,
+        "runtimeLedgerAttempts": 2,
+        "protocolStatus": "within total-2 lookup invocation limit"
+      },
+      {
+        "id": "q06",
+        "independentSupportGrade": "partial",
+        "retrievalBytes": 2551,
+        "retrievalTokens": 642,
+        "capturedInputPlusAnswerTokens": 3543,
+        "lookupCLIInvocations": 3,
+        "runtimeLedgerAttempts": 2,
+        "protocolStatus": "deviation: 3 lookup CLI invocations exceed predeclared total-2 allowance"
+      }
+    ]
+  },
+  "targeted": {
+    "sourceCommit": "51eff3d5af412664449b0749b543d528fea5396b",
+    "archiveSha256": "b8fcaf558a61485928f84c29f8513032c13473604c632267c52589457563b7b5",
+    "gradesSha256": "4ec2dde503c0fdc1931db128053c2276a6aca6f2b3478e3a4fd9faa33e495e43",
+    "gradeTotals": {
+      "supported": 1,
+      "partial": 1,
+      "unsupported": 0
+    },
+    "totals": {
+      "retrievalBytes": 13934,
+      "retrievalTokens": 3310,
+      "capturedInputBytes": 32156,
+      "capturedInputTokens": 7375,
+      "answerBytes": 13637,
+      "answerTokens": 2959,
+      "capturedInputPlusAnswerBytes": 45793,
+      "capturedInputPlusAnswerTokens": 10334,
+      "finalHandoffBytes": 209,
+      "finalHandoffTokens": 46,
+      "capturedInputPlusAnswerPlusHandoffTokens": 10380
+    },
+    "cases": [
+      {
+        "id": "q03",
+        "independentSupportGrade": "supported",
+        "retrievalBytes": 8212,
+        "retrievalTokens": 1940,
+        "capturedInputPlusAnswerTokens": 5310,
+        "lookupRequests": 2,
+        "lookupCLIInvocations": 2,
+        "runtimeLedgerAttempts": 2
+      },
+      {
+        "id": "q06",
+        "independentSupportGrade": "partial",
+        "retrievalBytes": 5722,
+        "retrievalTokens": 1370,
+        "capturedInputPlusAnswerTokens": 5024,
+        "lookupRequests": 2,
+        "lookupCLIInvocations": 2,
+        "runtimeLedgerAttempts": 2
+      }
+    ]
+  },
+  "scriptedOriginalRuntimeComparison": {
+    "B": {
+      "retrievalBytes": 17538,
+      "retrievalTokens": 4253
+    },
+    "E": {
+      "retrievalBytes": 39019,
+      "retrievalTokens": 9259
+    }
+  },
+  "remainingEvidenceGaps": [
+    "q05 keyboard/focus and raw-pointer versus high-level interaction comparison",
+    "q06 normal suspension/launch/coroutineScope scheduling and scope completion"
+  ],
+  "noSavingsClaim": true,
+  "noMergedSixCaseRetestGrade": true
+}
