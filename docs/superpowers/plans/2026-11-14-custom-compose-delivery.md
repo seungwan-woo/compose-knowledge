@@ -1,6 +1,6 @@
 # Custom Compose reference workflow delivery
 
-Status: implementation and local acceptance complete; final whole-branch review pending. See the [measured acceptance report](../../reports/custom-review-acceptance.md) and [decisions/costs](../../reports/custom-review-decisions.md). No public corpus/environment publication or merge was performed. This delivery follows the measured six-question pilot and the user's requirement that private code is only inspected in the consumer's approved environment.
+Status: implementation, local acceptance and final independent review complete. See the [measured acceptance report](../../reports/custom-review-acceptance.md) and [decisions/costs](../../reports/custom-review-decisions.md). No public corpus/environment publication or merge was performed. This delivery follows the measured six-question pilot and the user's requirement that private code is only inspected in the consumer's approved environment.
 
 ## Goal and scope
 
@@ -72,4 +72,4 @@ The implementer may factor these formats into small typed modules, but must noti
 - [x] Run fresh consumer scenarios on the candidate, independently grade claim support, and report total captured text with the same named tokenizer plus explicit missing provider/hidden usage. Preserve failed trials and evaluation overhead. Do not claim a 20% reduction unless comparable evidence supports it.
 - [x] Run final typecheck, 123 tests in 15 files, installed/bundle checks and separate CI evaluation (18 usable of 20, zero version/budget errors).
 - [x] Deliver the [report](../../reports/custom-review-acceptance.md), exact public questions and separate audit inventory. Preserve the original 3-supported/3-partial cohort, q06 protocol deviation and selected q03-supported/q06-partial retests; no mixed six-case average or savings claim.
-- [ ] Complete final whole-branch review before integration. Local E remains unpublished; code/bundle delivery does not publish corpus or environment configuration.
+- [x] Complete final whole-branch review and scoped correction review; no actionable findings remain. Local E remains unpublished; code/bundle delivery does not publish corpus or environment configuration.
