@@ -19,6 +19,8 @@ Both candidate bundles are labelled 0.4.0, so use their digests, not version alo
 
 Full identities and counts are in the [measurement summary](custom-review-measurement.json). The original 0.3.4 archive remains separately identified there.
 
+After those measured trials, the final entry correction added the documented public remote default for `begin`. The new 0.4.0 archive has SHA-256 `47ad5a7454041e08eb5ebfe0df479a9ec1b74b430fdc8c8ae4d19f61fe6d2110`; it was not used in either measured cohort. Its no-remote installed entry command was verified against a local Git fixture using a controlled URL rewrite, without a public network fetch. The corrected code passed typecheck and 123 tests across 15 files. These checks do not change the recorded trial results or costs.
+
 ## Original six consumers
 
 Independent graders used exact question, answer and actually seen evidence packets. Runtime `sufficient` flags and self-grades did not determine support. Correct abstention remains separate from retrieval coverage.

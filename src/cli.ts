@@ -8,6 +8,8 @@ import { searchIndex, readSection } from './retrieval/search.js';
 import { serializeBounded } from './retrieval/budget.js';
 import { createTask, lookup, routes, suggest } from './review/runtime.js';
 
+const defaultBeginRemote = 'https://github.com/seungwan-woo/compose-knowledge.git';
+
 const help = `Usage:
   compose-knowledge build --input FILE --out EMPTY_DIR [--json]
   compose-knowledge validate --dir DIR [--json]
@@ -23,6 +25,7 @@ Examples:
   compose-knowledge search --cache ./cache --snapshot FULL_SHA --symbol DropdownMenu
   compose-knowledge read --cache ./cache --snapshot FULL_SHA --id menu-api --require androidx.compose.material3:material3=1.3.2
 
+Begin defaults to ${defaultBeginRemote} (ref corpus); --remote overrides it. Offline begin without --remote uses the verified cache.
 JSON is the default. Search and read budgets are 256–3072 bytes (default 3072); mandatory metadata may require more than 256. Use version 'unknown' to indicate missing version context. Sync is explicit and defaults to ref corpus.
 `;
 const scopes: Record<string, string[]> = {
@@ -80,7 +83,7 @@ async function main(): Promise<void> {
   if (command === 'begin') {
     const cache = required(o, 'cache'), file = required(o, 'task');
     const versions = queryOptions(o).versions ?? [];
-    const result = await syncSnapshot({cacheDir:cache,remote:one(o,'remote'),ref:one(o,'ref'),offline:!!o.offline});
+    const result = await syncSnapshot({cacheDir:cache,remote:one(o,'remote') ?? (o.offline ? undefined : defaultBeginRemote),ref:one(o,'ref'),offline:!!o.offline});
     if (!result.snapshot) { process.stdout.write(JSON.stringify(result)+'\n'); process.exitCode=2; return; }
     const task = await createTask(file,cache,result,versions); process.stdout.write(JSON.stringify(task)+'\n'); return;
   }
