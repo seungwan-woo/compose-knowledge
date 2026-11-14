@@ -125,7 +125,9 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   let hit:ReturnType<typeof searchIndex>['hits'][number] | undefined; let query:SearchQuery={versions:task.versions,limit:1};
   for (const alt of alternatives) {
    query={...(alt.artifact ? {artifact:alt.artifact}:{}),...(alt.symbol ? {symbol:alt.symbol}:{query:alt.query}),versions:task.versions,limit:1};
-   hit=searchIndex(index,query,task.snapshot).hits[0]; if (hit) break;
+   // A route may prefer cards only among hits satisfying the same query and version context.
+   const preferred = route?.cardIds.length ? searchIndex({...index,entries:index.entries.filter(entry=>route.cardIds.includes(entry.id))},query,task.snapshot).hits[0] : undefined;
+   hit=preferred ?? searchIndex(index,query,task.snapshot).hits[0]; if (hit) break;
   }
   const descriptor=hit ? descriptors.find(d=>d.cardId===hit!.id) : undefined;
   const gaps:Gap[]=[]; const sections:ReadResponse[]=[];
