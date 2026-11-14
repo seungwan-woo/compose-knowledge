@@ -53,6 +53,7 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
       resource = source.url;
     } else {
       if (!source.path || !source.repo || !source.ref || source.path.split('/').some(x => !x || x === '..' || x === '.')) throw new Error(`Invalid Git source: ${id}`);
+      try {
       const gitiles = source.kind === 'gitiles';
       const headUrl = gitiles ? `${source.repo}/+/refs/heads/${source.ref}?format=JSON` : `https://api.github.com/repos/${source.repo}/commits/${source.ref}`;
       if (!revisions.has(headUrl)) revisions.set(headUrl, revisionFrom(await fetchText(headUrl), gitiles));
@@ -71,6 +72,11 @@ export async function crawlSources(config: CrawlConfig, baseline: KnowledgeInput
         const chunk = lines.slice(start, end).join('\n');
         if (chunk.trim()) parts.push({ anchor: `lines-${start + 1}`, title: `${title} (lines ${start + 1}–${end})`, text: chunk, startLine: start + 1, endLine: end });
         start = end;
+      }
+      } catch (error) {
+        const spans = spanCatalog.spans.filter(span => span.sourceId === id).map(span => ({id:span.id,status:'needs-review' as const,reason:'Source acquisition failed'}));
+        const failure = new Error(`Failed to acquire source ${id}: ${error instanceof Error ? error.message : String(error)}`, {cause:error});
+        Object.assign(failure,{spans}); throw failure;
       }
     }
     const seen = new Map<string, number>();

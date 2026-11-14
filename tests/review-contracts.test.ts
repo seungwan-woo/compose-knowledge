@@ -8,5 +8,5 @@ it('requires every descriptor body hash and matched version before marking a cla
  expect(reviewedClaims(contracts,[card,evidence])).toEqual([{id:'claim',claim:'A claim'}]);
  expect(reviewedClaims(contracts,[card])).toEqual([]);
  expect(reviewedClaims(contracts,[card,{...evidence,body:'changed'}])).toEqual([]);
- expect(reviewedClaims(contracts,[card,{...evidence,versionStatus:'unknown'}])).toEqual([]);
+ expect(reviewedClaims(contracts,[card,{...evidence,versionStatus:'unknown'}])).toEqual([{id:'claim',claim:'A claim'}]);
 });

@@ -13,7 +13,7 @@ const help = `Usage:
   compose-knowledge validate --dir DIR [--json]
   compose-knowledge begin --cache DIR --task FILE [--remote URL/PATH] [--ref REF] [--offline] [--require ARTIFACT=VERSION]
   compose-knowledge route --query TEXT
-  compose-knowledge lookup --task FILE (--query TEXT | --route ID) [--max-bytes N]
+  compose-knowledge lookup --task FILE (--query TEXT | --route ID) [--require ARTIFACT=VERSION] [--max-bytes N]
   compose-knowledge sync --cache DIR [--remote URL/PATH] [--ref REF] [--offline] [--json]
   compose-knowledge search --cache DIR --snapshot FULL_SHA [--artifact NAME --version VERSION] [--platform android] [--symbol NAME | --query TEXT] [--require ARTIFACT=VERSION] [--limit N] [--max-bytes N] [--include-different] [--json]
   compose-knowledge read --cache DIR --snapshot FULL_SHA --id ID [--artifact NAME --version VERSION] [--platform android] [--symbol NAME | --query TEXT] [--require ARTIFACT=VERSION] [--limit N] [--max-bytes N] [--include-different] [--json]
@@ -26,7 +26,7 @@ Examples:
 JSON is the default. Search and read budgets are 256–3072 bytes (default 3072); mandatory metadata may require more than 256. Use version 'unknown' to indicate missing version context. Sync is explicit and defaults to ref corpus.
 `;
 const scopes: Record<string, string[]> = {
-  begin: ['cache', 'task', 'remote', 'ref', 'offline', 'require', 'json'], route: ['query', 'json'], lookup: ['task', 'query', 'route', 'max-bytes', 'json'],
+  begin: ['cache', 'task', 'remote', 'ref', 'offline', 'require', 'json'], route: ['query', 'json'], lookup: ['task', 'query', 'route', 'max-bytes', 'require', 'json'],
   build: ['input', 'out', 'json'], validate: ['dir', 'json'], sync: ['cache', 'remote', 'ref', 'offline', 'json'],
   search: ['cache', 'snapshot', 'artifact', 'version', 'platform', 'symbol', 'query', 'require', 'limit', 'max-bytes', 'include-different', 'json'],
   read: ['cache', 'snapshot', 'id', 'artifact', 'version', 'platform', 'symbol', 'query', 'require', 'limit', 'max-bytes', 'include-different', 'json'],
@@ -87,7 +87,7 @@ async function main(): Promise<void> {
   if (command === 'lookup') {
     const query = one(o,'query'), route = one(o,'route');
     if (Boolean(query) === Boolean(route) || !(query ?? route)?.trim()) throw new Error('Use either --query or --route');
-    process.stdout.write(await lookup(required(o,'task'),{query,route},positive(one(o,'max-bytes'),6144,12288))); return;
+    process.stdout.write(await lookup(required(o,'task'),{query,route},positive(one(o,'max-bytes'),12288,12288),queryOptions(o).versions ?? [])); return;
   }
   const cache = required(o, 'cache'), snapshot = required(o, 'snapshot');
   const query = queryOptions(o), maxBytes = positive(one(o, 'max-bytes'), 3072, 3072);

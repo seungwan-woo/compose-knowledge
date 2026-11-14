@@ -157,3 +157,17 @@ it('emits only hash-valid inclusive selected Git spans and reports changes', asy
   expect(changed.input.documents[0]!.sections.some(s => s.id === 'selected')).toBe(false);
   expect(changed.spans[0]!.status).toBe('needs-review');
 });
+
+it('attaches needs-review span metadata when a required Git file is unavailable', async () => {
+ const git: CrawlConfig = {schemaVersion:1,sources:[{id:'missing',kind:'github',url:'https://github.com/a/b',title:'File',artifact:'a:b',fqn:'a.B',license:'Apache-2.0',repo:'a/b',ref:'main',path:'Missing.kt'}]};
+ const spans={schemaVersion:1 as const,spans:[{id:'span',sourceId:'missing',title:'Span',sourceSha256:'a'.repeat(64),startLine:1,endLine:1}]};
+ try { await crawlSources(git,baseline,undefined,async url=>{if(url.includes('api.github.com'))return JSON.stringify({sha:'a'.repeat(40)});throw new Error('HTTP 404');},spans); expect.fail('expected acquisition to fail'); }
+ catch (error) {expect((error as any).spans).toEqual([{id:'span',status:'needs-review',reason:expect.any(String)}]);}
+});
+
+it('suppresses an invalid selected span interval while keeping ordinary chunks', async () => {
+ const git:CrawlConfig={schemaVersion:1,sources:[{id:'code',kind:'github',url:'https://github.com/a/b',title:'File',artifact:'a:b',fqn:'a.B',license:'Apache-2.0',repo:'a/b',ref:'main',path:'A.kt'}]};
+ const {createHash}=await import('node:crypto'); const body='line one\nline two';
+ const result=await crawlSources(git,baseline,undefined,async url=>url.includes('api.github.com')?JSON.stringify({sha:'a'.repeat(40)}):body,{schemaVersion:1,spans:[{id:'bad',sourceId:'code',title:'Bad',sourceSha256:createHash('sha256').update(body).digest('hex'),startLine:2,endLine:3}]});
+ expect(result.spans).toEqual([{id:'bad',status:'needs-review',reason:expect.any(String)}]);expect(result.input.documents[0]!.sections.some(s=>s.id==='bad')).toBe(false);expect(result.input.documents[0]!.sections.length).toBeGreaterThan(0);
+});
