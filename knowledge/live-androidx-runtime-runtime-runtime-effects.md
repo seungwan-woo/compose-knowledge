@@ -6,6 +6,34 @@ tags:
   - Compose
   - Android
 sources:
+  - id: contract-launchedeffect-key-lifetime-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
+    revision: e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6
+    path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
+    startLine: 552
+    endLine: 569
+    sha256: 74a8b9defaaf13afb85d5b4c05d196c81669c10bebcc9c7627557877672ec552
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      /**
+       * When [LaunchedEffect] enters the composition it will launch [block] into the composition's
+       * [CoroutineContext]. The coroutine will be [cancelled][Job.cancel] and **re-launched** when
+       * [LaunchedEffect] is recomposed with a different [key1]. The coroutine will be
+       * [cancelled][Job.cancel] when the [LaunchedEffect] leaves the composition.
+       *
+       * This function should **not** be used to (re-)launch ongoing tasks in response to callback events
+       * by way of storing callback data in [MutableState] passed to [key1]. Instead, see
+       * [rememberCoroutineScope] to obtain a [CoroutineScope] that may be used to launch ongoing jobs
+       * scoped to the composition in response to event callbacks.
+       */
+      @Composable
+      @NonRestartableComposable
+      @OptIn(InternalComposeApi::class)
+      public fun LaunchedEffect(key1: Any?, block: suspend CoroutineScope.() -> Unit) {
+          val applyContext = currentComposer.applyCoroutineContext
+          remember(key1) { LaunchedEffectImpl(applyContext, block) }
+      }
   - id: live-androidx-runtime-runtime-runtime-effects-lines-1-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
@@ -1152,6 +1180,15 @@ compose:
   artifact: androidx.compose.runtime:runtime
   fqn: androidx.compose.runtime
   sections:
+    - id: contract-launchedeffect-key-lifetime
+      title: LaunchedEffect key changes and composition exit
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - contract-launchedeffect-key-lifetime-source
+      relatedIds: []
     - id: live-androidx-runtime-runtime-runtime-effects-lines-1
       title: androidx.compose.runtime Effects.kt source (lines 1–35)
       aliases: []
@@ -1456,6 +1493,29 @@ compose:
 # androidx.compose.runtime Effects.kt source
 
 Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
+
+## LaunchedEffect key changes and composition exit
+
+/**
+ * When [LaunchedEffect] enters the composition it will launch [block] into the composition's
+ * [CoroutineContext]. The coroutine will be [cancelled][Job.cancel] and **re-launched** when
+ * [LaunchedEffect] is recomposed with a different [key1]. The coroutine will be
+ * [cancelled][Job.cancel] when the [LaunchedEffect] leaves the composition.
+ *
+ * This function should **not** be used to (re-)launch ongoing tasks in response to callback events
+ * by way of storing callback data in [MutableState] passed to [key1]. Instead, see
+ * [rememberCoroutineScope] to obtain a [CoroutineScope] that may be used to launch ongoing jobs
+ * scoped to the composition in response to event callbacks.
+ */
+@Composable
+@NonRestartableComposable
+@OptIn(InternalComposeApi::class)
+public fun LaunchedEffect(key1: Any?, block: suspend CoroutineScope.() -> Unit) {
+    val applyContext = currentComposer.applyCoroutineContext
+    remember(key1) { LaunchedEffectImpl(applyContext, block) }
+}
+
+Sources: [contract-launchedeffect-key-lifetime-source](https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt)
 
 ## androidx.compose.runtime Effects.kt source (lines 1–35)
 

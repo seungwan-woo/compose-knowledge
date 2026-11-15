@@ -6,6 +6,42 @@ tags:
   - Compose
   - Android
 sources:
+  - id: contract-rememberupdatedstate-current-value-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
+    revision: e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6
+    path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
+    startLine: 317
+    endLine: 342
+    sha256: 361469368aebf06cbc3d82c5d9db2277ebd8689ec0dc2c547082d0f936945f1e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
+      /**
+       * [remember] a [mutableStateOf] [newValue] and update its value to [newValue] on each recomposition
+       * of the [rememberUpdatedState] call.
+       *
+       * [rememberUpdatedState] should be used when parameters or values computed during composition are
+       * referenced by a long-lived lambda or object expression. Recomposition will update the resulting
+       * [State] without recreating the long-lived lambda or object, allowing that object to persist
+       * without cancelling and resubscribing, or relaunching a long-lived operation that may be expensive
+       * or prohibitive to recreate and restart. This may be common when working with [DisposableEffect]
+       * or [LaunchedEffect], for example:
+       *
+       * @sample androidx.compose.runtime.samples.rememberUpdatedStateSampleWithDisposableEffect
+       *
+       * [LaunchedEffect]s often describe state machines that should not be reset and restarted if a
+       * parameter or event callback changes, but they should have the current value available when
+       * needed. For example:
+       *
+       * @sample androidx.compose.runtime.samples.rememberUpdatedStateSampleWithLaunchedEffect
+       *
+       * By using [rememberUpdatedState] a composable function can update these operations in progress.
+       */
+      @Composable
+      public fun <T> rememberUpdatedState(newValue: T): State<T> = remember {
+          mutableStateOf(newValue)
+      }
+          .apply { value = newValue }
   - id: live-androidx-runtime-runtime-runtime-snapshotstate-lines-1-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
@@ -452,6 +488,15 @@ compose:
   artifact: androidx.compose.runtime:runtime
   fqn: androidx.compose.runtime
   sections:
+    - id: contract-rememberupdatedstate-current-value
+      title: rememberUpdatedState current values in a long-lived operation
+      aliases: []
+      requires:
+        - artifact: androidx.compose.runtime:runtime
+          version: null
+      sourceIds:
+        - contract-rememberupdatedstate-current-value-source
+      relatedIds: []
     - id: live-androidx-runtime-runtime-runtime-snapshotstate-lines-1
       title: androidx.compose.runtime SnapshotState.kt source (lines 1–35)
       aliases: []
@@ -570,6 +615,37 @@ compose:
 # androidx.compose.runtime SnapshotState.kt source
 
 Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
+
+## rememberUpdatedState current values in a long-lived operation
+
+/**
+ * [remember] a [mutableStateOf] [newValue] and update its value to [newValue] on each recomposition
+ * of the [rememberUpdatedState] call.
+ *
+ * [rememberUpdatedState] should be used when parameters or values computed during composition are
+ * referenced by a long-lived lambda or object expression. Recomposition will update the resulting
+ * [State] without recreating the long-lived lambda or object, allowing that object to persist
+ * without cancelling and resubscribing, or relaunching a long-lived operation that may be expensive
+ * or prohibitive to recreate and restart. This may be common when working with [DisposableEffect]
+ * or [LaunchedEffect], for example:
+ *
+ * @sample androidx.compose.runtime.samples.rememberUpdatedStateSampleWithDisposableEffect
+ *
+ * [LaunchedEffect]s often describe state machines that should not be reset and restarted if a
+ * parameter or event callback changes, but they should have the current value available when
+ * needed. For example:
+ *
+ * @sample androidx.compose.runtime.samples.rememberUpdatedStateSampleWithLaunchedEffect
+ *
+ * By using [rememberUpdatedState] a composable function can update these operations in progress.
+ */
+@Composable
+public fun <T> rememberUpdatedState(newValue: T): State<T> = remember {
+    mutableStateOf(newValue)
+}
+    .apply { value = newValue }
+
+Sources: [contract-rememberupdatedstate-current-value-source](https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt)
 
 ## androidx.compose.runtime SnapshotState.kt source (lines 1–35)
 

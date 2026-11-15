@@ -13,6 +13,76 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
 ```json
 [
   {
+    "id": "contract-androidview-callback-parameters-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-androidview-factory-reuse-release-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-animatable-interruption-result-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-coroutine-normal-child-cancellation-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "contract-coroutine-parent-scope-lifetime-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "contract-launchedeffect-key-lifetime-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-modifier-node-attachment-scope-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-rememberupdatedstate-current-value-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-toggleable-input-disabled-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "contract-toggleable-node-state-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
     "id": "live-android-architecture-introduction-guides-source",
     "resource": "https://developer.android.com/topic/architecture/intro#guides",
     "revision": "web:android-architecture-introduction:content@sha256:f67817daf913e52c95b03226291a1e33e976c3336ab613395a880f19004507a7",
@@ -5232,6 +5302,139 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Size.kt",
     "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
     "path": "compose/foundation/foundation-layout/src/commonMain/kotlin/androidx/compose/foundation/layout/Size.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-106-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-141-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-176-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-211-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-246-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-281-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-316-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-351-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-386-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-421-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-456-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-491-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-526-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-561-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-596-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-631-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-foundation-selection-toggleable-lines-71-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
@@ -14825,6 +15028,90 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-1-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-106-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-137-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-167-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-202-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-237-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-272-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-307-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-342-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-36-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-377-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-viewinterop-android-view-lines-71-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
+    "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
     "id": "live-compose-api-guidelines-lines-1-source",
     "resource": "https://android.googlesource.com/platform/frameworks/support/+/85adb4710d1b88293d5b912df1c6104e6fe38c41/compose/docs/compose-api-guidelines.md",
     "revision": "85adb4710d1b88293d5b912df1c6104e6fe38c41",
@@ -17667,6 +17954,24 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
+    "id": "live-compose-guide-lists-cache-window-configuration-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#cache-window-configuration",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-lists-cache-window-migration-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#cache-window-migration",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-lists-cache-window-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#cache-window",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
     "id": "live-compose-guide-lists-content-padding-source",
     "resource": "https://developer.android.com/develop/ui/compose/lists#content-padding",
     "revision": "web:compose-guide-lists:content@sha256:8fede0e401dd94b8c418b55cf00ea43141460e71d159693875ba90e18b7f5e77",
@@ -17694,6 +17999,12 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "id": "live-compose-guide-lists-custom-arrangements-source",
     "resource": "https://developer.android.com/develop/ui/compose/lists#custom-arrangements",
     "revision": "web:compose-guide-lists:content@sha256:8fede0e401dd94b8c418b55cf00ea43141460e71d159693875ba90e18b7f5e77",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-lists-custom-cache-window-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#custom-cache-window",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -17787,6 +18098,12 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
+    "id": "live-compose-guide-lists-move-cache-window-arguments-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#move-cache-window-arguments",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
     "id": "live-compose-guide-lists-multiple-elements-one-item-source",
     "resource": "https://developer.android.com/develop/ui/compose/lists#multiple-elements-one-item",
     "revision": "web:compose-guide-lists:content@sha256:8fede0e401dd94b8c418b55cf00ea43141460e71d159693875ba90e18b7f5e77",
@@ -17808,6 +18125,12 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "id": "live-compose-guide-lists-recommended-for-you-source",
     "resource": "https://developer.android.com/develop/ui/compose/lists#recommended_for_you",
     "revision": "web:compose-guide-lists:content@sha256:8fede0e401dd94b8c418b55cf00ea43141460e71d159693875ba90e18b7f5e77",
+    "license": "Apache-2.0 (https://developer.android.com/license)"
+  },
+  {
+    "id": "live-compose-guide-lists-replace-prefetch-strategy-source",
+    "resource": "https://developer.android.com/develop/ui/compose/lists#replace-prefetch-strategy",
+    "revision": "web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -18005,7 +18328,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-performance-bestpractices-use-lazylist-keys-2-source",
     "resource": "https://developer.android.com/develop/ui/compose/performance/bestpractices#use-lazylist-keys",
-    "revision": "web:compose-guide-performance-bestpractices:content@sha256:ad6d6b11b9339d90a88f85f03049651fe70e8b6a131986b10cfa29b82026ad91",
+    "revision": "web:compose-guide-performance-bestpractices:content@sha256:f78c3bec79211a9ab9939fb04d38517ed3f10f17cac2f849796e13a1f2e9b2cc",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -20392,6 +20715,272 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/docs/topics/coroutines-cancellation.md",
     "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
     "path": "docs/topics/coroutines-cancellation.md",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1016-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1051-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-106-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1086-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1121-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1156-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1191-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1226-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1261-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-1296-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-141-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-176-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-211-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-246-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-281-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-316-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-351-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-36-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-386-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-421-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-456-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-491-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-526-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-561-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-596-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-631-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-666-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-701-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-71-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-736-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-771-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-806-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-841-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-876-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-911-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-946-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
+  },
+  {
+    "id": "live-kotlin-coroutines-coroutine-scope-lines-981-source",
+    "resource": "https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt",
+    "revision": "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "path": "kotlinx-coroutines-core/common/src/CoroutineScope.kt",
     "license": "Apache-2.0 (https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt)"
   },
   {

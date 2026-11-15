@@ -250,8 +250,8 @@ sources:
   - id: live-compose-guide-performance-bestpractices-use-lazylist-keys-2-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/performance/bestpractices#use-lazylist-keys
-    revision: web:compose-guide-performance-bestpractices:content@sha256:ad6d6b11b9339d90a88f85f03049651fe70e8b6a131986b10cfa29b82026ad91
-    sha256: abe0735ac791e4063a7f848cfdf081f77c91671970072ee95ba71f08867ea03b
+    revision: web:compose-guide-performance-bestpractices:content@sha256:f78c3bec79211a9ab9939fb04d38517ed3f10f17cac2f849796e13a1f2e9b2cc
+    sha256: 84804acfaceb3afc14fbbd99513ff9bf9f9f834c79401d198dba4ce70fbcf153
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       only reuses composition slots between items that share the same visual structure during scrolling.
@@ -261,6 +261,8 @@ sources:
       Hoist shared state and CompositionLocal reads: Collect shared Flow instances and read CompositionLocal values (such as LocalContext.current or LocalDensity.current) once in the parent composable above the lazy layout and pass the resolved values down to item composables.
 
       Use Row or Column for small, bounded lists: For small static or bounded collections (such as 1 to 10 items), a standard Row or Column with forEach avoids lazy virtualization and prefetching overhead.
+
+      Tune cacheWindow for heterogeneously sized items: Default prefetching clamps the ahead window between 10% and 50% of the viewport. For layouts containing items larger than 50% of the viewport (such as full-bleed cards or media posts), configure a larger aheadFraction on the lazy layout to prevent late composition during scrolling. For small items, the default window automatically prefetches multiple items. For more information, see Improve scroll performance with LazyLayoutCacheWindow.
   - id: live-compose-guide-performance-bestpractices-use-lazylist-keys-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/performance/bestpractices#use-lazylist-keys
@@ -794,6 +796,8 @@ Use itemsIndexed instead of indexOf: Avoid calling list.indexOf(item) inside an 
 Hoist shared state and CompositionLocal reads: Collect shared Flow instances and read CompositionLocal values (such as LocalContext.current or LocalDensity.current) once in the parent composable above the lazy layout and pass the resolved values down to item composables.
 
 Use Row or Column for small, bounded lists: For small static or bounded collections (such as 1 to 10 items), a standard Row or Column with forEach avoids lazy virtualization and prefetching overhead.
+
+Tune cacheWindow for heterogeneously sized items: Default prefetching clamps the ahead window between 10% and 50% of the viewport. For layouts containing items larger than 50% of the viewport (such as full-bleed cards or media posts), configure a larger aheadFraction on the lazy layout to prevent late composition during scrolling. For small items, the default window automatically prefetches multiple items. For more information, see Improve scroll performance with LazyLayoutCacheWindow.
 
 Sources: [live-compose-guide-performance-bestpractices-use-lazylist-keys-2-source](https://developer.android.com/develop/ui/compose/performance/bestpractices#use-lazylist-keys)
 

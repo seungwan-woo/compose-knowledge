@@ -99,6 +99,63 @@ sources:
               // ...
           }
       }LazyListSnippets.kt
+  - id: live-compose-guide-lists-cache-window-configuration-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#cache-window-configuration
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: 2b8c2e12445130a933dadf48ecea7405f93c22fb4f4fbad4fb5651d6d16225f9
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      You can configure a cache window using viewport fractions or fixed distances in Dp:
+
+      // Fraction-based cache window: prefetch 50% of viewport ahead, keep 20% behind
+      LazyColumn(
+          cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+      ) {
+          items(itemsList) { item -> Text("Item $item") }
+      }
+
+      // Dp-based cache window: prefetch 150.dp ahead, keep 50.dp behind
+      LazyVerticalGrid(
+          columns = GridCells.Fixed(3),
+          cacheWindow = LazyLayoutCacheWindow(
+              ahead = 150.dp,
+              behind = 50.dp,
+              isNonScrollCachingEnabled = true
+          )
+      ) {
+          items(itemsList) { item -> Text("Item $item") }
+      }CacheWindow.kt
+
+      The cache window manages two distinct regions relative to scroll direction:
+
+      Ahead window: The framework precomposes and premeasures upcoming items before they enter the visible viewport. This defaults to 0dp or 0f.
+
+      Behind window: The framework retains recently scrolled-off items without disposing of them. When users reverse scroll direction, retained items display immediately without recomposition or remeasurement. This defaults to 0dp or 0f.
+
+      In addition, when you set isNonScrollCachingEnabled = true (the default value), the layout populates the ahead window during idle periods outside of active user scrolls. These triggers include initial layout pass, dataset updates, and item reordering. When set to false, caching occurs only during scroll events.
+  - id: live-compose-guide-lists-cache-window-migration-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#cache-window-migration
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: 2abb0b3254a728c377e4ee0f72c4b58c2500c2165de031df59c98f50ada66558
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      The initial prefetching configuration APIs (PrefetchStrategy) and first version of LazyLayoutCacheWindow allowed the configuration to happen in the states, but this functionality is now deprecated. This section describes how to migrate from the following deprecated APIs and parameters:
+
+      The state-based cacheWindow parameters in rememberLazyListState and rememberLazyGridState.
+
+      The LazyListPrefetchStrategy and LazyGridPrefetchStrategy with LazyLayoutCacheWindow.
+  - id: live-compose-guide-lists-cache-window-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#cache-window
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: 90f3178a4453aef564fc461784e2fc8d4b8b76d09205e4a06debb31fdf008f90
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      LazyLayoutCacheWindow is an API designed to help improve scroll performance in lists, grids, and staggered grids. In CacheWindow, you can define a virtual space where items can be prefetched (ahead window) or kept alive (behind window) during scroll events. This means that item composition and measurement prime an internal cache — when these items are actually needed (when they become visible), displaying them takes significantly less time than if they were built from scratch.
+
+      All lazy collections use CacheWindow as the default prefetch strategy. The default window clamps the ahead prefetch distance between 10% and 50% of the viewport. It sets the behind window to 0 pixels and disables non-scroll caching.
   - id: live-compose-guide-lists-content-padding-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/lists#content-padding
@@ -225,6 +282,59 @@ sources:
               }
           }
       }LazyListSnippets.kt
+  - id: live-compose-guide-lists-custom-cache-window-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#custom-cache-window
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: dd007c3c40a2e19bca37029274337010ea2d2d7411fdb0ab6a0fab655239bd5f
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      When fixed distances or viewport fractions don't match your layout patterns, you can implement the LazyLayoutCacheWindow interface directly:
+
+      interface LazyLayoutCacheWindow {
+          fun Density.calculateAheadWindow(viewport: Int): Int = 0
+          fun Density.calculateBehindWindow(viewport: Int): Int = 0
+          val isNonScrollCachingEnabled: Boolean get() = false
+      }CacheWindow.kt
+
+      Implement the calculation methods to return the preferred window size in pixels for a given viewport size:
+
+      class ScaledCacheWindow(
+          val someLayoutState: LayoutState
+      ) : LazyLayoutCacheWindow {
+          override fun Density.calculateAheadWindow(viewport: Int): Int {
+              return someLayoutState.specialDynamicCalculation().coerceAtMost(viewport * 5)
+          }
+
+          override fun equals(other: Any?): Boolean {
+              if (this === other) return true
+              if (other !is ScaledCacheWindow) return false
+              return someLayoutState == other.someLayoutState
+          }
+
+          override fun hashCode(): Int {
+              return someLayoutState.hashCode()
+          }
+      }
+
+      @Composable
+      fun ScaledCacheWindowSample() {
+          val state = rememberLazyListState()
+          val newCacheWindow = remember { ScaledCacheWindow(state) }
+          LazyColumn(
+              state = state,
+              cacheWindow = newCacheWindow,
+          ) {
+              items(100) { index ->
+                  Text(
+                      text = "Item #$index",
+                      modifier = Modifier
+                          .fillMaxWidth()
+                          .padding(16.dp),
+                  )
+              }
+          }
+      }CacheWindow.kt
   - id: live-compose-guide-lists-example-animate-items-in-lazy-lists-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/lists#example_animate_items_in_lazy_lists
@@ -698,6 +808,31 @@ sources:
     sha256: a11ccfb78abba738b50c61b78d6d2242224f5d02be054d826c8aecb478e23a8f
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: You can only reliably measure the performance of a Lazy layout when running in release mode and with R8 optimization enabled. On debug builds, Lazy layout scrolling may appear slower. For more information on this, read through Compose performance.
+  - id: live-compose-guide-lists-move-cache-window-arguments-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#move-cache-window-arguments
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: 8f9d67cea382256cab7b346fd8347b473bdd806ce965110f9ca40a6b0c1a4c00
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      To migrate to the recommended APIs, move cacheWindow arguments from rememberLazyListState and rememberLazyGridState to use the cacheWindow argument on LazyColumn, LazyRow, LazyVerticalGrid, and LazyHorizontalGrid. LazyVerticalStaggeredGrid and LazyHorizontalStaggeredGrid already implement the new paradigm in the layout composable.
+
+      // Before (Experimental in Compose 1.9 to 1.12, now Deprecated)
+      val state = rememberLazyListState(
+          cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+      )
+      LazyColumn(state = state) {
+          items(itemsList) { item -> Text("Item $item") }
+      }CacheWindow.kt
+
+      // Now in Compose 1.13 (Stable)
+      val state = rememberLazyListState()
+      LazyColumn(
+          state = state,
+          cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+      ) {
+          items(itemsList) { item -> Text("Item $item") }
+      }CacheWindow.kt
   - id: live-compose-guide-lists-multiple-elements-one-item-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/lists#multiple-elements-one-item
@@ -824,6 +959,38 @@ sources:
       Save UI state in Compose
 
       Kotlin for Jetpack Compose
+  - id: live-compose-guide-lists-replace-prefetch-strategy-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/lists#replace-prefetch-strategy
+    revision: web:compose-guide-lists:content@sha256:6999c4235bf6f5d41b64c8bcd71eb47b24ecf9209997c7f329831bb18a2a9411
+    sha256: 88bbbf5d221973ad7d3c91cc4ea7749f4d7e49ef6daeaf911510b8d506cbc394
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Replace usages of the deprecated LazyListPrefetchStrategy and LazyGridPrefetchStrategy APIs with LazyLayoutCacheWindow. Internally, all prefetching behavior now relies on cacheWindow. This change alters prefetching behavior in the following scenarios:
+
+      Small items: When items take up less than 10% of the viewport, Compose prefetches multiple items ahead. This reduces scroll jank during rapid flings.
+
+      Large items: When individual items take up more than 50% of the viewport, the clamped window cannot cover an entire upcoming item. If you have tall items, such as media feeds or messaging threads, you might observe late prefetch triggers and should tune the ahead window.
+
+      If your custom strategy relied on item-by-item scheduling, port the logic to LazyLayoutCacheWindow.calculateAheadWindow. To replicate a similar prefetch behavior of composing and measuring one item ahead in the scroll direction, implement a custom window based on visible item metrics. Note that, while this is not exactly the same behavior, it's the closest you can get when using window-based prefetching:
+
+      val state = rememberLazyListState()
+      val legacyCacheWindow = remember(state) {
+          object : LazyLayoutCacheWindow {
+              override fun Density.calculateAheadWindow(viewport: Int): Int {
+                  val visibleItems = state.layoutInfo.visibleItemsInfo
+                  if (visibleItems.isEmpty()) return 0
+                  val averageItemHeight = visibleItems.sumOf { it.size } / visibleItems.size
+                  return averageItemHeight
+              }
+          }
+      }
+      LazyColumn(
+          state = state,
+          cacheWindow = legacyCacheWindow
+      ) {
+          items(itemsList) { item -> Text("Item $item") }
+      }CacheWindow.kt
   - id: live-compose-guide-lists-result-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/lists#result
@@ -914,6 +1081,36 @@ compose:
       sourceIds:
         - live-compose-guide-lists-avoid-nesting-scrollable-source
       relatedIds: []
+    - id: live-compose-guide-lists-cache-window
+      title: Improve scroll performance with LazyLayoutCacheWindow
+      aliases: []
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-cache-window-source
+      relatedIds: []
+    - id: live-compose-guide-lists-cache-window-configuration
+      title: Window configuration
+      aliases:
+        - androidx.compose.foundation.lazy.LazyColumn
+        - androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-cache-window-configuration-source
+      relatedIds: []
+    - id: live-compose-guide-lists-cache-window-migration
+      title: Migration guide
+      aliases:
+        - androidx.compose.foundation.lazy.rememberLazyListState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-cache-window-migration-source
+      relatedIds: []
     - id: live-compose-guide-lists-content-padding
       title: Content padding
       aliases:
@@ -967,6 +1164,17 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-lists-custom-arrangements-source
+      relatedIds: []
+    - id: live-compose-guide-lists-custom-cache-window
+      title: Custom CacheWindow
+      aliases:
+        - androidx.compose.foundation.lazy.LazyColumn
+        - androidx.compose.foundation.lazy.rememberLazyListState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-custom-cache-window-source
       relatedIds: []
     - id: live-compose-guide-lists-example-animate-items-in-lazy-lists
       title: "Example: Animate items in lazy lists"
@@ -1115,6 +1323,21 @@ compose:
       sourceIds:
         - live-compose-guide-lists-measuring-performance-source
       relatedIds: []
+    - id: live-compose-guide-lists-move-cache-window-arguments
+      title: "Option 1: Move cacheWindow arguments"
+      aliases:
+        - androidx.compose.foundation.lazy.LazyColumn
+        - androidx.compose.foundation.lazy.LazyRow
+        - androidx.compose.foundation.lazy.rememberLazyListState
+        - androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+        - androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+        - androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-move-cache-window-arguments-source
+      relatedIds: []
     - id: live-compose-guide-lists-multiple-elements-one-item
       title: Beware of putting multiple elements in one item
       aliases:
@@ -1154,6 +1377,17 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-lists-recommended-for-you-source
+      relatedIds: []
+    - id: live-compose-guide-lists-replace-prefetch-strategy
+      title: "Option 2: Replace LazyListPrefetchStrategy and LazyGridPrefetchStrategy"
+      aliases:
+        - androidx.compose.foundation.lazy.LazyColumn
+        - androidx.compose.foundation.lazy.rememberLazyListState
+      requires:
+        - artifact: androidx.compose.foundation:foundation
+          version: null
+      sourceIds:
+        - live-compose-guide-lists-replace-prefetch-strategy-source
       relatedIds: []
     - id: live-compose-guide-lists-result
       title: Result
@@ -1266,6 +1500,57 @@ Column(
 }LazyListSnippets.kt
 
 Sources: [live-compose-guide-lists-avoid-nesting-scrollable-source](https://developer.android.com/develop/ui/compose/lists#avoid-nesting-scrollable)
+
+## Improve scroll performance with LazyLayoutCacheWindow
+
+LazyLayoutCacheWindow is an API designed to help improve scroll performance in lists, grids, and staggered grids. In CacheWindow, you can define a virtual space where items can be prefetched (ahead window) or kept alive (behind window) during scroll events. This means that item composition and measurement prime an internal cache — when these items are actually needed (when they become visible), displaying them takes significantly less time than if they were built from scratch.
+
+All lazy collections use CacheWindow as the default prefetch strategy. The default window clamps the ahead prefetch distance between 10% and 50% of the viewport. It sets the behind window to 0 pixels and disables non-scroll caching.
+
+Sources: [live-compose-guide-lists-cache-window-source](https://developer.android.com/develop/ui/compose/lists#cache-window)
+
+## Window configuration
+
+You can configure a cache window using viewport fractions or fixed distances in Dp:
+
+// Fraction-based cache window: prefetch 50% of viewport ahead, keep 20% behind
+LazyColumn(
+    cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+) {
+    items(itemsList) { item -> Text("Item $item") }
+}
+
+// Dp-based cache window: prefetch 150.dp ahead, keep 50.dp behind
+LazyVerticalGrid(
+    columns = GridCells.Fixed(3),
+    cacheWindow = LazyLayoutCacheWindow(
+        ahead = 150.dp,
+        behind = 50.dp,
+        isNonScrollCachingEnabled = true
+    )
+) {
+    items(itemsList) { item -> Text("Item $item") }
+}CacheWindow.kt
+
+The cache window manages two distinct regions relative to scroll direction:
+
+Ahead window: The framework precomposes and premeasures upcoming items before they enter the visible viewport. This defaults to 0dp or 0f.
+
+Behind window: The framework retains recently scrolled-off items without disposing of them. When users reverse scroll direction, retained items display immediately without recomposition or remeasurement. This defaults to 0dp or 0f.
+
+In addition, when you set isNonScrollCachingEnabled = true (the default value), the layout populates the ahead window during idle periods outside of active user scrolls. These triggers include initial layout pass, dataset updates, and item reordering. When set to false, caching occurs only during scroll events.
+
+Sources: [live-compose-guide-lists-cache-window-configuration-source](https://developer.android.com/develop/ui/compose/lists#cache-window-configuration)
+
+## Migration guide
+
+The initial prefetching configuration APIs (PrefetchStrategy) and first version of LazyLayoutCacheWindow allowed the configuration to happen in the states, but this functionality is now deprecated. This section describes how to migrate from the following deprecated APIs and parameters:
+
+The state-based cacheWindow parameters in rememberLazyListState and rememberLazyGridState.
+
+The LazyListPrefetchStrategy and LazyGridPrefetchStrategy with LazyLayoutCacheWindow.
+
+Sources: [live-compose-guide-lists-cache-window-migration-source](https://developer.android.com/develop/ui/compose/lists#cache-window-migration)
 
 ## Content padding
 
@@ -1382,6 +1667,57 @@ object TopWithFooter : Arrangement.Vertical {
 }LazyListSnippets.kt
 
 Sources: [live-compose-guide-lists-custom-arrangements-source](https://developer.android.com/develop/ui/compose/lists#custom-arrangements)
+
+## Custom CacheWindow
+
+When fixed distances or viewport fractions don't match your layout patterns, you can implement the LazyLayoutCacheWindow interface directly:
+
+interface LazyLayoutCacheWindow {
+    fun Density.calculateAheadWindow(viewport: Int): Int = 0
+    fun Density.calculateBehindWindow(viewport: Int): Int = 0
+    val isNonScrollCachingEnabled: Boolean get() = false
+}CacheWindow.kt
+
+Implement the calculation methods to return the preferred window size in pixels for a given viewport size:
+
+class ScaledCacheWindow(
+    val someLayoutState: LayoutState
+) : LazyLayoutCacheWindow {
+    override fun Density.calculateAheadWindow(viewport: Int): Int {
+        return someLayoutState.specialDynamicCalculation().coerceAtMost(viewport * 5)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is ScaledCacheWindow) return false
+        return someLayoutState == other.someLayoutState
+    }
+
+    override fun hashCode(): Int {
+        return someLayoutState.hashCode()
+    }
+}
+
+@Composable
+fun ScaledCacheWindowSample() {
+    val state = rememberLazyListState()
+    val newCacheWindow = remember { ScaledCacheWindow(state) }
+    LazyColumn(
+        state = state,
+        cacheWindow = newCacheWindow,
+    ) {
+        items(100) { index ->
+            Text(
+                text = "Item #$index",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+            )
+        }
+    }
+}CacheWindow.kt
+
+Sources: [live-compose-guide-lists-custom-cache-window-source](https://developer.android.com/develop/ui/compose/lists#custom-cache-window)
 
 ## Example: Animate items in lazy lists
 
@@ -1828,6 +2164,29 @@ You can only reliably measure the performance of a Lazy layout when running in r
 
 Sources: [live-compose-guide-lists-measuring-performance-source](https://developer.android.com/develop/ui/compose/lists#measuring-performance)
 
+## Option 1: Move cacheWindow arguments
+
+To migrate to the recommended APIs, move cacheWindow arguments from rememberLazyListState and rememberLazyGridState to use the cacheWindow argument on LazyColumn, LazyRow, LazyVerticalGrid, and LazyHorizontalGrid. LazyVerticalStaggeredGrid and LazyHorizontalStaggeredGrid already implement the new paradigm in the layout composable.
+
+// Before (Experimental in Compose 1.9 to 1.12, now Deprecated)
+val state = rememberLazyListState(
+    cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+)
+LazyColumn(state = state) {
+    items(itemsList) { item -> Text("Item $item") }
+}CacheWindow.kt
+
+// Now in Compose 1.13 (Stable)
+val state = rememberLazyListState()
+LazyColumn(
+    state = state,
+    cacheWindow = LazyLayoutCacheWindow(aheadFraction = 0.5f, behindFraction = 0.2f)
+) {
+    items(itemsList) { item -> Text("Item $item") }
+}CacheWindow.kt
+
+Sources: [live-compose-guide-lists-move-cache-window-arguments-source](https://developer.android.com/develop/ui/compose/lists#move-cache-window-arguments)
+
 ## Beware of putting multiple elements in one item
 
 In this example, the second item lambda emits 2 items in one block:
@@ -1946,6 +2305,36 @@ Save UI state in Compose
 Kotlin for Jetpack Compose
 
 Sources: [live-compose-guide-lists-recommended-for-you-source](https://developer.android.com/develop/ui/compose/lists#recommended_for_you)
+
+## Option 2: Replace LazyListPrefetchStrategy and LazyGridPrefetchStrategy
+
+Replace usages of the deprecated LazyListPrefetchStrategy and LazyGridPrefetchStrategy APIs with LazyLayoutCacheWindow. Internally, all prefetching behavior now relies on cacheWindow. This change alters prefetching behavior in the following scenarios:
+
+Small items: When items take up less than 10% of the viewport, Compose prefetches multiple items ahead. This reduces scroll jank during rapid flings.
+
+Large items: When individual items take up more than 50% of the viewport, the clamped window cannot cover an entire upcoming item. If you have tall items, such as media feeds or messaging threads, you might observe late prefetch triggers and should tune the ahead window.
+
+If your custom strategy relied on item-by-item scheduling, port the logic to LazyLayoutCacheWindow.calculateAheadWindow. To replicate a similar prefetch behavior of composing and measuring one item ahead in the scroll direction, implement a custom window based on visible item metrics. Note that, while this is not exactly the same behavior, it's the closest you can get when using window-based prefetching:
+
+val state = rememberLazyListState()
+val legacyCacheWindow = remember(state) {
+    object : LazyLayoutCacheWindow {
+        override fun Density.calculateAheadWindow(viewport: Int): Int {
+            val visibleItems = state.layoutInfo.visibleItemsInfo
+            if (visibleItems.isEmpty()) return 0
+            val averageItemHeight = visibleItems.sumOf { it.size } / visibleItems.size
+            return averageItemHeight
+        }
+    }
+}
+LazyColumn(
+    state = state,
+    cacheWindow = legacyCacheWindow
+) {
+    items(itemsList) { item -> Text("Item $item") }
+}CacheWindow.kt
+
+Sources: [live-compose-guide-lists-replace-prefetch-strategy-source](https://developer.android.com/develop/ui/compose/lists#replace-prefetch-strategy)
 
 ## Result
 

@@ -6,6 +6,29 @@ tags:
   - Compose
   - Android
 sources:
+  - id: contract-animatable-interruption-result-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+    revision: e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6
+    path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+    startLine: 205
+    endLine: 217
+    sha256: 40de289b774953147dc4bb44f8246d004a999ceb85cf954179d40bdb2eca3fcc
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+           * Returns an [AnimationResult] object. It contains: 1) the reason for ending the animation,
+           * and 2) an end state of the animation. The reason for ending the animation can be either of
+           * the following two:
+           * - [Finished], when the animation finishes successfully without any interruption,
+           * - [BoundReached] If the animation reaches the either [lowerBound] or [upperBound] in any
+           *   dimension, the animation will end with [BoundReached] being the end reason.
+           *
+           * If the animation gets interrupted by 1) another call to start an animation (i.e.
+           * [animateTo]/[animateDecay]), 2) [Animatable.stop], or 3)[Animatable.snapTo], the canceled
+           * animation will throw a [CancellationException] as the job gets canceled. As a result, all the
+           * subsequent work in the caller's coroutine will be canceled. This is often the desired
+           * behavior. If there's any cleanup that needs to be done when an animation gets canceled,
+           * consider starting the animation in a `try-catch` block.
   - id: live-androidx-animation-animation-core-animation-core-animatable-lines-1-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
@@ -662,6 +685,15 @@ compose:
   artifact: androidx.compose.animation:animation-core
   fqn: androidx.compose.animation.core.Animatable
   sections:
+    - id: contract-animatable-interruption-result
+      title: Animatable return reasons and interruption cancellation
+      aliases: []
+      requires:
+        - artifact: androidx.compose.animation:animation-core
+          version: null
+      sourceIds:
+        - contract-animatable-interruption-result-source
+      relatedIds: []
     - id: live-androidx-animation-animation-core-animation-core-animatable-lines-1
       title: Animatable source (lines 1–35)
       aliases:
@@ -821,6 +853,24 @@ compose:
 # Animatable source
 
 Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+
+## Animatable return reasons and interruption cancellation
+
+     * Returns an [AnimationResult] object. It contains: 1) the reason for ending the animation,
+     * and 2) an end state of the animation. The reason for ending the animation can be either of
+     * the following two:
+     * - [Finished], when the animation finishes successfully without any interruption,
+     * - [BoundReached] If the animation reaches the either [lowerBound] or [upperBound] in any
+     *   dimension, the animation will end with [BoundReached] being the end reason.
+     *
+     * If the animation gets interrupted by 1) another call to start an animation (i.e.
+     * [animateTo]/[animateDecay]), 2) [Animatable.stop], or 3)[Animatable.snapTo], the canceled
+     * animation will throw a [CancellationException] as the job gets canceled. As a result, all the
+     * subsequent work in the caller's coroutine will be canceled. This is often the desired
+     * behavior. If there's any cleanup that needs to be done when an animation gets canceled,
+     * consider starting the animation in a `try-catch` block.
+
+Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt)
 
 ## Animatable source (lines 1–35)
 

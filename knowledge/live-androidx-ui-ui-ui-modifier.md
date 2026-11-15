@@ -6,6 +6,34 @@ tags:
   - Compose
   - Android
 sources:
+  - id: contract-modifier-node-attachment-scope-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
+    revision: e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6
+    path: compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
+    startLine: 175
+    endLine: 192
+    sha256: 25be7062a22789ebe958467c9cd79217fce5ccc142c078e5a32a33ad721b0b8d
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              /**
+               * A [CoroutineScope] that can be used to launch tasks that should run while the node is
+               * attached.
+               *
+               * The scope is accessible between [onAttach] and [onDetach] calls, and will be cancelled
+               * after the node is detached (after [onDetach] returns).
+               *
+               * @sample androidx.compose.ui.samples.ModifierNodeCoroutineScopeSample
+               * @throws IllegalStateException If called while the node is not attached.
+               */
+              public val coroutineScope: CoroutineScope
+                  get() =
+                      scope
+                          ?: CoroutineScope(
+                                  requireOwner().coroutineContext +
+                                      Job(parent = requireOwner().coroutineContext[Job])
+                              )
+                              .also { scope = it }
   - id: live-androidx-ui-ui-ui-modifier-lines-1-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
@@ -562,6 +590,15 @@ compose:
   artifact: androidx.compose.ui:ui
   fqn: androidx.compose.ui
   sections:
+    - id: contract-modifier-node-attachment-scope
+      title: Modifier.Node attachment-bound coroutine scope lifecycle
+      aliases: []
+      requires:
+        - artifact: androidx.compose.ui:ui
+          version: null
+      sourceIds:
+        - contract-modifier-node-attachment-scope-source
+      relatedIds: []
     - id: live-androidx-ui-ui-ui-modifier-lines-1
       title: androidx.compose.ui Modifier.kt source (lines 1–35)
       aliases:
@@ -694,6 +731,29 @@ compose:
 # androidx.compose.ui Modifier.kt source
 
 Public source: https://android.googlesource.com/platform/frameworks/support/+/androidx-main/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
+
+## Modifier.Node attachment-bound coroutine scope lifecycle
+
+        /**
+         * A [CoroutineScope] that can be used to launch tasks that should run while the node is
+         * attached.
+         *
+         * The scope is accessible between [onAttach] and [onDetach] calls, and will be cancelled
+         * after the node is detached (after [onDetach] returns).
+         *
+         * @sample androidx.compose.ui.samples.ModifierNodeCoroutineScopeSample
+         * @throws IllegalStateException If called while the node is not attached.
+         */
+        public val coroutineScope: CoroutineScope
+            get() =
+                scope
+                    ?: CoroutineScope(
+                            requireOwner().coroutineContext +
+                                Job(parent = requireOwner().coroutineContext[Job])
+                        )
+                        .also { scope = it }
+
+Sources: [contract-modifier-node-attachment-scope-source](https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt)
 
 ## androidx.compose.ui Modifier.kt source (lines 1–35)
 
