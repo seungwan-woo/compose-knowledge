@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-modifier-node-attachment-scope-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
-    revision: e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6
+    resource: https://android.googlesource.com/platform/frameworks/support/+/b8f12c706099a47e1e44d9772d03e14a4ae37146/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
+    revision: b8f12c706099a47e1e44d9772d03e14a4ae37146
     path: compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
     startLine: 175
     endLine: 192
@@ -753,7 +753,7 @@ Public source: https://android.googlesource.com/platform/frameworks/support/+/an
                         )
                         .also { scope = it }
 
-Sources: [contract-modifier-node-attachment-scope-source](https://android.googlesource.com/platform/frameworks/support/+/e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt)
+Sources: [contract-modifier-node-attachment-scope-source](https://android.googlesource.com/platform/frameworks/support/+/b8f12c706099a47e1e44d9772d03e14a4ae37146/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt)
 
 ## androidx.compose.ui Modifier.kt source (lines 1–35)
 
