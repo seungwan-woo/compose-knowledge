@@ -21053,6 +21053,223 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0"
   },
   {
+    "id": "tip-20261116-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-16.md#L14-L14",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-16.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261116-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-16.md#L16-L53",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-16.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261116-03-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-16.md#L55-L102",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-16.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261116-04-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-16.md#L104-L109",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-16.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L14-L14",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L16-L18",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-03-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L20-L40",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-04-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L42-L61",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-05-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L63-L112",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-06-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L114-L139",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-07-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L141-L173",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261117-08-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-17.md#L175-L180",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-17.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L14-L14",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L16-L39",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-03-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L41-L62",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-04-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L64-L86",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-05-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L88-L109",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-06-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L111-L133",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-07-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L135-L163",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-08-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L165-L191",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-09-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L193-L217",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261118-10-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-18.md#L219-L228",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-18.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L14-L14",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L16-L27",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-03-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L29-L31",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-04-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L33-L54",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-05-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L56-L78",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-06-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L80-L117",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-07-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L119-L171",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-08-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L173-L228",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261119-09-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b136e45e42bb34436dd7350b6af1ad8e328b5a5/docs/tips/2026-11-19.md#L230-L238",
+    "revision": "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "path": "docs/tips/2026-11-19.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
     "id": "unknown-reference-source",
     "resource": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
     "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
