@@ -127,7 +127,19 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   if (selection.route && !route) throw new Error('Unknown route');
   const alternatives:RouteQuery[]=route?.queries ?? [];
   let hit:ReturnType<typeof searchIndex>['hits'][number] | undefined; let query:SearchQuery={versions:task.versions,limit:1};
-  for (const alt of alternatives) {
+  // Explicit tip requests use the same pinned snapshot and retrieval ledger, not
+  // a second network fetch or a route that masquerades as reviewed source evidence.
+  const tipIntent = Boolean(selection.query && /(?:\b(?:tip|tips|snippet|snippets|example|examples)\b|실무|팁|예제|코드\s*예시)/iu.test(selection.query));
+  if (tipIntent) {
+   const stripped = selection.query!.replace(/\b(?:tip|tips|snippet|snippets|example|examples)\b|실무|팁|예제|코드\s*예시/giu,' ').trim();
+   query={query:stripped,versions:task.versions,limit:1};
+   const practical={...index,entries:index.entries.filter(entry=>entry.tags.includes('practical-tip'))};
+   if (stripped) hit=searchIndex(practical,query,task.snapshot).hits[0];
+   else {
+    const latest=[...practical.entries].sort((a,b)=>b.docId.localeCompare(a.docId) || a.id.localeCompare(b.id))[0];
+    if (latest) hit=searchIndex({...practical,entries:[latest]},query,task.snapshot).hits[0];
+   }
+  } else for (const alt of alternatives) {
    query={...(alt.artifact ? {artifact:alt.artifact}:{}),...(alt.symbol ? {symbol:alt.symbol}:{query:alt.query}),versions:task.versions,limit:1};
    // A route may prefer cards only among hits satisfying the same query and version context.
    const preferred = route?.cardIds.length ? searchIndex({...index,entries:index.entries.filter(entry=>route.cardIds.includes(entry.id))},query,task.snapshot).hits[0] : undefined;
@@ -136,8 +148,8 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   const descriptor=hit ? descriptors.find(d=>d.cardId===hit!.id) : undefined;
   const gaps:Gap[]=[]; const sections:ReadResponse[]=[];
   const ids=hit ? [hit.id,...(descriptor?.evidence.map(e=>e.id) ?? [])] : [];
-  if (!route && selection.query) gaps.push({reason:candidates.length ? 'Ambiguous route aliases; choose a candidate' : 'No explicit route alias matched'});
-  else if (!hit) gaps.push({reason:'No matching evidence'});
+  if (!tipIntent && !route && selection.query) gaps.push({reason:candidates.length ? 'Ambiguous route aliases; choose a candidate' : 'No explicit route alias matched'});
+  else if (!hit) gaps.push({reason:tipIntent ? 'No matching practical tip in pinned corpus' : 'No matching evidence'});
   if (hit && ids.length > 3-task.ledger.sections) for (const id of ids.slice(3-task.ledger.sections)) gaps.push({id,reason:`Selected pack requires ${ids.length} sections; ${3-task.ledger.sections} remain`});
   if (hit && descriptor) for (const e of descriptor.evidence) if (!hit.relatedIds.includes(e.id)) gaps.push({id:e.id,reason:'Required evidence is not one hop from direct hit'});
   if (!gaps.length) for (const id of ids) {
@@ -146,7 +158,7 @@ export async function lookup(file:string,selection:{query?:string;route?:string}
   }
   if (!gaps.length && descriptor) for (const item of [{id:descriptor.cardId,sha256:descriptor.cardSha256},...descriptor.evidence]) if (!sections.some(s=>s.id===item.id && hash(s.body)===item.sha256)) gaps.push({id:item.id,reason:'Reviewed body hash changed'});
   const claims=gaps.length ? [] : reviewedClaims(descriptors,sections);
-  const base={snapshot:task.snapshot,route:route?.id ?? null,candidates,scope:selection,sufficiency:claims.length ? 'sufficient':'unreviewed',claims,relatedRouteIds:route?.relatedRouteIds ?? []};
+  const base={snapshot:task.snapshot,route:tipIntent ? null : route?.id ?? null,candidates,scope:selection,sufficiency:claims.length ? 'sufficient':'unreviewed',claims,relatedRouteIds:route?.relatedRouteIds ?? []};
   let result=encodePack(base,task,sections,gaps,selectedMaxBytes);
   let pack=JSON.parse(result) as {sections:unknown[];transmission:string};
   if (pack.transmission==='gap' && claims.length) {base.sufficiency='unreviewed';base.claims=[];result=encodePack(base,task,sections,gaps,selectedMaxBytes);pack=JSON.parse(result) as typeof pack;}

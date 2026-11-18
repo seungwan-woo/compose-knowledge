@@ -174,3 +174,25 @@ Every new Daily Tip must have YAML frontmatter `agp_scope`, `version_scope`, and
 - If an API has no intrinsic AGP minimum, say that plainly. Do not invent a numeric AGP minimum; document the Compose version's toolchain requirements, including Compose 1.12+ requiring AGP 9+ and compileSdk 37 per [official guidance](https://developer.android.com/develop/ui/compose/setup-compose-dependencies-and-compiler).
 - For AGP-native Compose screenshot test suites, cite the [experimental AGP 9.5.0-alpha03+ requirement](https://developer.android.com/studio/preview/compose-screenshot-testing-with-testsuites). Always list the required screenshot engine version, and distinguish this from device `ui-test-junit4` capture.
 - Include source URLs, reproducible Kotlin snippets and exact applicability constraints; mark untested combinations as unverified. New public docs appear on Pages on merge to main and are indexable from the same canonical Markdown.
+
+
+## Practical tips in the skill corpus
+
+The **same** `docs/tips/YYYY-MM-DD.md` files rendered by GitHub Pages are also ingested into the published `corpus` branch as **`practical-tip`** entries. No HTML scraping, copy-paste duplication, extra API server, or private app source upload is necessary. Each tip chunk includes its complete Kotlin snippet, date, Compose version scope, AGP requirements, verification status and official references, with Git-commit-pinned source line links.
+
+- Daily upstream collection incorporates all checked-in tips.
+- On new or revised `docs/tips/*.md` on `main`, `.github/workflows/refresh.yml` performs a fast **tips-only** refresh against the current validated corpus, preserving existing raw AndroidX and reviewed guidance unchanged. The publisher checks the previous corpus SHA to reject stale publication.
+- Existing `begin → lookup` can retrieve a tip with `--query "tip LaunchedEffect"` (Korean `팁`/`실무`/`예제` also accepted). The official reviewed-pack route remains unchanged.
+- Plain `search` returns a practical-tip result alongside official sources for relevant text queries, labeled with `versionStatus: unknown`. Do not treat a tip as authoritative AndroidX evidence.
+- Updates become visible to the skill **only** after the corpus publish action succeeds and a consumer `begin` syncs the new pinned corpus SHA. Installed tool bundles also need reinstallation to use new tip-aware `lookup` behavior.
+
+To check end-to-end retrieval from an updated local checkout after a successful corpus publication:
+
+```sh
+npm ci --ignore-scripts
+npm run build
+node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs begin --cache .cache/skill-data --task /tmp/ck-tip-task.json
+node .agents/skills/compose-reference-context/scripts/compose-knowledge.mjs lookup --task /tmp/ck-tip-task.json --query "tip rememberUpdatedState"
+```
+
+Always use a new task path. For a reproducible offline test, see `tests/daily-tips.test.ts`.
