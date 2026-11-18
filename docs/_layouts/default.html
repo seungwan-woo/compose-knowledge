@@ -29,7 +29,8 @@
     {% if page.summary %}<p class="subtitle">{{ page.summary | escape }}</p>{% endif %}
     <section class="meta-card" aria-label="지원 버전 및 검증 상태">
       <div><span class="meta-label">게시일</span><strong>{{ page.doc_date }}</strong></div>
-      <div><span class="meta-label">적용 API 버전</span><strong>{{ page.version_scope | escape }}</strong></div>
+      <div><span class="meta-label">적용 Compose 버전</span><strong>{{ page.version_scope | escape }}</strong></div>
+      <div><span class="meta-label">지원 AGP / 도구 조건</span><strong>{{ page.agp_scope | escape }}</strong></div>
       <div><span class="meta-label">검증 수준</span><strong>{{ page.verification | escape }}</strong></div>
       <div class="meta-links">
         <a href="{{ site.raw_base }}/docs/{{ page.path }}">원본 Markdown</a>
