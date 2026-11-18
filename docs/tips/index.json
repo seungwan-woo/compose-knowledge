@@ -14,6 +14,7 @@ permalink: /tips/index.json
       "title": {{ item.title | jsonify }},
       "summary": {{ item.summary | jsonify }},
       "version_scope": {{ item.version_scope | jsonify }},
+      "agp_scope": {{ item.agp_scope | jsonify }},
       "verification": {{ item.verification | jsonify }},
       "page_path": {{ item.url | relative_url | jsonify }},
       "source_markdown_url": {{ site.raw_base | append: '/docs/' | append: item.path | jsonify }}
