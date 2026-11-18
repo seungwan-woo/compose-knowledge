@@ -165,3 +165,12 @@ The human-readable GitHub Pages site publishes source-grounded tips with highlig
 - **Canonical source:** `docs/tips/YYYY-MM-DD.md` (Markdown + YAML frontmatter)
 
 Jekyll renders the same Markdown that AI agents consume directly. Add one new `docs/tips/YYYY-MM-DD.md` page with `tip: true`, `doc_date`, `version_scope` and `verification` to publish the next tip; the homepage, archive, JSON index and `llms.txt` list it automatically. The Pages workflow deploys on pushes to `main` after Pages is configured for GitHub Actions in repository settings. GitHub Actions deployment status—not the existence of this README—determines whether the public site is live. This article pipeline is separate from the `corpus` branch and source-refresh workflow.
+
+### AGP support and version-claim policy for tip authors
+
+Every new Daily Tip must have YAML frontmatter `agp_scope`, `version_scope`, and `verification`. The GitHub Pages header and JSON/llms.txt index expose these fields. **Do not constrain new tips to AGP 8**: document newer AGP features when official sources support them, including preview, experimental, alpha and beta features. Distinguish:
+
+- **API introduction** (AndroidX Compose library artifact/version) versus **toolchain requirement** (AGP, compileSdk, Kotlin/Compose Compiler, JDK, screenshot engine) and **actual verification** (tested vs not executed).
+- If an API has no intrinsic AGP minimum, say that plainly. Do not invent a numeric AGP minimum; document the Compose version's toolchain requirements, including Compose 1.12+ requiring AGP 9+ and compileSdk 37 per [official guidance](https://developer.android.com/develop/ui/compose/setup-compose-dependencies-and-compiler).
+- For AGP-native Compose screenshot test suites, cite the [experimental AGP 9.5.0-alpha03+ requirement](https://developer.android.com/studio/preview/compose-screenshot-testing-with-testsuites). Always list the required screenshot engine version, and distinguish this from device `ui-test-junit4` capture.
+- Include source URLs, reproducible Kotlin snippets and exact applicability constraints; mark untested combinations as unverified. New public docs appear on Pages on merge to main and are indexable from the same canonical Markdown.
