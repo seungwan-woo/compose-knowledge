@@ -154,3 +154,14 @@ The animation/coroutine expansion adds 18 focused cards: Animatable sequencing, 
 The component knowledge audit adds 18 source-bound decisions for public APIs, custom themes, composition locals, modifier nodes, interaction streams, measurement/intrinsics/RTL, touch targets, focus, accessibility actions, stability, frame clocks, calculation caching, and saved-state tests. The 0.3.3 bundle includes a separate [component routing table](.agents/skills/compose-reference-context/references/components.md), loaded only for relevant tasks. The audit records unfilled knowledge and retrieval gaps separately.
 
 The performance/pattern expansion adds 10 cards for measured optimization, composition tracing, app Baseline Profiles, alpha compositing, compound components, named slots, library state interfaces, scoped parent data, and control ownership. Compound component is a repository synthesis of official contracts, not an Android pattern name or a performance guarantee. Bundle 0.3.4 adds optional [performance and pattern routes](.agents/skills/compose-reference-context/references/performance-patterns.md); target dependency compatibility and actual app performance still require consumer verification.
+
+
+## Daily Compose development and debugging tips
+
+The human-readable GitHub Pages site publishes source-grounded tips with highlighted Kotlin snippets, copy buttons, API-version applicability and verification status:
+
+- **Pages:** https://seungwan-woo.github.io/compose-knowledge/
+- **AI discoverability:** https://seungwan-woo.github.io/compose-knowledge/llms.txt and `/tips/index.json`
+- **Canonical source:** `docs/tips/YYYY-MM-DD.md` (Markdown + YAML frontmatter)
+
+Jekyll renders the same Markdown that AI agents consume directly. Add one new `docs/tips/YYYY-MM-DD.md` page with `tip: true`, `doc_date`, `version_scope` and `verification` to publish the next tip; the homepage, archive, JSON index and `llms.txt` list it automatically. The Pages workflow deploys on pushes to `main` after Pages is configured for GitHub Actions in repository settings. GitHub Actions deployment status—not the existence of this README—determines whether the public site is live. This article pipeline is separate from the `corpus` branch and source-refresh workflow.

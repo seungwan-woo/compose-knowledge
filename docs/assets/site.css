@@ -1,0 +1,75 @@
+:root {
+  color-scheme: dark;
+  --bg: #0c1220; --surface: #141e30; --surface-2: #1b293f;
+  --border: #2a3b55; --text: #edf3fc; --muted: #a8bbd5;
+  --accent: #7ac7ff; --accent-strong: #9be3d6;
+  --code: #101927; --radius: 16px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(ellipse at 85% 0%, #172b42 0%, var(--bg) 45%) fixed; color: var(--text); font: 16px/1.72 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: #b3e3ff; }
+.shell { width: min(100% - 40px, 960px); margin: 0 auto; }
+.site-header { border-bottom: 1px solid var(--border); background: #0c1220dd; position: sticky; top: 0; z-index: 20; backdrop-filter: blur(12px); }
+.header-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-inner { min-height: 72px; }
+.brand { color: var(--text); text-decoration: none; font-size: 1.08rem; letter-spacing: -.02em; font-weight: 560; display: inline-flex; align-items: center; gap: 11px; white-space: nowrap; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: #102637; background: var(--accent-strong); border-radius: 11px; font-size: 1.3rem; }
+nav { display: flex; gap: 21px; align-items: center; }
+nav a { color: var(--muted); font-size: .92rem; text-decoration: none; }
+nav a:hover { color: #fff; }
+main.shell { padding: 55px 0 90px; }
+.eyebrow { color: var(--accent-strong); font-size: .75rem; font-weight: 700; letter-spacing: .14em; margin: 0 0 14px; }
+.crumb { display: flex; align-items: center; gap: 12px; color: var(--muted); margin: 0 0 24px; font-size: .88rem; }
+.page-title { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.24; letter-spacing: -.035em; margin: 0 0 16px; }
+.subtitle { color: var(--muted); font-size: 1.07rem; margin: 0 0 30px; max-width: 770px; }
+.meta-card { display: grid; grid-template-columns: 1fr 2.1fr 1.6fr; gap: 16px; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; background: var(--surface); margin: 30px 0 42px; }
+.meta-card > div { min-width: 0; }
+.meta-label { color: var(--muted); display: block; font-size: .75rem; margin-bottom: 5px; }
+.meta-card strong { font-size: .87rem; font-weight: 620; overflow-wrap: anywhere; }
+.meta-links { display: flex; flex-wrap: wrap; gap: 20px; grid-column: 1/-1; border-top: 1px solid var(--border); padding-top: 14px; }
+.meta-links a { font-size: .89rem; }
+.prose { max-width: 880px; }
+.prose h1 { font-size: clamp(1.8rem,4vw,2.3rem); line-height: 1.3; letter-spacing: -.035em; margin: 0 0 22px; }
+.prose h2 { font-size: 1.48rem; margin: 58px 0 14px; line-height: 1.4; letter-spacing: -.02em; padding-top: 8px; }
+.prose h3 { font-size: 1.14rem; margin: 33px 0 12px; }
+.prose p, .prose ul, .prose ol { color: #d8e3f2; }
+.prose li { margin: 5px 0; }
+.prose blockquote { margin: 18px 0; padding: 4px 20px; border-left: 3px solid var(--accent); color: var(--muted); background: #1c2a3b; border-radius: 0 8px 8px 0; }
+.prose blockquote p { color: inherit; }
+.prose :not(pre) > code { padding: .13em .37em; font-size: .91em; border: 1px solid #2e3c52; border-radius: 6px; color: #b8f3df; background: #18263a; overflow-wrap: anywhere; }
+.prose hr { border: 0; height: 1px; background: var(--border); margin: 38px 0; }
+.prose table { border-collapse: collapse; width: 100%; display: block; overflow: auto; font-size: .91rem; }
+.prose td, .prose th { padding: 11px 13px; border: 1px solid var(--border); text-align: left; }
+.prose th { background: var(--surface-2); }
+.prose td { background: #111c2d; }
+.code-shell { position: relative; margin: 22px 0; border-radius: 12px; border: 1px solid var(--border); background: var(--code); overflow: hidden; }
+.prose .code-shell pre { margin: 0; padding: 50px 18px 21px; overflow-x: auto; white-space: pre; line-height: 1.56; font-size: .88rem; tab-size: 4; }
+.prose .code-shell code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-variant-ligatures: none; background: none; color: #dae7f9; }
+.code-shell .code-label { position: absolute; left: 16px; top: 12px; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; pointer-events: none; }
+.copy-button { position: absolute; top: 8px; right: 10px; padding: 5px 11px; font: inherit; font-size: .76rem; color: #deefff; background: var(--surface-2); border: 1px solid #426080; border-radius: 7px; cursor: pointer; }
+.copy-button:hover, .copy-button:focus-visible { border-color: var(--accent); background: #284461; }
+.highlight .k, .highlight .kd, .highlight .kt { color: #9ac7ff; }
+.highlight .nf, .highlight .nc, .highlight .na { color: #7cdeca; }
+.highlight .s, .highlight .s2 { color: #e7d19b; }
+.highlight .c1, .highlight .cm { color: #93a6bd; }
+.highlight .mi, .highlight .mf { color: #efb98e; }
+.tip-list { display: grid; gap: 16px; margin: 27px 0; }
+.tip-item { border: 1px solid var(--border); background: var(--surface); border-radius: 13px; padding: 20px 23px; text-decoration: none; display: block; }
+.tip-item:hover { border-color: var(--accent); background: #1b2b41; }
+.tip-item time { display: block; font-size: .77rem; color: var(--accent-strong); margin-bottom: 4px; }
+.tip-item strong { color: var(--text); display: block; font-size: 1.12rem; }
+.tip-item span { display: block; color: var(--muted); font-size: .91rem; margin-top: 6px; }
+.site-footer { border-top: 1px solid var(--border); padding: 26px 0 40px; color: var(--muted); font-size: .8rem; }
+.skip-link { position: absolute; transform: translateY(-160%); background: white; color: black; padding: 6px 10px; z-index: 100; }
+.skip-link:focus { transform: none; }
+@media (max-width: 700px) {
+  .shell { width: min(100% - 28px, 960px); }
+  .header-inner { flex-direction: column; gap: 7px; align-items: flex-start; padding: 15px 0; }
+  nav { gap: 18px; flex-wrap: wrap; }
+  main.shell { padding-top: 34px; }
+  .meta-card { grid-template-columns: 1fr; gap: 13px; }
+  .meta-links { grid-column: 1; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}

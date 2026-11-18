@@ -1,0 +1,18 @@
+title: "Compose Knowledge | Daily Tips"
+description: "Source-grounded AndroidX Compose development, debugging, and review tips"
+url: "https://seungwan-woo.github.io"
+baseurl: "/compose-knowledge"
+github_repo: "https://github.com/seungwan-woo/compose-knowledge"
+raw_base: "https://raw.githubusercontent.com/seungwan-woo/compose-knowledge/main"
+lang: "ko-KR"
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+exclude:
+  - reports
+  - superpowers
+  - consumer-setup.md
+  - dot-curation.md
+  - public-contract-evidence.md

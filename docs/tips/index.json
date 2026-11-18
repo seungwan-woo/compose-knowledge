@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /tips/index.json
+---
+{
+  "schema_version": 1,
+  "format": "markdown-with-yaml-frontmatter",
+  "purpose": "Index only; fetch source_markdown_url for full human-and-AI identical content",
+  "entries": [
+    {% assign items = site.pages | where: "tip", true | sort: "doc_date" | reverse %}
+    {% for item in items %}
+    {
+      "date": {{ item.doc_date | jsonify }},
+      "title": {{ item.title | jsonify }},
+      "summary": {{ item.summary | jsonify }},
+      "version_scope": {{ item.version_scope | jsonify }},
+      "verification": {{ item.verification | jsonify }},
+      "page_path": {{ item.url | relative_url | jsonify }},
+      "source_markdown_url": {{ site.raw_base | append: '/docs/' | append: item.path | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
