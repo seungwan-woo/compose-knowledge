@@ -9,13 +9,13 @@ sources:
   - id: live-compose-guide-animation-composables-modifiers-animatecontentsize-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animateContentSize
-    revision: web:compose-guide-animation-composables-modifiers:content@sha256:5de3de46ff801f7a67d365626e0724fbf4e1e4f88866280c495fbdade1fd8020
-    sha256: de3d52b795e2eaac97ba4fad9ba3b59511696c5906d1515be1b9ca6b1bf54ebc
+    revision: web:compose-guide-animation-composables-modifiers:content@sha256:af01772a8ad6d273511ec54bec4ccc4e1d55f0d4d721af0017f2166573411ef5
+    sha256: 69d59eb451f032c4fe9c4cd66bc7f17d536b2c49623c553c4f52390da7297c8b
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Figure 2.
+      Figure 4.
 
-      Composable smoothly animating between a small and a larger size
+      Composable smoothly animating between a small and a larger size.
 
       The animateContentSize modifier animates a size change.
 
@@ -35,14 +35,37 @@ sources:
 
       ) {
       }AnimationQuickGuide.kt
+
+      animateContentSize accepts optional animationSpec, alignment, and finishedListener parameters. Use them to set the FiniteAnimationSpec for the size animation, set the alignment of the content during the animation, and receive the initial and target IntSize when the animation finishes. The following example passes a custom spring as animationSpec. This example reuses the expanded state from the preceding example:
+
+      Box(
+          modifier = Modifier
+              .background(colorBlue)
+              .animateContentSize(
+                  spring(
+                      stiffness = Spring.StiffnessLow,
+                      dampingRatio = Spring.DampingRatioHighBouncy
+                  )
+              )
+              .height(if (expanded) 300.dp else 200.dp)
+              .fillMaxSize()
+              .clickable(
+                  interactionSource = remember { MutableInteractionSource() },
+                  indication = null
+              ) {
+                  expanded = !expanded
+              }
+
+      ) {
+      }AnimationQuickGuide.kt
   - id: live-compose-guide-animation-composables-modifiers-animatedcontent-2-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent
-    revision: web:compose-guide-animation-composables-modifiers:content@sha256:5de3de46ff801f7a67d365626e0724fbf4e1e4f88866280c495fbdade1fd8020
-    sha256: 6d16d348ff44228f454a224b3a0513c9c5595216ad1db0d6abb64ac83e39c805
+    revision: web:compose-guide-animation-composables-modifiers:content@sha256:af01772a8ad6d273511ec54bec4ccc4e1d55f0d4d721af0017f2166573411ef5
+    sha256: eb23c1ac3c2ef14580e282a50b4414a3b03d1784e60fd215c25372635d1825c7
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      available for AnimatedVisibility, AnimatedContent offers slideIntoContainer and slideOutOfContainer. These are convenient alternatives to slideInHorizontally/Vertically and slideOutHorizontally/Vertically that calculate the slide distance based on the sizes of the initial content and the target content of the AnimatedContent content.
+      addition to all of the EnterTransition and ExitTransition functions available for AnimatedVisibility, AnimatedContent offers slideIntoContainer and slideOutOfContainer. These are convenient alternatives to slideInHorizontally/Vertically and slideOutHorizontally/Vertically that calculate the slide distance based on the sizes of the initial content and the target content of the AnimatedContent content.
 
       SizeTransform defines how the size should animate between the initial and the target contents. You have access to both the initial size and the target size when you are creating the animation. SizeTransform also controls whether the content should be clipped to the component size during animations.
 
@@ -80,6 +103,23 @@ sources:
               }
           }
       }AnimationSnippets.kt
+
+      Figure 3.
+
+      Animating content size changes with
+
+      SizeTransform
+
+      .
+
+      By default, AnimatedContent draws the target content on top of the initial content. To change this draw order, set ContentTransform.targetContentZIndex. To keep the initial content until both the enter and exit
+  - id: live-compose-guide-animation-composables-modifiers-animatedcontent-3-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent
+    revision: web:compose-guide-animation-composables-modifiers:content@sha256:af01772a8ad6d273511ec54bec4ccc4e1d55f0d4d721af0017f2166573411ef5
+    sha256: b72afa842ea1e55725d79def2c5f8440d9138cdfe6cf22838d87a31244dafdd9
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: transitions finish, use ExitTransition.KeepUntilTransitionsFinished in transitionSpec, alone or combined with other exit transitions using the + operator.
   - id: live-compose-guide-animation-composables-modifiers-animatedcontent-add-custom-animation-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent-add-custom-animation
@@ -97,8 +137,8 @@ sources:
   - id: live-compose-guide-animation-composables-modifiers-animatedcontent-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent
-    revision: web:compose-guide-animation-composables-modifiers:content@sha256:5de3de46ff801f7a67d365626e0724fbf4e1e4f88866280c495fbdade1fd8020
-    sha256: c835973955f11529ec8995eb38c41b6f1cb4d4fcced7f1593dfab36d260514e2
+    revision: web:compose-guide-animation-composables-modifiers:content@sha256:af01772a8ad6d273511ec54bec4ccc4e1d55f0d4d721af0017f2166573411ef5
+    sha256: d58a3d5586259cee34dbe1c76f012b92c32a021999d4f661a0fc72ee43fdd3cb
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       The AnimatedContent composable animates its content as it changes based on a target state.
@@ -143,7 +183,15 @@ sources:
           Text(text = "$targetCount")
       }AnimationSnippets.kt
 
-      EnterTransition defines how the target content should appear, and ExitTransition defines how the initial content should disappear. In addition to all of the EnterTransition and ExitTransition functions
+      Figure 2.
+
+      Animating a counter with a custom
+
+      ContentTransform
+
+      .
+
+      EnterTransition defines how the target content should appear, and ExitTransition defines how the initial content should disappear. In
   - id: live-compose-guide-animation-composables-modifiers-animatedvisibility-add-custom-animation-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedvisibility-add-custom-animation
@@ -389,6 +437,15 @@ compose:
       sourceIds:
         - live-compose-guide-animation-composables-modifiers-animatedcontent-2-source
       relatedIds: []
+    - id: live-compose-guide-animation-composables-modifiers-animatedcontent-3
+      title: Animate based on target state
+      aliases: []
+      requires:
+        - artifact: androidx.compose.animation:animation
+          version: null
+      sourceIds:
+        - live-compose-guide-animation-composables-modifiers-animatedcontent-3-source
+      relatedIds: []
     - id: live-compose-guide-animation-composables-modifiers-animatedcontent-add-custom-animation
       title: Add custom animation
       aliases:
@@ -514,9 +571,9 @@ Public source: https://developer.android.com/develop/ui/compose/animation/compos
 
 ## Animate composable size changes
 
-Figure 2.
+Figure 4.
 
-Composable smoothly animating between a small and a larger size
+Composable smoothly animating between a small and a larger size.
 
 The animateContentSize modifier animates a size change.
 
@@ -527,6 +584,29 @@ Box(
         .animateContentSize()
         .height(if (expanded) 400.dp else 200.dp)
         .fillMaxWidth()
+        .clickable(
+            interactionSource = remember { MutableInteractionSource() },
+            indication = null
+        ) {
+            expanded = !expanded
+        }
+
+) {
+}AnimationQuickGuide.kt
+
+animateContentSize accepts optional animationSpec, alignment, and finishedListener parameters. Use them to set the FiniteAnimationSpec for the size animation, set the alignment of the content during the animation, and receive the initial and target IntSize when the animation finishes. The following example passes a custom spring as animationSpec. This example reuses the expanded state from the preceding example:
+
+Box(
+    modifier = Modifier
+        .background(colorBlue)
+        .animateContentSize(
+            spring(
+                stiffness = Spring.StiffnessLow,
+                dampingRatio = Spring.DampingRatioHighBouncy
+            )
+        )
+        .height(if (expanded) 300.dp else 200.dp)
+        .fillMaxSize()
         .clickable(
             interactionSource = remember { MutableInteractionSource() },
             indication = null
@@ -583,13 +663,21 @@ AnimatedContent(
     Text(text = "$targetCount")
 }AnimationSnippets.kt
 
-EnterTransition defines how the target content should appear, and ExitTransition defines how the initial content should disappear. In addition to all of the EnterTransition and ExitTransition functions
+Figure 2.
+
+Animating a counter with a custom
+
+ContentTransform
+
+.
+
+EnterTransition defines how the target content should appear, and ExitTransition defines how the initial content should disappear. In
 
 Sources: [live-compose-guide-animation-composables-modifiers-animatedcontent-source](https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent)
 
 ## Animate based on target state
 
-available for AnimatedVisibility, AnimatedContent offers slideIntoContainer and slideOutOfContainer. These are convenient alternatives to slideInHorizontally/Vertically and slideOutHorizontally/Vertically that calculate the slide distance based on the sizes of the initial content and the target content of the AnimatedContent content.
+addition to all of the EnterTransition and ExitTransition functions available for AnimatedVisibility, AnimatedContent offers slideIntoContainer and slideOutOfContainer. These are convenient alternatives to slideInHorizontally/Vertically and slideOutHorizontally/Vertically that calculate the slide distance based on the sizes of the initial content and the target content of the AnimatedContent content.
 
 SizeTransform defines how the size should animate between the initial and the target contents. You have access to both the initial size and the target size when you are creating the animation. SizeTransform also controls whether the content should be clipped to the component size during animations.
 
@@ -628,7 +716,23 @@ Surface(
     }
 }AnimationSnippets.kt
 
+Figure 3.
+
+Animating content size changes with
+
+SizeTransform
+
+.
+
+By default, AnimatedContent draws the target content on top of the initial content. To change this draw order, set ContentTransform.targetContentZIndex. To keep the initial content until both the enter and exit
+
 Sources: [live-compose-guide-animation-composables-modifiers-animatedcontent-2-source](https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent)
+
+## Animate based on target state
+
+transitions finish, use ExitTransition.KeepUntilTransitionsFinished in transitionSpec, alone or combined with other exit transitions using the + operator.
+
+Sources: [live-compose-guide-animation-composables-modifiers-animatedcontent-3-source](https://developer.android.com/develop/ui/compose/animation/composables-modifiers#animatedcontent)
 
 ## Add custom animation
 

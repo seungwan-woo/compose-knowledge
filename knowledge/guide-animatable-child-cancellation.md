@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-animatable-interruption-result-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/b8f12c706099a47e1e44d9772d03e14a4ae37146/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
-    revision: b8f12c706099a47e1e44d9772d03e14a4ae37146
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
     startLine: 205
     endLine: 217
@@ -32,8 +32,8 @@ sources:
            * consider starting the animation in a `try-catch` block.
   - id: contract-coroutine-normal-child-cancellation-source
     kind: code
-    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt
-    revision: ead082131ceb45b8e4fda027c74471103c1cd09f
+    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt
+    revision: 1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7
     path: kotlinx-coroutines-core/common/src/CoroutineScope.kt
     startLine: 378
     endLine: 383
@@ -79,4 +79,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: Interrupting Animatable with another animation, stop, or snapTo throws CancellationException, so subsequent work in that caller does not run normally. A child coroutine ending with CancellationException cancels itself and its own children without cancelling its parent or siblings. Limitation: the isolation claim requires the animation to run in a separate child; a direct animateTo call still interrupts the caller’s sequence. Normal return may be Finished or BoundReached, so require Finished when target completion matters.
 
-Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/b8f12c706099a47e1e44d9772d03e14a4ae37146/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/ead082131ceb45b8e4fda027c74471103c1cd09f/kotlinx-coroutines-core/common/src/CoroutineScope.kt)
+Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt)

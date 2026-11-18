@@ -9,13 +9,13 @@ sources:
   - id: live-compose-guide-animation-advanced-main-content-2-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/advanced#main-content
-    revision: web:compose-guide-animation-advanced:content@sha256:1fa9d7400b45f6c0476625b6ac76073f56ade62a4dfb85e241997156b5137a40
-    sha256: 52b1d7fb617ef90e8c38725b352db5430fdd0710ee705e22c93330c956c6a941
+    revision: web:compose-guide-animation-advanced:content@sha256:51327fbb94bc9e0dd4d6c4715649a59aeadff4eca2b9da2976f600bac9431b55
+    sha256: f2f82bab299653307faf0bbc0e31c7b7350f3b0cb68c52aa8352aa0d4fd52624
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      event, we stop the Animatable by the stop method so that any ongoing animation is intercepted.
+      ongoing animation is intercepted.
 
-      During a drag event, we use snapTo to update the Animatable value with the value calculated from touch events. For fling, Compose provides VelocityTracker to record drag events and calculate velocity. The velocity can be fed directly to animateDecay for the fling animation. When we want to slide the offset value back to the original position, we specify the target offset value of 0f with the animateTo method.
+      During a drag event, the modifier uses snapTo to update the Animatable value with the value calculated from touch events. For fling, Compose provides VelocityTracker to record drag events and calculate velocity. The velocity can be fed directly to animateDecay for the fling animation. To slide the offset value back to the original position, the modifier specifies the target offset value of 0f with the animateTo method.
 
       fun Modifier.swipeToDismiss(
           onDismissed: () -> Unit
@@ -56,17 +56,16 @@ sources:
                       // The animation stops when it reaches the bounds.
                       offsetX.updateBounds(
                           lowerBound = -size.width.toFloat(),
-                          upperBound =
+                          upperBound = size.width.toFloat()
+                      )
   - id: live-compose-guide-animation-advanced-main-content-3-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/advanced#main-content
-    revision: web:compose-guide-animation-advanced:content@sha256:1fa9d7400b45f6c0476625b6ac76073f56ade62a4dfb85e241997156b5137a40
-    sha256: 3b3a5e9da5c37f51708f1b2c39376d681bd8de1015947c73b00fe9ce0709c91d
+    revision: web:compose-guide-animation-advanced:content@sha256:51327fbb94bc9e0dd4d6c4715649a59aeadff4eca2b9da2976f600bac9431b55
+    sha256: eb44e8127f217d3f7836f7f86163b5c2980fcea0a588e81266a3274c27f2102a
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      size.width.toFloat()
-                      )
-                      launch {
+      launch {
                           if (targetOffsetX.absoluteValue <= size.width) {
                               // Not enough velocity; Slide back.
                               offsetX.animateTo(
@@ -87,13 +86,13 @@ sources:
   - id: live-compose-guide-animation-advanced-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/advanced#main-content
-    revision: web:compose-guide-animation-advanced:content@sha256:1fa9d7400b45f6c0476625b6ac76073f56ade62a4dfb85e241997156b5137a40
-    sha256: 9169e60f87af5b6895747fee4969e6bc3241e83346c95aae04e73177ba01b345
+    revision: web:compose-guide-animation-advanced:content@sha256:51327fbb94bc9e0dd4d6c4715649a59aeadff4eca2b9da2976f600bac9431b55
+    sha256: 72a2f7a140b0a5816511d94b3ad61f500456e3299db8ea86936801c22f43bd6c
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      There are several things we have to take into consideration when we are working with touch events and animations, compared to when we are working with animations alone. First of all, we might need to interrupt an ongoing animation when touch events begin as user interaction should have the highest priority.
+      When you work with touch events and animations, you have more to consider than when you work with animations alone. First, you might need to interrupt an ongoing animation when touch events begin, because user interaction should have the highest priority.
 
-      In the following example, we use an Animatable to represent the offset position of a circle component. Touch events are processed with the pointerInput modifier. When we detect a new tap event, we call animateTo to animate the offset value to the tap position. A tap event can happen during the animation too, and in that case, animateTo interrupts the ongoing animation and starts the animation to the new target position while maintaining the velocity of the interrupted animation.
+      The following example uses an Animatable to represent the offset position of a circle component. Touch events are processed with the pointerInput modifier. When the example detects a new tap event, it calls animateTo to animate the offset value to the tap position. A tap event can happen during the animation too, and in that case, animateTo interrupts the ongoing animation and starts the animation to the new target position while maintaining the velocity of the interrupted animation.
 
       @Composable
       fun Gesture() {
@@ -123,7 +122,7 @@ sources:
 
       private fun Offset.toIntOffset() = IntOffset(x.roundToInt(), y.roundToInt())AdvancedAnimationSnippets.kt
 
-      Another frequent pattern is we need to synchronize animation values with values coming from touch events, such as drag. In the following example, we see "swipe to dismiss" implemented as a Modifier (rather than using the SwipeToDismiss composable). The horizontal offset of the element is represented as an Animatable. This API has a characteristic useful in gesture animation. Its value can be changed by touch events as well as the animation. When we receive a touch down
+      Another frequent pattern is synchronizing animation values with values coming from touch events, such as drag. The following example implements "swipe to dismiss" as a modifier, rather than using the SwipeToDismissBox composable. The horizontal offset of the element is represented as an Animatable. This API has a characteristic useful in gesture animation. Its value can be changed by touch events as well as the animation. On a touch down event, the modifier stops the Animatable with the stop method so that any
   - id: live-compose-guide-animation-advanced-recommended-for-you-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/advanced#recommended_for_you
@@ -189,9 +188,9 @@ Public source: https://developer.android.com/develop/ui/compose/animation/advanc
 
 ## Introduction
 
-There are several things we have to take into consideration when we are working with touch events and animations, compared to when we are working with animations alone. First of all, we might need to interrupt an ongoing animation when touch events begin as user interaction should have the highest priority.
+When you work with touch events and animations, you have more to consider than when you work with animations alone. First, you might need to interrupt an ongoing animation when touch events begin, because user interaction should have the highest priority.
 
-In the following example, we use an Animatable to represent the offset position of a circle component. Touch events are processed with the pointerInput modifier. When we detect a new tap event, we call animateTo to animate the offset value to the tap position. A tap event can happen during the animation too, and in that case, animateTo interrupts the ongoing animation and starts the animation to the new target position while maintaining the velocity of the interrupted animation.
+The following example uses an Animatable to represent the offset position of a circle component. Touch events are processed with the pointerInput modifier. When the example detects a new tap event, it calls animateTo to animate the offset value to the tap position. A tap event can happen during the animation too, and in that case, animateTo interrupts the ongoing animation and starts the animation to the new target position while maintaining the velocity of the interrupted animation.
 
 @Composable
 fun Gesture() {
@@ -221,15 +220,15 @@ fun Gesture() {
 
 private fun Offset.toIntOffset() = IntOffset(x.roundToInt(), y.roundToInt())AdvancedAnimationSnippets.kt
 
-Another frequent pattern is we need to synchronize animation values with values coming from touch events, such as drag. In the following example, we see "swipe to dismiss" implemented as a Modifier (rather than using the SwipeToDismiss composable). The horizontal offset of the element is represented as an Animatable. This API has a characteristic useful in gesture animation. Its value can be changed by touch events as well as the animation. When we receive a touch down
+Another frequent pattern is synchronizing animation values with values coming from touch events, such as drag. The following example implements "swipe to dismiss" as a modifier, rather than using the SwipeToDismissBox composable. The horizontal offset of the element is represented as an Animatable. This API has a characteristic useful in gesture animation. Its value can be changed by touch events as well as the animation. On a touch down event, the modifier stops the Animatable with the stop method so that any
 
 Sources: [live-compose-guide-animation-advanced-main-content-source](https://developer.android.com/develop/ui/compose/animation/advanced#main-content)
 
 ## Introduction
 
-event, we stop the Animatable by the stop method so that any ongoing animation is intercepted.
+ongoing animation is intercepted.
 
-During a drag event, we use snapTo to update the Animatable value with the value calculated from touch events. For fling, Compose provides VelocityTracker to record drag events and calculate velocity. The velocity can be fed directly to animateDecay for the fling animation. When we want to slide the offset value back to the original position, we specify the target offset value of 0f with the animateTo method.
+During a drag event, the modifier uses snapTo to update the Animatable value with the value calculated from touch events. For fling, Compose provides VelocityTracker to record drag events and calculate velocity. The velocity can be fed directly to animateDecay for the fling animation. To slide the offset value back to the original position, the modifier specifies the target offset value of 0f with the animateTo method.
 
 fun Modifier.swipeToDismiss(
     onDismissed: () -> Unit
@@ -270,15 +269,14 @@ fun Modifier.swipeToDismiss(
                 // The animation stops when it reaches the bounds.
                 offsetX.updateBounds(
                     lowerBound = -size.width.toFloat(),
-                    upperBound =
+                    upperBound = size.width.toFloat()
+                )
 
 Sources: [live-compose-guide-animation-advanced-main-content-2-source](https://developer.android.com/develop/ui/compose/animation/advanced#main-content)
 
 ## Introduction
 
-size.width.toFloat()
-                )
-                launch {
+launch {
                     if (targetOffsetX.absoluteValue <= size.width) {
                         // Not enough velocity; Slide back.
                         offsetX.animateTo(

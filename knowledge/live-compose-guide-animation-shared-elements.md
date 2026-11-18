@@ -140,8 +140,8 @@ sources:
   - id: live-compose-guide-animation-shared-elements-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/shared-elements#main-content
-    revision: web:compose-guide-animation-shared-elements:content@sha256:06b1d217693e5cbea55c09b31e4ecf1db470ae64ad4cb10a0dbb7d28fd13ca25
-    sha256: 86aaa1272ddb2eb587eb35bc958eb489ce9dabd00d7dd81d960ce48f316a736e
+    revision: web:compose-guide-animation-shared-elements:content@sha256:876c534c7cfa71ac03aa93791063ac67d0dd4321b1b6d49a6e9badf401796c7d
+    sha256: 65ae0920dea6b8c87fbc23894b75b0a4b52ca862d0342a4fb4231dabe437336f
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Shared element transitions are a seamless way to transition between composables that have content that is consistent between them. They are often used for navigation, allowing you to visually connect different screens as a user navigates between them.
@@ -154,7 +154,9 @@ sources:
 
       In Compose, there are a few high-level APIs that help you create shared elements:
 
-      SharedTransitionLayout: The outermost layout required to implement shared element transitions. It provides a SharedTransitionScope. Composables need to be in a SharedTransitionScope to use the shared element modifiers.
+      SharedTransitionLayout: A layout that wraps your content and provides a SharedTransitionScope for shared element transitions. Composables need to be in a SharedTransitionScope to use the shared element modifiers.
+
+      SharedTransitionScope composable: Provides a SharedTransitionScope without adding a layout between your content and its parent. Apply the Modifier that the content lambda receives to the first child layout. If that layout doesn't have the highest zIndex, use SharedTransitionLayout instead.
 
       Modifier.sharedElement(): The modifier that flags to the SharedTransitionScope the composable that should be matched with another composable.
 
@@ -399,11 +401,11 @@ sources:
   - id: live-compose-guide-animation-shared-elements-understand-scopes-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/shared-elements#understand-scopes
-    revision: web:compose-guide-animation-shared-elements:content@sha256:06b1d217693e5cbea55c09b31e4ecf1db470ae64ad4cb10a0dbb7d28fd13ca25
-    sha256: f9d3cd2e88cf26b1b6ffbc53a3e1da0efc53c5b0cbfcfda936a47b7463dc43ab
+    revision: web:compose-guide-animation-shared-elements:content@sha256:876c534c7cfa71ac03aa93791063ac67d0dd4321b1b6d49a6e9badf401796c7d
+    sha256: a1e07bfb1dd20f07a2ff645f4620bc2caeb8788cb411720befa47fd1d014850a
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      To use Modifier.sharedElement(), the composable needs to be in a SharedTransitionScope. The SharedTransitionLayout composable provides the SharedTransitionScope. Make sure to place it at the same top-level point in your UI hierarchy that contains the elements you want to share.
+      To use Modifier.sharedElement(), the composable needs to be in a SharedTransitionScope. The SharedTransitionLayout or SharedTransitionScope composable provides this scope. Make sure to place it at the same top-level point in your UI hierarchy that contains the elements you want to share.
 
       Generally, the composables should also be placed inside an AnimatedVisibilityScope. This is typically provided by using AnimatedContent to switch between composables or when using AnimatedVisibility directly, or by the NavHost composable function, unless you manage the visibility manually. In order to use multiple scopes, save your required scopes in a CompositionLocal, use context parameters in Kotlin, or pass the scopes as parameters to your functions.
 
@@ -759,7 +761,9 @@ Jetsnack shared element demo.
 
 In Compose, there are a few high-level APIs that help you create shared elements:
 
-SharedTransitionLayout: The outermost layout required to implement shared element transitions. It provides a SharedTransitionScope. Composables need to be in a SharedTransitionScope to use the shared element modifiers.
+SharedTransitionLayout: A layout that wraps your content and provides a SharedTransitionScope for shared element transitions. Composables need to be in a SharedTransitionScope to use the shared element modifiers.
+
+SharedTransitionScope composable: Provides a SharedTransitionScope without adding a layout between your content and its parent. Apply the Modifier that the content lambda receives to the first child layout. If that layout doesn't have the highest zIndex, use SharedTransitionLayout instead.
 
 Modifier.sharedElement(): The modifier that flags to the SharedTransitionScope the composable that should be matched with another composable.
 
@@ -965,7 +969,7 @@ Sources: [live-compose-guide-animation-shared-elements-shared-bounds-2-source](h
 
 ## Understand scopes
 
-To use Modifier.sharedElement(), the composable needs to be in a SharedTransitionScope. The SharedTransitionLayout composable provides the SharedTransitionScope. Make sure to place it at the same top-level point in your UI hierarchy that contains the elements you want to share.
+To use Modifier.sharedElement(), the composable needs to be in a SharedTransitionScope. The SharedTransitionLayout or SharedTransitionScope composable provides this scope. Make sure to place it at the same top-level point in your UI hierarchy that contains the elements you want to share.
 
 Generally, the composables should also be placed inside an AnimatedVisibilityScope. This is typically provided by using AnimatedContent to switch between composables or when using AnimatedVisibility directly, or by the NavHost composable function, unless you manage the visibility manually. In order to use multiple scopes, save your required scopes in a CompositionLocal, use context parameters in Kotlin, or pass the scopes as parameters to your functions.
 

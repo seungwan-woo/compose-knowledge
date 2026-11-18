@@ -726,18 +726,20 @@ sources:
                           isLookingAhead = hasLookaheadOccurred,
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-596-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 596
     endLine: 630
-    sha256: d8482de006ab23317f5b823b4c4c466c47231c5e500364f56fb4a24f3c0318eb
+    sha256: 6d9119ec4673969ce99673111adbf30f617525fccb246177d17768cae935d7e6
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                           visibleItemsStayedTheSame = true,
                       )
                       // we don't need to remeasure, so we only trigger re-placement:
                       placementScopeInvalidator.invalidateScope()
+
+                      itemAnimator.applyScrollToDisappearingItems(intDelta)
 
                       notifyPrefetchOnScroll(
                           preScrollToBeConsumed - scrollToBeConsumed,
@@ -767,19 +769,19 @@ sources:
               prefetchStrategy?.apply {
                   if (prefetchingEnabled) {
                       prefetchScope.onScroll(delta, layoutInfo)
-                  }
-              }
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-631-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 631
     endLine: 665
-    sha256: 094609a4f3e477be2ad438f551a19645db29e4551c2e229a6bee89d13b267e38
+    sha256: 1f2e7b325e3e7319f34511b7d0d292e14a48ca8141d4908e3a753162bfa00538
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-      
+                  }
+              }
+
           /**
            * Animate (smooth scroll) to the given item.
            *
@@ -812,18 +814,18 @@ sources:
               // update the prefetch state with the number of nested prefetch items this layout
               // should use.
               result.prefetchState?.idealNestedPrefetchCount = result.visibleItemsInfo.size
-
-              if (!isLookingAhead && hasLookaheadOccurred) {
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-666-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 666
     endLine: 700
-    sha256: d7c138385a3f7e5cb83a10f738252089cd8949ee160651261d2e27f45c06c795
+    sha256: f43abf59ad3ffcf85eac62ef4acbef43d19419dc5f157c45ce312e3eeb5b6e05
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+      
+              if (!isLookingAhead && hasLookaheadOccurred) {
                   // If there was already a lookahead pass, record this result as approach result
                   approachLayoutInfo = result
                   Snapshot.withoutReadObservation {
@@ -857,18 +859,18 @@ sources:
                           }
                       }
                   }
-
-                  if (isLookingAhead) {
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-701-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 701
     endLine: 735
-    sha256: ead2903adfea023f53430de292e47071ce6e69452be8849f0166006ae5caf97e
+    sha256: d1028e42cec5df5999547323b04b3aa1ec9303ce0325c5fd54d9b8c795fcc101
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+    excerpt: |2
+      
+                  if (isLookingAhead) {
                       _lazyLayoutScrollDeltaBetweenPasses.updateScrollDeltaForApproach(
                           result.scrollBackAmount,
                           result.density,
@@ -901,9 +903,6 @@ sources:
               itemProvider: LazyListItemProvider,
               firstItemIndex: Int,
           ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
-
-          public companion object {
-              /** The default [Saver] implementation for [LazyListState]. */
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-71-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
@@ -951,14 +950,16 @@ sources:
           initialFirstVisibleItemIndex: Int = 0,
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-736-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 736
     endLine: 770
-    sha256: c00574c9b1253c0e0720b981b174de9f69dc0f8f9901d56a45e10d9d414c10c4
+    sha256: c690c8d775e89ae7208f8f9c67744e34e2f022a4f6db1ad8051caeb9fb1dbb30
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+          public companion object {
+              /** The default [Saver] implementation for [LazyListState]. */
               public val Saver: Saver<LazyListState, *> =
                   listSaver(
                       save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
@@ -992,18 +993,18 @@ sources:
               /**
                * A [Saver] implementation for [LazyListState] that handles setting a custom
                * [LazyLayoutCacheWindow].
-               */
-              @ExperimentalFoundationApi
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-771-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 771
     endLine: 805
-    sha256: dc5386b993bd4129ebc7b7dc2049a33ccfb0782fa87a46b700fb6e7ee7245617
+    sha256: 9507ca36af34d0b25dd2cc80d84c99c6e97af278d953fc477b45fa64851cf57c
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+               */
+              @ExperimentalFoundationApi
               internal fun saver(cacheWindow: LazyLayoutCacheWindow): Saver<LazyListState, *> =
                   listSaver(
                       save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
@@ -1037,18 +1038,18 @@ sources:
                       override fun placeChildren() {}
                   },
               scrollBackAmount = 0f,
-              visibleItemsInfo = emptyList(),
-              viewportStartOffset = 0,
   - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-806-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt
     startLine: 806
-    endLine: 822
-    sha256: 132efd54d8ab9dd068d025aece40e9bed5ba3419a4cefc34ebcab5f26916829e
+    endLine: 824
+    sha256: 87ad378a96973de2bb8e16287d6c59ea771b8772f59d5a1986b5fcf8f8f5944e
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
+              visibleItemsInfo = emptyList(),
+              viewportStartOffset = 0,
               viewportEndOffset = 0,
               totalItemsCount = 0,
               reverseLayout = false,
@@ -1252,8 +1253,7 @@ compose:
       relatedIds: []
     - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-701
       title: androidx.compose.foundation.lazy LazyListState.kt source (lines 701–735)
-      aliases:
-        - androidx.compose.foundation.lazy.LazyListState
+      aliases: []
       requires:
         - artifact: androidx.compose.foundation:foundation
           version: null
@@ -1292,7 +1292,7 @@ compose:
         - live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-771-source
       relatedIds: []
     - id: live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-806
-      title: androidx.compose.foundation.lazy LazyListState.kt source (lines 806–822)
+      title: androidx.compose.foundation.lazy LazyListState.kt source (lines 806–824)
       aliases: []
       requires:
         - artifact: androidx.compose.foundation:foundation
@@ -1953,6 +1953,8 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
                 // we don't need to remeasure, so we only trigger re-placement:
                 placementScopeInvalidator.invalidateScope()
 
+                itemAnimator.applyScrollToDisappearingItems(intDelta)
+
                 notifyPrefetchOnScroll(
                     preScrollToBeConsumed - scrollToBeConsumed,
                     scrolledLayoutInfo,
@@ -1981,13 +1983,13 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
         prefetchStrategy?.apply {
             if (prefetchingEnabled) {
                 prefetchScope.onScroll(delta, layoutInfo)
-            }
-        }
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 631–665)
 
+            }
+        }
 
     /**
      * Animate (smooth scroll) to the given item.
@@ -2022,12 +2024,12 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
         // should use.
         result.prefetchState?.idealNestedPrefetchCount = result.visibleItemsInfo.size
 
-        if (!isLookingAhead && hasLookaheadOccurred) {
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 666–700)
 
+
+        if (!isLookingAhead && hasLookaheadOccurred) {
             // If there was already a lookahead pass, record this result as approach result
             approachLayoutInfo = result
             Snapshot.withoutReadObservation {
@@ -2062,12 +2064,12 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
                 }
             }
 
-            if (isLookingAhead) {
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 701–735)
 
+
+            if (isLookingAhead) {
                 _lazyLayoutScrollDeltaBetweenPasses.updateScrollDeltaForApproach(
                     result.scrollBackAmount,
                     result.density,
@@ -2101,10 +2103,8 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
         firstItemIndex: Int,
     ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
 
-    public companion object {
-        /** The default [Saver] implementation for [LazyListState]. */
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 71–105)
 
@@ -2148,6 +2148,8 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 736–770)
 
+    public companion object {
+        /** The default [Saver] implementation for [LazyListState]. */
         public val Saver: Saver<LazyListState, *> =
             listSaver(
                 save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
@@ -2181,13 +2183,13 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
         /**
          * A [Saver] implementation for [LazyListState] that handles setting a custom
          * [LazyLayoutCacheWindow].
-         */
-        @ExperimentalFoundationApi
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
 
 ## androidx.compose.foundation.lazy LazyListState.kt source (lines 771–805)
 
+         */
+        @ExperimentalFoundationApi
         internal fun saver(cacheWindow: LazyLayoutCacheWindow): Saver<LazyListState, *> =
             listSaver(
                 save = { listOf(it.firstVisibleItemIndex, it.firstVisibleItemScrollOffset) },
@@ -2221,13 +2223,13 @@ private val EmptyLazyListMeasureResult =
                 override fun placeChildren() {}
             },
         scrollBackAmount = 0f,
+
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+
+## androidx.compose.foundation.lazy LazyListState.kt source (lines 806–824)
+
         visibleItemsInfo = emptyList(),
         viewportStartOffset = 0,
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
-
-## androidx.compose.foundation.lazy LazyListState.kt source (lines 806–822)
-
         viewportEndOffset = 0,
         totalItemsCount = 0,
         reverseLayout = false,
@@ -2246,4 +2248,4 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-line
 private const val NumberOfItemsToTeleport = 100
 
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-lazyliststate-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/LazyListState.kt)

@@ -82,8 +82,8 @@ sources:
   - id: live-compose-guide-animation-customize-easing-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/customize#easing
-    revision: web:compose-guide-animation-customize:content@sha256:0cb123330c12f156b93cf9a273f100b251a9ad61398439dc34b14053941065f0
-    sha256: 82478942bb6c089c27662a7865f26067347b1d6b29171632fe30e0b8b0f15207
+    revision: web:compose-guide-animation-customize:content@sha256:eb0fc1537650d2a224ea39309755fd769a3f5aeace79ad6872085be17745f55a
+    sha256: d8c0d0a12709cdacbb19bf75599ea90214c47e15c03655381faa1c2464db269d
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Duration-based AnimationSpec operations (such as tween or keyframes) use Easing to adjust an animation's fraction. This allows the animating value to speed up and slow down, rather than moving at a constant rate. Fraction is a value between 0 (start) and 1.0 (end) indicating the current point in the animation.
@@ -117,7 +117,15 @@ sources:
 
       CubicBezierEasing
 
-      See more
+      Ease
+
+      EaseIn
+
+      EaseOut
+
+      EaseInOut
+
+      Compose also provides EaseIn*, EaseOut*, and EaseInOut* presets for the sine, quad, cubic, quart, quint, expo, circ, back, elastic, and bounce curves. Examples are EaseInSine, EaseOutBack, and EaseInOutBounce. For the full list, see Ease and related presets in the API reference.
   - id: live-compose-guide-animation-customize-infiniterepeatable-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/animation/customize#infiniterepeatable
@@ -547,7 +555,15 @@ LinearEasing
 
 CubicBezierEasing
 
-See more
+Ease
+
+EaseIn
+
+EaseOut
+
+EaseInOut
+
+Compose also provides EaseIn*, EaseOut*, and EaseInOut* presets for the sine, quad, cubic, quart, quint, expo, circ, back, elastic, and bounce curves. Examples are EaseInSine, EaseOutBack, and EaseInOutBounce. For the full list, see Ease and related presets in the API reference.
 
 Sources: [live-compose-guide-animation-customize-easing-source](https://developer.android.com/develop/ui/compose/animation/customize#easing)
 

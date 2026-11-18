@@ -770,12 +770,12 @@ sources:
                       if (scrolledApproachLayoutInfo != null) {
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 631
     endLine: 665
-    sha256: 5b6f6fd1043b8a9dde9ca03211f05301037063072d86c7b901486df9489337d8
+    sha256: 86fb75e0b996019a19f9814e569508f412e16595a3a48cd62061b5b537fce444
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                           // we can apply scroll delta for both phases without remeasure
@@ -794,6 +794,8 @@ sources:
                       // we don't need to remeasure, so we only trigger re-placement:
                       placementScopeInvalidator.invalidateScope()
 
+                      itemAnimator.applyScrollToDisappearingItems(intDelta)
+
                       notifyPrefetchOnScroll(
                           preScrollToBeConsumed - scrollToBeConsumed,
                           scrolledLayoutInfo,
@@ -811,18 +813,18 @@ sources:
                   return distance
               } else {
                   val scrollConsumed = distance - scrollToBeConsumed
-                  // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
-                  // nested scrolling)
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 666
     endLine: 700
-    sha256: 44bf5929b2aeb373e7c1898a6d77053ad654bdb982806aa4af879e9be15f56de
+    sha256: f8e677d22b27d8a3a7bf86ba3335b3d937f0f906b4f1224dfbecae2e7cc1c80a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+    excerpt: |2
+                  // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
+                  // nested scrolling)
                   scrollToBeConsumed = 0f // We're not consuming the rest, give it back
                   return scrollConsumed
               }
@@ -855,19 +857,18 @@ sources:
                       .animateScrollToItem(index, scrollOffset, numOfItemsToTeleport, density)
               }
           }
-
-          /** Updates the state with the new calculated scroll position and consumed scroll. */
-          internal fun applyMeasureResult(
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 701
     endLine: 735
-    sha256: d83192cf7e6f4be47a45f1fc317b72f2f3a841e924cfedf94a94e618bca79571
+    sha256: f70e0e1d8e1b340fbaf699407102c039c5ddb43fa44f1027cf44994f199a1b4b
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+          /** Updates the state with the new calculated scroll position and consumed scroll. */
+          internal fun applyMeasureResult(
               result: LazyGridMeasureResult,
               isLookingAhead: Boolean,
               visibleItemsStayedTheSame: Boolean = false,
@@ -901,8 +902,6 @@ sources:
                   }
                   scrollToBeConsumed -= result.consumedScroll
                   layoutInfoState.value = result
-
-                  canScrollBackward = result.canScrollBackward
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-71-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
@@ -950,14 +949,16 @@ sources:
           initialFirstVisibleItemIndex: Int = 0,
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 736
     endLine: 770
-    sha256: 70aa57f64350d6f2c8289d4fc936cb0c6b67e861fe01ad93a685988578c59221
+    sha256: 2ee5a0241b0de19788237e44097f4e78c8a3b4547a88416ae8fc5e0dfa3f5e34
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+      
+                  canScrollBackward = result.canScrollBackward
                   canScrollForward = result.canScrollForward
 
                   if (visibleItemsStayedTheSame) {
@@ -991,18 +992,18 @@ sources:
            * When the user provided custom keys for the items we can try to detect when there were items
            * added or removed before our current first visible item and keep this item as the first
            * visible one even given that its index has been changed.
-           */
-          internal fun updateScrollPositionIfTheFirstItemWasMoved(
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 771
     endLine: 805
-    sha256: 68d91c9a24c10d8978398fef9a53d4b45c807ef4f97ef6645eb594f12cfe9f49
+    sha256: 3204d30cc8d6db203693ded29df64803ea435ae7883bcb4a8c357ba50432b855
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
+    excerpt: |2-
+           */
+          internal fun updateScrollPositionIfTheFirstItemWasMoved(
               itemProvider: LazyGridItemProvider,
               firstItemIndex: Int,
           ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
@@ -1036,17 +1037,18 @@ sources:
                               prefetchStrategy,
                           )
                       },
-                  )
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 806
     endLine: 840
-    sha256: 35a8ac37830cb0b57c6d5c83949b65e6be5c4171444e8817b5195606e2ca4ed6
+    sha256: 72bcd197fa91f17cf1e4f36dd7966214ec4c372422860dfb40d1ae6b9c024403
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+                  )
+
               /**
                * A [Saver] implementation for [LazyGridState] that handles setting a custom
                * [LazyLayoutCacheWindow].
@@ -1080,18 +1082,18 @@ sources:
 
                       @Suppress("PrimitiveInCollection")
                       override val alignmentLines: Map<AlignmentLine, Int> = emptyMap()
-
-                      override fun placeChildren() {}
   - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
+    revision: 7de187e988b71fd9873f023b55a7a6bddfd8b779
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt
     startLine: 841
-    endLine: 861
-    sha256: c52c7da2e862286ed51ad5c3f1f0c526faac9aa438778c277945e2e477b4f597
+    endLine: 863
+    sha256: 9d6785f6093e47417303396f653a6be6be3ffbe910abdf84a901d36215c85dbf
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
+      
+                      override fun placeChildren() {}
                   },
               scrollBackAmount = 0f,
               visibleItemsInfo = emptyList(),
@@ -1346,7 +1348,7 @@ compose:
         - live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source
       relatedIds: []
     - id: live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841
-      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–861)
+      title: androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–863)
       aliases: []
       requires:
         - artifact: androidx.compose.foundation:foundation
@@ -2058,6 +2060,8 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
                 // we don't need to remeasure, so we only trigger re-placement:
                 placementScopeInvalidator.invalidateScope()
 
+                itemAnimator.applyScrollToDisappearingItems(intDelta)
+
                 notifyPrefetchOnScroll(
                     preScrollToBeConsumed - scrollToBeConsumed,
                     scrolledLayoutInfo,
@@ -2075,13 +2079,13 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
             return distance
         } else {
             val scrollConsumed = distance - scrollToBeConsumed
-            // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
-            // nested scrolling)
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 666–700)
 
+            // We did not consume all of it - return the rest to be consumed elsewhere (e.g.,
+            // nested scrolling)
             scrollToBeConsumed = 0f // We're not consuming the rest, give it back
             return scrollConsumed
         }
@@ -2115,13 +2119,13 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
         }
     }
 
-    /** Updates the state with the new calculated scroll position and consumed scroll. */
-    internal fun applyMeasureResult(
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 701–735)
 
+    /** Updates the state with the new calculated scroll position and consumed scroll. */
+    internal fun applyMeasureResult(
         result: LazyGridMeasureResult,
         isLookingAhead: Boolean,
         visibleItemsStayedTheSame: Boolean = false,
@@ -2156,9 +2160,7 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
             scrollToBeConsumed -= result.consumedScroll
             layoutInfoState.value = result
 
-            canScrollBackward = result.canScrollBackward
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 71–105)
 
@@ -2202,6 +2204,8 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 736–770)
 
+
+            canScrollBackward = result.canScrollBackward
             canScrollForward = result.canScrollForward
 
             if (visibleItemsStayedTheSame) {
@@ -2235,13 +2239,13 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
      * When the user provided custom keys for the items we can try to detect when there were items
      * added or removed before our current first visible item and keep this item as the first
      * visible one even given that its index has been changed.
-     */
-    internal fun updateScrollPositionIfTheFirstItemWasMoved(
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 771–805)
 
+     */
+    internal fun updateScrollPositionIfTheFirstItemWasMoved(
         itemProvider: LazyGridItemProvider,
         firstItemIndex: Int,
     ): Int = scrollPosition.updateScrollPositionIfTheFirstItemWasMoved(itemProvider, firstItemIndex)
@@ -2275,12 +2279,12 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
                         prefetchStrategy,
                     )
                 },
-            )
 
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-771-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
 
 ## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 806–840)
+
+            )
 
         /**
          * A [Saver] implementation for [LazyGridState] that handles setting a custom
@@ -2316,12 +2320,12 @@ private val EmptyLazyGridLayoutInfo =
                 @Suppress("PrimitiveInCollection")
                 override val alignmentLines: Map<AlignmentLine, Int> = emptyMap()
 
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+
+## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–863)
+
+
                 override fun placeChildren() {}
-
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-806-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
-
-## androidx.compose.foundation.lazy.grid LazyGridState.kt source (lines 841–861)
-
             },
         scrollBackAmount = 0f,
         visibleItemsInfo = emptyList(),
@@ -2344,4 +2348,4 @@ Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate
     )
 
 
-Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
+Sources: [live-androidx-foundation-foundation-foundation-lazy-grid-lazygridstate-lines-841-source](https://android.googlesource.com/platform/frameworks/support/+/7de187e988b71fd9873f023b55a7a6bddfd8b779/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/lazy/grid/LazyGridState.kt)
