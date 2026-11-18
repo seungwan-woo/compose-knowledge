@@ -12,7 +12,7 @@ Each tip has one canonical Markdown source with YAML frontmatter, containing ful
 
 {% assign items = site.pages | where: "tip", true | sort: "doc_date" | reverse %}
 {% for item in items %}
-- {{ item.doc_date }} | {{ item.title }} | {{ item.version_scope }}
+- {{ item.doc_date }} | {{ item.title }} | {{ item.version_scope }} | AGP: {{ item.agp_scope }}
   Markdown: {{ site.raw_base }}/docs/{{ item.path }}
   Page: {{ site.url }}{{ site.baseurl }}{{ item.url }}
 {% endfor %}
