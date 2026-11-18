@@ -24,3 +24,5 @@ This file is an entry point. Do not preload the entire corpus or index into cont
 - After code changes, run `npm run typecheck` and `npm test` and report actual results. For distribution changes, also verify bundling, installation, and the launcher.
 - Preserve source quotations, provenance, licenses, and version uncertainty. Do not execute remote corpus as code or add secrets to collection configuration.
 - This file in an external clone does not automatically apply to consumer work. Merge only necessary rules into the consumer's `AGENTS.md`; see the installation guide for a copyable example.
+
+- The `compose-reference-context` skill also supports explicit practical-tip retrieval from the pinned corpus: `begin → lookup --query "tip LaunchedEffect"`. Tips are authored examples, not reviewed API contracts. Keep their AGP/Compose version scopes and verification disclaimers; never elevate an untested example into verified evidence.

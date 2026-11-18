@@ -9,12 +9,17 @@ import { buildSnapshot } from '../dist/knowledge/build.js';
 import { validateSnapshot } from '../dist/knowledge/validate.js';
 import { getSnapshotPath, syncSnapshot } from '../dist/io/snapshot.js';
 import { applyCuratedGuidance, parseGuidanceConfig } from '../dist/knowledge/curate.js';
+import { importDailyTips } from '../dist/knowledge/daily-tips.js';
 
 async function main() {
 const args = process.argv.slice(2); const opts = {};
-for (let i = 0; i < args.length; i += 2) {
-  if (!['--out', '--config', '--guidance', '--previous', '--remote', '--ref', '--base-snapshot'].includes(args[i]) || !args[i + 1] || opts[args[i]]) throw new Error('Usage: refresh.mjs --out DIR [--config FILE] [--guidance FILE] [--previous DIR | --remote URL] [--ref BRANCH]');
-  opts[args[i]] = args[i + 1];
+for (let i = 0; i < args.length;) {
+  if (args[i] === '--tips-only') {
+    if (opts['--tips-only']) throw new Error('Duplicate --tips-only');
+    opts['--tips-only'] = true; i++; continue;
+  }
+  if (!['--out', '--config', '--guidance', '--previous', '--remote', '--ref', '--base-snapshot'].includes(args[i]) || !args[i + 1] || opts[args[i]]) throw new Error('Usage: refresh.mjs --out DIR [--tips-only] [--config FILE] [--guidance FILE] [--previous DIR | --remote URL] [--ref BRANCH]');
+  opts[args[i]] = args[i + 1]; i += 2;
 }
 if (!opts['--out'] || (opts['--previous'] && opts['--remote']) || (opts['--previous'] && !opts['--base-snapshot']) || (opts['--base-snapshot'] && (!opts['--previous'] || !/^[0-9a-f]{40}$/.test(opts['--base-snapshot'])))) throw new Error('Specify --out and at most one previous source');
 const out = path.resolve(opts['--out']); await mkdir(out, { recursive: true });
@@ -48,11 +53,27 @@ try {
     if (!documents.has(docId)) documents.set(docId, { id: docId, artifact, fqn, title: docTitle, description, tags, sections: [] });
     documents.get(docId).sections.push(section);
   }
-  const result = await crawlSources(config, baseline, previous ? { schemaVersion: 1, documents: [...documents.values()] } : undefined, undefined, spans);
-  const guidance = applyCuratedGuidance(result.input, guidanceConfig);
-  const corpus = path.join(out, 'corpus'); await buildSnapshot(guidance.input, corpus);
+  const tipsOnly = opts['--tips-only'] === true;
+  if (tipsOnly && !previous) throw new Error('--tips-only requires an existing validated corpus snapshot');
+  const result = tipsOnly ? undefined : await crawlSources(config, baseline, previous ? { schemaVersion: 1, documents: [...documents.values()] } : undefined, undefined, spans);
+  const guidance = result ? applyCuratedGuidance(result.input, guidanceConfig) : undefined;
+  // On tip-only updates, preserve all published official and reviewed evidence byte-for-byte.
+  // Remove only the old practical tips before importing the current checked-out main sources.
+  const input = guidance?.input ?? { schemaVersion: 1, documents: [...documents.values()].filter(doc => !doc.tags.includes('practical-tip')) };
+  const sourceCommit = (await promisify(execFile)('git', ['rev-parse', 'HEAD'], {encoding:'utf8'})).stdout.trim();
+  const tips = await importDailyTips('docs/tips', sourceCommit);
+  const oldTips = new Map((previous?.index.entries ?? []).filter(entry => entry.tags.includes('practical-tip')).map(entry => [entry.id,entry]));
+  // Keep immutable old source URLs when the exact tip section body and frontmatter remain unchanged.
+  for (const doc of tips) for (const section of doc.sections) {
+    const prior = oldTips.get(section.id);
+    if (prior && prior.body === section.body && prior.title === section.title &&
+        JSON.stringify(prior.aliases) === JSON.stringify(section.aliases) &&
+        prior.sources[0]?.sha256 === section.sources[0]?.sha256) section.sources = structuredClone(prior.sources);
+  }
+  input.documents.push(...tips);
+  const corpus = path.join(out, 'corpus'); await buildSnapshot(input, corpus);
   const current = await validateSnapshot(corpus); const changes = diffSnapshots(previous, current);
-  const report = { baseSnapshot, sources: result.sources, spans: result.spans, changes, curatedGuidance: guidance.statuses };
+  const report = { baseSnapshot, sources: result?.sources ?? [], spans: result?.spans ?? [], changes, curatedGuidance: guidance?.statuses ?? [], tips: tips.map(tip => ({id:tip.id, sections:tip.sections.length})) };
   await writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n');
   const currentEntries = new Map(current.index.entries.map(entry => [entry.id, entry]));
   const previousEntries = new Map((previous?.index.entries ?? []).map(entry => [entry.id, entry]));
@@ -75,7 +96,7 @@ try {
     if (ids.length > 30) sections.push(`- ${ids.length - 30} more; see report.json for the full list.`);
     sections.push('');
   }
-  const summary = ['# Daily knowledge refresh', '', `Sections: ${changes.added.length} added, ${changes.updated.length} updated, ${changes.removed.length} removed.`, `Previous corpus: ${baseSnapshot ?? 'none'}.`, '', ...sections, '## Curated guidance', '', ...guidance.statuses.map(card => `- ${text(card.id)}: ${card.status}${card.reason ? ` — ${text(card.reason)}` : ''}`), '', '## Sources', '', ...result.sources.map(source => `- ${text(source.id)}: ${source.status}, ${source.sections} sections${source.note ? ` — ${text(source.note)}` : ''}`), ''].join('\n');
+  const summary = ['# Daily knowledge refresh', '', `Sections: ${changes.added.length} added, ${changes.updated.length} updated, ${changes.removed.length} removed.`, `Previous corpus: ${baseSnapshot ?? 'none'}.`, '', ...sections, '## Curated guidance', '', ...(guidance?.statuses ?? []).map(card => `- ${text(card.id)}: ${card.status}${card.reason ? ` — ${text(card.reason)}` : ''}`), '', '## Practical Tips', '', ...tips.map(tip => `- ${text(tip.id)}: ${tip.sections.length} sections`), '', '## Sources', '', ...(result?.sources ?? []).map(source => `- ${text(source.id)}: ${source.status}, ${source.sections} sections${source.note ? ` — ${text(source.note)}` : ''}`), ''].join('\n');
   await writeFile(path.join(out, 'summary.md'), summary);
   if (process.env.GITHUB_STEP_SUMMARY) await import('node:fs/promises').then(fs => fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summary));
 } finally { if (temp) await rm(temp, { recursive: true, force: true }); }

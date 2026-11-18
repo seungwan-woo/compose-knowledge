@@ -3,6 +3,9 @@ import { getVersionStatus, normalizeArtifact } from '../domain/version.js';
 
 function artifactMatches(entry: IndexEntry, query: SearchQuery): boolean {
   if (!query.artifact) return true;
+  // Practical tips span several modules: allow discovery with a requested artifact,
+  // but keep applicability explicitly unknown in their version requirements.
+  if (entry.tags.includes('practical-tip') && query.query && !query.symbol) return true;
   if (entry.artifact === query.artifact) return true;
   return normalizeArtifact(entry.artifact) === normalizeArtifact(query.artifact) &&
     (entry.artifact.endsWith('-android') || query.artifact.endsWith('-android') || query.platform === 'android');
@@ -66,7 +69,15 @@ export function searchIndex(index: SearchIndex, query: SearchQuery, snapshot: st
     return rank[a.versionStatus] - rank[b.versionStatus] || Number(b.curatedSymbol) - Number(a.curatedSymbol) || b.score - a.score || (a.entry.id < b.entry.id ? -1 : a.entry.id > b.entry.id ? 1 : 0);
   });
   const limit = query.limit === undefined ? 3 : Math.max(0, Math.floor(query.limit));
-  return { snapshot, hits: scored.slice(0, limit).map(({entry, versionStatus}) => ({id: entry.id, docId: entry.docId, title: entry.title, artifact: entry.artifact, fqn: entry.fqn, snippet: entry.body, versionStatus, sources: entry.sources.map(({id, resource}) => ({id, resource})), relatedIds: entry.relatedIds})), truncated: scored.length > limit };
+  const selected = scored.slice(0, limit);
+  // Surface one clearly labeled practical example alongside authoritative contracts
+  // in ordinary multi-result text searches, without overriding exact symbol lookups.
+  if (limit > 1 && query.query?.trim() && !query.symbol &&
+      !selected.some(hit => hit.entry.tags.includes('practical-tip'))) {
+    const tip = scored.find(hit => hit.entry.tags.includes('practical-tip'));
+    if (tip && selected.length === limit) selected[limit - 1] = tip;
+  }
+  return { snapshot, hits: selected.map(({entry, versionStatus}) => ({id: entry.id, docId: entry.docId, title: entry.title, artifact: entry.artifact, fqn: entry.fqn, snippet: entry.body, versionStatus, sources: entry.sources.map(({id, resource}) => ({id, resource})), relatedIds: entry.relatedIds})), truncated: scored.length > limit };
 }
 export function readSection(index: SearchIndex, id: string, query: SearchQuery, snapshot: string): ReadResponse {
   const entry = index.entries.find(item => item.id === id);
