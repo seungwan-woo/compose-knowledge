@@ -133,3 +133,24 @@ it('imports the currently published tips, preserving existing code fences', asyn
     expect(joined).toContain(name);
   }
 });
+
+it('tips-only refresh preserves previous official evidence without any upstream crawl', async () => {
+  const {root} = await setup();
+  const baseline=JSON.parse(await readFile(path.join(rootDir,'tests/fixtures/knowledge-input.json'),'utf8'));
+  const old=path.join(root,'old'), refreshed=path.join(root,'refresh');
+  await buildSnapshot(baseline,old);
+  run(process.execPath,[
+    path.join(rootDir,'scripts/refresh.mjs'),
+    '--out',refreshed,'--previous',old,
+    '--base-snapshot','b'.repeat(40),'--tips-only'
+  ],rootDir);
+  const former=await validateSnapshot(old);
+  const next=await validateSnapshot(path.join(refreshed,'corpus'));
+  for (const entry of former.index.entries) {
+    expect(next.index.entries.find(item=>item.id===entry.id)).toEqual(entry);
+  }
+  expect(next.index.entries.filter(entry=>entry.tags.includes('practical-tip')).length).toBeGreaterThan(4);
+  const report=JSON.parse(await readFile(path.join(refreshed,'report.json'),'utf8'));
+  expect(report.sources).toEqual([]);
+  expect(report.tips.length).toBeGreaterThanOrEqual(4);
+});

@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths:
       - 'docs/tips/**'
+      - '.github/workflows/refresh.yml'
+      - 'src/knowledge/daily-tips.ts'
+      - 'scripts/refresh.mjs'
   workflow_dispatch:
     inputs:
       publish:
