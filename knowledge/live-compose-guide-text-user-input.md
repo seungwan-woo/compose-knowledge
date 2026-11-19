@@ -306,6 +306,18 @@ sources:
       If the text overflows, it will wrap.
 
       If the text requires more lines, the field grows until it is maxHeightInLines tall, and scrolls vertically.
+  - id: live-compose-guide-text-user-input-m3-expressive-update-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/text/user-input#m3-expressive-update
+    revision: web:compose-guide-text-user-input:content@sha256:9ad77bfb26a27d2d76397c53a5e8b7c88c653a94893ce4a4959cfaac69bad524
+    sha256: d8f98b5ba0d55b91df23b71ddf6066816738a47e2d4da80f09a0d23ee40aa351
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      The expressive version of text fields remains functionally identical to the standard version, while offering a visual refresh with rounder corners and more tonal colors. In the expressive outlined variant, the label is displayed inside the container rather than in a cutout on the upper border.
+
+      Figure 6.
+
+      Expressive filled (1, left) and outlined (2, right) text fields.
   - id: live-compose-guide-text-user-input-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/text/user-input#main-content
@@ -316,8 +328,8 @@ sources:
   - id: live-compose-guide-text-user-input-manage-tf-state-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/text/user-input#manage-tf-state
-    revision: web:compose-guide-text-user-input:content@sha256:0bf31092d5fa006a6169b1630a1363a4009b4b42f6c31d2754b11722d7b786f6
-    sha256: 03911ec381e427ae8fb9457758041ee1cc4f85482d27e092ca57d7c3aad468ee
+    revision: web:compose-guide-text-user-input:content@sha256:9ad77bfb26a27d2d76397c53a5e8b7c88c653a94893ce4a4959cfaac69bad524
+    sha256: 988034a7bea3c96ab0b1d7a10524199b8c10d5f92d476f81a74a592d07d2e33e
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       TextField uses a dedicated state holder class called TextFieldState for its content and selection. TextFieldState is designed to be hoisted wherever it fits in your architecture. There are 2 main properties that are provided by TextFieldState:
@@ -349,6 +361,8 @@ sources:
       TextField
 
       with "Username" as the initial text.
+
+      Starting in Compose 1.13, rememberTextFieldState and TextFieldState.Saver save and restore formatted AnnotatedString styles, such as SpanStyle and ParagraphStyle, across configuration changes and process recreation. To save and restore custom annotations, such as StringAnnotation or LinkAnnotation, use AnnotatedString.Annotation.Saver.
   - id: live-compose-guide-text-user-input-modify-user-input-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/text/user-input#modify-user-input
@@ -358,8 +372,8 @@ sources:
     excerpt: The following sections describe how to modify user input. Input transformation lets you filter TextField input while the user is typing, while output transformation formats user input before it's displayed on-screen.
   - id: live-compose-guide-text-user-input-recommended-for-you-source
     kind: guide
-    resource: https://developer.android.com/develop/ui/compose/text/user-input#recommended_for_you
-    revision: web:compose-guide-text-user-input:content@sha256:0bf31092d5fa006a6169b1630a1363a4009b4b42f6c31d2754b11722d7b786f6
+    resource: https://developer.android.com/develop/ui/compose/text/user-input#recommended-for-you
+    revision: web:compose-guide-text-user-input:content@sha256:9ad77bfb26a27d2d76397c53a5e8b7c88c653a94893ce4a4959cfaac69bad524
     sha256: f2a27ccd32aa0c804ff3fd63133ac2752807fc7e8c9aac2853ccdc5f5139ce6c
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
@@ -432,6 +446,39 @@ sources:
               if (length > 8) insert(8, "-")
           }
       )StateBasedText.kt
+  - id: live-compose-guide-text-user-input-using-expressive-text-fields-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/text/user-input#using-expressive-text-fields
+    revision: web:compose-guide-text-user-input:content@sha256:9ad77bfb26a27d2d76397c53a5e8b7c88c653a94893ce4a4959cfaac69bad524
+    sha256: f986df3ff735a48b4a328fba818d2d139a15470a483b754a3fe47417c7cf41a1
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      For filled text fields, the only difference from using the standard version is passing TextFieldDefaults.roundedShape and TextFieldDefaults.tonalColors(). The following snippet demonstrates how to implement an expressive filled text field:
+
+      @Composable
+      fun TextFieldSample() {
+          TextField(
+              state = rememberTextFieldState(),
+              lineLimits = TextFieldLineLimits.SingleLine,
+              label = { Text("Label") },
+              shape = TextFieldDefaults.roundedShape,
+              colors = TextFieldDefaults.tonalColors(),
+          )
+      }TextField.kt
+
+      For outlined text fields, in addition to OutlinedTextFieldDefaults.roundedShape and OutlinedTextFieldDefaults.tonalColors(), set labelPosition to TextFieldLabelPosition.Inside(). The following snippet demonstrates how to implement an expressive outlined text field:
+
+      @Composable
+      fun OutlinedTextFieldSample() {
+          OutlinedTextField(
+              state = rememberTextFieldState(),
+              lineLimits = TextFieldLineLimits.SingleLine,
+              label = { Text("Label") },
+              shape = OutlinedTextFieldDefaults.roundedShape,
+              colors = OutlinedTextFieldDefaults.tonalColors(),
+              labelPosition = TextFieldLabelPosition.Inside(),
+          )
+      }TextField.kt
 compose:
   id: live-compose-guide-text-user-input
   artifact: androidx.compose.material3:material3
@@ -580,6 +627,15 @@ compose:
       sourceIds:
         - live-compose-guide-text-user-input-line-limits-source
       relatedIds: []
+    - id: live-compose-guide-text-user-input-m3-expressive-update
+      title: M3 Expressive update
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-text-user-input-m3-expressive-update-source
+      relatedIds: []
     - id: live-compose-guide-text-user-input-main-content
       title: Introduction
       aliases:
@@ -652,6 +708,17 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-text-user-input-text-field-buffer-source
+      relatedIds: []
+    - id: live-compose-guide-text-user-input-using-expressive-text-fields
+      title: Using expressive text fields
+      aliases:
+        - androidx.compose.material3.TextField
+        - androidx.compose.material3.OutlinedTextField
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-text-user-input-using-expressive-text-fields-source
       relatedIds: []
 ---
 
@@ -932,6 +999,16 @@ If the text requires more lines, the field grows until it is maxHeightInLines ta
 
 Sources: [live-compose-guide-text-user-input-line-limits-source](https://developer.android.com/develop/ui/compose/text/user-input#line-limits)
 
+## M3 Expressive update
+
+The expressive version of text fields remains functionally identical to the standard version, while offering a visual refresh with rounder corners and more tonal colors. In the expressive outlined variant, the label is displayed inside the container rather than in a cutout on the upper border.
+
+Figure 6.
+
+Expressive filled (1, left) and outlined (2, right) text fields.
+
+Sources: [live-compose-guide-text-user-input-m3-expressive-update-source](https://developer.android.com/develop/ui/compose/text/user-input#m3-expressive-update)
+
 ## Introduction
 
 TextField allows users to enter and modify text. This page describes how you can implement TextField, style TextField input, and configure other TextField options, like keyboard options and visually transforming user input.
@@ -970,6 +1047,8 @@ TextField
 
 with "Username" as the initial text.
 
+Starting in Compose 1.13, rememberTextFieldState and TextFieldState.Saver save and restore formatted AnnotatedString styles, such as SpanStyle and ParagraphStyle, across configuration changes and process recreation. To save and restore custom annotations, such as StringAnnotation or LinkAnnotation, use AnnotatedString.Annotation.Saver.
+
 Sources: [live-compose-guide-text-user-input-manage-tf-state-source](https://developer.android.com/develop/ui/compose/text/user-input#manage-tf-state)
 
 ## Modify user input
@@ -986,7 +1065,7 @@ State and Jetpack Compose
 
 Save UI state in Compose
 
-Sources: [live-compose-guide-text-user-input-recommended-for-you-source](https://developer.android.com/develop/ui/compose/text/user-input#recommended_for_you)
+Sources: [live-compose-guide-text-user-input-recommended-for-you-source](https://developer.android.com/develop/ui/compose/text/user-input#recommended-for-you)
 
 ## Style input with Brush API
 
@@ -1045,3 +1124,34 @@ TextField(
 )StateBasedText.kt
 
 Sources: [live-compose-guide-text-user-input-text-field-buffer-source](https://developer.android.com/develop/ui/compose/text/user-input#text-field-buffer)
+
+## Using expressive text fields
+
+For filled text fields, the only difference from using the standard version is passing TextFieldDefaults.roundedShape and TextFieldDefaults.tonalColors(). The following snippet demonstrates how to implement an expressive filled text field:
+
+@Composable
+fun TextFieldSample() {
+    TextField(
+        state = rememberTextFieldState(),
+        lineLimits = TextFieldLineLimits.SingleLine,
+        label = { Text("Label") },
+        shape = TextFieldDefaults.roundedShape,
+        colors = TextFieldDefaults.tonalColors(),
+    )
+}TextField.kt
+
+For outlined text fields, in addition to OutlinedTextFieldDefaults.roundedShape and OutlinedTextFieldDefaults.tonalColors(), set labelPosition to TextFieldLabelPosition.Inside(). The following snippet demonstrates how to implement an expressive outlined text field:
+
+@Composable
+fun OutlinedTextFieldSample() {
+    OutlinedTextField(
+        state = rememberTextFieldState(),
+        lineLimits = TextFieldLineLimits.SingleLine,
+        label = { Text("Label") },
+        shape = OutlinedTextFieldDefaults.roundedShape,
+        colors = OutlinedTextFieldDefaults.tonalColors(),
+        labelPosition = TextFieldLabelPosition.Inside(),
+    )
+}TextField.kt
+
+Sources: [live-compose-guide-text-user-input-using-expressive-text-fields-source](https://developer.android.com/develop/ui/compose/text/user-input#using-expressive-text-fields)

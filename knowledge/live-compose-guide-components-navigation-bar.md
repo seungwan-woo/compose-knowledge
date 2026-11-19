@@ -75,6 +75,48 @@ sources:
               AppNavHost(navController, startDestination, modifier = Modifier.padding(contentPadding))
           }
       }Navigation.kt
+  - id: live-compose-guide-components-navigation-bar-horizontal-items-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/navigation-bar#horizontal-items
+    revision: web:compose-guide-components-navigation-bar:content@sha256:3f9a795d2289262ce6270802dbaec018d6a698f395472ece76279253d1e63ed5
+    sha256: 9095ba14092d541fdbce872f939d6c504db745455c1f4491d782171aa7d8038a
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Use horizontal items in medium windows, such as on tablets. The following snippet demonstrates how to implement a ShortNavigationBar with horizontal items centered in the bar:
+
+      @Composable
+      fun ShortNavigationBarWithHorizontalItemsSample() {
+          var selectedItem by remember { mutableIntStateOf(0) }
+          val items = listOf("Songs", "Artists", "Playlists")
+
+          Column {
+              Text(
+                  "Note: this configuration is better displayed in medium screen sizes.",
+                  Modifier.padding(16.dp),
+              )
+
+              Spacer(Modifier.height(32.dp))
+
+              ShortNavigationBar(arrangement = ShortNavigationBarArrangement.Centered) {
+                  items.forEachIndexed { index, item ->
+                      ShortNavigationBarItem(
+                          iconPosition = NavigationItemIconPosition.Start,
+                          icon = {
+                              Icon(
+                                  painter = rememberVectorPainter(if (selectedItem == index) AppIcons.FavoriteFilled else AppIcons.Favorite),
+                                  contentDescription = null,
+                              )
+                          },
+                          label = { Text(item) },
+                          selected = selectedItem == index,
+                          onClick = { selectedItem = index },
+                      )
+                  }
+              }
+          }
+      }Navigation.kt
+
+      A short navigation bar with horizontal items.
   - id: live-compose-guide-components-navigation-bar-key-points-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/navigation-bar#key-points
@@ -93,6 +135,22 @@ sources:
       The onClick lambda of the NavigationBarItem updates the selectedDestination state to visually highlight the clicked item.
 
       The navigation logic calls the AppNavHost composable, passing the navController and startDestination, to display the actual content of the selected screen.
+  - id: live-compose-guide-components-navigation-bar-m3-expressive-update-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/navigation-bar#m3-expressive-update
+    revision: web:compose-guide-components-navigation-bar:content@sha256:3f9a795d2289262ce6270802dbaec018d6a698f395472ece76279253d1e63ed5
+    sha256: ee02ff58d2bb57f135f5bde416c36cc7cef0103e46bd6179da968b8f27f33521
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Material 3 Expressive introduces ShortNavigationBar and ShortNavigationBarItem as additional, flexible options alongside the standard NavigationBar.
+
+      Figure 3.
+
+      A flexible navigation bar.
+
+      For more information about the M3 Expressive updates for navigation bars, see the Material Design 3 navigation bar guidelines.
+
+      The navigation items in ShortNavigationBar can be arranged vertically or horizontally.
   - id: live-compose-guide-components-navigation-bar-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/navigation-bar#main-content
@@ -125,6 +183,38 @@ sources:
       Figure 2.
 
       A navigation bar that contains 3 destinations with associated icons: Songs, Album, and Playlist.
+  - id: live-compose-guide-components-navigation-bar-vertical-items-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/navigation-bar#vertical-items
+    revision: web:compose-guide-components-navigation-bar:content@sha256:3f9a795d2289262ce6270802dbaec018d6a698f395472ece76279253d1e63ed5
+    sha256: 77d148a4568e04dc402d56f6432ad4b3623c0ef6baee974d980c78828114de9a
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Use vertical items in compact windows, such as on mobile devices. The following snippet demonstrates how to implement a ShortNavigationBar with vertical items:
+
+      @Composable
+      fun ShortNavigationBarSample() {
+          var selectedItem by remember { mutableIntStateOf(0) }
+          val items = listOf("Songs", "Artists", "Playlists")
+
+          ShortNavigationBar {
+              items.forEachIndexed { index, item ->
+                  ShortNavigationBarItem(
+                      icon = {
+                          Icon(
+                              painter = rememberVectorPainter(if (selectedItem == index) AppIcons.FavoriteFilled else AppIcons.Favorite),
+                              contentDescription = null,
+                          )
+                      },
+                      label = { Text(item) },
+                      selected = selectedItem == index,
+                      onClick = { selectedItem = index },
+                  )
+              }
+          }
+      }Navigation.kt
+
+      A short navigation bar with vertical items.
 compose:
   id: live-compose-guide-components-navigation-bar
   artifact: androidx.compose.material3:material3
@@ -161,6 +251,15 @@ compose:
       sourceIds:
         - live-compose-guide-components-navigation-bar-example-top-source
       relatedIds: []
+    - id: live-compose-guide-components-navigation-bar-horizontal-items
+      title: Navigation bar with horizontal items
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-components-navigation-bar-horizontal-items-source
+      relatedIds: []
     - id: live-compose-guide-components-navigation-bar-key-points
       title: Key points
       aliases:
@@ -171,6 +270,16 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-components-navigation-bar-key-points-source
+      relatedIds: []
+    - id: live-compose-guide-components-navigation-bar-m3-expressive-update
+      title: M3 Expressive update
+      aliases:
+        - androidx.compose.material3.NavigationBar
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-components-navigation-bar-m3-expressive-update-source
       relatedIds: []
     - id: live-compose-guide-components-navigation-bar-main-content
       title: Introduction
@@ -189,6 +298,15 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-components-navigation-bar-result-source
+      relatedIds: []
+    - id: live-compose-guide-components-navigation-bar-vertical-items
+      title: Navigation bar with vertical items
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-components-navigation-bar-vertical-items-source
       relatedIds: []
 ---
 
@@ -259,6 +377,46 @@ fun NavigationBarExample(modifier: Modifier = Modifier) {
 
 Sources: [live-compose-guide-components-navigation-bar-example-top-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#example%3A-top)
 
+## Navigation bar with horizontal items
+
+Use horizontal items in medium windows, such as on tablets. The following snippet demonstrates how to implement a ShortNavigationBar with horizontal items centered in the bar:
+
+@Composable
+fun ShortNavigationBarWithHorizontalItemsSample() {
+    var selectedItem by remember { mutableIntStateOf(0) }
+    val items = listOf("Songs", "Artists", "Playlists")
+
+    Column {
+        Text(
+            "Note: this configuration is better displayed in medium screen sizes.",
+            Modifier.padding(16.dp),
+        )
+
+        Spacer(Modifier.height(32.dp))
+
+        ShortNavigationBar(arrangement = ShortNavigationBarArrangement.Centered) {
+            items.forEachIndexed { index, item ->
+                ShortNavigationBarItem(
+                    iconPosition = NavigationItemIconPosition.Start,
+                    icon = {
+                        Icon(
+                            painter = rememberVectorPainter(if (selectedItem == index) AppIcons.FavoriteFilled else AppIcons.Favorite),
+                            contentDescription = null,
+                        )
+                    },
+                    label = { Text(item) },
+                    selected = selectedItem == index,
+                    onClick = { selectedItem = index },
+                )
+            }
+        }
+    }
+}Navigation.kt
+
+A short navigation bar with horizontal items.
+
+Sources: [live-compose-guide-components-navigation-bar-horizontal-items-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#horizontal-items)
+
 ## Key points
 
 NavigationBar displays a collection of items, with each item corresponding to a Destination.
@@ -274,6 +432,20 @@ The onClick lambda of the NavigationBarItem updates the selectedDestination stat
 The navigation logic calls the AppNavHost composable, passing the navController and startDestination, to display the actual content of the selected screen.
 
 Sources: [live-compose-guide-components-navigation-bar-key-points-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#key-points)
+
+## M3 Expressive update
+
+Material 3 Expressive introduces ShortNavigationBar and ShortNavigationBarItem as additional, flexible options alongside the standard NavigationBar.
+
+Figure 3.
+
+A flexible navigation bar.
+
+For more information about the M3 Expressive updates for navigation bars, see the Material Design 3 navigation bar guidelines.
+
+The navigation items in ShortNavigationBar can be arranged vertically or horizontally.
+
+Sources: [live-compose-guide-components-navigation-bar-m3-expressive-update-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#m3-expressive-update)
 
 ## Introduction
 
@@ -302,3 +474,33 @@ Figure 2.
 A navigation bar that contains 3 destinations with associated icons: Songs, Album, and Playlist.
 
 Sources: [live-compose-guide-components-navigation-bar-result-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#result)
+
+## Navigation bar with vertical items
+
+Use vertical items in compact windows, such as on mobile devices. The following snippet demonstrates how to implement a ShortNavigationBar with vertical items:
+
+@Composable
+fun ShortNavigationBarSample() {
+    var selectedItem by remember { mutableIntStateOf(0) }
+    val items = listOf("Songs", "Artists", "Playlists")
+
+    ShortNavigationBar {
+        items.forEachIndexed { index, item ->
+            ShortNavigationBarItem(
+                icon = {
+                    Icon(
+                        painter = rememberVectorPainter(if (selectedItem == index) AppIcons.FavoriteFilled else AppIcons.Favorite),
+                        contentDescription = null,
+                    )
+                },
+                label = { Text(item) },
+                selected = selectedItem == index,
+                onClick = { selectedItem = index },
+            )
+        }
+    }
+}Navigation.kt
+
+A short navigation bar with vertical items.
+
+Sources: [live-compose-guide-components-navigation-bar-vertical-items-source](https://developer.android.com/develop/ui/compose/components/navigation-bar#vertical-items)

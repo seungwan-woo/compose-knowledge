@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-coroutine-normal-child-cancellation-source
     kind: code
-    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt
-    revision: 1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7
+    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt
+    revision: 7f4d6cf2414937b50291df6169a69afbaf9c5a20
     path: kotlinx-coroutines-core/common/src/CoroutineScope.kt
     startLine: 378
     endLine: 383
@@ -25,8 +25,8 @@ sources:
        * It does not affect the parent or sibling coroutines and is not considered a failure.
   - id: contract-coroutine-parent-scope-lifetime-source
     kind: code
-    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt
-    revision: 1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7
+    resource: https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt
+    revision: 7f4d6cf2414937b50291df6169a69afbaf9c5a20
     path: kotlinx-coroutines-core/common/src/CoroutineScope.kt
     startLine: 22
     endLine: 26
@@ -69,4 +69,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: Structured concurrency nests child lifetimes within their parent scope: cancelling the scope cancels its coroutines, and the scope cannot complete until its children complete. By contrast, a child ending with CancellationException cancels itself and its children without cancelling its parent or siblings. Limitation: this does not claim the same isolation for other exception types or for detached work outside that scope.
 
-Sources: [contract-coroutine-parent-scope-lifetime-source](https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/1e327d7e4afe5ecbc6a07197d0d79cc1fa8690b7/kotlinx-coroutines-core/common/src/CoroutineScope.kt)
+Sources: [contract-coroutine-parent-scope-lifetime-source](https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt)

@@ -16,11 +16,11 @@ sources:
   - id: live-compose-menus-api-surface-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/menu#api-surface
-    revision: web:compose-menus:content@sha256:e1a5a233065f286be7c4ec49359fbf1c3b08592ad362aac52b30b31abca3597a
-    sha256: e587d5e7c21bfc6b24873311f9899483d92a0ee558c10109ccaaf04edde9a66f
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: f2a5506a293d85b2d130ebc8c6a1d6fe4060e936107aa25b4d801ed45b88b851
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
-      Use DropdownMenu, DropdownMenuItem, and the IconButton components to implement a custom drop-down menu. The DropdownMenu and DropdownMenuItem components are used to display the menu items, while the IconButton is the trigger to display or hide the drop-down menu.
+      Use DropdownMenu, DropdownMenuItem, IconButton, and ExposedDropdownMenuBox components to implement drop-down menus. The DropdownMenu and DropdownMenuItem components are used to display the menu items, while IconButton or other components can trigger the menu display. ExposedDropdownMenuBox is used to create a menu attached to a text field.
 
       The key parameters for the DropdownMenu component include the following:
 
@@ -221,6 +221,20 @@ sources:
       The DropdownMenuItem composable represents selectable items in the drop-down menu.
 
       An IconButton triggers the expansion and collapse of the menu.
+  - id: live-compose-menus-m3-expressive-update-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#m3-expressive-update
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: 0ad0183537ce87bc259fabfb3b758a5c31436abc12af6d90e7443c4c6d111660
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Material 3 Expressive introduces DropdownMenuPopup, DropdownMenuGroup, and CheckableDropdownMenuItem as additional options alongside DropdownMenu and DropdownMenuItem to create segmented menus with grouped items, gaps, and checkable states.
+
+      Figure 5.
+
+      Material 3 Expressive vertical menu variations with gaps (1, left) and dividers (2, right).
+
+      For more information about the M3 Expressive updates for menus, see the Material Design 3 menus guidelines.
   - id: live-compose-menus-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/menu#main-content
@@ -267,6 +281,234 @@ sources:
       Figure 2.
 
       A minimal drop-down menu with only two options.
+  - id: live-compose-menus-segmented-menus-2-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#segmented-menus
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: 5416b449802db3b530ba56e92f12c27c236ae9bfb036eec483235303e7806299
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      groupLabels.size
+                  groupLabels.fastForEachIndexed { groupIndex, label ->
+                      DropdownMenuGroup(
+                          shapes = MenuDefaults.groupShape(groupIndex, groupCount),
+                          interactionSource = groupInteractionSource,
+                      ) {
+                          MenuDefaults.DropdownMenuGroupLabel { Text(label) }
+                          HorizontalDivider(modifier = Modifier.padding(MenuDefaults.HorizontalDividerPadding))
+                          val groupItemCount = groupItemLabels[groupIndex].size
+                          groupItemLabels[groupIndex].fastForEachIndexed { itemIndex, itemLabel ->
+                              CheckableDropdownMenuItem(
+                                  text = { Text(itemLabel) },
+                                  supportingText =
+                                      groupItemSupportingText[groupIndex][itemIndex]?.let { supportingText ->
+                                          { Text(supportingText) }
+                                      },
+                                  shapes = MenuDefaults.itemShape(itemIndex, groupItemCount),
+                                  leadingIcon =
+                                      groupItemLeadingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                          {
+                                              Icon(
+                                                  painter = rememberVectorPainter(iconData),
+                                                  modifier = Modifier.size(MenuDefaults.LeadingIconSize),
+                                                  contentDescription = null,
+                                              )
+                                          }
+                                      },
+                                  checkedLeadingIcon = {
+                                      Icon(
+                                          painter = rememberVectorPainter(groupItemCheckedLeadingIcons[groupIndex][itemIndex]),
+                                          modifier = Modifier.size(MenuDefaults.LeadingIconSize),
+                                          contentDescription = null,
+                                      )
+                                  },
+                                  trailingContent =
+                                      if
+  - id: live-compose-menus-segmented-menus-3-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#segmented-menus
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: 5a7dec6d1af68ce071bda0e15dcebf363f0e33599f80fa22e74aada626e55165
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      (checked[groupIndex][itemIndex]) {
+                                          groupItemCheckedTrailingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                              {
+                                                  Icon(
+                                                      painter = rememberVectorPainter(iconData),
+                                                      modifier = Modifier.size(MenuDefaults.TrailingIconSize),
+                                                      contentDescription = null,
+                                                  )
+                                              }
+                                          }
+                                      } else {
+                                          groupItemTrailingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                              {
+                                                  Icon(
+                                                      painter = rememberVectorPainter(iconData),
+                                                      modifier = Modifier.size(MenuDefaults.TrailingIconSize),
+                                                      contentDescription = null,
+                                                  )
+                                              }
+                                          }
+                                      },
+                                  checked = checked[groupIndex][itemIndex],
+                                  onCheckedChange = { checked[groupIndex][itemIndex] = it },
+                              )
+                          }
+                      }
+
+                      if (groupIndex != groupCount - 1) {
+                          Spacer(Modifier.height(MenuDefaults.GroupSpacing))
+                      }
+                  }
+                  if (checked.last().last()) {
+                      DropdownMenuButtonGroup()
+                  }
+              }
+          }
+      }
+
+      @Composable
+      private fun DropdownMenuButtonGroup() {
+          ButtonGroup(
+              overflowIndicator = { menuState -> ButtonGroupDefaults.OverflowIndicator(menuState) },
+              modifier = Modifier.fillMaxWidth(),
+              horizontalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterHorizontally),
+          ) {
+              customItem(
+                  buttonGroupContent = {
+                      FilledIconButton(
+  - id: live-compose-menus-segmented-menus-4-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#segmented-menus
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: 638622e7917698856d607702a7ec3769b7f3f527a3928db749a5983e64c4c9de
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      onClick = {},
+                          colors =
+                              IconButtonDefaults.filledIconButtonColors(
+                                  containerColor = MenuDefaults.groupStandardContainerColor
+                              ),
+                      ) {
+                          Icon(painter = rememberVectorPainter(AppIcons.ThumbUp), contentDescription = "Localized description")
+                      }
+                  },
+                  menuContent = {
+                      DropdownMenuItem(
+                          leadingIcon = {
+                              Icon(painter = rememberVectorPainter(AppIcons.ThumbUp), contentDescription = null)
+                          },
+                          text = { Text("Thumbs up") },
+                          onClick = {},
+                      )
+                  },
+              )
+
+              customItem(
+                  buttonGroupContent = {
+                      FilledIconButton(
+                          onClick = {},
+                          colors =
+                              IconButtonDefaults.filledIconButtonColors(
+                                  containerColor = MenuDefaults.groupStandardContainerColor
+                              ),
+                      ) {
+                          Icon(painter = rememberVectorPainter(AppIcons.ThumbDown), contentDescription = "Localized description")
+                      }
+                  },
+                  menuContent = {
+                      DropdownMenuItem(
+                          leadingIcon = {
+                              Icon(painter = rememberVectorPainter(AppIcons.ThumbDown), contentDescription = null)
+                          },
+                          text = { Text("Thumbs down") },
+                          onClick = {},
+                      )
+                  },
+              )
+
+              customItem(
+                  buttonGroupContent = {
+                      FilledIconButton(
+                          onClick = {},
+                          colors =
+                              IconButtonDefaults.filledIconButtonColors(
+                                  containerColor = MenuDefaults.groupStandardContainerColor
+                              ),
+                      ) {
+                          Icon(painter = rememberVectorPainter(AppIcons.TagFaces), contentDescription = "Localized description")
+                      }
+                  },
+                  menuContent = {
+                      DropdownMenuItem(
+  - id: live-compose-menus-segmented-menus-5-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#segmented-menus
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: b9bbe6e9723296a41fdba1de8cafcb2e0f5285245f41071cf4c14db9ee0e428b
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      leadingIcon = {
+                              Icon(painter = rememberVectorPainter(AppIcons.TagFaces), contentDescription = null)
+                          },
+                          text = { Text("Emotes") },
+                          onClick = {},
+                      )
+                  },
+              )
+          }
+      }Menus.kt
+
+      A segmented drop-down menu.
+  - id: live-compose-menus-segmented-menus-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/menu#segmented-menus
+    revision: web:compose-menus:content@sha256:de5f62e67cadbd1b4c83088d294349f51969cfdd6d6206721cee7b3ecae28c1a
+    sha256: 9f0e55f284f4fae38e112032168302f4642eb5528531d3cc7e2d7b37aadb72f9
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      Segmented menus group related actions into distinct visual sections separated by gaps or dividers. The following snippet demonstrates how to implement a segmented drop-down menu with DropdownMenuPopup, DropdownMenuGroup, and CheckableDropdownMenuItem:
+
+      @OptIn(ExperimentalMaterial3Api::class)
+      @Composable
+      fun GroupedMenuSample() {
+          val groupInteractionSource = remember { MutableInteractionSource() }
+          var expanded by remember { mutableStateOf(false) }
+          val groupLabels = listOf("Modification", "Navigation")
+          val groupItemLabels = listOf(listOf("Edit", "Settings"), listOf("Home", "More Options"))
+          val groupItemLeadingIcons =
+              listOf(listOf(AppIcons.Edit, AppIcons.Settings), listOf(null, AppIcons.Info))
+          val groupItemCheckedLeadingIcons =
+              listOf(
+                  listOf(AppIcons.EditFilled, AppIcons.SettingsFilled),
+                  listOf(AppIcons.Check, AppIcons.InfoFilled),
+              )
+          val groupItemTrailingIcons: List<List<ImageVector?>> =
+              listOf(listOf(null, null), listOf(AppIcons.Home, AppIcons.MoreVert))
+          val groupItemCheckedTrailingIcons: List<List<ImageVector?>> =
+              listOf(listOf(null, null), listOf(AppIcons.HomeFilled, AppIcons.MoreVert))
+          val groupItemSupportingText: List<List<String?>> =
+              listOf(listOf("Edit mode", null), listOf(null, "Opens menu"))
+          val checked = remember {
+              listOf(mutableStateListOf(false, false), mutableStateListOf(false, false))
+          }
+
+          Box(modifier = Modifier.fillMaxSize().wrapContentSize(Alignment.TopStart)) {
+              // Icon button should have a tooltip associated with it for a11y.
+              TooltipBox(
+                  positionProvider =
+                      TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above),
+                  tooltip = { PlainTooltip { Text("Localized description") } },
+                  state = rememberTooltipState(),
+              ) {
+                  IconButton(onClick = { expanded = true }) {
+                      Icon(painter = rememberVectorPainter(AppIcons.MoreVert), contentDescription = "Localized description")
+                  }
+              }
+              DropdownMenuPopup(expanded = expanded, onDismissRequest = { expanded = false }) {
+                  val groupCount =
 compose:
   id: live-compose-menus
   artifact: androidx.compose.material3:material3
@@ -353,6 +595,15 @@ compose:
       sourceIds:
         - live-compose-menus-key-points-longer-source
       relatedIds: []
+    - id: live-compose-menus-m3-expressive-update
+      title: M3 Expressive update
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-m3-expressive-update-source
+      relatedIds: []
     - id: live-compose-menus-main-content
       title: Introduction
       aliases: []
@@ -389,6 +640,51 @@ compose:
       sourceIds:
         - live-compose-menus-result-longer-source
       relatedIds: []
+    - id: live-compose-menus-segmented-menus
+      title: Segmented menus
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-segmented-menus-source
+      relatedIds: []
+    - id: live-compose-menus-segmented-menus-2
+      title: Segmented menus
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-segmented-menus-2-source
+      relatedIds: []
+    - id: live-compose-menus-segmented-menus-3
+      title: Segmented menus
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-segmented-menus-3-source
+      relatedIds: []
+    - id: live-compose-menus-segmented-menus-4
+      title: Segmented menus
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-segmented-menus-4-source
+      relatedIds: []
+    - id: live-compose-menus-segmented-menus-5
+      title: Segmented menus
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-menus-segmented-menus-5-source
+      relatedIds: []
 ---
 
 # Compose menus
@@ -403,7 +699,7 @@ Sources: [live-compose-menus-additional-resources-source](https://developer.andr
 
 ## API surface
 
-Use DropdownMenu, DropdownMenuItem, and the IconButton components to implement a custom drop-down menu. The DropdownMenu and DropdownMenuItem components are used to display the menu items, while the IconButton is the trigger to display or hide the drop-down menu.
+Use DropdownMenu, DropdownMenuItem, IconButton, and ExposedDropdownMenuBox components to implement drop-down menus. The DropdownMenu and DropdownMenuItem components are used to display the menu items, while IconButton or other components can trigger the menu display. ExposedDropdownMenuBox is used to create a menu attached to a text field.
 
 The key parameters for the DropdownMenu component include the following:
 
@@ -593,6 +889,18 @@ The onClick lambda within each DropdownMenuItem lets you define the action perfo
 
 Sources: [live-compose-menus-key-points-longer-source](https://developer.android.com/develop/ui/compose/components/menu#key-points-longer)
 
+## M3 Expressive update
+
+Material 3 Expressive introduces DropdownMenuPopup, DropdownMenuGroup, and CheckableDropdownMenuItem as additional options alongside DropdownMenu and DropdownMenuItem to create segmented menus with grouped items, gaps, and checkable states.
+
+Figure 5.
+
+Material 3 Expressive vertical menu variations with gaps (1, left) and dividers (2, right).
+
+For more information about the M3 Expressive updates for menus, see the Material Design 3 menus guidelines.
+
+Sources: [live-compose-menus-m3-expressive-update-source](https://developer.android.com/develop/ui/compose/components/menu#m3-expressive-update)
+
 ## Introduction
 
 Drop-down menus let users click an icon, text field, or other component, and then select from a list of options on a temporary surface. This guide describes how to create both basic menus and more complex menus with dividers and icons.
@@ -630,3 +938,221 @@ Figure 3.
 A long, scrollable drop-down menu.
 
 Sources: [live-compose-menus-result-longer-source](https://developer.android.com/develop/ui/compose/components/menu#result-longer)
+
+## Segmented menus
+
+Segmented menus group related actions into distinct visual sections separated by gaps or dividers. The following snippet demonstrates how to implement a segmented drop-down menu with DropdownMenuPopup, DropdownMenuGroup, and CheckableDropdownMenuItem:
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun GroupedMenuSample() {
+    val groupInteractionSource = remember { MutableInteractionSource() }
+    var expanded by remember { mutableStateOf(false) }
+    val groupLabels = listOf("Modification", "Navigation")
+    val groupItemLabels = listOf(listOf("Edit", "Settings"), listOf("Home", "More Options"))
+    val groupItemLeadingIcons =
+        listOf(listOf(AppIcons.Edit, AppIcons.Settings), listOf(null, AppIcons.Info))
+    val groupItemCheckedLeadingIcons =
+        listOf(
+            listOf(AppIcons.EditFilled, AppIcons.SettingsFilled),
+            listOf(AppIcons.Check, AppIcons.InfoFilled),
+        )
+    val groupItemTrailingIcons: List<List<ImageVector?>> =
+        listOf(listOf(null, null), listOf(AppIcons.Home, AppIcons.MoreVert))
+    val groupItemCheckedTrailingIcons: List<List<ImageVector?>> =
+        listOf(listOf(null, null), listOf(AppIcons.HomeFilled, AppIcons.MoreVert))
+    val groupItemSupportingText: List<List<String?>> =
+        listOf(listOf("Edit mode", null), listOf(null, "Opens menu"))
+    val checked = remember {
+        listOf(mutableStateListOf(false, false), mutableStateListOf(false, false))
+    }
+
+    Box(modifier = Modifier.fillMaxSize().wrapContentSize(Alignment.TopStart)) {
+        // Icon button should have a tooltip associated with it for a11y.
+        TooltipBox(
+            positionProvider =
+                TooltipDefaults.rememberTooltipPositionProvider(TooltipAnchorPosition.Above),
+            tooltip = { PlainTooltip { Text("Localized description") } },
+            state = rememberTooltipState(),
+        ) {
+            IconButton(onClick = { expanded = true }) {
+                Icon(painter = rememberVectorPainter(AppIcons.MoreVert), contentDescription = "Localized description")
+            }
+        }
+        DropdownMenuPopup(expanded = expanded, onDismissRequest = { expanded = false }) {
+            val groupCount =
+
+Sources: [live-compose-menus-segmented-menus-source](https://developer.android.com/develop/ui/compose/components/menu#segmented-menus)
+
+## Segmented menus
+
+groupLabels.size
+            groupLabels.fastForEachIndexed { groupIndex, label ->
+                DropdownMenuGroup(
+                    shapes = MenuDefaults.groupShape(groupIndex, groupCount),
+                    interactionSource = groupInteractionSource,
+                ) {
+                    MenuDefaults.DropdownMenuGroupLabel { Text(label) }
+                    HorizontalDivider(modifier = Modifier.padding(MenuDefaults.HorizontalDividerPadding))
+                    val groupItemCount = groupItemLabels[groupIndex].size
+                    groupItemLabels[groupIndex].fastForEachIndexed { itemIndex, itemLabel ->
+                        CheckableDropdownMenuItem(
+                            text = { Text(itemLabel) },
+                            supportingText =
+                                groupItemSupportingText[groupIndex][itemIndex]?.let { supportingText ->
+                                    { Text(supportingText) }
+                                },
+                            shapes = MenuDefaults.itemShape(itemIndex, groupItemCount),
+                            leadingIcon =
+                                groupItemLeadingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                    {
+                                        Icon(
+                                            painter = rememberVectorPainter(iconData),
+                                            modifier = Modifier.size(MenuDefaults.LeadingIconSize),
+                                            contentDescription = null,
+                                        )
+                                    }
+                                },
+                            checkedLeadingIcon = {
+                                Icon(
+                                    painter = rememberVectorPainter(groupItemCheckedLeadingIcons[groupIndex][itemIndex]),
+                                    modifier = Modifier.size(MenuDefaults.LeadingIconSize),
+                                    contentDescription = null,
+                                )
+                            },
+                            trailingContent =
+                                if
+
+Sources: [live-compose-menus-segmented-menus-2-source](https://developer.android.com/develop/ui/compose/components/menu#segmented-menus)
+
+## Segmented menus
+
+(checked[groupIndex][itemIndex]) {
+                                    groupItemCheckedTrailingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                        {
+                                            Icon(
+                                                painter = rememberVectorPainter(iconData),
+                                                modifier = Modifier.size(MenuDefaults.TrailingIconSize),
+                                                contentDescription = null,
+                                            )
+                                        }
+                                    }
+                                } else {
+                                    groupItemTrailingIcons[groupIndex][itemIndex]?.let { iconData ->
+                                        {
+                                            Icon(
+                                                painter = rememberVectorPainter(iconData),
+                                                modifier = Modifier.size(MenuDefaults.TrailingIconSize),
+                                                contentDescription = null,
+                                            )
+                                        }
+                                    }
+                                },
+                            checked = checked[groupIndex][itemIndex],
+                            onCheckedChange = { checked[groupIndex][itemIndex] = it },
+                        )
+                    }
+                }
+
+                if (groupIndex != groupCount - 1) {
+                    Spacer(Modifier.height(MenuDefaults.GroupSpacing))
+                }
+            }
+            if (checked.last().last()) {
+                DropdownMenuButtonGroup()
+            }
+        }
+    }
+}
+
+@Composable
+private fun DropdownMenuButtonGroup() {
+    ButtonGroup(
+        overflowIndicator = { menuState -> ButtonGroupDefaults.OverflowIndicator(menuState) },
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterHorizontally),
+    ) {
+        customItem(
+            buttonGroupContent = {
+                FilledIconButton(
+
+Sources: [live-compose-menus-segmented-menus-3-source](https://developer.android.com/develop/ui/compose/components/menu#segmented-menus)
+
+## Segmented menus
+
+onClick = {},
+                    colors =
+                        IconButtonDefaults.filledIconButtonColors(
+                            containerColor = MenuDefaults.groupStandardContainerColor
+                        ),
+                ) {
+                    Icon(painter = rememberVectorPainter(AppIcons.ThumbUp), contentDescription = "Localized description")
+                }
+            },
+            menuContent = {
+                DropdownMenuItem(
+                    leadingIcon = {
+                        Icon(painter = rememberVectorPainter(AppIcons.ThumbUp), contentDescription = null)
+                    },
+                    text = { Text("Thumbs up") },
+                    onClick = {},
+                )
+            },
+        )
+
+        customItem(
+            buttonGroupContent = {
+                FilledIconButton(
+                    onClick = {},
+                    colors =
+                        IconButtonDefaults.filledIconButtonColors(
+                            containerColor = MenuDefaults.groupStandardContainerColor
+                        ),
+                ) {
+                    Icon(painter = rememberVectorPainter(AppIcons.ThumbDown), contentDescription = "Localized description")
+                }
+            },
+            menuContent = {
+                DropdownMenuItem(
+                    leadingIcon = {
+                        Icon(painter = rememberVectorPainter(AppIcons.ThumbDown), contentDescription = null)
+                    },
+                    text = { Text("Thumbs down") },
+                    onClick = {},
+                )
+            },
+        )
+
+        customItem(
+            buttonGroupContent = {
+                FilledIconButton(
+                    onClick = {},
+                    colors =
+                        IconButtonDefaults.filledIconButtonColors(
+                            containerColor = MenuDefaults.groupStandardContainerColor
+                        ),
+                ) {
+                    Icon(painter = rememberVectorPainter(AppIcons.TagFaces), contentDescription = "Localized description")
+                }
+            },
+            menuContent = {
+                DropdownMenuItem(
+
+Sources: [live-compose-menus-segmented-menus-4-source](https://developer.android.com/develop/ui/compose/components/menu#segmented-menus)
+
+## Segmented menus
+
+leadingIcon = {
+                        Icon(painter = rememberVectorPainter(AppIcons.TagFaces), contentDescription = null)
+                    },
+                    text = { Text("Emotes") },
+                    onClick = {},
+                )
+            },
+        )
+    }
+}Menus.kt
+
+A segmented drop-down menu.
+
+Sources: [live-compose-menus-segmented-menus-5-source](https://developer.android.com/develop/ui/compose/components/menu#segmented-menus)

@@ -53,12 +53,12 @@ sources:
       import androidx.compose.foundation.text.input.KeyboardActionHandler
   - id: live-androidx-material3-material3-material3-textfield-lines-106-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
     startLine: 106
     endLine: 140
-    sha256: 1a0fc0579a3365e23c073e7254fdef9d1ffb8a60c4ac52b4029b316ba5de4998
+    sha256: 7da86c8ec443ca158ef774d7a55e602699810c49b0e24919edcd64c1ead5eaf5
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
        * You may provide a placeholder:
@@ -88,6 +88,27 @@ sources:
        * Hiding a software keyboard on IME action performed:
        *
        * @sample androidx.compose.material3.samples.TextFieldWithHideKeyboardOnImeAction
+       *
+       * Autofill services don't receive the [label] text. To tell them what the field is for, set
+       * [contentType][androidx.compose.ui.autofill.contentType] on the [modifier] for standard field
+       * types, such as email addresses:
+       *
+       * @sample androidx.compose.material3.samples.TextFieldWithContentType
+       *
+       * For other fields, set [hintText][androidx.compose.ui.semantics.hintText] on the [modifier] and
+  - id: live-androidx-material3-material3-material3-textfield-lines-141-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 141
+    endLine: 168
+    sha256: da8e51c76e600dcd697f54e48faf037784b6e6997e2ac1b6d88a05d1ffb6bd78
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+       * hide the [label] from accessibility services, which also announce the hint:
+       *
+       * @sample androidx.compose.material3.samples.OutlinedTextFieldWithHintText
        * @param state [TextFieldState] object that holds the internal editing state of the text field.
        * @param modifier the [Modifier] to be applied to this text field.
        * @param enabled controls the enabled state of this text field. When `false`, this component will
@@ -96,16 +117,6 @@ sources:
        * @param readOnly controls the editable state of the text field. When `true`, the text field cannot
        *   be modified. However, a user can focus it and copy text from it. Read-only text fields are
        *   usually used to display pre-filled forms that a user cannot edit.
-  - id: live-androidx-material3-material3-material3-textfield-lines-141-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 141
-    endLine: 167
-    sha256: 7ed2113556b10568ce36a68eede8ae7d03a210e2d52305469db3c18327c0786f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param textStyle the style to be applied to the input text. Defaults to [LocalTextStyle].
        * @param labelPosition the position of the label. See [TextFieldLabelPosition].
        * @param label the optional label to be displayed with this text field. The default text style uses
@@ -123,6 +134,16 @@ sources:
        *   components of the text field will be displayed in an error color, and an error will be
        *   announced to accessibility services.
        * @param inputTransformation optional [InputTransformation] that will be used to transform changes
+  - id: live-androidx-material3-material3-material3-textfield-lines-169-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 169
+    endLine: 193
+    sha256: 79dd545642a130f56c46ec284e28ea16a30dc8e85fe9de611d167e807893ec1b
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        *   to the [TextFieldState] made by the user. The transformation will be applied to changes made by
        *   hardware and software keyboard events, pasting or dropping text, accessibility services, and
        *   tests. The transformation will _not_ be applied when changing the [state] programmatically, or
@@ -133,16 +154,6 @@ sources:
        *   the text field are presented.
        * @param keyboardOptions software keyboard options that contains configuration such as
        *   [KeyboardType] and [ImeAction].
-  - id: live-androidx-material3-material3-material3-textfield-lines-168-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 168
-    endLine: 191
-    sha256: f470055848b370cd4486f689cd9769c2ab7ba7ab090e9e54a8d04f74fe4aa52c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param onKeyboardAction called when the user presses the action button in the input method editor
        *   (IME), or by pressing the enter key on a hardware keyboard. By default this parameter is null,
        *   and would execute the default behavior for a received IME Action e.g., [ImeAction.Done] would
@@ -158,6 +169,16 @@ sources:
        *   paragraph information, size of the text, baselines and other details. [Density] scope is the
        *   one that was used while creating the given text layout.
        * @param scrollState scroll state that manages either horizontal or vertical scroll of the text
+  - id: live-androidx-material3-material3-material3-textfield-lines-194-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 194
+    endLine: 228
+    sha256: 0654a5e14c7c64e8b78c5bb88f8e7a77cdc2944e6c0d07036157dfd2af981c43
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        *   field. If [lineLimits] is [SingleLine], this text field is treated as single line with
        *   horizontal scroll behavior. Otherwise, the text field becomes vertically scrollable.
        * @param shape defines the shape of this text field's container.
@@ -167,16 +188,6 @@ sources:
        *   surrounding elements of the text field. Note that the padding values may not be respected if
        *   they are incompatible with the text field's size constraints or layout. See
        *   [TextFieldDefaults.contentPaddingWithLabel] and [TextFieldDefaults.contentPaddingWithoutLabel].
-  - id: live-androidx-material3-material3-material3-textfield-lines-192-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 192
-    endLine: 226
-    sha256: d3d7ec951533759f4ee1a6ae0a70f9b735904ca178439ac881abf84bac206acf
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
        *   emitting [Interaction]s for this text field. You can use this to change the text field's
        *   appearance or preview the text field in different states. Note that if `null` is provided,
@@ -203,6 +214,16 @@ sources:
           outputTransformation: OutputTransformation? = null,
           keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
           onKeyboardAction: KeyboardActionHandler? = null,
+  - id: live-androidx-material3-material3-material3-textfield-lines-229-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 229
+    endLine: 263
+    sha256: 16d11d89ea9d1abb393fff636a77d72e3b4076582db260402b008bcd2498be4e
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           lineLimits: TextFieldLineLimits = TextFieldLineLimits.Default,
           onTextLayout: (Density.(getResult: () -> TextLayoutResult?) -> Unit)? = null,
           scrollState: ScrollState = rememberScrollState(),
@@ -212,16 +233,6 @@ sources:
           interactionSource: MutableInteractionSource? = null,
       ) {
           @Suppress("NAME_SHADOWING")
-  - id: live-androidx-material3-material3-material3-textfield-lines-227-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 227
-    endLine: 261
-    sha256: 1c42c96a412694b2c997fc56ce56efb56f3099ad72334d0d8d0f16d2b58ed11e
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           val interactionSource = interactionSource ?: remember { MutableInteractionSource() }
           // If color is not provided via the text style, use content color as a default
           val textColor =
@@ -248,6 +259,16 @@ sources:
                   readOnly = readOnly,
                   textStyle = mergedTextStyle,
                   cursorBrush = SolidColor(colors.cursorColor(isError)),
+  - id: live-androidx-material3-material3-material3-textfield-lines-264-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 264
+    endLine: 298
+    sha256: bb1929ca0dd9dcd7aed9d8ea3ca08b40a637e1a5a3474731b96676424e7cc532
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   keyboardOptions = keyboardOptions,
                   onKeyboardAction = onKeyboardAction,
                   lineLimits = lineLimits,
@@ -257,16 +278,6 @@ sources:
                   outputTransformation = outputTransformation,
                   scrollState = scrollState,
                   decorator =
-  - id: live-androidx-material3-material3-material3-textfield-lines-262-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 262
-    endLine: 296
-    sha256: 8bfd5e0fd3bd17b616055507107e4238ea034350a2e1aa41ad13b287e861c5ce
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       TextFieldDefaults.decorator(
                           state = state,
                           enabled = enabled,
@@ -293,6 +304,16 @@ sources:
                                   shape = shape,
                               )
                           },
+  - id: live-androidx-material3-material3-material3-textfield-lines-299-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 299
+    endLine: 333
+    sha256: 619f49464b6e84e8220bbbc3601e7cb676ec5fe5ccc08102fa3ad5249aeccd86
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                       ),
               )
           }
@@ -302,16 +323,6 @@ sources:
        * [Material Design filled text field](https://m3.material.io/components/text-fields/overview)
        *
        * Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.
-  - id: live-androidx-material3-material3-material3-textfield-lines-297-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 297
-    endLine: 327
-    sha256: e9993e8415d654af0ce89df7af2e798f7f5d6a6664c01a7a266ed1d2ee4b247d
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * Filled text fields have more visual emphasis than outlined text fields, making them stand out
        * when surrounded by other content and components.
        *
@@ -338,21 +349,21 @@ sources:
        *   [Typography.bodySmall] when minimized and [Typography.bodyLarge] when expanded.
        * @param placeholder the optional placeholder to be displayed when the text field is in focus and
        *   the input text is empty. The default text style for internal [Text] is [Typography.bodyLarge]
+  - id: live-androidx-material3-material3-material3-textfield-lines-334-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 334
+    endLine: 360
+    sha256: 92e3e089b5227d400f49b25042394fda5e90dadc4743313f99dfccdb2ca7e9a0
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * @param leadingIcon the optional leading icon to be displayed at the beginning of the text field
        *   container
        * @param trailingIcon the optional trailing icon to be displayed at the end of the text field
        *   container
        * @param prefix the optional prefix to be displayed before the input text in the text field
-  - id: live-androidx-material3-material3-material3-textfield-lines-328-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 328
-    endLine: 353
-    sha256: c5b9b955a81b72767f7a1ca904084260878112ab1997b355f2111b7507079a67
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param suffix the optional suffix to be displayed after the input text in the text field
        * @param supportingText the optional supporting text to be displayed below the text field
        * @param isError indicates if the text field's current value is in error. If set to true, the
@@ -375,55 +386,6 @@ sources:
        * @param minLines the minimum height in terms of minimum number of visible lines. It is required
        *   that 1 <= [minLines] <= [maxLines]. This parameter is ignored when [singleLine] is true.
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
-       *   emitting [Interaction]s for this text field. You can use this to change the text field's
-       *   appearance or preview the text field in different states. Note that if `null` is provided,
-       *   interactions will still happen internally.
-       * @param shape defines the shape of this text field's container
-  - id: live-androidx-material3-material3-material3-textfield-lines-354-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 354
-    endLine: 388
-    sha256: bd57e9fca2b26a95f2c6cc8158f8550d49a23a241169015d11f8e2a28d36b7aa
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-       * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
-       *   in different states. See [TextFieldDefaults.colors].
-       */
-      @Deprecated(
-          "Use the TextField(state: TextFieldState, ...) overload instead. To migrate: " +
-              "create a TextFieldState via rememberTextFieldState(initialText) in composition or " +
-              "TextFieldState(initialText) in a state holder; read text from state.text and update " +
-              "it programmatically via state.edit { ... } or state.setTextAndPlaceCursorAtEnd(text); " +
-              "observe text changes for side effects via snapshotFlow { state.text }.collect { ... }; " +
-              "and replace onValueChange input filtering with InputTransformation, visualTransformation " +
-              "with OutputTransformation (or SecureTextField for passwords), singleLine/maxLines/" +
-              "minLines with TextFieldLineLimits, and keyboardActions with KeyboardActionHandler. See " +
-              "https://developer.android.com/develop/ui/compose/text/migrate-state-based for full " +
-              "migration guidance."
-      )
-      @OptIn(ExperimentalMaterial3Api::class)
-      @Composable
-      public fun TextField(
-          value: String,
-          onValueChange: (String) -> Unit,
-          modifier: Modifier = Modifier,
-          enabled: Boolean = true,
-          readOnly: Boolean = false,
-          textStyle: TextStyle = LocalTextStyle.current,
-          label: @Composable (() -> Unit)? = null,
-          placeholder: @Composable (() -> Unit)? = null,
-          leadingIcon: @Composable (() -> Unit)? = null,
-          trailingIcon: @Composable (() -> Unit)? = null,
-          prefix: @Composable (() -> Unit)? = null,
-          suffix: @Composable (() -> Unit)? = null,
-          supportingText: @Composable (() -> Unit)? = null,
-          isError: Boolean = false,
-          visualTransformation: VisualTransformation = VisualTransformation.None,
-          keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-          keyboardActions: KeyboardActions = KeyboardActions.Default,
   - id: live-androidx-material3-material3-material3-textfield-lines-36-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
@@ -469,16 +431,65 @@ sources:
       import androidx.compose.ui.text.TextLayoutResult
       import androidx.compose.ui.text.TextStyle
       import androidx.compose.ui.text.input.ImeAction
-  - id: live-androidx-material3-material3-material3-textfield-lines-389-source
+  - id: live-androidx-material3-material3-material3-textfield-lines-361-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 389
-    endLine: 423
-    sha256: 4ed5c587a963e05448804c6dd8f120821f51e1d9d83f47153a4a5fcb5a9e16f8
+    startLine: 361
+    endLine: 395
+    sha256: 285889a1aac1c86ae74f39a8293f5ca8cf0f1d451a446c285f1880783a947d68
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+       *   emitting [Interaction]s for this text field. You can use this to change the text field's
+       *   appearance or preview the text field in different states. Note that if `null` is provided,
+       *   interactions will still happen internally.
+       * @param shape defines the shape of this text field's container
+       * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
+       *   in different states. See [TextFieldDefaults.colors].
+       */
+      @Deprecated(
+          "Use the TextField(state: TextFieldState, ...) overload instead. To migrate: " +
+              "create a TextFieldState via rememberTextFieldState(initialText) in composition or " +
+              "TextFieldState(initialText) in a state holder; read text from state.text and update " +
+              "it programmatically via state.edit { ... } or state.setTextAndPlaceCursorAtEnd(text); " +
+              "observe text changes for side effects via snapshotFlow { state.text }.collect { ... }; " +
+              "and replace onValueChange input filtering with InputTransformation, visualTransformation " +
+              "with OutputTransformation (or SecureTextField for passwords), singleLine/maxLines/" +
+              "minLines with TextFieldLineLimits, and keyboardActions with KeyboardActionHandler. See " +
+              "https://developer.android.com/develop/ui/compose/text/migrate-state-based for full " +
+              "migration guidance."
+      )
+      @OptIn(ExperimentalMaterial3Api::class)
+      @Composable
+      public fun TextField(
+          value: String,
+          onValueChange: (String) -> Unit,
+          modifier: Modifier = Modifier,
+          enabled: Boolean = true,
+          readOnly: Boolean = false,
+          textStyle: TextStyle = LocalTextStyle.current,
+          label: @Composable (() -> Unit)? = null,
+          placeholder: @Composable (() -> Unit)? = null,
+          leadingIcon: @Composable (() -> Unit)? = null,
+          trailingIcon: @Composable (() -> Unit)? = null,
+          prefix: @Composable (() -> Unit)? = null,
+          suffix: @Composable (() -> Unit)? = null,
+          supportingText: @Composable (() -> Unit)? = null,
+  - id: live-androidx-material3-material3-material3-textfield-lines-396-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 396
+    endLine: 430
+    sha256: 03af05a6adc97e8ccd02a132129fc759eb6f2d8d8ebb26746bfe3907c36303d1
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+          isError: Boolean = false,
+          visualTransformation: VisualTransformation = VisualTransformation.None,
+          keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+          keyboardActions: KeyboardActions = KeyboardActions.Default,
           singleLine: Boolean = false,
           maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
           minLines: Int = 1,
@@ -510,20 +521,20 @@ sources:
                   enabled = enabled,
                   readOnly = readOnly,
                   textStyle = mergedTextStyle,
+  - id: live-androidx-material3-material3-material3-textfield-lines-431-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 431
+    endLine: 465
+    sha256: fa96a0659b2a23c928465b8804e506f0d7c6becbd596355df37666883516f17f
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   cursorBrush = SolidColor(colors.cursorColor(isError)),
                   visualTransformation = visualTransformation,
                   keyboardOptions = keyboardOptions,
                   keyboardActions = keyboardActions,
-  - id: live-androidx-material3-material3-material3-textfield-lines-424-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 424
-    endLine: 458
-    sha256: 5918d04c341814ccfc82aaa20035d707dd47046c93fbc8d45346ab3ec5e534c5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   interactionSource = interactionSource,
                   singleLine = singleLine,
                   maxLines = maxLines,
@@ -555,20 +566,20 @@ sources:
       }
 
       /**
+  - id: live-androidx-material3-material3-material3-textfield-lines-466-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 466
+    endLine: 497
+    sha256: 0d8ceb3c977fc592363221856848c397b332821d8da52874546924abec70d4a4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * [Material Design filled text field](https://m3.material.io/components/text-fields/overview)
        *
        * Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.
        * Filled text fields have more visual emphasis than outlined text fields, making them stand out
-  - id: live-androidx-material3-material3-material3-textfield-lines-459-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 459
-    endLine: 490
-    sha256: 024a4951f4f2876d69a36166446166e97da712c828af65774042979cdeff0a17
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * when surrounded by other content and components.
        *
        * ![Filled text field
@@ -597,20 +608,20 @@ sources:
        *   the input text is empty. The default text style for internal [Text] is [Typography.bodyLarge]
        * @param leadingIcon the optional leading icon to be displayed at the beginning of the text field
        *   container
+  - id: live-androidx-material3-material3-material3-textfield-lines-498-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 498
+    endLine: 523
+    sha256: afbc451a4a51b2c575f298951b090cbffe83106c9739fb4220e137d31d42c7cb
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        * @param trailingIcon the optional trailing icon to be displayed at the end of the text field
        *   container
        * @param prefix the optional prefix to be displayed before the input text in the text field
        * @param suffix the optional suffix to be displayed after the input text in the text field
-  - id: live-androidx-material3-material3-material3-textfield-lines-491-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 491
-    endLine: 516
-    sha256: 6c3ae0ffd3b38e5f7c39c20f06589034d0dd4ddaa1c04e8160242e7f58379820
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param supportingText the optional supporting text to be displayed below the text field
        * @param isError indicates if the text field's current value is in error state. If set to true, the
        *   label, bottom indicator and trailing icon by default will be displayed in error color
@@ -633,20 +644,20 @@ sources:
        *   that 1 <= [minLines] <= [maxLines]. This parameter is ignored when [singleLine] is true.
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
        *   emitting [Interaction]s for this text field. You can use this to change the text field's
+  - id: live-androidx-material3-material3-material3-textfield-lines-524-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 524
+    endLine: 558
+    sha256: 6a8de50fc972086e494da37398989371709055bbafdd3a9de6979256f67fa866
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
        *   appearance or preview the text field in different states. Note that if `null` is provided,
        *   interactions will still happen internally.
        * @param shape defines the shape of this text field's container
        * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
-  - id: live-androidx-material3-material3-material3-textfield-lines-517-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 517
-    endLine: 551
-    sha256: bf76cbf9b1a51570e9f0b47d90d2bf7d4b744d65395df3230a45a40a2347c21f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        *   in different states. See [TextFieldDefaults.colors].
        */
       @Deprecated(
@@ -678,20 +689,20 @@ sources:
           prefix: @Composable (() -> Unit)? = null,
           suffix: @Composable (() -> Unit)? = null,
           supportingText: @Composable (() -> Unit)? = null,
+  - id: live-androidx-material3-material3-material3-textfield-lines-559-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 559
+    endLine: 593
+    sha256: 03af05a6adc97e8ccd02a132129fc759eb6f2d8d8ebb26746bfe3907c36303d1
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           isError: Boolean = false,
           visualTransformation: VisualTransformation = VisualTransformation.None,
           keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
           keyboardActions: KeyboardActions = KeyboardActions.Default,
-  - id: live-androidx-material3-material3-material3-textfield-lines-552-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 552
-    endLine: 586
-    sha256: 4ed5c587a963e05448804c6dd8f120821f51e1d9d83f47153a4a5fcb5a9e16f8
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           singleLine: Boolean = false,
           maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
           minLines: Int = 1,
@@ -723,20 +734,20 @@ sources:
                   enabled = enabled,
                   readOnly = readOnly,
                   textStyle = mergedTextStyle,
+  - id: live-androidx-material3-material3-material3-textfield-lines-594-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 594
+    endLine: 628
+    sha256: 0ea8af632614736ead7e6ab5aeb9e946c194c0afcddba368c0614289deb77db4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   cursorBrush = SolidColor(colors.cursorColor(isError)),
                   visualTransformation = visualTransformation,
                   keyboardOptions = keyboardOptions,
                   keyboardActions = keyboardActions,
-  - id: live-androidx-material3-material3-material3-textfield-lines-587-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 587
-    endLine: 621
-    sha256: c1821608dcb055d7e088d2da748845d658ec2690b7b2747cca5802463a877a6f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   interactionSource = interactionSource,
                   singleLine = singleLine,
                   maxLines = maxLines,
@@ -768,20 +779,20 @@ sources:
       }
 
       internal data class IndicatorLineElement(
+  - id: live-androidx-material3-material3-material3-textfield-lines-629-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 629
+    endLine: 663
+    sha256: e924e5e1b51f9adb49f88ad025c477a1cc3342673766fa1889a8398c79b529d6
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           val enabled: Boolean,
           val isError: Boolean,
           val interactionSource: InteractionSource,
           val colors: TextFieldColors?,
-  - id: live-androidx-material3-material3-material3-textfield-lines-622-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 622
-    endLine: 656
-    sha256: 4f3643f8242b750287b4be8143d83d5470ed2dbe31048d9c1d4551c364d8fee5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           val textFieldShape: Shape?,
           val focusedIndicatorLineThickness: Dp,
           val unfocusedIndicatorLineThickness: Dp,
@@ -813,20 +824,20 @@ sources:
                       ?: currentValueOf(LocalMaterialTheme)
                           .colorScheme
                           .defaultTextFieldColors(currentValueOf(LocalTextSelectionColors))
-
+  - id: live-androidx-material3-material3-material3-textfield-lines-664-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 664
+    endLine: 698
+    sha256: 07747b9fad98f20ecb48669308035c6ae0511250856c357db97c9ebd9bc44ac6
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
           private val shape: Shape
               get() =
                   params.textFieldShape
-  - id: live-androidx-material3-material3-material3-textfield-lines-657-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 657
-    endLine: 691
-    sha256: 58b9daa83c54b4033f43c1cf48f19599e91a9f8ff71056b5f02b194a80b921ff
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       ?: currentValueOf(LocalMaterialTheme)
                           .shapes
                           .fromToken(FilledTextFieldTokens.ContainerShape)
@@ -858,20 +869,20 @@ sources:
               // The draw cache doesn't observe the shape.
               if (params.textFieldShape != this.params.textFieldShape) {
                   drawWithCacheModifierNode.invalidateDrawCache()
+  - id: live-androidx-material3-material3-material3-textfield-lines-699-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    startLine: 699
+    endLine: 733
+    sha256: 69b882953afbde541a0ad1d94e736a969c7d9a819667a7f17f5067df4f005c26
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               }
               this.params = params
               // Last, since a new source resets the focus state, which updates the indicator.
               interactions.track(params.interactionSource)
-  - id: live-androidx-material3-material3-material3-textfield-lines-692-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 692
-    endLine: 726
-    sha256: 7279b376335749057e37280e9d661d1d47f68baea0e4087d3a1ab337b2072d35
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               invalidateIndicator()
           }
 
@@ -903,10 +914,6 @@ sources:
                                       density = this@CacheDrawModifierNode,
                                   )
                               )
-                          }
-                      val linePath =
-                          Path().apply {
-                              addRect(
   - id: live-androidx-material3-material3-material3-textfield-lines-71-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
@@ -952,16 +959,20 @@ sources:
        *
        * @sample androidx.compose.material3.samples.TextFieldWithTransformations
        *
-  - id: live-androidx-material3-material3-material3-textfield-lines-727-source
+  - id: live-androidx-material3-material3-material3-textfield-lines-734-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
+    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt
-    startLine: 727
-    endLine: 749
-    sha256: 60f8adf5cacf340016e5c889c1807c1c43faadf6fcc7b31a0129bf3b9b32d5ff
+    startLine: 734
+    endLine: 760
+    sha256: daea5cc8c859fca76f3b63b5bce46e229c2358c835efcc51033f6f31ff00ac02
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
+                          }
+                      val linePath =
+                          Path().apply {
+                              addRect(
                                   Rect(
                                       left = 0f,
                                       top = size.height - strokeWidth,
@@ -1008,7 +1019,7 @@ compose:
         - live-androidx-material3-material3-material3-textfield-lines-106-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-textfield-lines-141
-      title: androidx.compose.material3 TextField.kt source (lines 141–167)
+      title: androidx.compose.material3 TextField.kt source (lines 141–168)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
@@ -1016,71 +1027,61 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-textfield-lines-141-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-168
-      title: androidx.compose.material3 TextField.kt source (lines 168–191)
+    - id: live-androidx-material3-material3-material3-textfield-lines-169
+      title: androidx.compose.material3 TextField.kt source (lines 169–193)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-168-source
+        - live-androidx-material3-material3-material3-textfield-lines-169-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-192
-      title: androidx.compose.material3 TextField.kt source (lines 192–226)
+    - id: live-androidx-material3-material3-material3-textfield-lines-194
+      title: androidx.compose.material3 TextField.kt source (lines 194–228)
       aliases:
         - androidx.compose.material3.TextField
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-192-source
+        - live-androidx-material3-material3-material3-textfield-lines-194-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-227
-      title: androidx.compose.material3 TextField.kt source (lines 227–261)
+    - id: live-androidx-material3-material3-material3-textfield-lines-229
+      title: androidx.compose.material3 TextField.kt source (lines 229–263)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-227-source
+        - live-androidx-material3-material3-material3-textfield-lines-229-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-262
-      title: androidx.compose.material3 TextField.kt source (lines 262–296)
+    - id: live-androidx-material3-material3-material3-textfield-lines-264
+      title: androidx.compose.material3 TextField.kt source (lines 264–298)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-262-source
+        - live-androidx-material3-material3-material3-textfield-lines-264-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-297
-      title: androidx.compose.material3 TextField.kt source (lines 297–327)
+    - id: live-androidx-material3-material3-material3-textfield-lines-299
+      title: androidx.compose.material3 TextField.kt source (lines 299–333)
       aliases:
         - androidx.compose.material3.TextField
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-297-source
+        - live-androidx-material3-material3-material3-textfield-lines-299-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-328
-      title: androidx.compose.material3 TextField.kt source (lines 328–353)
+    - id: live-androidx-material3-material3-material3-textfield-lines-334
+      title: androidx.compose.material3 TextField.kt source (lines 334–360)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-328-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-354
-      title: androidx.compose.material3 TextField.kt source (lines 354–388)
-      aliases:
-        - androidx.compose.material3.TextField
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-354-source
+        - live-androidx-material3-material3-material3-textfield-lines-334-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-textfield-lines-36
       title: androidx.compose.material3 TextField.kt source (lines 36–70)
@@ -1091,97 +1092,107 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-textfield-lines-36-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-389
-      title: androidx.compose.material3 TextField.kt source (lines 389–423)
-      aliases: []
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-389-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-424
-      title: androidx.compose.material3 TextField.kt source (lines 424–458)
-      aliases: []
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-424-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-459
-      title: androidx.compose.material3 TextField.kt source (lines 459–490)
+    - id: live-androidx-material3-material3-material3-textfield-lines-361
+      title: androidx.compose.material3 TextField.kt source (lines 361–395)
       aliases:
         - androidx.compose.material3.TextField
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-459-source
+        - live-androidx-material3-material3-material3-textfield-lines-361-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-491
-      title: androidx.compose.material3 TextField.kt source (lines 491–516)
+    - id: live-androidx-material3-material3-material3-textfield-lines-396
+      title: androidx.compose.material3 TextField.kt source (lines 396–430)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-491-source
+        - live-androidx-material3-material3-material3-textfield-lines-396-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-517
-      title: androidx.compose.material3 TextField.kt source (lines 517–551)
+    - id: live-androidx-material3-material3-material3-textfield-lines-431
+      title: androidx.compose.material3 TextField.kt source (lines 431–465)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-textfield-lines-431-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-textfield-lines-466
+      title: androidx.compose.material3 TextField.kt source (lines 466–497)
       aliases:
         - androidx.compose.material3.TextField
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-517-source
+        - live-androidx-material3-material3-material3-textfield-lines-466-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-552
-      title: androidx.compose.material3 TextField.kt source (lines 552–586)
+    - id: live-androidx-material3-material3-material3-textfield-lines-498
+      title: androidx.compose.material3 TextField.kt source (lines 498–523)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-552-source
+        - live-androidx-material3-material3-material3-textfield-lines-498-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-587
-      title: androidx.compose.material3 TextField.kt source (lines 587–621)
+    - id: live-androidx-material3-material3-material3-textfield-lines-524
+      title: androidx.compose.material3 TextField.kt source (lines 524–558)
+      aliases:
+        - androidx.compose.material3.TextField
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-textfield-lines-524-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-textfield-lines-559
+      title: androidx.compose.material3 TextField.kt source (lines 559–593)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-587-source
+        - live-androidx-material3-material3-material3-textfield-lines-559-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-622
-      title: androidx.compose.material3 TextField.kt source (lines 622–656)
+    - id: live-androidx-material3-material3-material3-textfield-lines-594
+      title: androidx.compose.material3 TextField.kt source (lines 594–628)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-622-source
+        - live-androidx-material3-material3-material3-textfield-lines-594-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-657
-      title: androidx.compose.material3 TextField.kt source (lines 657–691)
+    - id: live-androidx-material3-material3-material3-textfield-lines-629
+      title: androidx.compose.material3 TextField.kt source (lines 629–663)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-657-source
+        - live-androidx-material3-material3-material3-textfield-lines-629-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-692
-      title: androidx.compose.material3 TextField.kt source (lines 692–726)
+    - id: live-androidx-material3-material3-material3-textfield-lines-664
+      title: androidx.compose.material3 TextField.kt source (lines 664–698)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-692-source
+        - live-androidx-material3-material3-material3-textfield-lines-664-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-textfield-lines-699
+      title: androidx.compose.material3 TextField.kt source (lines 699–733)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-textfield-lines-699-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-textfield-lines-71
       title: androidx.compose.material3 TextField.kt source (lines 71–105)
@@ -1193,14 +1204,14 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-textfield-lines-71-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-textfield-lines-727
-      title: androidx.compose.material3 TextField.kt source (lines 727–749)
+    - id: live-androidx-material3-material3-material3-textfield-lines-734
+      title: androidx.compose.material3 TextField.kt source (lines 734–760)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-textfield-lines-727-source
+        - live-androidx-material3-material3-material3-textfield-lines-734-source
       relatedIds: []
 ---
 
@@ -1277,6 +1288,22 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-1-source](
  * Hiding a software keyboard on IME action performed:
  *
  * @sample androidx.compose.material3.samples.TextFieldWithHideKeyboardOnImeAction
+ *
+ * Autofill services don't receive the [label] text. To tell them what the field is for, set
+ * [contentType][androidx.compose.ui.autofill.contentType] on the [modifier] for standard field
+ * types, such as email addresses:
+ *
+ * @sample androidx.compose.material3.samples.TextFieldWithContentType
+ *
+ * For other fields, set [hintText][androidx.compose.ui.semantics.hintText] on the [modifier] and
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 141–168)
+
+ * hide the [label] from accessibility services, which also announce the hint:
+ *
+ * @sample androidx.compose.material3.samples.OutlinedTextFieldWithHintText
  * @param state [TextFieldState] object that holds the internal editing state of the text field.
  * @param modifier the [Modifier] to be applied to this text field.
  * @param enabled controls the enabled state of this text field. When `false`, this component will
@@ -1285,11 +1312,6 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-1-source](
  * @param readOnly controls the editable state of the text field. When `true`, the text field cannot
  *   be modified. However, a user can focus it and copy text from it. Read-only text fields are
  *   usually used to display pre-filled forms that a user cannot edit.
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 141–167)
-
  * @param textStyle the style to be applied to the input text. Defaults to [LocalTextStyle].
  * @param labelPosition the position of the label. See [TextFieldLabelPosition].
  * @param label the optional label to be displayed with this text field. The default text style uses
@@ -1307,6 +1329,11 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-106-source
  *   components of the text field will be displayed in an error color, and an error will be
  *   announced to accessibility services.
  * @param inputTransformation optional [InputTransformation] that will be used to transform changes
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 169–193)
+
  *   to the [TextFieldState] made by the user. The transformation will be applied to changes made by
  *   hardware and software keyboard events, pasting or dropping text, accessibility services, and
  *   tests. The transformation will _not_ be applied when changing the [state] programmatically, or
@@ -1317,11 +1344,6 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-106-source
  *   the text field are presented.
  * @param keyboardOptions software keyboard options that contains configuration such as
  *   [KeyboardType] and [ImeAction].
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 168–191)
-
  * @param onKeyboardAction called when the user presses the action button in the input method editor
  *   (IME), or by pressing the enter key on a hardware keyboard. By default this parameter is null,
  *   and would execute the default behavior for a received IME Action e.g., [ImeAction.Done] would
@@ -1337,6 +1359,11 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-141-source
  *   paragraph information, size of the text, baselines and other details. [Density] scope is the
  *   one that was used while creating the given text layout.
  * @param scrollState scroll state that manages either horizontal or vertical scroll of the text
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-169-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 194–228)
+
  *   field. If [lineLimits] is [SingleLine], this text field is treated as single line with
  *   horizontal scroll behavior. Otherwise, the text field becomes vertically scrollable.
  * @param shape defines the shape of this text field's container.
@@ -1346,11 +1373,6 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-141-source
  *   surrounding elements of the text field. Note that the padding values may not be respected if
  *   they are incompatible with the text field's size constraints or layout. See
  *   [TextFieldDefaults.contentPaddingWithLabel] and [TextFieldDefaults.contentPaddingWithoutLabel].
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-168-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 192–226)
-
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
  *   emitting [Interaction]s for this text field. You can use this to change the text field's
  *   appearance or preview the text field in different states. Note that if `null` is provided,
@@ -1377,6 +1399,11 @@ public fun TextField(
     outputTransformation: OutputTransformation? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     onKeyboardAction: KeyboardActionHandler? = null,
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-194-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 229–263)
+
     lineLimits: TextFieldLineLimits = TextFieldLineLimits.Default,
     onTextLayout: (Density.(getResult: () -> TextLayoutResult?) -> Unit)? = null,
     scrollState: ScrollState = rememberScrollState(),
@@ -1386,11 +1413,6 @@ public fun TextField(
     interactionSource: MutableInteractionSource? = null,
 ) {
     @Suppress("NAME_SHADOWING")
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-192-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 227–261)
-
     val interactionSource = interactionSource ?: remember { MutableInteractionSource() }
     // If color is not provided via the text style, use content color as a default
     val textColor =
@@ -1417,6 +1439,11 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-192-source
             readOnly = readOnly,
             textStyle = mergedTextStyle,
             cursorBrush = SolidColor(colors.cursorColor(isError)),
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-229-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 264–298)
+
             keyboardOptions = keyboardOptions,
             onKeyboardAction = onKeyboardAction,
             lineLimits = lineLimits,
@@ -1426,11 +1453,6 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-192-source
             outputTransformation = outputTransformation,
             scrollState = scrollState,
             decorator =
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-227-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 262–296)
-
                 TextFieldDefaults.decorator(
                     state = state,
                     enabled = enabled,
@@ -1457,6 +1479,11 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-227-source
                             shape = shape,
                         )
                     },
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-264-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 299–333)
+
                 ),
         )
     }
@@ -1466,11 +1493,6 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-227-source
  * [Material Design filled text field](https://m3.material.io/components/text-fields/overview)
  *
  * Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-262-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 297–327)
-
  * Filled text fields have more visual emphasis than outlined text fields, making them stand out
  * when surrounded by other content and components.
  *
@@ -1497,16 +1519,16 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-262-source
  *   [Typography.bodySmall] when minimized and [Typography.bodyLarge] when expanded.
  * @param placeholder the optional placeholder to be displayed when the text field is in focus and
  *   the input text is empty. The default text style for internal [Text] is [Typography.bodyLarge]
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-299-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 334–360)
+
  * @param leadingIcon the optional leading icon to be displayed at the beginning of the text field
  *   container
  * @param trailingIcon the optional trailing icon to be displayed at the end of the text field
  *   container
  * @param prefix the optional prefix to be displayed before the input text in the text field
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-297-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 328–353)
-
  * @param suffix the optional suffix to be displayed after the input text in the text field
  * @param supportingText the optional supporting text to be displayed below the text field
  * @param isError indicates if the text field's current value is in error. If set to true, the
@@ -1529,52 +1551,8 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-297-source
  * @param minLines the minimum height in terms of minimum number of visible lines. It is required
  *   that 1 <= [minLines] <= [maxLines]. This parameter is ignored when [singleLine] is true.
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
- *   emitting [Interaction]s for this text field. You can use this to change the text field's
- *   appearance or preview the text field in different states. Note that if `null` is provided,
- *   interactions will still happen internally.
- * @param shape defines the shape of this text field's container
 
-Sources: [live-androidx-material3-material3-material3-textfield-lines-328-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 354–388)
-
- * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
- *   in different states. See [TextFieldDefaults.colors].
- */
-@Deprecated(
-    "Use the TextField(state: TextFieldState, ...) overload instead. To migrate: " +
-        "create a TextFieldState via rememberTextFieldState(initialText) in composition or " +
-        "TextFieldState(initialText) in a state holder; read text from state.text and update " +
-        "it programmatically via state.edit { ... } or state.setTextAndPlaceCursorAtEnd(text); " +
-        "observe text changes for side effects via snapshotFlow { state.text }.collect { ... }; " +
-        "and replace onValueChange input filtering with InputTransformation, visualTransformation " +
-        "with OutputTransformation (or SecureTextField for passwords), singleLine/maxLines/" +
-        "minLines with TextFieldLineLimits, and keyboardActions with KeyboardActionHandler. See " +
-        "https://developer.android.com/develop/ui/compose/text/migrate-state-based for full " +
-        "migration guidance."
-)
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-public fun TextField(
-    value: String,
-    onValueChange: (String) -> Unit,
-    modifier: Modifier = Modifier,
-    enabled: Boolean = true,
-    readOnly: Boolean = false,
-    textStyle: TextStyle = LocalTextStyle.current,
-    label: @Composable (() -> Unit)? = null,
-    placeholder: @Composable (() -> Unit)? = null,
-    leadingIcon: @Composable (() -> Unit)? = null,
-    trailingIcon: @Composable (() -> Unit)? = null,
-    prefix: @Composable (() -> Unit)? = null,
-    suffix: @Composable (() -> Unit)? = null,
-    supportingText: @Composable (() -> Unit)? = null,
-    isError: Boolean = false,
-    visualTransformation: VisualTransformation = VisualTransformation.None,
-    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-    keyboardActions: KeyboardActions = KeyboardActions.Default,
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-354-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+Sources: [live-androidx-material3-material3-material3-textfield-lines-334-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
 
 ## androidx.compose.material3 TextField.kt source (lines 36–70)
 
@@ -1616,8 +1594,52 @@ import androidx.compose.ui.text.input.ImeAction
 
 Sources: [live-androidx-material3-material3-material3-textfield-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
 
-## androidx.compose.material3 TextField.kt source (lines 389–423)
+## androidx.compose.material3 TextField.kt source (lines 361–395)
 
+ *   emitting [Interaction]s for this text field. You can use this to change the text field's
+ *   appearance or preview the text field in different states. Note that if `null` is provided,
+ *   interactions will still happen internally.
+ * @param shape defines the shape of this text field's container
+ * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
+ *   in different states. See [TextFieldDefaults.colors].
+ */
+@Deprecated(
+    "Use the TextField(state: TextFieldState, ...) overload instead. To migrate: " +
+        "create a TextFieldState via rememberTextFieldState(initialText) in composition or " +
+        "TextFieldState(initialText) in a state holder; read text from state.text and update " +
+        "it programmatically via state.edit { ... } or state.setTextAndPlaceCursorAtEnd(text); " +
+        "observe text changes for side effects via snapshotFlow { state.text }.collect { ... }; " +
+        "and replace onValueChange input filtering with InputTransformation, visualTransformation " +
+        "with OutputTransformation (or SecureTextField for passwords), singleLine/maxLines/" +
+        "minLines with TextFieldLineLimits, and keyboardActions with KeyboardActionHandler. See " +
+        "https://developer.android.com/develop/ui/compose/text/migrate-state-based for full " +
+        "migration guidance."
+)
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+public fun TextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    readOnly: Boolean = false,
+    textStyle: TextStyle = LocalTextStyle.current,
+    label: @Composable (() -> Unit)? = null,
+    placeholder: @Composable (() -> Unit)? = null,
+    leadingIcon: @Composable (() -> Unit)? = null,
+    trailingIcon: @Composable (() -> Unit)? = null,
+    prefix: @Composable (() -> Unit)? = null,
+    suffix: @Composable (() -> Unit)? = null,
+    supportingText: @Composable (() -> Unit)? = null,
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-361-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 396–430)
+
+    isError: Boolean = false,
+    visualTransformation: VisualTransformation = VisualTransformation.None,
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default,
     singleLine: Boolean = false,
     maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
     minLines: Int = 1,
@@ -1649,15 +1671,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-36-source]
             enabled = enabled,
             readOnly = readOnly,
             textStyle = mergedTextStyle,
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-396-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 431–465)
+
             cursorBrush = SolidColor(colors.cursorColor(isError)),
             visualTransformation = visualTransformation,
             keyboardOptions = keyboardOptions,
             keyboardActions = keyboardActions,
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-389-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 424–458)
-
             interactionSource = interactionSource,
             singleLine = singleLine,
             maxLines = maxLines,
@@ -1689,15 +1711,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-389-source
 }
 
 /**
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-431-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 466–497)
+
  * [Material Design filled text field](https://m3.material.io/components/text-fields/overview)
  *
  * Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.
  * Filled text fields have more visual emphasis than outlined text fields, making them stand out
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-424-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 459–490)
-
  * when surrounded by other content and components.
  *
  * ![Filled text field
@@ -1726,15 +1748,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-424-source
  *   the input text is empty. The default text style for internal [Text] is [Typography.bodyLarge]
  * @param leadingIcon the optional leading icon to be displayed at the beginning of the text field
  *   container
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-466-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 498–523)
+
  * @param trailingIcon the optional trailing icon to be displayed at the end of the text field
  *   container
  * @param prefix the optional prefix to be displayed before the input text in the text field
  * @param suffix the optional suffix to be displayed after the input text in the text field
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-459-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 491–516)
-
  * @param supportingText the optional supporting text to be displayed below the text field
  * @param isError indicates if the text field's current value is in error state. If set to true, the
  *   label, bottom indicator and trailing icon by default will be displayed in error color
@@ -1757,15 +1779,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-459-source
  *   that 1 <= [minLines] <= [maxLines]. This parameter is ignored when [singleLine] is true.
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
  *   emitting [Interaction]s for this text field. You can use this to change the text field's
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-498-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 524–558)
+
  *   appearance or preview the text field in different states. Note that if `null` is provided,
  *   interactions will still happen internally.
  * @param shape defines the shape of this text field's container
  * @param colors [TextFieldColors] that will be used to resolve the colors used for this text field
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 517–551)
-
  *   in different states. See [TextFieldDefaults.colors].
  */
 @Deprecated(
@@ -1797,15 +1819,15 @@ public fun TextField(
     prefix: @Composable (() -> Unit)? = null,
     suffix: @Composable (() -> Unit)? = null,
     supportingText: @Composable (() -> Unit)? = null,
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-524-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 559–593)
+
     isError: Boolean = false,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-517-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 552–586)
-
     singleLine: Boolean = false,
     maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
     minLines: Int = 1,
@@ -1837,15 +1859,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-517-source
             enabled = enabled,
             readOnly = readOnly,
             textStyle = mergedTextStyle,
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-559-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 594–628)
+
             cursorBrush = SolidColor(colors.cursorColor(isError)),
             visualTransformation = visualTransformation,
             keyboardOptions = keyboardOptions,
             keyboardActions = keyboardActions,
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-552-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 587–621)
-
             interactionSource = interactionSource,
             singleLine = singleLine,
             maxLines = maxLines,
@@ -1877,15 +1899,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-552-source
 }
 
 internal data class IndicatorLineElement(
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-594-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 629–663)
+
     val enabled: Boolean,
     val isError: Boolean,
     val interactionSource: InteractionSource,
     val colors: TextFieldColors?,
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-587-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 622–656)
-
     val textFieldShape: Shape?,
     val focusedIndicatorLineThickness: Dp,
     val unfocusedIndicatorLineThickness: Dp,
@@ -1918,14 +1940,14 @@ internal class IndicatorLineNode(initialParams: IndicatorLineElement) :
                     .colorScheme
                     .defaultTextFieldColors(currentValueOf(LocalTextSelectionColors))
 
+Sources: [live-androidx-material3-material3-material3-textfield-lines-629-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 664–698)
+
+
     private val shape: Shape
         get() =
             params.textFieldShape
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-622-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 657–691)
-
                 ?: currentValueOf(LocalMaterialTheme)
                     .shapes
                     .fromToken(FilledTextFieldTokens.ContainerShape)
@@ -1957,15 +1979,15 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-622-source
         // The draw cache doesn't observe the shape.
         if (params.textFieldShape != this.params.textFieldShape) {
             drawWithCacheModifierNode.invalidateDrawCache()
+
+Sources: [live-androidx-material3-material3-material3-textfield-lines-664-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+
+## androidx.compose.material3 TextField.kt source (lines 699–733)
+
         }
         this.params = params
         // Last, since a new source resets the focus state, which updates the indicator.
         interactions.track(params.interactionSource)
-
-Sources: [live-androidx-material3-material3-material3-textfield-lines-657-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
-
-## androidx.compose.material3 TextField.kt source (lines 692–726)
-
         invalidateIndicator()
     }
 
@@ -1997,12 +2019,8 @@ Sources: [live-androidx-material3-material3-material3-textfield-lines-657-source
                                 density = this@CacheDrawModifierNode,
                             )
                         )
-                    }
-                val linePath =
-                    Path().apply {
-                        addRect(
 
-Sources: [live-androidx-material3-material3-material3-textfield-lines-692-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+Sources: [live-androidx-material3-material3-material3-textfield-lines-699-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
 
 ## androidx.compose.material3 TextField.kt source (lines 71–105)
 
@@ -2044,8 +2062,12 @@ import androidx.compose.ui.unit.dp
 
 Sources: [live-androidx-material3-material3-material3-textfield-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
 
-## androidx.compose.material3 TextField.kt source (lines 727–749)
+## androidx.compose.material3 TextField.kt source (lines 734–760)
 
+                    }
+                val linePath =
+                    Path().apply {
+                        addRect(
                             Rect(
                                 left = 0f,
                                 top = size.height - strokeWidth,
@@ -2070,4 +2092,4 @@ internal val TextFieldWithLabelVerticalPadding
     get() = 8.dp
 
 
-Sources: [live-androidx-material3-material3-material3-textfield-lines-727-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)
+Sources: [live-androidx-material3-material3-material3-textfield-lines-734-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/TextField.kt)

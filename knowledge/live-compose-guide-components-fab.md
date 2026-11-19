@@ -104,6 +104,20 @@ sources:
       Figure 4.
 
       A large floating action button.
+  - id: live-compose-guide-components-fab-m3-expressive-update-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/fab#m3-expressive-update
+    revision: web:compose-guide-components-fab:content@sha256:0b3ec5547f602c37e3df2dac237a5db00b6cf4821785cb88df3a052c3d912dbb
+    sha256: e219cdba2a157f81b24bc9b4264e47286e4387d35bcf65b8921e1a906e46a472
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      The FAB offers additional sizes to match the extended FAB and expanded color options, including MediumFloatingActionButton, which is recommended for most situations alongside existing FAB sizes.
+
+      Figure 6.
+
+      Material 3 Expressive floating action button color and size variations.
+
+      For more information about the M3 Expressive updates for floating action buttons, see the Material Design 3 Floating action button guidelines.
   - id: live-compose-guide-components-fab-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/fab#main-content
@@ -134,6 +148,29 @@ sources:
       Figure 1.
 
       The four floating action button types.
+  - id: live-compose-guide-components-fab-medium-source
+    kind: guide
+    resource: https://developer.android.com/develop/ui/compose/components/fab#medium
+    revision: web:compose-guide-components-fab:content@sha256:0b3ec5547f602c37e3df2dac237a5db00b6cf4821785cb88df3a052c3d912dbb
+    sha256: b947415aaefd7b8fb5da09c93aace997d482cff15d4723b72e279ef0904cf3cb
+    license: Apache-2.0 (https://developer.android.com/license)
+    excerpt: |-
+      The medium FAB is recommended for most situations, and works best in compact and medium windows. Use it for important actions without taking up too much space.
+
+      The following snippet demonstrates how to implement a medium floating action button using MediumFloatingActionButton:
+
+      @Composable
+      fun MediumFloatingActionButtonSample() {
+          MediumFloatingActionButton(onClick = {}) {
+              Icon(
+                  painter = rememberVectorPainter(AppIcons.Add),
+                  contentDescription = "Add",
+                  modifier = Modifier.size(FloatingActionButtonDefaults.MediumIconSize),
+              )
+          }
+      }FloatingActionButton.kt
+
+      A medium floating action button.
   - id: live-compose-guide-components-fab-small-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/components/fab#small
@@ -214,6 +251,15 @@ compose:
       sourceIds:
         - live-compose-guide-components-fab-large-source
       relatedIds: []
+    - id: live-compose-guide-components-fab-m3-expressive-update
+      title: M3 Expressive update
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-components-fab-m3-expressive-update-source
+      relatedIds: []
     - id: live-compose-guide-components-fab-main-content
       title: Introduction
       aliases: []
@@ -222,6 +268,16 @@ compose:
           version: null
       sourceIds:
         - live-compose-guide-components-fab-main-content-source
+      relatedIds: []
+    - id: live-compose-guide-components-fab-medium
+      title: Medium floating action button
+      aliases:
+        - androidx.compose.material3.FloatingActionButton
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-compose-guide-components-fab-medium-source
       relatedIds: []
     - id: live-compose-guide-components-fab-small
       title: Small button
@@ -328,6 +384,18 @@ A large floating action button.
 
 Sources: [live-compose-guide-components-fab-large-source](https://developer.android.com/develop/ui/compose/components/fab#large)
 
+## M3 Expressive update
+
+The FAB offers additional sizes to match the extended FAB and expanded color options, including MediumFloatingActionButton, which is recommended for most situations alongside existing FAB sizes.
+
+Figure 6.
+
+Material 3 Expressive floating action button color and size variations.
+
+For more information about the M3 Expressive updates for floating action buttons, see the Material Design 3 Floating action button guidelines.
+
+Sources: [live-compose-guide-components-fab-m3-expressive-update-source](https://developer.android.com/develop/ui/compose/components/fab#m3-expressive-update)
+
 ## Introduction
 
 A Floating Action Button (FAB) is a high-emphasis button that lets the user perform a primary action in an application. It promotes a single, focused action that is the most common pathway a user might take and is typically found anchored to the bottom right of the screen.
@@ -355,6 +423,27 @@ Figure 1.
 The four floating action button types.
 
 Sources: [live-compose-guide-components-fab-main-content-source](https://developer.android.com/develop/ui/compose/components/fab#main-content)
+
+## Medium floating action button
+
+The medium FAB is recommended for most situations, and works best in compact and medium windows. Use it for important actions without taking up too much space.
+
+The following snippet demonstrates how to implement a medium floating action button using MediumFloatingActionButton:
+
+@Composable
+fun MediumFloatingActionButtonSample() {
+    MediumFloatingActionButton(onClick = {}) {
+        Icon(
+            painter = rememberVectorPainter(AppIcons.Add),
+            contentDescription = "Add",
+            modifier = Modifier.size(FloatingActionButtonDefaults.MediumIconSize),
+        )
+    }
+}FloatingActionButton.kt
+
+A medium floating action button.
+
+Sources: [live-compose-guide-components-fab-medium-source](https://developer.android.com/develop/ui/compose/components/fab#medium)
 
 ## Small button
 

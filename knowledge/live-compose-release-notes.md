@@ -109,13 +109,13 @@ sources:
   - id: live-compose-release-notes-versions-source
     kind: guide
     resource: https://developer.android.com/jetpack/androidx/releases/compose#versions
-    revision: web:compose-release-notes:content@sha256:c2807107c466cf15f8b58aadab228978c2d4409cdcbc253a3d58c7a94e1db921
-    sha256: 8613c17f2db2142dadefc83e551e13a00620d2008f1f24e3d47bdad4ce19d349
+    revision: web:compose-release-notes:content@sha256:79d304004b919aa1a4668102eeb45250a503a35cf099e2bd572a7b946e336440
+    sha256: fd3f08882adf4d4aa75595e6d984c9dfeeab502a3c66824f80ebe26894bbfcb4
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       This table lists the current versions of each group.
 
-      Maven Group ID Latest Update Stable Release Release Candidate Beta Release Alpha Release compose.animation November 04, 2026 1.12.1 1.13.0-rc01 - - compose.compiler August 7, 2024 1.5.15 - - - compose.foundation November 04, 2026 1.12.1 1.13.0-rc01 - - compose.material November 04, 2026 1.12.1 1.13.0-rc01 - - compose.material3 November 04, 2026 1.4.0 1.5.0-rc01 - - compose.runtime November 04, 2026 1.12.1 1.13.0-rc01 - - compose.ui November 04, 2026 1.12.1 1.13.0-rc01 - -
+      Maven Group ID Latest Update Stable Release Release Candidate Beta Release Alpha Release compose.animation November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.compiler August 7, 2024 1.5.15 - - - compose.foundation November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.material November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.material3 November 18, 2026 1.5.0 - - 1.6.0-alpha01 compose.runtime November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.ui November 18, 2026 1.13.0 - - 1.14.0-alpha01
 compose:
   id: live-compose-release-notes
   artifact: androidx.compose.ui:ui
@@ -291,6 +291,6 @@ Sources: [live-compose-release-notes-kts-source](https://developer.android.com/j
 
 This table lists the current versions of each group.
 
-Maven Group ID Latest Update Stable Release Release Candidate Beta Release Alpha Release compose.animation November 04, 2026 1.12.1 1.13.0-rc01 - - compose.compiler August 7, 2024 1.5.15 - - - compose.foundation November 04, 2026 1.12.1 1.13.0-rc01 - - compose.material November 04, 2026 1.12.1 1.13.0-rc01 - - compose.material3 November 04, 2026 1.4.0 1.5.0-rc01 - - compose.runtime November 04, 2026 1.12.1 1.13.0-rc01 - - compose.ui November 04, 2026 1.12.1 1.13.0-rc01 - -
+Maven Group ID Latest Update Stable Release Release Candidate Beta Release Alpha Release compose.animation November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.compiler August 7, 2024 1.5.15 - - - compose.foundation November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.material November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.material3 November 18, 2026 1.5.0 - - 1.6.0-alpha01 compose.runtime November 18, 2026 1.13.0 - - 1.14.0-alpha01 compose.ui November 18, 2026 1.13.0 - - 1.14.0-alpha01
 
 Sources: [live-compose-release-notes-versions-source](https://developer.android.com/jetpack/androidx/releases/compose#versions)
