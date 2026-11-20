@@ -519,8 +519,8 @@
         {
           "id": "contract-androidview-factory-reuse-release-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 110,
           "endLine": 165,
@@ -531,8 +531,8 @@
         {
           "id": "contract-androidview-callback-parameters-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 179,
           "endLine": 190,
@@ -581,8 +581,8 @@
         {
           "id": "contract-animatable-interruption-result-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
           "startLine": 205,
           "endLine": 217,
@@ -2242,8 +2242,8 @@
         {
           "id": "contract-launchedeffect-key-lifetime-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
           "startLine": 552,
           "endLine": 569,
@@ -2254,8 +2254,8 @@
         {
           "id": "contract-rememberupdatedstate-current-value-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
           "startLine": 317,
           "endLine": 342,
@@ -3095,8 +3095,8 @@
         {
           "id": "contract-modifier-node-attachment-scope-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
           "startLine": 175,
           "endLine": 192,
@@ -4072,108 +4072,6 @@
       ]
     },
     {
-      "id": "guide-test-saveable-state-restoration",
-      "title": "Guidance: Exercise saveable state restoration with StateRestorationTester",
-      "body": "Guidance: Wrap the test content in StateRestorationTester(composeTestRule).setContent, perform actions that change saveable UI state, call emulateSavedInstanceStateRestore(), and assert that the state was restored. This targets rememberSaveable restoration without requiring activity recreation. Limitation: the tester simulates recreation of a composable; this check alone does not establish that the entire activity or application survives actual process recreation.",
-      "aliases": [
-        "androidx.compose.ui.test.junit4.StateRestorationTester",
-        "androidx.compose.ui.test.junit4.StateRestorationTester.emulateSavedInstanceStateRestore",
-        "androidx.compose.runtime.saveable.rememberSaveable",
-        "test saved UI state",
-        "verify state restoration"
-      ],
-      "requires": [
-        {
-          "artifact": "androidx.compose.ui:ui-test-junit4",
-          "version": null
-        },
-        {
-          "artifact": "androidx.compose.ui:ui-test",
-          "version": null
-        }
-      ],
-      "sources": [
-        {
-          "id": "live-compose-guide-testing-common-patterns-verify-state-source",
-          "kind": "guide",
-          "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
-          "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
-          "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945",
-          "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.\n\nThis class lets you simulate the recreation of a composable. It's especially useful to verify the implementation of rememberSaveable.\n\nclass MyStateRestorationTests {\n\n    @get:Rule\n    val composeTestRule = createComposeRule()\n\n    @Test\n    fun onRecreation_stateIsRestored() {\n        val restorationTester = StateRestorationTester(composeTestRule)\n\n        restorationTester.setContent { MainScreen() }\n\n        // TODO: Run actions that modify the state\n\n        // Trigger a recreation\n        restorationTester.emulateSavedInstanceStateRestore()\n\n        // TODO: Verify that state has been correctly restored.\n    }\n}"
-        }
-      ],
-      "relatedIds": [
-        "live-compose-guide-testing-common-patterns-verify-state"
-      ],
-      "docId": "guide-test-saveable-state-restoration",
-      "docPath": "knowledge/guide-test-saveable-state-restoration.md",
-      "artifact": "androidx.compose.ui:ui-test-junit4",
-      "fqn": "androidx.compose.ui.test.junit4.StateRestorationTester",
-      "docTitle": "Guidance: Exercise saveable state restoration with StateRestorationTester",
-      "description": "AI-assisted, reviewed guidance bound to exact raw evidence. Released-version applicability is unknown.",
-      "tags": [
-        "Compose",
-        "Android",
-        "curated-guidance"
-      ]
-    },
-    {
-      "id": "guide-test-synchronization-external-work",
-      "title": "Guidance: Synchronize Compose assertions and wait for external work",
-      "body": "Guidance: Compose test-rule actions and assertions synchronize with the UI before running, waiting for the UI tree to become idle and advancing a virtual clock. A plain assertion immediately after changing state can observe stale composition results; use a synchronized Compose assertion. For conditions depending on external work, such as data loading or Android measure/draw outside Compose, use waitUntil with a timeout and condition. Limitation: Compose hierarchy synchronization does not automatically cover the rest of the app.",
-      "aliases": [
-        "androidx.compose.ui.test",
-        "androidx.compose.ui.test.junit4.ComposeTestRule",
-        "androidx.compose.ui.test.junit4.ComposeTestRule.waitUntil",
-        "test synchronization",
-        "external data loading",
-        "테스트 동기화",
-        "비동기 대기"
-      ],
-      "requires": [
-        {
-          "artifact": "androidx.compose.ui:ui-test",
-          "version": null
-        }
-      ],
-      "sources": [
-        {
-          "id": "live-compose-guide-testing-synchronization-main-content-source",
-          "kind": "guide",
-          "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#main-content",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "29d8e02257d8276af22d52d4a2db59e927b2373663eac6da69f9512f7dc7ed42",
-          "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Compose tests are synchronized by default with your UI. When you call an assertion or an action with the ComposeTestRule, the test is synchronized beforehand, waiting until the UI tree is idle.\n\nNormally, you don't have to take any action. However, there are some edge cases you should know about.\n\nWhen a test is synchronized, your Compose app is advanced in time using a virtual clock. This means Compose tests don't run in real time, so they can pass as fast as possible.\n\nHowever, if you don't use the methods that synchronize your tests, no recomposition will occur and the UI will appear to be paused.\n\n@Test\nfun counterTest() {\n    val myCounter = mutableStateOf(0) // State that can cause recompositions.\n    var lastSeenValue = 0 // Used to track recompositions.\n    composeTestRule.setContent {\n        Text(myCounter.value.toString())\n        lastSeenValue = myCounter.value\n    }\n    myCounter.value = 1 // The state changes, but there is no recomposition.\n\n    // Fails because nothing triggered a recomposition.\n    assertTrue(lastSeenValue == 1)\n\n    // Passes because the assertion triggers recomposition.\n    composeTestRule.onNodeWithText(\"1\").assertExists()\n}\n\nNote that this requirement only applies to Compose hierarchies and not to the rest of the app."
-        },
-        {
-          "id": "live-compose-guide-testing-synchronization-manual-sync-waituntil-source",
-          "kind": "guide",
-          "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#manual-sync-waituntil",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "9f0badaef574a462c7063a6ae2189ee8823a7501c6b820e54f953577feb90fe1",
-          "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Any condition that depends on external work, such as data loading or Android's measure or draw (that is, measure or draw external to Compose), should use a more general concept such as waitUntil():\n\ncomposeTestRule.waitUntil(timeoutMs) { condition }\n\nYou can also use any of the waitUntil helpers:\n\ncomposeTestRule.waitUntilAtLeastOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilDoesNotExist(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilExactlyOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilNodeCount(matcher, count, timeoutMs)"
-        }
-      ],
-      "relatedIds": [
-        "live-compose-guide-testing-synchronization-main-content",
-        "live-compose-guide-testing-synchronization-manual-sync-waituntil"
-      ],
-      "docId": "guide-test-synchronization-external-work",
-      "docPath": "knowledge/guide-test-synchronization-external-work.md",
-      "artifact": "androidx.compose.ui:ui-test",
-      "fqn": "androidx.compose.ui.test",
-      "docTitle": "Guidance: Synchronize Compose assertions and wait for external work",
-      "description": "AI-assisted, reviewed guidance bound to exact raw evidence. Released-version applicability is unknown.",
-      "tags": [
-        "Compose",
-        "Android",
-        "curated-guidance"
-      ]
-    },
-    {
       "id": "guide-text-style-and-span-weight",
       "title": "Guidance: Apply font weight to whole text or individual spans",
       "body": "Guidance: Set Text fontWeight to FontWeight.Bold, or another FontWeight, to style its text. For different styles within one Text, build an AnnotatedString and wrap selected appended ranges with withStyle(SpanStyle(...)); the example makes one letter bold and red while leaving surrounding letters outside that span. TextStyle is for Text, while SpanStyle and ParagraphStyle belong in AnnotatedString. Limitation: use SpanStyle for inline ranges and ParagraphStyle for paragraph properties such as alignment, direction, line height, and indent.",
@@ -4295,8 +4193,8 @@
         {
           "id": "contract-toggleable-input-disabled-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 125,
           "endLine": 137,
@@ -4307,8 +4205,8 @@
         {
           "id": "contract-toggleable-node-state-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 309,
           "endLine": 348,
@@ -8242,8 +8140,8 @@
         {
           "id": "contract-animatable-interruption-result-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
           "startLine": 205,
           "endLine": 217,
@@ -33606,8 +33504,8 @@
         {
           "id": "contract-toggleable-input-disabled-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 125,
           "endLine": 137,
@@ -33643,8 +33541,8 @@
         {
           "id": "contract-toggleable-node-state-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 309,
           "endLine": 348,
@@ -65353,8 +65251,8 @@
         {
           "id": "contract-launchedeffect-key-lifetime-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
           "startLine": 552,
           "endLine": 569,
@@ -67803,8 +67701,8 @@
         {
           "id": "contract-rememberupdatedstate-current-value-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
           "startLine": 317,
           "endLine": 342,
@@ -84221,8 +84119,8 @@
         {
           "id": "contract-modifier-node-attachment-scope-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
           "startLine": 175,
           "endLine": 192,
@@ -88609,8 +88507,8 @@
         {
           "id": "contract-androidview-callback-parameters-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 179,
           "endLine": 190,
@@ -88646,8 +88544,8 @@
         {
           "id": "contract-androidview-factory-reuse-release-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 110,
           "endLine": 165,
@@ -114714,7 +114612,7 @@
     {
       "id": "live-compose-guide-testing-apis-assertions",
       "title": "Assertions",
-      "body": "Check assertions by calling assert() on the SemanticsNodeInteraction returned by a finder with one or multiple matchers:\n\n// Single matcher:\ncomposeTestRule\n    .onNode(matcher)\n    .assert(hasText(\"Button\")) // hasText is a SemanticsMatcher\n\n// Multiple matchers can use and / or\ncomposeTestRule\n    .onNode(matcher).assert(hasText(\"Button\") or hasText(\"Button2\"))\n\nYou can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.\n\nThere are also functions to check assertions on a collection of nodes:\n\n// Check number of matched nodes\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertCountEquals(4)\n// At least one matches\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAny(hasTestTag(\"Drummer\"))\n// All of them match\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAll(hasClickAction())",
+      "body": "Check assertions by calling assert() on the SemanticsNodeInteraction returned by a finder with one or multiple matchers:\n\n// Single matcher:\ncomposeTestRule\n    .onNode(matcher)\n    .assert(hasText(\"Button\")) // hasText is a SemanticsMatcher.\n\n// Multiple matchers can use and / or.\ncomposeTestRule\n    .onNode(matcher).assert(hasText(\"Button\") or hasText(\"Button2\"))TestingApis.kt\n\nYou can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.\n\nThere are also functions to check assertions on a collection of nodes:\n\n// Check number of matched nodes.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertCountEquals(4)\n// At least one matches.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAny(hasTestTag(\"Drummer\"))\n// All of them match.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAll(hasClickAction())TestingApis.kt",
       "aliases": [
         "androidx.compose.ui.test.SemanticsMatcher",
         "androidx.compose.ui.test.SemanticsNodeInteraction"
@@ -114730,10 +114628,10 @@
           "id": "live-compose-guide-testing-apis-assertions-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#assertions",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "98ca595c129465ee4fb23ba91cfd3e81df249f7dc1d0328a75f7477a99bf1459",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "14053dbaa4a6edc5278c625c15bd8652d2d16b4956482e1f6539368ec61aa21c",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Check assertions by calling assert() on the SemanticsNodeInteraction returned by a finder with one or multiple matchers:\n\n// Single matcher:\ncomposeTestRule\n    .onNode(matcher)\n    .assert(hasText(\"Button\")) // hasText is a SemanticsMatcher\n\n// Multiple matchers can use and / or\ncomposeTestRule\n    .onNode(matcher).assert(hasText(\"Button\") or hasText(\"Button2\"))\n\nYou can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.\n\nThere are also functions to check assertions on a collection of nodes:\n\n// Check number of matched nodes\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertCountEquals(4)\n// At least one matches\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAny(hasTestTag(\"Drummer\"))\n// All of them match\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAll(hasClickAction())"
+          "excerpt": "Check assertions by calling assert() on the SemanticsNodeInteraction returned by a finder with one or multiple matchers:\n\n// Single matcher:\ncomposeTestRule\n    .onNode(matcher)\n    .assert(hasText(\"Button\")) // hasText is a SemanticsMatcher.\n\n// Multiple matchers can use and / or.\ncomposeTestRule\n    .onNode(matcher).assert(hasText(\"Button\") or hasText(\"Button2\"))TestingApis.kt\n\nYou can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.\n\nThere are also functions to check assertions on a collection of nodes:\n\n// Check number of matched nodes.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertCountEquals(4)\n// At least one matches.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAny(hasTestTag(\"Drummer\"))\n// All of them match.\ncomposeTestRule\n    .onAllNodesWithContentDescription(\"Beatle\").assertAll(hasClickAction())TestingApis.kt"
         }
       ],
       "relatedIds": [],
@@ -114785,7 +114683,7 @@
     {
       "id": "live-compose-guide-testing-apis-hierarchical-matchers",
       "title": "Hierarchical matchers",
-      "body": "Hierarchical matchers let you go up or down the semantics tree and perform matching.\n\nfun hasParent(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnySibling(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyAncestor(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyDescendant(matcher: SemanticsMatcher):  SemanticsMatcher\n\nHere are some examples of these matchers being used:\n\ncomposeTestRule.onNode(hasParent(hasText(\"Button\")))\n    .assertIsDisplayed()",
+      "body": "Hierarchical matchers let you go up or down the semantics tree and perform matching.\n\nfun hasParent(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnySibling(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyAncestor(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyDescendant(matcher: SemanticsMatcher):  SemanticsMatcher\n\nHere are some examples of these matchers being used:\n\ncomposeTestRule.onNode(hasParent(hasText(\"Button\")))\n    .assertIsDisplayed()TestingApis.kt",
       "aliases": [
         "androidx.compose.ui.test.SemanticsMatcher"
       ],
@@ -114800,10 +114698,10 @@
           "id": "live-compose-guide-testing-apis-hierarchical-matchers-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#hierarchical-matchers",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "2413bd30a3eeeac7a726cd224550db568fc001ddd71044bfb221fa4ce835e557",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "c050eae0cd9f390497f337e37ba47cadf5e1bc427598abc9188ed27102118c97",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Hierarchical matchers let you go up or down the semantics tree and perform matching.\n\nfun hasParent(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnySibling(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyAncestor(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyDescendant(matcher: SemanticsMatcher):  SemanticsMatcher\n\nHere are some examples of these matchers being used:\n\ncomposeTestRule.onNode(hasParent(hasText(\"Button\")))\n    .assertIsDisplayed()"
+          "excerpt": "Hierarchical matchers let you go up or down the semantics tree and perform matching.\n\nfun hasParent(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnySibling(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyAncestor(matcher: SemanticsMatcher): SemanticsMatcher\nfun hasAnyDescendant(matcher: SemanticsMatcher):  SemanticsMatcher\n\nHere are some examples of these matchers being used:\n\ncomposeTestRule.onNode(hasParent(hasText(\"Button\")))\n    .assertIsDisplayed()TestingApis.kt"
         }
       ],
       "relatedIds": [],
@@ -114891,7 +114789,7 @@
     {
       "id": "live-compose-guide-testing-apis-select-multiple",
       "title": "Select multiple nodes",
-      "body": "composeTestRule\n    .onAllNodes(<<SemanticsMatcher>>): SemanticsNodeInteractionCollection\n\n// Example\ncomposeTestRule\n    .onAllNodes(hasText(\"Button\")) // Equivalent to onAllNodesWithText(\"Button\")",
+      "body": "composeTestRule\n    .onAllNodes(<<SemanticsMatcher>>): SemanticsNodeInteractionCollection\n\n// Example\ncomposeTestRule\n    .onAllNodes(hasText(\"Button\")) // Equivalent to onAllNodesWithText(\"Button\")TestingApis.kt",
       "aliases": [
         "androidx.compose.ui.test.SemanticsMatcher"
       ],
@@ -114906,10 +114804,10 @@
           "id": "live-compose-guide-testing-apis-select-multiple-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#select-multiple",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "4ea226e7631c2df74957d803a0daa93427484695d069511fe7a2b1dc17773635",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "6f207bde95ca8de8331d98a04203bc20609dd9eeb1c48b1b4f28ab779ff2fe69",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "composeTestRule\n    .onAllNodes(<<SemanticsMatcher>>): SemanticsNodeInteractionCollection\n\n// Example\ncomposeTestRule\n    .onAllNodes(hasText(\"Button\")) // Equivalent to onAllNodesWithText(\"Button\")"
+          "excerpt": "composeTestRule\n    .onAllNodes(<<SemanticsMatcher>>): SemanticsNodeInteractionCollection\n\n// Example\ncomposeTestRule\n    .onAllNodes(hasText(\"Button\")) // Equivalent to onAllNodesWithText(\"Button\")TestingApis.kt"
         }
       ],
       "relatedIds": [],
@@ -114927,7 +114825,7 @@
     {
       "id": "live-compose-guide-testing-apis-select-single",
       "title": "Select a single node",
-      "body": "composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): SemanticsNodeInteraction\n\n// Example\ncomposeTestRule\n    .onNode(hasText(\"Button\")) // Equivalent to onNodeWithText(\"Button\")",
+      "body": "composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): SemanticsNodeInteraction\n\n// Example\ncomposeTestRule\n    .onNode(hasText(\"Button\")) // Equivalent to onNodeWithText(\"Button\")TestingApis.kt",
       "aliases": [
         "androidx.compose.ui.test.SemanticsMatcher",
         "androidx.compose.ui.test.SemanticsNodeInteraction"
@@ -114943,10 +114841,10 @@
           "id": "live-compose-guide-testing-apis-select-single-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#select-single",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "a49b477bc275d5866163d2da7ab89550001a2dcfa7d32f7ae70a115c9a95c99d",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "0f8dfacd3d097d062242d9008ea93296c85149bbae27c868d755232f6be520f0",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): SemanticsNodeInteraction\n\n// Example\ncomposeTestRule\n    .onNode(hasText(\"Button\")) // Equivalent to onNodeWithText(\"Button\")"
+          "excerpt": "composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): SemanticsNodeInteraction\n\n// Example\ncomposeTestRule\n    .onNode(hasText(\"Button\")) // Equivalent to onNodeWithText(\"Button\")TestingApis.kt"
         }
       ],
       "relatedIds": [],
@@ -114964,7 +114862,7 @@
     {
       "id": "live-compose-guide-testing-apis-selectors",
       "title": "Selectors",
-      "body": "An alternative way to create tests is to use selectors which can make some tests more readable.\n\ncomposeTestRule.onNode(hasTestTag(\"Players\"))\n    .onChildren()\n    .filter(hasClickAction())\n    .assertCountEquals(4)\n    .onFirst()\n    .assert(hasText(\"John\"))\n\nYou can browse the complete list in the Compose Testing cheat sheet.",
+      "body": "An alternative way to create tests is to use selectors which can make some tests more readable.\n\ncomposeTestRule.onNode(hasTestTag(\"Players\"))\n    .onChildren()\n    .filter(hasClickAction())\n    .assertCountEquals(4)\n    .onFirst()\n    .assert(hasText(\"John\"))TestingApis.kt\n\nYou can browse the complete list in the Compose Testing cheat sheet.",
       "aliases": [],
       "requires": [
         {
@@ -114977,10 +114875,10 @@
           "id": "live-compose-guide-testing-apis-selectors-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#selectors",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "503d11a8feb326aa05a504c09d0e927daf2169f0a92d490eb75268b3f4532721",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "01c33767c2d01b3efb78ad5a1d08ac9741afddd22672b0630d4fc42b9e277f48",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "An alternative way to create tests is to use selectors which can make some tests more readable.\n\ncomposeTestRule.onNode(hasTestTag(\"Players\"))\n    .onChildren()\n    .filter(hasClickAction())\n    .assertCountEquals(4)\n    .onFirst()\n    .assert(hasText(\"John\"))\n\nYou can browse the complete list in the Compose Testing cheat sheet."
+          "excerpt": "An alternative way to create tests is to use selectors which can make some tests more readable.\n\ncomposeTestRule.onNode(hasTestTag(\"Players\"))\n    .onChildren()\n    .filter(hasClickAction())\n    .assertCountEquals(4)\n    .onFirst()\n    .assert(hasText(\"John\"))TestingApis.kt\n\nYou can browse the complete list in the Compose Testing cheat sheet."
         }
       ],
       "relatedIds": [],
@@ -114998,7 +114896,7 @@
     {
       "id": "live-compose-guide-testing-apis-unmerged",
       "title": "Unmerged tree",
-      "body": "Some nodes merge the semantics information of their children. For example, a button with two text elements merges the text element labels:\n\nMyButton {\n    Text(\"Hello\")\n    Text(\"World\")\n}\n\nFrom a test, use printToLog() to show the semantics tree:\n\ncomposeTestRule.onRoot().printToLog(\"TAG\")\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   Role = 'Button'\n   Text = '[Hello, World]'\n   Actions = [OnClick, GetTextLayoutResult]\n   MergeDescendants = 'true'\n\nIf you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:\n\ncomposeTestRule.onRoot(useUnmergedTree = true).printToLog(\"TAG\")\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   OnClick = '...'\n   MergeDescendants = 'true'\n    |-Node #3 at (...)px\n    | Text = '[Hello]'\n    |-Node #5 at (83.0, 86.0, 191.0, 135.0)px\n      Text = '[World]'\n\nThe useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.\n\ncomposeTestRule\n    .onNodeWithText(\"World\", useUnmergedTree = true).assertIsDisplayed()",
+      "body": "Some nodes merge the semantics information of their children. For example, a button with two text elements merges the text element labels:\n\nMyButton {\n    Text(\"Hello\")\n    Text(\"World\")\n}TestingApis.kt\n\nFrom a test, use printToLog() to show the semantics tree:\n\ncomposeTestRule.onRoot().printToLog(\"TAG\")TestingApis.kt\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   Role = 'Button'\n   Text = '[Hello, World]'\n   Actions = [OnClick, GetTextLayoutResult]\n   MergeDescendants = 'true'\n\nIf you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:\n\ncomposeTestRule.onRoot(useUnmergedTree = true).printToLog(\"TAG\")TestingApis.kt\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   OnClick = '...'\n   MergeDescendants = 'true'\n    |-Node #3 at (...)px\n    | Text = '[Hello]'\n    |-Node #5 at (83.0, 86.0, 191.0, 135.0)px\n      Text = '[World]'\n\nThe useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.\n\ncomposeTestRule\n    .onNodeWithText(\"World\", useUnmergedTree = true).assertIsDisplayed()TestingApis.kt",
       "aliases": [],
       "requires": [
         {
@@ -115011,10 +114909,10 @@
           "id": "live-compose-guide-testing-apis-unmerged-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/apis#unmerged",
-          "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
-          "sha256": "f3ce192d6fba5ca654666b285ac9b16e06eb07fcf70a00cc5d22082f1b217751",
+          "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
+          "sha256": "2e3d42e9a65aae9582069579a629ad1e2f5cd7179b6962ffbc221f490c29db93",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Some nodes merge the semantics information of their children. For example, a button with two text elements merges the text element labels:\n\nMyButton {\n    Text(\"Hello\")\n    Text(\"World\")\n}\n\nFrom a test, use printToLog() to show the semantics tree:\n\ncomposeTestRule.onRoot().printToLog(\"TAG\")\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   Role = 'Button'\n   Text = '[Hello, World]'\n   Actions = [OnClick, GetTextLayoutResult]\n   MergeDescendants = 'true'\n\nIf you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:\n\ncomposeTestRule.onRoot(useUnmergedTree = true).printToLog(\"TAG\")\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   OnClick = '...'\n   MergeDescendants = 'true'\n    |-Node #3 at (...)px\n    | Text = '[Hello]'\n    |-Node #5 at (83.0, 86.0, 191.0, 135.0)px\n      Text = '[World]'\n\nThe useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.\n\ncomposeTestRule\n    .onNodeWithText(\"World\", useUnmergedTree = true).assertIsDisplayed()"
+          "excerpt": "Some nodes merge the semantics information of their children. For example, a button with two text elements merges the text element labels:\n\nMyButton {\n    Text(\"Hello\")\n    Text(\"World\")\n}TestingApis.kt\n\nFrom a test, use printToLog() to show the semantics tree:\n\ncomposeTestRule.onRoot().printToLog(\"TAG\")TestingApis.kt\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   Role = 'Button'\n   Text = '[Hello, World]'\n   Actions = [OnClick, GetTextLayoutResult]\n   MergeDescendants = 'true'\n\nIf you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:\n\ncomposeTestRule.onRoot(useUnmergedTree = true).printToLog(\"TAG\")TestingApis.kt\n\nThis code prints the following output:\n\nNode #1 at (...)px\n |-Node #2 at (...)px\n   OnClick = '...'\n   MergeDescendants = 'true'\n    |-Node #3 at (...)px\n    | Text = '[Hello]'\n    |-Node #5 at (83.0, 86.0, 191.0, 135.0)px\n      Text = '[World]'\n\nThe useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.\n\ncomposeTestRule\n    .onNodeWithText(\"World\", useUnmergedTree = true).assertIsDisplayed()TestingApis.kt"
         }
       ],
       "relatedIds": [],
@@ -115100,7 +114998,7 @@
     {
       "id": "live-compose-guide-testing-common-patterns-componentactivity",
       "title": "Access the activity and resources after setting your own content",
-      "body": "Oftentimes you need to set the content under test using composeTestRule.setContent and you also need to access activity resources, for example to assert that a displayed text matches a string resource. However, you can't call setContent on a rule created with createAndroidComposeRule() if the activity already calls it.\n\nA common pattern to achieve this is to create an AndroidComposeTestRule using an empty activity such as ComponentActivity.\n\nclass MyComposeTest {\n\n    @get:Rule\n    val composeTestRule = createAndroidComposeRule<ComponentActivity>()\n\n    @Test\n    fun myTest() {\n        // Start the app\n        composeTestRule.setContent {\n            MyAppTheme {\n                MainScreen(uiState = exampleUiState, /*...*/)\n            }\n        }\n        val continueLabel = composeTestRule.activity.getString(R.string.next)\n        composeTestRule.onNodeWithText(continueLabel).performClick()\n    }\n}\n\nNote that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:\n\ndebugImplementation(\"androidx.compose.ui:ui-test-manifest:$compose_version\")",
+      "body": "Oftentimes you need to set the content under test using composeTestRule.setContent and you also need to access activity resources, for example to assert that a displayed text matches a string resource. However, you can't call setContent on a rule created with createAndroidComposeRule() if the activity already calls it.\n\nA common pattern to achieve this is to create an AndroidComposeTestRule using an empty activity such as ComponentActivity.\n\nclass MyComposeTest {\n\n    @get:Rule\n    val composeTestRule = createAndroidComposeRule<ComponentActivity>()\n\n    @Test\n    fun myTest() {\n        // Start the app.\n        composeTestRule.setContent {\n            MyAppTheme {\n                MainScreen(uiState = exampleUiState, /*...*/)\n            }\n        }\n        val continueLabel = composeTestRule.activity.getString(R.string.next)\n        composeTestRule.onNodeWithText(continueLabel).performClick()\n    }\n}CommonPatternsSnippets.kt\n\nNote that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:\n\ndebugImplementation(\"androidx.compose.ui:ui-test-manifest:$compose_version\")",
       "aliases": [],
       "requires": [
         {
@@ -115113,10 +115011,10 @@
           "id": "live-compose-guide-testing-common-patterns-componentactivity-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#componentactivity",
-          "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
-          "sha256": "24f2ff424010ac56e8bbaf09b46c6c2efe7d5ff8b29b58e363e5cb0beed7700d",
+          "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
+          "sha256": "e4e07d9b7c0e07e60ff366bfdb17568d50dc0b83304366208aed2a97ec7719b8",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Oftentimes you need to set the content under test using composeTestRule.setContent and you also need to access activity resources, for example to assert that a displayed text matches a string resource. However, you can't call setContent on a rule created with createAndroidComposeRule() if the activity already calls it.\n\nA common pattern to achieve this is to create an AndroidComposeTestRule using an empty activity such as ComponentActivity.\n\nclass MyComposeTest {\n\n    @get:Rule\n    val composeTestRule = createAndroidComposeRule<ComponentActivity>()\n\n    @Test\n    fun myTest() {\n        // Start the app\n        composeTestRule.setContent {\n            MyAppTheme {\n                MainScreen(uiState = exampleUiState, /*...*/)\n            }\n        }\n        val continueLabel = composeTestRule.activity.getString(R.string.next)\n        composeTestRule.onNodeWithText(continueLabel).performClick()\n    }\n}\n\nNote that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:\n\ndebugImplementation(\"androidx.compose.ui:ui-test-manifest:$compose_version\")"
+          "excerpt": "Oftentimes you need to set the content under test using composeTestRule.setContent and you also need to access activity resources, for example to assert that a displayed text matches a string resource. However, you can't call setContent on a rule created with createAndroidComposeRule() if the activity already calls it.\n\nA common pattern to achieve this is to create an AndroidComposeTestRule using an empty activity such as ComponentActivity.\n\nclass MyComposeTest {\n\n    @get:Rule\n    val composeTestRule = createAndroidComposeRule<ComponentActivity>()\n\n    @Test\n    fun myTest() {\n        // Start the app.\n        composeTestRule.setContent {\n            MyAppTheme {\n                MainScreen(uiState = exampleUiState, /*...*/)\n            }\n        }\n        val continueLabel = composeTestRule.activity.getString(R.string.next)\n        composeTestRule.onNodeWithText(continueLabel).performClick()\n    }\n}CommonPatternsSnippets.kt\n\nNote that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:\n\ndebugImplementation(\"androidx.compose.ui:ui-test-manifest:$compose_version\")"
         }
       ],
       "relatedIds": [],
@@ -115270,7 +115168,7 @@
     {
       "id": "live-compose-guide-testing-common-patterns-custom-semantics-properties",
       "title": "Custom semantics properties",
-      "body": "You can create custom semantics properties to expose information to tests. To do this, define a new SemanticsPropertyKey and make it available using the SemanticsPropertyReceiver.\n\n// Creates a semantics property of type Long.\nval PickedDateKey = SemanticsPropertyKey<Long>(\"PickedDate\")\nvar SemanticsPropertyReceiver.pickedDate by PickedDateKey\n\nNow use that property in the semantics modifier:\n\nval datePickerValue by remember { mutableStateOf(0L) }\nMyCustomDatePicker(\n    modifier = Modifier.semantics { pickedDate = datePickerValue }\n)\n\nFrom tests, use SemanticsMatcher.expectValue to assert the value of the property:\n\ncomposeTestRule\n    .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21\n    .assertExists()",
+      "body": "You can create custom semantics properties to expose information to tests. To do this, define a new SemanticsPropertyKey and make it available using the SemanticsPropertyReceiver.\n\n// Creates a semantics property of type Long.\nval PickedDateKey = SemanticsPropertyKey<Long>(\"PickedDate\")\nvar SemanticsPropertyReceiver.pickedDate by PickedDateKeyCommonPatternsSnippets.kt\n\nNow use that property in the semantics modifier:\n\nval datePickerValue by remember { mutableStateOf(0L) }\nMyCustomDatePicker(\n    modifier = Modifier.semantics { pickedDate = datePickerValue }\n)CommonPatternsSnippets.kt\n\nFrom tests, use SemanticsMatcher.expectValue to assert the value of the property:\n\ncomposeTestRule\n    .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21\n    .assertExists()CommonPatternsSnippets.kt",
       "aliases": [],
       "requires": [
         {
@@ -115283,10 +115181,10 @@
           "id": "live-compose-guide-testing-common-patterns-custom-semantics-properties-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#custom-semantics-properties",
-          "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
-          "sha256": "ef0b209c53e6d444dd6f8698edd9dda289ca0f52d5e20ab91152f9c6b2c6efae",
+          "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
+          "sha256": "7b5eeb92c48e742c203a0e2759e7d7b4cfd914dd4281dba594d0cebb0455a5f7",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "You can create custom semantics properties to expose information to tests. To do this, define a new SemanticsPropertyKey and make it available using the SemanticsPropertyReceiver.\n\n// Creates a semantics property of type Long.\nval PickedDateKey = SemanticsPropertyKey<Long>(\"PickedDate\")\nvar SemanticsPropertyReceiver.pickedDate by PickedDateKey\n\nNow use that property in the semantics modifier:\n\nval datePickerValue by remember { mutableStateOf(0L) }\nMyCustomDatePicker(\n    modifier = Modifier.semantics { pickedDate = datePickerValue }\n)\n\nFrom tests, use SemanticsMatcher.expectValue to assert the value of the property:\n\ncomposeTestRule\n    .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21\n    .assertExists()"
+          "excerpt": "You can create custom semantics properties to expose information to tests. To do this, define a new SemanticsPropertyKey and make it available using the SemanticsPropertyReceiver.\n\n// Creates a semantics property of type Long.\nval PickedDateKey = SemanticsPropertyKey<Long>(\"PickedDate\")\nvar SemanticsPropertyReceiver.pickedDate by PickedDateKeyCommonPatternsSnippets.kt\n\nNow use that property in the semantics modifier:\n\nval datePickerValue by remember { mutableStateOf(0L) }\nMyCustomDatePicker(\n    modifier = Modifier.semantics { pickedDate = datePickerValue }\n)CommonPatternsSnippets.kt\n\nFrom tests, use SemanticsMatcher.expectValue to assert the value of the property:\n\ncomposeTestRule\n    .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21\n    .assertExists()CommonPatternsSnippets.kt"
         }
       ],
       "relatedIds": [],
@@ -115478,7 +115376,7 @@
     {
       "id": "live-compose-guide-testing-common-patterns-verify-state",
       "title": "Verify state restoration",
-      "body": "Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.\n\nThis class lets you simulate the recreation of a composable. It's especially useful to verify the implementation of rememberSaveable.\n\nclass MyStateRestorationTests {\n\n    @get:Rule\n    val composeTestRule = createComposeRule()\n\n    @Test\n    fun onRecreation_stateIsRestored() {\n        val restorationTester = StateRestorationTester(composeTestRule)\n\n        restorationTester.setContent { MainScreen() }\n\n        // TODO: Run actions that modify the state\n\n        // Trigger a recreation\n        restorationTester.emulateSavedInstanceStateRestore()\n\n        // TODO: Verify that state has been correctly restored.\n    }\n}",
+      "body": "Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.\n\nThis class lets you simulate the recreation of a composable. It's especially useful to verify the implementation of rememberSaveable.\n\nclass MyStateRestorationTests {\n\n    @get:Rule\n    val composeTestRule = createComposeRule()\n\n    @Test\n    fun onRecreation_stateIsRestored() {\n        val restorationTester = StateRestorationTester(composeTestRule)\n\n        restorationTester.setContent { MainScreen() }\n\n        // TODO: Run actions that modify the state\n\n        // Trigger a recreation.\n        restorationTester.emulateSavedInstanceStateRestore()\n\n        // TODO: Verify that state has been correctly restored.\n    }\n}CommonPatternsSnippets.kt",
       "aliases": [
         "androidx.compose.ui.test.junit4.StateRestorationTester"
       ],
@@ -115493,10 +115391,10 @@
           "id": "live-compose-guide-testing-common-patterns-verify-state-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
-          "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
-          "sha256": "95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945",
+          "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
+          "sha256": "33db1fe7860470cc92c23096b3e0297e261a0415d1c296fc8dd1f9a9eb7817e2",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.\n\nThis class lets you simulate the recreation of a composable. It's especially useful to verify the implementation of rememberSaveable.\n\nclass MyStateRestorationTests {\n\n    @get:Rule\n    val composeTestRule = createComposeRule()\n\n    @Test\n    fun onRecreation_stateIsRestored() {\n        val restorationTester = StateRestorationTester(composeTestRule)\n\n        restorationTester.setContent { MainScreen() }\n\n        // TODO: Run actions that modify the state\n\n        // Trigger a recreation\n        restorationTester.emulateSavedInstanceStateRestore()\n\n        // TODO: Verify that state has been correctly restored.\n    }\n}"
+          "excerpt": "Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.\n\nThis class lets you simulate the recreation of a composable. It's especially useful to verify the implementation of rememberSaveable.\n\nclass MyStateRestorationTests {\n\n    @get:Rule\n    val composeTestRule = createComposeRule()\n\n    @Test\n    fun onRecreation_stateIsRestored() {\n        val restorationTester = StateRestorationTester(composeTestRule)\n\n        restorationTester.setContent { MainScreen() }\n\n        // TODO: Run actions that modify the state\n\n        // Trigger a recreation.\n        restorationTester.emulateSavedInstanceStateRestore()\n\n        // TODO: Verify that state has been correctly restored.\n    }\n}CommonPatternsSnippets.kt"
         }
       ],
       "relatedIds": [],
@@ -115548,7 +115446,7 @@
     {
       "id": "live-compose-guide-testing-semantics-main-content",
       "title": "Introduction",
-      "body": "UI tests in Compose use semantics to interact with the UI hierarchy. Semantics, as the name implies, give meaning to a piece of UI. In this context, a \"piece of UI\" (or element) can mean anything from a single composable to a full screen. The semantics tree is generated alongside the UI hierarchy and describes the hierarchy.\n\nYou can learn more about semantics generally in Semantics in Compose.\n\nFigure 1. A typical UI hierarchy and its semantics tree.\n\nThe semantics framework is primarily used for accessibility, so tests take advantage of the information exposed by semantics about the UI hierarchy. Developers decide what and how much to expose.\n\nFigure 2. A typical button containing an icon and text.\n\nFor example, given a button like this that consists of an icon and a text element, the default semantics tree only contains the text label \"Like\". This is because some composables, such as Text, already expose some properties to the semantics tree. You can add properties to the semantics tree by using a Modifier.\n\nMyButton(\n    modifier = Modifier.semantics { contentDescription = \"Add to favorites\" }\n)",
+      "body": "UI tests in Compose use semantics to interact with the UI hierarchy. Semantics, as the name implies, give meaning to a piece of UI. In this context, a \"piece of UI\" (or element) can mean anything from a single composable to a full screen. The semantics tree is generated alongside the UI hierarchy and describes the hierarchy.\n\nYou can learn more about semantics generally in Semantics in Compose.\n\nFigure 1. A typical UI hierarchy and its semantics tree.\n\nThe semantics framework is primarily used for accessibility, so tests take advantage of the information exposed by semantics about the UI hierarchy. Developers decide what and how much to expose.\n\nFigure 2. A typical button containing an icon and text.\n\nFor example, given a button like this that consists of an icon and a text element, the default semantics tree only contains the text label \"Like\". This is because some composables, such as Text, already expose some properties to the semantics tree. You can add properties to the semantics tree by using a Modifier.\n\nMyButton(\n    modifier = Modifier.semantics { contentDescription = \"Add to favorites\" }\n)SemanticsSnippets.kt",
       "aliases": [],
       "requires": [
         {
@@ -115561,10 +115459,10 @@
           "id": "live-compose-guide-testing-semantics-main-content-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/semantics#main-content",
-          "revision": "web:compose-guide-testing-semantics:content@sha256:b5f1beff7fab85aea6460957c30969e66b4b481204779c44fd93905039c26131",
-          "sha256": "ecd81a16e2bc89020f60c46fa7daa9436a27c383f18be99c5406c6b170b635df",
+          "revision": "web:compose-guide-testing-semantics:content@sha256:43a8182670bf927ddefbd7704d90be25a8e575f0269cf93d435e2481fb11137a",
+          "sha256": "9aa62b25d4c62c7ecf81b3c20a7f946e3d00b3793dc0cc143e61e515ef8fdad2",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "UI tests in Compose use semantics to interact with the UI hierarchy. Semantics, as the name implies, give meaning to a piece of UI. In this context, a \"piece of UI\" (or element) can mean anything from a single composable to a full screen. The semantics tree is generated alongside the UI hierarchy and describes the hierarchy.\n\nYou can learn more about semantics generally in Semantics in Compose.\n\nFigure 1. A typical UI hierarchy and its semantics tree.\n\nThe semantics framework is primarily used for accessibility, so tests take advantage of the information exposed by semantics about the UI hierarchy. Developers decide what and how much to expose.\n\nFigure 2. A typical button containing an icon and text.\n\nFor example, given a button like this that consists of an icon and a text element, the default semantics tree only contains the text label \"Like\". This is because some composables, such as Text, already expose some properties to the semantics tree. You can add properties to the semantics tree by using a Modifier.\n\nMyButton(\n    modifier = Modifier.semantics { contentDescription = \"Add to favorites\" }\n)"
+          "excerpt": "UI tests in Compose use semantics to interact with the UI hierarchy. Semantics, as the name implies, give meaning to a piece of UI. In this context, a \"piece of UI\" (or element) can mean anything from a single composable to a full screen. The semantics tree is generated alongside the UI hierarchy and describes the hierarchy.\n\nYou can learn more about semantics generally in Semantics in Compose.\n\nFigure 1. A typical UI hierarchy and its semantics tree.\n\nThe semantics framework is primarily used for accessibility, so tests take advantage of the information exposed by semantics about the UI hierarchy. Developers decide what and how much to expose.\n\nFigure 2. A typical button containing an icon and text.\n\nFor example, given a button like this that consists of an icon and a text element, the default semantics tree only contains the text label \"Like\". This is because some composables, such as Text, already expose some properties to the semantics tree. You can add properties to the semantics tree by using a Modifier.\n\nMyButton(\n    modifier = Modifier.semantics { contentDescription = \"Add to favorites\" }\n)SemanticsSnippets.kt"
         }
       ],
       "relatedIds": [],
@@ -115616,7 +115514,7 @@
     {
       "id": "live-compose-guide-testing-synchronization-disable-autosync",
       "title": "Disable automatic synchronization",
-      "body": "When you call an assertion or action through the ComposeTestRule such as assertExists(), your test is synchronized with the Compose UI. In some cases you might want to stop this synchronization and control the clock yourself. For example, you can control time to take accurate screenshots of an animation at a point where the UI would still be busy. To disable automatic synchronization, set the autoAdvance property in the mainClock to false:\n\ncomposeTestRule.mainClock.autoAdvance = false\n\nTypically you will then advance the time yourself. You can advance exactly one frame with advanceTimeByFrame() or by a specific duration with advanceTimeBy():\n\ncomposeTestRule.mainClock.advanceTimeByFrame()\ncomposeTestRule.mainClock.advanceTimeBy(milliseconds)",
+      "body": "When you call an assertion or action through the ComposeTestRule such as assertExists(), your test is synchronized with the Compose UI. In some cases you might want to stop this synchronization and control the clock yourself. For example, you can control time to take accurate screenshots of an animation at a point where the UI would still be busy. To disable automatic synchronization, set the autoAdvance property in the mainClock to false:\n\ncomposeTestRule.mainClock.autoAdvance = falseTestSyncSnippets.kt\n\nTypically you will then advance the time yourself. You can advance exactly one frame with advanceTimeByFrame() or by a specific duration with advanceTimeBy():\n\ncomposeTestRule.mainClock.advanceTimeByFrame()\ncomposeTestRule.mainClock.advanceTimeBy(milliseconds)TestSyncSnippets.kt",
       "aliases": [
         "androidx.compose.ui.test.junit4.ComposeTestRule"
       ],
@@ -115631,10 +115529,10 @@
           "id": "live-compose-guide-testing-synchronization-disable-autosync-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#disable-autosync",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "5bd4c3be1ab6b0c2eb06fe05df282205c938e6cad5229a91c7ef9b4f10ff21b8",
+          "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
+          "sha256": "0f16e4876f4c96b4ae2c8c9edec78a4bbb38c49b4fb50f7f62d1ea779102b68f",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "When you call an assertion or action through the ComposeTestRule such as assertExists(), your test is synchronized with the Compose UI. In some cases you might want to stop this synchronization and control the clock yourself. For example, you can control time to take accurate screenshots of an animation at a point where the UI would still be busy. To disable automatic synchronization, set the autoAdvance property in the mainClock to false:\n\ncomposeTestRule.mainClock.autoAdvance = false\n\nTypically you will then advance the time yourself. You can advance exactly one frame with advanceTimeByFrame() or by a specific duration with advanceTimeBy():\n\ncomposeTestRule.mainClock.advanceTimeByFrame()\ncomposeTestRule.mainClock.advanceTimeBy(milliseconds)"
+          "excerpt": "When you call an assertion or action through the ComposeTestRule such as assertExists(), your test is synchronized with the Compose UI. In some cases you might want to stop this synchronization and control the clock yourself. For example, you can control time to take accurate screenshots of an animation at a point where the UI would still be busy. To disable automatic synchronization, set the autoAdvance property in the mainClock to false:\n\ncomposeTestRule.mainClock.autoAdvance = falseTestSyncSnippets.kt\n\nTypically you will then advance the time yourself. You can advance exactly one frame with advanceTimeByFrame() or by a specific duration with advanceTimeBy():\n\ncomposeTestRule.mainClock.advanceTimeByFrame()\ncomposeTestRule.mainClock.advanceTimeBy(milliseconds)TestSyncSnippets.kt"
         }
       ],
       "relatedIds": [],
@@ -115720,7 +115618,7 @@
     {
       "id": "live-compose-guide-testing-synchronization-idling-resources",
       "title": "Idle resources",
-      "body": "Compose can synchronize tests and the UI so that every action and assertion is done in an idle state, waiting or advancing the clock as needed. However, some asynchronous operations whose results affect the UI state can be run in the background while the test is unaware of them.\n\nCreate and register these idling resources in your test so that they're taken into account when deciding whether the app under test is busy or idle. You don't have to take action unless you need to register additional idling resources, for example, if you run a background job that is not synchronized with Espresso or Compose.\n\nThis API is very similar to Espresso's Idling Resources to indicate whether the subject under test is idle or busy. Use the Compose test rule to register the implementation of the IdlingResource.\n\ncomposeTestRule.registerIdlingResource(idlingResource)\ncomposeTestRule.unregisterIdlingResource(idlingResource)",
+      "body": "Compose can synchronize tests and the UI so that every action and assertion is done in an idle state, waiting or advancing the clock as needed. However, some asynchronous operations whose results affect the UI state can be run in the background while the test is unaware of them.\n\nCreate and register these idling resources in your test so that they're taken into account when deciding whether the app under test is busy or idle. You don't have to take action unless you need to register additional idling resources, for example, if you run a background job that is not synchronized with Espresso or Compose.\n\nThis API is very similar to Espresso's Idling Resources to indicate whether the subject under test is idle or busy. Use the Compose test rule to register the implementation of the IdlingResource.\n\ncomposeTestRule.registerIdlingResource(idlingResource)\ncomposeTestRule.unregisterIdlingResource(idlingResource)TestSyncSnippets.kt",
       "aliases": [
         "androidx.compose.ui.test.IdlingResource"
       ],
@@ -115735,10 +115633,10 @@
           "id": "live-compose-guide-testing-synchronization-idling-resources-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#idling-resources",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "9d800b0d0af986ad59ed1774b079d500d52e92c8636232fca7422a82aa71690e",
+          "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
+          "sha256": "d46995477a81d6960078c0c15c0b5befeab89b9cc1a74b2c25ffa59b55fbe2af",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Compose can synchronize tests and the UI so that every action and assertion is done in an idle state, waiting or advancing the clock as needed. However, some asynchronous operations whose results affect the UI state can be run in the background while the test is unaware of them.\n\nCreate and register these idling resources in your test so that they're taken into account when deciding whether the app under test is busy or idle. You don't have to take action unless you need to register additional idling resources, for example, if you run a background job that is not synchronized with Espresso or Compose.\n\nThis API is very similar to Espresso's Idling Resources to indicate whether the subject under test is idle or busy. Use the Compose test rule to register the implementation of the IdlingResource.\n\ncomposeTestRule.registerIdlingResource(idlingResource)\ncomposeTestRule.unregisterIdlingResource(idlingResource)"
+          "excerpt": "Compose can synchronize tests and the UI so that every action and assertion is done in an idle state, waiting or advancing the clock as needed. However, some asynchronous operations whose results affect the UI state can be run in the background while the test is unaware of them.\n\nCreate and register these idling resources in your test so that they're taken into account when deciding whether the app under test is busy or idle. You don't have to take action unless you need to register additional idling resources, for example, if you run a background job that is not synchronized with Espresso or Compose.\n\nThis API is very similar to Espresso's Idling Resources to indicate whether the subject under test is idle or busy. Use the Compose test rule to register the implementation of the IdlingResource.\n\ncomposeTestRule.registerIdlingResource(idlingResource)\ncomposeTestRule.unregisterIdlingResource(idlingResource)TestSyncSnippets.kt"
         }
       ],
       "relatedIds": [],
@@ -115756,7 +115654,7 @@
     {
       "id": "live-compose-guide-testing-synchronization-main-content",
       "title": "Introduction",
-      "body": "Compose tests are synchronized by default with your UI. When you call an assertion or an action with the ComposeTestRule, the test is synchronized beforehand, waiting until the UI tree is idle.\n\nNormally, you don't have to take any action. However, there are some edge cases you should know about.\n\nWhen a test is synchronized, your Compose app is advanced in time using a virtual clock. This means Compose tests don't run in real time, so they can pass as fast as possible.\n\nHowever, if you don't use the methods that synchronize your tests, no recomposition will occur and the UI will appear to be paused.\n\n@Test\nfun counterTest() {\n    val myCounter = mutableStateOf(0) // State that can cause recompositions.\n    var lastSeenValue = 0 // Used to track recompositions.\n    composeTestRule.setContent {\n        Text(myCounter.value.toString())\n        lastSeenValue = myCounter.value\n    }\n    myCounter.value = 1 // The state changes, but there is no recomposition.\n\n    // Fails because nothing triggered a recomposition.\n    assertTrue(lastSeenValue == 1)\n\n    // Passes because the assertion triggers recomposition.\n    composeTestRule.onNodeWithText(\"1\").assertExists()\n}\n\nNote that this requirement only applies to Compose hierarchies and not to the rest of the app.",
+      "body": "Compose tests are synchronized by default with your UI. When you call an assertion or an action with the ComposeTestRule, the test is synchronized beforehand, waiting until the UI tree is idle.\n\nNormally, you don't have to take any action. However, there are some edge cases you should know about.\n\nWhen a test is synchronized, your Compose app is advanced in time using a virtual clock. This means Compose tests don't run in real time, so they can pass as fast as possible.\n\nHowever, if you don't use the methods that synchronize your tests, no recomposition will occur and the UI will appear to be paused.\n\n@Test\nfun counterTest() {\n    val myCounter = mutableStateOf(0) // State that can cause recompositions.\n    var lastSeenValue = 0 // Used to track recompositions.\n    composeTestRule.setContent {\n        Text(myCounter.value.toString())\n        lastSeenValue = myCounter.value\n    }\n    myCounter.value = 1 // The state changes, but there is no recomposition.\n\n    // Fails because nothing triggered a recomposition.\n    assertTrue(lastSeenValue == 1)\n\n    // Passes because the assertion triggers recomposition.\n    composeTestRule.onNodeWithText(\"1\").assertExists()\n}TestSyncSnippets.kt\n\nNote that this requirement only applies to Compose hierarchies and not to the rest of the app.",
       "aliases": [
         "androidx.compose.ui.test.junit4.ComposeTestRule"
       ],
@@ -115771,10 +115669,10 @@
           "id": "live-compose-guide-testing-synchronization-main-content-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#main-content",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "29d8e02257d8276af22d52d4a2db59e927b2373663eac6da69f9512f7dc7ed42",
+          "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
+          "sha256": "386099267ff945ca9a7d0fb8fff36fc06b6fc2b9f8440df4bcba485f35fc0068",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Compose tests are synchronized by default with your UI. When you call an assertion or an action with the ComposeTestRule, the test is synchronized beforehand, waiting until the UI tree is idle.\n\nNormally, you don't have to take any action. However, there are some edge cases you should know about.\n\nWhen a test is synchronized, your Compose app is advanced in time using a virtual clock. This means Compose tests don't run in real time, so they can pass as fast as possible.\n\nHowever, if you don't use the methods that synchronize your tests, no recomposition will occur and the UI will appear to be paused.\n\n@Test\nfun counterTest() {\n    val myCounter = mutableStateOf(0) // State that can cause recompositions.\n    var lastSeenValue = 0 // Used to track recompositions.\n    composeTestRule.setContent {\n        Text(myCounter.value.toString())\n        lastSeenValue = myCounter.value\n    }\n    myCounter.value = 1 // The state changes, but there is no recomposition.\n\n    // Fails because nothing triggered a recomposition.\n    assertTrue(lastSeenValue == 1)\n\n    // Passes because the assertion triggers recomposition.\n    composeTestRule.onNodeWithText(\"1\").assertExists()\n}\n\nNote that this requirement only applies to Compose hierarchies and not to the rest of the app."
+          "excerpt": "Compose tests are synchronized by default with your UI. When you call an assertion or an action with the ComposeTestRule, the test is synchronized beforehand, waiting until the UI tree is idle.\n\nNormally, you don't have to take any action. However, there are some edge cases you should know about.\n\nWhen a test is synchronized, your Compose app is advanced in time using a virtual clock. This means Compose tests don't run in real time, so they can pass as fast as possible.\n\nHowever, if you don't use the methods that synchronize your tests, no recomposition will occur and the UI will appear to be paused.\n\n@Test\nfun counterTest() {\n    val myCounter = mutableStateOf(0) // State that can cause recompositions.\n    var lastSeenValue = 0 // Used to track recompositions.\n    composeTestRule.setContent {\n        Text(myCounter.value.toString())\n        lastSeenValue = myCounter.value\n    }\n    myCounter.value = 1 // The state changes, but there is no recomposition.\n\n    // Fails because nothing triggered a recomposition.\n    assertTrue(lastSeenValue == 1)\n\n    // Passes because the assertion triggers recomposition.\n    composeTestRule.onNodeWithText(\"1\").assertExists()\n}TestSyncSnippets.kt\n\nNote that this requirement only applies to Compose hierarchies and not to the rest of the app."
         }
       ],
       "relatedIds": [],
@@ -115826,7 +115724,7 @@
     {
       "id": "live-compose-guide-testing-synchronization-manual-sync",
       "title": "Manual synchronization",
-      "body": "In certain cases, you have to synchronize the Compose UI with other parts of your test or the app you're testing.\n\nThe waitForIdle() function waits for Compose to be idle, but the function depends on the autoAdvance property:\n\ncomposeTestRule.mainClock.autoAdvance = true // Default\ncomposeTestRule.waitForIdle() // Advances the clock until Compose is idle.\n\ncomposeTestRule.mainClock.autoAdvance = false\ncomposeTestRule.waitForIdle() // Only waits for idling resources to become idle.\n\nNote that in both cases, waitForIdle() also waits for pending draw and layout passes.\n\nAlso, you can advance the clock until a certain condition is met with advanceTimeUntil().\n\ncomposeTestRule.mainClock.advanceTimeUntil(timeoutMs) { condition }\n\nNote that the given condition should be checking the state that can be affected by this clock (it only works with Compose state).",
+      "body": "In certain cases, you have to synchronize the Compose UI with other parts of your test or the app you're testing.\n\nThe waitForIdle() function waits for Compose to be idle, but the function depends on the autoAdvance property:\n\ncomposeTestRule.mainClock.autoAdvance = true // Default.\ncomposeTestRule.waitForIdle() // Advances the clock until Compose is idle.\n\ncomposeTestRule.mainClock.autoAdvance = false\ncomposeTestRule.waitForIdle() // Only waits for idling resources to become idle.TestSyncSnippets.kt\n\nNote that in both cases, waitForIdle() also waits for pending draw and layout passes.\n\nAlso, you can advance the clock until a certain condition is met with advanceTimeUntil().\n\ncomposeTestRule.mainClock.advanceTimeUntil(timeoutMs) { condition }TestSyncSnippets.kt\n\nNote that the given condition should be checking the state that can be affected by this clock (it only works with Compose state).",
       "aliases": [],
       "requires": [
         {
@@ -115839,10 +115737,10 @@
           "id": "live-compose-guide-testing-synchronization-manual-sync-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#manual-sync",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "f320b27033849c55e2c57decc2687262a2092cf3bb29e013fbecf062df0a1d90",
+          "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
+          "sha256": "7937bc49665fb52baf9326971fe708274074bf29d01739d374136617bc831efe",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "In certain cases, you have to synchronize the Compose UI with other parts of your test or the app you're testing.\n\nThe waitForIdle() function waits for Compose to be idle, but the function depends on the autoAdvance property:\n\ncomposeTestRule.mainClock.autoAdvance = true // Default\ncomposeTestRule.waitForIdle() // Advances the clock until Compose is idle.\n\ncomposeTestRule.mainClock.autoAdvance = false\ncomposeTestRule.waitForIdle() // Only waits for idling resources to become idle.\n\nNote that in both cases, waitForIdle() also waits for pending draw and layout passes.\n\nAlso, you can advance the clock until a certain condition is met with advanceTimeUntil().\n\ncomposeTestRule.mainClock.advanceTimeUntil(timeoutMs) { condition }\n\nNote that the given condition should be checking the state that can be affected by this clock (it only works with Compose state)."
+          "excerpt": "In certain cases, you have to synchronize the Compose UI with other parts of your test or the app you're testing.\n\nThe waitForIdle() function waits for Compose to be idle, but the function depends on the autoAdvance property:\n\ncomposeTestRule.mainClock.autoAdvance = true // Default.\ncomposeTestRule.waitForIdle() // Advances the clock until Compose is idle.\n\ncomposeTestRule.mainClock.autoAdvance = false\ncomposeTestRule.waitForIdle() // Only waits for idling resources to become idle.TestSyncSnippets.kt\n\nNote that in both cases, waitForIdle() also waits for pending draw and layout passes.\n\nAlso, you can advance the clock until a certain condition is met with advanceTimeUntil().\n\ncomposeTestRule.mainClock.advanceTimeUntil(timeoutMs) { condition }TestSyncSnippets.kt\n\nNote that the given condition should be checking the state that can be affected by this clock (it only works with Compose state)."
         }
       ],
       "relatedIds": [],
@@ -115860,7 +115758,7 @@
     {
       "id": "live-compose-guide-testing-synchronization-manual-sync-waituntil",
       "title": "Wait for conditions",
-      "body": "Any condition that depends on external work, such as data loading or Android's measure or draw (that is, measure or draw external to Compose), should use a more general concept such as waitUntil():\n\ncomposeTestRule.waitUntil(timeoutMs) { condition }\n\nYou can also use any of the waitUntil helpers:\n\ncomposeTestRule.waitUntilAtLeastOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilDoesNotExist(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilExactlyOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilNodeCount(matcher, count, timeoutMs)",
+      "body": "Any condition that depends on external work, such as data loading or Android's measure or draw (that is, measure or draw external to Compose), should use a more general concept such as waitUntil():\n\ncomposeTestRule.waitUntil(timeoutMs) { condition }TestSyncSnippets.kt\n\nYou can also use any of the waitUntil helpers:\n\ncomposeTestRule.waitUntilAtLeastOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilDoesNotExist(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilExactlyOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilNodeCount(matcher, count, timeoutMs)TestSyncSnippets.kt",
       "aliases": [],
       "requires": [
         {
@@ -115873,10 +115771,10 @@
           "id": "live-compose-guide-testing-synchronization-manual-sync-waituntil-source",
           "kind": "guide",
           "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#manual-sync-waituntil",
-          "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
-          "sha256": "9f0badaef574a462c7063a6ae2189ee8823a7501c6b820e54f953577feb90fe1",
+          "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
+          "sha256": "1798bde76faa5ac0e71e4cbef07ff38508d555629b05715400f1b52300316698",
           "license": "Apache-2.0 (https://developer.android.com/license)",
-          "excerpt": "Any condition that depends on external work, such as data loading or Android's measure or draw (that is, measure or draw external to Compose), should use a more general concept such as waitUntil():\n\ncomposeTestRule.waitUntil(timeoutMs) { condition }\n\nYou can also use any of the waitUntil helpers:\n\ncomposeTestRule.waitUntilAtLeastOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilDoesNotExist(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilExactlyOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilNodeCount(matcher, count, timeoutMs)"
+          "excerpt": "Any condition that depends on external work, such as data loading or Android's measure or draw (that is, measure or draw external to Compose), should use a more general concept such as waitUntil():\n\ncomposeTestRule.waitUntil(timeoutMs) { condition }TestSyncSnippets.kt\n\nYou can also use any of the waitUntil helpers:\n\ncomposeTestRule.waitUntilAtLeastOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilDoesNotExist(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilExactlyOneExists(matcher, timeoutMs)\n\ncomposeTestRule.waitUntilNodeCount(matcher, count, timeoutMs)TestSyncSnippets.kt"
         }
       ],
       "relatedIds": [],

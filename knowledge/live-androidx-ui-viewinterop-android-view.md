@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-androidview-callback-parameters-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
-    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    resource: https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
+    revision: 6967ac69452dfa322107e43923d41b9a787d1071
     path: compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
     startLine: 179
     endLine: 190
@@ -30,8 +30,8 @@ sources:
        *   update the information and state of the view.
   - id: contract-androidview-factory-reuse-release-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
-    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    resource: https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
+    revision: 6967ac69452dfa322107e43923d41b9a787d1071
     path: compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
     startLine: 110
     endLine: 165
@@ -762,7 +762,7 @@ Public source: https://android.googlesource.com/platform/frameworks/support/+/an
  * @param update A callback to be invoked after the layout is inflated and upon recomposition to
  *   update the information and state of the view.
 
-Sources: [contract-androidview-callback-parameters-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)
+Sources: [contract-androidview-callback-parameters-source](https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)
 
 ## AndroidView factory, update, reset, and release lifecycle
 
@@ -823,7 +823,7 @@ Sources: [contract-androidview-callback-parameters-source](https://android.googl
  * again in the future, a new instance will be created, with a fresh lifecycle that begins by
  * calling the [factory].
 
-Sources: [contract-androidview-factory-reuse-release-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)
+Sources: [contract-androidview-factory-reuse-release-source](https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)
 
 ## AndroidView lifecycle source (lines 1–35)
 

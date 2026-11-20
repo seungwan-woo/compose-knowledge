@@ -51,8 +51,8 @@ sources:
   - id: live-compose-guide-testing-common-patterns-componentactivity-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/common-patterns#componentactivity
-    revision: web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197
-    sha256: 24f2ff424010ac56e8bbaf09b46c6c2efe7d5ff8b29b58e363e5cb0beed7700d
+    revision: web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896
+    sha256: e4e07d9b7c0e07e60ff366bfdb17568d50dc0b83304366208aed2a97ec7719b8
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Oftentimes you need to set the content under test using composeTestRule.setContent and you also need to access activity resources, for example to assert that a displayed text matches a string resource. However, you can't call setContent on a rule created with createAndroidComposeRule() if the activity already calls it.
@@ -66,7 +66,7 @@ sources:
 
           @Test
           fun myTest() {
-              // Start the app
+              // Start the app.
               composeTestRule.setContent {
                   MyAppTheme {
                       MainScreen(uiState = exampleUiState, /*...*/)
@@ -75,7 +75,7 @@ sources:
               val continueLabel = composeTestRule.activity.getString(R.string.next)
               composeTestRule.onNodeWithText(continueLabel).performClick()
           }
-      }
+      }CommonPatternsSnippets.kt
 
       Note that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:
 
@@ -129,28 +129,28 @@ sources:
   - id: live-compose-guide-testing-common-patterns-custom-semantics-properties-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/common-patterns#custom-semantics-properties
-    revision: web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197
-    sha256: ef0b209c53e6d444dd6f8698edd9dda289ca0f52d5e20ab91152f9c6b2c6efae
+    revision: web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896
+    sha256: 7b5eeb92c48e742c203a0e2759e7d7b4cfd914dd4281dba594d0cebb0455a5f7
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       You can create custom semantics properties to expose information to tests. To do this, define a new SemanticsPropertyKey and make it available using the SemanticsPropertyReceiver.
 
       // Creates a semantics property of type Long.
       val PickedDateKey = SemanticsPropertyKey<Long>("PickedDate")
-      var SemanticsPropertyReceiver.pickedDate by PickedDateKey
+      var SemanticsPropertyReceiver.pickedDate by PickedDateKeyCommonPatternsSnippets.kt
 
       Now use that property in the semantics modifier:
 
       val datePickerValue by remember { mutableStateOf(0L) }
       MyCustomDatePicker(
           modifier = Modifier.semantics { pickedDate = datePickerValue }
-      )
+      )CommonPatternsSnippets.kt
 
       From tests, use SemanticsMatcher.expectValue to assert the value of the property:
 
       composeTestRule
           .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21
-          .assertExists()
+          .assertExists()CommonPatternsSnippets.kt
   - id: live-compose-guide-testing-common-patterns-isolation-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/common-patterns#isolation
@@ -256,8 +256,8 @@ sources:
   - id: live-compose-guide-testing-common-patterns-verify-state-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state
-    revision: web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197
-    sha256: 95ba01d479197fbba97dd04166c7dbe5abf9dc4e799d90c4f638f2a5fe660945
+    revision: web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896
+    sha256: 33db1fe7860470cc92c23096b3e0297e261a0415d1c296fc8dd1f9a9eb7817e2
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Verify that the state of your Compose elements is correctly restored when the activity or process is recreated. Perform such checks without relying on activity recreation with the StateRestorationTester class.
@@ -277,12 +277,12 @@ sources:
 
               // TODO: Run actions that modify the state
 
-              // Trigger a recreation
+              // Trigger a recreation.
               restorationTester.emulateSavedInstanceStateRestore()
 
               // TODO: Verify that state has been correctly restored.
           }
-      }
+      }CommonPatternsSnippets.kt
 compose:
   id: live-compose-guide-testing-common-patterns
   artifact: androidx.compose.ui:ui-test
@@ -474,7 +474,7 @@ class MyComposeTest {
 
     @Test
     fun myTest() {
-        // Start the app
+        // Start the app.
         composeTestRule.setContent {
             MyAppTheme {
                 MainScreen(uiState = exampleUiState, /*...*/)
@@ -483,7 +483,7 @@ class MyComposeTest {
         val continueLabel = composeTestRule.activity.getString(R.string.next)
         composeTestRule.onNodeWithText(continueLabel).performClick()
     }
-}
+}CommonPatternsSnippets.kt
 
 Note that ComponentActivity needs to be added to your app's AndroidManifest.xml file. Enable that by adding this dependency to your module:
 
@@ -536,20 +536,20 @@ You can create custom semantics properties to expose information to tests. To do
 
 // Creates a semantics property of type Long.
 val PickedDateKey = SemanticsPropertyKey<Long>("PickedDate")
-var SemanticsPropertyReceiver.pickedDate by PickedDateKey
+var SemanticsPropertyReceiver.pickedDate by PickedDateKeyCommonPatternsSnippets.kt
 
 Now use that property in the semantics modifier:
 
 val datePickerValue by remember { mutableStateOf(0L) }
 MyCustomDatePicker(
     modifier = Modifier.semantics { pickedDate = datePickerValue }
-)
+)CommonPatternsSnippets.kt
 
 From tests, use SemanticsMatcher.expectValue to assert the value of the property:
 
 composeTestRule
     .onNode(SemanticsMatcher.expectValue(PickedDateKey, 1445378400)) // 2015-10-21
-    .assertExists()
+    .assertExists()CommonPatternsSnippets.kt
 
 Sources: [live-compose-guide-testing-common-patterns-custom-semantics-properties-source](https://developer.android.com/develop/ui/compose/testing/common-patterns#custom-semantics-properties)
 
@@ -665,11 +665,11 @@ class MyStateRestorationTests {
 
         // TODO: Run actions that modify the state
 
-        // Trigger a recreation
+        // Trigger a recreation.
         restorationTester.emulateSavedInstanceStateRestore()
 
         // TODO: Verify that state has been correctly restored.
     }
-}
+}CommonPatternsSnippets.kt
 
 Sources: [live-compose-guide-testing-common-patterns-verify-state-source](https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state)

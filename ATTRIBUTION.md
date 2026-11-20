@@ -14,22 +14,22 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
 [
   {
     "id": "contract-androidview-callback-parameters-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-androidview-factory-reuse-release-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-animatable-interruption-result-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -49,36 +49,36 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "contract-launchedeffect-key-lifetime-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-modifier-node-attachment-scope-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-rememberupdatedstate-current-value-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-input-disabled-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-node-state-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -19488,7 +19488,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-apis-assertions-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#assertions",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19500,7 +19500,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-apis-hierarchical-matchers-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#hierarchical-matchers",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19518,25 +19518,25 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-apis-select-multiple-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#select-multiple",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-testing-apis-select-single-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#select-single",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-testing-apis-selectors-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#selectors",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-testing-apis-unmerged-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/apis#unmerged",
-    "revision": "web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f",
+    "revision": "web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19554,7 +19554,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-common-patterns-componentactivity-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#componentactivity",
-    "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+    "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19584,7 +19584,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-common-patterns-custom-semantics-properties-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#custom-semantics-properties",
-    "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+    "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19620,7 +19620,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-common-patterns-verify-state-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/common-patterns#verify-state",
-    "revision": "web:compose-guide-testing-common-patterns:content@sha256:861eaedfc1278a99069fc557a14a9bca68181e5142f478af9840905bbf151197",
+    "revision": "web:compose-guide-testing-common-patterns:content@sha256:bc9de8a32647c423459bed5194d29aa0d16fdafa776c0e9392d73c0f99d76896",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19632,7 +19632,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-semantics-main-content-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/semantics#main-content",
-    "revision": "web:compose-guide-testing-semantics:content@sha256:b5f1beff7fab85aea6460957c30969e66b4b481204779c44fd93905039c26131",
+    "revision": "web:compose-guide-testing-semantics:content@sha256:43a8182670bf927ddefbd7704d90be25a8e575f0269cf93d435e2481fb11137a",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19644,7 +19644,7 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-synchronization-disable-autosync-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#disable-autosync",
-    "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+    "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19662,13 +19662,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-synchronization-idling-resources-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#idling-resources",
-    "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+    "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-testing-synchronization-main-content-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#main-content",
-    "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+    "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
@@ -19680,13 +19680,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-guide-testing-synchronization-manual-sync-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#manual-sync",
-    "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+    "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-guide-testing-synchronization-manual-sync-waituntil-source",
     "resource": "https://developer.android.com/develop/ui/compose/testing/synchronization#manual-sync-waituntil",
-    "revision": "web:compose-guide-testing-synchronization:content@sha256:fea0b7c82793985b7de3a01b8d402da6fc160c7500fe75a49ff7d1f7b3c787ba",
+    "revision": "web:compose-guide-testing-synchronization:content@sha256:164a4e2d6ac997c915d91c7a9c03a4757ad067ad2529b44411673dd897f0cb02",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {

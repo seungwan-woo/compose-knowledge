@@ -48,8 +48,8 @@ sources:
   - id: live-compose-guide-testing-apis-assertions-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#assertions
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: 98ca595c129465ee4fb23ba91cfd3e81df249f7dc1d0328a75f7477a99bf1459
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: 14053dbaa4a6edc5278c625c15bd8652d2d16b4956482e1f6539368ec61aa21c
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Check assertions by calling assert() on the SemanticsNodeInteraction returned by a finder with one or multiple matchers:
@@ -57,25 +57,25 @@ sources:
       // Single matcher:
       composeTestRule
           .onNode(matcher)
-          .assert(hasText("Button")) // hasText is a SemanticsMatcher
+          .assert(hasText("Button")) // hasText is a SemanticsMatcher.
 
-      // Multiple matchers can use and / or
+      // Multiple matchers can use and / or.
       composeTestRule
-          .onNode(matcher).assert(hasText("Button") or hasText("Button2"))
+          .onNode(matcher).assert(hasText("Button") or hasText("Button2"))TestingApis.kt
 
       You can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.
 
       There are also functions to check assertions on a collection of nodes:
 
-      // Check number of matched nodes
+      // Check number of matched nodes.
       composeTestRule
           .onAllNodesWithContentDescription("Beatle").assertCountEquals(4)
-      // At least one matches
+      // At least one matches.
       composeTestRule
           .onAllNodesWithContentDescription("Beatle").assertAny(hasTestTag("Drummer"))
-      // All of them match
+      // All of them match.
       composeTestRule
-          .onAllNodesWithContentDescription("Beatle").assertAll(hasClickAction())
+          .onAllNodesWithContentDescription("Beatle").assertAll(hasClickAction())TestingApis.kt
   - id: live-compose-guide-testing-apis-finders-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#finders
@@ -86,8 +86,8 @@ sources:
   - id: live-compose-guide-testing-apis-hierarchical-matchers-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#hierarchical-matchers
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: 2413bd30a3eeeac7a726cd224550db568fc001ddd71044bfb221fa4ce835e557
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: c050eae0cd9f390497f337e37ba47cadf5e1bc427598abc9188ed27102118c97
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Hierarchical matchers let you go up or down the semantics tree and perform matching.
@@ -100,7 +100,7 @@ sources:
       Here are some examples of these matchers being used:
 
       composeTestRule.onNode(hasParent(hasText("Button")))
-          .assertIsDisplayed()
+          .assertIsDisplayed()TestingApis.kt
   - id: live-compose-guide-testing-apis-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#main-content
@@ -127,8 +127,8 @@ sources:
   - id: live-compose-guide-testing-apis-select-multiple-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#select-multiple
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: 4ea226e7631c2df74957d803a0daa93427484695d069511fe7a2b1dc17773635
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: 6f207bde95ca8de8331d98a04203bc20609dd9eeb1c48b1b4f28ab779ff2fe69
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       composeTestRule
@@ -136,24 +136,24 @@ sources:
 
       // Example
       composeTestRule
-          .onAllNodes(hasText("Button")) // Equivalent to onAllNodesWithText("Button")
+          .onAllNodes(hasText("Button")) // Equivalent to onAllNodesWithText("Button")TestingApis.kt
   - id: live-compose-guide-testing-apis-select-single-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#select-single
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: a49b477bc275d5866163d2da7ab89550001a2dcfa7d32f7ae70a115c9a95c99d
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: 0f8dfacd3d097d062242d9008ea93296c85149bbae27c868d755232f6be520f0
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): SemanticsNodeInteraction
 
       // Example
       composeTestRule
-          .onNode(hasText("Button")) // Equivalent to onNodeWithText("Button")
+          .onNode(hasText("Button")) // Equivalent to onNodeWithText("Button")TestingApis.kt
   - id: live-compose-guide-testing-apis-selectors-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#selectors
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: 503d11a8feb326aa05a504c09d0e927daf2169f0a92d490eb75268b3f4532721
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: 01c33767c2d01b3efb78ad5a1d08ac9741afddd22672b0630d4fc42b9e277f48
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       An alternative way to create tests is to use selectors which can make some tests more readable.
@@ -163,14 +163,14 @@ sources:
           .filter(hasClickAction())
           .assertCountEquals(4)
           .onFirst()
-          .assert(hasText("John"))
+          .assert(hasText("John"))TestingApis.kt
 
       You can browse the complete list in the Compose Testing cheat sheet.
   - id: live-compose-guide-testing-apis-unmerged-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/apis#unmerged
-    revision: web:compose-guide-testing-apis:content@sha256:ee822fd20d95c653147c8221503470414af356fed67318ac6e35616dc44f395f
-    sha256: f3ce192d6fba5ca654666b285ac9b16e06eb07fcf70a00cc5d22082f1b217751
+    revision: web:compose-guide-testing-apis:content@sha256:bbf9dd792dd87dfbcea33452a548decf1aeea813bd2b1dfdf2327250687c0884
+    sha256: 2e3d42e9a65aae9582069579a629ad1e2f5cd7179b6962ffbc221f490c29db93
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       Some nodes merge the semantics information of their children. For example, a button with two text elements merges the text element labels:
@@ -178,11 +178,11 @@ sources:
       MyButton {
           Text("Hello")
           Text("World")
-      }
+      }TestingApis.kt
 
       From a test, use printToLog() to show the semantics tree:
 
-      composeTestRule.onRoot().printToLog("TAG")
+      composeTestRule.onRoot().printToLog("TAG")TestingApis.kt
 
       This code prints the following output:
 
@@ -195,7 +195,7 @@ sources:
 
       If you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:
 
-      composeTestRule.onRoot(useUnmergedTree = true).printToLog("TAG")
+      composeTestRule.onRoot(useUnmergedTree = true).printToLog("TAG")TestingApis.kt
 
       This code prints the following output:
 
@@ -211,7 +211,7 @@ sources:
       The useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.
 
       composeTestRule
-          .onNodeWithText("World", useUnmergedTree = true).assertIsDisplayed()
+          .onNodeWithText("World", useUnmergedTree = true).assertIsDisplayed()TestingApis.kt
 compose:
   id: live-compose-guide-testing-apis
   artifact: androidx.compose.ui:ui-test
@@ -371,25 +371,25 @@ Check assertions by calling assert() on the SemanticsNodeInteraction returned by
 // Single matcher:
 composeTestRule
     .onNode(matcher)
-    .assert(hasText("Button")) // hasText is a SemanticsMatcher
+    .assert(hasText("Button")) // hasText is a SemanticsMatcher.
 
-// Multiple matchers can use and / or
+// Multiple matchers can use and / or.
 composeTestRule
-    .onNode(matcher).assert(hasText("Button") or hasText("Button2"))
+    .onNode(matcher).assert(hasText("Button") or hasText("Button2"))TestingApis.kt
 
 You can also use convenience functions for the most common assertions, such as assertExists, assertIsDisplayed, and assertTextEquals. You can browse the complete list in the Compose Testing cheat sheet.
 
 There are also functions to check assertions on a collection of nodes:
 
-// Check number of matched nodes
+// Check number of matched nodes.
 composeTestRule
     .onAllNodesWithContentDescription("Beatle").assertCountEquals(4)
-// At least one matches
+// At least one matches.
 composeTestRule
     .onAllNodesWithContentDescription("Beatle").assertAny(hasTestTag("Drummer"))
-// All of them match
+// All of them match.
 composeTestRule
-    .onAllNodesWithContentDescription("Beatle").assertAll(hasClickAction())
+    .onAllNodesWithContentDescription("Beatle").assertAll(hasClickAction())TestingApis.kt
 
 Sources: [live-compose-guide-testing-apis-assertions-source](https://developer.android.com/develop/ui/compose/testing/apis#assertions)
 
@@ -411,7 +411,7 @@ fun hasAnyDescendant(matcher: SemanticsMatcher):  SemanticsMatcher
 Here are some examples of these matchers being used:
 
 composeTestRule.onNode(hasParent(hasText("Button")))
-    .assertIsDisplayed()
+    .assertIsDisplayed()TestingApis.kt
 
 Sources: [live-compose-guide-testing-apis-hierarchical-matchers-source](https://developer.android.com/develop/ui/compose/testing/apis#hierarchical-matchers)
 
@@ -442,7 +442,7 @@ composeTestRule
 
 // Example
 composeTestRule
-    .onAllNodes(hasText("Button")) // Equivalent to onAllNodesWithText("Button")
+    .onAllNodes(hasText("Button")) // Equivalent to onAllNodesWithText("Button")TestingApis.kt
 
 Sources: [live-compose-guide-testing-apis-select-multiple-source](https://developer.android.com/develop/ui/compose/testing/apis#select-multiple)
 
@@ -452,7 +452,7 @@ composeTestRule.onNode(<<SemanticsMatcher>>, useUnmergedTree = false): Semantics
 
 // Example
 composeTestRule
-    .onNode(hasText("Button")) // Equivalent to onNodeWithText("Button")
+    .onNode(hasText("Button")) // Equivalent to onNodeWithText("Button")TestingApis.kt
 
 Sources: [live-compose-guide-testing-apis-select-single-source](https://developer.android.com/develop/ui/compose/testing/apis#select-single)
 
@@ -465,7 +465,7 @@ composeTestRule.onNode(hasTestTag("Players"))
     .filter(hasClickAction())
     .assertCountEquals(4)
     .onFirst()
-    .assert(hasText("John"))
+    .assert(hasText("John"))TestingApis.kt
 
 You can browse the complete list in the Compose Testing cheat sheet.
 
@@ -478,11 +478,11 @@ Some nodes merge the semantics information of their children. For example, a but
 MyButton {
     Text("Hello")
     Text("World")
-}
+}TestingApis.kt
 
 From a test, use printToLog() to show the semantics tree:
 
-composeTestRule.onRoot().printToLog("TAG")
+composeTestRule.onRoot().printToLog("TAG")TestingApis.kt
 
 This code prints the following output:
 
@@ -495,7 +495,7 @@ Node #1 at (...)px
 
 If you need to match a node of what would be the unmerged tree, you can set useUnmergedTree to true:
 
-composeTestRule.onRoot(useUnmergedTree = true).printToLog("TAG")
+composeTestRule.onRoot(useUnmergedTree = true).printToLog("TAG")TestingApis.kt
 
 This code prints the following output:
 
@@ -511,6 +511,6 @@ Node #1 at (...)px
 The useUnmergedTree parameter is available in all finders. For example, here it's used in an onNodeWithText finder.
 
 composeTestRule
-    .onNodeWithText("World", useUnmergedTree = true).assertIsDisplayed()
+    .onNodeWithText("World", useUnmergedTree = true).assertIsDisplayed()TestingApis.kt
 
 Sources: [live-compose-guide-testing-apis-unmerged-source](https://developer.android.com/develop/ui/compose/testing/apis#unmerged)

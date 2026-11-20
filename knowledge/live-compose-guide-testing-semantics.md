@@ -29,8 +29,8 @@ sources:
   - id: live-compose-guide-testing-semantics-main-content-source
     kind: guide
     resource: https://developer.android.com/develop/ui/compose/testing/semantics#main-content
-    revision: web:compose-guide-testing-semantics:content@sha256:b5f1beff7fab85aea6460957c30969e66b4b481204779c44fd93905039c26131
-    sha256: ecd81a16e2bc89020f60c46fa7daa9436a27c383f18be99c5406c6b170b635df
+    revision: web:compose-guide-testing-semantics:content@sha256:43a8182670bf927ddefbd7704d90be25a8e575f0269cf93d435e2481fb11137a
+    sha256: 9aa62b25d4c62c7ecf81b3c20a7f946e3d00b3793dc0cc143e61e515ef8fdad2
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       UI tests in Compose use semantics to interact with the UI hierarchy. Semantics, as the name implies, give meaning to a piece of UI. In this context, a "piece of UI" (or element) can mean anything from a single composable to a full screen. The semantics tree is generated alongside the UI hierarchy and describes the hierarchy.
@@ -47,7 +47,7 @@ sources:
 
       MyButton(
           modifier = Modifier.semantics { contentDescription = "Add to favorites" }
-      )
+      )SemanticsSnippets.kt
 compose:
   id: live-compose-guide-testing-semantics
   artifact: androidx.compose.ui:ui-test
@@ -111,6 +111,6 @@ For example, given a button like this that consists of an icon and a text elemen
 
 MyButton(
     modifier = Modifier.semantics { contentDescription = "Add to favorites" }
-)
+)SemanticsSnippets.kt
 
 Sources: [live-compose-guide-testing-semantics-main-content-source](https://developer.android.com/develop/ui/compose/testing/semantics#main-content)

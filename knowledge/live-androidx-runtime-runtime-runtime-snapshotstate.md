@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-rememberupdatedstate-current-value-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
-    revision: 2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab
+    resource: https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
+    revision: 6967ac69452dfa322107e43923d41b9a787d1071
     path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
     startLine: 317
     endLine: 342
@@ -645,7 +645,7 @@ public fun <T> rememberUpdatedState(newValue: T): State<T> = remember {
 }
     .apply { value = newValue }
 
-Sources: [contract-rememberupdatedstate-current-value-source](https://android.googlesource.com/platform/frameworks/support/+/2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt)
+Sources: [contract-rememberupdatedstate-current-value-source](https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt)
 
 ## androidx.compose.runtime SnapshotState.kt source (lines 1–35)
 
