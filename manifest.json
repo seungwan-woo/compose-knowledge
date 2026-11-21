@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "files": {
-    "ATTRIBUTION.md": "0136af1ef9760f7eacc45ef5c476b3d0187e7e981bc1110568c7594d4bd0b0a4",
+    "ATTRIBUTION.md": "6851fcd8f6a2e9a911c5350665489133b17c2efa61169323433eeef1c1a9c9f2",
     "LICENSE-AndroidX.txt": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
-    "index/sections.json": "1d47f76f79246513c2dfe35ffea67ed573e4e6014269949c7f686aaa5e8b355e",
+    "index/sections.json": "7187affe02e0cd51011405d67f378140419f67c01f7297694f44f40d6d5dd005",
     "knowledge/compose-popup-properties-main.md": "66b6437761b0f40be7b1dec14c92919aa50cf575ce937b76ec0170a1b304dba8",
     "knowledge/compose-popup-properties.md": "03feb0840478217806288544ccb3d1132b903c834aacd8ef457523144a7df509",
     "knowledge/compose-popup.md": "541a4ceccd532a4390216ebd065ea9bd1e9674f3ebaaac049bb2d9ae2d964d0f",
@@ -266,16 +266,16 @@
     "knowledge/tip-20261118.md": "e48f3f02a9af464bdfd84e9eee6dc71ffc5c2ed07755bb6eb13905c8ea9217a0",
     "knowledge/tip-20261119.md": "9a8236f523b1cc61a52f4cadb18fb5ca93687f751eda419dc7f361302ae710f3",
     "knowledge/tip-20261120.md": "33da45cb49c9dca69169e4a70859f961afb33b27506373cf953d8371f72c6f55",
-    "knowledge/tip-20261121.md": "97ced5b8caf56639aecbae192e4c9678f7c1fa99466ecbbbf93c9fc094a037c2"
+    "knowledge/tip-20261121.md": "4b4d091fc357f2f179beadf50a100fd6711142722c3f1e0a521327614ab39895"
   },
   "inputRevisions": [
-    "02ffe1f1b2040ecac137b16785414619e4605f29",
     "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
     "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
     "25631e8f544a9a1e3f01e296eaf1b4c28428196c",
     "2cda5a0d3a6aa54cac15f6a0ca1c7ea65b4665ab",
     "34a3184bc88a3d67811302bb0634456e52be8b48",
     "4b136e45e42bb34436dd7350b6af1ad8e328b5a5",
+    "5b065f7b2c57e404079550472cfd882593b5c18a",
     "6967ac69452dfa322107e43923d41b9a787d1071",
     "75856eb147ebe0f9b37f5aa3ae3023d023fd54ce",
     "7de187e988b71fd9873f023b55a7a6bddfd8b779",
