@@ -67,8 +67,8 @@ sources:
   - id: live-compose-release-notes-groovy-source
     kind: guide
     resource: https://developer.android.com/jetpack/androidx/releases/compose#groovy
-    revision: web:compose-release-notes:content@sha256:c2807107c466cf15f8b58aadab228978c2d4409cdcbc253a3d58c7a94e1db921
-    sha256: 0e816a7bc3d7ff1178e5ff4a89807244369148e773f2e095dabde48282fdfee3
+    revision: web:compose-release-notes:content@sha256:32562dd902b116a803ef7c0bb71d8e1efe2ebdc86b402fdc9c5d54ed54d1c97a
+    sha256: d594855d0338f6db1f9a46203ebf8ca13ef3597c4b605c5fc471203d4dcae462
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       plugins {
@@ -80,15 +80,16 @@ sources:
               compose true
           }
 
-          kotlinOptions {
-              jvmTarget = "1.8"
+          compileOptions {
+              sourceCompatibility JavaVersion.VERSION_11
+              targetCompatibility JavaVersion.VERSION_11
           }
       }
   - id: live-compose-release-notes-kts-source
     kind: guide
     resource: https://developer.android.com/jetpack/androidx/releases/compose#kts
-    revision: web:compose-release-notes:content@sha256:c2807107c466cf15f8b58aadab228978c2d4409cdcbc253a3d58c7a94e1db921
-    sha256: 51fb6a42072360c693eaaa4c8568bc2a491114df24ddbe9438ff2a7b3e8b7ac1
+    revision: web:compose-release-notes:content@sha256:32562dd902b116a803ef7c0bb71d8e1efe2ebdc86b402fdc9c5d54ed54d1c97a
+    sha256: 017c7c41c61930d28c7b0c000a7a092794d6f2c3d63555a7835caf2e0e8f1ca5
     license: Apache-2.0 (https://developer.android.com/license)
     excerpt: |-
       plugins {
@@ -100,8 +101,9 @@ sources:
               compose = true
           }
 
-          kotlinOptions {
-              jvmTarget = "1.8"
+          compileOptions {
+              sourceCompatibility = JavaVersion.VERSION_11
+              targetCompatibility = JavaVersion.VERSION_11
           }
       }
 
@@ -260,8 +262,9 @@ android {
         compose true
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -278,8 +281,9 @@ android {
         compose = true
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 

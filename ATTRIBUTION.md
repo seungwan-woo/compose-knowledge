@@ -14,22 +14,22 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
 [
   {
     "id": "contract-androidview-callback-parameters-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-androidview-factory-reuse-release-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-animatable-interruption-result-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -49,36 +49,36 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "contract-launchedeffect-key-lifetime-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-modifier-node-attachment-scope-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-rememberupdatedstate-current-value-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-input-disabled-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-node-state-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/6967ac69452dfa322107e43923d41b9a787d1071/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "6967ac69452dfa322107e43923d41b9a787d1071",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -4032,8 +4032,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-foundation-foundation-foundation-text-basictext-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -4088,8 +4088,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-foundation-foundation-foundation-text-basictext-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -12033,386 +12033,526 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1016-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1051-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1086-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1121-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1156-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1191-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1226-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1261-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1296-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1331-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1366-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1401-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1436-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1471-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1506-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1541-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1576-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1611-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1646-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1681-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1716-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1751-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1786-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1821-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1856-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1891-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/34a3184bc88a3d67811302bb0634456e52be8b48/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "34a3184bc88a3d67811302bb0634456e52be8b48",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1926-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1961-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-1996-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2031-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2066-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2101-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2136-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2171-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2206-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2241-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2276-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2311-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2346-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2381-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2416-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2451-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2486-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2521-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2556-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-2591-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-561-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-596-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-631-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-666-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-701-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-736-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-771-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-806-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-841-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-876-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-911-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-946-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-annotatedstring-lines-981-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/AnnotatedString.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -12502,302 +12642,785 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1011-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1046-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1081-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1116-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1151-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1186-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1221-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1256-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1291-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1326-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-1361-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-171-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-206-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-241-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-276-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-311-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-346-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-381-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-416-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-451-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-486-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-521-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-556-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-591-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-626-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-661-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-696-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-731-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-766-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-801-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-836-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-871-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-906-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-941-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-paragraphstyle-lines-976-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/ParagraphStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1006-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1041-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1076-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1111-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1146-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1181-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1216-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1251-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1286-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1321-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1356-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1391-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1426-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1461-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1496-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1531-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1566-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1601-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1636-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1671-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1706-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1741-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1776-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1811-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1846-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1881-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1916-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1951-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-1986-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2021-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2056-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2091-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2126-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2161-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2196-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2231-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2266-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2301-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2336-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2371-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2406-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2441-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-2476-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-306-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-341-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-376-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-411-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-446-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-481-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-516-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-561-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-551-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-596-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-586-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-631-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-621-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-666-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-656-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-701-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-691-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-736-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-726-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-771-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-761-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-806-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-796-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-841-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-831-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-876-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-866-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-911-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-901-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-936-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-spanstyle-lines-971-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/SpanStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -12809,317 +13432,352 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1016-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1008-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1051-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1043-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1086-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1078-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1121-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1113-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1156-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1148-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1191-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1183-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1226-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1218-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1261-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1253-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1296-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1288-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1331-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1323-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1366-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1358-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1401-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1393-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1436-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1428-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1471-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1463-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1506-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1498-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1541-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1533-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1576-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1568-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1603-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1638-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1673-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1708-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-1743-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-238-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-273-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-308-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-343-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-378-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-413-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-448-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-483-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-518-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-561-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-553-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-596-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-588-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-631-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-623-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-666-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-658-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-701-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-693-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-736-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-728-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-771-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-763-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-806-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-798-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-841-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-833-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-876-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-868-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-911-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-903-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-946-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-938-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-981-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-ui-ui-text-ui-text-textstyle-lines-973-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
+    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
     "path": "compose/ui/ui-text/src/commonMain/kotlin/androidx/compose/ui/text/TextStyle.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -20838,13 +21496,13 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   {
     "id": "live-compose-release-notes-groovy-source",
     "resource": "https://developer.android.com/jetpack/androidx/releases/compose#groovy",
-    "revision": "web:compose-release-notes:content@sha256:c2807107c466cf15f8b58aadab228978c2d4409cdcbc253a3d58c7a94e1db921",
+    "revision": "web:compose-release-notes:content@sha256:32562dd902b116a803ef7c0bb71d8e1efe2ebdc86b402fdc9c5d54ed54d1c97a",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {
     "id": "live-compose-release-notes-kts-source",
     "resource": "https://developer.android.com/jetpack/androidx/releases/compose#kts",
-    "revision": "web:compose-release-notes:content@sha256:c2807107c466cf15f8b58aadab228978c2d4409cdcbc253a3d58c7a94e1db921",
+    "revision": "web:compose-release-notes:content@sha256:32562dd902b116a803ef7c0bb71d8e1efe2ebdc86b402fdc9c5d54ed54d1c97a",
     "license": "Apache-2.0 (https://developer.android.com/license)"
   },
   {

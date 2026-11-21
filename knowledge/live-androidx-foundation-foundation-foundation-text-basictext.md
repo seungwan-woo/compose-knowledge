@@ -188,12 +188,12 @@ sources:
           validateMinMaxLines(minLines = minLines, maxLines = maxLines)
   - id: live-androidx-foundation-foundation-foundation-text-basictext-lines-211-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
+    revision: 9f2d8dbb1abcac474493625d39046a7d76e2fb22
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
     startLine: 211
     endLine: 245
-    sha256: 445a0bf25be2b46ee09c224f5ce7e4bb15e87e0e8c14432976ade1a1811efbec
+    sha256: 965dc1bb8b618bef1ed9ee67f4a51bd4f251d76929eaa7b18823828605e98367
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
           val selectionRegistrar = LocalSelectionRegistrar.current
@@ -214,7 +214,7 @@ sources:
               } else {
                   null
               }
-          val hasInlineContent = text.hasInlineContent()
+          val hasInlineContent = text.hasInlineContent(inlineContent)
           val hasLinks = text.hasLinks()
 
           val fontFamilyResolver = LocalFontFamilyResolver.current
@@ -548,12 +548,12 @@ sources:
                   remember(selectableId, selectionRegistrar, backgroundSelectionColor) {
   - id: live-androidx-foundation-foundation-foundation-text-basictext-lines-456-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
+    revision: 9f2d8dbb1abcac474493625d39046a7d76e2fb22
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt
     startLine: 456
     endLine: 490
-    sha256: f5fd37b1b1c0b243b36114f200b26f39c16ce5b9e256591291c6f41a9195f73b
+    sha256: abfe2087ef0c2f8ce4bfd4936f6c45105e4555aee65a62ae46647337c8076f35
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                       SelectionController(
@@ -565,7 +565,7 @@ sources:
               } else {
                   null
               }
-          val hasInlineContent = text.hasInlineContent()
+          val hasInlineContent = text.hasInlineContent(inlineContent)
           val hasLinks = text.hasLinks()
 
           val fontFamilyResolver = LocalFontFamilyResolver.current
@@ -1763,7 +1763,7 @@ Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-17
         } else {
             null
         }
-    val hasInlineContent = text.hasInlineContent()
+    val hasInlineContent = text.hasInlineContent(inlineContent)
     val hasLinks = text.hasLinks()
 
     val fontFamilyResolver = LocalFontFamilyResolver.current
@@ -1781,7 +1781,7 @@ Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-17
 
         // this is the same as text: String, use all the early exits
 
-Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt)
+Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt)
 
 ## androidx.compose.foundation.text BasicText.kt source (lines 246–280)
 
@@ -2074,7 +2074,7 @@ Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-42
         } else {
             null
         }
-    val hasInlineContent = text.hasInlineContent()
+    val hasInlineContent = text.hasInlineContent(inlineContent)
     val hasLinks = text.hasLinks()
 
     val fontFamilyResolver = LocalFontFamilyResolver.current
@@ -2101,7 +2101,7 @@ Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-42
                     autoSize = autoSize,
                 ),
 
-Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt)
+Sources: [live-androidx-foundation-foundation-foundation-text-basictext-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/text/BasicText.kt)
 
 ## androidx.compose.foundation.text BasicText.kt source (lines 491–525)
 
