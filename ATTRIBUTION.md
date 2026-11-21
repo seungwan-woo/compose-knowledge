@@ -22353,8 +22353,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "tip-20261122-02-source",
-    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/4b3cf2dd6c5e7f881ebc9611e43cd39a6fc26413/docs/tips/2026-11-22.md#L19-L69",
-    "revision": "4b3cf2dd6c5e7f881ebc9611e43cd39a6fc26413",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/ef8f0c76924ebe4d2a1da2245a147f4a3dc09cd4/docs/tips/2026-11-22.md#L19-L68",
+    "revision": "ef8f0c76924ebe4d2a1da2245a147f4a3dc09cd4",
     "path": "docs/tips/2026-11-22.md",
     "license": "Unspecified (repository-authored content)"
   },

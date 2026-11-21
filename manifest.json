@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "files": {
-    "ATTRIBUTION.md": "77bf0c4ab3cf9011700a55568a3f9ca4b3dd96432a9ab0904ec3fafd2225e070",
+    "ATTRIBUTION.md": "178dbfec60d1b5c14e5de5663c5f307eb731599c2f1d99e2208a71432ac2bae3",
     "LICENSE-AndroidX.txt": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
-    "index/sections.json": "001684645961e5a97e2f26d60ac457c439b6f61ee417b007d8591aefbad3260b",
+    "index/sections.json": "48950ebda91e58ccaee9444b23df115ac8acc72392482e219d065d14b032d9c3",
     "knowledge/compose-popup-properties-main.md": "66b6437761b0f40be7b1dec14c92919aa50cf575ce937b76ec0170a1b304dba8",
     "knowledge/compose-popup-properties.md": "03feb0840478217806288544ccb3d1132b903c834aacd8ef457523144a7df509",
     "knowledge/compose-popup.md": "541a4ceccd532a4390216ebd065ea9bd1e9674f3ebaaac049bb2d9ae2d964d0f",
@@ -267,7 +267,7 @@
     "knowledge/tip-20261119.md": "9a8236f523b1cc61a52f4cadb18fb5ca93687f751eda419dc7f361302ae710f3",
     "knowledge/tip-20261120.md": "33da45cb49c9dca69169e4a70859f961afb33b27506373cf953d8371f72c6f55",
     "knowledge/tip-20261121.md": "4b4d091fc357f2f179beadf50a100fd6711142722c3f1e0a521327614ab39895",
-    "knowledge/tip-20261122.md": "fdb70a6361745a78afa34cc21c61605f906e41020df9f423fbbbacbaf50cf524"
+    "knowledge/tip-20261122.md": "21c60a81e1ee21dfa7342fe6bb62226de6e0f6e7f16a4c8cf30d7054efeae501"
   },
   "inputRevisions": [
     "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
@@ -291,6 +291,7 @@
     "e6a2555b309ca013e29a80f26299b26a221f9562",
     "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
     "ead082131ceb45b8e4fda027c74471103c1cd09f",
+    "ef8f0c76924ebe4d2a1da2245a147f4a3dc09cd4",
     "web:android-architecture-introduction:content@sha256:f67817daf913e52c95b03226291a1e33e976c3336ab613395a880f19004507a7",
     "web:android-coroutines-best-practices:content@sha256:48e6344d9e8450c3342af934a887158d3e663dda9170f17d80ad49867c4b0b34",
     "web:compose-custom-modifiers:content@sha256:6d47aa98da9dac6d00cc852330bd3e1d09fbafe17c6b381cc6d47850dae4cee7",
