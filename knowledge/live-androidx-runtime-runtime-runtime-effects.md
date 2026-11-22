@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-launchedeffect-key-lifetime-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
-    revision: 9f2d8dbb1abcac474493625d39046a7d76e2fb22
+    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
+    revision: 296313a488a01c84ddcb0801d4efee640a14070c
     path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
     startLine: 552
     endLine: 569
@@ -1515,7 +1515,7 @@ public fun LaunchedEffect(key1: Any?, block: suspend CoroutineScope.() -> Unit) 
     remember(key1) { LaunchedEffectImpl(applyContext, block) }
 }
 
-Sources: [contract-launchedeffect-key-lifetime-source](https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt)
+Sources: [contract-launchedeffect-key-lifetime-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt)
 
 ## androidx.compose.runtime Effects.kt source (lines 1–35)
 

@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-toggleable-input-disabled-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
-    revision: 9f2d8dbb1abcac474493625d39046a7d76e2fb22
+    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
+    revision: 296313a488a01c84ddcb0801d4efee640a14070c
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
     startLine: 125
     endLine: 137
@@ -31,8 +31,8 @@ sources:
        */
   - id: contract-toggleable-node-state-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
-    revision: 9f2d8dbb1abcac474493625d39046a7d76e2fb22
+    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
+    revision: 296313a488a01c84ddcb0801d4efee640a14070c
     path: compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt
     startLine: 309
     endLine: 348
@@ -1159,7 +1159,7 @@ Public source: https://android.googlesource.com/platform/frameworks/support/+/an
  * @see [Modifier.triStateToggleable] if you require support for an indeterminate state.
  */
 
-Sources: [contract-toggleable-input-disabled-source](https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt)
+Sources: [contract-toggleable-input-disabled-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt)
 
 ## Toggleable current value, callback update, and semantics
 
@@ -1204,7 +1204,7 @@ Sources: [contract-toggleable-input-disabled-source](https://android.googlesourc
     }
 }
 
-Sources: [contract-toggleable-node-state-source](https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt)
+Sources: [contract-toggleable-node-state-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt)
 
 ## Toggleable state and input source (lines 1–35)
 

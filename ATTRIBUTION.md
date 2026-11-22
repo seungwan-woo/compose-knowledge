@@ -14,22 +14,22 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
 [
   {
     "id": "contract-androidview-callback-parameters-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-androidview-factory-reuse-release-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-animatable-interruption-result-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -49,36 +49,36 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "contract-launchedeffect-key-lifetime-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-modifier-node-attachment-scope-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-rememberupdatedstate-current-value-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-input-disabled-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-node-state-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/9f2d8dbb1abcac474493625d39046a7d76e2fb22/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "9f2d8dbb1abcac474493625d39046a7d76e2fb22",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "296313a488a01c84ddcb0801d4efee640a14070c",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
