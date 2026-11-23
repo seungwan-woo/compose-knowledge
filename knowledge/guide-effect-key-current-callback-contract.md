@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-launchedeffect-key-lifetime-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
-    revision: 296313a488a01c84ddcb0801d4efee640a14070c
+    resource: https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
+    revision: 3f766fadf3bfd63f9055b0f53130c2e87cc2dacc
     path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt
     startLine: 552
     endLine: 569
@@ -37,8 +37,8 @@ sources:
       }
   - id: contract-rememberupdatedstate-current-value-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
-    revision: 296313a488a01c84ddcb0801d4efee640a14070c
+    resource: https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
+    revision: 3f766fadf3bfd63f9055b0f53130c2e87cc2dacc
     path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt
     startLine: 317
     endLine: 342
@@ -104,4 +104,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: LaunchedEffect launches on entry, cancels and relaunches when its key changes, and cancels on composition exit. Put values that must restart work in its keys. For a changing callback or parameter that must stay current without restarting the operation, create rememberUpdatedState during composition and read its returned State inside the long-lived effect. Limitation: do not route event-handler jobs through a MutableState effect key; use rememberCoroutineScope to launch jobs from callbacks.
 
-Sources: [contract-launchedeffect-key-lifetime-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt), [contract-rememberupdatedstate-current-value-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt)
+Sources: [contract-launchedeffect-key-lifetime-source](https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt), [contract-rememberupdatedstate-current-value-source](https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt)

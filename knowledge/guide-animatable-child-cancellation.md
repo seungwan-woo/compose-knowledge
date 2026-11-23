@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-animatable-interruption-result-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
-    revision: 296313a488a01c84ddcb0801d4efee640a14070c
+    resource: https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+    revision: 3f766fadf3bfd63f9055b0f53130c2e87cc2dacc
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
     startLine: 205
     endLine: 217
@@ -79,4 +79,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: Interrupting Animatable with another animation, stop, or snapTo throws CancellationException, so subsequent work in that caller does not run normally. A child coroutine ending with CancellationException cancels itself and its own children without cancelling its parent or siblings. Limitation: the isolation claim requires the animation to run in a separate child; a direct animateTo call still interrupts the caller’s sequence. Normal return may be Finished or BoundReached, so require Finished when target completion matters.
 
-Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/296313a488a01c84ddcb0801d4efee640a14070c/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt)
+Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt), [contract-coroutine-normal-child-cancellation-source](https://github.com/Kotlin/kotlinx.coroutines/blob/7f4d6cf2414937b50291df6169a69afbaf9c5a20/kotlinx-coroutines-core/common/src/CoroutineScope.kt)
