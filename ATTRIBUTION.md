@@ -22422,6 +22422,34 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Unspecified (repository-authored content)"
   },
   {
+    "id": "tip-20261125-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/3728229e19e945492f641acee59380af9469099f/docs/tips/2026-11-25.md#L13-L15",
+    "revision": "3728229e19e945492f641acee59380af9469099f",
+    "path": "docs/tips/2026-11-25.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261125-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/3728229e19e945492f641acee59380af9469099f/docs/tips/2026-11-25.md#L17-L44",
+    "revision": "3728229e19e945492f641acee59380af9469099f",
+    "path": "docs/tips/2026-11-25.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261125-03-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/3728229e19e945492f641acee59380af9469099f/docs/tips/2026-11-25.md#L46-L52",
+    "revision": "3728229e19e945492f641acee59380af9469099f",
+    "path": "docs/tips/2026-11-25.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261125-04-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/3728229e19e945492f641acee59380af9469099f/docs/tips/2026-11-25.md#L54-L64",
+    "revision": "3728229e19e945492f641acee59380af9469099f",
+    "path": "docs/tips/2026-11-25.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
     "id": "unknown-reference-source",
     "resource": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
     "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
