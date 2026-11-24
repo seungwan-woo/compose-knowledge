@@ -519,8 +519,8 @@
         {
           "id": "contract-androidview-factory-reuse-release-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 110,
           "endLine": 165,
@@ -531,8 +531,8 @@
         {
           "id": "contract-androidview-callback-parameters-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 179,
           "endLine": 190,
@@ -581,8 +581,8 @@
         {
           "id": "contract-animatable-interruption-result-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
           "startLine": 205,
           "endLine": 217,
@@ -2242,8 +2242,8 @@
         {
           "id": "contract-launchedeffect-key-lifetime-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
           "startLine": 552,
           "endLine": 569,
@@ -2254,8 +2254,8 @@
         {
           "id": "contract-rememberupdatedstate-current-value-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
           "startLine": 317,
           "endLine": 342,
@@ -3095,8 +3095,8 @@
         {
           "id": "contract-modifier-node-attachment-scope-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
           "startLine": 175,
           "endLine": 192,
@@ -4193,8 +4193,8 @@
         {
           "id": "contract-toggleable-input-disabled-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 125,
           "endLine": 137,
@@ -4205,8 +4205,8 @@
         {
           "id": "contract-toggleable-node-state-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 309,
           "endLine": 348,
@@ -8140,8 +8140,8 @@
         {
           "id": "contract-animatable-interruption-result-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
           "startLine": 205,
           "endLine": 217,
@@ -33504,8 +33504,8 @@
         {
           "id": "contract-toggleable-input-disabled-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 125,
           "endLine": 137,
@@ -33541,8 +33541,8 @@
         {
           "id": "contract-toggleable-node-state-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
           "startLine": 309,
           "endLine": 348,
@@ -65251,8 +65251,8 @@
         {
           "id": "contract-launchedeffect-key-lifetime-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
           "startLine": 552,
           "endLine": 569,
@@ -67385,7 +67385,7 @@
     {
       "id": "live-androidx-runtime-runtime-runtime-snapshotflow-lines-421",
       "title": "Compose snapshotFlow source (lines 421–455)",
-      "body": "     * [MultiSubscriptionSnapshotFlowManager], disposes of this manager, and returns the new\n     * manager.\n     */\n    fun promote(): MultiSubscriptionSnapshotFlowManager {\n        val multiSubscriptionManager =\n            MultiSubscriptionSnapshotFlowManager().also {\n                val subscribedChannel = subscribedChannel\n                checkPrecondition(subscribedChannel != null) {\n                    \"promote must only be called when a manager is managing subscriptions for \" +\n                        \"one channel and needs to start managing them for a second\"\n                }\n                val watchSet = watchSet\n                if (watchSet == null) {\n                    it.watch(subscribedChannel, soleWatchedObject!!)\n                } else {\n                    watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }\n                }\n                it.commitSubscriptionChanges()\n            }\n\n        dispose()\n        return multiSubscriptionManager\n    }\n}\n\n/**\n * A [SnapshotFlowManagerImpl] that can manage an unbounded number of active subscriptions.\n *\n * This class is not thread-safe.\n */\nprivate class MultiSubscriptionSnapshotFlowManager : SnapshotFlowManagerImpl() {\n    private sealed interface SubscriptionChange\n\n    private class Add(val obj: Any, val channel: SendChannel<Unit>) : SubscriptionChange\n",
+      "body": "     * [MultiSubscriptionSnapshotFlowManager], disposes of this manager, and returns the new\n     * manager.\n     */\n    fun promote(): MultiSubscriptionSnapshotFlowManager {\n        val multiSubscriptionManager =\n            MultiSubscriptionSnapshotFlowManager().also {\n                val subscribedChannel = subscribedChannel\n                checkPrecondition(subscribedChannel != null) {\n                    \"promote must only be called when a manager is managing subscriptions for \" +\n                        \"one channel and needs to start managing them for a second\"\n                }\n                val watchSet = watchSet\n                if (watchSet == null) {\n                    soleWatchedObject?.let { watched -> it.watch(subscribedChannel, watched) }\n                } else {\n                    watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }\n                }\n                it.commitSubscriptionChanges()\n            }\n\n        dispose()\n        return multiSubscriptionManager\n    }\n}\n\n/**\n * A [SnapshotFlowManagerImpl] that can manage an unbounded number of active subscriptions.\n *\n * This class is not thread-safe.\n */\nprivate class MultiSubscriptionSnapshotFlowManager : SnapshotFlowManagerImpl() {\n    private sealed interface SubscriptionChange\n\n    private class Add(val obj: Any, val channel: SendChannel<Unit>) : SubscriptionChange\n",
       "aliases": [],
       "requires": [
         {
@@ -67397,14 +67397,14 @@
         {
           "id": "live-androidx-runtime-runtime-runtime-snapshotflow-lines-421-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
-          "revision": "c395005ece1a96fa54b051898031ab98a90323e9",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt",
           "startLine": 421,
           "endLine": 455,
-          "sha256": "e9a8d28921b422b57d7108893872268cb828089998a9ca8975954eb81b1d9674",
+          "sha256": "23e745ec0c821107b7d23e3867511a2fe220604ae29cd6e201e9d33e06319fb9",
           "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)",
-          "excerpt": "     * [MultiSubscriptionSnapshotFlowManager], disposes of this manager, and returns the new\n     * manager.\n     */\n    fun promote(): MultiSubscriptionSnapshotFlowManager {\n        val multiSubscriptionManager =\n            MultiSubscriptionSnapshotFlowManager().also {\n                val subscribedChannel = subscribedChannel\n                checkPrecondition(subscribedChannel != null) {\n                    \"promote must only be called when a manager is managing subscriptions for \" +\n                        \"one channel and needs to start managing them for a second\"\n                }\n                val watchSet = watchSet\n                if (watchSet == null) {\n                    it.watch(subscribedChannel, soleWatchedObject!!)\n                } else {\n                    watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }\n                }\n                it.commitSubscriptionChanges()\n            }\n\n        dispose()\n        return multiSubscriptionManager\n    }\n}\n\n/**\n * A [SnapshotFlowManagerImpl] that can manage an unbounded number of active subscriptions.\n *\n * This class is not thread-safe.\n */\nprivate class MultiSubscriptionSnapshotFlowManager : SnapshotFlowManagerImpl() {\n    private sealed interface SubscriptionChange\n\n    private class Add(val obj: Any, val channel: SendChannel<Unit>) : SubscriptionChange\n"
+          "excerpt": "     * [MultiSubscriptionSnapshotFlowManager], disposes of this manager, and returns the new\n     * manager.\n     */\n    fun promote(): MultiSubscriptionSnapshotFlowManager {\n        val multiSubscriptionManager =\n            MultiSubscriptionSnapshotFlowManager().also {\n                val subscribedChannel = subscribedChannel\n                checkPrecondition(subscribedChannel != null) {\n                    \"promote must only be called when a manager is managing subscriptions for \" +\n                        \"one channel and needs to start managing them for a second\"\n                }\n                val watchSet = watchSet\n                if (watchSet == null) {\n                    soleWatchedObject?.let { watched -> it.watch(subscribedChannel, watched) }\n                } else {\n                    watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }\n                }\n                it.commitSubscriptionChanges()\n            }\n\n        dispose()\n        return multiSubscriptionManager\n    }\n}\n\n/**\n * A [SnapshotFlowManagerImpl] that can manage an unbounded number of active subscriptions.\n *\n * This class is not thread-safe.\n */\nprivate class MultiSubscriptionSnapshotFlowManager : SnapshotFlowManagerImpl() {\n    private sealed interface SubscriptionChange\n\n    private class Add(val obj: Any, val channel: SendChannel<Unit>) : SubscriptionChange\n"
         }
       ],
       "relatedIds": [],
@@ -67701,8 +67701,8 @@
         {
           "id": "contract-rememberupdatedstate-current-value-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
           "startLine": 317,
           "endLine": 342,
@@ -87687,8 +87687,8 @@
         {
           "id": "contract-modifier-node-attachment-scope-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
           "startLine": 175,
           "endLine": 192,
@@ -92075,8 +92075,8 @@
         {
           "id": "contract-androidview-callback-parameters-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 179,
           "endLine": 190,
@@ -92112,8 +92112,8 @@
         {
           "id": "contract-androidview-factory-reuse-release-source",
           "kind": "code",
-          "resource": "https://android.googlesource.com/platform/frameworks/support/+/3f766fadf3bfd63f9055b0f53130c2e87cc2dacc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-          "revision": "3f766fadf3bfd63f9055b0f53130c2e87cc2dacc",
+          "resource": "https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+          "revision": "f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6",
           "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
           "startLine": 110,
           "endLine": 165,

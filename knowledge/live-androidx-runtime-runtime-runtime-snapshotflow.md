@@ -501,12 +501,12 @@ sources:
            * Transfers all subscriptions being managed by this manager to a new
   - id: live-androidx-runtime-runtime-runtime-snapshotflow-lines-421-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt
-    revision: c395005ece1a96fa54b051898031ab98a90323e9
+    resource: https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt
+    revision: f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6
     path: compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt
     startLine: 421
     endLine: 455
-    sha256: e9a8d28921b422b57d7108893872268cb828089998a9ca8975954eb81b1d9674
+    sha256: 23e745ec0c821107b7d23e3867511a2fe220604ae29cd6e201e9d33e06319fb9
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
            * [MultiSubscriptionSnapshotFlowManager], disposes of this manager, and returns the new
@@ -522,7 +522,7 @@ sources:
                       }
                       val watchSet = watchSet
                       if (watchSet == null) {
-                          it.watch(subscribedChannel, soleWatchedObject!!)
+                          soleWatchedObject?.let { watched -> it.watch(subscribedChannel, watched) }
                       } else {
                           watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }
                       }
@@ -1498,7 +1498,7 @@ Sources: [live-androidx-runtime-runtime-runtime-snapshotflow-lines-386-source](h
                 }
                 val watchSet = watchSet
                 if (watchSet == null) {
-                    it.watch(subscribedChannel, soleWatchedObject!!)
+                    soleWatchedObject?.let { watched -> it.watch(subscribedChannel, watched) }
                 } else {
                     watchSet.forEach { obj -> it.watch(subscribedChannel, obj) }
                 }
@@ -1521,7 +1521,7 @@ private class MultiSubscriptionSnapshotFlowManager : SnapshotFlowManagerImpl() {
     private class Add(val obj: Any, val channel: SendChannel<Unit>) : SubscriptionChange
 
 
-Sources: [live-androidx-runtime-runtime-runtime-snapshotflow-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/c395005ece1a96fa54b051898031ab98a90323e9/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt)
+Sources: [live-androidx-runtime-runtime-runtime-snapshotflow-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotFlow.kt)
 
 ## Compose snapshotFlow source (lines 456–490)
 
