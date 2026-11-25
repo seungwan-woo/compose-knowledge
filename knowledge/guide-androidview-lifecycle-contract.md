@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-androidview-callback-parameters-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
-    revision: f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6
+    resource: https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
+    revision: f6580aa992ca1d2c58609f2db50027cd0bcf43cc
     path: compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
     startLine: 179
     endLine: 190
@@ -31,8 +31,8 @@ sources:
        *   update the information and state of the view.
   - id: contract-androidview-factory-reuse-release-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
-    revision: f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6
+    resource: https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
+    revision: f6580aa992ca1d2c58609f2db50027cd0bcf43cc
     path: compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt
     startLine: 110
     endLine: 165
@@ -126,4 +126,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: factory creates each View once on the UI thread; update runs after factory and on recomposition for changing properties. Non-null onReset permits reuse in supporting containers with compatible group structure; reset transient state there before update. Reset need not be immediately followed by update: a View can remain detached and retained, or be reset from deactivation before release. onRelease permanently ends that instance’s use: free additional resources; Compose never reuses it afterward, and future instances begin with factory. Limitation: reuse is eligible, not guaranteed; reset/deactivation and permanent release are different events.
 
-Sources: [contract-androidview-factory-reuse-release-source](https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt), [contract-androidview-callback-parameters-source](https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)
+Sources: [contract-androidview-factory-reuse-release-source](https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt), [contract-androidview-callback-parameters-source](https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt)

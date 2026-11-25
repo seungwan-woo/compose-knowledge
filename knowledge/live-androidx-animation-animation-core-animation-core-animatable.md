@@ -8,8 +8,8 @@ tags:
 sources:
   - id: contract-animatable-interruption-result-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
-    revision: f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6
+    resource: https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
+    revision: f6580aa992ca1d2c58609f2db50027cd0bcf43cc
     path: compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt
     startLine: 205
     endLine: 217
@@ -870,7 +870,7 @@ Public source: https://android.googlesource.com/platform/frameworks/support/+/an
      * behavior. If there's any cleanup that needs to be done when an animation gets canceled,
      * consider starting the animation in a `try-catch` block.
 
-Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/f555a473272f9a3ba856a8ba1e1c8a08b33bfbe6/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt)
+Sources: [contract-animatable-interruption-result-source](https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt)
 
 ## Animatable source (lines 1–35)
 
