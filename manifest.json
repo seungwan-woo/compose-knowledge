@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "files": {
-    "ATTRIBUTION.md": "6e08b203f55023944cd10c45fe9516bcf5d7047e3c2107a9f30b44b33fec690e",
+    "ATTRIBUTION.md": "802958952fafae5df7d08b07d9f836ad8e937cfa1336665b680924fe52594848",
     "LICENSE-AndroidX.txt": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
-    "index/sections.json": "7d08dab8513ad3cf1c795c5028f0cf94b400fc246c0af24cabe85756f3c44134",
+    "index/sections.json": "39fed29dac53843e6019729d9ecf1c6d1c597852dcf0bb6dd26e660d91810183",
     "knowledge/compose-popup-properties-main.md": "66b6437761b0f40be7b1dec14c92919aa50cf575ce937b76ec0170a1b304dba8",
     "knowledge/compose-popup-properties.md": "03feb0840478217806288544ccb3d1132b903c834aacd8ef457523144a7df509",
     "knowledge/compose-popup.md": "541a4ceccd532a4390216ebd065ea9bd1e9674f3ebaaac049bb2d9ae2d964d0f",
@@ -270,7 +270,8 @@
     "knowledge/tip-20261122.md": "3e7c12ae547f61296d3a36892501c08d72fe3d954bf0f46f491b2b8b4abec6bb",
     "knowledge/tip-20261123.md": "5ede9da2105ea25e67c572e1f6141a51846a7f9bf0e788ba92ad097d0973f716",
     "knowledge/tip-20261124.md": "bc026485c33e0ade924eb4cc7d66210dae242244bf478ecdcec53d51a93e86aa",
-    "knowledge/tip-20261125.md": "cca4de79966769bfaca0251cb6d960450adc4b9be0a5e68e44d3591eeb36aac8"
+    "knowledge/tip-20261125.md": "cca4de79966769bfaca0251cb6d960450adc4b9be0a5e68e44d3591eeb36aac8",
+    "knowledge/tip-20261126.md": "43de0dbf3f5480aea36e9c2d1df69940aa88d4725b38c54ce9509eeee38ea74d"
   },
   "inputRevisions": [
     "058aec35cb127974f0335c47b6a85b2e75390d72",
@@ -297,6 +298,7 @@
     "androidx.compose.material3:material3-android:1.3.2@sha256:e58d105a4fcf1f65a6b2838ca8a6fe40b5784b5dba9ddcf27aabcdfc92b3e4e2",
     "androidx.compose.ui:ui-android:1.7.8@sha256:0d72b414bba41ea48dc599cbd06d326cb860aa511bdf42fe8cbce07690cad8fc",
     "c395005ece1a96fa54b051898031ab98a90323e9",
+    "e12ff7d8fbe4c462632102feaaa7a6b646079a90",
     "e6a2555b309ca013e29a80f26299b26a221f9562",
     "e70f5406a4fa24bd3c2dfb27832ab5fa87c9c5c6",
     "ead082131ceb45b8e4fda027c74471103c1cd09f",
