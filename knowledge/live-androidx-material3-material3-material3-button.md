@@ -53,15 +53,14 @@ sources:
       import androidx.compose.foundation.layout.padding
   - id: live-androidx-material3-material3-material3-button-lines-1010-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1010
     endLine: 1044
-    sha256: e3d7ec363fbb015f72bb7640a172b41feac76bfcddda2198cc69d26987fb8fcd
+    sha256: 220208cbaac3970031748312a01de106cb61289ebbaf372347f0a17b97e49f27
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
-                  top = LargeVerticalPadding,
+    excerpt: |2-
                   end = if (hasTrailingIcon) IconLargeTrailingPadding else LargeTrailingPadding,
                   bottom = LargeVerticalPadding,
               )
@@ -95,17 +94,18 @@ sources:
               )
 
           private val TextButtonWithIconHorizontalEndPadding = 16.dp
+
+          /**
   - id: live-androidx-material3-material3-material3-button-lines-1045-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1045
     endLine: 1079
-    sha256: f76ba02e8465393fd597dce64414d4563f3a8bd1b0935493a5c9351624df47a4
+    sha256: 795a2d6a708f0cd7ff5bd6f79ec1f15fc69e9a89ec6735e2820db8da79453941
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
-          /**
+    excerpt: |2-
            * The default content padding used by [TextButton] that contains an [Icon].
            *
            * Note: it's recommended to use [ButtonWithIconContentPadding] instead for a more consistent
@@ -139,6 +139,8 @@ sources:
 
           /** The default height for a extra small button container. */
           public val ExtraSmallContainerHeight: Dp = ButtonXSmallTokens.ContainerHeight
+
+          /** The default height for a medium button container. */
   - id: live-androidx-material3-material3-material3-button-lines-106-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
@@ -186,15 +188,14 @@ sources:
           onClick: () -> Unit,
   - id: live-androidx-material3-material3-material3-button-lines-1080-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1080
     endLine: 1114
-    sha256: 3ee9b9d0d91a209c5ff8a58830c5f659228be3ede18077990ca0da4a7e6a1ca5
+    sha256: bec881add60677839626fa4831a71934a67e6f3afd716d654f1d5c4d628529da
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-          /** The default height for a medium button container. */
           public val MediumContainerHeight: Dp = ButtonMediumTokens.ContainerHeight
 
           /** The default height for a large button container. */
@@ -229,20 +230,19 @@ sources:
           public val IconSpacing: Dp = ButtonSmallTokens.IconLabelSpace
 
           /**
+           * The default spacing between an icon and a text when they used inside any extra small button.
   - id: live-androidx-material3-material3-material3-button-lines-1115-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1115
     endLine: 1149
-    sha256: 5a1690df5e351599299d5ac5ee9198320e3d5449070eea67b12e40c4e3c54188
+    sha256: 0e132cf1148b24421bb44b7b9ffdad47fa71a0e8d7e678632cecd5c16be017dd
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-           * The default spacing between an icon and a text when they used inside any extra small button.
            */
-          // TODO use the value from ButtonXSmallTokens.kt once it's been corrected
-          public val ExtraSmallIconSpacing: Dp = 4.dp
+          public val ExtraSmallIconSpacing: Dp = ButtonXSmallTokens.IconLabelSpace
 
           /** The default spacing between an icon and a text when they're inside any medium button. */
           public val MediumIconSpacing: Dp = ButtonMediumTokens.IconLabelSpace
@@ -274,18 +274,18 @@ sources:
           /** Pressed shape for large buttons. */
           public val largePressedShape: Shape
               @Composable get() = ButtonLargeTokens.PressedContainerShape.value
+
+          /** Pressed shape for extra large buttons. */
   - id: live-androidx-material3-material3-material3-button-lines-1150-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1150
     endLine: 1184
-    sha256: 1b5043281dca110705052eb9835fbff204d0fe55981bd351fa56bd9951be1b25
+    sha256: 1ee36bb5a7617396e5f64a4f925e620f611ed1a7e5f674d54a9b495d4dcc8082
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-      
-          /** Pressed shape for extra large buttons. */
           public val extraLargePressedShape: Shape
               @Composable get() = ButtonXLargeTokens.PressedContainerShape.value
 
@@ -319,18 +319,18 @@ sources:
            * Creates a [ButtonShapes] that represents the default shape and pressedShape used in a
            * [Button] and its variants.
            *
+           * @param shape the unchecked shape for [ButtonShapes]
+           * @param pressedShape the unchecked shape for [ButtonShapes]
   - id: live-androidx-material3-material3-material3-button-lines-1185-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1185
     endLine: 1219
-    sha256: 5d8839edb5af24cd4dccf1bf37827e03a887e75907326afe15ec3cb49201e654
+    sha256: 64e0fce8396bd368e5e4c410018303149ac56b6e52d458bec281120804087733
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-           * @param shape the unchecked shape for [ButtonShapes]
-           * @param pressedShape the unchecked shape for [ButtonShapes]
            */
           @Composable
           public fun shapes(shape: Shape? = null, pressedShape: Shape? = null): ButtonShapes =
@@ -364,18 +364,18 @@ sources:
            */
           @Composable
           public fun buttonColors(
+              containerColor: Color = Color.Unspecified,
+              contentColor: Color = Color.Unspecified,
   - id: live-androidx-material3-material3-material3-button-lines-1220-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1220
     endLine: 1254
-    sha256: 934608e8f5bd784b143234ef30a2f9feaee5438c9db592af2d4045433ceb7dd7
+    sha256: 4a0311df3b2efa2076d6cff1fc9c317e2020477280942236137370639acd71b2
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              containerColor: Color = Color.Unspecified,
-              contentColor: Color = Color.Unspecified,
               disabledContainerColor: Color = Color.Unspecified,
               disabledContentColor: Color = Color.Unspecified,
           ): ButtonColors =
@@ -409,18 +409,18 @@ sources:
           @Composable
           public fun elevatedButtonColors(): ButtonColors =
               MaterialTheme.colorScheme.defaultElevatedButtonColors
+
+          /**
   - id: live-androidx-material3-material3-material3-button-lines-1255-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1255
     endLine: 1289
-    sha256: 1b4a3f8bdcaea9c6b3cf04a72f2344275a8b6d1bdc82d5be9039383907123e35
+    sha256: 7fc2201bdc656ef52513702ba3465d379d8c6f6df5e8c67e4f7d18e342eb1020
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-      
-          /**
            * Creates a [ButtonColors] that represents the default container and content colors used in an
            * [ElevatedButton].
            *
@@ -454,18 +454,18 @@ sources:
                                       .copy(alpha = ElevatedButtonTokens.DisabledContainerOpacity),
                               disabledContentColor =
                                   fromToken(ElevatedButtonTokens.DisabledLabelTextColor)
+                                      .copy(alpha = ElevatedButtonTokens.DisabledLabelTextOpacity),
+                          )
   - id: live-androidx-material3-material3-material3-button-lines-1290-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1290
     endLine: 1324
-    sha256: 354b00aa29c14b4a10fed1fc8597530b3952c2f29366ada7dc579e94b93fe3b1
+    sha256: 63fd5050b27decff612d999ef2acdb54d3d2e6aefbe9abd08b19bce74f2e0f2a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-                                      .copy(alpha = ElevatedButtonTokens.DisabledLabelTextOpacity),
-                          )
+    excerpt: |2
                           .also { defaultElevatedButtonColorsCached = it }
               }
 
@@ -499,18 +499,17 @@ sources:
                   contentColor = contentColor,
                   disabledContainerColor = disabledContainerColor,
                   disabledContentColor = disabledContentColor,
+              )
   - id: live-androidx-material3-material3-material3-button-lines-1325-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1325
     endLine: 1359
-    sha256: 52828bcc93708763d67386fe17c88902c894b0e06a5c4acf6e2da1ed88d28177
+    sha256: ddef1332c86dea40fdc2717c0c220f8c621cb01a23e6d9c22e7cefd7b891a91f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              )
-
           internal val ColorScheme.defaultFilledTonalButtonColors: ButtonColors
               get() {
                   return defaultFilledTonalButtonColorsCached
@@ -519,9 +518,16 @@ sources:
                               contentColor = fromToken(FilledTonalButtonTokens.LabelTextColor),
                               disabledContainerColor =
                                   fromToken(FilledTonalButtonTokens.DisabledContainerColor)
-                                      .copy(alpha = FilledTonalButtonTokens.DisabledContainerOpacity),
+                                      .copy(
+                                          // TODO(b/588071802): This value is outdated, but updating it
+                                          //  is a breaking visual change
+                                          alpha = 0.12f
+                                      ),
                               disabledContentColor =
-                                  fromToken(FilledTonalButtonTokens.DisabledLabelTextColor)
+                                  // TODO(b/588071802): Use
+                                  //  FilledTonalButtonTokens.DisabledLabelTextColor once its value is
+                                  //  updated to OnSurface
+                                  fromToken(ColorSchemeKeyTokens.OnSurface)
                                       .copy(alpha = FilledTonalButtonTokens.DisabledLabelTextOpacity),
                           )
                           .also { defaultFilledTonalButtonColorsCached = it }
@@ -539,21 +545,21 @@ sources:
            * Creates a [ButtonColors] that represents the default container and content colors used in an
            * [OutlinedButton].
            *
+  - id: live-androidx-material3-material3-material3-button-lines-1360-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1360
+    endLine: 1394
+    sha256: 463176d8421e139f6dd7b7a53a2ae1deaaa5799e07e86a43bbc6718e14f031c2
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            * @param containerColor the container color of this [OutlinedButton] when enabled
            * @param contentColor the content color of this [OutlinedButton] when enabled
            * @param disabledContainerColor the container color of this [OutlinedButton] when not enabled
            * @param disabledContentColor the content color of this [OutlinedButton] when not enabled
            */
-  - id: live-androidx-material3-material3-material3-button-lines-1360-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1360
-    endLine: 1394
-    sha256: 545a81c5b4a5fca6154b47f5b2f9499779715be80e62d5fefd9e0c0b0e8ceafd
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
           @Composable
           public fun outlinedButtonColors(
               containerColor: Color = Color.Unspecified,
@@ -584,20 +590,21 @@ sources:
 
           /**
            * Creates a [ButtonColors] that represents the default container and content colors used in a
+  - id: live-androidx-material3-material3-material3-button-lines-1395-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1395
+    endLine: 1429
+    sha256: 4b1c002ae76a9a2e8a6ddf7cff1b4fe5e05c326199ecb7878344b5bb6ee49327
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            * [TextButton].
            */
           @Composable
           public fun textButtonColors(): ButtonColors = MaterialTheme.colorScheme.defaultTextButtonColors
-  - id: live-androidx-material3-material3-material3-button-lines-1395-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1395
-    endLine: 1429
-    sha256: 5a45cf4904e4b4af8aadd4ff0c7b26caa95d87338fb528b6aab9a90474f5e10f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
+
           /**
            * Creates a [ButtonColors] that represents the default container and content colors used in a
            * [TextButton].
@@ -626,13 +633,8 @@ sources:
                   return defaultTextButtonColorsCached
                       ?: ButtonColors(
                               containerColor = Color.Transparent,
-                              // TODO replace with the token value once it's corrected
-                              contentColor = fromToken(ColorSchemeKeyTokens.Primary),
+                              contentColor = fromToken(TextButtonTokens.LabelTextColor),
                               disabledContainerColor = Color.Transparent,
-                              disabledContentColor =
-                                  fromToken(TextButtonTokens.DisabledLabelColor)
-                                      .copy(alpha = TextButtonTokens.DisabledLabelOpacity),
-                          )
   - id: live-androidx-material3-material3-material3-button-lines-141-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
@@ -680,14 +682,18 @@ sources:
                           )
   - id: live-androidx-material3-material3-material3-button-lines-1430-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1430
     endLine: 1464
-    sha256: 5cea2d5512dc71047370b5f4b6b2091d9a0acd56bb874c1820e35c9659b162c8
+    sha256: 7fa61d6a1b0a1b6ec80bbe594ee5360b86a4f4c47d65f609a198f2b3b8595abf
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+                              disabledContentColor =
+                                  fromToken(TextButtonTokens.DisabledLabelTextColor)
+                                      .copy(alpha = TextButtonTokens.DisabledLabelTextOpacity),
+                          )
                           .also { defaultTextButtonColorsCached = it }
               }
 
@@ -719,20 +725,20 @@ sources:
               )
 
           /**
+  - id: live-androidx-material3-material3-material3-button-lines-1465-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1465
+    endLine: 1499
+    sha256: e74004860e0465cb0c2968a7f4fb197c6a3ba40f032d549e9978e0bdbabb0dc4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            * Creates a [ButtonElevation] that will animate between the provided values according to the
            * Material specification for a [ElevatedButton].
            *
            * @param defaultElevation the elevation used when the [ElevatedButton] is enabled, and has no
-  - id: live-androidx-material3-material3-material3-button-lines-1465-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1465
-    endLine: 1499
-    sha256: dc1d3f238765e8237303dd619aa63e949bea1483b0c588037e745b3362eb4ed1
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            *   other [Interaction]s.
            * @param pressedElevation the elevation used when this [ElevatedButton] is enabled and pressed.
            * @param focusedElevation the elevation used when the [ElevatedButton] is enabled and focused.
@@ -764,27 +770,27 @@ sources:
            * @param pressedElevation the elevation used when this [FilledTonalButton] is enabled and
            *   pressed.
            * @param focusedElevation the elevation used when the [FilledTonalButton] is enabled and
+  - id: live-androidx-material3-material3-material3-button-lines-1500-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1500
+    endLine: 1534
+    sha256: 2e9c28ebc8c0b194fcc5de9c602e8b3fb8af677d6d8404c102c4dd713ff21caf
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            *   focused.
            * @param hoveredElevation the elevation used when the [FilledTonalButton] is enabled and
            *   hovered.
            * @param disabledElevation the elevation used when the [FilledTonalButton] is not enabled.
-  - id: live-androidx-material3-material3-material3-button-lines-1500-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1500
-    endLine: 1534
-    sha256: 31bce5491d5284192b42af1bc35c6a1f22988628b5093d65b02456ec48e1183f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            */
           @Composable
           public fun filledTonalButtonElevation(
               defaultElevation: Dp = FilledTonalButtonTokens.ContainerElevation,
               pressedElevation: Dp = FilledTonalButtonTokens.PressedContainerElevation,
-              focusedElevation: Dp = FilledTonalButtonTokens.FocusContainerElevation,
-              hoveredElevation: Dp = FilledTonalButtonTokens.HoverContainerElevation,
+              focusedElevation: Dp = FilledTonalButtonTokens.FocusedContainerElevation,
+              hoveredElevation: Dp = FilledTonalButtonTokens.HoveredContainerElevation,
               disabledElevation: Dp = 0.dp,
           ): ButtonElevation =
               ButtonElevation(
@@ -809,20 +815,20 @@ sources:
                       width = ButtonSmallTokens.OutlinedOutlineWidth,
                       color = OutlinedButtonTokens.OutlineColor.value,
                   )
-
-          /**
-           * The default [BorderStroke] used by [OutlinedButton].
-           *
   - id: live-androidx-material3-material3-material3-button-lines-1535-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1535
     endLine: 1569
-    sha256: 5551ab6671be1bfe7d389f79adfec145317343fa5bc5d805c9b137fa6c19162f
+    sha256: 225ff38068fd914b6dda35df137f2abc257dee99c5cb3a498f474617fb741f92
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+      
+          /**
+           * The default [BorderStroke] used by [OutlinedButton].
+           *
            * @param enabled whether the button is enabled
            */
           @Composable
@@ -854,20 +860,20 @@ sources:
               return when {
                   buttonHeight <= (xSmallHeight + smallHeight) / 2 ->
                       shapes(shape = shape, pressedShape = extraSmallPressedShape)
+  - id: live-androidx-material3-material3-material3-button-lines-1570-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1570
+    endLine: 1604
+    sha256: f3c5f4c29e47f3d82715844917a7bc6e20e00e4e0510da13a084a56e321502ca
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   buttonHeight <= (smallHeight + mediumHeight) / 2 -> shapes()
                   buttonHeight <= (mediumHeight + largeHeight) / 2 ->
                       shapes(shape = shape, pressedShape = mediumPressedShape)
                   buttonHeight <= (largeHeight + xLargeHeight) / 2 ->
-  - id: live-androidx-material3-material3-material3-button-lines-1570-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1570
-    endLine: 1604
-    sha256: 8ed7cce299e4d036b01434a1e8a1aa9ee6d757d9e536a2369c56e608c61912e6
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       shapes(shape = shape, pressedShape = largePressedShape)
                   else -> shapes(shape = shape, pressedShape = extraLargePressedShape)
               }
@@ -899,21 +905,21 @@ sources:
                   buttonHeight < smallHeight -> ExtraSmallContentPadding
                   buttonHeight < mediumHeight -> getSmallContentPadding(hasStartIcon, hasEndIcon)
                   buttonHeight < largeHeight -> getMediumContentPadding(hasStartIcon, hasEndIcon)
+  - id: live-androidx-material3-material3-material3-button-lines-1605-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1605
+    endLine: 1639
+    sha256: a00523bda6efff0e931c4bce496a09f07cd228cacad928b96d75db23b31304c1
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   buttonHeight < xLargeHeight -> getLargeContentPadding(hasStartIcon, hasEndIcon)
                   else -> ExtraLargeContentPadding
               }
           }
-  - id: live-androidx-material3-material3-material3-button-lines-1605-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1605
-    endLine: 1639
-    sha256: d718ac909010b508222d64b58c9c21d4c12fb7096c5f18505bb1b56bc25585a5
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-      
+
           /**
            * Recommended Icon size for a provided button height.
            *
@@ -944,20 +950,20 @@ sources:
               val largeHeight = LargeContainerHeight
               val xLargeHeight = ExtraLargeContainerHeight
               return when {
+  - id: live-androidx-material3-material3-material3-button-lines-1640-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1640
+    endLine: 1674
+    sha256: 97f26523d44121f39fef79071d08334c8b0bc8c36cb41c979965ac2c0f5365fb
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   buttonHeight < smallHeight -> ExtraSmallIconSpacing
                   buttonHeight < mediumHeight -> IconSpacing
                   buttonHeight < largeHeight -> MediumIconSpacing
                   buttonHeight < xLargeHeight -> LargeIconSpacing
-  - id: live-androidx-material3-material3-material3-button-lines-1640-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1640
-    endLine: 1674
-    sha256: 72e1d12978ac6c62c73cba979f1a70fbddfd5cba341488426179ad8e2d4edb9c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   else -> ExtraLargeIconSpacing
               }
           }
@@ -986,6 +992,19 @@ sources:
           private val iconSmallHorizontalPadding
               get() = if (shouldUsePrecisionPointerComponentSizing.value) 12.dp else SmallStartPadding
 
+          private val ExtraSmallLeadingPadding = ButtonXSmallTokens.LeadingSpace
+          private val ExtraSmallTrailingPadding = ButtonXSmallTokens.TrailingSpace
+          private val ExtraSmallVerticalPadding = 6.dp
+  - id: live-androidx-material3-material3-material3-button-lines-1675-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1675
+    endLine: 1709
+    sha256: 7eb259cd2fd5767655d58f3638883d83254eafd95c2e4281c385714d8f7af68b
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           private val MediumLeadingPadding = ButtonMediumTokens.LeadingSpace
           private val MediumTrailingPadding = ButtonMediumTokens.TrailingSpace
           private val MediumVerticalPadding = 16.dp
@@ -993,16 +1012,6 @@ sources:
           private val IconMediumTrailingPadding = ButtonMediumTokens.TrailingSpace
           private val LargeVerticalPadding = 32.dp
           private val LargeLeadingPadding = ButtonLargeTokens.LeadingSpace
-  - id: live-androidx-material3-material3-material3-button-lines-1675-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1675
-    endLine: 1709
-    sha256: e3e57db91a72bdf5d04834b5c7a6aef50af8260cb4ad076a3bea5765dd043024
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           private val LargeTrailingPadding = ButtonLargeTokens.TrailingSpace
           private val IconLargeLeadingPadding = ButtonLargeTokens.LeadingSpace
           private val IconLargeTrailingPadding = ButtonLargeTokens.TrailingSpace
@@ -1031,6 +1040,16 @@ sources:
            *
            * @param enabled whether the button is enabled
            * @param interactionSource the [InteractionSource] for this button
+  - id: live-androidx-material3-material3-material3-button-lines-1710-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1710
+    endLine: 1744
+    sha256: 3cbb42a81110506ccd88d7c4a2fc389eaf045f0d13a32db88bf8a35b8a874573
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            */
           @Composable
           internal fun shadowElevation(
@@ -1038,16 +1057,6 @@ sources:
               interactionSource: InteractionSource,
           ): State<Dp> {
               return animateElevation(enabled = enabled, interactionSource = interactionSource)
-  - id: live-androidx-material3-material3-material3-button-lines-1710-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1710
-    endLine: 1744
-    sha256: aa84202182e7d1e52e35d0dcf57e38348f0af3c38dff3cb69b1e22352e8808b0
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
           }
 
           @Composable
@@ -1076,6 +1085,16 @@ sources:
                           }
                           is PressInteraction.Release -> {
                               interactions.remove(interaction.press)
+  - id: live-androidx-material3-material3-material3-button-lines-1745-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1745
+    endLine: 1779
+    sha256: 2276f3628e0dd33a073aa2cc311fbd23aa2f4a2d2b5dfd4f4e3bc22bf4338389
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                           }
                           is PressInteraction.Cancel -> {
                               interactions.remove(interaction.press)
@@ -1083,17 +1102,7 @@ sources:
                       }
                   }
               }
-  - id: live-androidx-material3-material3-material3-button-lines-1745-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1745
-    endLine: 1779
-    sha256: abba84d00f06a70516f7bbaabc123151e8e3d5eadae1dec96e8cb26a1679c9c1
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-      
+
               val interaction = interactions.lastOrNull()
 
               val target =
@@ -1121,13 +1130,6 @@ sources:
                                   pressedElevation -> PressInteraction.Press(Offset.Zero)
                                   hoveredElevation -> HoverInteraction.Enter()
                                   focusedElevation -> FocusInteraction.Focus()
-                                  else -> null
-                              }
-                          animatable.animateElevation(
-                              from = lastInteraction,
-                              to = interaction,
-                              target = target,
-                          )
   - id: live-androidx-material3-material3-material3-button-lines-176-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
@@ -1175,14 +1177,21 @@ sources:
        *
   - id: live-androidx-material3-material3-material3-button-lines-1780-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 1780
     endLine: 1814
-    sha256: 41c62cd9e20ee29e9c8f00dd179b70aece710caa64fafa35ebbd3655d3b1acfe
+    sha256: 3a7281d75f1c509344cdf5352f01ab614c6054bbd7623bb0fd42657f42c3d14f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
+                                  else -> null
+                              }
+                          animatable.animateElevation(
+                              from = lastInteraction,
+                              to = interaction,
+                              target = target,
+                          )
                       }
                   }
               }
@@ -1211,6 +1220,16 @@ sources:
               result = 31 * result + disabledElevation.hashCode()
               return result
           }
+  - id: live-androidx-material3-material3-material3-button-lines-1815-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1815
+    endLine: 1849
+    sha256: e5aa4289902131d5f048f4619129be8f16e5ab2509bca8d84f454c66fb807757
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |-
       }
 
       /**
@@ -1218,16 +1237,6 @@ sources:
        *
        * @param containerColor the container color of this [Button] when enabled.
        * @param contentColor the content color of this [Button] when enabled.
-  - id: live-androidx-material3-material3-material3-button-lines-1815-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1815
-    endLine: 1849
-    sha256: 313e5f10fedca37a77f3d2355ca1443387f381cc65dc8d88c44ed66f98f99a10
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
        * @param disabledContainerColor the container color of this [Button] when not enabled.
        * @param disabledContentColor the content color of this [Button] when not enabled.
        *     @constructor create an instance with arbitrary colors.
@@ -1256,6 +1265,16 @@ sources:
               ButtonColors(
                   containerColor.takeOrElse { this.containerColor },
                   contentColor.takeOrElse { this.contentColor },
+  - id: live-androidx-material3-material3-material3-button-lines-1850-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1850
+    endLine: 1884
+    sha256: ffac55aaa275cf693f9e46f993f1ce37d6a144c339ad71f58c7c3c37f9ed1ad6
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   disabledContainerColor.takeOrElse { this.disabledContainerColor },
                   disabledContentColor.takeOrElse { this.disabledContentColor },
               )
@@ -1263,16 +1282,6 @@ sources:
           /**
            * Represents the container color for this button, depending on [enabled].
            *
-  - id: live-androidx-material3-material3-material3-button-lines-1850-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1850
-    endLine: 1884
-    sha256: 2dd17e17895e661fc5494de3dacbf6e3223b708921b71b1bb8f23c8256629c8c
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            * @param enabled whether the button is enabled
            */
           @Stable
@@ -1301,6 +1310,16 @@ sources:
           }
 
           override fun hashCode(): Int {
+  - id: live-androidx-material3-material3-material3-button-lines-1885-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1885
+    endLine: 1919
+    sha256: bf32558290427c6b536449702f181c7854a99b9fc86864e9c505ff0d463fbeeb
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
               var result = containerColor.hashCode()
               result = 31 * result + contentColor.hashCode()
               result = 31 * result + disabledContainerColor.hashCode()
@@ -1308,17 +1327,7 @@ sources:
               return result
           }
       }
-  - id: live-androidx-material3-material3-material3-button-lines-1885-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1885
-    endLine: 1919
-    sha256: 90e67540cf9bfbf4d7c911a334fe811a4c955e7e27381705d1eb5a2699503e6b
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
-      
+
       /**
        * The shapes that will be used in buttons. Button will morph between these shapes depending on the
        * interaction of the button, assuming all of the shapes are [CornerBasedShape]s.
@@ -1346,24 +1355,24 @@ sources:
 
               if (shape != other.shape) return false
               if (pressedShape != other.pressedShape) return false
-
+  - id: live-androidx-material3-material3-material3-button-lines-1920-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1920
+    endLine: 1954
+    sha256: 4ad5992889c28e9eeacf05526c51e067ffa77ff32889106b02e69a6b854a26d4
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
+      
               return true
           }
 
           override fun hashCode(): Int {
               var result = shape.hashCode()
               result = 31 * result + pressedShape.hashCode()
-  - id: live-androidx-material3-material3-material3-button-lines-1920-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    startLine: 1920
-    endLine: 1950
-    sha256: 140468e1587ef1f8a883342be428c67b6817d3d8bd2cb1c8417ebd6c54d31f5d
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
-      
+
               return result
           }
       }
@@ -1390,7 +1399,16 @@ sources:
               return key(shapes) { rememberAnimatedShape(shape as RoundedCornerShape, animationSpec) }
           else if (shapes.hasCornerBasedShapes)
               return key(shapes) { rememberAnimatedShape(shape as CornerBasedShape, animationSpec) }
-
+  - id: live-androidx-material3-material3-material3-button-lines-1955-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    startLine: 1955
+    endLine: 1957
+    sha256: f139787c3d21b2b1b36d35fe4d0b422880028a0d85dd21b063e4d16613be68d8
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2
           return shape
       }
   - id: live-androidx-material3-material3-material3-button-lines-211-source
@@ -2424,12 +2442,12 @@ sources:
               )
   - id: live-androidx-material3-material3-material3-button-lines-940-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 940
     endLine: 974
-    sha256: 9df72d4b721c29b72762673689458f247d1657728adc94c06fc388945a1a92b4
+    sha256: a6681e103c2627073a2a0906ffb24152b2d48df96f53b48eb96e72152f50fd41
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
       
@@ -2464,21 +2482,20 @@ sources:
           public val ExtraSmallContentPadding: PaddingValues
               get() =
                   PaddingValues(
-                      // TODO update with the value from ButtonXSmallTokens.kt once it's been corrected
-                      start = 12.dp,
-                      end = 12.dp,
+                      start = ExtraSmallLeadingPadding,
+                      end = ExtraSmallTrailingPadding,
+                      top = ExtraSmallVerticalPadding,
   - id: live-androidx-material3-material3-material3-button-lines-975-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt
     startLine: 975
     endLine: 1009
-    sha256: 410e7d6804ed0161302ff750968fdaf238ef1f0d2068058eed98bff9b9bdbff8
+    sha256: ec796c6883ce1004928794241c86e27f4d109f010786d978c7279e9e61136c62
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                      top = 6.dp,
-                      bottom = 6.dp,
+                      bottom = ExtraSmallVerticalPadding,
                   )
 
           /** Default content padding for a medium button. */
@@ -2512,6 +2529,7 @@ sources:
           private fun getLargeContentPadding(hasLeadingIcon: Boolean, hasTrailingIcon: Boolean) =
               PaddingValues(
                   start = if (hasLeadingIcon) IconLargeLeadingPadding else LargeLeadingPadding,
+                  top = LargeVerticalPadding,
 compose:
   id: live-androidx-material3-material3-material3-button
   artifact: androidx.compose.material3:material3
@@ -2651,7 +2669,7 @@ compose:
     - id: live-androidx-material3-material3-material3-button-lines-1360
       title: androidx.compose.material3 Button.kt source (lines 1360–1394)
       aliases:
-        - androidx.compose.material3.TextButton
+        - androidx.compose.material3.OutlinedButton
         - androidx.compose.material3.ButtonColors
       requires:
         - artifact: androidx.compose.material3:material3
@@ -2687,7 +2705,6 @@ compose:
       title: androidx.compose.material3 Button.kt source (lines 1430–1464)
       aliases:
         - androidx.compose.material3.Button
-        - androidx.compose.material3.ElevatedButton
         - androidx.compose.material3.ButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
@@ -2710,6 +2727,7 @@ compose:
     - id: live-androidx-material3-material3-material3-button-lines-1500
       title: androidx.compose.material3 Button.kt source (lines 1500–1534)
       aliases:
+        - androidx.compose.material3.FilledTonalButton
         - androidx.compose.material3.OutlinedButton
         - androidx.compose.material3.ButtonElevation
       requires:
@@ -2721,6 +2739,7 @@ compose:
     - id: live-androidx-material3-material3-material3-button-lines-1535
       title: androidx.compose.material3 Button.kt source (lines 1535–1569)
       aliases:
+        - androidx.compose.material3.OutlinedButton
         - androidx.compose.material3.ButtonShapes
       requires:
         - artifact: androidx.compose.material3:material3
@@ -2805,7 +2824,6 @@ compose:
     - id: live-androidx-material3-material3-material3-button-lines-1780
       title: androidx.compose.material3 Button.kt source (lines 1780–1814)
       aliases:
-        - androidx.compose.material3.Button
         - androidx.compose.material3.ButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
@@ -2849,7 +2867,7 @@ compose:
         - live-androidx-material3-material3-material3-button-lines-1885-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-button-lines-1920
-      title: androidx.compose.material3 Button.kt source (lines 1920–1950)
+      title: androidx.compose.material3 Button.kt source (lines 1920–1954)
       aliases:
         - androidx.compose.material3.ButtonShapes
       requires:
@@ -2857,6 +2875,15 @@ compose:
           version: null
       sourceIds:
         - live-androidx-material3-material3-material3-button-lines-1920-source
+      relatedIds: []
+    - id: live-androidx-material3-material3-material3-button-lines-1955
+      title: androidx.compose.material3 Button.kt source (lines 1955–1957)
+      aliases: []
+      requires:
+        - artifact: androidx.compose.material3:material3
+          version: null
+      sourceIds:
+        - live-androidx-material3-material3-material3-button-lines-1955-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-button-lines-211
       title: androidx.compose.material3 Button.kt source (lines 211–245)
@@ -3246,7 +3273,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1-source](htt
 
 ## androidx.compose.material3 Button.kt source (lines 1010–1044)
 
-            top = LargeVerticalPadding,
             end = if (hasTrailingIcon) IconLargeTrailingPadding else LargeTrailingPadding,
             bottom = LargeVerticalPadding,
         )
@@ -3281,12 +3307,12 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1-source](htt
 
     private val TextButtonWithIconHorizontalEndPadding = 16.dp
 
+    /**
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1010-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1010-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1045–1079)
 
-    /**
      * The default content padding used by [TextButton] that contains an [Icon].
      *
      * Note: it's recommended to use [ButtonWithIconContentPadding] instead for a more consistent
@@ -3321,8 +3347,9 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1010-source](
     /** The default height for a extra small button container. */
     public val ExtraSmallContainerHeight: Dp = ButtonXSmallTokens.ContainerHeight
 
+    /** The default height for a medium button container. */
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1045-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1045-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 106–140)
 
@@ -3366,7 +3393,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-106-source](h
 
 ## androidx.compose.material3 Button.kt source (lines 1080–1114)
 
-    /** The default height for a medium button container. */
     public val MediumContainerHeight: Dp = ButtonMediumTokens.ContainerHeight
 
     /** The default height for a large button container. */
@@ -3401,15 +3427,14 @@ Sources: [live-androidx-material3-material3-material3-button-lines-106-source](h
     public val IconSpacing: Dp = ButtonSmallTokens.IconLabelSpace
 
     /**
+     * The default spacing between an icon and a text when they used inside any extra small button.
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1080-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1080-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1115–1149)
 
-     * The default spacing between an icon and a text when they used inside any extra small button.
      */
-    // TODO use the value from ButtonXSmallTokens.kt once it's been corrected
-    public val ExtraSmallIconSpacing: Dp = 4.dp
+    public val ExtraSmallIconSpacing: Dp = ButtonXSmallTokens.IconLabelSpace
 
     /** The default spacing between an icon and a text when they're inside any medium button. */
     public val MediumIconSpacing: Dp = ButtonMediumTokens.IconLabelSpace
@@ -3442,12 +3467,12 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1080-source](
     public val largePressedShape: Shape
         @Composable get() = ButtonLargeTokens.PressedContainerShape.value
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1115-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+    /** Pressed shape for extra large buttons. */
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1115-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1150–1184)
 
-
-    /** Pressed shape for extra large buttons. */
     public val extraLargePressedShape: Shape
         @Composable get() = ButtonXLargeTokens.PressedContainerShape.value
 
@@ -3481,13 +3506,13 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1115-source](
      * Creates a [ButtonShapes] that represents the default shape and pressedShape used in a
      * [Button] and its variants.
      *
+     * @param shape the unchecked shape for [ButtonShapes]
+     * @param pressedShape the unchecked shape for [ButtonShapes]
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1150-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1150-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1185–1219)
 
-     * @param shape the unchecked shape for [ButtonShapes]
-     * @param pressedShape the unchecked shape for [ButtonShapes]
      */
     @Composable
     public fun shapes(shape: Shape? = null, pressedShape: Shape? = null): ButtonShapes =
@@ -3521,13 +3546,13 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1150-source](
      */
     @Composable
     public fun buttonColors(
+        containerColor: Color = Color.Unspecified,
+        contentColor: Color = Color.Unspecified,
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1185-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1185-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1220–1254)
 
-        containerColor: Color = Color.Unspecified,
-        contentColor: Color = Color.Unspecified,
         disabledContainerColor: Color = Color.Unspecified,
         disabledContentColor: Color = Color.Unspecified,
     ): ButtonColors =
@@ -3562,12 +3587,12 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1185-source](
     public fun elevatedButtonColors(): ButtonColors =
         MaterialTheme.colorScheme.defaultElevatedButtonColors
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1220-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+    /**
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1220-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1255–1289)
 
-
-    /**
      * Creates a [ButtonColors] that represents the default container and content colors used in an
      * [ElevatedButton].
      *
@@ -3601,13 +3626,13 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1220-source](
                                 .copy(alpha = ElevatedButtonTokens.DisabledContainerOpacity),
                         disabledContentColor =
                             fromToken(ElevatedButtonTokens.DisabledLabelTextColor)
+                                .copy(alpha = ElevatedButtonTokens.DisabledLabelTextOpacity),
+                    )
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1255-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1255-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1290–1324)
 
-                                .copy(alpha = ElevatedButtonTokens.DisabledLabelTextOpacity),
-                    )
                     .also { defaultElevatedButtonColorsCached = it }
         }
 
@@ -3641,12 +3666,12 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1255-source](
             contentColor = contentColor,
             disabledContainerColor = disabledContainerColor,
             disabledContentColor = disabledContentColor,
+        )
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1290-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1290-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1325–1359)
-
-        )
 
     internal val ColorScheme.defaultFilledTonalButtonColors: ButtonColors
         get() {
@@ -3656,9 +3681,16 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1290-source](
                         contentColor = fromToken(FilledTonalButtonTokens.LabelTextColor),
                         disabledContainerColor =
                             fromToken(FilledTonalButtonTokens.DisabledContainerColor)
-                                .copy(alpha = FilledTonalButtonTokens.DisabledContainerOpacity),
+                                .copy(
+                                    // TODO(b/588071802): This value is outdated, but updating it
+                                    //  is a breaking visual change
+                                    alpha = 0.12f
+                                ),
                         disabledContentColor =
-                            fromToken(FilledTonalButtonTokens.DisabledLabelTextColor)
+                            // TODO(b/588071802): Use
+                            //  FilledTonalButtonTokens.DisabledLabelTextColor once its value is
+                            //  updated to OnSurface
+                            fromToken(ColorSchemeKeyTokens.OnSurface)
                                 .copy(alpha = FilledTonalButtonTokens.DisabledLabelTextOpacity),
                     )
                     .also { defaultFilledTonalButtonColorsCached = it }
@@ -3676,16 +3708,16 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1290-source](
      * Creates a [ButtonColors] that represents the default container and content colors used in an
      * [OutlinedButton].
      *
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1325-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1360–1394)
+
      * @param containerColor the container color of this [OutlinedButton] when enabled
      * @param contentColor the content color of this [OutlinedButton] when enabled
      * @param disabledContainerColor the container color of this [OutlinedButton] when not enabled
      * @param disabledContentColor the content color of this [OutlinedButton] when not enabled
      */
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1325-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1360–1394)
-
     @Composable
     public fun outlinedButtonColors(
         containerColor: Color = Color.Unspecified,
@@ -3716,15 +3748,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1325-source](
 
     /**
      * Creates a [ButtonColors] that represents the default container and content colors used in a
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1360-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1395–1429)
+
      * [TextButton].
      */
     @Composable
     public fun textButtonColors(): ButtonColors = MaterialTheme.colorScheme.defaultTextButtonColors
-
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1360-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1395–1429)
 
     /**
      * Creates a [ButtonColors] that represents the default container and content colors used in a
@@ -3754,15 +3786,10 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1360-source](
             return defaultTextButtonColorsCached
                 ?: ButtonColors(
                         containerColor = Color.Transparent,
-                        // TODO replace with the token value once it's corrected
-                        contentColor = fromToken(ColorSchemeKeyTokens.Primary),
+                        contentColor = fromToken(TextButtonTokens.LabelTextColor),
                         disabledContainerColor = Color.Transparent,
-                        disabledContentColor =
-                            fromToken(TextButtonTokens.DisabledLabelColor)
-                                .copy(alpha = TextButtonTokens.DisabledLabelOpacity),
-                    )
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1395-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1395-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 141–175)
 
@@ -3806,6 +3833,10 @@ Sources: [live-androidx-material3-material3-material3-button-lines-141-source](h
 
 ## androidx.compose.material3 Button.kt source (lines 1430–1464)
 
+                        disabledContentColor =
+                            fromToken(TextButtonTokens.DisabledLabelTextColor)
+                                .copy(alpha = TextButtonTokens.DisabledLabelTextOpacity),
+                    )
                     .also { defaultTextButtonColorsCached = it }
         }
 
@@ -3837,15 +3868,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-141-source](h
         )
 
     /**
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1430-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1465–1499)
+
      * Creates a [ButtonElevation] that will animate between the provided values according to the
      * Material specification for a [ElevatedButton].
      *
      * @param defaultElevation the elevation used when the [ElevatedButton] is enabled, and has no
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1430-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1465–1499)
-
      *   other [Interaction]s.
      * @param pressedElevation the elevation used when this [ElevatedButton] is enabled and pressed.
      * @param focusedElevation the elevation used when the [ElevatedButton] is enabled and focused.
@@ -3877,22 +3908,22 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1430-source](
      * @param pressedElevation the elevation used when this [FilledTonalButton] is enabled and
      *   pressed.
      * @param focusedElevation the elevation used when the [FilledTonalButton] is enabled and
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1465-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1500–1534)
+
      *   focused.
      * @param hoveredElevation the elevation used when the [FilledTonalButton] is enabled and
      *   hovered.
      * @param disabledElevation the elevation used when the [FilledTonalButton] is not enabled.
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1465-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1500–1534)
-
      */
     @Composable
     public fun filledTonalButtonElevation(
         defaultElevation: Dp = FilledTonalButtonTokens.ContainerElevation,
         pressedElevation: Dp = FilledTonalButtonTokens.PressedContainerElevation,
-        focusedElevation: Dp = FilledTonalButtonTokens.FocusContainerElevation,
-        hoveredElevation: Dp = FilledTonalButtonTokens.HoverContainerElevation,
+        focusedElevation: Dp = FilledTonalButtonTokens.FocusedContainerElevation,
+        hoveredElevation: Dp = FilledTonalButtonTokens.HoveredContainerElevation,
         disabledElevation: Dp = 0.dp,
     ): ButtonElevation =
         ButtonElevation(
@@ -3918,14 +3949,14 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1465-source](
                 color = OutlinedButtonTokens.OutlineColor.value,
             )
 
-    /**
-     * The default [BorderStroke] used by [OutlinedButton].
-     *
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1500-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1500-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 1535–1569)
 
+
+    /**
+     * The default [BorderStroke] used by [OutlinedButton].
+     *
      * @param enabled whether the button is enabled
      */
     @Composable
@@ -3957,15 +3988,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1500-source](
         return when {
             buttonHeight <= (xSmallHeight + smallHeight) / 2 ->
                 shapes(shape = shape, pressedShape = extraSmallPressedShape)
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1535-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1570–1604)
+
             buttonHeight <= (smallHeight + mediumHeight) / 2 -> shapes()
             buttonHeight <= (mediumHeight + largeHeight) / 2 ->
                 shapes(shape = shape, pressedShape = mediumPressedShape)
             buttonHeight <= (largeHeight + xLargeHeight) / 2 ->
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1535-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1570–1604)
-
                 shapes(shape = shape, pressedShape = largePressedShape)
             else -> shapes(shape = shape, pressedShape = extraLargePressedShape)
         }
@@ -3997,15 +4028,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1535-source](
             buttonHeight < smallHeight -> ExtraSmallContentPadding
             buttonHeight < mediumHeight -> getSmallContentPadding(hasStartIcon, hasEndIcon)
             buttonHeight < largeHeight -> getMediumContentPadding(hasStartIcon, hasEndIcon)
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1570-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1605–1639)
+
             buttonHeight < xLargeHeight -> getLargeContentPadding(hasStartIcon, hasEndIcon)
             else -> ExtraLargeContentPadding
         }
     }
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1570-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1605–1639)
-
 
     /**
      * Recommended Icon size for a provided button height.
@@ -4037,15 +4068,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1570-source](
         val largeHeight = LargeContainerHeight
         val xLargeHeight = ExtraLargeContainerHeight
         return when {
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1605-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1640–1674)
+
             buttonHeight < smallHeight -> ExtraSmallIconSpacing
             buttonHeight < mediumHeight -> IconSpacing
             buttonHeight < largeHeight -> MediumIconSpacing
             buttonHeight < xLargeHeight -> LargeIconSpacing
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1605-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1640–1674)
-
             else -> ExtraLargeIconSpacing
         }
     }
@@ -4074,6 +4105,14 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1605-source](
     private val iconSmallHorizontalPadding
         get() = if (shouldUsePrecisionPointerComponentSizing.value) 12.dp else SmallStartPadding
 
+    private val ExtraSmallLeadingPadding = ButtonXSmallTokens.LeadingSpace
+    private val ExtraSmallTrailingPadding = ButtonXSmallTokens.TrailingSpace
+    private val ExtraSmallVerticalPadding = 6.dp
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1640-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1675–1709)
+
     private val MediumLeadingPadding = ButtonMediumTokens.LeadingSpace
     private val MediumTrailingPadding = ButtonMediumTokens.TrailingSpace
     private val MediumVerticalPadding = 16.dp
@@ -4081,11 +4120,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1605-source](
     private val IconMediumTrailingPadding = ButtonMediumTokens.TrailingSpace
     private val LargeVerticalPadding = 32.dp
     private val LargeLeadingPadding = ButtonLargeTokens.LeadingSpace
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1640-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1675–1709)
-
     private val LargeTrailingPadding = ButtonLargeTokens.TrailingSpace
     private val IconLargeLeadingPadding = ButtonLargeTokens.LeadingSpace
     private val IconLargeTrailingPadding = ButtonLargeTokens.TrailingSpace
@@ -4114,6 +4148,11 @@ internal constructor(
      *
      * @param enabled whether the button is enabled
      * @param interactionSource the [InteractionSource] for this button
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1675-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1710–1744)
+
      */
     @Composable
     internal fun shadowElevation(
@@ -4121,11 +4160,6 @@ internal constructor(
         interactionSource: InteractionSource,
     ): State<Dp> {
         return animateElevation(enabled = enabled, interactionSource = interactionSource)
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1675-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1710–1744)
-
     }
 
     @Composable
@@ -4154,6 +4188,11 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1675-source](
                     }
                     is PressInteraction.Release -> {
                         interactions.remove(interaction.press)
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1710-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1745–1779)
+
                     }
                     is PressInteraction.Cancel -> {
                         interactions.remove(interaction.press)
@@ -4161,11 +4200,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1675-source](
                 }
             }
         }
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1710-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1745–1779)
-
 
         val interaction = interactions.lastOrNull()
 
@@ -4194,15 +4228,8 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1710-source](
                             pressedElevation -> PressInteraction.Press(Offset.Zero)
                             hoveredElevation -> HoverInteraction.Enter()
                             focusedElevation -> FocusInteraction.Focus()
-                            else -> null
-                        }
-                    animatable.animateElevation(
-                        from = lastInteraction,
-                        to = interaction,
-                        target = target,
-                    )
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1745-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1745-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 176–210)
 
@@ -4246,6 +4273,13 @@ Sources: [live-androidx-material3-material3-material3-button-lines-176-source](h
 
 ## androidx.compose.material3 Button.kt source (lines 1780–1814)
 
+                            else -> null
+                        }
+                    animatable.animateElevation(
+                        from = lastInteraction,
+                        to = interaction,
+                        target = target,
+                    )
                 }
             }
         }
@@ -4274,6 +4308,11 @@ Sources: [live-androidx-material3-material3-material3-button-lines-176-source](h
         result = 31 * result + disabledElevation.hashCode()
         return result
     }
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1780-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1815–1849)
+
 }
 
 /**
@@ -4281,11 +4320,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-176-source](h
  *
  * @param containerColor the container color of this [Button] when enabled.
  * @param contentColor the content color of this [Button] when enabled.
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1780-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1815–1849)
-
  * @param disabledContainerColor the container color of this [Button] when not enabled.
  * @param disabledContentColor the content color of this [Button] when not enabled.
  *     @constructor create an instance with arbitrary colors.
@@ -4314,6 +4348,11 @@ public constructor(
         ButtonColors(
             containerColor.takeOrElse { this.containerColor },
             contentColor.takeOrElse { this.contentColor },
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1815-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1850–1884)
+
             disabledContainerColor.takeOrElse { this.disabledContainerColor },
             disabledContentColor.takeOrElse { this.disabledContentColor },
         )
@@ -4321,11 +4360,6 @@ public constructor(
     /**
      * Represents the container color for this button, depending on [enabled].
      *
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1815-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1850–1884)
-
      * @param enabled whether the button is enabled
      */
     @Stable
@@ -4354,6 +4388,11 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1815-source](
     }
 
     override fun hashCode(): Int {
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1850-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1885–1919)
+
         var result = containerColor.hashCode()
         result = 31 * result + contentColor.hashCode()
         result = 31 * result + disabledContainerColor.hashCode()
@@ -4361,11 +4400,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-1815-source](
         return result
     }
 }
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1850-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1885–1919)
-
 
 /**
  * The shapes that will be used in buttons. Button will morph between these shapes depending on the
@@ -4395,17 +4429,17 @@ public class ButtonShapes(public val shape: Shape, public val pressedShape: Shap
         if (shape != other.shape) return false
         if (pressedShape != other.pressedShape) return false
 
+Sources: [live-androidx-material3-material3-material3-button-lines-1885-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1920–1954)
+
+
         return true
     }
 
     override fun hashCode(): Int {
         var result = shape.hashCode()
         result = 31 * result + pressedShape.hashCode()
-
-Sources: [live-androidx-material3-material3-material3-button-lines-1885-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
-
-## androidx.compose.material3 Button.kt source (lines 1920–1950)
-
 
         return result
     }
@@ -4434,11 +4468,16 @@ private fun shapeByInteraction(
     else if (shapes.hasCornerBasedShapes)
         return key(shapes) { rememberAnimatedShape(shape as CornerBasedShape, animationSpec) }
 
+
+Sources: [live-androidx-material3-material3-material3-button-lines-1920-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+
+## androidx.compose.material3 Button.kt source (lines 1955–1957)
+
     return shape
 }
 
 
-Sources: [live-androidx-material3-material3-material3-button-lines-1920-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-1955-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 211–245)
 
@@ -5388,16 +5427,15 @@ Sources: [live-androidx-material3-material3-material3-button-lines-905-source](h
     public val ExtraSmallContentPadding: PaddingValues
         get() =
             PaddingValues(
-                // TODO update with the value from ButtonXSmallTokens.kt once it's been corrected
-                start = 12.dp,
-                end = 12.dp,
+                start = ExtraSmallLeadingPadding,
+                end = ExtraSmallTrailingPadding,
+                top = ExtraSmallVerticalPadding,
 
-Sources: [live-androidx-material3-material3-material3-button-lines-940-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-940-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
 
 ## androidx.compose.material3 Button.kt source (lines 975–1009)
 
-                top = 6.dp,
-                bottom = 6.dp,
+                bottom = ExtraSmallVerticalPadding,
             )
 
     /** Default content padding for a medium button. */
@@ -5431,5 +5469,6 @@ Sources: [live-androidx-material3-material3-material3-button-lines-940-source](h
     private fun getLargeContentPadding(hasLeadingIcon: Boolean, hasTrailingIcon: Boolean) =
         PaddingValues(
             start = if (hasLeadingIcon) IconLargeLeadingPadding else LargeLeadingPadding,
+            top = LargeVerticalPadding,
 
-Sources: [live-androidx-material3-material3-material3-button-lines-975-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)
+Sources: [live-androidx-material3-material3-material3-button-lines-975-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt)

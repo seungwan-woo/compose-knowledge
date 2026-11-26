@@ -14,22 +14,22 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
 [
   {
     "id": "contract-androidview-callback-parameters-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-androidview-factory-reuse-release-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/viewinterop/AndroidView.android.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-animatable-interruption-result-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/animation/animation-core/src/commonMain/kotlin/androidx/compose/animation/core/Animatable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -49,36 +49,36 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "contract-launchedeffect-key-lifetime-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/Effects.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-modifier-node-attachment-scope-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-rememberupdatedstate-current-value-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/runtime/runtime/src/commonMain/kotlin/androidx/compose/runtime/SnapshotState.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-input-disabled-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "contract-toggleable-node-state-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/f6580aa992ca1d2c58609f2db50027cd0bcf43cc/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
-    "revision": "f6580aa992ca1d2c58609f2db50027cd0bcf43cc",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/foundation/foundation/src/commonMain/kotlin/androidx/compose/foundation/selection/Toggleable.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -6068,16 +6068,16 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1017-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1015-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1052-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-1050-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -6174,50 +6174,50 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-exposed-dropdown-menu-lines-516-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-548-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-545-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-578-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-576-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-613-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-611-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-647-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-643-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-671-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-670-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-704-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-702-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -6229,58 +6229,58 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-737-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-735-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-772-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-770-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-807-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-805-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-842-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-840-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-877-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-875-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-912-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-910-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-947-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-945-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-exposed-dropdown-menu-lines-982-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
-    "revision": "aecce470261af232883b790016ce79fc51c962ca",
+    "id": "live-androidx-material3-exposed-dropdown-menu-lines-980-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7028,15 +7028,15 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1010-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1045-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7049,71 +7049,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1080-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1115-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1150-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1185-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1220-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1255-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1290-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1325-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1360-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1395-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7126,71 +7126,71 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1430-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1465-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1500-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1535-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1570-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1605-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1640-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1675-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1710-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1745-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7203,36 +7203,43 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1780-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1815-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1850-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1885-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-1920-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
+    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
+  },
+  {
+    "id": "live-androidx-material3-material3-material3-button-lines-1955-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7399,15 +7406,15 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-940-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-button-lines-975-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Button.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -7797,303 +7804,296 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1013-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1012-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1048-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1047-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-106-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1083-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1082-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1118-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1117-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1153-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1152-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1188-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1187-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1223-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1222-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1258-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1257-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1293-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1292-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1328-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1327-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1363-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1362-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1398-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1397-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-141-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1433-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1432-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1468-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
-    "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
-  },
-  {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1503-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-1467-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-211-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-246-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-281-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-316-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-351-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-36-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-386-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-491-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-561-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-596-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-631-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-666-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-665-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-701-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-700-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-71-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-735-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-734-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-770-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-769-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-804-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-803-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-839-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-838-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-873-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-872-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-908-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-907-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-943-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-942-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
-    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-978-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "id": "live-androidx-material3-material3-material3-floatingactionbutton-lines-977-source",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -8120,8 +8120,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-navigationbar-lines-176-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -8246,8 +8246,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-navigationbar-lines-736-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -9485,15 +9485,15 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-snackbar-lines-421-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
   {
     "id": "live-androidx-material3-material3-material3-snackbar-lines-456-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },
@@ -9506,8 +9506,8 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
   },
   {
     "id": "live-androidx-material3-material3-material3-snackbar-lines-526-source",
-    "resource": "https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
-    "revision": "07f09ade563fe07a62dd26797ba27a2f6ff5571a",
+    "resource": "https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
+    "revision": "4f62eee6bfdd6515cc005c0006087f9aa807a549",
     "path": "compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt",
     "license": "Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)"
   },

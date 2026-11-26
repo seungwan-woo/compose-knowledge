@@ -143,12 +143,12 @@ sources:
           icon: @Composable () -> Unit,
   - id: live-androidx-material3-material3-material3-navigationbar-lines-176-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
     startLine: 176
     endLine: 210
-    sha256: 4c3b6e527f3aeb52dd44f3a8bb93acd08f6eb03d9584f1b7a04a8566f78ed595
+    sha256: 7df19bcea3e7a760c67d3616096eb15cce011bf24fc7905d46a3a66ceaa0e18c
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
           modifier: Modifier = Modifier,
@@ -178,7 +178,7 @@ sources:
 
           val styledLabel: @Composable (() -> Unit)? = label?.let {
               @Composable {
-                  val style = NavigationBarTokens.LabelTextFont.value
+                  val style = NavigationBarVerticalItemTokens.LabelTextFont.value
                   val textColor by
                       animateColorAsState(
                           targetValue = colors.textColor(selected = selected, enabled = enabled),
@@ -951,12 +951,12 @@ sources:
        *   darker color in light theme and lighter color in dark theme. See also: [Surface].
   - id: live-androidx-material3-material3-material3-navigationbar-lines-736-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt
     startLine: 736
-    endLine: 757
-    sha256: bd8520b2690b6ed39dbefa476d1f960635b5267f61953094604a97a7d4c0f2dd
+    endLine: 755
+    sha256: d81774dd4981640cc1150fe64f1c67e49cfb94a259cd1f0dc25b3a0c5a69637a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
           get() = 8.dp
@@ -966,13 +966,11 @@ sources:
           get() = 4.dp
 
       private val IndicatorHorizontalPadding: Dp =
-          (NavigationBarVerticalItemTokens.ActiveIndicatorWidth -
-              NavigationBarVerticalItemTokens.IconSize) / 2
+          (NavigationBarVerticalItemTokens.ActiveIndicatorWidth - NavigationBarTokens.ItemIconSize) / 2
 
       /*@VisibleForTesting*/
       internal val IndicatorVerticalPadding: Dp =
-          (NavigationBarVerticalItemTokens.ActiveIndicatorHeight -
-              NavigationBarVerticalItemTokens.IconSize) / 2
+          (NavigationBarVerticalItemTokens.ActiveIndicatorHeight - NavigationBarTokens.ItemIconSize) / 2
 
       private val IndicatorVerticalOffset: Dp
           get() = 12.dp
@@ -1196,7 +1194,7 @@ compose:
         - live-androidx-material3-material3-material3-navigationbar-lines-71-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-navigationbar-lines-736
-      title: androidx.compose.material3 NavigationBar.kt source (lines 736–757)
+      title: androidx.compose.material3 NavigationBar.kt source (lines 736–755)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
@@ -1359,7 +1357,7 @@ Sources: [live-androidx-material3-material3-material3-navigationbar-lines-141-so
 
     val styledLabel: @Composable (() -> Unit)? = label?.let {
         @Composable {
-            val style = NavigationBarTokens.LabelTextFont.value
+            val style = NavigationBarVerticalItemTokens.LabelTextFont.value
             val textColor by
                 animateColorAsState(
                     targetValue = colors.textColor(selected = selected, enabled = enabled),
@@ -1368,7 +1366,7 @@ Sources: [live-androidx-material3-material3-material3-navigationbar-lines-141-so
             ProvideContentColorTextStyle(
                 contentColor = textColor,
 
-Sources: [live-androidx-material3-material3-material3-navigationbar-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt)
+Sources: [live-androidx-material3-material3-material3-navigationbar-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt)
 
 ## androidx.compose.material3 NavigationBar.kt source (lines 211–245)
 
@@ -2050,7 +2048,7 @@ import kotlin.math.roundToInt
 
 Sources: [live-androidx-material3-material3-material3-navigationbar-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt)
 
-## androidx.compose.material3 NavigationBar.kt source (lines 736–757)
+## androidx.compose.material3 NavigationBar.kt source (lines 736–755)
 
     get() = 8.dp
 
@@ -2059,13 +2057,11 @@ internal val NavigationBarIndicatorToLabelPadding: Dp
     get() = 4.dp
 
 private val IndicatorHorizontalPadding: Dp =
-    (NavigationBarVerticalItemTokens.ActiveIndicatorWidth -
-        NavigationBarVerticalItemTokens.IconSize) / 2
+    (NavigationBarVerticalItemTokens.ActiveIndicatorWidth - NavigationBarTokens.ItemIconSize) / 2
 
 /*@VisibleForTesting*/
 internal val IndicatorVerticalPadding: Dp =
-    (NavigationBarVerticalItemTokens.ActiveIndicatorHeight -
-        NavigationBarVerticalItemTokens.IconSize) / 2
+    (NavigationBarVerticalItemTokens.ActiveIndicatorHeight - NavigationBarTokens.ItemIconSize) / 2
 
 private val IndicatorVerticalOffset: Dp
     get() = 12.dp
@@ -2075,4 +2071,4 @@ internal val NavigationBarItemToIconMinimumPadding: Dp
     get() = 44.dp
 
 
-Sources: [live-androidx-material3-material3-material3-navigationbar-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt)
+Sources: [live-androidx-material3-material3-material3-navigationbar-lines-736-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/NavigationBar.kt)

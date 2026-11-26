@@ -503,12 +503,12 @@ sources:
               val actionButtonPlaceable =
   - id: live-androidx-material3-material3-material3-snackbar-lines-421-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
     startLine: 421
     endLine: 455
-    sha256: 6d752e794e6222aad945ef546d32e15ad14752d200058e714d4f6ddf772b049c
+    sha256: dbbb51b75ae683eedc7376f3595a9e9ff4ffbb85c56095847657bcec1d37a06d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                   measurables.fastFirstOrNull { it.layoutId == actionTag }?.measure(constraints)
@@ -540,7 +540,7 @@ sources:
               val containerHeight: Int
               val actionButtonPlaceY: Int
               if (isOneLine) {
-                  val minContainerHeight = SnackbarTokens.SingleLineContainerHeight.roundToPx()
+                  val minContainerHeight = SnackbarTokens.ContainerHeight.roundToPx()
                   val contentHeight = max(actionButtonHeight, dismissButtonHeight)
                   containerHeight = max(minContainerHeight, contentHeight)
                   textPlaceY = (containerHeight - textPlaceable.height) / 2
@@ -548,12 +548,12 @@ sources:
                       if (actionButtonPlaceable != null) {
   - id: live-androidx-material3-material3-material3-snackbar-lines-456-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
     startLine: 456
     endLine: 490
-    sha256: 63a446681d2b1322b7f85432d690c7e6e2fadcc2d510be9bca4a9f3c2a4116a7
+    sha256: a043493c60899ddd2082a5adbbf9616e00bbe07e8b17c40f251e3854e5e76ffc
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                           actionButtonPlaceable[FirstBaseline].let {
@@ -569,7 +569,7 @@ sources:
               } else {
                   val baselineOffset = HeightToFirstLine.roundToPx()
                   textPlaceY = baselineOffset - firstTextBaseline
-                  val minContainerHeight = SnackbarTokens.TwoLinesContainerHeight.roundToPx()
+                  val minContainerHeight = SnackbarTokens.LargeContainerHeight.roundToPx()
                   val contentHeight = textPlaceY + textPlaceable.height
                   containerHeight = max(minContainerHeight, contentHeight)
                   actionButtonPlaceY =
@@ -638,12 +638,12 @@ sources:
                   }
   - id: live-androidx-material3-material3-material3-snackbar-lines-526-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt
     startLine: 526
     endLine: 560
-    sha256: b91c7b26b7bfdb936bf1e23315d71c14c5676300548807acd8cd1153777615be
+    sha256: d38d12b66f833b6e426e56e5c4976d9a7441ae8531b1594343c22259abe95c4d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
               },
@@ -653,7 +653,7 @@ sources:
                       end = if (dismissAction == null) TextEndExtraSpacing else 0.dp,
                   ),
           ) { measurables, constraints ->
-              val minContainerHeight = SnackbarTokens.SingleLineContainerHeight.roundToPx()
+              val minContainerHeight = SnackbarTokens.ContainerHeight.roundToPx()
               val containerWidth = min(constraints.maxWidth, ContainerMaxWidth.roundToPx())
               val actionButtonPlaceable =
                   measurables.fastFirstOrNull { it.layoutId == actionTag }?.measure(constraints)
@@ -1462,14 +1462,14 @@ Sources: [live-androidx-material3-material3-material3-snackbar-lines-386-source]
         val containerHeight: Int
         val actionButtonPlaceY: Int
         if (isOneLine) {
-            val minContainerHeight = SnackbarTokens.SingleLineContainerHeight.roundToPx()
+            val minContainerHeight = SnackbarTokens.ContainerHeight.roundToPx()
             val contentHeight = max(actionButtonHeight, dismissButtonHeight)
             containerHeight = max(minContainerHeight, contentHeight)
             textPlaceY = (containerHeight - textPlaceable.height) / 2
             actionButtonPlaceY =
                 if (actionButtonPlaceable != null) {
 
-Sources: [live-androidx-material3-material3-material3-snackbar-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
+Sources: [live-androidx-material3-material3-material3-snackbar-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
 
 ## androidx.compose.material3 Snackbar.kt source (lines 456–490)
 
@@ -1486,7 +1486,7 @@ Sources: [live-androidx-material3-material3-material3-snackbar-lines-421-source]
         } else {
             val baselineOffset = HeightToFirstLine.roundToPx()
             textPlaceY = baselineOffset - firstTextBaseline
-            val minContainerHeight = SnackbarTokens.TwoLinesContainerHeight.roundToPx()
+            val minContainerHeight = SnackbarTokens.LargeContainerHeight.roundToPx()
             val contentHeight = textPlaceY + textPlaceable.height
             containerHeight = max(minContainerHeight, contentHeight)
             actionButtonPlaceY =
@@ -1509,7 +1509,7 @@ Sources: [live-androidx-material3-material3-material3-snackbar-lines-421-source]
             dismissButtonPlaceable?.placeRelative(dismissButtonPlaceX, dismissButtonPlaceY)
         }
 
-Sources: [live-androidx-material3-material3-material3-snackbar-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
+Sources: [live-androidx-material3-material3-material3-snackbar-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
 
 ## androidx.compose.material3 Snackbar.kt source (lines 491–525)
 
@@ -1560,7 +1560,7 @@ Sources: [live-androidx-material3-material3-material3-snackbar-lines-491-source]
                 end = if (dismissAction == null) TextEndExtraSpacing else 0.dp,
             ),
     ) { measurables, constraints ->
-        val minContainerHeight = SnackbarTokens.SingleLineContainerHeight.roundToPx()
+        val minContainerHeight = SnackbarTokens.ContainerHeight.roundToPx()
         val containerWidth = min(constraints.maxWidth, ContainerMaxWidth.roundToPx())
         val actionButtonPlaceable =
             measurables.fastFirstOrNull { it.layoutId == actionTag }?.measure(constraints)
@@ -1589,7 +1589,7 @@ Sources: [live-androidx-material3-material3-material3-snackbar-lines-491-source]
         val dismissButtonPlaceX = containerWidth - dismissButtonWidth
         val actionButtonPlaceX = dismissButtonPlaceX - actionButtonWidth
 
-Sources: [live-androidx-material3-material3-material3-snackbar-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
+Sources: [live-androidx-material3-material3-material3-snackbar-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/Snackbar.kt)
 
 ## androidx.compose.material3 Snackbar.kt source (lines 561–595)
 

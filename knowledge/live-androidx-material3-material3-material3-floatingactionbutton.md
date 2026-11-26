@@ -51,14 +51,14 @@ sources:
       import androidx.compose.foundation.interaction.MutableInteractionSource
       import androidx.compose.foundation.interaction.PressInteraction
       import androidx.compose.foundation.layout.Arrangement
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1013-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1012-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1013
-    endLine: 1047
-    sha256: d7de841ac0e6245b28b0327cf703f766bb07d1aee24be306feb0d59c9bbe4c12
+    startLine: 1012
+    endLine: 1046
+    sha256: 4149fc941f4742890690e19167c9173149afc50cc6ede93f69b4789cc27134fd
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
           public val shape: Shape
@@ -70,7 +70,7 @@ sources:
 
           /** Default shape for a medium floating action button. */
           public val mediumShape: Shape
-              @Composable get() = ShapeDefaults.LargeIncreased // TODO: update to use token
+              @Composable get() = FabMediumTokens.ContainerShape.value
 
           /** Default shape for a large floating action button. */
           public val largeShape: Shape
@@ -78,7 +78,7 @@ sources:
 
           /** Default shape for an extended floating action button. */
           public val extendedFabShape: Shape
-              @Composable get() = ExtendedFabPrimaryTokens.ContainerShape.value
+              @Composable get() = ExtendedFabSmallTokens.ContainerShape.value
 
           /** Default shape for a small extended floating action button. */
           public val smallExtendedFabShape: Shape
@@ -86,7 +86,7 @@ sources:
 
           /** Default shape for a medium extended floating action button. */
           public val mediumExtendedFabShape: Shape
-              @Composable get() = ShapeDefaults.LargeIncreased // TODO: update to use token
+              @Composable get() = ExtendedFabMediumTokens.ContainerShape.value
 
           /** Default shape for a large extended floating action button. */
           public val largeExtendedFabShape: Shape
@@ -95,13 +95,13 @@ sources:
           /** Default container color for a floating action button. */
           public val containerColor: Color
               @Composable get() = FabPrimaryContainerTokens.ContainerColor.value
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1048-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1047-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1048
-    endLine: 1082
+    startLine: 1047
+    endLine: 1081
     sha256: 8cb9fe207ff8b65585110a6eaa6494948cc31d70d022b5deab44e919a894fc51
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -142,15 +142,14 @@ sources:
            */
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-106-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 106
     endLine: 140
-    sha256: 625fde79b9400a515cc4854da0774834af578cd0d874439c4ef48b89807f12c1
+    sha256: f2bb59f27124982214f54b74901ca281c729b9537f41987ba1ff4f68d86d8b01
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       * ![FAB image](https://developer.android.com/images/reference/androidx/compose/material3/fab.png)
        *
        * FAB typically contains an icon, for a FAB with text and an icon, see
        * [ExtendedFloatingActionButton].
@@ -185,13 +184,14 @@ sources:
           interactionSource: MutableInteractionSource? = null,
           content: @Composable () -> Unit,
       ): Unit =
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1083-source
+          FloatingActionButton(
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1082-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1083
-    endLine: 1117
+    startLine: 1082
+    endLine: 1116
     sha256: 7fd0ed2d8dd430da45c6974d16a8917062ce0633aac0b35f03ecbded82db753d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -230,13 +230,13 @@ sources:
                   pressedElevation,
                   focusedElevation,
                   hoveredElevation,
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1118-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1117-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1118
-    endLine: 1152
+    startLine: 1117
+    endLine: 1151
     sha256: 1d7fade1629a1684b2d37795be198196725168b22a3e6d61cd8c5167de0f0a09
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2
@@ -274,13 +274,13 @@ sources:
               )
           )
       }
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1153-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1152-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1153
-    endLine: 1187
+    startLine: 1152
+    endLine: 1186
     sha256: 202028b55a2a02629ab5569ef500521fc4b473bc71c0737a45c009ddfd86de84
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
@@ -319,13 +319,13 @@ sources:
       internal class FabVisibleNode(
           visible: Boolean,
           private var alignment: Alignment,
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1188-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1187-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1188
-    endLine: 1222
+    startLine: 1187
+    endLine: 1221
     sha256: 7fed07f56f4d81da31fbc7e7828db43206d6113c60e04ebfe89896e95b7b1d82
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -364,13 +364,13 @@ sources:
 
                           record(size = layerSize) {
                               inset(layerInsetFloat, layerInsetFloat) { this@record.drawContent() }
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1223-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1222-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1223
-    endLine: 1257
+    startLine: 1222
+    endLine: 1256
     sha256: 7c954f50e63f86c4e163a88389de61b07b48737398414e32c89b9c8f5126a741
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -409,13 +409,13 @@ sources:
                   alphaAnimatable.animateTo(
                       targetValue = if (visible) 1f else 0f,
                       animationSpec =
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1258-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1257-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1258
-    endLine: 1292
+    startLine: 1257
+    endLine: 1291
     sha256: 1e117d030cfa87cc4e7856d72fd8f1c0c95244c23c0a113784fa0c45b652ca0f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -454,13 +454,13 @@ sources:
           @Composable
           internal fun shadowElevation(interactionSource: InteractionSource): State<Dp> {
               return animateElevation(interactionSource = interactionSource)
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1293-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1292-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1293
-    endLine: 1327
+    startLine: 1292
+    endLine: 1326
     sha256: 90050bfda7b6d4222330c732bd3348287db5ac9ade9f692fffeb8b86b5ba599a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -499,13 +499,13 @@ sources:
                               interactions.add(interaction)
                           }
                           is HoverInteraction.Exit -> {
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1328-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1327-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1328
-    endLine: 1362
+    startLine: 1327
+    endLine: 1361
     sha256: 243c2c75030cd4c041497214e8f4fb253166d5ff7462680c255907239e17b37d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -544,13 +544,13 @@ sources:
               if (focusedElevation != other.focusedElevation) return false
               return hoveredElevation == other.hoveredElevation
           }
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1363-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1362-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1363
-    endLine: 1397
+    startLine: 1362
+    endLine: 1396
     sha256: 42d81887b59b43407b92b6e24790e7d3591731d31db323f4a6bcc14dd7900295
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -589,13 +589,13 @@ sources:
               pressedElevation: Dp,
               hoveredElevation: Dp,
               focusedElevation: Dp,
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1398-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1397-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1398
-    endLine: 1432
+    startLine: 1397
+    endLine: 1431
     sha256: 4f040623cfac5c29dc1ef80613a6c303332b0b6fba15f46b8f2b5cd84d6f7b67
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -636,17 +636,16 @@ sources:
       }
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-141-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 141
     endLine: 175
-    sha256: 3c41e9110373dfce3c7171bc52a8166b75699c4927d03a18cee06c13187a058b
+    sha256: 33d747c81642a73200f178395a4e05eecbae5706bf1d5390a51f8fec1e965a13
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-          FloatingActionButton(
               onClick,
-              ExtendedFabPrimaryTokens.LabelTextFont.value,
+              ExtendedFabSmallTokens.LabelText.value,
               FabBaselineTokens.ContainerWidth,
               FabBaselineTokens.ContainerHeight,
               modifier,
@@ -679,14 +678,15 @@ sources:
               modifier = modifier.semantics { role = Role.Button },
               shape = shape,
               color = containerColor,
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1433-source
+              contentColor = contentColor,
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1432-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1433
-    endLine: 1467
-    sha256: 1666bca97a98bffe3ac205297deaaa91760cb93cfe432f27a9e40a7837ddc12f
+    startLine: 1432
+    endLine: 1466
+    sha256: 0bf2c1d7709efc0e5d799104fee1cb6fc37469ea348f85d190d7978c0a127a0d
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
       
@@ -710,9 +710,8 @@ sources:
           get() = ExtendedFabMediumTokens.LeadingSpace
       private val MediumExtendedFabPaddingEnd
           get() = ExtendedFabMediumTokens.TrailingSpace
-      // TODO: ExtendedFabMediumTokens.IconLabelSpace is incorrect
       private val MediumExtendedFabIconPadding
-          get() = 12.dp
+          get() = ExtendedFabMediumTokens.IconLabelSpace
       private val MediumExtendedFabTextStyle = TypographyKeyTokens.TitleLarge
 
       private val LargeExtendedFabMinimumWidth
@@ -723,19 +722,18 @@ sources:
           get() = ExtendedFabLargeTokens.LeadingSpace
       private val LargeExtendedFabPaddingEnd
           get() = ExtendedFabLargeTokens.TrailingSpace
-      // TODO: ExtendedFabLargeTokens.IconLabelSpace is incorrect
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1468-source
+      private val LargeExtendedFabIconPadding
+          get() = ExtendedFabLargeTokens.IconLabelSpace
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1467-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1468
-    endLine: 1502
-    sha256: d0dee6cda242d5346cbe1378f668913bc9b9e696ea19c975411fc237135acfa8
+    startLine: 1467
+    endLine: 1501
+    sha256: 2358a1aff831f1d92f3a7e35162bf7c2b2d1e56400571fb1a500c23698543645
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
-      private val LargeExtendedFabIconPadding
-          get() = 16.dp
       private val LargeExtendedFabTextStyle = TypographyKeyTokens.HeadlineSmall
 
       private val ExtendedFabStartIconPadding
@@ -769,29 +767,18 @@ sources:
           ) +
               expandHorizontally(
                   animationSpec = MotionSchemeKeyTokens.FastSpatial.value(),
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1503-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 1503
-    endLine: 1505
-    sha256: db5f2d6d56beac04a51f41f0922dfd9e4840b560a509f54ca3493dcfc75f0a42
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
                   expandFrom = Alignment.Start,
               )
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-176-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 176
     endLine: 210
-    sha256: 729b467406c71fad649ddacd5cc67ad7a0ac921f34eb66382a6dadee9017b80e
+    sha256: 79a8129ee3d83509c76d271811266eb553bcd2239c7bf4236e2f1720eea76eec
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              contentColor = contentColor,
               tonalElevation = elevation.tonalElevation(),
               shadowElevation = elevation.shadowElevation(interactionSource = interactionSource).value,
               interactionSource = interactionSource,
@@ -826,17 +813,17 @@ sources:
        * @param shape defines the shape of this FAB's container and shadow (when using [elevation])
        * @param containerColor the color used for the background of this FAB. Use [Color.Transparent] to
        *   have no color.
+       * @param contentColor the preferred color for content inside this FAB. Defaults to either the
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-211-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 211
     endLine: 245
-    sha256: f0d68488030b2c558524447b6dd80c72c06615088eb6e1e68e975c07370b3f8d
+    sha256: a977482db661bfb6307485d10f90ec00b8ec947cb47693b7c000711e9dbc9faa
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       * @param contentColor the preferred color for content inside this FAB. Defaults to either the
        *   matching content color for [containerColor], or to the current [LocalContentColor] if
        *   [containerColor] is not a color from the theme.
        * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
@@ -871,17 +858,17 @@ sources:
               containerColor = containerColor,
               contentColor = contentColor,
               elevation = elevation,
+              interactionSource = interactionSource,
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-246-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 246
     endLine: 280
-    sha256: 37d0a5ccf1aa5065acdf848cf5f356cf84bd73aec672bcc7cd66bd0331d3f320
+    sha256: 6a1b443bb9ce0785241da9e7745596bd543ece8e87d7846cd387d1fab8b13084
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              interactionSource = interactionSource,
               content = content,
           )
       }
@@ -916,17 +903,17 @@ sources:
        * @param content the content of this FAB, typically an [Icon]
        *
        * @material3expressive
+       */
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-281-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 281
     endLine: 315
-    sha256: ca37d33911ef7ddda4817fde020278935dd63835423f274c5e12bd5954b964a9
+    sha256: b5734624a1ad8036670829f05d95fb0511d8a6bec667cdd93fd3ce54f55f3201
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-       */
+    excerpt: |-
       @Composable
       public fun MediumFloatingActionButton(
           onClick: () -> Unit,
@@ -961,17 +948,17 @@ sources:
        * The FAB represents the most important action on a screen. It puts key actions within reach.
        *
        * ![Large FAB
+       * image](https://developer.android.com/images/reference/androidx/compose/material3/large-fab.png)
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-316-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 316
     endLine: 350
-    sha256: b98c6c2249fa07822608c727387d7d66880a13f15cb14c7ef5ac9911b10379a0
+    sha256: a209b982c69cd10f32af435c5e80c95a11749cd4fe3f177d4ccdeeddad060e19
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       * image](https://developer.android.com/images/reference/androidx/compose/material3/large-fab.png)
        *
        * @sample androidx.compose.material3.samples.LargeFloatingActionButtonSample
        *
@@ -1006,17 +993,17 @@ sources:
           elevation: FloatingActionButtonElevation = FloatingActionButtonDefaults.elevation(),
           interactionSource: MutableInteractionSource? = null,
           content: @Composable () -> Unit,
+      ) {
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-351-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 351
     endLine: 385
-    sha256: f3494441097c0085aef09e3dcac6eeb646e1c4635938e0fed0557b30d54c599c
+    sha256: 493ead3f9010a177535da42c75c2130d70b9babd2d760a315352520ad03a2bf8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
-      ) {
+    excerpt: |2-
           FloatingActionButton(
               onClick = onClick,
               modifier =
@@ -1051,14 +1038,15 @@ sources:
        *   have no color.
        * @param contentColor the preferred color for content inside this FAB. Defaults to either the
        *   matching content color for [containerColor], or to the current [LocalContentColor] if
+       *   [containerColor] is not a color from the theme.
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-36-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 36
     endLine: 70
-    sha256: c4261a7900da5396d4f7e16d112f396a9a93ad24ccdc5b8f5780c4198346e5ea
+    sha256: a177972cbf9deda6013f9f3c52ce19136903d5e434274a22eac4c385a0950189
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
       import androidx.compose.foundation.layout.Box
@@ -1075,7 +1063,6 @@ sources:
       import androidx.compose.material3.tokens.ElevationTokens
       import androidx.compose.material3.tokens.ExtendedFabLargeTokens
       import androidx.compose.material3.tokens.ExtendedFabMediumTokens
-      import androidx.compose.material3.tokens.ExtendedFabPrimaryTokens
       import androidx.compose.material3.tokens.ExtendedFabSmallTokens
       import androidx.compose.material3.tokens.FabBaselineTokens
       import androidx.compose.material3.tokens.FabLargeTokens
@@ -1096,17 +1083,17 @@ sources:
       import androidx.compose.ui.geometry.Offset
       import androidx.compose.ui.geometry.Size
       import androidx.compose.ui.graphics.Color
+      import androidx.compose.ui.graphics.Shape
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-386-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 386
     endLine: 420
-    sha256: 910f4675998bdb1b97792944ebc6e56e9fe9be9fc7d87c987d777f0b2b48468d
+    sha256: c220aed0ac6697b2a409b0610445efdef29b510beaf70541d00350ecfadb6a7a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       *   [containerColor] is not a color from the theme.
        * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
        *   different states. This controls the size of the shadow below the FAB. Additionally, when the
        *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
@@ -1141,17 +1128,17 @@ sources:
               contentColor = contentColor,
               elevation = elevation,
               interactionSource = interactionSource,
+          ) {
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-421-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 421
     endLine: 455
-    sha256: 050de1ae1c6874ca251b351d394ab223f08456ad3052079a13ef712cfe76ee2b
+    sha256: c7ea294b56b84aba85a3747641b94ab145263b00ea67044bb44791f7adf8d0ca
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-          ) {
               Row(
                   modifier =
                       Modifier.padding(
@@ -1186,17 +1173,17 @@ sources:
        *   [containerColor] is not a color from the theme.
        * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
        *   different states. This controls the size of the shadow below the FAB. Additionally, when the
+       *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-456-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 456
     endLine: 490
-    sha256: ff0a8205000259eb64e9f50ad7ceb196ca30bcc8f616e33cd43f066a3ed08669
+    sha256: 8efb524590b60bc7e951b21c343d74f835e59c5008d4b6e0d9f4baaaa2c5d92a
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
        *   an overlay. See also: [Surface].
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
        *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
@@ -1231,17 +1218,17 @@ sources:
           ) {
               Row(
                   modifier =
+                      Modifier.padding(
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-491-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 491
     endLine: 525
-    sha256: ae59cce646a23281aa3fd37f60bbf2a92a2014b17cf93d1479f486f843e709ec
+    sha256: 06d4ccef38651f4bdba258c636669096fc139b9dd52cc24928866d364f0602a7
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                      Modifier.padding(
                           start = MediumExtendedFabPaddingStart,
                           end = MediumExtendedFabPaddingEnd,
                       ),
@@ -1276,17 +1263,17 @@ sources:
        *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
        *   an overlay. See also: [Surface].
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
+       *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-526-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 526
     endLine: 560
-    sha256: 113e7fb50d97c9c443c28595316e0e897dea304d9ab5bf83e41b7b178a795eba
+    sha256: 46e4ea5ba4441631a0c99b5b2f225fcc6feb1d30e94817353e0d52c5ea085b89
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-       *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
        *   preview the FAB in different states. Note that if `null` is provided, interactions will still
        *   happen internally.
        * @param content the content of this FAB, typically a [Text] label
@@ -1321,17 +1308,17 @@ sources:
                       Modifier.padding(
                           start = LargeExtendedFabPaddingStart,
                           end = LargeExtendedFabPaddingEnd,
+                      ),
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-561-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 561
     endLine: 595
-    sha256: e52add863d735d8aff5e3bc4fc2f829fc696d7af76aaf5692f1644cb174faaf6
+    sha256: 1005680c0c7fcbfb0c8997442f91816dfa855ec36e4966e8de2e1de919534e98
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                      ),
                   horizontalArrangement = Arrangement.Center,
                   verticalAlignment = Alignment.CenterVertically,
                   content = content,
@@ -1366,17 +1353,17 @@ sources:
        *   an overlay. See also: [Surface].
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
        *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
+       *   preview the FAB in different states. Note that if `null` is provided, interactions will still
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-596-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 596
     endLine: 630
-    sha256: 5feb0e80ed2b1edbe6bc93d976e23781d3c78d018a7cc2f17e8e93ec63d87260
+    sha256: 9b9c2f1a62c0235cfc32ea12d793f705cb7c5846e9b66bb5c5938b57367dc935
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2
-       *   preview the FAB in different states. Note that if `null` is provided, interactions will still
+    excerpt: |2-
        *   happen internally.
        * @param content the content of this FAB, typically a [Text] label
        */
@@ -1410,17 +1397,18 @@ sources:
               )
           }
       }
+
+      /**
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-631-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 631
-    endLine: 665
-    sha256: e3ceb5a00256bf997341e461c36f61968f9148901b885dba7997b2c094cc3e47
+    endLine: 664
+    sha256: 9871700b782ca3d86ce39d005d8c831a1d3301b6a942bec6f4e6ca67c14117e5
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
-      /**
+    excerpt: |2-
        * [Material Design small extended floating action
        * button](https://m3.material.io/components/extended-fab/overview)
        *
@@ -1455,13 +1443,13 @@ sources:
        *   preview the FAB in different states. Note that if `null` is provided, interactions will still
        *   happen internally.
        *
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-666-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-665-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 666
-    endLine: 700
+    startLine: 665
+    endLine: 699
     sha256: cd5196daf5d9c4685fcd8e23d4fa6956b8947242000d73bf0cf95a76e2085e97
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1500,13 +1488,13 @@ sources:
           )
 
       /**
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-701-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-700-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 701
-    endLine: 734
+    startLine: 700
+    endLine: 733
     sha256: c9b72a95d6d1b949843c52f4fddcf1bf361199f15d82f298109e2b0e173a731c
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1546,15 +1534,14 @@ sources:
        *
   - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-71-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
     startLine: 71
     endLine: 105
-    sha256: 8a54ec7e7f6fe0bf6aa087c180fed9fb31ba59844b2cb72d4abf7f563494d679
+    sha256: ef0f782443b36b7f1789fff69a8cedc9ef2410626dbe5179b8c26997ff201be8
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |-
-      import androidx.compose.ui.graphics.Shape
       import androidx.compose.ui.graphics.drawscope.inset
       import androidx.compose.ui.graphics.graphicsLayer
       import androidx.compose.ui.graphics.layer.drawLayer
@@ -1589,13 +1576,14 @@ sources:
        *
        * The FAB represents the most important action on a screen. It puts key actions within reach.
        *
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-735-source
+       * ![FAB image](https://developer.android.com/images/reference/androidx/compose/material3/fab.png)
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-734-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 735
-    endLine: 769
+    startLine: 734
+    endLine: 768
     sha256: 05e58a7850b866159c13f7b4206ff5eb0fcbfe5b6672d6bd9455cf45f8e55d0e
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1634,13 +1622,13 @@ sources:
           )
 
       /**
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-770-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-769-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 770
-    endLine: 803
+    startLine: 769
+    endLine: 802
     sha256: f2bbcbe625191848ea5cd4ff63cc28f8dcedd7bdd5e531ca88f54ee8232b7619
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1678,13 +1666,13 @@ sources:
        *   preview the FAB in different states. Note that if `null` is provided, interactions will still
        *   happen internally.
        *
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-804-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-803-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 804
-    endLine: 838
+    startLine: 803
+    endLine: 837
     sha256: be4bb7615b035aa80f4cfdef8c3f288e1463e9174aa8c3e992253dbe66f8994e
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1723,13 +1711,13 @@ sources:
           )
 
       /**
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-839-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-838-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 839
-    endLine: 872
+    startLine: 838
+    endLine: 871
     sha256: 609cf33a77bbc3566bcdbf00ce826e9b6174e397349ab6a8282078499bb3fab4
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1767,13 +1755,13 @@ sources:
        *   an overlay. See also: [Surface].
        * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
        *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-873-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-872-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 873
-    endLine: 907
+    startLine: 872
+    endLine: 906
     sha256: 07dbde000b2eaea1b2dd393be2d0b529e1c45f1f9c94e1d7a4fcbac7a2a1380f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1812,13 +1800,13 @@ sources:
                                   if (expanded) {
                                       ExtendedFabMinimumWidth
                                   } else {
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-908-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-907-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 908
-    endLine: 942
+    startLine: 907
+    endLine: 941
     sha256: 7e47d3968e1db835dc953efbf0feb3c1e4978baa36d89abf3f45a05acdb8a410
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1857,13 +1845,13 @@ sources:
           iconPadding: Dp,
           modifier: Modifier = Modifier,
           expanded: Boolean = true,
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-943-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-942-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 943
-    endLine: 977
+    startLine: 942
+    endLine: 976
     sha256: 52be178d9f07860014789e769ad95db6cfd60d6799d8ef4a8aa85acde52f898f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
@@ -1902,14 +1890,14 @@ sources:
                               val placeable = measurable.measure(constraints)
                               layout(width, placeable.height) { placeable.place(0, 0) }
                           }
-  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-978-source
+  - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-977-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    revision: 07f09ade563fe07a62dd26797ba27a2f6ff5571a
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt
-    startLine: 978
-    endLine: 1012
-    sha256: f85c0b381815b036990c137e7d366920d4778045949a0715e4881c77fc249847
+    startLine: 977
+    endLine: 1011
+    sha256: f88ad1ee6c1ce10688bd0c0b979ad03285151700fd83767b462f50731418003b
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
                           .sizeIn(minWidth = minWidth, minHeight = minHeight)
@@ -1944,7 +1932,7 @@ sources:
           public val MediumIconSize: Dp = FabMediumTokens.IconSize
 
           /** The recommended size of the icon inside a [LargeFloatingActionButton]. */
-          public val LargeIconSize: Dp = 36.dp // TODO: FabLargeTokens.IconSize is incorrect
+          public val LargeIconSize: Dp = FabLargeTokens.IconSize
 
           /** Default shape for a floating action button. */
 compose:
@@ -1961,17 +1949,17 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-1-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1013
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1013–1047)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1012
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1012–1046)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1013-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1012-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1048
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1048–1082)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1047
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1047–1081)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.FloatingActionButtonElevation
@@ -1979,7 +1967,7 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1048-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1047-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-106
       title: androidx.compose.material3 FloatingActionButton.kt source (lines 106–140)
@@ -1994,8 +1982,8 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-106-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1083
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1083–1117)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1082
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1082–1116)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.FloatingActionButtonElevation
@@ -2003,10 +1991,10 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1083-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1082-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1118
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1118–1152)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1117
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1117–1151)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.FloatingActionButtonDefaults
@@ -2015,37 +2003,37 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1118-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1117-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1153
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1153–1187)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1152
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1152–1186)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1153-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1152-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1188
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1188–1222)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1187
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1187–1221)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1188-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1187-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1223
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1223–1257)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1222
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1222–1256)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1223-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1222-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1258
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1258–1292)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1257
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1257–1291)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.ExtendedFloatingActionButton
@@ -2055,44 +2043,44 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1258-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1257-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1293
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1293–1327)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1292
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1292–1326)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1293-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1292-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1328
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1328–1362)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1327
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1327–1361)
       aliases:
         - androidx.compose.material3.FloatingActionButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1328-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1327-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1363
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1363–1397)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1362
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1362–1396)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1363-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1362-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1398
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1398–1432)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1397
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1397–1431)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1398-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1397-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-141
       title: androidx.compose.material3 FloatingActionButton.kt source (lines 141–175)
@@ -2106,32 +2094,23 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-141-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1433
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1433–1467)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1432
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1432–1466)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1433-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1432-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1468
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1468–1502)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1467
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1467–1501)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1468-source
-      relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-1503
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 1503–1505)
-      aliases: []
-      requires:
-        - artifact: androidx.compose.material3:material3
-          version: null
-      sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1503-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-1467-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-176
       title: androidx.compose.material3 FloatingActionButton.kt source (lines 176–210)
@@ -2292,7 +2271,7 @@ compose:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-596-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-631
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 631–665)
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 631–664)
       aliases:
         - androidx.compose.material3.FloatingActionButtonElevation
       requires:
@@ -2301,8 +2280,8 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-631-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-666
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 666–700)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-665
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 665–699)
       aliases:
         - androidx.compose.material3.SmallExtendedFloatingActionButton
         - androidx.compose.material3.ExtendedFloatingActionButton
@@ -2312,17 +2291,17 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-666-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-665-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-701
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 701–734)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-700
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 700–733)
       aliases:
         - androidx.compose.material3.FloatingActionButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-701-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-700-source
       relatedIds: []
     - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-71
       title: androidx.compose.material3 FloatingActionButton.kt source (lines 71–105)
@@ -2333,8 +2312,8 @@ compose:
       sourceIds:
         - live-androidx-material3-material3-material3-floatingactionbutton-lines-71-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-735
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 735–769)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-734
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 734–768)
       aliases:
         - androidx.compose.material3.MediumExtendedFloatingActionButton
         - androidx.compose.material3.ExtendedFloatingActionButton
@@ -2344,20 +2323,20 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-735-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-734-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-770
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 770–803)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-769
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 769–802)
       aliases:
         - androidx.compose.material3.FloatingActionButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-770-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-769-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-804
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 804–838)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-803
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 803–837)
       aliases:
         - androidx.compose.material3.LargeExtendedFloatingActionButton
         - androidx.compose.material3.ExtendedFloatingActionButton
@@ -2367,20 +2346,20 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-804-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-803-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-839
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 839–872)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-838
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 838–871)
       aliases:
         - androidx.compose.material3.FloatingActionButtonElevation
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-839-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-838-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-873
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 873–907)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-872
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 872–906)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.ExtendedFloatingActionButton
@@ -2390,20 +2369,20 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-873-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-872-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-908
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 908–942)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-907
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 907–941)
       aliases:
         - androidx.compose.material3.ExtendedFloatingActionButton
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-908-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-907-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-943
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 943–977)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-942
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 942–976)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.FloatingActionButtonDefaults
@@ -2412,10 +2391,10 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-943-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-942-source
       relatedIds: []
-    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-978
-      title: androidx.compose.material3 FloatingActionButton.kt source (lines 978–1012)
+    - id: live-androidx-material3-material3-material3-floatingactionbutton-lines-977
+      title: androidx.compose.material3 FloatingActionButton.kt source (lines 977–1011)
       aliases:
         - androidx.compose.material3.FloatingActionButton
         - androidx.compose.material3.MediumFloatingActionButton
@@ -2425,7 +2404,7 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-material3-material3-floatingactionbutton-lines-978-source
+        - live-androidx-material3-material3-material3-floatingactionbutton-lines-977-source
       relatedIds: []
 ---
 
@@ -2473,7 +2452,7 @@ import androidx.compose.foundation.layout.Arrangement
 
 Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1013–1047)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1012–1046)
 
     public val shape: Shape
         @Composable get() = FabBaselineTokens.ContainerShape.value
@@ -2484,7 +2463,7 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
 
     /** Default shape for a medium floating action button. */
     public val mediumShape: Shape
-        @Composable get() = ShapeDefaults.LargeIncreased // TODO: update to use token
+        @Composable get() = FabMediumTokens.ContainerShape.value
 
     /** Default shape for a large floating action button. */
     public val largeShape: Shape
@@ -2492,7 +2471,7 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
 
     /** Default shape for an extended floating action button. */
     public val extendedFabShape: Shape
-        @Composable get() = ExtendedFabPrimaryTokens.ContainerShape.value
+        @Composable get() = ExtendedFabSmallTokens.ContainerShape.value
 
     /** Default shape for a small extended floating action button. */
     public val smallExtendedFabShape: Shape
@@ -2500,7 +2479,7 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
 
     /** Default shape for a medium extended floating action button. */
     public val mediumExtendedFabShape: Shape
-        @Composable get() = ShapeDefaults.LargeIncreased // TODO: update to use token
+        @Composable get() = ExtendedFabMediumTokens.ContainerShape.value
 
     /** Default shape for a large extended floating action button. */
     public val largeExtendedFabShape: Shape
@@ -2511,9 +2490,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
         @Composable get() = FabPrimaryContainerTokens.ContainerColor.value
 
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1013-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1012-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1048–1082)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1047–1081)
 
     /**
      * Creates a [FloatingActionButtonElevation] that represents the elevation of a
@@ -2551,11 +2530,10 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
      * @param hoveredElevation the elevation used when the [FloatingActionButton] is hovered.
      */
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1048-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1047-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 106–140)
 
- * ![FAB image](https://developer.android.com/images/reference/androidx/compose/material3/fab.png)
  *
  * FAB typically contains an icon, for a FAB with text and an icon, see
  * [ExtendedFloatingActionButton].
@@ -2590,10 +2568,11 @@ public fun FloatingActionButton(
     interactionSource: MutableInteractionSource? = null,
     content: @Composable () -> Unit,
 ): Unit =
+    FloatingActionButton(
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-106-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1083–1117)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1082–1116)
 
     @Composable
     public fun loweredElevation(
@@ -2631,9 +2610,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
             focusedElevation,
             hoveredElevation,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1083-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1082-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1118–1152)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1117–1151)
 
         )
 }
@@ -2671,9 +2650,9 @@ public fun Modifier.animateFloatingActionButton(
 }
 
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1118-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1117-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1153–1187)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1152–1186)
 
 internal data class FabVisibleModifier(
     private val visible: Boolean,
@@ -2711,9 +2690,9 @@ internal class FabVisibleNode(
     visible: Boolean,
     private var alignment: Alignment,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1153-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1152-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1188–1222)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1187–1221)
 
     private var targetScale: Float,
     private var scaleAnimationSpec: AnimationSpec<Float>? = null,
@@ -2751,9 +2730,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
                     record(size = layerSize) {
                         inset(layerInsetFloat, layerInsetFloat) { this@record.drawContent() }
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1188-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1187-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1223–1257)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1222–1256)
 
                     }
                 }
@@ -2791,9 +2770,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
                 targetValue = if (visible) 1f else 0f,
                 animationSpec =
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1223-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1222-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1258–1292)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1257–1291)
 
                     alphaAnimationSpec
                         ?: currentValueOf(LocalMaterialTheme).motionScheme.fastEffectsSpec<Float>(),
@@ -2831,9 +2810,9 @@ internal constructor(
     internal fun shadowElevation(interactionSource: InteractionSource): State<Dp> {
         return animateElevation(interactionSource = interactionSource)
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1258-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1257-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1293–1327)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1292–1326)
 
     }
 
@@ -2871,9 +2850,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
                     }
                     is HoverInteraction.Exit -> {
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1293-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1292-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1328–1362)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1327–1361)
 
                         interactions.remove(interaction.enter)
                     }
@@ -2911,9 +2890,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
         return hoveredElevation == other.hoveredElevation
     }
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1328-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1327-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1363–1397)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1362–1396)
 
 
     override fun hashCode(): Int {
@@ -2951,9 +2930,9 @@ private class FloatingActionButtonElevationAnimatable(
         hoveredElevation: Dp,
         focusedElevation: Dp,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1363-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1362-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1398–1432)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1397–1431)
 
     ) {
         this.defaultElevation = defaultElevation
@@ -2991,13 +2970,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
     fun asState(): State<Dp> = animatable.asState()
 }
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1398-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1397-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 141–175)
 
-    FloatingActionButton(
         onClick,
-        ExtendedFabPrimaryTokens.LabelTextFont.value,
+        ExtendedFabSmallTokens.LabelText.value,
         FabBaselineTokens.ContainerWidth,
         FabBaselineTokens.ContainerHeight,
         modifier,
@@ -3030,10 +3008,11 @@ private fun FloatingActionButton(
         modifier = modifier.semantics { role = Role.Button },
         shape = shape,
         color = containerColor,
+        contentColor = contentColor,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-141-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1433–1467)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1432–1466)
 
 
 private val SmallExtendedFabMinimumWidth
@@ -3056,9 +3035,8 @@ private val MediumExtendedFabPaddingStart
     get() = ExtendedFabMediumTokens.LeadingSpace
 private val MediumExtendedFabPaddingEnd
     get() = ExtendedFabMediumTokens.TrailingSpace
-// TODO: ExtendedFabMediumTokens.IconLabelSpace is incorrect
 private val MediumExtendedFabIconPadding
-    get() = 12.dp
+    get() = ExtendedFabMediumTokens.IconLabelSpace
 private val MediumExtendedFabTextStyle = TypographyKeyTokens.TitleLarge
 
 private val LargeExtendedFabMinimumWidth
@@ -3069,14 +3047,13 @@ private val LargeExtendedFabPaddingStart
     get() = ExtendedFabLargeTokens.LeadingSpace
 private val LargeExtendedFabPaddingEnd
     get() = ExtendedFabLargeTokens.TrailingSpace
-// TODO: ExtendedFabLargeTokens.IconLabelSpace is incorrect
-
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1433-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
-
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1468–1502)
-
 private val LargeExtendedFabIconPadding
-    get() = 16.dp
+    get() = ExtendedFabLargeTokens.IconLabelSpace
+
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1432-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+
+## androidx.compose.material3 FloatingActionButton.kt source (lines 1467–1501)
+
 private val LargeExtendedFabTextStyle = TypographyKeyTokens.HeadlineSmall
 
 private val ExtendedFabStartIconPadding
@@ -3110,20 +3087,13 @@ private fun extendedFabExpandAnimation() =
     ) +
         expandHorizontally(
             animationSpec = MotionSchemeKeyTokens.FastSpatial.value(),
-
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1468-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
-
-## androidx.compose.material3 FloatingActionButton.kt source (lines 1503–1505)
-
             expandFrom = Alignment.Start,
         )
 
-
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1503-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-1467-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 176–210)
 
-        contentColor = contentColor,
         tonalElevation = elevation.tonalElevation(),
         shadowElevation = elevation.shadowElevation(interactionSource = interactionSource).value,
         interactionSource = interactionSource,
@@ -3158,12 +3128,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  * @param shape defines the shape of this FAB's container and shadow (when using [elevation])
  * @param containerColor the color used for the background of this FAB. Use [Color.Transparent] to
  *   have no color.
+ * @param contentColor the preferred color for content inside this FAB. Defaults to either the
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-176-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 211–245)
 
- * @param contentColor the preferred color for content inside this FAB. Defaults to either the
  *   matching content color for [containerColor], or to the current [LocalContentColor] if
  *   [containerColor] is not a color from the theme.
  * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
@@ -3198,12 +3168,12 @@ public fun SmallFloatingActionButton(
         containerColor = containerColor,
         contentColor = contentColor,
         elevation = elevation,
+        interactionSource = interactionSource,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-211-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 246–280)
 
-        interactionSource = interactionSource,
         content = content,
     )
 }
@@ -3238,12 +3208,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  * @param content the content of this FAB, typically an [Icon]
  *
  * @material3expressive
+ */
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-246-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 281–315)
 
- */
 @Composable
 public fun MediumFloatingActionButton(
     onClick: () -> Unit,
@@ -3278,12 +3248,12 @@ public fun MediumFloatingActionButton(
  * The FAB represents the most important action on a screen. It puts key actions within reach.
  *
  * ![Large FAB
+ * image](https://developer.android.com/images/reference/androidx/compose/material3/large-fab.png)
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-281-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-281-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 316–350)
 
- * image](https://developer.android.com/images/reference/androidx/compose/material3/large-fab.png)
  *
  * @sample androidx.compose.material3.samples.LargeFloatingActionButtonSample
  *
@@ -3318,12 +3288,12 @@ public fun LargeFloatingActionButton(
     elevation: FloatingActionButtonElevation = FloatingActionButtonDefaults.elevation(),
     interactionSource: MutableInteractionSource? = null,
     content: @Composable () -> Unit,
+) {
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-316-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-316-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 351–385)
 
-) {
     FloatingActionButton(
         onClick = onClick,
         modifier =
@@ -3358,8 +3328,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   have no color.
  * @param contentColor the preferred color for content inside this FAB. Defaults to either the
  *   matching content color for [containerColor], or to the current [LocalContentColor] if
+ *   [containerColor] is not a color from the theme.
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-351-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-351-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 36–70)
 
@@ -3377,7 +3348,6 @@ import androidx.compose.material3.internal.animateElevation
 import androidx.compose.material3.tokens.ElevationTokens
 import androidx.compose.material3.tokens.ExtendedFabLargeTokens
 import androidx.compose.material3.tokens.ExtendedFabMediumTokens
-import androidx.compose.material3.tokens.ExtendedFabPrimaryTokens
 import androidx.compose.material3.tokens.ExtendedFabSmallTokens
 import androidx.compose.material3.tokens.FabBaselineTokens
 import androidx.compose.material3.tokens.FabLargeTokens
@@ -3398,12 +3368,12 @@ import androidx.compose.ui.draw.CacheDrawModifierNode
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-36-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 386–420)
 
- *   [containerColor] is not a color from the theme.
  * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
  *   different states. This controls the size of the shadow below the FAB. Additionally, when the
  *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
@@ -3438,12 +3408,12 @@ public fun SmallExtendedFloatingActionButton(
         contentColor = contentColor,
         elevation = elevation,
         interactionSource = interactionSource,
+    ) {
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-386-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 421–455)
 
-    ) {
         Row(
             modifier =
                 Modifier.padding(
@@ -3478,12 +3448,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   [containerColor] is not a color from the theme.
  * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB in
  *   different states. This controls the size of the shadow below the FAB. Additionally, when the
+ *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-421-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 456–490)
 
- *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
  *   an overlay. See also: [Surface].
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
  *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
@@ -3518,12 +3488,12 @@ public fun MediumExtendedFloatingActionButton(
     ) {
         Row(
             modifier =
+                Modifier.padding(
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-456-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 491–525)
 
-                Modifier.padding(
                     start = MediumExtendedFabPaddingStart,
                     end = MediumExtendedFabPaddingEnd,
                 ),
@@ -3558,12 +3528,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   container color is [ColorScheme.surface], this controls the amount of primary color applied as
  *   an overlay. See also: [Surface].
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
+ *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-491-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 526–560)
 
- *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
  *   preview the FAB in different states. Note that if `null` is provided, interactions will still
  *   happen internally.
  * @param content the content of this FAB, typically a [Text] label
@@ -3598,12 +3568,12 @@ public fun LargeExtendedFloatingActionButton(
                 Modifier.padding(
                     start = LargeExtendedFabPaddingStart,
                     end = LargeExtendedFabPaddingEnd,
+                ),
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-526-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 561–595)
 
-                ),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
             content = content,
@@ -3638,12 +3608,12 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   an overlay. See also: [Surface].
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
  *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
+ *   preview the FAB in different states. Note that if `null` is provided, interactions will still
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-561-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 596–630)
 
- *   preview the FAB in different states. Note that if `null` is provided, interactions will still
  *   happen internally.
  * @param content the content of this FAB, typically a [Text] label
  */
@@ -3678,12 +3648,12 @@ public fun ExtendedFloatingActionButton(
     }
 }
 
-
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
-
-## androidx.compose.material3 FloatingActionButton.kt source (lines 631–665)
-
 /**
+
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-596-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+
+## androidx.compose.material3 FloatingActionButton.kt source (lines 631–664)
+
  * [Material Design small extended floating action
  * button](https://m3.material.io/components/extended-fab/overview)
  *
@@ -3719,9 +3689,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   happen internally.
  *
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-631-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 666–700)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 665–699)
 
  * @material3expressive
  */
@@ -3759,9 +3729,9 @@ public fun SmallExtendedFloatingActionButton(
 
 /**
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-666-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-665-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 701–734)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 700–733)
 
  * [Material Design medium extended floating action
  * button](https://m3.material.io/components/extended-fab/overview)
@@ -3798,11 +3768,10 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   happen internally.
  *
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-701-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-700-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
 ## androidx.compose.material3 FloatingActionButton.kt source (lines 71–105)
 
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.drawscope.inset
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.layer.drawLayer
@@ -3837,10 +3806,11 @@ import kotlinx.coroutines.launch
  *
  * The FAB represents the most important action on a screen. It puts key actions within reach.
  *
+ * ![FAB image](https://developer.android.com/images/reference/androidx/compose/material3/fab.png)
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 735–769)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 734–768)
 
  * @material3expressive
  */
@@ -3878,9 +3848,9 @@ public fun MediumExtendedFloatingActionButton(
 
 /**
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-735-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-734-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 770–803)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 769–802)
 
  * [Material Design large extended floating action
  * button](https://m3.material.io/components/extended-fab/overview)
@@ -3917,9 +3887,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  *   happen internally.
  *
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-770-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-769-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 804–838)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 803–837)
 
  * @material3expressive
  */
@@ -3957,9 +3927,9 @@ public fun LargeExtendedFloatingActionButton(
 
 /**
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-804-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-803-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 839–872)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 838–871)
 
  * [Material Design extended floating action
  * button](https://m3.material.io/components/extended-fab/overview)
@@ -3996,9 +3966,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
  * @param interactionSource an optional hoisted [MutableInteractionSource] for observing and
  *   emitting [Interaction]s for this FAB. You can use this to change the FAB's appearance or
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-839-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-838-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 873–907)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 872–906)
 
  *   preview the FAB in different states. Note that if `null` is provided, interactions will still
  *   happen internally.
@@ -4036,9 +4006,9 @@ public fun ExtendedFloatingActionButton(
                                 ExtendedFabMinimumWidth
                             } else {
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-873-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-872-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 908–942)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 907–941)
 
                                 FabBaselineTokens.ContainerWidth
                             }
@@ -4076,9 +4046,9 @@ private fun ExtendedFloatingActionButton(
     modifier: Modifier = Modifier,
     expanded: Boolean = true,
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-908-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-907-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 943–977)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 942–976)
 
     shape: Shape = FloatingActionButtonDefaults.extendedFabShape,
     containerColor: Color = FloatingActionButtonDefaults.containerColor,
@@ -4116,9 +4086,9 @@ Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines
                         layout(width, placeable.height) { placeable.place(0, 0) }
                     }
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-943-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-942-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
 
-## androidx.compose.material3 FloatingActionButton.kt source (lines 978–1012)
+## androidx.compose.material3 FloatingActionButton.kt source (lines 977–1011)
 
                     .sizeIn(minWidth = minWidth, minHeight = minHeight)
                     .padding(start = startPadding, end = endPadding),
@@ -4152,8 +4122,8 @@ public object FloatingActionButtonDefaults {
     public val MediumIconSize: Dp = FabMediumTokens.IconSize
 
     /** The recommended size of the icon inside a [LargeFloatingActionButton]. */
-    public val LargeIconSize: Dp = 36.dp // TODO: FabLargeTokens.IconSize is incorrect
+    public val LargeIconSize: Dp = FabLargeTokens.IconSize
 
     /** Default shape for a floating action button. */
 
-Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-978-source](https://android.googlesource.com/platform/frameworks/support/+/07f09ade563fe07a62dd26797ba27a2f6ff5571a/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)
+Sources: [live-androidx-material3-material3-material3-floatingactionbutton-lines-977-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/FloatingActionButton.kt)

@@ -51,30 +51,17 @@ sources:
       import androidx.compose.material3.ExposedDropdownMenu as ExposedDropdownMenuExtension
       import androidx.compose.material3.internal.BackHandler
       import androidx.compose.material3.internal.Icons
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-1017-source
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-1015-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 1017
-    endLine: 1051
-    sha256: cd61cbf54a57c9245ef7163d382d8ff5ece486e87a0dbbccd7b4b8f98817760a
+    startLine: 1015
+    endLine: 1049
+    sha256: 78cdfbbcfeda7e334c544ff987d9c84894017abe580758271916fc3722674f6f
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
-                      if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
-                          focusRequester.requestFocus()
-                      }
-                      onExpandedChange()
-                      if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
-                          keyboardController?.show()
-                      }
-                      true
-                  }
-              }
-
-      private val KeyEvent.isClick: Boolean
-          get() = type == KeyUp && (isEnterMinusSpacebar || key == Key.Spacebar)
-
+    excerpt: |
+      
       private val KeyEvent.isEnterMinusSpacebar: Boolean
           get() =
               when (key) {
@@ -96,16 +83,6 @@ sources:
           val availableHeight =
               if (anchorBounds.top > windowBounds.bottom || anchorBounds.bottom < windowBounds.top) {
                   marginedWindowBottom - marginedWindowTop
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-1052-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 1052
-    endLine: 1086
-    sha256: 5077db68a41054d98278c4f68bfd955a12b975baca5912e36320f8ca944a4e59
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               } else {
                   val heightAbove = anchorBounds.top - marginedWindowTop
                   val heightBelow = marginedWindowBottom - anchorBounds.bottom
@@ -118,7 +95,16 @@ sources:
       // Don't use `boundsInWindow()` because it can report 0 when the window is animating/resizing
       private fun LayoutCoordinates?.getAnchorBounds(): Rect =
           if (this == null || !this.isAttached) Rect.Zero else Rect(positionInWindow(), size.toSize())
-
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-1050-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 1050
+    endLine: 1072
+    sha256: 673fd34b9812daf5ec6109b34b1b5f060a6866abd91403040457069f92d072a3
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |
       internal expect class WindowBoundsCalculator {
           fun getVisibleWindowBounds(): IntRect
       }
@@ -718,102 +704,94 @@ sources:
           public fun textFieldColors(
   - id: live-androidx-material3-exposed-dropdown-menu-lines-516-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
     startLine: 516
-    endLine: 547
-    sha256: 12c065eaea45e0d9242b8283b6c49d42ce24fbf48635cebe9e604b0cb91d5d84
+    endLine: 544
+    sha256: a8565dcddd96c54c0e013414f048564504f4319192e1c287dab85375e023f3c1
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              focusedTextColor: Color = FilledAutocompleteTokens.FieldFocusInputTextColor.value,
-              unfocusedTextColor: Color = FilledAutocompleteTokens.FieldInputTextColor.value,
+              focusedTextColor: Color = FilledAutocompleteTokens.FocusInputTextColor.value,
+              unfocusedTextColor: Color = FilledAutocompleteTokens.InputTextColor.value,
               disabledTextColor: Color =
-                  FilledAutocompleteTokens.FieldDisabledInputTextColor.value.copy(
-                      alpha = FilledAutocompleteTokens.FieldDisabledInputTextOpacity
+                  FilledAutocompleteTokens.DisabledInputTextColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledInputTextOpacity
                   ),
-              errorTextColor: Color = FilledAutocompleteTokens.FieldErrorInputTextColor.value,
-              focusedContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-              unfocusedContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-              disabledContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-              errorContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-              cursorColor: Color = FilledAutocompleteTokens.TextFieldCaretColor.value,
-              errorCursorColor: Color = FilledAutocompleteTokens.TextFieldErrorFocusCaretColor.value,
+              errorTextColor: Color = FilledAutocompleteTokens.ErrorInputTextColor.value,
+              focusedContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+              unfocusedContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+              disabledContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+              errorContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+              cursorColor: Color = FilledAutocompleteTokens.CaretColor.value,
+              errorCursorColor: Color = FilledAutocompleteTokens.ErrorFocusCaretColor.value,
               selectionColors: TextSelectionColors = LocalTextSelectionColors.current,
-              focusedIndicatorColor: Color =
-                  FilledAutocompleteTokens.TextFieldFocusActiveIndicatorColor.value,
-              unfocusedIndicatorColor: Color =
-                  FilledAutocompleteTokens.TextFieldActiveIndicatorColor.value,
+              focusedIndicatorColor: Color = FilledAutocompleteTokens.FocusActiveIndicatorColor.value,
+              unfocusedIndicatorColor: Color = FilledAutocompleteTokens.ActiveIndicatorColor.value,
               disabledIndicatorColor: Color =
-                  FilledAutocompleteTokens.TextFieldDisabledActiveIndicatorColor.value.copy(
-                      alpha = FilledAutocompleteTokens.TextFieldDisabledActiveIndicatorOpacity
+                  FilledAutocompleteTokens.DisabledActiveIndicatorColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledActiveIndicatorOpacity
                   ),
-              errorIndicatorColor: Color =
-                  FilledAutocompleteTokens.TextFieldErrorActiveIndicatorColor.value,
-              focusedLeadingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldFocusLeadingIconColor.value,
-              unfocusedLeadingIconColor: Color = FilledAutocompleteTokens.TextFieldLeadingIconColor.value,
+              errorIndicatorColor: Color = FilledAutocompleteTokens.ErrorActiveIndicatorColor.value,
+              focusedLeadingIconColor: Color = FilledAutocompleteTokens.FocusLeadingIconColor.value,
+              unfocusedLeadingIconColor: Color = FilledAutocompleteTokens.LeadingIconColor.value,
               disabledLeadingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldDisabledLeadingIconColor.value.copy(
-                      alpha = FilledAutocompleteTokens.TextFieldDisabledLeadingIconOpacity
+                  FilledAutocompleteTokens.DisabledLeadingIconColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledLeadingIconOpacity
                   ),
-              errorLeadingIconColor: Color =
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-548-source
+              errorLeadingIconColor: Color = FilledAutocompleteTokens.ErrorLeadingIconColor.value,
+              focusedTrailingIconColor: Color = FilledAutocompleteTokens.FocusTrailingIconColor.value,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-545-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 548
-    endLine: 577
-    sha256: 344de8a475168f322f49c53cf2525c2b6cbff71677a809108180c080b3716d44
+    startLine: 545
+    endLine: 575
+    sha256: ae1f6fd3f60f34d2d6e39c266febb2dab8099235705b30cc401ed6d6d2f14262
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                  FilledAutocompleteTokens.TextFieldErrorLeadingIconColor.value,
-              focusedTrailingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldFocusTrailingIconColor.value,
-              unfocusedTrailingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldTrailingIconColor.value,
+              unfocusedTrailingIconColor: Color = FilledAutocompleteTokens.TrailingIconColor.value,
               disabledTrailingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldDisabledTrailingIconColor.value.copy(
-                      alpha = FilledAutocompleteTokens.TextFieldDisabledTrailingIconOpacity
+                  FilledAutocompleteTokens.DisabledTrailingIconColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledTrailingIconOpacity
                   ),
-              errorTrailingIconColor: Color =
-                  FilledAutocompleteTokens.TextFieldErrorTrailingIconColor.value,
-              focusedLabelColor: Color = FilledAutocompleteTokens.FieldFocusLabelTextColor.value,
-              unfocusedLabelColor: Color = FilledAutocompleteTokens.FieldLabelTextColor.value,
-              disabledLabelColor: Color = FilledAutocompleteTokens.FieldDisabledLabelTextColor.value,
-              errorLabelColor: Color = FilledAutocompleteTokens.FieldErrorLabelTextColor.value,
-              focusedPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-              unfocusedPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+              errorTrailingIconColor: Color = FilledAutocompleteTokens.ErrorTrailingIconColor.value,
+              focusedLabelColor: Color = FilledAutocompleteTokens.FocusLabelTextColor.value,
+              unfocusedLabelColor: Color = FilledAutocompleteTokens.LabelTextColor.value,
+              disabledLabelColor: Color = FilledAutocompleteTokens.DisabledLabelTextColor.value,
+              errorLabelColor: Color = FilledAutocompleteTokens.ErrorLabelTextColor.value,
+              focusedPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              unfocusedPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
               disabledPlaceholderColor: Color =
-                  FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                      alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
+                  FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
                   ),
-              errorPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-              focusedPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-              unfocusedPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+              errorPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              focusedPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              unfocusedPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
               disabledPrefixColor: Color =
-                  FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                      alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
+                  FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
                   ),
-              errorPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-              focusedSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-578-source
+              errorPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              focusedSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              unfocusedSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+              disabledSuffixColor: Color =
+                  FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
+                  ),
+              errorSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-576-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 578
-    endLine: 612
-    sha256: 34d5d406ec9581d2ea24b06536e2d5db93d62e508818fd7e4ec6e86c6826b8e7
+    startLine: 576
+    endLine: 610
+    sha256: 94a0f5cb92f2b3c7bc33124d987f6394450866a5617a6cad6fac9073fb2b122e
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-              unfocusedSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-              disabledSuffixColor: Color =
-                  FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                      alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
-                  ),
-              errorSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
           ): TextFieldColors =
               TextFieldDefaults.colors(
                   focusedTextColor = focusedTextColor,
@@ -843,22 +821,22 @@ sources:
                   unfocusedLabelColor = unfocusedLabelColor,
                   disabledLabelColor = disabledLabelColor,
                   errorLabelColor = errorLabelColor,
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-613-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 613
-    endLine: 646
-    sha256: 199d03f323671d24be9e4f07e91fcc97ab50b335d080491a5c5c305ca5ec0c5f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   focusedPlaceholderColor = focusedPlaceholderColor,
                   unfocusedPlaceholderColor = unfocusedPlaceholderColor,
                   disabledPlaceholderColor = disabledPlaceholderColor,
                   errorPlaceholderColor = errorPlaceholderColor,
                   focusedPrefixColor = focusedPrefixColor,
                   unfocusedPrefixColor = unfocusedPrefixColor,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-611-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 611
+    endLine: 642
+    sha256: c020d7d8d4948fbbb4945b09e3320c24159575b717ad24d052d73bb8a4a7c3c7
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   disabledPrefixColor = disabledPrefixColor,
                   errorPrefixColor = errorPrefixColor,
                   focusedSuffixColor = focusedSuffixColor,
@@ -887,20 +865,20 @@ sources:
            * @param selectionColors the colors used when the input text of this text field is selected
            * @param focusedBorderColor the border color for this text field when focused
            * @param unfocusedBorderColor the border color for this text field when not focused
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-647-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 647
-    endLine: 670
-    sha256: c18058f0dac8c55f217e1df05cf47b192e6be7c31486e2a69753f154d1c738f3
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            * @param disabledBorderColor the border color for this text field when disabled
            * @param errorBorderColor the border color for this text field when in error state
            * @param focusedLeadingIconColor the leading icon color for this text field when focused
            * @param unfocusedLeadingIconColor the leading icon color for this text field when not focused
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-643-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 643
+    endLine: 669
+    sha256: fa264fb264559875f926873cfa4d14863b32a0f481ec5df3ef8ddb2c647a6bbb
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
            * @param disabledLeadingIconColor the leading icon color for this text field when disabled
            * @param errorLeadingIconColor the leading icon color for this text field when in error state
            * @param focusedTrailingIconColor the trailing icon color for this text field when focused
@@ -921,92 +899,98 @@ sources:
            * @param disabledPrefixColor the prefix color for this text field when disabled
            * @param errorPrefixColor the prefix color for this text field when in error state
            * @param focusedSuffixColor the suffix color for this text field when focused
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-671-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 671
-    endLine: 703
-    sha256: 3b80d3c7f489db84295e31b9fd08866b6561f1e8158c821cb0e075ae8f400b61
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
            * @param unfocusedSuffixColor the suffix color for this text field when not focused
            * @param disabledSuffixColor the suffix color for this text field when disabled
            * @param errorSuffixColor the suffix color for this text field when in error state
            */
           @Composable
           public fun outlinedTextFieldColors(
-              focusedTextColor: Color = OutlinedAutocompleteTokens.FieldFocusInputTextColor.value,
-              unfocusedTextColor: Color = OutlinedAutocompleteTokens.FieldInputTextColor.value,
+              focusedTextColor: Color = OutlinedAutocompleteTokens.FocusInputTextColor.value,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-670-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 670
+    endLine: 701
+    sha256: 653656df6a338bd494f850701c484e3010a997f662a90e28560aeeeae3775507
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+              unfocusedTextColor: Color = OutlinedAutocompleteTokens.InputTextColor.value,
               disabledTextColor: Color =
-                  OutlinedAutocompleteTokens.FieldDisabledInputTextColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.FieldDisabledInputTextOpacity
+                  OutlinedAutocompleteTokens.DisabledInputTextColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledInputTextOpacity
                   ),
-              errorTextColor: Color = OutlinedAutocompleteTokens.FieldErrorInputTextColor.value,
+              errorTextColor: Color = OutlinedAutocompleteTokens.ErrorInputTextColor.value,
               focusedContainerColor: Color = Color.Transparent,
               unfocusedContainerColor: Color = Color.Transparent,
               disabledContainerColor: Color = Color.Transparent,
               errorContainerColor: Color = Color.Transparent,
-              cursorColor: Color = OutlinedAutocompleteTokens.TextFieldCaretColor.value,
-              errorCursorColor: Color = OutlinedAutocompleteTokens.TextFieldErrorFocusCaretColor.value,
+              cursorColor: Color = OutlinedAutocompleteTokens.CaretColor.value,
+              errorCursorColor: Color = OutlinedAutocompleteTokens.ErrorFocusCaretColor.value,
               selectionColors: TextSelectionColors = LocalTextSelectionColors.current,
-              focusedBorderColor: Color = OutlinedAutocompleteTokens.TextFieldFocusOutlineColor.value,
-              unfocusedBorderColor: Color = OutlinedAutocompleteTokens.TextFieldOutlineColor.value,
+              focusedBorderColor: Color = OutlinedAutocompleteTokens.FocusOutlineColor.value,
+              unfocusedBorderColor: Color = OutlinedAutocompleteTokens.OutlineColor.value,
               disabledBorderColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldDisabledOutlineColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.TextFieldDisabledOutlineOpacity
+                  OutlinedAutocompleteTokens.DisabledOutlineColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledOutlineOpacity
                   ),
-              errorBorderColor: Color = OutlinedAutocompleteTokens.TextFieldErrorOutlineColor.value,
-              focusedLeadingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldFocusLeadingIconColor.value,
-              unfocusedLeadingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldLeadingIconColor.value,
+              errorBorderColor: Color = OutlinedAutocompleteTokens.ErrorOutlineColor.value,
+              focusedLeadingIconColor: Color = OutlinedAutocompleteTokens.FocusLeadingIconColor.value,
+              unfocusedLeadingIconColor: Color = OutlinedAutocompleteTokens.LeadingIconColor.value,
               disabledLeadingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldDisabledLeadingIconColor.value.copy(
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-704-source
+                  OutlinedAutocompleteTokens.DisabledLeadingIconColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledLeadingIconOpacity
+                  ),
+              errorLeadingIconColor: Color = OutlinedAutocompleteTokens.ErrorLeadingIconColor.value,
+              focusedTrailingIconColor: Color = OutlinedAutocompleteTokens.FocusTrailingIconColor.value,
+              unfocusedTrailingIconColor: Color = OutlinedAutocompleteTokens.TrailingIconColor.value,
+              disabledTrailingIconColor: Color =
+                  OutlinedAutocompleteTokens.DisabledTrailingIconColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledTrailingIconOpacity
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-702-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 704
-    endLine: 736
-    sha256: a6c06c1c21cf1cf6f7c5361e636b6576bac0dd44fb0bdbb34c39b9c36dade235
+    startLine: 702
+    endLine: 734
+    sha256: 47893f5c45a5e1f5d947044bcc34f5982bbbdff6a511b5ffb59de1f69e0a5885
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                      alpha = OutlinedAutocompleteTokens.TextFieldDisabledLeadingIconOpacity
                   ),
-              errorLeadingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldErrorLeadingIconColor.value,
-              focusedTrailingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldFocusTrailingIconColor.value,
-              unfocusedTrailingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldTrailingIconColor.value,
-              disabledTrailingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldDisabledTrailingIconColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.TextFieldDisabledTrailingIconOpacity
-                  ),
-              errorTrailingIconColor: Color =
-                  OutlinedAutocompleteTokens.TextFieldErrorTrailingIconColor.value,
-              focusedLabelColor: Color = OutlinedAutocompleteTokens.FieldFocusLabelTextColor.value,
-              unfocusedLabelColor: Color = OutlinedAutocompleteTokens.FieldLabelTextColor.value,
+              errorTrailingIconColor: Color = OutlinedAutocompleteTokens.ErrorTrailingIconColor.value,
+              focusedLabelColor: Color = OutlinedAutocompleteTokens.FocusLabelTextColor.value,
+              unfocusedLabelColor: Color = OutlinedAutocompleteTokens.LabelTextColor.value,
               disabledLabelColor: Color =
-                  OutlinedAutocompleteTokens.FieldDisabledLabelTextColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.FieldDisabledLabelTextOpacity
+                  OutlinedAutocompleteTokens.DisabledLabelTextColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledLabelTextOpacity
                   ),
-              errorLabelColor: Color = OutlinedAutocompleteTokens.FieldErrorLabelTextColor.value,
-              focusedPlaceholderColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              unfocusedPlaceholderColor: Color =
-                  OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
+              errorLabelColor: Color = OutlinedAutocompleteTokens.ErrorLabelTextColor.value,
+              focusedPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              unfocusedPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
               disabledPlaceholderColor: Color =
-                  OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
+                  OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
                   ),
-              errorPlaceholderColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              focusedPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              unfocusedPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
+              errorPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              focusedPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              unfocusedPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
               disabledPrefixColor: Color =
-                  OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
+                  OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
+                  ),
+              errorPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              focusedSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              unfocusedSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+              disabledSuffixColor: Color =
+                  OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                      alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
+                  ),
+              errorSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+          ): TextFieldColors =
+              OutlinedTextFieldDefaults.colors(
+                  focusedTextColor = focusedTextColor,
   - id: live-androidx-material3-exposed-dropdown-menu-lines-71-source
     kind: code
     resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
@@ -1052,29 +1036,16 @@ sources:
        * Menus display a list of choices on a temporary surface. They appear when users interact with a
        * button, action, or other control.
        *
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-737-source
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-735-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
     path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 737
-    endLine: 771
-    sha256: b639a43fdc99d2c6fc7edd2679b5d4dd77bbf2e8e54ee1f7c6a4a5f03e0878ab
+    startLine: 735
+    endLine: 769
+    sha256: dd8a02c98438e2e7d6731d826a95ae54e0cd2d229e2785573e466ab739589aeb
     license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
     excerpt: |2-
-                      alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
-                  ),
-              errorPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              focusedSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              unfocusedSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-              disabledSuffixColor: Color =
-                  OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                      alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
-                  ),
-              errorSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-          ): TextFieldColors =
-              OutlinedTextFieldDefaults.colors(
-                  focusedTextColor = focusedTextColor,
                   unfocusedTextColor = unfocusedTextColor,
                   disabledTextColor = disabledTextColor,
                   errorTextColor = errorTextColor,
@@ -1097,16 +1068,6 @@ sources:
                   unfocusedTrailingIconColor = unfocusedTrailingIconColor,
                   disabledTrailingIconColor = disabledTrailingIconColor,
                   errorTrailingIconColor = errorTrailingIconColor,
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-772-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 772
-    endLine: 806
-    sha256: d5c369a373757e737b5e7116d5bf3cd5b9555fcae702bda8992182ef83ec4edb
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   focusedLabelColor = focusedLabelColor,
                   unfocusedLabelColor = unfocusedLabelColor,
                   disabledLabelColor = disabledLabelColor,
@@ -1120,6 +1081,16 @@ sources:
                   disabledPrefixColor = disabledPrefixColor,
                   errorPrefixColor = errorPrefixColor,
                   focusedSuffixColor = focusedSuffixColor,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-770-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 770
+    endLine: 804
+    sha256: eb4eff87c7b7348a99c03460425ac2031a84a14867e04605942b1efc1fd0f6ea
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                   unfocusedSuffixColor = unfocusedSuffixColor,
                   disabledSuffixColor = disabledSuffixColor,
                   errorSuffixColor = errorSuffixColor,
@@ -1142,16 +1113,6 @@ sources:
           val onPositionCalculated: (anchorBounds: IntRect, menuBounds: IntRect) -> Unit = { _, _ -> },
       ) : DropdownMenuPopupPositionProvider {
           override var transformOrigin by mutableStateOf(TransformOrigin.Center)
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-807-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 807
-    endLine: 841
-    sha256: cbdbea4073c084de77092fffb422e48993ab2dcddf8a2f5b80e0f886021c4937
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               private set
 
           // Horizontal position
@@ -1165,7 +1126,17 @@ sources:
           private val bottomToAnchorTop = MenuPosition.bottomToAnchorTop
           private val topToWindowTop = MenuPosition.topToWindowTop
           private val bottomToWindowBottom = MenuPosition.bottomToWindowBottom
-
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-805-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 805
+    endLine: 839
+    sha256: 4b207f5cd7efcf65214ffcb8b3d0dd6f13d1f53306b0000fb2c29b55cd67a7a7
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
           override fun calculatePosition(
               anchorBounds: IntRect,
               windowSize: IntSize,
@@ -1187,16 +1158,6 @@ sources:
                   listOf(
                       startToAnchorStart,
                       endToAnchorEnd,
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-842-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 842
-    endLine: 876
-    sha256: c2d09fe61ee54b8cf6d523970aa059e1f84f995e4c0299c6bb961674d2b80346
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                       if (anchorBounds.center.x < windowSize.width / 2) {
                           leftToWindowLeft
                       } else {
@@ -1210,6 +1171,16 @@ sources:
                           anchorBounds = anchorBounds,
                           windowSize = windowSize,
                           menuWidth = popupContentSize.width,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-840-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 840
+    endLine: 874
+    sha256: 826c1cf75b380b267cfb4895d7ed060e79f769a804e8a15e479d11a8eab5eca3
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                           layoutDirection = layoutDirection,
                       )
                   if (
@@ -1232,16 +1203,6 @@ sources:
                       },
                   )
               var y = 0
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-877-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 877
-    endLine: 911
-    sha256: 254aa981ca05600e0ecb96dba072dcc599792bb2c6bad74440199bcbc68eb14f
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
               for (index in yCandidates.indices) {
                   var yCandidate =
                       yCandidates[index].position(
@@ -1255,6 +1216,16 @@ sources:
                               Alignment.CenterVertically.align(
                                   size = popupContentSize.height,
                                   space = windowSize.height,
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-875-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 875
+    endLine: 909
+    sha256: 1cf5c0ead94d5fd642d5b09cadf3d0e5ddd3e5b76f6274ee1fbf7cfec02c6c87
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                               )
                           } else {
                               yCandidate.coerceIn(
@@ -1277,16 +1248,6 @@ sources:
                   calculateTransformOrigin(anchorBounds, IntRect(offset = menuOffset, popupContentSize))
               onPositionCalculated(
                   /* anchorBounds = */ anchorBounds,
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-912-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 912
-    endLine: 946
-    sha256: 7ca4017cb8f102b069bb10633e952a7b3c965add5e8b5ce1fd5bef441ad9af06
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                   /* menuBounds = */ IntRect(offset = menuOffset, size = popupContentSize),
               )
               return menuOffset
@@ -1300,7 +1261,17 @@ sources:
           override fun update(node: ExposedDropdownMenuAnchorNode) {
               node.updateStateOnAttach = updateStateOnAttach
           }
-
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-910-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 910
+    endLine: 944
+    sha256: 3323c45adec6512fdde875e87a15a4a236990ed2e1d520d66c2f13737ccccf82
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
+      
           override fun InspectorInfo.inspectableProperties() {
               name = "exposedDropdownMenuAnchorType"
               properties["updateStateOnAttach"] = updateStateOnAttach
@@ -1322,16 +1293,6 @@ sources:
           override fun onAttach() {
               updateStateOnAttach()
           }
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-947-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 947
-    endLine: 981
-    sha256: e27422026a0d037b834e8a579176083aa50cc721999bdc93fac17a10908233ec
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |-
       }
 
       private fun Modifier.expandable(
@@ -1345,6 +1306,16 @@ sources:
           keyboardController: SoftwareKeyboardController?,
           focusRequester: FocusRequester,
       ) =
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-945-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 945
+    endLine: 979
+    sha256: 569cec18e8ec263505c41b355270d7707ae9cc1e1a89abfb26effe18897ca63c
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
           pointerInput(onExpandedChange) {
                   awaitEachGesture {
                       // Modifier.clickable makes the ExposedDropdownMenuBox capture focus first instead
@@ -1367,16 +1338,6 @@ sources:
                       if (anchorType != ExposedDropdownMenuAnchorType.PrimaryEditable) {
                           onExpandedChange()
                       } else if (it.isEnterMinusSpacebar) {
-  - id: live-androidx-material3-exposed-dropdown-menu-lines-982-source
-    kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    revision: aecce470261af232883b790016ce79fc51c962ca
-    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
-    startLine: 982
-    endLine: 1016
-    sha256: dd3fe13057c52a075d21278baffea7ea5499637a6d28d42eaa4dc2ac829f01d3
-    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
-    excerpt: |2-
                           // Primary editable shouldn't expand menu via spacebar.
                           // TODO: First menu item shouldn't have darker background before gaining focus.
                           onExpandedChange()
@@ -1390,6 +1351,16 @@ sources:
                       // reach the menu via keyboard navigation.
                       if (
                           it.key == Key.Tab ||
+  - id: live-androidx-material3-exposed-dropdown-menu-lines-980-source
+    kind: code
+    resource: https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    revision: 4f62eee6bfdd6515cc005c0006087f9aa807a549
+    path: compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt
+    startLine: 980
+    endLine: 1014
+    sha256: 319b04079badae2bdcc1256735d83d8a5220f68f13471115dd58f1159ce4ab4a
+    license: Apache-2.0 (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/LICENSE.txt)
+    excerpt: |2-
                               it.key == Key.DirectionDown ||
                               it.key == Key.NumPadDirectionDown ||
                               it.key == Key.DirectionUp ||
@@ -1412,6 +1383,19 @@ sources:
                       role = Role.DropdownList
                   }
                   onClick {
+                      if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
+                          focusRequester.requestFocus()
+                      }
+                      onExpandedChange()
+                      if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
+                          keyboardController?.show()
+                      }
+                      true
+                  }
+              }
+
+      private val KeyEvent.isClick: Boolean
+          get() = type == KeyUp && (isEnterMinusSpacebar || key == Key.Spacebar)
 compose:
   id: live-androidx-material3-exposed-dropdown-menu
   artifact: androidx.compose.material3:material3
@@ -1426,18 +1410,17 @@ compose:
       sourceIds:
         - live-androidx-material3-exposed-dropdown-menu-lines-1-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-1017
-      title: Material 3 exposed dropdown menu source (lines 1017–1051)
-      aliases:
-        - androidx.compose.material3.ExposedDropdownMenuAnchorType
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-1015
+      title: Material 3 exposed dropdown menu source (lines 1015–1049)
+      aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-1017-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-1015-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-1052
-      title: Material 3 exposed dropdown menu source (lines 1052–1086)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-1050
+      title: Material 3 exposed dropdown menu source (lines 1050–1072)
       aliases:
         - androidx.compose.material3.ExposedDropdownMenuBoxScope
         - androidx.compose.material3.ExposedDropdownMenuAnchorType
@@ -1445,7 +1428,7 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-1052-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-1050-source
       relatedIds: []
     - id: live-androidx-material3-exposed-dropdown-menu-lines-106
       title: Material 3 exposed dropdown menu source (lines 106–140)
@@ -1580,7 +1563,7 @@ compose:
         - live-androidx-material3-exposed-dropdown-menu-lines-489-source
       relatedIds: []
     - id: live-androidx-material3-exposed-dropdown-menu-lines-516
-      title: Material 3 exposed dropdown menu source (lines 516–547)
+      title: Material 3 exposed dropdown menu source (lines 516–544)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
@@ -1588,60 +1571,60 @@ compose:
       sourceIds:
         - live-androidx-material3-exposed-dropdown-menu-lines-516-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-548
-      title: Material 3 exposed dropdown menu source (lines 548–577)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-545
+      title: Material 3 exposed dropdown menu source (lines 545–575)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-548-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-545-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-578
-      title: Material 3 exposed dropdown menu source (lines 578–612)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-576
+      title: Material 3 exposed dropdown menu source (lines 576–610)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-578-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-576-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-613
-      title: Material 3 exposed dropdown menu source (lines 613–646)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-611
+      title: Material 3 exposed dropdown menu source (lines 611–642)
       aliases:
         - androidx.compose.material3.ExposedDropdownMenuBox
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-613-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-611-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-647
-      title: Material 3 exposed dropdown menu source (lines 647–670)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-643
+      title: Material 3 exposed dropdown menu source (lines 643–669)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-647-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-643-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-671
-      title: Material 3 exposed dropdown menu source (lines 671–703)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-670
+      title: Material 3 exposed dropdown menu source (lines 670–701)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-671-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-670-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-704
-      title: Material 3 exposed dropdown menu source (lines 704–736)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-702
+      title: Material 3 exposed dropdown menu source (lines 702–734)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-704-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-702-source
       relatedIds: []
     - id: live-androidx-material3-exposed-dropdown-menu-lines-71
       title: Material 3 exposed dropdown menu source (lines 71–105)
@@ -1652,63 +1635,64 @@ compose:
       sourceIds:
         - live-androidx-material3-exposed-dropdown-menu-lines-71-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-737
-      title: Material 3 exposed dropdown menu source (lines 737–771)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-735
+      title: Material 3 exposed dropdown menu source (lines 735–769)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-737-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-735-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-772
-      title: Material 3 exposed dropdown menu source (lines 772–806)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-770
+      title: Material 3 exposed dropdown menu source (lines 770–804)
       aliases:
         - androidx.compose.material3.ExposedDropdownMenuBoxScope
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-772-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-770-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-807
-      title: Material 3 exposed dropdown menu source (lines 807–841)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-805
+      title: Material 3 exposed dropdown menu source (lines 805–839)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-807-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-805-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-842
-      title: Material 3 exposed dropdown menu source (lines 842–876)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-840
+      title: Material 3 exposed dropdown menu source (lines 840–874)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-842-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-840-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-877
-      title: Material 3 exposed dropdown menu source (lines 877–911)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-875
+      title: Material 3 exposed dropdown menu source (lines 875–909)
       aliases: []
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-877-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-875-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-912
-      title: Material 3 exposed dropdown menu source (lines 912–946)
-      aliases: []
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-910
+      title: Material 3 exposed dropdown menu source (lines 910–944)
+      aliases:
+        - androidx.compose.material3.ExposedDropdownMenuAnchorType
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-912-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-910-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-947
-      title: Material 3 exposed dropdown menu source (lines 947–981)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-945
+      title: Material 3 exposed dropdown menu source (lines 945–979)
       aliases:
         - androidx.compose.material3.ExposedDropdownMenuBox
         - androidx.compose.material3.ExposedDropdownMenuAnchorType
@@ -1716,17 +1700,17 @@ compose:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-947-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-945-source
       relatedIds: []
-    - id: live-androidx-material3-exposed-dropdown-menu-lines-982
-      title: Material 3 exposed dropdown menu source (lines 982–1016)
+    - id: live-androidx-material3-exposed-dropdown-menu-lines-980
+      title: Material 3 exposed dropdown menu source (lines 980–1014)
       aliases:
         - androidx.compose.material3.ExposedDropdownMenuAnchorType
       requires:
         - artifact: androidx.compose.material3:material3
           version: null
       sourceIds:
-        - live-androidx-material3-exposed-dropdown-menu-lines-982-source
+        - live-androidx-material3-exposed-dropdown-menu-lines-980-source
       relatedIds: []
 ---
 
@@ -1774,21 +1758,8 @@ import androidx.compose.material3.internal.Icons
 
 Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
-## Material 3 exposed dropdown menu source (lines 1017–1051)
+## Material 3 exposed dropdown menu source (lines 1015–1049)
 
-                if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
-                    focusRequester.requestFocus()
-                }
-                onExpandedChange()
-                if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
-                    keyboardController?.show()
-                }
-                true
-            }
-        }
-
-private val KeyEvent.isClick: Boolean
-    get() = type == KeyUp && (isEnterMinusSpacebar || key == Key.Spacebar)
 
 private val KeyEvent.isEnterMinusSpacebar: Boolean
     get() =
@@ -1811,11 +1782,6 @@ private fun calculateMaxHeight(
     val availableHeight =
         if (anchorBounds.top > windowBounds.bottom || anchorBounds.bottom < windowBounds.top) {
             marginedWindowBottom - marginedWindowTop
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1017-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 1052–1086)
-
         } else {
             val heightAbove = anchorBounds.top - marginedWindowTop
             val heightBelow = marginedWindowBottom - anchorBounds.bottom
@@ -1828,6 +1794,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1017-source](https
 // Don't use `boundsInWindow()` because it can report 0 when the window is animating/resizing
 private fun LayoutCoordinates?.getAnchorBounds(): Rect =
     if (this == null || !this.isAttached) Rect.Zero else Rect(positionInWindow(), size.toSize())
+
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1015-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 1050–1072)
 
 internal expect class WindowBoundsCalculator {
     fun getVisibleWindowBounds(): IntRect
@@ -1852,7 +1823,8 @@ internal expect fun popupPropertiesForAnchorType(
 private val ExposedDropdownMenuItemHorizontalPadding
     get() = 16.dp
 
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1052-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-1050-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
 ## Material 3 exposed dropdown menu source (lines 106–140)
 
@@ -2364,86 +2336,78 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-456-source](https:
 
 Sources: [live-androidx-material3-exposed-dropdown-menu-lines-489-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
-## Material 3 exposed dropdown menu source (lines 516–547)
+## Material 3 exposed dropdown menu source (lines 516–544)
 
-        focusedTextColor: Color = FilledAutocompleteTokens.FieldFocusInputTextColor.value,
-        unfocusedTextColor: Color = FilledAutocompleteTokens.FieldInputTextColor.value,
+        focusedTextColor: Color = FilledAutocompleteTokens.FocusInputTextColor.value,
+        unfocusedTextColor: Color = FilledAutocompleteTokens.InputTextColor.value,
         disabledTextColor: Color =
-            FilledAutocompleteTokens.FieldDisabledInputTextColor.value.copy(
-                alpha = FilledAutocompleteTokens.FieldDisabledInputTextOpacity
+            FilledAutocompleteTokens.DisabledInputTextColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledInputTextOpacity
             ),
-        errorTextColor: Color = FilledAutocompleteTokens.FieldErrorInputTextColor.value,
-        focusedContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-        unfocusedContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-        disabledContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-        errorContainerColor: Color = FilledAutocompleteTokens.TextFieldContainerColor.value,
-        cursorColor: Color = FilledAutocompleteTokens.TextFieldCaretColor.value,
-        errorCursorColor: Color = FilledAutocompleteTokens.TextFieldErrorFocusCaretColor.value,
+        errorTextColor: Color = FilledAutocompleteTokens.ErrorInputTextColor.value,
+        focusedContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+        unfocusedContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+        disabledContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+        errorContainerColor: Color = FilledAutocompleteTokens.ContainerColor.value,
+        cursorColor: Color = FilledAutocompleteTokens.CaretColor.value,
+        errorCursorColor: Color = FilledAutocompleteTokens.ErrorFocusCaretColor.value,
         selectionColors: TextSelectionColors = LocalTextSelectionColors.current,
-        focusedIndicatorColor: Color =
-            FilledAutocompleteTokens.TextFieldFocusActiveIndicatorColor.value,
-        unfocusedIndicatorColor: Color =
-            FilledAutocompleteTokens.TextFieldActiveIndicatorColor.value,
+        focusedIndicatorColor: Color = FilledAutocompleteTokens.FocusActiveIndicatorColor.value,
+        unfocusedIndicatorColor: Color = FilledAutocompleteTokens.ActiveIndicatorColor.value,
         disabledIndicatorColor: Color =
-            FilledAutocompleteTokens.TextFieldDisabledActiveIndicatorColor.value.copy(
-                alpha = FilledAutocompleteTokens.TextFieldDisabledActiveIndicatorOpacity
+            FilledAutocompleteTokens.DisabledActiveIndicatorColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledActiveIndicatorOpacity
             ),
-        errorIndicatorColor: Color =
-            FilledAutocompleteTokens.TextFieldErrorActiveIndicatorColor.value,
-        focusedLeadingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldFocusLeadingIconColor.value,
-        unfocusedLeadingIconColor: Color = FilledAutocompleteTokens.TextFieldLeadingIconColor.value,
+        errorIndicatorColor: Color = FilledAutocompleteTokens.ErrorActiveIndicatorColor.value,
+        focusedLeadingIconColor: Color = FilledAutocompleteTokens.FocusLeadingIconColor.value,
+        unfocusedLeadingIconColor: Color = FilledAutocompleteTokens.LeadingIconColor.value,
         disabledLeadingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldDisabledLeadingIconColor.value.copy(
-                alpha = FilledAutocompleteTokens.TextFieldDisabledLeadingIconOpacity
+            FilledAutocompleteTokens.DisabledLeadingIconColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledLeadingIconOpacity
             ),
-        errorLeadingIconColor: Color =
+        errorLeadingIconColor: Color = FilledAutocompleteTokens.ErrorLeadingIconColor.value,
+        focusedTrailingIconColor: Color = FilledAutocompleteTokens.FocusTrailingIconColor.value,
 
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-516-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-516-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
-## Material 3 exposed dropdown menu source (lines 548–577)
+## Material 3 exposed dropdown menu source (lines 545–575)
 
-            FilledAutocompleteTokens.TextFieldErrorLeadingIconColor.value,
-        focusedTrailingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldFocusTrailingIconColor.value,
-        unfocusedTrailingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldTrailingIconColor.value,
+        unfocusedTrailingIconColor: Color = FilledAutocompleteTokens.TrailingIconColor.value,
         disabledTrailingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldDisabledTrailingIconColor.value.copy(
-                alpha = FilledAutocompleteTokens.TextFieldDisabledTrailingIconOpacity
+            FilledAutocompleteTokens.DisabledTrailingIconColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledTrailingIconOpacity
             ),
-        errorTrailingIconColor: Color =
-            FilledAutocompleteTokens.TextFieldErrorTrailingIconColor.value,
-        focusedLabelColor: Color = FilledAutocompleteTokens.FieldFocusLabelTextColor.value,
-        unfocusedLabelColor: Color = FilledAutocompleteTokens.FieldLabelTextColor.value,
-        disabledLabelColor: Color = FilledAutocompleteTokens.FieldDisabledLabelTextColor.value,
-        errorLabelColor: Color = FilledAutocompleteTokens.FieldErrorLabelTextColor.value,
-        focusedPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-        unfocusedPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+        errorTrailingIconColor: Color = FilledAutocompleteTokens.ErrorTrailingIconColor.value,
+        focusedLabelColor: Color = FilledAutocompleteTokens.FocusLabelTextColor.value,
+        unfocusedLabelColor: Color = FilledAutocompleteTokens.LabelTextColor.value,
+        disabledLabelColor: Color = FilledAutocompleteTokens.DisabledLabelTextColor.value,
+        errorLabelColor: Color = FilledAutocompleteTokens.ErrorLabelTextColor.value,
+        focusedPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+        unfocusedPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
         disabledPlaceholderColor: Color =
-            FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
+            FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
             ),
-        errorPlaceholderColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-        focusedPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-        unfocusedPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+        errorPlaceholderColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+        focusedPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+        unfocusedPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
         disabledPrefixColor: Color =
-            FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
+            FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
             ),
-        errorPrefixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-        focusedSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-548-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 578–612)
-
-        unfocusedSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+        errorPrefixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+        focusedSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+        unfocusedSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
         disabledSuffixColor: Color =
-            FilledAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                alpha = FilledAutocompleteTokens.FieldDisabledSupportingTextOpacity
+            FilledAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = FilledAutocompleteTokens.DisabledSupportingTextOpacity
             ),
-        errorSuffixColor: Color = FilledAutocompleteTokens.FieldSupportingTextColor.value,
+        errorSuffixColor: Color = FilledAutocompleteTokens.SupportingTextColor.value,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-545-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 576–610)
+
     ): TextFieldColors =
         TextFieldDefaults.colors(
             focusedTextColor = focusedTextColor,
@@ -2473,17 +2437,17 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-548-source](https:
             unfocusedLabelColor = unfocusedLabelColor,
             disabledLabelColor = disabledLabelColor,
             errorLabelColor = errorLabelColor,
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-578-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 613–646)
-
             focusedPlaceholderColor = focusedPlaceholderColor,
             unfocusedPlaceholderColor = unfocusedPlaceholderColor,
             disabledPlaceholderColor = disabledPlaceholderColor,
             errorPlaceholderColor = errorPlaceholderColor,
             focusedPrefixColor = focusedPrefixColor,
             unfocusedPrefixColor = unfocusedPrefixColor,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-576-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 611–642)
+
             disabledPrefixColor = disabledPrefixColor,
             errorPrefixColor = errorPrefixColor,
             focusedSuffixColor = focusedSuffixColor,
@@ -2512,15 +2476,15 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-578-source](https:
      * @param selectionColors the colors used when the input text of this text field is selected
      * @param focusedBorderColor the border color for this text field when focused
      * @param unfocusedBorderColor the border color for this text field when not focused
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-613-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 647–670)
-
      * @param disabledBorderColor the border color for this text field when disabled
      * @param errorBorderColor the border color for this text field when in error state
      * @param focusedLeadingIconColor the leading icon color for this text field when focused
      * @param unfocusedLeadingIconColor the leading icon color for this text field when not focused
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-611-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 643–669)
+
      * @param disabledLeadingIconColor the leading icon color for this text field when disabled
      * @param errorLeadingIconColor the leading icon color for this text field when in error state
      * @param focusedTrailingIconColor the trailing icon color for this text field when focused
@@ -2541,84 +2505,90 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-613-source](https:
      * @param disabledPrefixColor the prefix color for this text field when disabled
      * @param errorPrefixColor the prefix color for this text field when in error state
      * @param focusedSuffixColor the suffix color for this text field when focused
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-647-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 671–703)
-
      * @param unfocusedSuffixColor the suffix color for this text field when not focused
      * @param disabledSuffixColor the suffix color for this text field when disabled
      * @param errorSuffixColor the suffix color for this text field when in error state
      */
     @Composable
     public fun outlinedTextFieldColors(
-        focusedTextColor: Color = OutlinedAutocompleteTokens.FieldFocusInputTextColor.value,
-        unfocusedTextColor: Color = OutlinedAutocompleteTokens.FieldInputTextColor.value,
+        focusedTextColor: Color = OutlinedAutocompleteTokens.FocusInputTextColor.value,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-643-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 670–701)
+
+        unfocusedTextColor: Color = OutlinedAutocompleteTokens.InputTextColor.value,
         disabledTextColor: Color =
-            OutlinedAutocompleteTokens.FieldDisabledInputTextColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.FieldDisabledInputTextOpacity
+            OutlinedAutocompleteTokens.DisabledInputTextColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledInputTextOpacity
             ),
-        errorTextColor: Color = OutlinedAutocompleteTokens.FieldErrorInputTextColor.value,
+        errorTextColor: Color = OutlinedAutocompleteTokens.ErrorInputTextColor.value,
         focusedContainerColor: Color = Color.Transparent,
         unfocusedContainerColor: Color = Color.Transparent,
         disabledContainerColor: Color = Color.Transparent,
         errorContainerColor: Color = Color.Transparent,
-        cursorColor: Color = OutlinedAutocompleteTokens.TextFieldCaretColor.value,
-        errorCursorColor: Color = OutlinedAutocompleteTokens.TextFieldErrorFocusCaretColor.value,
+        cursorColor: Color = OutlinedAutocompleteTokens.CaretColor.value,
+        errorCursorColor: Color = OutlinedAutocompleteTokens.ErrorFocusCaretColor.value,
         selectionColors: TextSelectionColors = LocalTextSelectionColors.current,
-        focusedBorderColor: Color = OutlinedAutocompleteTokens.TextFieldFocusOutlineColor.value,
-        unfocusedBorderColor: Color = OutlinedAutocompleteTokens.TextFieldOutlineColor.value,
+        focusedBorderColor: Color = OutlinedAutocompleteTokens.FocusOutlineColor.value,
+        unfocusedBorderColor: Color = OutlinedAutocompleteTokens.OutlineColor.value,
         disabledBorderColor: Color =
-            OutlinedAutocompleteTokens.TextFieldDisabledOutlineColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.TextFieldDisabledOutlineOpacity
+            OutlinedAutocompleteTokens.DisabledOutlineColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledOutlineOpacity
             ),
-        errorBorderColor: Color = OutlinedAutocompleteTokens.TextFieldErrorOutlineColor.value,
-        focusedLeadingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldFocusLeadingIconColor.value,
-        unfocusedLeadingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldLeadingIconColor.value,
+        errorBorderColor: Color = OutlinedAutocompleteTokens.ErrorOutlineColor.value,
+        focusedLeadingIconColor: Color = OutlinedAutocompleteTokens.FocusLeadingIconColor.value,
+        unfocusedLeadingIconColor: Color = OutlinedAutocompleteTokens.LeadingIconColor.value,
         disabledLeadingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldDisabledLeadingIconColor.value.copy(
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-671-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 704–736)
-
-                alpha = OutlinedAutocompleteTokens.TextFieldDisabledLeadingIconOpacity
+            OutlinedAutocompleteTokens.DisabledLeadingIconColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledLeadingIconOpacity
             ),
-        errorLeadingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldErrorLeadingIconColor.value,
-        focusedTrailingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldFocusTrailingIconColor.value,
-        unfocusedTrailingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldTrailingIconColor.value,
+        errorLeadingIconColor: Color = OutlinedAutocompleteTokens.ErrorLeadingIconColor.value,
+        focusedTrailingIconColor: Color = OutlinedAutocompleteTokens.FocusTrailingIconColor.value,
+        unfocusedTrailingIconColor: Color = OutlinedAutocompleteTokens.TrailingIconColor.value,
         disabledTrailingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldDisabledTrailingIconColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.TextFieldDisabledTrailingIconOpacity
-            ),
-        errorTrailingIconColor: Color =
-            OutlinedAutocompleteTokens.TextFieldErrorTrailingIconColor.value,
-        focusedLabelColor: Color = OutlinedAutocompleteTokens.FieldFocusLabelTextColor.value,
-        unfocusedLabelColor: Color = OutlinedAutocompleteTokens.FieldLabelTextColor.value,
-        disabledLabelColor: Color =
-            OutlinedAutocompleteTokens.FieldDisabledLabelTextColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.FieldDisabledLabelTextOpacity
-            ),
-        errorLabelColor: Color = OutlinedAutocompleteTokens.FieldErrorLabelTextColor.value,
-        focusedPlaceholderColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        unfocusedPlaceholderColor: Color =
-            OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        disabledPlaceholderColor: Color =
-            OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
-            ),
-        errorPlaceholderColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        focusedPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        unfocusedPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        disabledPrefixColor: Color =
-            OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
+            OutlinedAutocompleteTokens.DisabledTrailingIconColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledTrailingIconOpacity
 
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-704-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-670-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 702–734)
+
+            ),
+        errorTrailingIconColor: Color = OutlinedAutocompleteTokens.ErrorTrailingIconColor.value,
+        focusedLabelColor: Color = OutlinedAutocompleteTokens.FocusLabelTextColor.value,
+        unfocusedLabelColor: Color = OutlinedAutocompleteTokens.LabelTextColor.value,
+        disabledLabelColor: Color =
+            OutlinedAutocompleteTokens.DisabledLabelTextColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledLabelTextOpacity
+            ),
+        errorLabelColor: Color = OutlinedAutocompleteTokens.ErrorLabelTextColor.value,
+        focusedPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        unfocusedPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        disabledPlaceholderColor: Color =
+            OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
+            ),
+        errorPlaceholderColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        focusedPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        unfocusedPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        disabledPrefixColor: Color =
+            OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
+            ),
+        errorPrefixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        focusedSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        unfocusedSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+        disabledSuffixColor: Color =
+            OutlinedAutocompleteTokens.DisabledSupportingTextColor.value.copy(
+                alpha = OutlinedAutocompleteTokens.DisabledSupportingTextOpacity
+            ),
+        errorSuffixColor: Color = OutlinedAutocompleteTokens.SupportingTextColor.value,
+    ): TextFieldColors =
+        OutlinedTextFieldDefaults.colors(
+            focusedTextColor = focusedTextColor,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-702-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
 ## Material 3 exposed dropdown menu source (lines 71–105)
 
@@ -2660,21 +2630,8 @@ import kotlin.math.roundToInt
 
 Sources: [live-androidx-material3-exposed-dropdown-menu-lines-71-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
 
-## Material 3 exposed dropdown menu source (lines 737–771)
+## Material 3 exposed dropdown menu source (lines 735–769)
 
-                alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
-            ),
-        errorPrefixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        focusedSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        unfocusedSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-        disabledSuffixColor: Color =
-            OutlinedAutocompleteTokens.FieldDisabledSupportingTextColor.value.copy(
-                alpha = OutlinedAutocompleteTokens.FieldDisabledSupportingTextOpacity
-            ),
-        errorSuffixColor: Color = OutlinedAutocompleteTokens.FieldSupportingTextColor.value,
-    ): TextFieldColors =
-        OutlinedTextFieldDefaults.colors(
-            focusedTextColor = focusedTextColor,
             unfocusedTextColor = unfocusedTextColor,
             disabledTextColor = disabledTextColor,
             errorTextColor = errorTextColor,
@@ -2697,11 +2654,6 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-71-source](https:/
             unfocusedTrailingIconColor = unfocusedTrailingIconColor,
             disabledTrailingIconColor = disabledTrailingIconColor,
             errorTrailingIconColor = errorTrailingIconColor,
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-737-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 772–806)
-
             focusedLabelColor = focusedLabelColor,
             unfocusedLabelColor = unfocusedLabelColor,
             disabledLabelColor = disabledLabelColor,
@@ -2715,6 +2667,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-737-source](https:
             disabledPrefixColor = disabledPrefixColor,
             errorPrefixColor = errorPrefixColor,
             focusedSuffixColor = focusedSuffixColor,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-735-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 770–804)
+
             unfocusedSuffixColor = unfocusedSuffixColor,
             disabledSuffixColor = disabledSuffixColor,
             errorSuffixColor = errorSuffixColor,
@@ -2737,11 +2694,6 @@ internal class ExposedDropdownMenuPositionProvider(
     val onPositionCalculated: (anchorBounds: IntRect, menuBounds: IntRect) -> Unit = { _, _ -> },
 ) : DropdownMenuPopupPositionProvider {
     override var transformOrigin by mutableStateOf(TransformOrigin.Center)
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-772-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 807–841)
-
         private set
 
     // Horizontal position
@@ -2755,6 +2707,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-772-source](https:
     private val bottomToAnchorTop = MenuPosition.bottomToAnchorTop
     private val topToWindowTop = MenuPosition.topToWindowTop
     private val bottomToWindowBottom = MenuPosition.bottomToWindowBottom
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-770-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 805–839)
+
 
     override fun calculatePosition(
         anchorBounds: IntRect,
@@ -2777,11 +2734,6 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-772-source](https:
             listOf(
                 startToAnchorStart,
                 endToAnchorEnd,
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-807-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 842–876)
-
                 if (anchorBounds.center.x < windowSize.width / 2) {
                     leftToWindowLeft
                 } else {
@@ -2795,6 +2747,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-807-source](https:
                     anchorBounds = anchorBounds,
                     windowSize = windowSize,
                     menuWidth = popupContentSize.width,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-805-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 840–874)
+
                     layoutDirection = layoutDirection,
                 )
             if (
@@ -2817,11 +2774,6 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-807-source](https:
                 },
             )
         var y = 0
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-842-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 877–911)
-
         for (index in yCandidates.indices) {
             var yCandidate =
                 yCandidates[index].position(
@@ -2835,6 +2787,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-842-source](https:
                         Alignment.CenterVertically.align(
                             size = popupContentSize.height,
                             space = windowSize.height,
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-840-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 875–909)
+
                         )
                     } else {
                         yCandidate.coerceIn(
@@ -2857,11 +2814,6 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-842-source](https:
             calculateTransformOrigin(anchorBounds, IntRect(offset = menuOffset, popupContentSize))
         onPositionCalculated(
             /* anchorBounds = */ anchorBounds,
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-877-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 912–946)
-
             /* menuBounds = */ IntRect(offset = menuOffset, size = popupContentSize),
         )
         return menuOffset
@@ -2875,6 +2827,11 @@ private class ExposedDropdownMenuAnchorElement(val updateStateOnAttach: () -> Un
     override fun update(node: ExposedDropdownMenuAnchorNode) {
         node.updateStateOnAttach = updateStateOnAttach
     }
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-875-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 910–944)
+
 
     override fun InspectorInfo.inspectableProperties() {
         name = "exposedDropdownMenuAnchorType"
@@ -2897,11 +2854,6 @@ private class ExposedDropdownMenuAnchorNode(var updateStateOnAttach: () -> Unit)
     override fun onAttach() {
         updateStateOnAttach()
     }
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-912-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 947–981)
-
 }
 
 private fun Modifier.expandable(
@@ -2915,6 +2867,11 @@ private fun Modifier.expandable(
     keyboardController: SoftwareKeyboardController?,
     focusRequester: FocusRequester,
 ) =
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-910-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 945–979)
+
     pointerInput(onExpandedChange) {
             awaitEachGesture {
                 // Modifier.clickable makes the ExposedDropdownMenuBox capture focus first instead
@@ -2937,11 +2894,6 @@ private fun Modifier.expandable(
                 if (anchorType != ExposedDropdownMenuAnchorType.PrimaryEditable) {
                     onExpandedChange()
                 } else if (it.isEnterMinusSpacebar) {
-
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-947-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
-
-## Material 3 exposed dropdown menu source (lines 982–1016)
-
                     // Primary editable shouldn't expand menu via spacebar.
                     // TODO: First menu item shouldn't have darker background before gaining focus.
                     onExpandedChange()
@@ -2955,6 +2907,11 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-947-source](https:
                 // reach the menu via keyboard navigation.
                 if (
                     it.key == Key.Tab ||
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-945-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+
+## Material 3 exposed dropdown menu source (lines 980–1014)
+
                         it.key == Key.DirectionDown ||
                         it.key == Key.NumPadDirectionDown ||
                         it.key == Key.DirectionUp ||
@@ -2977,5 +2934,18 @@ Sources: [live-androidx-material3-exposed-dropdown-menu-lines-947-source](https:
                 role = Role.DropdownList
             }
             onClick {
+                if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
+                    focusRequester.requestFocus()
+                }
+                onExpandedChange()
+                if (anchorType == ExposedDropdownMenuAnchorType.PrimaryEditable) {
+                    keyboardController?.show()
+                }
+                true
+            }
+        }
 
-Sources: [live-androidx-material3-exposed-dropdown-menu-lines-982-source](https://android.googlesource.com/platform/frameworks/support/+/aecce470261af232883b790016ce79fc51c962ca/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
+private val KeyEvent.isClick: Boolean
+    get() = type == KeyUp && (isEnterMinusSpacebar || key == Key.Spacebar)
+
+Sources: [live-androidx-material3-exposed-dropdown-menu-lines-980-source](https://android.googlesource.com/platform/frameworks/support/+/4f62eee6bfdd6515cc005c0006087f9aa807a549/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/ExposedDropdownMenu.kt)
