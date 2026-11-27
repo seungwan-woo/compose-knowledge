@@ -1,5 +1,10 @@
+{%- if page.tip or page.tip_translation -%}
+  {%- assign page_lang = page.lang | default: 'en' -%}
+{%- else -%}
+  {%- assign page_lang = page.lang | default: site.lang -%}
+{%- endif -%}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang }}">
+<html lang="{{ page_lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,11 +14,11 @@
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">본문으로 이동</a>
+  <a class="skip-link" href="#main-content">{% if page_lang == 'en' %}Skip to content{% else %}본문으로 이동{% endif %}</a>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">⌘</span><span>Compose <strong>Knowledge</strong></span></a>
-      <nav aria-label="주요 메뉴">
+      <nav aria-label="{% if page_lang == 'en' %}Main navigation{% else %}주요 메뉴{% endif %}">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/tips/' | relative_url }}">Tips</a>
         <a href="{{ '/llms.txt' | relative_url }}">For AI</a>
@@ -22,19 +27,27 @@
     </div>
   </header>
   <main id="main-content" class="shell">
-    {% if page.tip %}
+    {% if page.tip or page.tip_translation %}
+    {% if page.tip_translation %}
+      {% assign original = site.pages | where: 'tip', true | where: 'doc_date', page.doc_date | first %}
+    {% else %}
+      {% assign original = page %}
+    {% endif %}
     <div class="crumb"><a href="{{ '/tips/' | relative_url }}">Daily Tips</a><span aria-hidden="true">/</span><time datetime="{{ page.doc_date }}">{{ page.doc_date }}</time></div>
     <div class="eyebrow">ANDROIDX COMPOSE · DEV / DEBUG / REVIEW</div>
     <h1 class="page-title">{{ page.title | escape }}</h1>
     {% if page.summary %}<p class="subtitle">{{ page.summary | escape }}</p>{% endif %}
-    <section class="meta-card" aria-label="지원 버전 및 검증 상태">
-      <div><span class="meta-label">게시일</span><strong>{{ page.doc_date }}</strong></div>
-      <div><span class="meta-label">적용 Compose 버전</span><strong>{{ page.version_scope | escape }}</strong></div>
-      <div><span class="meta-label">지원 AGP / 도구 조건</span><strong>{{ page.agp_scope | escape }}</strong></div>
-      <div><span class="meta-label">검증 수준</span><strong>{{ page.verification | escape }}</strong></div>
+    <nav aria-label="{% if page_lang == 'en' %}Tip language{% else %}팁 언어{% endif %}">
+      {% include tip-language-links.html tip=original %}
+    </nav>
+    <section class="meta-card" aria-label="{% if page_lang == 'en' %}Version and verification{% else %}지원 버전 및 검증 상태{% endif %}">
+      <div><span class="meta-label">{% if page_lang == 'en' %}Published{% else %}게시일{% endif %}</span><strong>{{ page.doc_date }}</strong></div>
+      <div><span class="meta-label">{% if page_lang == 'en' %}Compose versions{% else %}적용 Compose 버전{% endif %}</span><strong>{{ page.version_scope | escape }}</strong></div>
+      <div><span class="meta-label">{% if page_lang == 'en' %}AGP and tooling{% else %}지원 AGP / 도구 조건{% endif %}</span><strong>{{ page.agp_scope | escape }}</strong></div>
+      <div><span class="meta-label">{% if page_lang == 'en' %}Verification{% else %}검증 수준{% endif %}</span><strong>{{ page.verification | escape }}</strong></div>
       <div class="meta-links">
-        <a href="{{ site.raw_base }}/docs/{{ page.path }}">원본 Markdown</a>
-        <a href="{{ '/tips/index.json' | relative_url }}">AI JSON 목록</a>
+        <a href="{{ site.raw_base }}/docs/{{ page.path }}">{% if page_lang == 'en' %}Markdown source{% else %}원본 Markdown{% endif %}</a>
+        <a href="{{ '/tips/index.json' | relative_url }}">{% if page_lang == 'en' %}JSON index for AI{% else %}AI JSON 목록{% endif %}</a>
       </div>
     </section>
     {% else %}
@@ -44,7 +57,7 @@
       {{ content }}
     </article>
   </main>
-  <footer class="site-footer"><div class="shell footer-inner"><span>Compose Knowledge · 문서와 AI가 동일한 Markdown 원문을 참조합니다.</span><a href="{{ site.github_repo }}">Source on GitHub</a></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><span>Compose Knowledge · {% if page_lang == 'en' %}Tips and AI reference the original Markdown.{% else %}문서와 AI가 동일한 Markdown 원문을 참조합니다.{% endif %}</span><a href="{{ site.github_repo }}">Source on GitHub</a></div></footer>
   <script defer src="{{ '/assets/site.js' | relative_url }}"></script>
 </body>
 </html>

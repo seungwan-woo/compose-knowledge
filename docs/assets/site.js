@@ -1,5 +1,7 @@
 (() => {
   "use strict";
+  const english = document.documentElement.lang === "en";
+  const copyLabel = english ? "Copy" : "복사";
   // The visible code and copied text are both generated from the single Markdown source.
   const blocks = document.querySelectorAll("article pre");
   for (const pre of blocks) {
@@ -17,8 +19,8 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className = "copy-button";
-    button.textContent = "복사";
-    button.setAttribute("aria-label", "코드 복사");
+    button.textContent = copyLabel;
+    button.setAttribute("aria-label", english ? "Copy code" : "코드 복사");
     button.addEventListener("click", async () => {
       // textContent omits syntax-highlight markup but preserves snippet characters.
       const source = code?.textContent ?? pre.textContent ?? "";
@@ -36,11 +38,11 @@
           input.remove();
           if (!copied) throw new Error("copy not supported");
         }
-        button.textContent = "복사됨 ✓";
+        button.textContent = english ? "Copied ✓" : "복사됨 ✓";
       } catch (error) {
-        button.textContent = "복사 실패";
+        button.textContent = english ? "Copy failed" : "복사 실패";
       }
-      window.setTimeout(() => { button.textContent = "복사"; }, 1800);
+      window.setTimeout(() => { button.textContent = copyLabel; }, 1800);
     });
     shell.appendChild(button);
   }

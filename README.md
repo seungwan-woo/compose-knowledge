@@ -164,7 +164,9 @@ The human-readable GitHub Pages site publishes source-grounded tips with highlig
 - **AI discoverability:** https://seungwan-woo.github.io/compose-knowledge/llms.txt and `/tips/index.json`
 - **Canonical source:** `docs/tips/YYYY-MM-DD.md` (Markdown + YAML frontmatter)
 
-Jekyll renders the same Markdown that AI agents consume directly. Add one new `docs/tips/YYYY-MM-DD.md` page with `tip: true`, `doc_date`, `version_scope` and `verification` to publish the next tip; the homepage, archive, JSON index and `llms.txt` list it automatically. The Pages workflow deploys on pushes to `main` after Pages is configured for GitHub Actions in repository settings. GitHub Actions deployment status—not the existence of this README—determines whether the public site is live. This article pipeline is separate from the `corpus` branch and source-refresh workflow.
+Publish each tip in Korean and English in the same PR. Add the canonical `docs/tips/YYYY-MM-DD.md` page with `tip: true` and its `lang`. Add the other language under `docs/tips/ko/` or `docs/tips/en/` with `tip_translation: true`, the same `doc_date`, the appropriate `lang`, and a locale-specific permalink. See the [tip authoring rule](AGENTS.md#repository-maintenance). Readers can switch languages in the archive and each tip. The JSON and `llms.txt` indexes list the canonical source once per date.
+
+GitHub Actions deploys Pages for changes on `main` after Pages is configured in the repository settings. Check the Pages workflow for deployment status.
 
 ### AGP support and version-claim policy for tip authors
 
