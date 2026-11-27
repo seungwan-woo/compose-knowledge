@@ -22492,6 +22492,20 @@ The AndroidX license text is in LICENSE-AndroidX.txt. Source-specific provenance
     "license": "Unspecified (repository-authored content)"
   },
   {
+    "id": "tip-20261127-01-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/2489baf2f939b4487a1207ab6b72ecb8737f7b9e/docs/tips/2026-11-27.md#L14-L53",
+    "revision": "2489baf2f939b4487a1207ab6b72ecb8737f7b9e",
+    "path": "docs/tips/2026-11-27.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
+    "id": "tip-20261127-02-source",
+    "resource": "https://github.com/seungwan-woo/compose-knowledge/blob/2489baf2f939b4487a1207ab6b72ecb8737f7b9e/docs/tips/2026-11-27.md#L55-L91",
+    "revision": "2489baf2f939b4487a1207ab6b72ecb8737f7b9e",
+    "path": "docs/tips/2026-11-27.md",
+    "license": "Unspecified (repository-authored content)"
+  },
+  {
     "id": "unknown-reference-source",
     "resource": "https://raw.githubusercontent.com/androidx/androidx/07bb66ae1eada12632eb10c75246d7b2c5ba6ede/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/window/Popup.kt",
     "revision": "07bb66ae1eada12632eb10c75246d7b2c5ba6ede",
