@@ -1,0 +1,18 @@
+{% assign original = include.tip %}
+{% assign translations = site.pages | where: 'tip_translation', true | where: 'doc_date', original.doc_date %}
+{% assign korean = translations | where: 'lang', 'ko-KR' | first %}
+{% assign english = translations | where: 'lang', 'en' | first %}
+{% assign original_lang = original.lang | default: 'en' %}
+{% if original_lang == 'ko-KR' %}
+  {% assign korean = korean | default: original %}
+{% elsif original_lang == 'en' %}
+  {% assign english = english | default: original %}
+{% endif %}
+<div class="tip-languages">
+  {% if korean %}
+    <a href="{{ korean.url | relative_url }}" lang="ko" hreflang="ko"{% if page.url == korean.url %} aria-current="page"{% endif %}>한국어</a>
+  {% endif %}
+  {% if english %}
+    <a href="{{ english.url | relative_url }}" lang="en" hreflang="en"{% if page.url == english.url %} aria-current="page"{% endif %}>English</a>
+  {% endif %}
+</div>

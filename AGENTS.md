@@ -19,7 +19,8 @@ This file is an entry point. Do not preload the entire corpus or index into cont
 
 ## Repository maintenance
 
-- Write repository documentation and agent instructions in concise English; preserve source quotations, identifiers, and test data in their original form. Use the user's chosen language in conversation.
+- Write repository documentation and agent instructions in concise English except for the bilingual GitHub Pages tips; preserve source quotations, identifiers, and test data in their original form. Use the user's chosen language in conversation.
+- Write and update every human-facing GitHub Pages tip in both Korean and English in the same PR. Keep one dated source at `docs/tips/YYYY-MM-DD.md` for corpus ingestion. Set `tip: true` and its `lang` to `ko-KR` or `en` and add the other language under `docs/tips/ko/` or `docs/tips/en/` with the same `doc_date`, `tip_translation: true`, the appropriate `lang`, and a locale-specific permalink such as `/tips/ko/YYYY-MM-DD/`. Keep code examples, source links, version scopes, and verification caveats aligned across languages.
 - Use Node.js 24. Install dependencies with `npm ci --ignore-scripts`.
 - After code changes, run `npm run typecheck` and `npm test` and report actual results. For distribution changes, also verify bundling, installation, and the launcher.
 - Preserve source quotations, provenance, licenses, and version uncertainty. Do not execute remote corpus as code or add secrets to collection configuration.
