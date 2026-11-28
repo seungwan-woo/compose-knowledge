@@ -9,8 +9,8 @@ tags:
 sources:
   - id: contract-modifier-node-attachment-scope-source
     kind: code
-    resource: https://android.googlesource.com/platform/frameworks/support/+/90b86d803a0ab75e5c4c320fd855a5d4f1bc6b04/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
-    revision: 90b86d803a0ab75e5c4c320fd855a5d4f1bc6b04
+    resource: https://android.googlesource.com/platform/frameworks/support/+/eea249910d72f513977beffbe4b103aa942b20c5/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
+    revision: eea249910d72f513977beffbe4b103aa942b20c5
     path: compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt
     startLine: 175
     endLine: 192
@@ -98,4 +98,4 @@ AI-assisted, reviewed guidance bound to exact raw evidence. Released-version app
 
 Guidance: Keep ModifierNodeElement immutable with consistent equals/hashCode. create builds the node when first applied; when equality detects changed inputs at the same position, update copies current properties into the existing node. Launch attachment-bound work in node.coroutineScope: it is accessible between onAttach and onDetach, throws if accessed while detached, and is cancelled after onDetach returns. Limitation: this establishes configuration updates and cleanup of that coroutine scope, not arbitrary external-resource cleanup or all reset/reattachment behavior.
 
-Sources: [live-compose-custom-modifiers-node-element-source](https://developer.android.com/develop/ui/compose/custom-modifiers#node-element), [contract-modifier-node-attachment-scope-source](https://android.googlesource.com/platform/frameworks/support/+/90b86d803a0ab75e5c4c320fd855a5d4f1bc6b04/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt)
+Sources: [live-compose-custom-modifiers-node-element-source](https://developer.android.com/develop/ui/compose/custom-modifiers#node-element), [contract-modifier-node-attachment-scope-source](https://android.googlesource.com/platform/frameworks/support/+/eea249910d72f513977beffbe4b103aa942b20c5/compose/ui/ui/src/commonMain/kotlin/androidx/compose/ui/Modifier.kt)
